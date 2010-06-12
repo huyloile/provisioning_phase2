@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  
+  <page backtext="notext" descr="Option Total TV" cost="freet_pt">
+    <title>Menu Option Total TV</title>
+    <redirect src="erl://svc_options_mobi:first_page?opt_total_tv&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+
+	<page tag = "nouveaute" cost="freept">		
+	<redirect src="erl://svc_options_mobi:first_page?opt_total_tv&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#do_activation"/>
+	</page>
+
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Totale TV deja active">
+    <title>Option Totale TV deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> est
+    deja activee.
+    Vous ne pourrez resouscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> qu'une
+    fois votre option en cours epuisee.
+  </page>
+  
+   <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Option Total TV solde insuffisant classique">
+   <title>Option Total TV solde insuffisant classique</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>,
+   vous devez disposer de plus de
+   <include src="erl://svc_options:print_option_price?opt_total_tv"/> sur votre compte.
+   Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Option Total TV solde insuffisant M6">
+   <title>Option Total TV solde insuffisant M6</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>,
+   vous devez disposer de plus de
+   <include src="erl://svc_options:print_option_price?opt_total_tv"/> sur votre compte
+   principal. Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Option Total TV solde insuffisant Foot">
+   <title>Option Total TV solde insuffisant Foot</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>,
+   vous devez disposer de plus de
+   <include src="erl://svc_options:print_option_price?opt_total_tv"/> sur votre compte.
+   Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Option Total TV solde insuffisant Click">
+   <title>Option Total TV solde insuffisant Click</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>,
+   vous devez disposer de plus de
+   <include src="erl://svc_options:print_option_price?opt_total_tv"/> sur votre compte.
+   Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Total TV page offre incompatible">
+    <title>option Option Total TV page offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis
+    votre mobile (0,37 E/min.). Merci de votre appel.
+  </page>
+
+  <page tag="generique" backtext="notext" descr="Option Total TV:generic case" 
+	cost="freet_pt">
+    <title>Menu generique Option Total TV</title>
+    Avec l'option
+   <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>,
+    profitez de plus de 50 chaines
+    et toute la video en illimite pour
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/> par mois.<br/>
+    <a href="#infos">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#do_activation">Souscrire</a>     
+  </page> 
+  
+  <page tag="infos" descr="Option Totale TV: Infos Page 1" cost="free_pt">
+    <title>Option Totale TV Infos P1</title>
+    Profitez des chaines nationales, de la TNT ainsi que
+    des chaines  thematiques Sport, Cine, Musique
+    (InfoSport, Manga, M6 Hits, RTL9)...<br/>
+    <a href="#infos_2">Suite</a><br/>
+    <a href="#do_activation">Souscrire</a>
+  </page>
+  
+  <page tag="infos_2" descr="Option Totale TV: Infos Page 2" cost="free_pt">
+    <title>Option Totale TV: Infos  P3</title>
+    ... + toutes les videos actu, musique, sport,  humour, cinema en illimite,
+    profitez-en vite! Option non compatible avec l'option TV<br/>
+    <a href="#do_activation">Souscrire</a>
+  </page>
+
+    <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>
+
+  <page tag="conditions_gen" descr="Opt Totale TV Conditions: Page 1" cost="free_pt">
+    <title>Opt Totale TV Conditions : Page 1</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> valable
+    en France metropolitaine pour tout client mobicarte et click la mobicarte.
+    Connexions illimitees pour acceder a plus de 50 chaines et ...<br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+  
+  <page tag="conditions_m6" descr="Opt Totale TV Conditions M6: Page 1" cost="free_pt">
+    <title>Opt Totale TV Conditions M6 : Page 1</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> valable
+    en France metropolitaine pour tout client d'une offre
+    prepayee Orange. Connexions illimitees pour acceder a plus de 50 chaines et ...<br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_foot" descr="Opt Totale TV Conditions Foot: Page 1" cost="free_pt">
+    <title>Opt Totale TV Conditions Foot : Page 1</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> valable
+    en France metropolitaine pour tout client d'une offre
+    prepayee Orange. Connexions illimitees pour acceder a plus de 50 chaines et ...<br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_click" descr="Opt Totale TV Conditions Foot: Page 1" cost="free_pt">
+    <title>Opt Totale TV Conditions Foot : Page 1</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> valable
+    en France metropolitaine pour tout client mobicarte et click la mobicarte.
+    Connexions illimitees pour acceder a plus de 50 chaines et ...<br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+  
+  <page tag="conditions_2" descr="Opt Totale TV Conditions: Page 2" cost="free_pt">
+    <title>Opt Totale TV Conditions: Page 2</title>
+    ... a toutes les videos proposees sur Orange World (hors contenus payants).
+    Liste des chaines susceptible d'evolution<br/>
+    Tarifs des autres communications...<br/>
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" descr="Opt Totale TV Conditions: Page 3" cost="free_pt">
+    <title>Opt Totale TV Conditions: Page 3</title>
+    ...wap web hors option dans la fiche tarifaire en vigueur<br/>
+    Services accessibles sur les reseaux et depuis un terminal compatibles.
+    Voir details de l'option...<br/>
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" descr="Opt Totale TV Conditions: Page 4" cost="free_pt">
+    <title>Opt Totale TV Conditions: Page 4</title>
+    ...et conditions specifiques et liste des mobiles compatibles sur
+    www.orange.fr. L'option sera valable 31 jours consecutifs a compter...<br/>
+    <a href="#conditions_5">Suite</a>
+  </page>
+
+    <page tag="conditions_5" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_5_gen,35=#conditions_5_m6,39=#conditions_5_foot,40=#conditions_5_foot,41=#conditions_5_foot,42=#conditions_5_foot,43=#conditions_5_foot,44=#conditions_5_foot,default=#conditions_5_gen"/>
+  </page>
+
+
+  <page tag="conditions_5_gen" descr="Opt Totale TV Conditions: Page 5" cost="free_pt">
+    <title>Opt Totale TV Conditions: Page 5</title>
+    ...de la date de souscription a l'option. Le prix de
+    l'option sera preleve sur le compte du client
+    sous reserve que le credit dudit compte soit...<br/>
+    <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_5_m6" descr="Opt Totale TV Conditions M6: Page 5" cost="free_pt">
+    <title>Opt Totale TV Conditions M6: Page 5</title>
+    ...de la date de souscription a l'option. Le prix de
+    l'option sera preleve sur le compte principal du client
+    sous reserve que le credit dudit compte soit...<br/>
+    <a href="#conditions_6">Suite</a>
+  </page>
+
+ <page tag="conditions_5_foot" descr="Opt Totale TV Conditions M6: Page 5" cost="free_pt">
+    <title>Opt Totale TV Conditions M6: Page 5</title>
+    ...de la date de souscription a l'option. Le prix de
+    l'option sera preleve sur le compte du client
+    sous reserve que le credit dudit compte soit...<br/>
+    <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_6" descr="Opt Totale TV Conditions: Page 6" cost="free_pt">
+    <title>Opt Totale TV Conditions: Page 6</title>
+    ...suffisant. Souscription de l'option au 220 et #123#
+    (appels gratuits). Option non compatible a l'option TV.<br/>
+    <a href="#do_activation">Souscrire</a>
+  </page>
+
+   <page tag="do_activation"
+	descr="option Totale TV page souscrire">
+    <title>option Totale TV page souscrire</title>
+     Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> pour
+     <include src="erl://svc_options:print_option_price?opt_total_tv"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_total_tv&amp;#success,#opt_deja_active,#solde_insuff,#system_failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer
+    </a>
+  </page>
+
+  <page tag="success" nav="stop" cost="free_pt"
+	descr="option Totale TV page apres confirmation">
+    <title>option Totale TV page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> sera activee.
+    Merci de votre appel.<br/>
+  </page>
+
+  <page tag="success_princ" nav="stop" cost="free_pt"
+	descr="option Totale TV page apres confirmation">
+    <title>option Totale TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> sera activee.
+  </page>
+  <page tag="success_bp" nav="stop" cost="free_pt"
+	descr="option Totale TV page apres confirmation">
+    <title>option Totale TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> sera activee.
+  </page>
+  <page tag="success_offert" nav="stop" cost="free_pt"
+	descr="option Totale TV page apres confirmation">
+    <title>option Totale TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> sera activee.
+  </page>
+  <page tag="success_dixit" nav="stop" cost="free_pt"
+	descr="option Totale TV page apres confirmation">
+    <title>option Totale TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> sera activee.
+  </page>
+  
+  <!-- Restitution -->
+  <page tag="restitution" cost="free_pt" hist="donthist" 
+	volatile="true" descr="Page de restitution de l'option Total TV">
+    <title>Page de restitution a l'option Total TV</title>
+    Vous avez jusqu'au <include src="erl://svc_options:print_account_dlv?cpte_total_tv&amp;dm"/> 
+    inclus pour profiter en illimite de votre option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/>. 
+  </page>
+
+  <!-- Error Pages -->
+ <page tag="system_failure" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+  
+<!--PROMO-->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Totale TV menu generique promo">
+    <title>option Totale TV menu generique promo</title>
+     Votre 1ere option
+     <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> est
+     offerte jusqu'au
+     <include src="erl://svc_options:print_commercial_end_date?opt_total_tv&amp;dmy"/>.
+     Profitez de 50 chaines en illimites + videos...etc<br/>
+     <a href="#souscrire_promo">Profiter de la promo</a><br/>
+     <a href="#conditions_promo">Conditions</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Totale TV page souscrire Promo">
+    <title>option Totale TV page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> offerte.
+    Option non compatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>.
+    <a href="erl://svc_options_mobi:do_subscription?opt_total_tv&amp;#success,#opt_deja_active,#solde_insuff_promo,#system_failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+  <page tag="souscrire_promo_apres_cond" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Totale TV page souscrire Promo">
+    <title>option Totale TV page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> offerte.
+    <a href="erl://svc_options_mobi:do_subscription?opt_total_tv&amp;#success,#opt_deja_active,#solde_insuff_promo,#system_failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+ <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo">
+    <title>option Totale TV page conditions promo</title>
+    Offre valable en France metropolitaine. 1er mois offert pour toute
+    1ere souscription a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> avant le
+    <include src="erl://svc_options:print_commercial_end_date?opt_total_tv&amp;dmy"/> inclus
+    et reservee...<br/>
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+
+  <page tag="conditions_promo2" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_promo2_gen,35=#conditions_promo2_m6,51=#conditions_promo2_click,default=#conditions_promo2_gen"/>
+  </page>
+
+ <page tag="conditions_promo2_gen" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 2">
+    <title>option Totale TV page conditions promo 2</title>
+    ...aux clients mobicarte et click la mobicarte ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_total_tv&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_total_tv&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>...<br/> 
+    <a href="#conditions_promo3">Suite</a>
+ </page>
+
+ <page tag="conditions_promo2_m6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo M6 2">
+    <title>option Totale TV page conditions promo M6 2</title>
+    ...aux clients d'une offre prepayee Orange ayant active
+    leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_total_tv&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_total_tv&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>...<br/> 
+    <a href="#conditions_promo3_m6">Suite</a>
+ </page>
+
+ <page tag="conditions_promo2_click" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo Click 2">
+    <title>option Totale TV page conditions promo Click 2</title>
+    ...aux clients mobicarte et click la mobicarte ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_total_tv&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_total_tv&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>...<br/> 
+    <a href="#conditions_promo3_click">Suite</a>
+ </page>
+
+ <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 3">
+    <title>option Totale TV page conditions promo 3</title>
+    ...L'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> est
+    valable en France metropolitaine pour tout client mobicarte et click la mobicarte.
+    Connexions illimitees pour acceder a plus de 50 chaines et ...<br/>
+    <a href="#conditions_promo4">Suite</a>
+ </page>
+
+ <page tag="conditions_promo3_m6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo M6 3">
+    <title>option Totale TV page conditions promo M6 3</title>
+    ...Option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> valable
+    en France metropolitaine pour tout client d'une offre prepayee Orange.
+    Connexions illimitees pour acceder a plus de 50 chaines et...<br/>
+    <a href="#conditions_promo4">Suite</a>
+ </page>
+ 
+ <page tag="conditions_promo3_click" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo Click 3">
+    <title>option Totale TV page conditions promo Click 3</title>
+    ...L'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> est
+    valable en France metropolitaine pour tout client mobicarte et click la mobicarte.
+    Connexions illimitees pour acceder a plus de 50 chaines<br/>
+    <a href="#conditions_promo4_click">Suite</a>
+ </page>
+
+ <page tag="conditions_promo4" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 4">
+    <title>option Totale TV page conditions promo 4</title>
+    ...a toutes les videos proposees sur Orange World (hors contenus payants).
+    Liste des chaines susceptible d'evolution. Tarifs des autres communications... <br/>
+    <a href="#conditions_promo5">Suite</a>
+ </page>
+
+ <page tag="conditions_promo4_click" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo Click 4">
+    <title>option Totale TV page conditions promo Click 4</title>
+    et a toutes les videos proposees sur Orange World (hors contenus payants).
+    Liste des chaines susceptible d'evolution. Tarifs des autres communications... <br/>
+    <a href="#conditions_promo5">Suite</a>
+ </page>
+  <page tag="conditions_promo5" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 5">
+    <title>option Totale TV page conditions promo 5</title>
+    ...wap web hors option dans la fiche tarifaire en vigueur. Services
+    accessibles sur les reseaux et depuis un terminal compatibles.
+    Voir details de l'option...<br/>
+    <a href="#conditions_promo6">Suite</a>
+  </page>
+
+ <page tag="conditions_promo6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 6">
+    <title>option Totale TV page conditions promo 6</title>
+    ...et conditions specifiques et liste des mobiles compatibles
+    sur www.orange.fr. L'option sera valable 31 jours
+    consecutifs a compter...<br/>
+    <a href="#conditions_promo7">Suite</a>
+  </page>
+
+  <page tag="conditions_promo7" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Totale TV page conditions promo 7">
+    <title>option Totale TV page conditions promo 7</title>
+    ...de la date de souscription a l'option. Souscription de l'option
+    au 220 et #123# (appels gratuits). Option non compatible a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>.<br/>
+    <a href="#souscrire_promo_apres_cond">Profiter de la promo</a>
+  </page>
+
+  <page tag="solde_insuff_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Totale TV solde insuffisant promo">
+    <title>option Totale TV solde insuffisant promo</title>
+    Bonjour, pour beneficier de votre 1ere souscription a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_total_tv"/> offerte,
+    vous devez disposer d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_total_tv"/>.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+</pages>

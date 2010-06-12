@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour les bonus JANUS decouvrir">
+
+  <page cost="freept">
+      Envie d'un bonus appels, sms, internet ou international? Confirmez votre inscription et vous pourrez choisir
+      gratuitement votre bonus<br/>
+     <a href="erl://svc_of_plugins:redirect_by_kdo_dte?#decouvrir_s_inscrire,#decouvrir_s_inscrire_kdo,#decouvrir_s_inscrire_dte">S'inscrire</a><br/>
+      <a href="#decouvrir_infos">Plus d'infos</a>
+  </page>  
+
+  <page tag="decouvrir_infos" hist="dohist" cost="free_pt" descr="decouvrir bonus +infos" menutext="notext">
+    <title>decouvrir bonus +infos</title>
+    decouvrez les bonus<br/>
+   <a href="#decouvrir_bonus_appels">Bonus appels</a><br/>
+   <a href="#decouvrir_bonus_sms">Bonus SMS</a><br/>
+   <a href="#decouvrir_bonus_internet">Bonus internet</a><br/>
+   <a href="#decouvrir_bonus_international">Bonus international</a><br/>
+   <a href="#decouvrir_bonus_condition">Conditions</a>
+  </page>  
+
+  <page tag="decouvrir_s_inscrire" hist="dohist" cost="free_pt" descr="decouvrir bonus s'inscrire" menutext="notext">
+    <title>decouvrir bonus s'inscrire</title>
+    En + des bonus, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#decouvrir_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="decouvrir_s_inscrire_kdo" hist="dohist" cost="free_pt" descr="decouvrir bonus s'inscrire" menutext="notext">
+    <title>decouvrir bonus s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a l'illimite KDO.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#decouvrir_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="decouvrir_s_inscrire_dte" hist="dohist" cost="free_pt" descr="decouvrir bonus s'inscrire" menutext="notext">
+    <title>decouvrir bonus s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a du Temps en Plus<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#decouvrir_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="decouvrir_confirmation" hist="dohist" cost="free_pt" descr="decouvrir confirmation" backtext="notext">
+    <title>decouvrir confirmation</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_janus&amp;validation"/>
+    Votre demande a bien ete prise en compte et sera traitee sous 72H, un SMS vous avertira de l'activation. Vous
+    pourrez alors choisir votre bonus au #123#
+  </page>
+
+  <page tag="decouvrir_bonus_appels" hist="dohist" cost="free_pt" descr="decouvrir bonus appels">
+    <title>decouvrir bonus appels</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_appels&amp;description"/>
+    Avec le Bonus appels: a partir de 10E recharges dans le mois, beneficiez de 20 a 80 min d'appels offerts
+    le mois suivant<br/><br/>
+     <a href="erl://svc_of_plugins:redirect_by_kdo_dte?#bappels_s_inscrire,#bappels_s_inscrire_kdo,#bappels_s_inscrire_dte">S'inscrire</a><br/>
+    <a href="#bappels_p_infos">+d'infos</a>
+  </page>
+  
+  <page tag="bappels_s_inscrire" hist="dohist" cost="free_pt" descr="bonus appels s'inscrire" menutext="notext">
+    <title>bonus appels s'inscrire</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_appels&amp;souscription"/>
+    En + des bonus, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#appels_success_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+ 	 
+  <page tag="bappels_s_inscrire_kdo" hist="dohist" cost="free_pt" descr="bonus appels s'inscrire" menutext="notext">
+    <title>bonus appels s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a l'illimite KDO.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#appels_success_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="bappels_s_inscrire_dte" hist="dohist" cost="free_pt" descr="bonus appels s'inscrire" menutext="notext">
+    <title>bonus appels s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a du Temps en Plus.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#appels_success_confirmation&amp;#error_technique">Confirmer</a>
+  </page>
+
+
+  <page tag="appels_success_confirmation" hist="dohist" cost="free_pt" descr="bonus appels confirmer" backtext="notext">
+    <title>bonus appels confirmer</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_appels&amp;validation"/>
+    Votre demande a bien ete prise en compte et sera traitee sous 72H, un SMS vous avertira de l'activation. Vous
+    pourrez alors choisir votre bonus au #123#
+  </page>
+
+  <page tag="bappels_p_infos" hist="dohist" cost="free_pt" descr="bonus appels +d'infos" menutext="notext">
+    <title>bonus appels +d'infos</title>
+    Bonus offert hors numeros speciaux, de services et en cours de portabilite. Appels directs entre personnes
+    physiques et pour usage perso non lucratif
+  </page>
+
+  <page tag="decouvrir_bonus_sms" hist="dohist" cost="free_pt" descr="decouvrir bonus sms">
+    <title>decouvrir bonus sms</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_sms&amp;description"/>
+    Avec le Bonus SMS: a partir de 10E recharges dans le mois, beneficiez de, au minimum, 100 SMS offerts
+    le mois suivant<br/><br/>
+     <a href="erl://svc_of_plugins:redirect_by_kdo_dte?#bsms_s_inscrire,#bsms_s_inscrire_kdo,#bsms_s_inscrire_dte">S'inscrire</a><br/>
+    <a href="#bsms_p_infos">+d'infos</a>
+  </page>
+  
+  <page tag="bsms_s_inscrire" hist="dohist" cost="free_pt" descr="bonus sms s'inscrire" menutext="notext">
+    <title>bonus sms s'inscrire</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_sms&amp;souscription"/>
+    En + des bonus, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#bsms_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="bsms_s_inscrire_kdo" hist="dohist" cost="free_pt" descr="bonus sms s'inscrire" menutext="notext">
+    <title>bonus sms s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a l'illimite KDO.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#bsms_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="bsms_s_inscrire_dte" hist="dohist" cost="free_pt" descr="bonus sms s'inscrire" menutext="notext">
+    <title>bonus sms s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a du Temps en Plus.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#bsms_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="bsms_confirmer" hist="dohist" cost="free_pt" descr="bonus sms confirmer" backtext="notext">
+    <title>bonus sms confirmer</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_sms&amp;validation"/>
+    Votre demande a bien ete prise en compte et sera traitee sous 72H, un SMS vous avertira de l'activation. Vous
+    pourrez alors choisir votre bonus au #123#
+  </page>
+
+  <page tag="bsms_p_infos" hist="dohist" cost="free_pt" descr="bonus sms +d'infos" menutext="notext">
+    <title>bonus sms +d'infos</title>
+    SMS/MMS offerts en France Metro, hors sms/mms surtaxes, numeros courts et MMS cartes postales.<br/>
+    <a href="#bsms_p_infos_1">Suite</a>
+  </page>
+
+  <page tag="bsms_p_infos_1" hist="dohist" cost="free_pt" descr="bonus sms +d'infos page 1" menutext="notext">
+    <title>bonus sms +d'infos page 1</title>
+    SMS/MMS entre personnes physiques et pour usage personel non lucratif, jusqu'a 200 destinataires differents
+  </page>
+
+  <page tag="decouvrir_bonus_internet" hist="dohist" cost="free_pt" descr="decouvrir bonus internet">
+    <title>decouvrir bonus internet</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_internet&amp;description"/>
+    Avec le Bonus internet: a partir de 10E recharges, de 1h a 4h d'internet mobile offertes le mois suivant<br/><br/>
+     <a href="erl://svc_of_plugins:redirect_by_kdo_dte?#binternet_s_inscrire,#binternet_s_inscrire_kdo,#binternet_s_inscrire_dte">S'inscrire</a><br/>
+    <a href="#binternet_p_infos">+d'infos</a>
+  </page>
+  
+  <page tag="binternet_s_inscrire" hist="dohist" cost="free_pt" descr="bonus internet s'inscrire" menutext="notext">
+    <title>bonus internet s'inscrire</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_internet&amp;souscription"/>
+    En + des bonus, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternet_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="binternet_s_inscrire_kdo" hist="dohist" cost="free_pt" descr="bonus internet s'inscrire" menutext="notext">
+    <title>bonus internet s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a l'illimite KDO.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternet_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="binternet_s_inscrire_dte" hist="dohist" cost="free_pt" descr="bonus internet s'inscrire" menutext="notext">
+    <title>bonus internet s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a du Temps en Plus<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternet_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="binternet_confirmer" hist="dohist" cost="free_pt" descr="bonus internet confirmer" backtext="notext">
+    <title>bonus internet confirmer</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_internet&amp;validation"/>
+    Votre demande a bien ete prise en compte et sera traitee sous 72H, un SMS vous avertira de l'activation. Vous
+    pourrez alors choisir votre bonus au #123#
+  </page>
+
+  <page tag="binternet_p_infos" hist="dohist" cost="free_pt" descr="bonus internet +d'infos" menutext="notext">
+    <title>bonus internet +d'infos</title>
+    Bonus internet decompte a la min indivisible pour navigation sur portail OW, Gallery et internet, consultation
+    videos, rubriques actualite, cinema, sport<br/><br/>
+    <a href="#binternet_p_infos_1">Suite</a>
+  </page>
+
+  <page tag="binternet_p_infos_1" hist="dohist" cost="free_pt" descr="bonus internet +d'infos page 1" menutext="notext">
+    <title>bonus internet +d'infos page 1</title>
+    et mes communautes sur le portail OW. Les usages mail (smtp, pop, imap) et modem, contenus et les services payants
+    non inclus. Usages en France metro...<br/>
+    <a href="#binternet_p_infos_2">Suite</a>
+  </page>
+
+  <page tag="binternet_p_infos_2" hist="dohist" cost="free_pt" descr="bonus internet +d'infos page 2" menutext="notext">
+    <title>bonus internet +d'infos page 2</title>
+    Services de Voix surIP, P2P, Newsgroups interdits. Services sur reseaux et terminal compatibles. Le piratage nuit
+    a la creation artistique. +d'infos sur orange.fr
+  </page>
+    
+  <page tag="decouvrir_bonus_international" hist="dohist" cost="free_pt" descr="decouvrir bonus international">
+    <title>decouvrir bonus international</title>
+    a partir de 10E recharges, de 10 a 40mn d'appels offerts le mois suivant vers et depuis l'Europe ou le Maghreb<br/>
+     <a href="erl://svc_of_plugins:redirect_by_kdo_dte?#binternational_s_inscrire,#binternational_s_inscrire_kdo,#binternational_s_inscrire_dte">S'inscrire</a><br/>
+    <a href="#binternational_p_infos">+d'infos</a>
+  </page>
+  
+  <page tag="binternational_s_inscrire" hist="dohist" cost="free_pt" descr="bonus international s'inscrire"
+  menutext="notext">
+    <title>bonus international s'inscrire</title>
+    En + des bonus, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternational_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="binternational_s_inscrire_kdo" hist="dohist" cost="free_pt" descr="bonus international s'inscrire"
+  menutext="notext">
+    <title>bonus international s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a l'illimite KDO.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternational_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+  <page tag="binternational_s_inscrire_dte" hist="dohist" cost="free_pt" descr="bonus international s'inscrire"
+  menutext="notext">
+    <title>bonus international s'inscrire</title>
+    En +, profitez de vos appels a 0,50E/min et du SMS a 0,12E.<br/>
+    En vous inscrivant, vous renoncez a votre plan tarifaire actuel et a du Temps en Plus.<br/>
+    <a href="erl://svc_of_plugins:write_to_file?janus&amp;#binternational_confirmer&amp;#error_technique">Confirmer</a>
+  </page>
+
+
+  <page tag="binternational_confirmer" hist="dohist" cost="free_pt" descr="bonus international confirmer" backtext="notext">
+    <title>bonus international confirmer</title>
+    Votre demande a bien ete prise en compte et sera traitee sous 72H, un SMS vous avertira de l'activation. Vous pourrez
+    alors choisir votre bonus au #123#
+  </page>
+
+  <page tag="binternational_p_infos" hist="dohist" cost="free_pt" descr="bonus international +d'infos" menutext="notext">
+    <title>bonus international +d'infos</title>
+    Bonus decompte a la seconde apres une 1ere minute indivisible. Appels depuis la France Metro vers la zone
+    Europe, ...<br/>
+    <a href="#binternational_p_infos_1">Suite</a>
+  </page>
+
+  <page tag="binternational_p_infos_1" hist="dohist" cost="free_pt" descr="bonus international +d'infos page 1"
+  menutext="notext">
+    <title>bonus international +d'infos page 1</title>
+    ...et depuis les pays de la zone Europe vers la France Metro et vers les pays de la zone choisie. Les autres
+    com. decomptees du compte principal au tarif en vigueur
+  </page>
+
+  <page tag="decouvrir_bonus_condition" hist="dohist" cost="free_pt" descr="decouvrir bonus condition">
+    <title>decouvrir bonus condition</title>
+    Beneficiez du bonus choisi tous les mois en fonction de votre cumul recharge (a partir de 10E, hors credit offert)
+    le mois precedent
+  </page>
+
+  <page tag="error_technique" backtext="notext">
+    Erreur technique<br/>
+    Votre demande n'a pas ete prise en compte.<br/>
+    Veuillez vous reconnecter ulterieurement. 
+  </page>
+
+</pages>

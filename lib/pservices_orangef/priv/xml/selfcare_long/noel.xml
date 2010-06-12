@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF nouveautés page">
+
+  <page>
+  </page>
+  
+  <page tag="soiree_inf" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Soiree infinies a 2,5 euros">
+    <title>Soiree infinies a 2,5 euros</title>
+    Envie d'1 soiree au telephone? Appels illimites vers Orange &amp; fixes le
+    soir de votre choix pour seulement 2,5E/soiree! Infos &amp; Souscription
+    jusqu'au 22/11 au 444 (gratuit)
+  </page>
+  
+  <page tag="we_inf" hist="dohist" cost="free_pt" backtext="notext"
+	descr="WE infinie a 8 euros">
+    <title>WE infinie a 8 euros</title>
+    Envie d'appeler sans compter? Avec le WE infini Noel 8E, vos appels sont
+    illimites le WE vers Orange &amp; fixes. Plus d'infos sur le 444 (gratuit)
+  </page>
+  
+  <page tag="nuit_kdo_sms" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Nuit KDO SMS">
+    <title>Nuit KDO SMS</title>
+    Nuit Kdo! Vos SMS GRATUITS &amp; ILLIMITES vers TOUS les mobiles &amp;
+    fixes de 21h30 a 8h dans la nuit du 6 au 7/12 (SMS metrop. non surtaxes)
+    Plus d'infos sur le 444 (gratuit)
+  </page>
+  
+  <page tag="we_inf2" hist="dohist" cost="free_pt" backtext="notext"
+	descr="WE infinie a 8 euros">
+    <title>WE infinie a 8 euros</title>
+    Envie d'appeler sans compter? Avec le WE infini Noel 8E, vos appels sont
+    illimites le WE vers Orange &amp; fixes. + d'infos &amp; souscription sur
+    le 444 (gratuit) jusqu'au 13/12.
+  </page>
+  
+  <page tag="pack_voeux_mms" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Pack Voeux MMS">
+    <title>Pack Voeux MMS</title>
+    Partagez Noel en photos avec vos proches grace au pack Noel MMS: 25 MMS
+    (valables 7 jours) pour seulement 5 E jusqu'au 20/12. + d'infos et
+    souscription au 444 (gratuit)
+  </page>
+  
+  <page tag="jeu_logo_sonn" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Promo Jeu, Logo, Sonneries">
+    <title>Promo Jeu, Logo, Sonneries</title>
+    Vos cadeaux Orange pour Noel : 1 sonnerie + 1 logo + 1 jeu a telecharger
+    gratuitement sur orange World ! Plus d'infos au 444 (gratuit) jusqu'au
+    27/12
+  </page>
+  
+  <page tag="carte_postale" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Carte Postale">
+    <title>Carte Postale</title>
+    Faites vos voeux par MMS! Vos MMS carte postale sont au prix du MMS photo,
+    du 28/12 au 03/01. Plus d'infos sur le 444 (gratuit)
+  </page>
+  
+  <page tag="pack_noel_smsmms" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Pack Noel SMS/MMS">
+    <title>Pack Noel SMS/MMS</title>
+    Envoyez vos voeux autrement avec le pack voeux SMS/MMS : 60 SMS/20 MMS
+    photo (valables 7 jours) pour seulement 5E. Plus  d'infos et souscription
+    au 444 (gratuit)
+  </page>
+  
+  <page tag="we_inf3" hist="dohist" cost="free_pt" backtext="notext"
+	descr="2005 minutes">
+    <title>2005 minutes</title>
+    Besoin d'une rallonge pour souhaiter la nouvelle annee? Offrez-vous 2005
+    min de voeux a 8E le week-end vers Orange &amp; fixes. Plus d'infos sur le
+    444 (gratuit) jusqu'au 17/1.
+  </page>
+  
+  <page tag="nouveaute" hist="dohist" cost="free_pt" backtext="notext"
+	descr="page nouveaute du calendrier de l'avant">
+    <title>page nouveaute du calendrier de l'avant</title>
+    Du 16/11 au 17/01, Orange vous donne rendez-vous chaque mardi pour
+    decouvrir l'offre exclusive Noel de la semaine... Alors rdv ts les mardis
+    sur le 444 (gratuit) !
+  </page>
+
+
+</pages>

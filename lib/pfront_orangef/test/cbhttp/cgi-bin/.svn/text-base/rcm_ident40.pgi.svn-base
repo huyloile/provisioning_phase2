@@ -1,0 +1,50 @@
+#!/bin/sh
+
+read BODY
+
+MSISDN=""
+ORDRE=""
+CODE=""
+IMSI=""
+VERSION=""
+
+##echo ${BODY%%[=]*}
+x=`expr "$BODY" : '.*MSISDN=\([0-9]*\)'` && MSISDN="$x"
+y=`expr "$BODY" : '.*ORDRE=\([0-Z]*\)'` && ORDRE="$y"
+z=`expr "$BODY" : '.*CODE=\([0-9]*\)'` && CODE="$z"
+t=`expr "$BODY" : '.*IMSI=\([0-9]*\)'` && IMSI="$t"
+v=`expr "$BODY" : '.*VERSION=\([0-9]*\)'` && VERSION="$v"
+#echo $ORDRE
+
+function affiche {
+case $VERSION in
+    1*)
+	  ident_v1;;
+    *)
+	  ident_v1
+esac
+}
+
+function ident_v1 {
+	case $MSISDN in	
+	    *012)
+	    ##DOssier inconnu
+		echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI;NOADV=4;CODE_PLT=PTE;NUM_CLNT=1111222233;TYPE_DOS=;CODE_PROD=;SEG_OP=;PARC=;ID_SCS=;ETADOS=;LIB_ETADOS=;ETAPE_REC;SO=;FACT_MOY=;";;
+	    *013)
+	    ## Erreur Request
+		echo "STATUT=401;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=Ordre inconnu";;
+	    *014)
+		## NADV KO
+		echo "STATUT=0;MSISDN=$MSISDN;IMSI=$IMSI;NOADV=0;CODE_PLT=PTE;NUM_CLNT=1111222233;TYPE_DOS=;CODE_PROD=;SEG_OP=;PARC=;ID_SCS=;ETADOS=;LIB_ETADOS=;ETAPE_REC;SO=;FACT_MOY=;";;
+	    *)
+		echo "STATUT=0;MSISDN=$MSISDN;IMSI=$IMSI;NOADV=4;CODE_PLT=PTE;NUM_CLNT=1111222233;TYPE_DOS=;CODE_PROD=;SEG_OP=;PARC=;ID_SCS=;ETADOS=;LIB_ETADOS=;ETAPE_REC;SO=;FACT_MOY=;";;
+	esac
+}
+
+
+
+cat <<EOF
+Content-Type: text/xml
+
+`affiche`
+EOF

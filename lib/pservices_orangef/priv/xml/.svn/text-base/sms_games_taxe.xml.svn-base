@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+   <page descr="sms_games">
+       <redirect src="erl://svc_util:redirect_size?181&#filter&#not_compatible"/>
+   </page>
+    <page tag="filter">
+       <redirect src="erl://svc_util:filter_msisdn?#init&#not_msisdn"/>
+    </page>
+    <page tag="init">
+       <redirect src="erl://svc_sms_games:init?#start"/>
+    </page>
+    <page tag="start">
+       <redirect src="erl://svc_sms_games:verif_credit?#filter_sub"/>
+    </page>
+
+    <page tag="filter_sub">
+        <redirect src="erl://svc_util:redir_subscription?mobi=#menu,cmo=#menu,default=#not_prepaid"/>
+    </page>
+
+    <page tag="menu" descr="Menu SMS Orange">
+        Bienvenue sur les jeux SMS d'Orange!<br/>
+        Ce mois-ci,gagnez des kdos avec Blackjack et MobileArena!<br/>
+        Choisissez une rubrique en tapant 1,2 ou 3:<br/>
+       <a href="#Blackjack">Blackjack</a><br/>
+       <a href="#Arena">Mobile Arena</a><br/>
+       <a href="#all_games">Tous les jeux</a>
+    </page>
+
+    <page tag="all_games" descr="Liste des jeux" menutext="notext" backtext="notext">
+         Tous les jeux<br/>
+        <a href="#SDA">Seigneur des Anneaux</a><br/>
+        <a href="#QVGDM">Qui veut gagner des millions</a><br/>
+        <a href="#Wabi">Wabi</a><br/>
+        <a href="#Trivial">Trivial Pursuit</a><br/>
+        <a href="#Casino">Casino</a><br/>
+        <a href="#pendu">Pendu</a><br/>
+        <a href="#love_match">Love Match</a><br/>
+ 	<a href="#start" key="00">Menu</a>
+    </page>
+
+    <page tag="Wabi" menutext="notext" backtext="notext" descr="WABI">
+         WABI<br/>
+        <a href="erl://svc_sms_games:send_mes?WABI&20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Trivial" menutext="notext" backtext="notext" descr="Trivial Pursuit">
+        Trivial Pursuit<br/>
+        <a href="erl://svc_sms_games:pre_send?TP&20239&#inscription">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Casino" menutext="notext" backtext="notext" descr="Casino">
+        Casino<br/>
+        <a href="#Blackjack">Blackjack</a><br/>
+        <a href="#Poker">Viéo Poker</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Blackjack" menutext="notext" backtext="notext" descr="Blackjack">
+        Blackjack<br/>
+        <a href="#Blackjack_kdos">Les Kdos</a><br/>
+        <a href="erl://svc_sms_games:send_mes?BJK&20555">Jouer</a><br/>
+        <a href="#New_game">Nouvelle partie</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Poker" menutext="notext" backtext="notext" descr="Poker">
+        VidéoPoker<br/>
+        <a href="erl://svc_sms_games:send_mes?POK&20555">Jouer</a><br/>
+        <a href="#New_game">Nouvelle partie</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Arena" menutext="notext" backtext="notext" descr="Menu Arena">
+        Mobile Aréna<br/>
+        <a href="#Kdos_arena">Les Kdos</a><br/>
+        <a href="#aide_arena">Comment jouer?</a><br/>
+        <a href="erl://svc_sms_games:pre_send?INSC&20666&#inscription_arena">S'inscrire</a><br/>
+        <a href="erl://svc_sms_games:send_mes?ATT&20666&#conf_ok_05">Attaquer</a><br/>
+        <a href="erl://svc_sms_games:send_mes?NOMS&20666&#conf_ok_05">Liste de joueurs</a><br/>
+        <a href="erl://svc_sms_games:send_mes?INFO PAUSE&20666&#conf_ok_05">Pause</a><br/>
+        <a href="erl://svc_sms_games:send_mes?REPRENDRE&20666&#conf_ok_05">Reprendre</a><br/>
+        <a href="erl://svc_sms_games:send_mes?INFO CHAT&20666&#conf_ok_05">Chat</a><br/>
+        <a href="erl://svc_sms_games:send_mes?SCORE&20666&#conf_ok_05">Score</a><br/>
+        <a href="erl://svc_sms_games:send_mes?TOP10&20666&#conf_ok_05">Highscores</a><br/>
+        <a href="erl://svc_sms_games:send_mes?QUITTER&20666&#conf_ok_05">Se désinscrire</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="pendu" menutext="notext" backtext="notext" descr="Menu pendu">
+        Pendu<br/>
+        <a href="erl://svc_sms_games:send_mes?PEN&20555">Jouer</a><br/>
+        <a href="erl://svc_sms_games:send_mes?PEN SCO&20555">Classement</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="QVGDM" menutext="notext" backtext="notext" descr="Menu QVGDM">
+        QVGDM<br/>
+        <a href="#aide_QVGDM">Comment jouer?</a><br/>
+        <a href="erl://svc_sms_games:send_mes?M&20707&#conf_ok_20">Jouer</a><br/>
+        <a href="erl://svc_sms_games:send_mes?HOF&20707">Hall of fame</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="love_match" menutext="notext" backtext="notext" descr="Menu Love match">
+        Love Match<br/>
+        <a href="#aide_love">Comment jouer?</a><br/>
+        <a href="erl://svc_sms_games:send_mes?LOVE&20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="SDA" menutext="notext" backtext="notext" descr="Menu SDA">
+        Seigneur Des Anneaux<br/>
+        <a href="erl://svc_sms_games:send_mes?SDA&20808&#conf_ok_20">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_arena" menutext="notext" descr="Kdos Arena">
+         Chaque dimanche, le premier du classement à 23h59 gagne une GameBoy Advance.<br/>
+    </page>
+
+   <page tag="Blackjack_kdos" menutext="notext" descr="Kdos Blackjack">
+         Concours Blackjack<br/>
+         Chaque mois jusqu'au 03/08/03, gagnez une PS2 et 9 DVD de Casino.<br/>
+    </page>
+
+    <page tag="inscription" backtext="notext" menutext="notext" descr="Saisie pseudo">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_10">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caractères max):
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="inscription_arena" backtext="notext" menutext="notext" descr="Saisie pseudo">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_05">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caractères max):
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="aide_arena" menutext="notext" descr="Aide arena">
+       Concours Mobile Arena<br/>
+       Attaquez vos adversaires lorsqu'ils ne peuvent pas se défendre et volez-leur leurs points!<br/>
+       Lorsque vous recevez un missile, vous devez l'intercepter au plus vite en envoyant "DEF" par SMS. Vous voulez dormir? Prenez 8h de pause (5).
+    </page>
+
+    <page tag="aide_QVGDM" menutext="notext" descr="Aide QVGDM">
+       Vous avez 2 min par question.<br/>
+       Aides:<br/>
+       -50:50/50<br/>
+       -AVIS=Avis du public<br/>
+       -TEMPS:+2 min<br/>
+       Envoyer Q pour quitter.<br/>
+       Le Hall of Fame est hebdo.<br/>
+       0.2E/envoi hors coût du SMS
+    </page>
+
+    <page tag="New_game" menutext="notext" descr="Nouvelle partie">
+        Nouvelle partie vous permet de recommencer avec 1000 jetons (fonction valable si la partie a été initialisée il y a moins de 20 minutes<br/>
+        <a href="erl://svc_sms_games:send_mes?NIV&20555">Confirmer</a><br/>
+    </page>
+
+    <page tag="aide_love" menutext="notext" descr="Aide love match">
+       Love Match<br/>
+       Etes-vous fait l'un pour l'autre?<br/>
+       Donnez 2 prénoms et le Love Match vous révèle quel est le type de relation amoureuse entre ces 2 prénoms.
+    </page>
+
+    <page tag="confirm_nok" nav="end" descr="Service indisponible">
+        Le service est temporairement indisponible.<br/>
+        Veuillez essayer ultérieurement.
+    </page>
+
+
+    <page tag="conf_ok_20" nav="end" descr="Confirmation ok taxé">
+        Vous allez bientot recevoir un SMS.<br/>
+        Pour jouer, répondez par SMS.<br/>
+        0.2E/envoi hors coût du SMS
+    </page>
+
+    <page tag="conf_ok_05" nav="end" descr="Confirmation ok tax 0.05">
+        Vous allez bientot recevoir un SMS.<br/>
+        Pour jouer, répondez par SMS.<br/>
+        0.05E/envoi hors coût du SMS
+    </page>
+
+    <page tag="conf_ok_10" nav="end" descr="Confirmation ok tax 0.10">
+        Vous allez bientot recevoir un SMS.<br/>
+        Pour jouer, répondez par SMS.<br/>
+        0.10E/envoi hors coût du SMS
+    </page>
+
+   <page tag="balance_too_low" nav="end" descr="Credit insuffisant">
+       Vous n'avez pas assez de crédit pour accéder à ce service.<br/>
+       Veuillez recharger votre compte.
+    </page>
+ 
+   <page tag="not_prepaid" nav="end" descr="Credit insuffisant">
+       L'accès à ce service n'est pas ouvert aux clients forfaits.
+    </page>
+
+    <page tag="not_compatible" descr="Pas compatible" nav="end">
+        Votre terminal ne vous permet pas d'accéder à ce service
+    </page>
+
+    <page tag="not_msisdn" descr="Manque d'information" nav="end">
+        Nous n'avons pas assez d'information pour vous permettre d'accéder à ce service.
+    </page>
+</pages>

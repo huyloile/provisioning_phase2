@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="msisdn_operator">
+
+<!-- diferent redirection if initial request is *121# or *121*number# -->
+
+<page hist="dohist">
+   <redirect src="erl://svc_msisdn_operator:input_or_empty"/>
+</page>
+
+<page tag="input" hist="donthist" backtext="notext" menutext="notext">
+   <form action="erl://svc_msisdn_operator:is_msisdn_orange">
+      <entry kind="digits">
+         <prompt>Saisissez #121*numéro de votre correspondant puis #
+          puis envoie</prompt>
+      </entry>
+   </form>
+</page>
+
+<!-- help -->
+
+<page tag="help" hist="donthist" nav="end">
+Tapez #121* puis numéro puis #.
+</page>
+
+<!--possibles answers with a correct imput-->
+
+<page tag="ozab_orangef" hist="donthist" nav="end">
+  Ce numéro est Orange<br/>
+</page>
+
+<page tag="ozab_not_orangef" hist="donthist" nav="end">
+  Ce numéro n'est pas Orange<br/>.
+</page>
+
+<page tag="not_metropole" hist="donthist" nav="end">
+ Ce n'est pas un numéro mobile de France Métropolitaine.
+</page>
+
+<page tag="system_failure" nav="end" descr="OCF-RDP HS">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu.
+  </page>
+</pages>
+

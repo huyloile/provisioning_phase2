@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include
+END
+recharge_cb_cmo_new.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/recharge_cb_cmo_new.hrl
+END
+mmsinfos.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/mmsinfos.hrl
+END
+wifi.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/wifi.hrl
+END
+sms_mms_infos_opt.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/sms_mms_infos_opt.hrl
+END
+prisme.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/prisme.hrl
+END
+smsinfos.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/smsinfos.hrl
+END
+cmb.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/cmb.hrl
+END
+quicksilver.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/quicksilver.hrl
+END
+transfert_credit.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/transfert_credit.hrl
+END
+annuaire.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/annuaire.hrl
+END
+opim.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/opim.hrl
+END
+dme.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/dme.hrl
+END
+one2one.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/one2one.hrl
+END
+option.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/option.hrl
+END
+smspre.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/smspre.hrl
+END
+tele2.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/tele2.hrl
+END
+ftmtlv.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/ftmtlv.hrl
+END
+qlc.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/qlc.hrl
+END
+messages_options_cmo.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/messages_options_cmo.hrl
+END
+recharge_cb_cmo.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/recharge_cb_cmo.hrl
+END
+postpaid.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/postpaid.hrl
+END
+recharge_moi.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/recharge_moi.hrl
+END
+selfcare.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/selfcare.hrl
+END
+messages_options_postpaid.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/messages_options_postpaid.hrl
+END
+version.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/version.hrl
+END
+smspopup.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/smspopup.hrl
+END
+mipc_vpbx.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/mipc_vpbx.hrl
+END
+messages_options_mobi.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/messages_options_mobi.hrl
+END
+recharge_cb_mobi.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/recharge_cb_mobi.hrl
+END
+subscr_asmetier.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/include/subscr_asmetier.hrl
+END

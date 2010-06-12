@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListeClient>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000001</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000001</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+    <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000002</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000002</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000003</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000003</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>2</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33610000004</AttributClient>
+      <AttributClient nomAttribut='ancienMSISDN'>33600000004</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000004</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000005</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010010000005</AttributClient>
+      <AttributClient nomAttribut='ancienIMSI'>208010000000005</AttributClient>	
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000006</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000006</AttributClient>
+      <AttributClient nomAttribut='segCo'>CPP01</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>oui</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000007</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000007</AttributClient>
+      <AttributClient nomAttribut='segCo'>ABONW</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>cmo</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000008</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000008</AttributClient>
+      <AttributClient nomAttribut='segCo'>30JOU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000009</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000009</AttributClient>
+      <AttributClient nomAttribut='segCo'>A30FL</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>ENT</AttributClient>
+   </Client>
+   <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000010</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000010</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+  <Client etatDossier='70'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000011</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000011</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000012</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000012</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000013</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000013</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>#NA#</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>0</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+  </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000014</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000014</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>#NA#</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>2</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+  </Client>
+  <Client etatDossier='10'>
+      <Souscription sva='MMSC' etat='actif'/>
+      <AttributClient nomAttribut='MSISDN'>33600000015</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000016</AttributClient>
+      <AttributClient nomAttribut='ancienIMSI'>208010000000015</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>#NA#</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>2</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+  </Client>
+</ListeClient>

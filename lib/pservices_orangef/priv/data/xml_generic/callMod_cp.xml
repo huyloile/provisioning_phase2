@@ -1,0 +1,52 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callMod_cp>
+      <sac:params>
+        <sac:name>DOS_NUMID</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.DOS_NUMID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TCP_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.TCP_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>ECP_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.ECP_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>CPP_DATE_LV</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.CPP_DATE_LV.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>CPP_DESTINATION</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.CPP_DESTINATION.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>RNV_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.RNV_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>PTF_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.PTF_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>CTRL_ESC</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.CTRL_ESC.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>PCT_MONTANT</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(mod_cp.PCT_MONTANT.)"?></sac:value>
+      </sac:params>
+    </sac:callMod_cp>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2/lib/pfront_orangef/test
+END
+test_sachem.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_sachem.erl
+END
+orchideeResponse.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/orchideeResponse.hrl
+END
+test_asmetier_webserv.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_asmetier_webserv.erl
+END
+test_smppasn_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_smppasn_server.erl
+END
+edelweissResponse.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/edelweissResponse.hrl
+END
+test_batch_ocf.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2/lib/pfront_orangef/test/test_batch_ocf.erl
+END
+test_limande.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_limande.erl
+END
+cbhttp_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp_fake.erl
+END
+test_sms_mms_infos.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_sms_mms_infos.erl
+END
+sachemResponse.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sachemResponse.hrl
+END
+test_mipc_vpbx_webserv.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_mipc_vpbx_webserv.erl
+END
+USSD123
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/USSD123
+END
+test_mqseries.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_mqseries.erl
+END
+test_sachem_api.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_sachem_api.erl
+END
+test_SMPP37.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_SMPP37.erl
+END
+test_tlv_encodage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_tlv_encodage.erl
+END
+prism.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/prism.erl
+END
+test_opal.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/test_opal.erl
+END
+USSD123_etatDossier10
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2/lib/pfront_orangef/test/USSD123_etatDossier10
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/Makefile
+END

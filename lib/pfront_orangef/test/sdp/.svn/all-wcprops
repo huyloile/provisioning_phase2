@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp
+END
+sachem_cmo_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/sachem_cmo_fake.erl
+END
+sachem_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/sachem_fake.erl
+END
+smsinfos_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/smsinfos_fake.erl
+END
+msc_sdp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/msc_sdp.erl
+END
+postpaid_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/postpaid_fake.erl
+END
+dme_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/dme_fake.erl
+END
+tlv_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/tlv_fake.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/sdp/Makefile
+END

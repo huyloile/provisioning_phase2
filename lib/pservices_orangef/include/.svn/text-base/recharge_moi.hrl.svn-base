@@ -1,0 +1,1 @@
+-define(SVC_NAME, "rech_moi").

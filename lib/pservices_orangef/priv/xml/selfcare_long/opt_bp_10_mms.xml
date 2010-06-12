@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Option Bon Plan 10 MMS">
+
+<!-- Restitution -->
+  
+  <page tag="restit_ac" cost="free_pt"
+        descr="Restit Option 10 MMS ac">
+    <title>Restit option 10 MMS ac</title>
+    <include src="erl://text_opt_bp_10_mms:opt_bp_10_mms_restit_ac_text?opt_mms_mensu&amp;mms"/>
+  </page>
+
+  <page tag="restit_ep" cost="free_pt"
+        descr="Restit Option 10 MMS ep">
+    <title>Restit option 10 MMS ep</title>
+    <include src="erl://text_opt_bp_10_mms:opt_bp_10_mms_restit_ep_text?opt_mms_mensu"/>
+  </page>
+
+</pages>
+
+

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+
+ <page cost="freept">
+   <redirect src="erl://svc_selfcare:start_light?#redirect_compte"/>
+ </page>  
+
+ 
+ <page tag="redirect_compte" cost="freept">
+    <redirect src="erl://svc_selfcare:select_home_niv1"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas C  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas C">
+    <title>Suivi Conso Mobi cas C</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ac_classique,smm=#princ_ac_sms_ac_wap_ac_smm,smam=#princ_ac_sms_ac_wap_ac_smm,smsoir=#princ_ac_sms_ac_wap_ac_smm,smn=#princ_ac_sms_ac_wap_ac_smm,madrid2=#princ_ac_sms_ac_wap_ac_madrid2,plug_noel=#princ_ac_sms_ac_wap_ac_plug_noel,plugv3=#princ_ac_sms_ac_wap_ac_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ac_plug_noel,zap=#princ_ac_sms_ac_wap_ac_zap,zap_promo=#princ_ac_sms_ac_wap_ac_zap,m6_prepaid=#princ_ac_sms_ac_wap_ac_m6_prepaid,default=#princ_ac_sms_ac_wap_ac_classique"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas D  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas D">
+    <title>Suivi Conso Mobi cas D</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ep_classique,smm=#princ_ac_sms_ac_wap_ep_smm,smam=#princ_ac_sms_ac_wap_ep_smm,smsoir=#princ_ac_sms_ac_wap_ep_smm,smn=#princ_ac_sms_ac_wap_ep_smm,madrid2=#princ_ac_sms_ac_wap_ep_madrid2,plug_noel=#princ_ac_sms_ac_wap_ep_plug_noel,plugv3=#princ_ac_sms_ac_wap_ep_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ep_plug_noel,zap=#princ_ac_sms_ac_wap_ac_zap,zap_promo=#princ_ac_sms_ac_wap_ac_zap,m6_prepaid=#princ_ac_sms_ac_wap_ep_m6_prepaid,default=#princ_ac_sms_ac_wap_ep_classique"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas H  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas H">
+    <title>Suivi Conso Mobi cas H</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ac_classique,smm=#princ_ac_sms_ep_wap_ac_smm,smam=#princ_ac_sms_ep_wap_ac_smm,smsoir=#princ_ac_sms_ep_wap_ac_smm,smn=#princ_ac_sms_ep_wap_ac_smm,madrid2=#princ_ac_sms_ep_wap_ac_madrid2,plug_noel=#princ_ac_sms_ep_wap_ac_plug_noel,plugv3=#princ_ac_sms_ep_wap_ac_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ac_plug_noel,zap=#princ_ac_sms_ep_wap_ac_zap,zap_promo=#princ_ac_sms_ep_wap_ac_zap,m6_prepaid=#princ_ac_sms_ep_wap_ac_m6_prepaid,default=#princ_ac_sms_ep_wap_ac_classique"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas N  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas N">
+    <title>Suivi Conso Mobi cas N</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ep_sms_ac_wap_ac_classique,smm=#princ_ep_sms_ac_wap_ac_smm,smam=#princ_ep_sms_ac_wap_ac_smm,smsoir=#princ_ep_sms_ac_wap_ac_smm,smn=#princ_ep_sms_ac_wap_ac_smm,madrid2=#princ_ep_sms_ac_wap_ac_madrid2,plug_noel=#princ_ep_sms_ac_wap_ac_plug_noel,plugv3=#princ_ep_sms_ac_wap_ac_plug_noel,plugv3sec=#princ_ep_sms_ac_wap_ac_plug_noel,m6_prepaid=#princ_ep_sms_ac_wap_ac_m6_prepaid,default=#princ_ep_sms_ac_wap_ac_classique"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas E  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas E">
+    <title>Suivi Conso Mobi cas E</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ep_classique,smm=#princ_ac_sms_ep_wap_ep_smm,smam=#princ_ac_sms_ep_wap_ep_smm,smsoir=#princ_ac_sms_ep_wap_ep_smm,smn=#princ_ac_sms_ep_wap_ep_smm,madrid2=#princ_ac_sms_ep_wap_ep_madrid2,plug_noel=#princ_ac_sms_ep_wap_ep_plug_noel,plugv3=#princ_ac_sms_ep_wap_ep_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ep_plug_noel,zap=#princ_ac_sms_ep_wap_ep_zap,zap_promo=#princ_ac_sms_ep_wap_ep_zap,m6_prepaid=#princ_ac_sms_ep_wap_ep_m6_prepaid,default=#princ_ac_sms_ep_wap_ep_classique"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas M  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas M">
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ep_m6_prepaid,default=#princ_ep_sms_ac_wap_ep_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas P  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso cas P">
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ep_wap_ac_m6_prepaid,default=#princ_ep_sms_ep_wap_ac_default"/>
+  </page>
+
+
+<!-- ======================================================================== -->
+<!-- CAS B (CptePrinc Ep, SMS Ep, WAP Ep) : script #epuise et #perime -->
+
+ <page tag="epuise" log="SC_Eep" cost="free_pt" backtext="notext" descr="Suivi conso :Mobi - Cpte Princ EP">
+    <title>Suivi conso</title>
+    la mobicarte<br/>
+    Credit epuise. <br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.
+ </page>
+
+ <page tag="perime" log="SC_Eper" cost="free_pt" backtext="notext" descr="Mobi : Compte perime">
+    <title>Suivi-Conso</title>
+    la mobicarte<br/>
+    Date de validite du credit depassee.<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.
+ </page>
+
+<!-- ======================================================================== -->
+<!-- CAS C (CptePrinc Cred, SMS Cred, WAP Cred) #princ_ac_sms_ac_wap_ac_xxxx -->
+<!-- script classique = script soir et WE = script TAS -->
+<page tag="princ_ac_sms_ac_wap_ac_classique" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi classique - Cpte Princ ,SMS et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/>),
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+<page tag="princ_ac_sms_ac_wap_ac_smm" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi classique - Cpte Princ ,SMS et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/>)
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script plug -->
+<page tag="princ_ac_sms_ac_wap_ac_madrid2" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi plug - Cpte Princ, SMS et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de com.nat.
+    en heures creuses) a ut 
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<page tag="princ_ac_sms_ac_wap_ac_plug_noel">
+    <redirect src="#princ_ac_sms_ac_wap_ac_madrid2"/>
+ </page>
+
+ <!-- cas C script M6 Prepaid -->
+  <page tag="princ_ac_sms_ac_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas C">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR,
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+<!-- script ZAP Cas C et D -->
+<page tag="princ_ac_sms_ac_wap_ac_zap" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi plug - Cpte Princ, SMS et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (jusqu'a
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> d'appels
+    en heures 11-18) a utiliser
+    avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- ======================================================================== -->
+<!-- CAS D -->
+<!-- script classique = script soir et WE = script TAS -->
+<page tag="princ_ac_sms_ac_wap_ep_classique" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi classique - Cpte Princ AC + Cpte SMS AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/>)
+    et <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+<page tag="princ_ac_sms_ac_wap_ep_smm">
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/>)
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script plug -->
+<page tag="princ_ac_sms_ac_wap_ep_madrid2">
+  <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;min"/> de
+    com.nat <include src="#descr_plan"/>)
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<page tag="princ_ac_sms_ac_wap_ep_plug_noel">
+  <redirect src="#princ_ac_sms_ac_wap_ep_madrid2"/>
+ </page>
+
+  <!-- cas D script M6 Prepaid -->
+  <page tag="princ_ac_sms_ac_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas D">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas D</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+<!-- ======================================================================== -->
+<!-- CAS E -->
+<!-- script classique = script soir et WE = script TAS -->
+ <page tag="princ_ac_sms_ep_wap_ep_classique" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi classique - Cpte Princ AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/> ou <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS<br/>
+    a utiliser avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+  <page tag="princ_ac_sms_ep_wap_ep_smm" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi mesure- Cpte Princ AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com. nat (<include src="#descr_plan"/>)
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    
+  </page>
+
+<!-- script plug -->
+ <page tag="princ_ac_sms_ep_wap_ep_madrid2" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi plug - Cpte Princ AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com. nationales <include src="#descr_plug"/> a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<page tag="princ_ac_sms_ep_wap_ep_plug_noel">
+    <redirect src="#princ_ac_sms_ep_wap_ep_madrid2"/>
+  </page>
+
+<!-- script ZAP -->
+ <page tag="princ_ac_sms_ep_wap_ep_zap" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi Zap - Cpte Princ AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=jusqu'a
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS en
+    heures 11-18 ou
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms_p"/> SMS en
+    heures normales a ut.
+    avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+  <!-- cas E script M6 Prepaid -->
+  <page tag="princ_ac_sms_ep_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas E">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+<!-- ======================================================================== -->
+<!-- CAS H -->
+<!-- script classique = script soir et WE = script TAS -->
+<page tag="princ_ac_sms_ep_wap_ac_classique" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi classique - Cpte Princ et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nat <include src="#descr_plan"/>) a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+<page tag="princ_ac_sms_ep_wap_ac_smm" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi mesure - Cpte Princ et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com. nationales <include src="#descr_plan"/>) a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+   
+ </page>
+<!-- script plug -->
+<page tag="princ_ac_sms_ep_wap_ac_madrid2" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi plug - Cpte Princ et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de com.nat
+    <include src="#descr_plug"/>) a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>    
+ </page>
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<page tag="princ_ac_sms_ep_wap_ac_plug_noel">
+    <redirect src="#princ_ac_sms_ep_wap_ac_madrid2"/>
+ </page>
+
+<!-- script Zap -->
+<page tag="princ_ac_sms_ep_wap_ac_zap" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi Zap - Cpte Princ et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=jusqu'a
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS en heures
+    11-18 a ut. avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde_min?cpte_wap"/> sur Orange World
+ </page>
+
+  <!-- cas H script M6 Prepaid -->
+  <page tag="princ_ac_sms_ep_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas H">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+<!-- ======================================================================== -->
+<!-- CAS M -->
+<!-- script classique = script soir et WE = script TAS -->
+<!-- = -->
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+<!-- = -->
+<!-- script plug -->
+<!-- = -->
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<!-- = -->
+ <page tag="princ_ep_sms_ac_wap_ep_default" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi -  Cpte Princ et WAP EP + Cpte SMS AC">
+    <title>Suivi Conso</title>
+    plan <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+    </page>
+
+  <!-- cas M m6_prepaid -->
+  <page tag="princ_ep_sms_ac_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas M">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas M</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+  <a href="selfcare.xml#mainmenu" key="00">menu</a></page>
+
+<!-- ======================================================================== -->
+<!-- CAS N -->
+<!-- script classique = script soir et WE = script TAS -->
+ <page tag="princ_ep_sms_ac_wap_ac_classique" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi -  Cpte Princ EP + Cpte SMS et WAP AC">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde_min?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+ </page>
+
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+ <page tag="princ_ep_sms_ac_wap_ac_smm">
+   <redirect src="#princ_ep_sms_ac_wap_ac_classique"/>
+ </page>
+
+<!-- script plug -->
+ <page tag="princ_ep_sms_ac_wap_ac_madrid2">
+    <redirect src="#princ_ep_sms_ac_wap_ac_classique"/>
+ </page>
+
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+ <page tag="princ_ep_sms_ac_wap_ac_plug_noel">
+   <redirect src="#princ_ep_sms_ac_wap_ac_classique"/>
+ </page>
+
+  <!-- cas N m6_prepaid -->
+  <page tag="princ_ep_sms_ac_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas N">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas N</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+<!-- ======================================================================== -->
+<!-- CAS P -->
+<!-- script classique = script soir et WE = script TAS -->
+<!-- = -->
+<!-- script sur mesure matin = script sur mesure apres midi = script sur mesure soir = script sur mesure nuit -->
+<!-- = -->
+<!-- script plug -->
+<!-- = -->
+<!-- script plug serie limitee(plug noel) = script plug v3 -->
+<!-- = -->
+ <page tag="princ_ep_sms_ep_wap_ac_default" backtext="notext" hist="donthist" cost="free_pt" volatile="true" descr="Suivi Conso : Mobi -  Cpte Princ et SMS EP + Cpte WAP AC">
+    <title>Suivi Conso</title>
+    plan <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde_min?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_wap"/>
+  </page>
+
+  <!-- cas P m6_prepaid -->
+  <page tag="princ_ep_sms_ep_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas P">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas P</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_wap"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <a href="selfcare.xml#mainmenu" key="00">menu</a>
+  </page>
+
+
+<!-- Error pages -->
+
+  <page tag="notmobi" nav="end" log="SC_Enotmobi" cost="free_pt" descr="Mobi : not mobi">
+    <title>Mobi : not mobi</title>
+    Vous n'avez pas acces a ce service reserve aux mobicartes.
+  </page>
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.</page>
+
+<!-- page de nom des plans, suite a une redirection de svc_selfcare:plan/1 -->
+
+ <page tag="plan_name">
+    <include src="erl://svc_selfcare:print_by_plan?classique=classique,smm=sur mesure matin,smam=sur mesure apres midi,smsoir=sur mesure soir,smn=sur mesure nuit,madrid2=Orange plug,noel=soir et we serie limitee,plug_noel=Orange plug,classiquev2=classique,soir_we=soir et we,plugv3=Orange plug,plugv3sec=Orange plug,classique_sec=classique,soir_we_sec=soir et we,zap=Orange 11-18 a la seconde,zap_promo=Orange 11-18 a la seconde"/>
+  </page>
+  
+  <page tag="descr_plan">
+    <include src="erl://svc_selfcare:print_by_plan?smm= le matin%2BWE,smam= l'ap.midi%2BWE,smsoir= le%2BWE,smn= la nuit%2BWE,madrid2= en heures creuses,plug_noel= le soir%2BWE,soir_we= le soir%2BWE,soir_we_sec= le soir%2BWE,zap=en heure 11-18,zap_promo=en heure 11-18"/>
+  </page>
+  
+  <page tag="descr_wap">
+    <include src="erl://svc_selfcare:print_by_plan?madrid2=a Orange plug,plug_noel=a Orange plug,plugv3=a Orange plug,default=a Orange World"/>
+  </page>
+
+<page tag="descr_plug">
+   en heures creuses</page>
+
+<!--page de petite description du plan, suite a une redirection de svc_selfcare:descr_plan/1-->
+
+</pages>

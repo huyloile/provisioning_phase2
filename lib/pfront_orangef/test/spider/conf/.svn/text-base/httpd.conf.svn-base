@@ -1,0 +1,6 @@
+Port 8084
+ServerName spider_serveur
+SocketType ip_comm
+Modules mod_spider
+ServerRoot lib/pfront_orangef/test/spider
+DocumentRoot lib/pfront_orangef/test/spider/htdocs

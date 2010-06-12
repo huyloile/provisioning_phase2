@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+
+<pages descr="scripts pour le service : option Cityzi">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_cityzi&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Cityzi page offre incompatible">
+    <title>option option Cityzi page offre incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Cityzi page option non souscrite">
+    <title>option option Cityzi page option non souscrite</title>
+    <redirect src="#failure"/>
+  </page>
+  
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Cityzi solde insuffisant">
+    <title>option Cityzi solde insuffisant</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Cityzi deja active">
+    <title>option Cityzi deja active</title>
+    Attention, si vous supprimez votre option Cityzi, vous allez perdre l'acces a vos services Cityzi.
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_cityzi&amp;#desinscr_success,#failure">supprimer l'option Cityzi</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Cityzi apres confirmation desinscription">
+    <title>option Cityzi apres confirmation desnscription</title>
+    Votre option Cityzi vient d'etre supprimee. Pensez a contacter vos fournisseurs de services Cityzi si necessaire.
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>
+

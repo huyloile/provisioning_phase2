@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Eskimo selfcare pages">
+
+  <page descr="Eskimo prepaid: redir by USSD level">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#sc_level12&amp;#sc_level3"/>
+  </page>
+  
+  <page tag="sc_level12" descr="Eskimo prepaid:Redirection fonction etat compte princ">
+   <redirect src="erl://svc_eskimo:select_home_niv1"/>
+  </page>
+
+  <!--Niv 1-->
+
+ <page tag="ac_niv1" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Eskimo suivi conso 180">
+  <title>Eskimo suivi conso 180 :Niv 1 cpte princ actif</title>
+  Symacom Mobile bonjour.
+  Votre credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+  a utiliser avant le <include src="erl://svc_options:print_account_dlv?cpte_princ&amp;dmy"/>.<br/>
+  <a href="recharge_eskimo.xml">Recharger</a><br/>
+  <a href="#tarif_etranger">Connaitre les tarifs vers l'etranger</a><br/>
+  </page>
+  
+ <page tag="ep_niv1" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Eskimo suivi conso epuise 180">
+  <title>Eskimo suivi conso epuise 180 : Niv 1</title>
+  Votre credit est epuise.
+  Vous pouvez recharger votre compte avant le <include src="erl://svc_options:number_validity_end"/> et conserver ainsi votre numero.<br/>
+  <a href="recharge_eskimo.xml">Recharger</a><br/>
+  <a href="#tarif_etranger">Connaitre les tarifs vers l'etranger</a><br/>
+ </page>
+
+
+<!--Niv2-->
+
+ <page tag="ac_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Eskimo suivi conso 130">
+  <title>Eskimo suivi conso 130 :Niv 2 cpte princ actif</title>
+  Votre credit Symacom Mobile est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+  a utiliser avant le <include src="erl://svc_options:print_account_dlv?cpte_princ&amp;dmy"/>.<br/>
+ </page>
+ 
+ <page tag="ep_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Eskimo suivi conso epuise 130">
+  <title>Eskimo suivi conso epuise 130 : Niv 2</title>
+  Votre credit est epuise. Recharger votre compte en appelant le 224 avant le <include src="erl://svc_options:number_validity_end"/> pour conserver votre numero<br/>
+  <a href="recharge_eskimo.xml">Recharger</a><br/>
+  <a href="#tarif_etranger">Connaitre les tarifs vers l'etranger></a><br/>
+ </page>
+
+<!--Niv3-->
+  
+  <page tag="sc_level3" descr="Eskimo prepaid:Redirection fonction type de terminal">
+   <redirect src="erl://svc_eskimo:select_home_niv3"/>
+  </page>
+  
+  <page tag="act_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Eskimo suivi conso 64">
+  <title>Eskimo suivi conso 64:Niv 3 cpt princ actif</title>
+  <include src="erl://svc_compte:print_solde?cpte_princ"/> euros<br/> a utiliser avant le <include src="erl://svc_options:print_account_dlv?cpte_princ&amp;dmy"/> <br/>
+ </page>
+ 
+ <page tag="ep_niv3" backtext="notext" hist="donthist" cost="free_pt"
+       volatile="true" descr="Eskimo suivi conso epuise 64">
+   <title>Eskimo suivi conso epuise 64 :Niv 3</title>
+   Merci de recharger au 224 avant le <include src="erl://svc_options:number_validity_end"/> <br/>
+ </page>
+ 
+<page tag="tarif_etranger">
+  Pour connaitre les tarifs nationaux et internationaux,
+  consultez symacom-mobile.com ou le service clientele au 243
+</page>
+
+</pages>

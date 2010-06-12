@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#main_long&amp;#main_short"/>
+ </page>
+
+  <page tag="main_long">
+    <redirect src="erl://svc_util_of:redirect_if_declinaison?cmo&amp;#start_recharge&amp;#not_cmo"/>
+	</page>
+
+  <page tag="start_recharge">
+    <redirect src="erl://svc_recharge_cb_cmo:start_tlr"/>
+  </page>
+
+  <page tag="main_short" hist="donthist" nav="end" descr="terminal incompatible">
+    Votre terminal ne permet pas d'accéder au service.
+  </page>
+
+<!-- Phase de paiement --> 
+
+  <page tag="info_ok">
+    <redirect src="#saisie_montant"/>
+  </page>
+
+<!--2127-->
+  <page tag="plafond_depasse" nav="end" descr="Rechargement CMO TLR: plafond depasse">
+    <title>Rech CMO CB: PLafond Depasse</title>
+    Votre plafond de versement autorise est depasse<br/>
+    Pour realiser cette operation, appelez le 700 (com nat) depuis votre mobile 
+  </page>
+
+   <!-- Msg 2125-->
+   <page tag="saisie_nok" menutext="notext" descr="#123# CMO Rechargement TLR: Erreur tentatives">
+     <title>#123# CMO Rechargement TLR: Erreur tentatives</title>
+			Apres 3 erreurs dans la saisie des informations, nous vous conseillons d'appeler
+			votre service clients Orange mobile en composant le 700 (prix com nat) depuis votre mobile<br/>
+			<a href="selfcare_cmo.xml#recharge">menu rechargement</a>
+   </page>
+
+<!-- Phase de versement: 2104 -->
+
+<page tag="saisie_montant" menutext="notext" descr="#123# CMO Rechargement TLR: demande montant" nav="stop">
+    <title>Rech CMO TLR: Saisie Montant</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Votre versement doit etre au minimum de
+      <include src="erl://svc_recharge_cb_cmo:print?recharge_mini"/> Euros
+      et ne doit pas depasser
+      <include src="erl://svc_recharge_cb_cmo:print?plafond"/> Euros.<br/>
+      Tapez le montant de votre versement en Euros et validez<br/>
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3010-->
+ <page tag="montant_saisie_sup_plfd" menutext="notext" descr="#123# CMO Rechargement TLR: Erreur Montant" nav="stop">
+    <title>#123# CMO Rechargement TLR: Erreur Montant</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Ce montant ne peut etre accepte car il est superieur au maximum
+      autorise. Tapez le montant de votre versement en Euros dans
+      les limites indiquees et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<!--3009-->
+ <page tag="montant_saisie_inf_mini" menutext="notext" descr="#123# CMO Rechargement TLR: Erreur Montant inf" nav="stop">
+    <title>#123# CMO Rechargement TLR: Erreur Montant inf</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Ce montant ne peut etre accepte car il est inferieur au montant
+      minimum de
+      <include src="erl://svc_recharge_cb_cmo:print?recharge_mini"/>Euros<br/>
+      Tapez le montant de votre versement en Euros et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<!--3012-->
+<page tag="wrong_montant_saisie" menutext="notext" descr="#123# CMO Rechargement TLR: Erreur saisie" nav="stop">
+    <title>#123# CMO Rechargement TLR: Erreur saisie</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Tapez le montant de votre versement en Euros et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<!--2107--> 
+ <page tag="montant_saisie_sup_plfd_nok">
+   <redirect src="#saisie_nok"/>
+  </page>
+
+<!--3011-->
+ <page tag="montant_saisie_inf_mini_nok">
+   <redirect src="#saisie_nok"/>
+  </page>
+
+ 
+<!--2109-->
+<page tag="confirm_recharge" hist="donthist" ismenu="true" descr="#123# CMO Rechargement TLR: confirmation montant">
+    <title>#123# CMO Rechargement TLR: confirmation montant</title>
+    Vous souhaitez recharger votre compte mobile de
+    <include src="erl://svc_recharge_cb_cmo:print?montant"/> Euros?<br/>
+    <a href="#saisie_tlr">confirmer ce versement</a><br/>
+    <a href="erl://svc_recharge_cb_cmo:reinit_compteur?c_montant&amp;#saisie_montant">recommencer</a>
+  </page>
+
+
+<!-- Saisie TLR -->
+<!--4000-->
+<page tag="saisie_tlr" menutext="notext" descr="#123# CMO Rechargement TLR: demande code">
+    <title>#123# CMO Rechargement TLR: demande code</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_tlr">
+    <entry kind="digits">
+      <prompt>Tapez les 4 chiffres de votre code prelevement sur compte bancaire.<br/>
+      C'est facile! il correspond aux 2 derniers numeros de votre compte bancaire +
+      les 2 numeros de votre cle RIB.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--4002-->
+<page tag="wrong_tlr" menutext="notext" descr="#123# CMO Rechargement TLR: Erreur code">
+    <title>#123# CMO Rechargement TLR: Erreur code</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_tlr">
+    <entry kind="digits">
+      <prompt>Code prelevement sur compte bancaire incorrect, veuillez le saisir de nouveau
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<!--paiement error pages-->
+
+<!--4001-->
+ <page tag="erreur_300" descr="#123# CMO Rechargement TLR: Erreur Inscription" backtext="notext">
+    <title>#123# CMO Rechargement TLR: Erreur Inscription</title>
+    Vous n'etes pas inscrit au prelevement sur compte bancaire. Pour vous
+    inscrire, contactez votre service clients en composant le 700 (com nat).<br/>
+    <a href="selfcare_cmo.xml#recharge">retour au menu rechargement</a>
+ </page>
+ 
+<!--4003-->
+ <page tag="erreur_304" descr="#123# CMO Rechargement TLR: Erreur suspendu" nav="end">
+    <title>#123# CMO Rechargement TLR: Erreur suspendu</title>
+    Vous n'etes pas autorise a utiliser le prelevement sur compte bancaire.
+    Contacter votre service clients en composant le 700(com.nat.).
+ </page>
+
+<!--4004-->
+ <page tag="erreur_reseau" descr="#123# CMO Rechargement TLR: Erreur technique" nav="end">
+    <title>#123# CMO Rechargement TLR: Erreur Technique</title>
+		Suite a un probleme technique votre paiement a ete refuse, veuillez recommencer.<br/>
+		Si le probleme persiste contactez votre service clients Orange mobile au 700 (prix com nat)<br/>
+ </page>
+
+<!--4005-->
+
+<page tag="rechargement_reussi" descr="#123# CMO Rechargement TLR: Succes" nav="end">
+    <title>#123# CMO Rechargement TLR: Succes</title>
+     Feliciations! Votre rechargement sur prelevement bancaire a ete effectue.<br/>
+     Votre nouveau solde est
+     de <include src="erl://svc_compte:print_solde?cpte_princ"/> Euros.<br/>
+     Votre bonus de rechargement est
+     de <include src="erl://svc_recharge_cb_cmo:print?bonus_montant"/> Euros
+</page>
+
+<!-- Error pages -->
+
+  <page tag="system_failure" descr="#123# CMO Rechargement TLR: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+		Suite a un probleme technique votre paiement a ete refuse, veuillez recommencer.<br/>
+		Si le probleme persiste contactez votre service clients Orange mobile au 700 (prix com nat)<br/>
+  </page>
+
+ <page tag="temporary" nav="end" descr="#123# CMO Rechargement TLR: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement.
+  </page>
+
+<!--2133-->
+  <page tag="not_cmo" nav="end" descr="#123# CMO Rechargement TLR: Erreur Dossier">
+  	Service reserve aux clients d'une offre avec compte mobile.<br/>
+		Pour toute info, contactez votre service clients Orange mobile en composant
+		le 700 (prix com nat) depuis votre mobile.
+  </page>
+
+</pages>

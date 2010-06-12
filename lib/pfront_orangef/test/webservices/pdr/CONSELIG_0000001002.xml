@@ -1,0 +1,12 @@
+<getAccesPDRReponse>
+	<date>15/01/2005</date>
+	<heure>14:00:22</heure>
+	<codeRet>0</codeRet>
+	<requete>
+		<dossier>0608266600</dossier>
+		<canal>SWI</canal>
+	</requete>
+	<resultat>
+		<codeProduit>6</codeProduit>
+	</resultat>
+</getAccesPDRReponse>

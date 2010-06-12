@@ -1,0 +1,10 @@
+{ application, webuser_orangef,
+  [ {description, "Cellcare interface ofr Orange France"},
+    {vsn, "%VSN_webuser_orangef%"},
+    {modules, %APP_MODULES%},
+    {registered, []},
+    {applications, [kernel, stdlib, mnesia, oma]},
+    {env,
+  	[	
+     ]}
+    ]}.

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light
+END
+recharge_direct_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/recharge_direct_mobi.xml
+END
+bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/bzh_cmo.xml
+END
+selfcare_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/selfcare_cmo.xml
+END
+selfcare.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/selfcare.xml
+END
+direct_callback.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/direct_callback.xml
+END
+selfcare_omer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/selfcare_omer.xml
+END
+spider.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/spider.xml
+END
+recharge_direct_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/recharge_direct_cmo.xml
+END
+opim_light.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/opim_light.xml
+END
+recharge_direct_bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/recharge_direct_bzh_cmo.xml
+END
+selfcare_omer_new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_light/selfcare_omer_new.xml
+END

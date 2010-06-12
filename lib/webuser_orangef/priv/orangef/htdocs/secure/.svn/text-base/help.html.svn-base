@@ -1,0 +1,936 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML
+><HEAD
+><TITLE
+>Cellicium Customer Care</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"></HEAD
+><BODY
+CLASS="book"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="AEN2"
+>Cellicium Customer Care</A
+></H1
+><H2
+CLASS="subtitle"
+>On-line Help</H2
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="#AEN11"
+>Introduction</A
+></DT
+><DT
+><A
+HREF="#AEN14"
+>Overview</A
+></DT
+><DT
+><A
+HREF="#AEN17"
+>Sessions search procedures</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="#AEN25"
+>Customer identification</A
+></DT
+><DT
+><A
+HREF="#AEN36"
+>Choice of period</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="#AEN39"
+>Search result</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="#customer_card"
+>USSD Customer card</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="#AEN47"
+>Customer summary</A
+></DT
+><DT
+><A
+HREF="#AEN66"
+>Customer details</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="#sessions_list"
+>Sessions list</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="#AEN88"
+>Description</A
+></DT
+><DT
+><A
+HREF="#session_details"
+>Session description</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="#AEN151"
+>Data interpretation</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="#AEN153"
+>Introduction</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+><A
+HREF="#AEN213"
+>Security</A
+></DT
+><DT
+><A
+HREF="#AEN218"
+>Glossary</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN11"
+></A
+>Introduction</H1
+><P
+>The aim of this tool is to provide as much information as possible
+    about the customer's navigation, in order to cover all interrogations a
+    customer may have. To achieve this, the tool allows to recreate as
+    accurately as possible the customer's session.</P
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN14"
+></A
+>Overview</H1
+><P
+>Pages seen by a customer are saved as URLs. This implies that
+   session-dependent dynamic elements are not stored and cannot be
+   displayed by this tool. Dynamic elements are replaced by explicit
+   terms.USSD sessions are saved on a 15 days sliding period, thus no
+  information is available after.</P
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN17"
+></A
+>Sessions search procedures</H1
+><P
+>Once a CSR has logged in, the home page allows to :
+   <P
+></P
+><UL
+><LI
+><P
+>Identify a customer</P
+></LI
+><LI
+><P
+>Select a time period</P
+></LI
+></UL
+></P
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN25"
+>Customer identification</A
+></H2
+><P
+>Customer identification is done according to his phone number
+    (MSISDN) or to his IMSI number. Choice of the criterion is made
+   possible by using radio buttons and drop down menu for periods</P
+><P
+>Examples of MSISDN inputs:</P
+><P
+></P
+><UL
+><LI
+><P
+>National format: 0678998877</P
+></LI
+><LI
+><P
+>International format: +33678998877</P
+></LI
+></UL
+><P
+>IMSI identification is done by entering the 15 digits.</P
+><P
+>NB : Customer IMSI is  obligatorily known by the
+    platform; this is not the case of the MSISDN. This is why IMSI is the
+    preferred criterion.</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN36"
+>Choice of period</A
+></H2
+><P
+>This criterion allows to select only sessions that occurred during a
+    specified period. Selected boundary days are included in the
+    selection.</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN39"
+></A
+>Search result</H1
+><P
+>Once previous criterion have been selected, the CSR confirms his
+   selection by clicking "Select" and the search result is displayed
+   as described in <A
+HREF="#customer_card"
+>the Section called <I
+>USSD Customer card</I
+></A
+> and
+   <A
+HREF="#sessions_list"
+>the Section called <I
+>Sessions list</I
+></A
+>
+  </P
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="customer_card"
+>USSD Customer card</A
+></H2
+><P
+>This section aims at recalling customer details and is
+    divided into two parts:</P
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN47"
+>Customer summary</A
+></H3
+><P
+>This summary recalls customer information. All the items may
+   not appear depending on the platform configuration :</P
+><P
+></P
+><UL
+><LI
+><P
+>IMEI</P
+></LI
+><LI
+><P
+>IMSI</P
+></LI
+><LI
+><P
+>MSISDN (phone number in international format)</P
+></LI
+><LI
+><P
+>Subscription - the commercial profile as it
+     appears in database (prepaid, postpaid, corporate...), if available</P
+></LI
+><LI
+><P
+>Language - a two letters code (en, fr...)</P
+></LI
+><LI
+><P
+>Date of the last connection to Cellcube (when available)</P
+></LI
+><LI
+><P
+>Additional specific information that is not
+     available in a generic way</P
+></LI
+></UL
+><P
+>A 'NULL' value means that this information is not
+    available. This may be normal for IMEI and language: default
+     platform values are used in this case</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="AEN66"
+>Customer details</A
+></H3
+><P
+>This section details the customer's terminal, its
+     USSD navigation capabilities (if known) and other service
+    values:</P
+><P
+>If you belong to the 'update' group, you can change values
+     like the language, handset. Several kinds of editors are
+    available depending on the running configuration. Main editors
+    include :</P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>Standard input: type the new value and click the
+       update button next to the field</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Standard list choice: select a value in the list
+       and click the update button next to the field</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Time editor: allows to edit a date/time. Format
+       is DD-MM-YYYY HH:MM:SS</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Handset Editor : allows to select the handset features by matching a requested terminal in the terminal database. The special keyword 'any' can be used to not filter on a given feature.</P
+><P
+>Note : In the database, some terminals are set to use the platform default values for some of their capabilities. The 'any' value is the only way to grab them. </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Handset Reset : delete current IMEI from database. Upon next connection, the customer will use default terminal capabilities</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Handset IMEI : allows to specify an IMEI. Enter at least 6 digits.</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>Handset Choose IMEI : allows to select a kind
+       of mobile depending on those that are defined in the platform configuration (e.g. : "182 characters" would match an IMEI with that number of characters)</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="sessions_list"
+>Sessions list</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN88"
+>Description</A
+></H3
+><P
+>This list contains all the customer sessions during the selected
+     period. They are sorted from the most recent to the
+     oldest.</P
+><P
+>The following information is attached to each session
+     :</P
+><P
+></P
+><UL
+><LI
+><P
+>Connection date</P
+></LI
+><LI
+><P
+>Connection time</P
+></LI
+><LI
+><P
+>First used service code</P
+></LI
+><LI
+><P
+>Session duration</P
+></LI
+><LI
+><P
+>Navigation phase that was used</P
+></LI
+><LI
+><P
+>Session cost</P
+></LI
+><LI
+><P
+>Phone/IMSI number used</P
+></LI
+></UL
+><P
+>A Maximum number of 15 sessions can be displayed on this
+    page. If there are more sessions to print, they can be accessed
+    using the "previous sessions" link described in <A
+HREF="#previous_sessions"
+>the Section called <I
+>Previous sessions</I
+></A
+>.</P
+><P
+>For each session, it is possible to get a precise
+     description of pages seen by the customer. For this, click on
+     "details" and see  <A
+HREF="#session_details"
+>the Section called <I
+>Session description</I
+></A
+>.</P
+><DIV
+CLASS="section"
+><HR><H4
+CLASS="section"
+><A
+NAME="AEN111"
+>Next sessions</A
+></H4
+><P
+>This link allows to select sessions that have been done
+      after the most recent session displayed on screen.</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H4
+CLASS="section"
+><A
+NAME="previous_sessions"
+>Previous sessions</A
+></H4
+><P
+>This link allows to select sessions that have been done
+      before the oldest session displayed on screen.</P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H3
+CLASS="section"
+><A
+NAME="session_details"
+>Session description</A
+></H3
+><P
+>This page is composed of a session summary displaying important
+     information :</P
+><P
+></P
+><UL
+><LI
+><P
+>Connection date</P
+></LI
+><LI
+><P
+>Connection time</P
+></LI
+><LI
+><P
+>USSD Phase</P
+><P
+></P
+><UL
+><LI
+><P
+>2 means that browsing is made using
+	 direct numbers : link 1 will be available by sending "1"</P
+></LI
+><LI
+><P
+>1 means that browsing is made by redialing an USSD
+	 code : link 1 in service #123# would be reachable by dialing #12*1#</P
+></LI
+><LI
+><P
+>1.5 means that browsing will be forced to use
+	 phase 1 style, even if the handset seems to handle USSD phase 2
+	 (this can be a workaround for some handsets that do not support
+	 correctly phase 2)
+	</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Session cost</P
+></LI
+><LI
+><P
+>Session duration</P
+></LI
+><LI
+><P
+>Source identifier for the session : MSISDN or IMSI</P
+></LI
+></UL
+><P
+>A second part allows to see the complete navigation done
+     by the customer, on four columns :</P
+><P
+></P
+><UL
+><LI
+><P
+>The first one indicates what the customer typed</P
+></LI
+><LI
+><P
+> The second column indicates how the USSD
+       platform has interpreted the user input (if this
+       interpretation is not the same as the customer's input)</P
+></LI
+><LI
+><P
+>The third column shows a brief summary for each
+       visited page, or its URL. This is also a button that can be
+       used to display the page content in the fourth column, as it
+       has been sent to the customer (without some real dynamic
+       content)</P
+></LI
+><LI
+><P
+>The fourth column displays the USSD page content
+       if the user has clicked on the URL button or if the Cellcare
+       application is configured to directly show sessions details. In
+       this case, the user does not have to click on the button.</P
+></LI
+></UL
+><P
+>If the user browsed some taxed services/pages, some columns
+     are added to describe their cost. Furthermore, a help about
+     the different tariffs is displayed at the bottom of the page.</P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="AEN151"
+>Data interpretation</A
+></H2
+><DIV
+CLASS="section"
+><H3
+CLASS="section"
+><A
+NAME="AEN153"
+>Introduction</A
+></H3
+><P
+>As we saw earlier, the tool recreates the customer's
+     navigation using URL interpretation. As a consequence, some
+     information may be modified or unavailable when recreating
+     pages. This paragraph aims to explain a few re-interpretations as
+     they may occur in the customer input or in the displayed
+     page.</P
+><DIV
+CLASS="section"
+><HR><H4
+CLASS="section"
+><A
+NAME="AEN156"
+>User input</A
+></H4
+><P
+>The interpretation column allows to know how the platform has
+      interpreted the input done by the customer. There are two kinds of
+      interpretations :</P
+><P
+></P
+><UL
+><LI
+><P
+>First one is a Phase 1 navigation
+      interpretation:</P
+><P
+>A Phase 1 customer in the #123# service (for example),
+	wishing to access link "1" will have to type on his
+	handset "#12*1#"</P
+><DIV
+CLASS="example"
+><A
+NAME="AEN163"
+></A
+><P
+><B
+>Example 1. Phase 1 interpretation</B
+></P
+><P
+>"12*abcdef2" &#60;=&#62; "abcdef2"</P
+></DIV
+></LI
+><LI
+><P
+>The second kind of interpretation comes from the data
+	itself that can be differently interpreted :</P
+><DIV
+CLASS="example"
+><A
+NAME="AEN168"
+></A
+><P
+><B
+>Example 2. Conversion of a letter character into a
+	 numerical character</B
+></P
+><P
+>"a" &#60;=&#62; "2";"d"&#60;=&#62;"3" ...</P
+></DIV
+><DIV
+CLASS="example"
+><A
+NAME="AEN171"
+></A
+><P
+><B
+>Example 3. Conversion of a set of letter characters into
+	 a numerical set :</B
+></P
+><P
+>"ad" &#60;=&#62; "2" then "3"  or "23" &#60;=&#62; "2" then "3"</P
+></DIV
+><DIV
+CLASS="example"
+><A
+NAME="AEN174"
+></A
+><P
+><B
+>Example 4. Conversion of characters into a
+	 platform-specific term</B
+></P
+><P
+>"0" &#60;=&#62; "back" which means back to previous
+	 page</P
+><P
+>"A" or "a" &#60;=&#62; "back"</P
+></DIV
+><P
+>Ask your administrator what are the current
+       platform-specific terms.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H4
+CLASS="section"
+><A
+NAME="AEN179"
+>Pages interpretation</A
+></H4
+><DIV
+CLASS="section"
+><H5
+CLASS="section"
+><A
+NAME="AEN181"
+>Sent pages/Browsed pages</A
+></H5
+><P
+>Two kinds of pages can be displayed on screen:</P
+><P
+></P
+><UL
+><LI
+><P
+>Pages really sent to the customer : they are
+	 displayed with a gray background</P
+></LI
+><LI
+><P
+>Pages that are interpreted by the navigation
+	 engine to redirect the user to another page : (e.g. :
+	 Interpreted pages when using shortcuts #123*04#).</P
+><P
+>These are displayed with a red background</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="section"
+><HR><H5
+CLASS="section"
+><A
+NAME="AEN190"
+>Dynamic elements</A
+></H5
+><P
+>Some pages contain some dynamic elements (balance,
+       number of SMS...) that cannot be retrieved : these elements
+       are replaced by red explicit terms.</P
+><P
+>These terms are not displayed on the terminal but they
+       help the user to understand what was displayed on the
+       customer's handset for real.</P
+><P
+>Some dynamic contents can not be replaced. In this case,
+       "Missing elements"(in orange) is printed instead.</P
+><P
+>(NB : The term "Missing elements" means that one or
+       several elements are not printed because they have been
+       deleted or modified since the session time).</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H5
+CLASS="section"
+><A
+NAME="AEN196"
+>Updated pages</A
+></H5
+><P
+>If a page has been deleted since the customer session, it
+      will not be available for the session replay. The page URL will
+      be displayed on a red background</P
+><P
+>If a page has been modified since the customer session,
+      latest version will be displayed during the reply. As a
+      consequence, browsing information may be inaccurate, for example
+      if a link has been deleted from the page, the customer may have
+      browsed the menu by following a 'virtual' link.</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H5
+CLASS="section"
+><A
+NAME="AEN200"
+>Split pages</A
+></H5
+><P
+>During USSD navigation, some pages can contain a bigger number of
+       characters than the customer's handset can support. These pages
+      are cut into several parts according to the maximum number of
+      characters the handset supports. These pages are
+      <I
+CLASS="emphasis"
+>split</I
+>. The customer can access these
+       split parts by following a special link "next" that will
+       display the next part of the split page.</P
+><P
+>From the Cellcare tool point of view, this navigation is
+       interpreted as follows :</P
+><P
+></P
+><UL
+><LI
+><P
+>The whole page is completely displayed in the first row.</P
+></LI
+><LI
+><P
+>Then, if the customer wishes to see the end of the page,
+	 his demand is interpreted as "Next page" and an empty cell
+	 appears in the "page" column if the customer followed the
+	 "next" link.</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H4
+CLASS="section"
+><A
+NAME="AEN210"
+>Note about language support</A
+></H4
+><P
+>The customer has the ability to choose his language during
+      navigation. Pages that are recreated in the customer care tool
+      use the current language setting of the customer. This language
+      parameter is session-independent. Thus, if the customer changes his
+      language, the current setting in database will be used to recreate his
+      session, which may not be the same as the one that was originally used
+      during the USSD session.</P
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN213"
+></A
+>Security</H1
+><P
+>A login and a password are necessary to connect to the
+  Customer care tool.</P
+><P
+>In order to authenticate yourself, your browser must accept
+  cookies.</P
+><P
+>The authenticated session will end after an inactivity period.</P
+></DIV
+><DIV
+CLASS="GLOSSARY"
+><H1
+><A
+NAME="AEN218"
+></A
+>Glossary</H1
+><DL
+><DT
+><A
+NAME="gl_session"
+></A
+><B
+>Session</B
+></DT
+><DD
+><P
+>A session contains all the actions made while the customer
+     was browsing a service before it was interrupted, because of the user
+     hangup or of the USSD server initiative.</P
+></DD
+><DT
+><A
+NAME="gl_timeout"
+></A
+><B
+>Timeout</B
+></DT
+><DD
+><P
+>The timeout is a period during which the customer's session
+     is still alive on the USSD server, waiting for a request from the
+     customer. When this timeout occurs (e.g. : after 2 minutes), the session
+     is closed on the USSD server.</P
+></DD
+><DT
+><A
+NAME="gl_imei"
+></A
+><B
+>IMEI</B
+></DT
+> (International Mobile Equipment Identity)<DD
+><P
+>The "id number" of a handset</P
+></DD
+><DT
+><A
+NAME="gl_imsi"
+></A
+><B
+>IMSI</B
+></DT
+> (International Mobile Subscriber Identity)<DD
+><P
+></P
+></DD
+><DT
+><A
+NAME="gl_msisdn"
+></A
+><B
+>MSISDN</B
+></DT
+> (Mobile Subscriber ISDN number)<DD
+><P
+></P
+></DD
+><DT
+><A
+NAME="gl_ucs"
+></A
+><B
+>UCS</B
+></DT
+> (Universal Character Set)<DD
+><P
+>Set of characters used to display some text other
+   than simple ascii. Example : Greek, Arabic, Chinese...</P
+><P
+>In the USSD context, UCS pages can not exceed more than 80
+   characters.</P
+></DD
+></DL
+></DIV
+></DIV
+></BODY
+></HTML
+>

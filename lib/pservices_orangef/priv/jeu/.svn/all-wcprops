@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/jeu
+END
+create-jeu.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/jeu/create-jeu.sql
+END
+populate-jeu.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/jeu/populate-jeu.sql
+END
+jeu.csv
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/jeu/jeu.csv
+END

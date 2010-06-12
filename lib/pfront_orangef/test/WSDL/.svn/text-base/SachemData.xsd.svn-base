@@ -1,0 +1,358 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:sachem.data.ecare" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:sachem.data.ecare">
+    <xs:complexType name="curseur">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="filtre" type="xs:string"/>
+                    <xs:element name="idCompteSachem" type="xs:short"/>
+                    <xs:element name="idDossierSachem" type="xs:long"/>
+                    <xs:element name="indice" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType abstract="true" name="objetMetierSachem"/>
+    <xs:complexType name="modificationOption">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateFinValidite" type="xs:dateTime"/>
+                    <xs:element name="solde" type="xs:long"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optionSachem">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="canalAjout" type="xs:long"/>
+                    <xs:element name="canalSupprim" type="xs:long"/>
+                    <xs:element minOccurs="0" name="cle" type="xs:string"/>
+                    <xs:element minOccurs="0" name="code" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coutAjout" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="coutModif" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="coutSuppr" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="dateMaxSouscription" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateMinSouscription" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="debutClient" type="xs:dateTime"/>
+                    <xs:element name="decalDebut" type="xs:long"/>
+                    <xs:element minOccurs="0" name="declinaison" type="tns:codeLibelle"/>
+                    <xs:element name="deltaDernierRec" type="xs:long"/>
+                    <xs:element name="duree" type="xs:long"/>
+                    <xs:element name="escNum" type="xs:long"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="etatSecondaireMinimum" nillable="true" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="finClient" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="finDateFixe" type="xs:dateTime"/>
+                    <xs:element name="identifiant" type="xs:long"/>
+                    <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listeOptionsIncompatibles" nillable="true" type="tns:optionSachem"/>
+                    <xs:element minOccurs="0" name="montantInitial" type="xs:decimal"/>
+                    <xs:element name="nopNum" type="xs:long"/>
+                    <xs:element name="ptfNum" type="xs:long"/>
+                    <xs:element name="ptfNumCritere" type="xs:long"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="resultatEligibilite" nillable="true" type="xs:int"/>
+                    <xs:element name="soldeMin" type="xs:long"/>
+                    <xs:element name="tableCompl" type="xs:long"/>
+                    <xs:element name="tcpNum" type="xs:long"/>
+                    <xs:element name="tcpNumCritere" type="xs:long"/>
+                    <xs:element minOccurs="0" name="topCumul" type="xs:string"/>
+                    <xs:element name="topIllim" type="xs:long"/>
+                    <xs:element name="trnNum" type="xs:long"/>
+                    <xs:element name="typeDlv" type="xs:long"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="codeLibelle">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" type="xs:string"/>
+                    <xs:element name="identifiant" type="xs:int"/>
+                    <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optionsDossier">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="idDossierSachem" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="membresMsisdn" nillable="true" type="tns:membreMsisdn"/>
+                    <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="optionTG" nillable="true" type="tns:optionTG"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="optionsDossier" nillable="true" type="tns:optionDossier"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="membreMsisdn">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="idOption" type="xs:short"/>
+                    <xs:element name="idPlanTarifaire" type="xs:short"/>
+                    <xs:element name="idTypeRenouvellement" type="xs:short"/>
+                    <xs:element name="idTypecompte" type="xs:short"/>
+                    <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rang" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optionTG">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="compteur" type="xs:long"/>
+                    <xs:element minOccurs="0" name="dateProchaineRAZ" type="xs:dateTime"/>
+                    <xs:element name="idOptionTG" type="xs:short"/>
+                    <xs:element name="idUniteRestitution" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optionDossier">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="cppCumulCredit" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dateDebutOption" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateFinOption" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateSouscription" type="xs:dateTime"/>
+                    <xs:element name="identifiant" type="xs:short"/>
+                    <xs:element minOccurs="0" name="info1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="info2" type="xs:string"/>
+                    <xs:element name="ptfNum" type="xs:short"/>
+                    <xs:element name="rnvNum" type="xs:short"/>
+                    <xs:element name="tcpNum" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargementPossible">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dureeValidite" type="xs:int"/>
+                    <xs:element minOccurs="0" name="montantOffert" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="montantPaye" type="xs:decimal"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="evenement">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateEnregistrement" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateHeure" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="declinaisonDossier" type="tns:codeLibelle"/>
+                    <xs:element name="duree" type="xs:long"/>
+                    <xs:element minOccurs="0" name="infoComp" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="libelles" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="libellesATraduire" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="nombres" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="numeros" nillable="true" type="xs:string"/>
+                    <xs:element name="solde" type="xs:float"/>
+                    <xs:element minOccurs="0" name="sousTypeOper" type="tns:codeLibelle"/>
+                    <xs:element name="total" type="xs:float"/>
+                    <xs:element minOccurs="0" name="typeCompte" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="typeOper" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteGestion" type="tns:codeLibelle"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="historiqueRecharge">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateRecharge" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="infosComplementaires" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montant" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="numeroSerie" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="demandeModificationOption">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="coutModification" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="dateDebutValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="duree" type="xs:long"/>
+                    <xs:element minOccurs="0" name="idOption" type="xs:short"/>
+                    <xs:element minOccurs="0" name="idPeriodiciteRenouvellement" type="xs:short"/>
+                    <xs:element minOccurs="0" name="idPlanTarifaire" type="xs:short"/>
+                    <xs:element minOccurs="0" name="idTypeCompte" type="xs:short"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="infosComplementaires" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montantInitial" type="xs:decimal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="msisdn" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeAction" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeTraitement" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="demandeActionPrestation">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="duree" type="xs:short"/>
+                    <xs:element name="idTypeCompte" type="xs:short"/>
+                    <xs:element name="idTypePrestation" type="xs:short"/>
+                    <xs:element name="idUnite" type="xs:short"/>
+                    <xs:element name="montantPrestation" type="xs:long"/>
+                    <xs:element minOccurs="0" name="signe" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargeableParentChild">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="idDossier" type="xs:long"/>
+                    <xs:element name="mobicarte" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="historique">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="curseur" type="tns:curseur"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="evenement" nillable="true" type="tns:evenement"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargement">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="comptes" nillable="true" type="tns:compte"/>
+                    <xs:element minOccurs="0" name="dateLimiteValiditeDossier" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="compte">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="credit" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="dateLimiteValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="montantFidelisation" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="planTarifaire" type="tns:codeLibelle"/>
+                    <xs:element name="pourcentageFidelisation" type="xs:short"/>
+                    <xs:element minOccurs="0" name="typeCompte" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteGestion" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteRestitution" type="tns:codeLibelle"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoDossier">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeRechargement" type="xs:string"/>
+                    <xs:element name="creditCumule" type="xs:float"/>
+                    <xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateCreationComptePrincipal" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDebutFidelisation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDerChgtEtatCompte" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDerChgtEtatDossier" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDerRecharge" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDerRechargeCB" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateLancementOrange" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateLimiteValidCompte" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateLimiteValidDossier" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="datePremiereUtilisation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="declinaisonOffre" type="tns:codeLibelle"/>
+                    <xs:element name="escNum" type="xs:long"/>
+                    <xs:element minOccurs="0" name="etatCompte" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="etatDossier" type="tns:codeLibelle"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="etatsSecondaires" nillable="true" type="tns:codeLibelle"/>
+                    <xs:element name="idDossierSachem" type="xs:long"/>
+                    <xs:element minOccurs="0" name="imei" type="xs:string"/>
+                    <xs:element minOccurs="0" name="imsi" type="xs:string"/>
+                    <xs:element minOccurs="0" name="kitMobile" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="langue" type="tns:codeLibelle"/>
+                    <xs:element name="montantDerRechargeCB" type="xs:long"/>
+                    <xs:element name="montantRechargeCB" type="xs:long"/>
+                    <xs:element name="nbComptes" type="xs:short"/>
+                    <xs:element name="nbErreursRecharge" type="xs:short"/>
+                    <xs:element minOccurs="0" name="nsce" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numClientCMO" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="options" nillable="true" type="tns:codeLibelle"/>
+                    <xs:element name="plafond" type="xs:long"/>
+                    <xs:element minOccurs="0" name="planTarifaire" type="tns:codeLibelle"/>
+                    <xs:element name="pourcentageFidelisation" type="xs:short"/>
+                    <xs:element name="soldeCompte" type="xs:float"/>
+                    <xs:element name="soldeRestantForfait" type="xs:long"/>
+                    <xs:element minOccurs="0" name="typeCompte" type="tns:codeLibelle"/>
+                    <xs:element name="typeDateValidite" type="xs:short"/>
+                    <xs:element minOccurs="0" name="typeRenouvellement" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteGestion" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteRestitution" type="tns:codeLibelle"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optionsCatalogue">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="optionsNonSouscriptibles" nillable="true" type="tns:optionSachem"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="optionsSouscriptibles" nillable="true" type="tns:optionSachem"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoCompte">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence>
+                    <xs:element name="credit" type="xs:float"/>
+                    <xs:element name="cumulCreditCompte" type="xs:float"/>
+                    <xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDerniereModif" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateLimiteValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="etatCompte" type="tns:codeLibelle"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="options" nillable="true" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="planTarifaire" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="typeCompte" type="tns:codeLibelle"/>
+                    <xs:element name="typeDateValidite" type="xs:short"/>
+                    <xs:element minOccurs="0" name="typeRenouvellement" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteGestion" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteRestitution" type="tns:codeLibelle"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargeableCB">
+        <xs:complexContent>
+            <xs:extension base="tns:rechargeableParentChild">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="montantMaxRechargeable" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="plafond" type="xs:decimal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="rechargementsPossibles" nillable="true" type="tns:rechargementPossible"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="codesLibellesPourEdelweiss">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierSachem">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option appel a prix unique">
+  
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_appelprixunique&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique deja active">
+    <title>option Appel A Prix Unique deja active</title>
+    Bonjour, votre option Appel a prix unique est deja activee. Orange vous
+    remercie de votre appel.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option appel a prix unique page offre incompatible">
+    <title>option option appel a prix unique page offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire l'option Appel a Prix Unique.Pour +d'infos
+    contactez otre service clients Orange mobile au 722 depuis votre mobile
+    (0,37 E/min.).
+  </page>
+
+   <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,default=#solde_insuff_gen"/>
+  </page> 
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique solde insuffisant">
+    <title>option appel a prix unique solde insuffisant</title>
+    Bonjour, pour souscrire a l'option Appel a Prix Unique, vous devez disposer
+    de 5E sur votre compte mobicarte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+ 
+ <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique solde insuffisant">
+    <title>option appel a prix unique solde insuffisant</title>
+    Bonjour, pour souscrire a l'option Appel a Prix Unique, vous devez disposer
+    de 5E sur votre compte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique menu generique">
+    <title>option appel a prix unique menu generique</title>
+    Avec l'0ption Appel a Prix Unique, profitez en semaine, de 7h a 17h,
+    jusqu'a 1heure d'appel pour 0.30E vers...<br/>
+    <a href="#generique_suite">Suite</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+  
+  <page tag="generique_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique menu generique suite">
+    <title>option appel a prix unique menu generique</title>
+    ...les fixes et les mobiles orange pendant 1 mois pour seulement <include
+    src="erl://svc_options:print_option_price?opt_appelprixunique"/>.<br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+  
+  <page tag="conditions" descr="option appel a prix unique page condition">
+    L'option permet d'appeler pour 0.30E par appel en France metropolitaine
+    dans la limite d'une heure d'appels, de 7h a 17h,<br/>
+    <a href="#conditions2">Suite</a>
+  </page>
+  
+  <page tag="conditions2" descr="option appel a prix unique page condition2">
+    en semaine vers les mobiles Orange et les no fixes (hors no speciaux, no
+    d'acces wap et web) pour <include
+    src="erl://svc_options:print_option_price?opt_appelprixunique"/>.<br/>
+    <a href="#conditions3">Suite</a>
+  </page>
+  
+  <page tag="conditions3" descr="option appel a prix unique page condition3">
+    Communications decomptees a la seconde au-dela de la 1ere minute
+    indivisible. Au-dela d'1 H, ces appels seront decomptes au tarif en
+    vigueur<br/>
+    <a href="#conditions4">Suite</a>
+  </page>
+  
+   <page tag="conditions4" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions4_mobi,35=#conditions4_mobi,39=#conditions4_foot, 40=#conditions4_foot,41=#conditions4_foot,42=#conditions4_foot,43=#conditions4_foot,44=#conditions4_foot,default=#conditions4_mobi"/>
+  </page> 
+
+  <page tag="conditions4_mobi" descr="option appel a prix unique page condition4">
+    sur le plan classique seconde. Cette offre est disponible du <include src="erl://svc_options:print_commercial_start_date?opt_appelprixunique&amp;dmy"/> au <include src="erl://svc_options:print_commercial_end_date?opt_appelprixunique&amp;dmy"/> inclus et reservee aux clients mobicarte du plan classique seconde<br/>
+    <a href="#conditions5">Suite</a>
+  </page>
+
+  <page tag="conditions4_foot" descr="option appel a prix unique page condition4">
+    sur le plan classique seconde. Cette offre est disponible du <include src="erl://svc_options:print_commercial_start_date?opt_appelprixunique&amp;dmy"/> au <include src="erl://svc_options:print_commercial_end_date?opt_appelprixunique&amp;dmy"/> inclus et reservee aux clients club de foot<br/>
+    <a href="#conditions5">Suite</a>
+  </page>
+  
+  <page tag="conditions5" descr="option appel a prix unique page condition5">
+    ... et valable pendant un mois a compter de la souscription.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+  
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page souscrire">
+    <title>option appel a prix unique page souscrire</title>
+    Vous allez souscrire a l'option Appel a prix Unique pour
+    <include src="erl://svc_options:print_option_price?opt_appelprixunique"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_appelprixunique&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page apres confirmation">
+    <title>option appel a prix unique page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Appel a prix unique sera activee. Merci de votre appel.
+  </page>
+  
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page apres confirmation">
+    <title>option appel a prix unique page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Appel a prix unique sera activee. Merci de votre appel.
+  </page>
+  
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page apres confirmation">
+    <title>option appel a prix unique page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Appel a prix unique sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page apres confirmation">
+    <title>option appel a prix unique page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Appel a prix unique sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option appel a prix unique page apres confirmation">
+    <title>option appel a prix unique page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Appel a prix unique sera activee. Merci de votre appel.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. J INF: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="nouveaute" cost="free_pt"
+	descr="Option appel a prix unique page du menu nouveaute">
+    <title>Option appel a prix unique page du menu nouveaute</title>
+    Incroyable : l'appel a 0,30 E vers les no fixes et mobiles Orange,
+    jusqu'a 1h par appel ! Offrez-vous ce plaisir jusqu'au 5/10/05 !<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_appelprixunique&amp;Souscrire=opt_appelprixunique.xml&amp;no_br"/>
+  </page>
+  
+  <page tag="restitution" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option appel a prix unique">
+    <title>Page de restitution a l'option appel a prix unique</title>
+    Votre option "Appel a Prix Unique" est activee jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_appelprixunique"/>.
+  </page>
+  
+</pages>
+
+

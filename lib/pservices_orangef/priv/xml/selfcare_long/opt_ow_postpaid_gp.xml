@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: Forfait Orange World GP">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="OW Postpaid GP: souscription" cost="freept">
+   <title>Menu souscription OW GP</title>
+   Choisissez votre option<br/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_surf_gp&amp;#impact_ow_surf&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv_gp&amp;#impact_ow_tv&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv2_gp&amp;#impact_ow_tv2&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_spo_gp&amp;#impact_ow_spo&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv_mus_surf_gp&amp;#impact_ow_tv_mus_surf&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_musique_gp&amp;#impact_ow_musique&amp;br"/>
+   </page>
+
+<page tag="impact_ow_tv" hist="dohist" descr="OW Postpaid GP : impact souscription OW option TV">
+   <title>Impact souscription OW option TV</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_tv_gp&amp;#add_ow_tv,#error_msg"/>
+  </page>
+
+<page tag="impact_ow_tv2" hist="dohist" descr="OW Postpaid GP : impact souscription OW Total TV">
+   <title>Impact souscription OW Total TV</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_tv2_gp&amp;#add_ow_tv2,#error_msg"/>
+  </page>
+
+<page tag="impact_ow_musique" hist="dohist" descr="OW Postpaid GP : impact souscription OW MUSIQUE">
+   <title>Impact souscription OW MUSIQUE</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_musique_gp&amp;#add_ow_musique,#error_msg"/>
+  </page>
+
+<page tag="impact_ow_surf" hist="dohist" descr="OW Postpaid GP : impact souscription OW SURF">
+   <title>Impact souscription OW SURF</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_surf_gp&amp;#add_ow_surf,#error_msg"/>
+  </page>
+
+<page tag="impact_ow_spo" hist="dohist" descr="OW Postpaid GP : impact souscription OW SPORT">
+   <title>Impact souscription OW SPORT</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_spo_gp&amp;#add_ow_spo,#error_msg"/>
+  </page>
+
+<page tag="impact_ow_tv_mus_surf" hist="dohist" descr="OW Postpaid GP : impact souscription OW TV Musique Surf">
+   <title>Impact souscription OW TV Musique Surf</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?ow_tv_mus_surf_gp&amp;#add_ow_tv_mus_surf,#error_msg"/>
+  </page>   
+
+<page tag="add_ow_tv" hist="dohist" descr="OW Postpaid GP : tentative souscription option TV">
+   <title>OW : souscription option TV</title>
+   Avec l'option TV a 6E/mois, beneficiez de l'acces illimite
+   a pres de 20 chaines TV nationales + toutes les videos.<br/>
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>		
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_tv_gp&amp;#success_tv_gp,#success_tv_gp">Valider</a>
+  </page>
+  
+<page tag="add_ow_tv2" hist="dohist" descr="OW Postpaid GP : tentative souscription Total TV">
+   <title>OW : souscription Total TV</title>
+   Avec l'option Totale TV a 10E/mois, beneficiez de l'acces illimite
+   a plus de 50 chaines TV+toutes les videos.<br/>
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>		
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_tv2_gp&amp;#success_tv2_gp,#success_tv2_gp">Valider</a>
+  </page>
+
+<page tag="add_ow_musique" hist="dohist" descr="OW Postpaid GP : tentative souscription Musique">
+   <title>OW : souscription Musique</title>
+   Avec l'option musique a 6E/mois, beneficiez de l'acces illimite aux chaines TV musicales et radios.<br/>
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_musique_gp&amp;#success_musique_gp,#success_musique_gp">Valider</a>
+  </page>
+
+<page tag="add_ow_surf" hist="dohist" descr="OW Postpaid GP : tentative souscription Surf">
+   <title>OW : souscription surf</title>
+		Avec l'option surf a 6E/mois, beneficiez de l'acces illimite 24h/24 et 7j/7 au portail Orange World.<br/>
+		<include src="erl://svc_subscr_asmetier:print_opt_incomp"/>
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_surf_gp&amp;#success_surf_gp,#success_surf_gp">Valider</a>
+  </page>
+
+<page tag="add_ow_spo" hist="dohist" descr="OW Postpaid GP : tentative souscription Sport">
+   <title>OW : souscription Sport</title>
+   Avec l'option sport a 9E/mois, vous pouvez suivre les evenements sportifs en direct et en illimite.<br/>
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_spo_gp&amp;#success_sport_gp,#success_sport_gp">Valider</a>
+  </page>
+
+<page tag="add_ow_tv_mus_surf" hist="dohist" descr="OW Postpaid GP : tentative souscription Sport">
+   <title>OW : souscription Tv Musique Surf</title>
+   Avec l'option TV-musique-surf a 12E/mois, profitez de 3 options illimitees a prix exceptionnel.<br/>
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_spo_gp&amp;#success_tv_mus_surf_gp,#success_tv_mus_surf_gp">Valider</a>
+  </page>
+
+<page tag="success_tv_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option TV Reussie">
+   <title>Souscription option TV Reussie</title>
+   Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+   Le 1er mois vous est offert, au dela vous serez facture de 6E/mois.<br/>
+</page>
+
+<page tag="success_tv2_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription Total TV Reussie">
+   <title>Souscription Total TV Reussie</title>
+   Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+   Le 1er mois vous est offert, au dela vous serez facture de 10E/mois.<br/>
+</page>
+
+<page tag="success_musique_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription Musique Reussie">
+   <title>Souscription Musique Reussie</title>
+   Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+   Le 1er mois vous est offert, au dela vous serez facture de 6E/mois.<br/>
+</page>
+
+<page tag="success_surf_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription Surf Reussie">
+   <title>Souscription Surf Reussie</title>
+		Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+    Le 1er mois vous est offert, au dela vous serez facture de 6E/mois.<br/>
+</page>
+
+<page tag="success_sport_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription Sport Reussie">
+   <title>Souscription Sport Reussie</title>
+    Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+    Le 1er mois vous est offert, au dela vous serez facture de 9E/mois.<br/>
+</page>
+
+<page tag="success_tv_mus_surf_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription Reussie">
+   <title>Souscription Reussi</title>
+   Souscription enregistree. Vous serez averti de l'activation de votre option par SMS.<br/>
+   Le 1er mois vous est offert, au dela vous serez facture de 12E/mois.<br/>
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="OW Postpaid GP : Echec souscription failure">
+  <redirect src="/orangef/postpaid_gp.xml#temporary"/>
+</page>
+
+</pages>

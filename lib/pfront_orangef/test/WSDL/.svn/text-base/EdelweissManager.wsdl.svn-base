@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="EdelweissManagerService" targetNamespace="urn:edelweiss.service.ecare/G8" xmlns:tns="urn:edelweiss.service.ecare/G8" xmlns:ns1="urn:exception.ecare" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn:edelweiss.exception.ecare" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="urn:sachem.data.ecare" schemaLocation="WSDL/SachemData.xsd"/>
+<import namespace="urn:exception.ecare" schemaLocation="WSDL/CommunException.xsd"/>
+<import namespace="urn:edelweiss.exception.ecare" schemaLocation="WSDL/EdelweissException.xsd"/>
+<import namespace="urn:edelweiss.service.ecare/G8" schemaLocation="WSDL/EdelweissService.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getInfoUtilisateur">
+    <wsdl:part name="parameters" element="tns:getInfoUtilisateur">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDemandeModificationPlanTarifaire">
+    <wsdl:part name="parameters" element="tns:doDemandeModificationPlanTarifaire">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActionComA5">
+    <wsdl:part name="parameters" element="tns:doActionComA5">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionDonneesInvalides">
+    <wsdl:part name="ExceptionDonneesInvalides" element="ns2:ExceptionDonneesInvalides">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionRegleNonVerifiee">
+    <wsdl:part name="ExceptionRegleNonVerifiee" element="ns2:ExceptionRegleNonVerifiee">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationPlanTarifaireResponse">
+    <wsdl:part name="parameters" element="tns:doModificationPlanTarifaireResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isAlive">
+    <wsdl:part name="parameters" element="tns:isAlive">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionTribuPleine">
+    <wsdl:part name="ExceptionTribuPleine" element="ns2:ExceptionTribuPleine">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationOption">
+    <wsdl:part name="parameters" element="tns:doModificationOption">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionRegleMediapost">
+    <wsdl:part name="ExceptionRegleMediapost" element="ns2:ExceptionRegleMediapost">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionAucuneCarteSimPreparee">
+    <wsdl:part name="ExceptionAucuneCarteSimPreparee" element="ns2:ExceptionAucuneCarteSimPreparee">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationCoordonnees">
+    <wsdl:part name="parameters" element="tns:doModificationCoordonnees">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionPaiement">
+    <wsdl:part name="ExceptionPaiement" element="ns2:ExceptionPaiement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeServicesEtPrestationsResponse">
+    <wsdl:part name="parameters" element="tns:getListeServicesEtPrestationsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoUtilisateurResponse">
+    <wsdl:part name="parameters" element="tns:getInfoUtilisateurResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDemandeModificationPlanTarifaireResponse">
+    <wsdl:part name="parameters" element="tns:doDemandeModificationPlanTarifaireResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeMediapostResponse">
+    <wsdl:part name="parameters" element="tns:getListeMediapostResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActivationNouvelleCarteSimResponse">
+    <wsdl:part name="parameters" element="tns:doActivationNouvelleCarteSimResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionInfosCarteSimIncorrect">
+    <wsdl:part name="ExceptionInfosCarteSimIncorrect" element="ns2:ExceptionInfosCarteSimIncorrect">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargementCBResponse">
+    <wsdl:part name="parameters" element="tns:doRechargementCBResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDonneesGUResponse">
+    <wsdl:part name="parameters" element="tns:getDonneesGUResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionSoldeInsuffisant">
+    <wsdl:part name="ExceptionSoldeInsuffisant" element="ns2:ExceptionSoldeInsuffisant">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isAliveResponse">
+    <wsdl:part name="parameters" element="tns:isAliveResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDemandeModificationCoordonnees">
+    <wsdl:part name="parameters" element="tns:doDemandeModificationCoordonnees">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ECareExceptionFonctionnelle">
+    <wsdl:part name="ECareExceptionFonctionnelle" element="ns1:ECareExceptionFonctionnelle">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargementCB">
+    <wsdl:part name="parameters" element="tns:doRechargementCB">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDemandeModificationCoordonneesResponse">
+    <wsdl:part name="parameters" element="tns:doDemandeModificationCoordonneesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActionComA5Response">
+    <wsdl:part name="parameters" element="tns:doActionComA5Response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersion">
+    <wsdl:part name="parameters" element="tns:getVersion">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="parameters" element="tns:getVersionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doPreactivationCarteSim">
+    <wsdl:part name="parameters" element="tns:doPreactivationCarteSim">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationOptionResponse">
+    <wsdl:part name="parameters" element="tns:doModificationOptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionCoupleClientDossierInexistant">
+    <wsdl:part name="ExceptionCoupleClientDossierInexistant" element="ns2:ExceptionCoupleClientDossierInexistant">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionErreurInterne">
+    <wsdl:part name="ExceptionErreurInterne" element="ns2:ExceptionErreurInterne">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActivationNouvelleCarteSim">
+    <wsdl:part name="parameters" element="tns:doActivationNouvelleCarteSim">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionNumeroTelephoneInterdit">
+    <wsdl:part name="ExceptionNumeroTelephoneInterdit" element="ns2:ExceptionNumeroTelephoneInterdit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllDemandeClientResponse">
+    <wsdl:part name="parameters" element="tns:getAllDemandeClientResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeOptionsUtilisateur">
+    <wsdl:part name="parameters" element="tns:getListeOptionsUtilisateur">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationPlanTarifaire">
+    <wsdl:part name="parameters" element="tns:doModificationPlanTarifaire">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoCPUKResponse">
+    <wsdl:part name="parameters" element="tns:getInfoCPUKResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRenouvellementMobile">
+    <wsdl:part name="parameters" element="tns:doRenouvellementMobile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoCPUK">
+    <wsdl:part name="parameters" element="tns:getInfoCPUK">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRenouvellementMobileResponse">
+    <wsdl:part name="parameters" element="tns:doRenouvellementMobileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doSuspendreDossier">
+    <wsdl:part name="parameters" element="tns:doSuspendreDossier">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionPasMembre">
+    <wsdl:part name="ExceptionPasMembre" element="ns2:ExceptionPasMembre">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllDemandeClient">
+    <wsdl:part name="parameters" element="tns:getAllDemandeClient">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doSuspendreDossierResponse">
+    <wsdl:part name="parameters" element="tns:doSuspendreDossierResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeMediapost">
+    <wsdl:part name="parameters" element="tns:getListeMediapost">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionUtilisateurNonTrouve">
+    <wsdl:part name="ExceptionUtilisateurNonTrouve" element="ns2:ExceptionUtilisateurNonTrouve">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doPreactivationCarteSimResponse">
+    <wsdl:part name="parameters" element="tns:doPreactivationCarteSimResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationCoordonneesResponse">
+    <wsdl:part name="parameters" element="tns:doModificationCoordonneesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ECareExceptionTechnique">
+    <wsdl:part name="ECareExceptionTechnique" element="ns1:ECareExceptionTechnique">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionMembreInconnu">
+    <wsdl:part name="ExceptionMembreInconnu" element="ns2:ExceptionMembreInconnu">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeServicesEtPrestations">
+    <wsdl:part name="parameters" element="tns:getListeServicesEtPrestations">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionDossierNonTrouve">
+    <wsdl:part name="ExceptionDossierNonTrouve" element="ns2:ExceptionDossierNonTrouve">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDonneesGU">
+    <wsdl:part name="parameters" element="tns:getDonneesGU">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListeOptionsUtilisateurResponse">
+    <wsdl:part name="parameters" element="tns:getListeOptionsUtilisateurResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EdelweissManager">
+    <wsdl:operation name="getAllDemandeClient">
+      <wsdl:input name="getAllDemandeClient" message="tns:getAllDemandeClient">
+    </wsdl:input>
+      <wsdl:output name="getAllDemandeClientResponse" message="tns:getAllDemandeClientResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoUtilisateur">
+      <wsdl:input name="getInfoUtilisateur" message="tns:getInfoUtilisateur">
+    </wsdl:input>
+      <wsdl:output name="getInfoUtilisateurResponse" message="tns:getInfoUtilisateurResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doActivationNouvelleCarteSim">
+      <wsdl:input name="doActivationNouvelleCarteSim" message="tns:doActivationNouvelleCarteSim">
+    </wsdl:input>
+      <wsdl:output name="doActivationNouvelleCarteSimResponse" message="tns:doActivationNouvelleCarteSimResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionInfosCarteSimIncorrect" message="tns:ExceptionInfosCarteSimIncorrect">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDossierNonTrouve" message="tns:ExceptionDossierNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionAucuneCarteSimPreparee" message="tns:ExceptionAucuneCarteSimPreparee">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoCPUK">
+      <wsdl:input name="getInfoCPUK" message="tns:getInfoCPUK">
+    </wsdl:input>
+      <wsdl:output name="getInfoCPUKResponse" message="tns:getInfoCPUKResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationCoordonnees">
+      <wsdl:input name="doModificationCoordonnees" message="tns:doModificationCoordonnees">
+    </wsdl:input>
+      <wsdl:output name="doModificationCoordonneesResponse" message="tns:doModificationCoordonneesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeOptionsUtilisateur">
+      <wsdl:input name="getListeOptionsUtilisateur" message="tns:getListeOptionsUtilisateur">
+    </wsdl:input>
+      <wsdl:output name="getListeOptionsUtilisateurResponse" message="tns:getListeOptionsUtilisateurResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doDemandeModificationPlanTarifaire">
+      <wsdl:input name="doDemandeModificationPlanTarifaire" message="tns:doDemandeModificationPlanTarifaire">
+    </wsdl:input>
+      <wsdl:output name="doDemandeModificationPlanTarifaireResponse" message="tns:doDemandeModificationPlanTarifaireResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargementCB">
+      <wsdl:input name="doRechargementCB" message="tns:doRechargementCB">
+    </wsdl:input>
+      <wsdl:output name="doRechargementCBResponse" message="tns:doRechargementCBResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionPaiement" message="tns:ExceptionPaiement">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesGU">
+      <wsdl:input name="getDonneesGU" message="tns:getDonneesGU">
+    </wsdl:input>
+      <wsdl:output name="getDonneesGUResponse" message="tns:getDonneesGUResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionCoupleClientDossierInexistant" message="tns:ExceptionCoupleClientDossierInexistant">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersion" message="tns:getVersion">
+    </wsdl:input>
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doActionComA5">
+      <wsdl:input name="doActionComA5" message="tns:doActionComA5">
+    </wsdl:input>
+      <wsdl:output name="doActionComA5Response" message="tns:doActionComA5Response">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionTribuPleine" message="tns:ExceptionTribuPleine">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionPasMembre" message="tns:ExceptionPasMembre">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionMembreInconnu" message="tns:ExceptionMembreInconnu">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionSoldeInsuffisant" message="tns:ExceptionSoldeInsuffisant">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isAlive">
+      <wsdl:input name="isAlive" message="tns:isAlive">
+    </wsdl:input>
+      <wsdl:output name="isAliveResponse" message="tns:isAliveResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationPlanTarifaire">
+      <wsdl:input name="doModificationPlanTarifaire" message="tns:doModificationPlanTarifaire">
+    </wsdl:input>
+      <wsdl:output name="doModificationPlanTarifaireResponse" message="tns:doModificationPlanTarifaireResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doDemandeModificationCoordonnees">
+      <wsdl:input name="doDemandeModificationCoordonnees" message="tns:doDemandeModificationCoordonnees">
+    </wsdl:input>
+      <wsdl:output name="doDemandeModificationCoordonneesResponse" message="tns:doDemandeModificationCoordonneesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeServicesEtPrestations">
+      <wsdl:input name="getListeServicesEtPrestations" message="tns:getListeServicesEtPrestations">
+    </wsdl:input>
+      <wsdl:output name="getListeServicesEtPrestationsResponse" message="tns:getListeServicesEtPrestationsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doSuspendreDossier">
+      <wsdl:input name="doSuspendreDossier" message="tns:doSuspendreDossier">
+    </wsdl:input>
+      <wsdl:output name="doSuspendreDossierResponse" message="tns:doSuspendreDossierResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationOption">
+      <wsdl:input name="doModificationOption" message="tns:doModificationOption">
+    </wsdl:input>
+      <wsdl:output name="doModificationOptionResponse" message="tns:doModificationOptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee" message="tns:ExceptionRegleNonVerifiee">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionNumeroTelephoneInterdit" message="tns:ExceptionNumeroTelephoneInterdit">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve" message="tns:ExceptionUtilisateurNonTrouve">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRenouvellementMobile">
+      <wsdl:input name="doRenouvellementMobile" message="tns:doRenouvellementMobile">
+    </wsdl:input>
+      <wsdl:output name="doRenouvellementMobileResponse" message="tns:doRenouvellementMobileResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doPreactivationCarteSim">
+      <wsdl:input name="doPreactivationCarteSim" message="tns:doPreactivationCarteSim">
+    </wsdl:input>
+      <wsdl:output name="doPreactivationCarteSimResponse" message="tns:doPreactivationCarteSimResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeMediapost">
+      <wsdl:input name="getListeMediapost" message="tns:getListeMediapost">
+    </wsdl:input>
+      <wsdl:output name="getListeMediapostResponse" message="tns:getListeMediapostResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne" message="tns:ExceptionErreurInterne">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleMediapost" message="tns:ExceptionRegleMediapost">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides" message="tns:ExceptionDonneesInvalides">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EdelweissManagerServiceSoapBinding" type="tns:EdelweissManager">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAllDemandeClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllDemandeClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllDemandeClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoUtilisateur">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInfoUtilisateur">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInfoUtilisateurResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doActivationNouvelleCarteSim">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doActivationNouvelleCarteSim">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doActivationNouvelleCarteSimResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionInfosCarteSimIncorrect">
+        <soap:fault name="ExceptionInfosCarteSimIncorrect" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDossierNonTrouve">
+        <soap:fault name="ExceptionDossierNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionAucuneCarteSimPreparee">
+        <soap:fault name="ExceptionAucuneCarteSimPreparee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationCoordonnees">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doModificationCoordonnees">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doModificationCoordonneesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoCPUK">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInfoCPUK">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInfoCPUKResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeOptionsUtilisateur">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getListeOptionsUtilisateur">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getListeOptionsUtilisateurResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doDemandeModificationPlanTarifaire">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doDemandeModificationPlanTarifaire">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doDemandeModificationPlanTarifaireResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargementCB">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doRechargementCB">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doRechargementCBResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionPaiement">
+        <soap:fault name="ExceptionPaiement" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDonneesGU">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDonneesGU">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDonneesGUResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionCoupleClientDossierInexistant">
+        <soap:fault name="ExceptionCoupleClientDossierInexistant" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doActionComA5">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doActionComA5">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doActionComA5Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionTribuPleine">
+        <soap:fault name="ExceptionTribuPleine" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionPasMembre">
+        <soap:fault name="ExceptionPasMembre" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionMembreInconnu">
+        <soap:fault name="ExceptionMembreInconnu" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionSoldeInsuffisant">
+        <soap:fault name="ExceptionSoldeInsuffisant" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVersion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAlive">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="isAlive">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isAliveResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationPlanTarifaire">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doModificationPlanTarifaire">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doModificationPlanTarifaireResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doDemandeModificationCoordonnees">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doDemandeModificationCoordonnees">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doDemandeModificationCoordonneesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeServicesEtPrestations">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getListeServicesEtPrestations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getListeServicesEtPrestationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doSuspendreDossier">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doSuspendreDossier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doSuspendreDossierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationOption">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doModificationOption">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doModificationOptionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleNonVerifiee">
+        <soap:fault name="ExceptionRegleNonVerifiee" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionNumeroTelephoneInterdit">
+        <soap:fault name="ExceptionNumeroTelephoneInterdit" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionUtilisateurNonTrouve">
+        <soap:fault name="ExceptionUtilisateurNonTrouve" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doPreactivationCarteSim">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doPreactivationCarteSim">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doPreactivationCarteSimResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRenouvellementMobile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doRenouvellementMobile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doRenouvellementMobileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListeMediapost">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getListeMediapost">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getListeMediapostResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExceptionErreurInterne">
+        <soap:fault name="ExceptionErreurInterne" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionRegleMediapost">
+        <soap:fault name="ExceptionRegleMediapost" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDonneesInvalides">
+        <soap:fault name="ExceptionDonneesInvalides" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EdelweissManagerService">
+    <wsdl:port name="EdelweissManagerPort" binding="tns:EdelweissManagerServiceSoapBinding">
+      <soap:address location="http://localhost:8181/asm-ws-8.2.0.1/orchideeService.yaws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/releases/orangef
+END
+custom.mk
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/releases/orangef/custom.mk
+END
+custom_webmin.mk
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/releases/orangef/custom_webmin.mk
+END
+test.config
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/releases/orangef/test.config
+END
+custom_webuser.mk
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/releases/orangef/custom_webuser.mk
+END

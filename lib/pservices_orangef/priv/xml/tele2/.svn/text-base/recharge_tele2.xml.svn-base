@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page">
+
+  <page descr="Rech Tele2 PP: enter">
+    <!-- filter subscription-->
+    <redirect src="erl://svc_tele2:enter_rech?#choix_montant"/>
+  </page>
+
+  <page tag="choix_montant" descr="Rech Tele2 PP: choix montant">
+    <title>Rech Tele2 PP: choix montant</title>
+    Montant de rechargement:<br/>
+    <include src="erl://svc_tele2:inc_choix_montant"/>
+  </page>
+
+   <page tag="confirm_recharge" descr="Rech Tele2 PP: Confirmant montant">
+     <title>Rech Tele2 PP: Confirmant montant</title>
+    Vous souhaitez rechargez
+    <include src="erl://svc_tele2:print_info?montant"/>EUR (plus
+    <include src="erl://svc_tele2:print_info?bonus"/>EUR de bonus)?<br/>
+    Ces <include src="erl://svc_tele2:print_info?montant"/>EUR seront
+    preleves sur votre facture Tele2<br/>
+    <a href="#saisie_code_secret">Confirmer</a>
+  </page>
+
+<page tag="saisie_code_secret" menutext="notext" descr="Rech Tele2 PP: saisie code secret">
+  <title>Rech Tele2 PP: saisie code secret</title>
+  <form action="erl://svc_tele2:verif_code_secret">
+    <entry kind="digits">
+      <prompt>Veuillez saisir votre code secret de rechargement
+      a 4 chiffres</prompt>
+    </entry>
+  </form>
+</page>
+
+<page tag="success" descr="Rech Tele2 PP: succes">
+  <title>Rech Tele2 PP: succes</title>
+  Rechargement OK<br/>
+  Nouveau solde: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR,
+  valable jsq'au <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+</page>
+
+<!-- Pages D'erreur-->
+
+<page tag="format_cs_nok" descr="Rech Tele2 PP: format code secret invalide">
+  <title>Rech Tele2 PP: format code secret invalid</title>
+  Format invalide. Le code attendu doit etre compose de 4 chiffres
+</page>
+
+<page tag="cs_invalid" descr="Rech Tele2 PP: code secret invalide">
+  <title>Rech Tele2 PP: code secret invalid</title>
+  Code secret invalide
+</page>
+
+<page tag="cs_blocked" nav="end" descr="Rech Tele2 PP: code secret bloque">
+  <title>Rech Tele2 PP: code secret bloque</title>
+  Code secret invalide.<br/>
+  Veuillez vous connecter a nouveau ulterieurement ou
+  contacter votre service client
+</page>
+
+<page tag="cl_inactif" nav="end" descr="Rech Tele2 PP: Client Inactif">
+  <title>Rech Tele2 PP: Client Inactif</title>
+  Compte inactif, veuillez contacter le service client
+</page>
+
+
+<page tag="temporary" descr="Rech Tele2 PP: Erreur interne">
+  <title>Rech Tele2 PP: Erreur intern</title>
+  Service temporairement indisponible
+</page>
+
+<page tag="timeout" descr="Rech Tele2 PP: En cours de traitement">
+  <title>Rech Tele2 PP: En cours de traitement</title>
+  Rechargement en cours.<br/>
+  Pour connaitre votre nouveau solde consulter
+  a nouveau ce service ultérieurement
+</page>
+
+</pages>

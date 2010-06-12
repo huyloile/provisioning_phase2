@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Jouez">
+  <page hist="dohist" backtext="notext">
+      Tentez de remporter 1 sejour aux parcs Disney, l'un des 100 mobiles W595 ou encore l'un des 100000 bons plans en jeu!<br/>
+      <a href="erl://svc_jeu:je_participe?mobi">Je participe</a><br/>
+      <a href="#les_dotations">Les dotations</a><br/>
+      <a href="#reglement">Reglement</a>
+  </page>
+  <page tag="jouez_cmo" backtext="notext">
+      Tentez de remporter 1 sejour aux parcs Disney, l'un des 100 mobiles W595 ou encore l'un des 100000 bons plans en jeu!<br/>
+      <a href="erl://svc_jeu:je_participe?cmo">Je participe</a><br/>
+      <a href="#les_dotations">Les dotations</a><br/>
+      <a href="#reglement">Reglement</a>
+  </page> 
+  <page tag="gagnant" backtext="notext">
+      Bravo! Vous avez remporte 1 bon plan d'une valeur max de 3E. Choisissez d'ici 2 mois votre bon plan offert parmi les bons plans suivants : journee SMS...<br/>
+      <a href="#gagnant1">Suite</a>
+  </page>
+  <page tag="gagnant1">
+      ...illimites, soiree SMS illimites, journee infinie et soiree infinie, ou encore Duo Journee.<br/>
+      <a href="/mcel/acceptance/mobi/bons_plans/menu.xml">Acceder aux bons plans</a><br/>
+      <a href="#gagnant2">Suite</a>
+  </page>
+  <page tag="gagnant2">
+      Vous participez aussi au tirage au sort qui fera peut-etre de vous l'heureux gagnant d'1 sejour aux parcs Disney ou d'1 mobile Sony Ericsson W595<br/>
+      <a href="#gagnant3">Suite</a>
+  </page>
+  <page tag="gagnant3">
+      En cas de gain au tirage au sort,Orange vous contactera dans les 2 mois suivant le terme de l'operation.
+      Merci d'avoir participe!<br/>
+      <a href="/mcel/acceptance/mobi/bons_plans/menu.xml">Acceder aux bons plans</a>
+  </page>
+  <page tag="perdant" backtext="notext">
+      Bravo! Vous participez gratuitement au tirage au sort qui fera peut-etre de vous l'heureux gagnant d'1 sejour aux parcs Disney ou d'1 mobile Sony Ericsson<br/>
+      <a href="#perdant1">Suite</a>
+  </page>
+  <page tag="perdant1"> 
+      En cas de gain, Orange vous contactera dans les 2 mois suivant le terme de l'operation.
+      Merci d'avoir participe!
+  </page>
+  <page tag="gagnant_cmo" backtext="notext">
+      Bravo! Vous avez remporte 1 bon plan d'une valeur max de 3E. Choisissez d'ici 2 mois votre bon plan offert parmi les bons plans suivants :<br/>
+      <a href="#gagnant1_cmo">Suite</a>
+  </page>
+  <page tag="gagnant1_cmo">
+      Journee SMS/MMS illimites, Soiree SMS/MMS illimites, Journee Internet illimite, ou Soiree Internet illimite.<br/>
+      <a href="/mcel/acceptance/cmo/Home_page.xml#asmetier_GetIdentification">Acceder aux bons plans</a><br/>
+      <a href="#gagnant2_cmo">Suite</a>
+  </page>
+  <page tag="gagnant2_cmo">
+      Vous participez aussi au tirage au sort qui fera peut-etre de vous l'heureux gagnant d'1 sejour aux parcs Disney ou d'1 mobile Sony Ericsson W595<br/>
+      <a href="#gagnant3_cmo">Suite</a>
+  </page>
+  <page tag="gagnant3_cmo">
+      En cas de gain, Orange vous contactera d'ici 2 mois.
+      Merci d'avoir participe!<br/>
+      <a href="/mcel/acceptance/cmo/Home_page.xml#asmetier_GetIdentification">Acceder aux bons plans</a><br/>
+  </page>
+  <page tag="perdant_cmo" backtext="notext">
+      Bravo! Vous participez gratuitement au tirage au sort qui fera peut-etre de vous l'heureux gagnant d'1 sejour aux parcs Disney ou d'1 mobile Sony Ericsson<br/>
+      <a href="#perdant1_cmo">Suite</a>
+  </page>
+  <page tag="perdant1_cmo"> 
+      En cas de gain, Orange vous contactera d'ici 2 mois.
+      Merci d'avoir participe!
+  </page>
+  <page tag="les_dotations">
+      -1 sejour aux parcs Disneys (784E)<br/>
+      -100 mobiles Sony Ericsson Walkman W595 (289E)<br/>
+      -250 billets 1 jour /2 parcs (65E).<br/>
+      -100 000 bons plans (3E).
+  </page>
+  <page tag="reglement">
+      Jeu gratuit sans obligation d'achat du 08/04 au 09/06/10 reserve aux clients ayant active leur ligne avt le 08/03/10, residant en France metro<br/>
+      <a href="#reglement1">Suite</a>
+  </page>
+  <page tag="reglement1">
+      Participation en rechargeant son compte ou par bulletin gratuit disponible sur orange.fr a renvoyer avt le 09/06/10 minuit. Lots mis en jeu:<br/>
+      <a href="#reglement2">Suite</a>
+  </page>
+  <page tag="reglement2">
+      en instant gagnant, bons plans a choisir parmi une liste eligible; et par tirage au sort, 1sejour comprenant 1 chambre d'hotel pour 4pers et ...<br/>
+      <a href="#reglement3">Suite</a>
+  </page>
+  <page tag="reglement3">
+      8 billets 1 jour / 2 parcs, 100 mobiles W595 et 250 billets 1 jour /2 parcs. Reglement depose a SCP LE HONSEC &amp; SIMHON Huissiers de Justice...<br/>
+      <a href="#reglement4">Suite</a>
+  </page>
+  <page tag="reglement4">
+      et dispo gratuitement sur demande ecrite a : Grand Jeu Rechargement, Cedex 3066, 99306 Paris Concours. Details et reglement sur orange.fr
+  </page>
+</pages>

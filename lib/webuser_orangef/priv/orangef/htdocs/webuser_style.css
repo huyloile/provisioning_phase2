@@ -1,0 +1,355 @@
+/* Webuser generic CSS Style */
+
+body{
+      background-color: #FFFFFF;
+      font-family: arial, sans-serif;
+      font-size: 12pt ;
+      color: #003267 ;
+      margin: 0px;
+      text-align:center;
+      }
+
+a{ font-size: 12pt; }
+
+a:link{ color: black; }    
+a:visited{color: #003267; }
+a:active{ color: #ccc; }
+
+table{
+       border: 0px solid black;
+       empty-cells: show;}
+th{
+    background-color: #FFD700; /* before cyan*/
+    border: 1px solid black;
+    color: #003267;
+    padding: 2px;
+    }
+
+td{ border: 0px solid black; }
+
+input,select{ font-size: 10px; }
+
+form{ display: inline ;
+      vertical-align: top;
+      padding:0px;
+      border-spacing: 0px;
+      margin:0px; }
+
+
+/* Useful styles */
+
+table.center{
+              border: 0px;
+              text-align: center;
+              width: 100%;
+              }
+
+td.bold{ font-weight: bold; }
+
+td.right{  text-align: right; }
+
+p.center{ text-align: center; }
+
+
+form.center{ text-align: center;
+             width: 100%;
+             }
+
+form.left{ text-align: left;
+           width: 100%;
+             }
+div.left{ text-align: left;
+          padding-right: 0px;
+          margin-right: 0px;}
+
+span.red{ color: red; }
+
+
+/* Banner */
+
+table.banner{ border: 0px solid #003153;
+              width: 100%;
+              font-family: 'Frutiger Lynotype', arial, sans-serif;
+              font-size: 28pt ;
+              border-collapse: collapse;
+              margin-bottom: 10px;
+              }
+
+td.banner_left{ background-color: #003153;
+                color: white;
+                content: "Customer Care USSD";  }
+
+td.banner_right{ width: 40%;
+                 background: white url("/icons/Cellcare.jpg") no-repeat right;
+                 }
+td.banner_links{ background-color: #FFD700;
+                 color: #003267;
+                 font-size: 16pt;
+                 }
+
+
+
+
+
+/* Welcome Page */
+
+div.welcome{ font-weight: bold;
+             text-align: center;
+             padding-top: 100px;
+             }
+
+a.welcome{ font-size: 22pt ;
+           color: #003153 ;
+           }
+
+
+
+/* Authentication Page */
+
+table.login{ margin-top:100px;
+             border: 0px;
+             height: 150px;
+             font-weight: bold;
+             text-align: left;
+             font-size: 10pt;
+             margin-left: auto;
+             margin-right: auto;
+             }
+
+td.login_text{ font-weight: normal; }
+
+
+/* Select user and period */
+
+
+table.select_user{ background: #b5f7d2;
+                   margin-top: 100px;
+                   margin-left: auto;
+                   margin-right: auto;
+                   margin-bottom: 0px;
+                   border-spacing: 10px;
+                   text-align : center;
+                   width: 500px;
+                   border: 2px solid black;
+                   font-size: 10pt;
+                   color: black;
+                   -moz-border-radius: 10px;
+                   border-radius: 10px;
+                   }
+
+td.identifier{ font-weight: bold;
+               border-spacing: 50px;
+               }
+
+p.select{ margin-top: 5px;
+          text-align: center;
+          }
+
+
+/* Profile & Sessions */
+td.layout{ vertical-align: top; }
+
+
+/* Tabs */
+
+#nav  { background:  white;
+        padding: 5px  10px  2px;
+        margin: 0px; 
+        list-style:  none;
+        vertical-align: top;
+        } 
+#nav  li  { display:  inline;
+            padding:  2px;
+            background:  #eee;
+            margin-left: 2px;
+            margin-right: 2px;
+            border-top: 1px solid #888;
+            border-left: 1px solid #888;
+            border-right: 1px solid #888;
+            font:  bold  11pt  Arial,  sans-serif;
+            } 
+
+#current_nav{
+              border-bottom: 3px solid #FFEC9B;
+              color: black;
+              }
+
+
+input.tab_button{ padding: 0px;
+                  vertical-align: top;
+                  border: 0px;
+                  border-spacing: 0px;
+                  margin: 0px;
+                  background:  #eee;
+                  color: #66c;
+                  font:  bold  10pt  Arial,  sans-serif;
+                  }
+
+input.tab_button:hover { color: #003153; }
+
+
+table.tab{ margin-top: 0px;
+           border: 2px solid #FF6600;
+           background: #FFECDF;
+           width: 400px;
+           height: 100px;
+           padding: 5px;
+           vertical-align: top;
+           font-weight: bold;
+           font-size: 10pt ;
+           color: black;
+           border-radius: 10px;
+           -moz-border-radius: 10px;
+           }
+
+td.tab_edit{ text-align: right;
+             padding-left: 10px;}
+
+td.tab_label{ vertical-align: top;}
+
+
+/* Quick Description */
+
+table.quick_desc{ margin: 22px;
+                  padding: 5px;
+                  text-align: left;
+                  width: 300px;
+                  background: #b5f7d2;
+                  border: 2px solid #009900;
+                  font-weight: bold;
+                  font-size: 10pt ;
+                  color: black;
+                  border-radius: 10px;
+                  -moz-border-radius: 10px;
+                  }
+	
+/* Sessions */
+
+
+table.sessions{ margin-top: 20px;
+                display: block;
+                background: white;
+                border-spacing: 2px;
+                text-align: center;
+                border: 0px solid;
+                padding-top: 2px;
+                padding-left: 0px;
+                padding-right: 0px;
+                width: 100%;
+                font-family: arial, sans-serif;
+                font-size: 12pt ;
+                color: black;
+                }
+
+td.sessions_header{ background: #003153;
+                    font-weight: bold;
+                    border: 1px solid black;
+                    text-align: center;
+                    color: white;
+                    font-size: 11pt;
+                    }
+
+td.sessions{ background: #C0C0FF; 
+             border: 1px solid black;
+             }
+
+tr.sessions{ background: white; }
+
+td.user{
+         width: 6%;
+         background: #e0e0ff;
+         }
+td.server{
+           width: 6%;
+           background: #FFD700;
+           }
+td.empty_page{ content: "-"; }
+td.resend{ background: #FFD700; }
+td.error{ background: #FFD700; }
+td.end{ background: #FFD700;}
+td.push{ background: #FFD700; }
+td.next_page{ background: #D3D3D3;}
+td.menu{ background: #D3D3D3;}
+td.received{
+             width: 29%;
+             background: white;
+             }
+
+input.unfold{ width: 100%; }
+
+td.entry{ background: #D3D3D3; }
+
+td.tariff{ background: #ccffcc; }
+td.duration{ background: #ccffcc; }
+
+
+a.to_the_top{ background: #ddf;
+              margin-top: 100px;
+              color: black;
+              }
+
+
+
+
+/* Several Profiles */
+
+table.several_profiles{ margin: auto;
+                        background: #b0b0ee;
+                        font-weight: bold;
+                        text-align: center;
+                        border: 3px solid black;
+                        width: 80%;
+                        font-family: arial, sans-serif;
+                        font-size: 10pt;
+                        border: 0px;
+                        }
+
+table.several_profiles td{  border: 1px solid black;
+                           }
+
+tr.profiles_header{ background-color: #003153;
+                    color: white;
+                    }
+
+
+/* Page data */
+td.page_data_error{ border: 1px solid black;
+                    background: #922;
+                    color: white;
+                    }
+td.page_data{ border: 1px solid black; 
+              text-align:left;
+              background: white;
+              }
+td.shortcut{ border: 1px solid black; 
+             text-align:left;
+             background: white;
+             color: #aaa;
+             }
+
+
+
+span.subst{ color: #FF0000; }
+span.error{ color: #FF0000; }
+
+
+/* Editors */
+
+table.list{ border: 0px solid #ccc;
+      font-size: 8pt;
+      text-align: left;
+      margin-right: 0px;
+      margin-left: auto;
+      }
+
+table.list_left{ border: 0px solid #ccc;
+      font-size: 8pt;
+      text-align: left;
+      margin-left: 0px;
+      }
+
+table.barring{ margin-left: auto;
+               margin-right: auto;              
+               }
+
+table.barring td{ padding: 50px;}

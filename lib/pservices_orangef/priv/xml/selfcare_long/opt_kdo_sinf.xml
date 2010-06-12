@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<!-- Option opt_kdo_sinf valable uniquement pour les forfait mobicarte club de football -->
+  
+<pages descr="scripts pour le service : option journée infinie">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_kdo_sinf&amp;#opt_deja_active&amp;#failure&amp;#failure&amp;#accueil_opt"/>
+  </page>
+
+<page tag="redirect_activer_cpte_sinf" hist="dohist" cost="free_pt" descr="">
+    <title>Menu qui offre les options soiree infinie et WE infinis</title>
+   <redirect src="erl://svc:redirect?#accueil_opt&amp;#opt_deja_active"/>    
+  </page>
+
+<page tag="accueil_opt" hist="dohist" cost="free_pt" descr="">
+    <title>accueil activation option cadeau soiree infinie</title>
+    Profitez chaque mois de 4 soirees infinies pour appeler en illimite
+     les fixes et les mobiles Orange de 21h a minuit.<br/> 
+    <a href="#plus_d_infos">+ d'infos</a><br/>
+    <a href="#activer">Activer votre compte soirees infinies</a><br/>
+</page>
+
+<page tag="opt_deja_active" hist="dohist" cost="free_pt" descr="">
+    <title>option deja active</title>
+    Bonjour, votre compte soirees infinies est deja active.
+   </page>
+
+<page tag="activer" hist="dohist" cost="free_pt" descr="">
+    <title>activation de l'option</title>
+    Vous allez activer gratuitement votre compte soirees infinies.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_kdo_sinf&amp;#success,#opt_deja_active,#failure,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+</page>
+  
+<page tag="success" hist="dohist" cost="free_pt" descr="">
+    <title>success activation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre compte soirees infinies sera active.
+    Merci de votre appel.
+  </page>
+<page tag="success_princ" hist="dohist" cost="free_pt" descr="">
+    <title>success activation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre compte soirees infinies sera active.
+    Merci de votre appel.
+  </page>
+<page tag="success_bp" hist="dohist" cost="free_pt" descr="">
+    <title>success activation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre compte soirees infinies sera active.
+    Merci de votre appel.
+  </page>
+<page tag="success_offert" hist="dohist" cost="free_pt" descr="">
+    <title>success activation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre compte soirees infinies sera active.
+    Merci de votre appel.
+  </page>
+<page tag="success_dixit" hist="dohist" cost="free_pt" descr="">
+    <title>success activation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre compte soirees infinies sera active.
+    Merci de votre appel.
+  </page>
+
+<page tag="plus_d_infos" hist="dohist" cost="free_pt" descr="">
+    <title> + d'infos </title>
+     Ideal pour refaire le match avec vos amis pendant les soirees de championnat,
+     les soirees infinies vous permettent d'appeler en illimite les fixes et
+     mobiles Orange.<br/>
+    <a href="#plus_d_infos_Suite1">Suite</a><br/>
+</page>
+
+<page tag="plus_d_infos_Suite1" hist="dohist" cost="free_pt" descr="">
+    <title>+ d'infos1</title>
+   en France metropolitaine de 21h a minuit.
+   Pour pouvoir profiter de vos 4 soirees infinies chaque mois,
+   il faut tout d'abord activer votre compte soirees infinies.<br/>
+    <a href="#plus_d_infos_Suite2">Suite</a><br/>
+</page>
+
+<page tag="plus_d_infos_Suite2" hist="dohist" cost="free_pt" descr="">
+    <title>+ d'infos2</title>
+    Une fois votre compte active, il est automatiquement renouvele tous
+    les 31 jours a date anniversaire de son activation sous reserve
+    que votre credit soit superieur a zero.<br/>
+    <a href="#plus_d_infos_Suite3">Suite</a><br/>
+</page>
+
+<page tag="plus_d_infos_Suite3" hist="dohist" cost="free_pt" descr="">
+    <title>+ d'infos3</title>
+ Ensuite, pour profiter de vos 4 soirees infinies par mois, c'est simple,
+ il vous suffit d'appeler le 220 ou le #123# et de souscrire une soiree infinie..
+    <a href="#plus_d_infos_Suite4">Suite</a><br/>
+</page>
+
+<page tag="plus_d_infos_Suite4" hist="dohist" cost="free_pt" descr="">
+    <title>+ d'infos4</title>
+    ... le soir des matchs de votre equipe.<br/>
+    <a href="#activer">Activer votre compte soirees infinies</a><br/>
+</page>
+
+<page tag="solde_insuff" hist="dohist" cost="free_pt" descr="">
+    <title>accueil activation soiree infinie</title>
+</page>
+ 
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>
+
+ 

@@ -1,0 +1,19 @@
+echo test_activ_opt_cmo
+make test_activ_opt_cmo
+echo test_bzh_cmo
+make test_bzh_cmo
+echo test_cmo
+make test_cmo_compl
+make test_cmo_compl
+echo test_cmo
+echo test_plan_tarif_bzh_cmo
+make test_plan_tarif_bzh_cmo
+make test_recharge_cb_cmo
+make test_recharge_cb_cmo
+echo test_recharge_cb_cmo_new
+make test_recharge_cb_cmo_new
+echo test_roaming_cmo
+make test_roaming_cmo
+echo test_selfcare_cmo
+make test_selfcare_cmo
+

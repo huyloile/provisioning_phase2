@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Redirection OTO CMO">
+
+  <page cost="freept">
+  </page>
+
+  <page tag = "sms_30" cost="freept" descr="Redirection SMS 300">
+    <title>Option SMS 30</title>
+    <redirect src="erl://svc_variable:set_v2?oto&amp;option&amp;/mcel/acceptance/oto_cmo.xml&amp;sms_30"/>    
+  </page>
+  <page tag = "sms_80" cost="freept" descr="Redirection SMS 80">
+    <title>Option SMS 80</title>
+    <redirect src="erl://svc_variable:set_v2?oto&amp;option&amp;/mcel/acceptance/oto_cmo.xml&amp;sms_80"/>    
+  </page>
+  <page tag = "sms_130" cost="freept" descr="Redirection SMS 130">
+    <title>Option SMS 130</title>
+    <redirect src="erl://svc_variable:set_v2?oto&amp;option&amp;/mcel/acceptance/oto_cmo.xml&amp;sms_130"/>    
+  </page>
+  <page tag = "sms_210" cost="freept" descr="Redirection SMS 210">
+    <title>Option SMS 210</title>
+    <redirect src="erl://svc_variable:set_v2?oto&amp;option&amp;/mcel/acceptance/oto_cmo.xml&amp;sms_210"/>    
+  </page>
+  <page tag = "sms_300" cost="freept" descr="Redirection SMS 300">
+    <title>Option SMS 300</title>
+    <redirect src="erl://svc_variable:set_v2?oto&amp;option&amp;/mcel/acceptance/oto_cmo.xml&amp;sms_300"/>    
+  </page>
+  <page tag = "menu_bons_plans" cost="freept" descr="Redirection Menu bons plans">
+    <title>Menu Bons Plans</title>
+    <redirect src="file://mcel/acceptance/cmo/Home_page.xml#asmetier_GetIdentification"/>
+  </page>	
+
+</pages>

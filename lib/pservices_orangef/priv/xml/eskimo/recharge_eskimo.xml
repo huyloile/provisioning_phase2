@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Eskimo prepaid : Refill page">
+
+  <page descr="Eskimo recharge code ou achat ticket">
+    Symacom Mobile<br/>
+    Si vous disposez d'un code de rechargement, tapez 1 et valider<br/>
+    Sinon, tapez 2 et valider<br/>
+    <a href="#recharger">Recharger</a><br/>
+    <a href="#achat">Infos</a>
+  </page>
+
+<page tag="achat" descr="pas de carte de rechargement">
+  Symacom Mobile
+  Vous pouvez acheter des recharges chez votre revendeur habituel ou 
+  sur www.symacom-mobile.com
+</page>
+
+<page tag="recharger" descr="Eskimo rechargement">
+  <title>Rechargement Eskimo</title>
+  <form action="erl://svc_recharge_eskimo:process_code?#recharge_ok&amp;#bad_code1">
+    <entry kind="digits">
+      <prompt>Symacom Mobile<br/>
+      Pour recharger, tapez les 14 chiffres de votre code de rechargement puis validez.
+      </prompt>
+    </entry>
+  </form>
+</page>
+
+<page tag="probleme_souscription" descr="probleme rechargement">
+  Suite a une erreur technique, votre rechargement n'a pas ete pris en compte. Merci de reessayer.
+</page>
+
+<page tag="system_failure" descr="probleme rechargement">
+  Suite a une erreur technique, votre rechargement n'a pas ete pris en compte. Merci de reessayer.
+</page>
+
+<page tag="bad_code1" descr="code incorrect">
+  Rechargement refuse : votre code n'est pas correct.<br/>
+  Merci de verifier votre code et de renouveler l'operation<br/>
+  Attention vous n'avez droit qu'a 3 essais.
+</page>
+
+<page tag="recharge_ok" descr="recharegement ok">
+  Vous venez de recharger <include src="erl://svc_recharge:montant_recharge"/> EUR sur votre compte. 
+  Nouveau solde de votre compte : <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR 
+  valables jusqu'au <include src="erl://svc_options:print_account_dlv?cpte_princ&amp;dmy"/>.
+</page>
+
+</pages>

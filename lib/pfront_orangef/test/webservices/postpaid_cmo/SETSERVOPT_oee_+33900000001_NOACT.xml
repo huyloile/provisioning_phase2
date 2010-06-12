@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <setServiceOptionnelResponse xmlns="urn:m8o.francetelecom.com">
+            <setServiceOptionnelReturn>
+                <ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+                    <item>
+                        <ns1:UUID>1</ns1:UUID>
+                        <ns1:channel>1</ns1:channel>
+                        <ns1:lang>FR</ns1:lang>
+                        <ns1:statusCode>7b00</ns1:statusCode>
+                        <ns1:statusDescription>Successful setServiceOptionnel</ns1:statusDescription>
+                        <ns1:statusName>GetSuccess</ns1:statusName>
+                        <ns1:statusType>0</ns1:statusType>
+                    </item>
+                </ns1:statusList>
+            </setServiceOptionnelReturn>
+        </setServiceOptionnelResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

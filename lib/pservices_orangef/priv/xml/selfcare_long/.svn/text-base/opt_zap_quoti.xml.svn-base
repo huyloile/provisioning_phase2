@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+
+<pages descr="scripts pour le service : option 11-18 Quodtidien">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_zap_quoti&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option 11-18 Quodtidien page offre incompatible">
+    <title>option option 11-18 Quodtidien page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option 11-18 Quodtidien page offre incompatible">
+    <title>option option 11-18 Quodtidien page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien deja active">
+    <title>option 11-18 Quodtidien deja active</title>
+    Votre bon plan messages illimites est actif : vous beneficiez chaque jour de messages illimites de 16h a 20h pour 0,5E. 
+    <a href="#plus_d_infos">+ d'infos</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#supprimer">Supprimer l'option</a>
+  </page>
+
+ <page tag="plus_d_infos" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page plus d infos">
+    <title>option 11-18 Quodtidien page conditions</title>
+    Tous vos SMS, MMS et messages Windows Live sont en illimite chaque jour de 16h a 20h pour 0,5E seulement
+    <a href="#supprimer">Supprimer le bon plan</a>
+  </page>
+
+  <page tag="supprimer" cost="free_pt"  backtext="notext" hist="dohist">
+    Si vous supprimez votre bon plan, vous perdez immediatement le benefice d'envoi de messages illimites de 16h a 20h.
+    Merci de confirmer la suppression.
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_zap_quoti&amp;#desinscr_success,#failure">Confirmer</a>
+  </page>
+
+  <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_mobi,35=#conditions_pp,39=#conditions_pp,40=#conditions_pp,41=#conditions_pp,42=#conditions_pp,43=#conditions_pp,44=#conditions_pp,51=#conditions_mobi,default=#conditions_mobi"/>
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien solde insuffisant">
+    <title>option 11-18 Quodtidien solde insuffisant</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="conditions_mobi" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P1/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    Option a souscrire valable en France metropolitaine pour les clients mobicarte et click la mobicarte.
+    SMS/MMS et messages orange messenger windows live illimites...
+    <a href="#conditions_2">Suite</a>
+  </page>
+  <page tag="conditions_pp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P1/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    Offre valable en France metropolitaine et reservee aux clients d'une offre prepayee Orange.
+    Acces et connexions illimitees...
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P2/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    en France metropolitaine de 16h a 20h (hors sms/mms surtaxes et mms cartes postales et jusqu'a
+    200 destinataires differents par mois) sms/mms entre 2 personnes...
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P3/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    ...physiques et pour un usage non lucratif direct. Cession des messages et messages emis depuis
+    des boitiers radio interdits. mms disponibles depuis un mobile...
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P3/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    ...compatible. Envoi illimite de messages metropolitains depuis votre mobile.
+    Service Orange Messenger by Windows Live disponible en telechargement sur...
+    <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P4/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    ...http://im.orange.fr et utilisable entre equipements compatibles dotes du service.
+    Option reconduite chaque jour. Le prix de l'option est preleve chaque jour sur..
+    <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P5/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    ...le compte du client sous reserve d'un credit suffisant. 
+    A defaut, l'option est suspendue et reprend automatiquement des que le credit... 
+    <a href="#conditions_7">Supprimer l'option</a>
+  </page>
+
+  <page tag="conditions_7" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 Quodtidien page conditions P6/7">
+    <title>option 11-18 Quodtidien page conditions</title>
+    ...est de nouveau suffisant. Resiliation possible au au 220 ou au #123#...
+    <a href="#supprimer">Supprimer le bon plan</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option 11-18 quotidien apres confirmation desinscription">
+    <title>option illimite KDO apres confirmation desnscription</title>
+    La suppression de votre bon plan messages illimites a bien ete pris en compte.
+    Merci de votre appel.
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>
+
+ 

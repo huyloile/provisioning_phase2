@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/auth
+END
+passwd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/auth/passwd
+END
+group
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/auth/group
+END

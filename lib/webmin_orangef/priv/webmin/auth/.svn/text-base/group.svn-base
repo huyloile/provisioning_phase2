@@ -1,0 +1,14 @@
+# View alarms, operational status, config parameters and statistics.
+status: system config control status
+# Acknowledge alarms. Enable/disable services etc (application-specific).
+control: system config control
+# Change config parameters.
+config: system config
+# Logs, shell, OS access.
+system: system
+# Access-lists (cellcube-specific)
+acl: acl system
+# Contents creation (cellcube-specific)
+contents: system config control contents
+# Orange (customer-specific)
+orangef: system orangef

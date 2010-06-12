@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Omer selfcare pages">
+
+ <page cost="freept">
+    <redirect src="erl://svc_util_of:redir_declinaison?11=#omer_select_home,85=selfcare_omer_new.xml"/>
+ </page>
+ <page tag="omer_select_home">
+    <redirect src="erl://svc_selfcare:omer_select_home"/>
+ </page>
+ 
+ <page tag="principal_ac_odr_ac" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 1 compte principal actif">
+  <title>Omer suivi conso Niv 1 compte principal actif, odr actif</title>
+  Breizh Mobile bonjour.<br/>
+  Votre credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/>E
+  soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de com ou <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS
+  a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_omer.xml" key="1">Recharger</a><br/>
+  <a href ="#menu_tarif" key="2">Menu</a>
+ </page>
+
+ <page tag="principal_ac_odr_ep" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 1 compte principal actif">
+  <title>Omer suivi conso Niv 1 comptes principal actif, odr epuise</title>
+  Breizh Mobile bonjour.<br/>
+  Votre credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/>E
+  soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de com ou <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS
+  a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.<br/>
+  <a href="recharge_omer.xml" key="1">Recharger</a><br/>
+  <a href ="#menu_tarif" key="2">Menu</a>
+  </page>
+
+ <page tag="principal_ep_odr_ac" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 1 compte principal epuise">
+  <title>Omer suivi conso Niv 1 compte principal epuise, odr actifr</title>
+  Votre credit principal est epuise.<br/>
+  Autre compte: il vous reste <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  Vous pouvez recharger avant le <include src="erl://svc_selfcare:fin_validite"/> et conserver ainsi votre numero.<br/>
+  <a href="recharge_omer.xml" key="1">Recharger</a><br/>
+  <a href="#menu_tarif" key="2">Menu</a>
+ </page>
+
+ <page tag="principal_ep_odr_ep" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 1 compte principal epuise">
+  <title>Omer suivi conso Niv 1 compte principal epuise, odr epuise</title>
+  Votre credit est epuise.<br/>
+  Vous pouvez recharger votre compte avant le <include src="erl://svc_selfcare:fin_validite"/> et conserver ainsi votre numero.<br/>
+  <a href="recharge_omer.xml" key="1">Recharger</a><br/>
+  <a href="#menu_tarif" key="2">Menu</a>
+ </page>
+
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" 
+ descr="Service indisponible">
+  <title>Omer : Service indisponible</title>
+  Le service est momentanement interrompu. Veuillez recommencer ulterieurement.
+  <br/>Merci.
+ </page>
+
+ <page tag="system_failure" ismenu="false" volatile="false" descr="Service convalescent">
+  <title>Omer : Service convalescent</title>
+   Desole mais ce service est convalescent pour le moment. Vous pouvez aussi composer le 221 pour suivre votre conso     
+ </page>
+
+ <page tag="mainmenu" log="SC_menu" ismenu="true" menutext="notext"
+ cost="free_pt" descr="menu principal Omer">
+  <title>menu principal Omer</title>
+  <a href="recharge_omer.xml">Recharger mon compte</a><br/>
+  <a href="plan_tarifaire_omer.xml">Changer de plan</a><br/>
+ </page>
+ 
+<page tag="menu_tarif" cost="freept" backtext="notext" menutext="notext"
+       descr="Menu tarif">
+   <title>Menu</title>
+   <a href="#etranger_1">Connaitre les tarifs a l'etranger</a><br/>
+   <a href="#omer_select_home" key="00">Menu</a>
+ </page>
+<!--Tarif a l'Etranger -->
+
+ <page tag="etranger_1" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 1">
+   <title>tarif etranger 1</title>
+   Les destinations sont classees en 4 zones tarifaires : Europe, Suisse/Andorre, Maghreb/Amerique du Nord/Turquie et " Reste du monde ".<br/>   
+   <a href="#menu_tarif" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_2" key="1">suite</a>
+ </page>
+ 
+ <page tag="etranger_2" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 2">
+   <title>tarif etranger 2</title>
+   Un seul tarif est applique par zone pour vos appels voix vers la France Metropolitaine ou la zone de votre destination.<br/>Prix/mn des appels emis depuis et<br/>   
+   <a href="#etranger_1" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_3" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_3" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 3">
+   <title>tarif etranger 3</title>
+  vers: la zone Europe =0.514E, (sauf Suisse-Andorre =1E15), la zone Maghreb/Amerique du Nord/Turquie=1.40E, la zone "Reste du monde"=3E. Prix/mn des appels<br/>
+   <a href="#etranger_2" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_4" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_4" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 4">
+   <title>tarif etranger 4</title>
+   recus depuis : la zone Europe = 0.227E, (sauf Suisse-Andorre =0.65E), la zone Maghreb/Amerique du Nord/Turquie = 0.75E, la zone "Reste du monde" = 1.50E<br/>
+   <a href="#etranger_3" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_5" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_5" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 5">
+   <title>tarif etranger 5</title>
+   En zone UE, vos appels sont decomptes a la sec des la 1ere sec pour la reception, a la sec au-dela de 30sec indivisibles pour les emissions d'appel en UE<br/>
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_6" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_6" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 6">
+   <title>tarif etranger 6</title>
+   et vers la France. Dans les autres pays, facturation a la sec au-dela de la 1ere min indivisible. Envoi d'1 SMS vers ou depuis l'etranger: 0.30E (0,1315E<br/>
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_7" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_7" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 7">
+   <title>tarif etranger 7</title>
+   depuis UE vers UE), reception gratuite. Envoi d'1 MMS vers ou depuis l'etranger: 1.10E. Reception d'un MMS: 0.80E. Prix des connexions data depuis<br/>
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a><br/>
+   <a href="#etranger_8" key="1">suite</a>
+ </page>
+
+ <page tag="etranger_8" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 8">
+   <title>tarif etranger 8</title>
+   l'etranger:0,25E TTC/10ko.<br/>
+   <a href="#etranger_5" key="0">retour</a><br/>
+   <a href="#omer_select_home" key="00">menu</a>
+ </page>
+
+</pages>

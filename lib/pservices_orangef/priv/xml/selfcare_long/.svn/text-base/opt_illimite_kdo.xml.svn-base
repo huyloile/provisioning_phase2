@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option illimite KDO">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:redirect_if_kdo?opt_illimite_kdo&amp;#menu_illimite,#enregistrer_kdo"/>
+  </page>
+  
+<!-- OPTION ALREADY EXISTS -->
+
+  <page tag="opt_deja_active">
+    <redirect src="erl://svc_options_mobi:redirect_if_kdo?opt_illimite_kdo&amp;#menu_illimite,#enregistrer_kdo"/>
+  </page>
+
+  <page tag="menu_illimite" backtext="notext" hist="donthist" cost="free_pt"
+	descr="option illimite KDO deja active">
+    <title>Menu illimite KDO</title>
+    <a href="#suivi_rech">Suivi du rechargement</a><br/>
+    <a href="#consulter_KDO">Pour consulter son No KDO</a><br/>
+    <a href="#modifier_KDO">Pour modifier son No KDO</a><br/>
+    <a href="#desinscrire_KDO">Se desinscrire de l'illimite KDO</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+<!-- GENERIC MENU -->
+
+<!--  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO menu generique">
+    <title>option illimite KDO menu generique</title>
+    Beneficiez d'appels illimites vers votre numero de mobile prefere Orange.
+    A partir de 30 euros recharges dans le mois<br/>
+    <a href="#generique2">Suite</a><br/>
+    <a href="#conditions_inscr">Conditions</a><br/>
+    <a href="#souscrire">S'inscrire gratuitement</a>
+  </page>
+  
+  <page tag="generique2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO menu generique 2">
+    <title>option illimite KDO menu generique 2</title>
+    ...vous beneficierez d'appels illimites 7j/7 et 24h/24 vers votre
+    numero KDO le mois suivant.<br/>
+    <a href="#generique3">Suite</a><br/>
+  </page>
+ 
+ <page tag="generique3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option illimite KDO menu generique 3">
+    <title>option illimite KDO menu generique 3</title>
+    ...Tout rechargement effectue avant l'inscription a l'illimite KDO ne sera pas pris en compte.<br/>
+    <a href="#souscrire">S'inscrire gratuitement</a><br/>
+    <a href="#conditions_inscr">Conditions</a>
+  </page>-->
+ 
+<!-- REGISTER NUMBER -->
+
+  <page tag="enregistrer_kdo" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO menu enregistrer no kdo">
+    <title>option illimite KDO menu enregistrer no kdo</title>
+    Beneficiez d'appels illimites vers votre numero de mobile prefere Orange.
+    A partir de 30 euros recharges dans le mois...<br/>
+    <a href="#enregistrer_kdo2">Suite</a><br/>
+    <a href="#conditions_enreg">Conditions</a><br/>
+    <a href="#enregistrer">Enregistrer son numero</a><br/>
+  </page>
+  
+  <page tag="enregistrer_kdo2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO menu generique 2">
+    <title>option illimite KDO menu generique 2</title>
+    ...vous beneficierez d'appels illimites 7j/7 et 24h/24 vers votre
+    numero KDO le mois suivant.<br/>
+    <a href="#enregistrer">Enregistrer son No KDO</a><br/>
+    <a href="#conditions_enreg">Conditions</a><br/>
+  </page>
+  
+  <page tag="enregistrer" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO enregistrer no kdo">
+    <title>option illimite KDO enregistrer no kdo</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_illimite_kdo&amp;#kdo_enreg&amp;#error_new">
+      <entry kind="digits" type="password">
+	<prompt>Merci de bien vouloir taper les 10 chiffres de votre
+                numero KDO. Ce numero doit etre un numero de mobile
+                Orange.
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="kdo_enreg">
+    <redirect src="erl://svc_options_mobi:do_register?opt_illimite_kdo&amp;#kdo_enreg_success,#error_new,#failure"/>
+  </page>
+
+  <page tag="kdo_enreg_success" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO page kdo enregistre">
+    <title>option illimite KDO page kdo enregistre</title>
+    Vous avez enregistre le
+    <include src="erl://svc_options:print_msisdn_kdo"/> comme numero KDO. 
+  </page>
+ 
+  <page tag="error_new" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO erreur saisie nouveau numero KDO">
+    <title>Erreur de saisie du nouveau numero KDO</title>
+    Le numero KDO que vous venez de saisir n'est pas un numero de
+    mobile Orange.
+    <a href="#enregistrer">Reenregistrer votre No KDO</a><br/>
+  </page>
+ 
+<!-- MODIFY NUMBER -->
+
+  <page tag="modifier_KDO">
+    <redirect src="erl://svc_options_mobi:redirect_if_modif_allowed?opt_illimite_kdo&amp;#modif_generique,#not_allowed"/>
+  </page>
+
+  <page tag="modif_generique" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO modifier numero KDO">
+    <title>option illimite KDO modifier numero KDO</title>
+    Vous voulez modifier votre numero KDO Orange.
+    Vous aviez enregistre le
+    <include src="erl://svc_options:print_msisdn_kdo"/> comme
+    numero KDO...<br/>
+    <a href="#modifier">Suite</a><br/>
+  </page>
+ 
+  <page tag="modifier" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO enregistrer no kdo">
+    <title>option illimite KDO modifier no kdo</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_illimite_kdo&amp;#kdo_enreg&amp;#error_modif">
+      <entry kind="digits" type="password">
+	<prompt>Merci de bien vouloir taper les 10 chiffres de votre
+                nouveau numero KDO. Ce numero doit etre un numero de mobile
+                Orange.
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="error_modif" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO erreur saisie numero kdo modifie">
+    <title>Erreur de saisie du numero KDO modifie</title>
+    Le numero KDO que vous venez de saisir n'est pas un numero de
+    mobile Orange.
+    <a href="#modifier">Reenregistrer votre No KDO</a><br/>
+  </page>
+ 
+  <page tag="not_allowed" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO numero deja modifie">
+    <title>option illimite KDO numero deja modifie</title>
+    Desole, vous avez deja modifie votre numero KDO ce mois-ci.
+    Un seul changement de numero KDO est autorise dans le mois
+    ou vous beneficiez de l'illimite KDO.<br/>
+    <a href="#not_allowed2">Suite</a>
+  </page>
+  
+  <page tag="not_allowed2" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO numero deja modifie 2">
+    <title>option illimite KDO numero deja modifie 2</title>
+    ...Vous pourrez a nouveau changer de numero KDO le prochain
+    mois ou vous beneficierez a nouveau de l'illimite KDO.<br/>
+  </page>
+  
+<!-- CONDITIONS -->
+
+  <page tag="conditions_inscr">
+    <redirect src="erl://svc_variable:set?user_state&amp;cond&amp;0&amp;#conditions&amp;"/>
+  </page>
+
+  <page tag="conditions_enreg">
+    <redirect src="erl://svc_variable:set?user_state&amp;cond&amp;1&amp;#conditions&amp;"/>
+  </page>
+
+  <page tag="conditions_temps_plus">
+    <redirect src="erl://svc_variable:set?user_state&amp;cond&amp;2&amp;#conditions&amp;"/>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option illimite KDO conditions">
+    <title>option illimite KDO conditions</title>
+    Offre valable en France metropolitaine reservee aux 750 000 premiers
+    clients de l'offre mobicarte uniquement, inscrits a l'illimite KDO.
+    Inscription gratuite et<br/>
+    <a href="#conditions2">Suite</a>
+  </page>
+
+  <page tag="conditions2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 2">
+    <title>option illimite KDO conditions 2</title>
+    ...choix du NoKDO en appelant le 220 ou le #123#. SMS de confirmation
+    de l'activation du NoKDO envoye au client beneficiaire...<br/>
+    <a href="#conditions3">Suite</a>
+  </page>
+ 
+  <page tag="conditions3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option illimite KDO conditions 3">
+    <title>option illimite KDO conditions 3</title>
+    ...le mois suivant le rechargement de 30E minimum cumules par mois
+    calendaire (hors recharge SMS). Tout rechargement effectue avant
+    l'inscription a l'illimite KDO...<br/>
+    <a href="#conditions4">Suite</a>
+  </page>
+ 
+  <page tag="conditions4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option illimite KDO conditions 4">
+    <title>option illimite KDO conditions 4</title>
+    ...ne sera pas pris en compte. L'illimite KDO est incompatible
+    avec le programme Temps en Plus...<br/>
+    <a href="#conditions5">Suite</a>
+  </page>
+
+  <page tag="conditions5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 5">
+    <title>option illimite KDO conditions 5</title>
+    ...Conformement aux conditions generales de vente mobicarte,
+    le client mobicarte inscrit au programme Temps en Plus qui choisit
+    et utilise le No KDO avant...<br/>
+    <a href="#conditions6">Suite</a>
+  </page>
+
+  <page tag="conditions6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 6">
+    <title>option illimite KDO conditions 6</title>
+    l'expiration d'un delai de 7 jours, est repute avoir renonce a son
+    droit de retractation. Appels voix/visio en France metropolitaine vers
+    1 No KDO Orange...<br/>
+    <a href="#conditions7">Suite</a>
+  </page>
+
+  <page tag="conditions7" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 7">
+    <title>option illimite KDO conditions 7</title>
+    ...(3 heures maximum par appel, hors nos de mobiles Orange ou tout
+    autre operateur en cours de portabilite, hors nos speciaux, No courts...<br/>
+    <a href="#conditions8">Suite</a>
+  </page>
+
+  <page tag="conditions8" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 8">
+    <title>option illimite KDO conditions 8</title>
+    ...No d'acces WAP et WEB, appels emis depuis des boitiers
+    et appels vers plates-formes telephoniques) le mois suivant le rechargement...<br/>
+    <a href="#conditions9">Suite</a>
+  </page>
+
+  <page tag="conditions9" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 9">
+    <title>option illimite KDO conditions 9</title>
+    Appels directs entre personnes physiques et pour un usage non lucratif
+    direct. Appels en visiophonie entre terminaux et sur reseaux compatibles illimites...<br/>
+    <a href="#conditions10">Suite</a>
+  </page>
+
+  <page tag="conditions10">
+    <redirect src="erl://svc_variable:redir_by_variable?user_state&amp;cond&amp;equal_num&amp;0=#conditions10_inscr,1=#conditions10_enreg,2=#conditions10_temps_plus,?=#conditions10_gen"/>
+  </page>
+
+  <page tag="conditions10_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 10">
+    <title>option illimite KDO conditions 10</title>
+    ...pendant un an a compter de l'inscription.<br/>
+  </page>
+
+  <page tag="conditions10_inscr" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 10 inscription">
+    <title>option illimite KDO conditions 10 inscription</title>
+    ...pendant un an a compter de l'inscription.<br/>
+    <a href="#souscrire">S'inscrire gratuitement</a>
+  </page>
+
+  <page tag="conditions10_enreg" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 10 enregistrement">
+    <title>option illimite KDO conditions 10 enregistrement</title>
+    ...pendant un an a compter de l'inscription.<br/>
+    <a href="#enregistrer">Enregistrer son No KDO</a>
+  </page>
+ 
+  <page tag="conditions10_temps_plus" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO conditions 10 resil temps plus">
+    <title>option illimite KDO conditions 10 resil temps plus</title>
+    ...pendant un an a compter de l'inscription.<br/>
+    <a href="#souscrire">S'inscrire gratuitement</a>
+  </page>
+ 
+<!-- CHECK REFILL -->
+
+  <page tag="suivi_rech">
+    <redirect src="erl://svc_options_mobi:redirect_state_opt_cpte?opt_illimite_kdo&amp;#suivi_rech_ok,#suivi_rech_nok"/>
+  </page>
+
+  <page tag="suivi_rech_ok" menutext="notext" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO suivi rechargement ok">
+    <title>option illimite KDO suivi rechargement ok</title>
+    Vous beneficiez de l'illimite KDO jusqu'a la fin du mois.
+    Pour continuer a en profiter le mois prochain, pensez a recharger
+    au moins
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;min_refill"/>E
+    ce mois-ci.<br/>
+    <a href="#restit_rech">Suivi du rechargement</a><br/>
+  </page>
+
+  <page tag="suivi_rech_nok" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO suivi rechargement nok">
+    <title>option illimite KDO suivi rechargement nok</title>
+    Vous ne beneficiez pas de l'illimite KDO ce mois-ci.
+    Pour en profiter le mois prochain, pensez a recharger
+    au moins
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;min_refill"/>E
+    avt fin de ce mois.<br/>
+    <a href="#restit_rech_next_month">Suivi du rechargement</a><br/>
+  </page>
+ 
+<!-- CONSULT NUMBER -->
+
+  <page tag="consulter_KDO" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO consulter No KDO">
+    <title>option illimite KDO consulter No KDO</title>
+    Vous avez enregistre le
+    <include src="erl://svc_options:print_msisdn_kdo"/> comme
+    numero KDO Orange.
+    Vous avez la possibilite de le modifier une fois uniquement
+    dans le mois...<br/>
+    <a href="#consulter_KDO2">Suite</a><br/>
+  </page>
+
+  <page tag="consulter_KDO2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO consulter No KDO 2">
+    <title>option illimite KDO consulter No KDO 2</title>
+    ...ou vous beneficiez de l'illimite KDO. Pour modifier votre numero KDO,
+    revenez au menu precedent.<br/>
+  </page>
+
+ 
+<!-- SUBSCRIBE TO OPTION -->
+
+  <page tag="resil_temps_plus" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO resiliation Temps Plus, s'inscrire">
+    <title>option illimite KDO resiliation Temps Plus</title>
+    Vous souhaitez vous inscrire gratuitement a l'illimite KDO et
+    renoncer au programme Temps en Plus.<br/>
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_temps_plus&amp;#resil_success,#failure_desinscr">Confirmer</a>
+  </page>
+
+  <page tag="resil_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO s'inscrire gratuitement">
+    <title>option illimite KDO s'inscrire gratuitement</title>
+    <redirect src="erl://svc_options_mobi:do_subscription?opt_illimite_kdo&amp;#success,#opt_deja_active,#failure_inscr,#failure_inscr,#success,#success,#success,#success"/>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO s'inscrire gratuitement">
+    <title>option illimite KDO s'inscrire gratuitement</title>
+    Vous allez vous inscrire gratuitement a l'illimite KDO.<br/>
+    Tout rechargement effectue avant l'inscription a l'illimite KDO ne sera pas pris en compte.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_illimite_kdo&amp;#success,#opt_deja_active,#failure,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+  
+  <page tag="success" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option illimite KDO apres confirmation">
+    <title>option illimite KDO apres confirmation</title>
+    Votre inscription a l'illimite KDO a bien ete prise en compte.
+    Le cumul de vos rechargements du mois commence maintenant.C'est a vous!<br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+  <page tag="success_princ" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option illimite KDO apres confirmation">
+    <title>option illimite KDO apres confirmation</title>
+    Votre inscription a l'illimite KDO a bien ete prise en compte.
+    Le cumul de vos rechargements du mois commence maintenant.C'est a vous!<br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+  <page tag="success_bp" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option illimite KDO apres confirmation">
+    <title>option illimite KDO apres confirmation</title>
+    Votre inscription a l'illimite KDO a bien ete prise en compte.
+    Le cumul de vos rechargements du mois commence maintenant.C'est a vous!<br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+  <page tag="success_offert" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO apres confirmation">
+    <title>option illimite KDO apres confirmation</title>
+    Votre inscription a l'illimite KDO a bien ete prise en compte.
+    Le cumul de vos rechargements du mois commence maintenant. C'est a vous!<br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+  <page tag="success_dixit" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option illimite KDO apres confirmation">
+    <title>option illimite KDO apres confirmation</title>
+    Votre inscription a l'illimite KDO a bien ete prise en compte.
+    Le cumul de vos rechargements du mois commence maintenant. C'est a vous!<br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+   
+<!-- UNSUBSCRIBE OPTION -->
+
+  <page tag="desinscrire_KDO">
+    <redirect src="erl://svc_options_mobi:redirect_state_and_refill?opt_illimite_kdo&amp;#desinscr_encours_moins30,#desinscr_encours_plus30,#desinscrire,#desinscr_plus30"/>
+  </page>
+
+  <page tag="desinscr_plus30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire +30E">
+    <title>option illimite KDO desinscrire +30E</title>
+    Attention si vous souhaitez vous desinscrire, vous perdrez immediatement
+    tous les benefices lies a l'illimite KDO.<br/>
+    Vous avez deja recharge au moins 30 euros<br/>
+    <a href="#desinscr_plus30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_plus30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire +30E 2">
+    <title>option illimite KDO desinscrire +30E 2</title>
+    ...ce mois-ci, si vous confirmez votre souhait de vous desinscrire,
+    vous perdrez le benefice de l'illimite KDO le mois suivant...<br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_moins30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire en cours -30E">
+    <title>option illimite KDO desinscrire en cours -30E</title>
+    Attention si vous souhaitez vous desinscrire, vous perdrez immediatement
+    tous les benefices lies a l'illimite KDO.<br/>
+    Vous beneficiez actuellement de l'illimite KDO<br/>
+    <a href="#desinscr_encours_moins30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_moins30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire en cours -30E 2">
+    <title>option illimite KDO desinscrire en cours -30E 2</title>
+    ...jusqu'a la fin de ce mois. Si vous vous desinscrivez, vous perdrez
+    immediatement le benefice de l'illimite KDO<br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire en cours +30E">
+    <title>option illimite KDO desinscrire en cours +30E</title>
+    Attention si vous souhaitez vous desinscrire, vous perdrez immediatement
+    tous les benefices lies a l'illimite KDO.<br/>
+    Vous avez deja recharge au moins 30 euros<br/>
+    <a href="#desinscr_encours_plus30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire en cours +30E 2">
+    <title>option illimite KDO desinscrire en cours +30E 2</title>
+    ...ce mois-ci, et vous beneficiez actuellement de l'illimite KDO
+    jusqu'a la fin de ce mois. Si vous vous desinscrivez, vous perdrez
+    immediatement <br/>
+    <a href="#desinscr_encours_plus30_3">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30_3" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire en cours +30E 3">
+    <title>option illimite KDO desinscrire en cours +30E 3</title>
+    ...le benefice de l'illimite KDO...<br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO desinscrire">
+    <title>option illimite KDO desinscrire</title>
+    Vous souhaitez vous desinscrire de l'illimite KDO.<br/>
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_illimite_kdo&amp;#desinscr_success,#failure">Confirmer</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO apres confirmation desinscription">
+    <title>option illimite KDO apres confirmation desnscription</title>
+    Vous n'etes plus inscrit a l'illimite KDO.
+    Orange vous remercie de votre appel.<br/>
+  </page>
+     
+<!-- ERROR CASES -->
+
+  <page tag="failure" backtext="notext"
+        cost="free_pt" descr="Opt. J INF: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+ <page tag="failure_inscr" backtext="notext"
+        cost="free_pt" descr="Opt. illimite kdo : Echec desinscr">
+    <title>Echec inscription</title>
+    Suite a un probleme technique nous ne pouvons vous inscrire au programme illimite KDO.Votre desinscription au programme temps en plus a par contre bien ete...<br/>
+    <a href="#failure_inscr_suite">Suite</a>
+  </page>
+
+ <page tag="failure_inscr_suite" backtext="notext"
+        cost="free_pt" descr="Opt. Temps en plus : Echec desinscr">
+    <title>Echec Desinscription</title>
+    ... prise en compte. Veuillez reessayer plus tard l'inscription. Desole et merci de votre appel.<br/>
+ </page>
+ <page tag="failure_desinscr" backtext="notext"
+        cost="free_pt" descr="Opt. Temps en plus : Echec desinscr">
+    <title>Echec Desinscription</title>
+     Suite a un probleme technique, nous ne pouvons vous desinscrire du programme temps en plus.
+     Veuillez reessayer plus tard. Orange vous remercie de votre appel.<br/>
+  </page>
+
+   
+<!-- RESTITUTION -->
+
+  <page tag="restit_rech">
+    <redirect src="erl://svc_options_mobi:redirect_refill_amount?opt_illimite_kdo&amp;#restit_rech_inf_30E,#restit_rech_sup_30E"/>
+  </page>
+
+  <page tag="restit_rech_inf_30E" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution recharge inferieur a 30E">
+    <title>Page de restitution recharge inferieur a 30E</title>
+    Depuis le
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;month"/> vous
+    avez recharge
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;refill_amount"/> euros.
+    A partir de
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;min_refill"/> euros
+    recharges dans le mois, vous beneficierez le mois prochain d'appels
+    illimites vers votre No KDO.<br/>
+  </page>
+
+  <page tag="restit_rech_sup_30E" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution recharge superieur a 30E">
+    <title>Page de restitution recharge superieur a 30E</title>
+    Felicitations, vous beneficierez d'appels illimites vers votre
+    No KDO le mois prochain, des reception du SMS de confirmation.<br/>
+  </page>
+
+  <page tag="restit_rech_next_month">
+    <redirect src="erl://svc_options_mobi:redirect_refill_amount?opt_illimite_kdo&amp;#next_month_inf_30E,#restit_rech_sup_30E"/>
+  </page>
+
+  <page tag="next_month_inf_30E" menutext="notext"
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution mois inscription recharge inferieur a 30E">
+    <title>Page de restitution mois inscription recharge inferieur a 30E</title>
+    Vous avez recharge
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;refill_amount"/> euros.
+    A partir de
+    <include src="erl://svc_options_mobi:print_opt_info?opt_illimite_kdo&amp;min_refill"/> euros
+    recharges dans le mois (apres votre inscription), vous beneficierez
+    le mois prochain d'appels illimites vers votre No KDO.
+  </page>
+
+</pages>
+
+ 

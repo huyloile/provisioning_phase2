@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+<!--Service de rechargement MOBICARTE-->
+<page>
+  <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+</page>
+
+
+<page tag="start">
+  <redirect src="erl://svc_util:direct_access_length?14&amp;#direct_recharge&amp;#rech_light"/>
+</page>
+
+  <page tag="rech_light" descr="Rechargement Direct rappel" nav="end">
+    <title>Rappel Rechargement direct</title>
+    Saisissez #124*Code_a_14_chiffres# pour recharger
+  </page>
+
+  <page tag="direct_recharge">  
+    <!-- Switch to the correct home page depending on the profile  -->
+    <!-- attention pas de messages intermédaire-->
+    <redirect src="erl://svc_recharge_cmo:start"/>
+  </page>
+<!-- Script lié au rechargement -->
+
+       
+  <page tag="cag" backtext="notext" menutext="notext" descr="Rechargement Mobi: Form ph2">
+      <title>Rechargement Mobi: Form ph2</title>
+  <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Saisissez #124*Code_a_14_chiffres#</prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" log="SC_rechph1" descr="Rechargement Mobi: Form ph1">
+  <title>Rechargement Mobi: Form ph1</title>
+  <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>
+        Saisissez #124*Code_a_14_chiffres#
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ 
+  <page tag="sucess" descr="rechargement direct sucess" nav="end">
+    <title>Rechargement CMO en direct</title>
+    Votre compte vient d'etre recharge<br/>
+    Nouveau Solde sur le #123#.
+  </page>
+  
+ <!-- Recharge Serie Limitee 20 euros  -->
+
+<page tag="rech_20E_limitee" 
+      descr="Recharge 20 euros par TLR Mobi Reussie: Special Vacances 1_2">
+  Rechargement reussi. Choisissez votre illimite soir offert en France metro:<br/>
+  <a href="#unlimited_TV">illimite TV</a><br/>
+  <a href="#unlimited_SMS">illimite SMS</a><br/>
+  <a href="#unlimited_Voice">illimite Voix</a><br/>
+  <a href="#plus_infos">+ d'infos</a><br/>
+</page>
+
+<page tag="rech_20E_messages" 
+      descr="Recharge 20 euros par TLR Mobi Reussie: Special Vacances 1_2">
+  Vous avez recharge votre compte de 20E valables 1 mois. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros 
+  a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+  <a href="#plus_infos_messages">Plus d'infos</a><br/>
+</page>
+
+<page tag="plus_infos_messages"
+      descr="Recharge 20 euros serie limitee messages illimites plus d'infos">
+  SMS, MMS et Orange Messenger illimite de 21h a 00h jusqu'au jj/mm/aa sous reserve de compatibilite mobile. Details de l'offre et conditions sur orange.fr
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : TV illimite -->
+
+<page tag="unlimited_TV" descr="Recharge 20 euros par TLR Mobi : Choix TV Illimite">
+	Vous souhaitez acceder gratuitement a 20 chaines de TV, de 21h a minuit, 7j/7 pdt 1 mois
+	(ss reserve de compatibilite mobile)<br/>
+     <a href="#unlimited_TV_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_TV_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix TV Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?1&amp;#unlimited_TV_ok"/>
+</page>
+
+<page tag="unlimited_TV_ok" backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec TV Illimite">
+	Vous avez recharge 20E valables 1 mois.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite TV jusqu'au <include src="erl://svc_of_plugins:print_end_credit?dmy"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : SMS illimite -->
+
+<page tag="unlimited_SMS"  
+      descr="Recharge 20 euros par TLR Mobi : Choix SMS Illimite">
+	Vous souhaitez envoyer gratuitement vos sms vers tous les operateurs de 21h a 00h, 7j/7 pendant 1 mois<br/>
+     <a href="#unlimited_SMS_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_SMS_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix SMS Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?2&amp;#unlimited_SMS_ok"/>
+</page>
+
+<page tag="unlimited_SMS_ok"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec SMS Illimite">
+	Vous avez recharge 20 euros.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite SMS de 21h a 00h
+	jusqu'au <include src="erl://svc_of_plugins:print_end_credit?dmy"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : Voix illimite -->
+
+<page tag="unlimited_Voice"  
+      descr="Recharge 20 euros par TLR Mobi : Choix Voix Illimite">
+	Vous souhaitez appeler gratuitement vers les mobiles Orange de 21h a minuit, 7j/7 pendant 1 mois<br/>
+     <a href="#unlimited_Voice_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_Voice_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix Voice Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?3&amp;#unlimited_Voice_ok"/>
+</page>
+
+<page tag="unlimited_Voice_ok"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec Voix Illimite">
+	Vous avez recharge 20E.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite vers Orange de 21h a 00h
+	jusqu'au <include src="erl://svc_of_plugins:print_end_credit?dmy"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : Plus d'infos -->
+
+<page tag="plus_infos" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	La recharge 20E offre l'illimite, de 21h a 00h, de votre choix pdt 1 mois.
+	illimite tv: connexions illimites en Fr metro a 20 chaines TV et videos<br/>
+     <a href="#plus_infos_suite">Suite</a><br/>
+</page>
+
+<page tag="plus_infos_suite" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	sur Orange world (hors contenus payants).<br/>
+	Services accessibles sur reseaux et depuis terminal compatible.
+	illimite voix: appels voix illimites 
+     <a href="#plus_infos_suite_1">Suite</a><br/>
+</page>
+
+<page tag="plus_infos_suite_1" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	en France metro vers les mobiles Orange (hors num speciaux). 
+	illimite SMS: SMS metro (non surtaxes) vers tous les operateurs. 
+	Conditions sur Orange.fr<br/>
+</page>
+
+<!-- Succes page with D4 -->
+
+<page tag="sucess_cpte">
+  <redirect src="erl://svc_util:redirect_size?181&amp;#sucess_cpte_niv1&amp;#sucess_cpte_light"/>
+</page>
+
+<page tag="sucess_cpte_light">
+  <redirect src="erl://svc_util:redirect_size?130&amp;#sucess_cpte_niv2&amp;#sucess_cpte_niv3"/>
+</page>
+
+<page tag="sucess_cpte_niv1">
+   <redirect src="/orangef/selfcare_long/recharge_cmo.xml#sucess_cpte"/>
+</page>
+
+<page tag="sucess_cpte_niv2" backtext="notext" menutext="notext" nav="end" descr="Rech Direct CMO: Succes Niv2" >
+  Vous venez de recharger
+  <include src="erl://svc_recharge:montant_recharge"/>EUR sur votre compte mobile.
+  Votre nouveau solde compte mobile est de
+  <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+</page>
+
+<page tag="sucess_cpte_niv3" backtext="notext" menutext="notext" nav="end" descr="Rech Direct CMO: Succes Niv3">
+  rechargement de <include src="erl://svc_recharge:montant_recharge"/>EUR
+  ok.Nouveau solde:
+  <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR 
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;#sucess_sms_niv1&amp;#sucess_sms_light"/>
+</page>
+
+<page tag="sucess_sms_light">
+  <redirect src="erl://svc_util:redirect_size?130&amp;#sucess_sms_niv2&amp;#sucess_sms_niv3"/>
+</page>
+
+<page tag="sucess_sms_niv1">
+   <redirect src="/orangef/selfcare_long/recharge_cmo.xml#sucess_sms"/>
+</page>
+
+<page tag="sucess_sms_niv2" backtext="notext" menutext="notext" nav="end" descr="Rech Direct CMO: Succes SMS Niv2">
+  Vous venez de recharger
+  <include src="erl://svc_recharge:montant_recharge"/>EUR sur votre compte mobile.
+  Votre nouveau compte SMS est de
+  <include src="erl://svc_compte:print_solde?cpte_asms&amp;sms"/>SMS.
+</page>
+
+<page tag="sucess_sms_niv3" backtext="notext" menutext="notext" nav="end" descr="Rech Direct CMO: Succes SMS Niv3">
+  rechargement de
+  <include src="erl://svc_recharge:montant_recharge"/>EUR ok.
+  Nouveau Cpte SMS:
+  <include src="erl://svc_compte:print_solde?cpte_asms&amp;sms"/>SMS 
+</page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;#sucess_cpte_sms_niv1&amp;#sucess_cpte_sms_light"/>
+</page>
+
+<page tag="sucess_cpte_sms_light">
+  <redirect src="erl://svc_util:redirect_size?130&amp;#sucess_cpte_sms_niv2&amp;#sucess_cpte_sms_niv3"/>
+</page>
+
+<page tag="sucess_cpte_sms_niv1">
+   <redirect src="/orangef/selfcare_long/recharge_cmo.xml#sucess_cpte_sms"/>
+</page>
+
+<page tag="sucess_cpte_sms_niv2">
+  <redirect src="#sucess_cpte_niv2"/>
+</page>
+
+<page tag="sucess_cpte_sms_niv3">
+   <redirect src="#sucess_cpte_niv3"/>
+</page>
+
+<page tag="success_vacances">
+  <redirect src="erl://svc_util:redirect_size?181&amp;#success_vacances_niv1&amp;#success_vacances_light"/>
+</page>
+
+<page tag="success_vacances_light">
+  <redirect src="erl://svc_util:redirect_size?130&amp;#success_vacances_niv2&amp;#success_vacances_niv3"/>
+</page>
+
+<page tag="success_vacances_niv1">
+   <redirect src="/orangef/selfcare_long/recharge_cmo.xml#success_vacances"/>
+</page>
+
+<page tag="success_vacances_niv2">
+  <redirect src="#sucess_cpte_niv2"/>
+</page>
+
+<page tag="success_vacances_niv3">
+   <redirect src="#sucess_cpte_niv3"/>
+</page>
+
+
+<!-- Erecharge WE infini-->
+
+<page tag="weinf_deja_actif" nav="end" descr="Rech Direct CMO: WE inf et Option deja active">
+     <title>Rechargement CMO Reussi: WE inf et Option deja active</title>
+     Vous avez deja souscrit a l'option WE infini.
+     rechargement de <include src="erl://svc_recharge:montant_recharge"/> euros ok.
+</page>
+
+<page tag="succes_weinf" nav="end" descr="Rech Direct CMO: WE inf">
+      Vous avez souscrit a un Week End infini.
+ </page>
+
+<page tag="succes_weinf_ss_souscription" nav="end" descr="Rech Direct CMO: WE inf + echec souscription">
+     <title>Rechargement CMO Reussi: WE inf +echec souscription</title>
+     Votre inscription au WE infini n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+ </page>
+
+<!-- Erecharge WE Europe/Maghreb-->
+<page tag="sucess_erech_europe">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge_cmo.xml#sucess_erech_europe&amp;#sucess_cpte_light"/>
+</page>
+
+<page tag="sucess_erech_maghreb">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge_cmo.xml#sucess_erech_maghreb&amp;#sucess_cpte_light"/>
+</page>
+
+<page tag="sucess_erech_smsmms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge_cmo.xml#sucess_erech_smsmms&amp;#sucess_cpte_light"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge CMO: Fermeture">
+    <title>Recharge CMO: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Réessayer ultérieurement.
+  </page>
+
+  <page tag="badprofil" nav="end" log="SCrech_Enotm" descr="not mobi">
+    <title>Reject : not mobi</title>
+    Vous n'avez pas acces à ce service reserve aux CMO.
+  </page>
+
+
+  <page tag="incompatible" backtext="notext" nav="end">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end">
+    <redirect src="#reject"/>  
+  </page>
+
+  <page tag="bad_code_ph2">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="bad_code_ph1">
+    <redirect src="#reject"/>    
+  </page>
+
+  <page tag="reject" backtext="notext" nav="end" descr="Rech Direct CMO: Reject">
+    <title>Reject : rech promo</title>
+    Rechargement refuse.
+  </page>
+
+  <page tag="bad_code">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="system_failure" descr="Reject : Rechargement momentanèment impossible" nav="end">
+    <title>Reject : system failure</title>
+    Le service est momentanément interrompu.
+  </page>
+
+  <page tag="incompatible_offre" descr="Reject : recharge incompatible avec votre offre"><title>Reject : recharge incompatible avec offre</title>
+	Erreur<br/>
+	Rechargement refuse car les caracteres saisis correspondent a une recharge non compatible avec votre offre.
+  </page>
+
+</pages>

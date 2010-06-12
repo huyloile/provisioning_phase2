@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <isRechargeableParentChildResponse xmlns="urn:sachem.service.ecare/G8">
+      <return>
+	<idDossier>8198055</idDossier>
+	<mobicarte>false</mobicarte>
+      </return>
+    </isRechargeableParentChildResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

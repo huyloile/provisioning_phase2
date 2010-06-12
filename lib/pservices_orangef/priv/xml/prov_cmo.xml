@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="reject msg cmo">
+
+  <page tag="notcmo" nav="end" log="SC_Enotcmo" cost="system_free_pt" descr="not mobi">
+    Vous n'avez pas accès à ce service réservé aux clients
+    Compte Mobile Orange.
+    Veuillez contacter votre service client.
+  </page>
+
+   <page tag="temporary" nav="end" log="SC_Etmp" cost="system_free_pt" descr="Suivi Conso: Service indisponible">
+    <title>Suivi Conso: Service indisponible</title>
+    Le service est momentanément interrompu.
+    Veuillez recommencer ultérieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="CMO: Mobile suspendu">
+    <title>CMO: Mobile suspendu</title>
+    Votre compte mobile est suspendu.
+    Vous ne pouvez pas accéder à ce service.
+    Contactez votre service-clients Orange.
+  </page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="free_pt" descr="CMO: Mobile suspendu">
+    <title>CMO: Mobile suspendu</title>
+    Votre compte mobile est suspendu.
+  </page>
+
+  <page tag="resilie">
+    <redirect src="erl://svc_util:redirect_size?130&#resilie_long&#resilie_short"/>
+  </page>
+
+  <page tag="resilie_long" nav="end" log="SC_Eres" cost="free_pt" descr="CMO: Mobile résilié">
+    <title>CMO: Mobile résilié</title>
+    Votre compte mobile est résilié.
+    Vous ne pouvez pas accéder à ce service.
+    Contactez votre service-clients Orange.
+  </page>
+
+  <page tag="resilie_short" nav="end" log="SC_Eres" cost="free_pt" descr="CMO: Mobile résilié">
+    <title>CMO: Mobile résilié</title>
+    Votre compte mobile est résilié.
+  </page>
+
+  <page tag="notdeclared" nav="end" log="SC_Endecl" cost="free_pt">
+    <!-- Ce cas ne devrait pas se produire, mais il y a une redirection
+         dans svc_selfcare_cmo. -->
+    Votre compte mobile est en cours de création.
+  </page>
+
+ <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="free_pt" descr="CMO : Mobile sursitaire">
+    <title>CMO : Mobile sursitaire</title>
+     La date limite de rechargement est dépassée.<br/>
+     Votre Compte Mobile est définitivement inutilisable.
+  </page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="free_pt" descr="CMO : Mobile sursitaire">
+    <title>CMO : Mobile sursitaire</title>
+    Votre compte mobile est définitivement inutilisable.
+  </page>
+
+
+</pages>

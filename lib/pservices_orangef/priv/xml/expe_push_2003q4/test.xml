@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+
+  <!-- Pull menu for testing -->
+
+  <page>
+    <redirect src="erl://svc_util:redirect_size?181&#test1&#not_compatible"/>
+  </page>
+
+  <page tag="test1">
+    Test campagnes push #101#<br/>
+    <a href="#test_pull">Mode pull</a><br/>
+    <a href="#test_push">Mode push</a>
+  </page>
+
+  <page tag="test_pull" ismenu="true" hist="dohist" descr="Test SMS games"
+        menutext="notext" backtext="notext">
+    Campagne ?<br/>
+    <a href="smsp_games_push.xml#j1_10">Jour 1+10</a><br/>
+    <a href="smsp_games_push.xml#j2_11">Jour 2+11</a><br/>
+    <a href="smsp_games_push.xml#j3_12">Jour 3+12</a><br/>
+    <a href="smsp_games_push.xml#j4_13">Jour 4+13</a><br/>
+    <a href="smsp_games_push.xml#j5_14">Jour 5+14</a><br/>
+    <a href="smsp_games_push.xml#j6_15">Jour 6+15</a><br/>
+    <a href="smsp_games_push.xml#j7_16">Jour 7+16</a><br/>
+    <a href="smsp_games_push.xml#j8">Jour 8</a><br/>
+    <a href="smsp_games_push.xml#j9">Jour 9</a>
+  </page>
+
+  <page tag="test_push" ismenu="true" hist="dohist" descr="Test SMS games"
+        menutext="notext" backtext="notext">
+    Campagne ?<br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j1_10&#test_pull_ok&#test_pull_nok">Jour 1+10</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j2_11&#test_pull_ok&#test_pull_nok">Jour 2+11</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j3_12&#test_pull_ok&#test_pull_nok">Jour 3+12</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j4_13&#test_pull_ok&#test_pull_nok">Jour 4+13</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j5_14&#test_pull_ok&#test_pull_nok">Jour 5+14</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j6_15&#test_pull_ok&#test_pull_nok">Jour 6+15</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j7_16&#test_pull_ok&#test_pull_nok">Jour 7+16</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j8&#test_pull_ok&#test_pull_nok">Jour 8</a><br/>
+    <a href="erl://svc_push:trigger?6&PUSH03Q4&smsp_games_push.xml#j9&#test_pull_ok&#test_pull_nok">Jour 9</a>
+  </page>
+
+  <page tag="test_pull_ok" nav="end">
+    Push en cours, veuillez raccrocher.
+  </page>
+
+  <page tag="test_pull_nok" nav="end">
+    Echec, push impossible.
+  </page>
+
+  <page tag="not_compatible" descr="Unsupported handset" nav="end">
+    Votre terminal ne permet pas d'acceder au service
+  </page>
+
+</pages>

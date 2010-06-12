@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF nouveautés page">
+
+<page>
+  <redirect src="#menu"/>
+</page> 
+
+<page tag="menu" cost="free_pt" hist="dohist" descr="Nouveautes CMO Menu">
+  <title>Nouveautes CMO: Menu</title>
+    <a href="#bon_plan_voix">Des Bons plans "100% Voix" pour vos appels, le soir, le week-end, 
+    vers l'etranger... </a><br/>
+    <a href="#bon_plan_autrement">Des Bons Plans "pour communiquer autrement" </a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?opt_zap&amp;Plan Heures Zap Vacances=souscrire_options_cmo.xml#zap_vacances&amp;br"/>
+</page>
+
+<page tag="bon_plan_voix" cost="free_pt" hist="dohist" descr="Nouveuates CMO: Menu bon plan voix">
+  <title>Souscrire Options CMO: Menu bon plan voix</title>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_weinf&amp;Week-ends infinis=souscrire_options_cmo.xml#weekend_infini&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_sinf&amp;Soirees infinies=souscrire_options_cmo.xml#s_inf&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_jinf&amp;Journee infinie=souscrire_options_cmo.xml#j_inf&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_voyage&amp;Bonus sans frontiere=souscrire_options_cmo.xml#bsf&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_maghreb&amp;Option Maghreb=souscrire_options_cmo.xml#maghreb&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_europe&amp;Option Europe=souscrire_options_cmo.xml#europe&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_afterschool&amp;Option After school=souscrire_options_cmo.xml#afterschool&amp;br"/>
+</page>
+
+<page tag="bon_plan_autrement" cost="free_pt" hist="dohist" descr="Nouveautes CMO: Menu bon plan autrement">
+  <title>Souscrire Options CMO: Menu bon plan autrement</title>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_ssms&amp;Soirees SMS=souscrire_options_cmo.xml#ssms&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_sms_quoti&amp;Bon Plan SMS Quotidiens=souscrire_options_cmo.xml#sms_quoti&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_pack_duo_journee&amp;Option Duo Journee=souscrire_options_cmo.xml#duo_journee&amp;br"/>
+</page>
+
+ <page tag="nuit_kdo" cost="free_pt" descr="Nuit KDO">
+     <title>N.CMO Nuits KDO</title>
+     Accros aux SMS ? Profitez des nuits KDO: SMS gratuits en France
+     metropolitaine vers tous les mobiles de 21h30 a 08h00! Prochain RDV la
+     nuit du 31/10 au 01/10.
+ </page>
+
+ <page tag="appelle_moi" cost="free_pt" descr="Bon Plans: Appelle Moi">
+     <title>N.CMO: Appelle Moi</title>
+     Decouvrez le nouveau service gratuit Appelle-moi : Forfait epuise?
+     Profitez de 10 messages valables 1 semaine pour demander a etre rappeler !
+     Plus d'infos au 700 (tarif normal)
+ </page>
+
+</pages>
+
+

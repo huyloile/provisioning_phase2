@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Offres Limande">
+
+<page>
+ <redirect src="erl://svc_limande:enabled_offers"/>
+</page>
+
+<page tag="souscription_ok" descr="Limande:Souscription OK" hist="donthist" backtext="notext">
+  <title>SOUSCRIPTION LIMANDE OK</title>
+  Votre demande de souscription est en cours. Vous allez recevoir
+  un SMS de confirmation.<br/>
+  <a href="erl://svc_limande:enabled_offers">Souscrire a une nouvelle offre</a>
+</page>
+
+<!--TRAITEMENT DES ERREURS-->
+
+<page tag="solde_insuff" descr="Limande:Solde Insuffisant">
+  <title>Solde insuffisant</title>
+  Vous n'avez pas assez de credit sur votre compte mobile pour souscrire a cette option.<br/>
+  <a href="recharge.xml">Rechargez votre compte</a>
+</page>
+
+<page tag="pb_tech" descr="Limande:Pb technique">
+  <title>Pb technique</title>
+  Votre demande ne peut etre prise en compte actuellement. Merci de reessayer ulterieurement. Orange vous remercie
+</page>
+
+<page tag="limite_subscr" descr="Limande:Nb limite de souscription">
+  <title>limite sousciption atteinte</title>
+  Toutes les offres ont ete souscrites.
+</page>
+
+<page tag="0_offre" descr="Pas d'offre disponible">
+  <title>Pas d'offre</title>
+  Aucune offre disponible
+</page>
+
+<page tag="offre_term" descr="Offre terminee">
+  <title>Offre terminee</title>
+  Cette offre n'est malheureusement plus disponible a la souscription.
+</page>
+
+<page tag="offre_susp_quoti" descr="Offre suspendue seuil quotidien">
+  <title>Offre suspendue seuil quotidien</title>
+  Cette offre n'est plus disponible a la souscription. Toutes les offres de la journee ont ete souscrites.
+</page>
+
+<page tag="offre_susp_mensu" descr="Offre suspendue seuil mensuel">
+  <title>Offre suspendue seuil mensuel</title>
+  Cette offre n'est plus disponible a la souscription. Toutes les offres  du mois ont ete souscrites. 
+</page>
+
+<page tag="offre_desact" descr="Offre desactivee">
+  <title>Offre desactivee</title>
+  L'offre n'est plus disponible a la souscription.
+</page>
+
+<page tag="horaire_souscr_nok" descr="Horaire soucr non autorisee">
+  <title>soucription non autorisee</title>
+  La souscription aux offres eXclusives n'est actuellement pas ouverte. Merci de reessayer a partir de 02h00.
+</page>
+
+<page tag="offre_incomp" descr="souscription incompatible">
+  <title>Souscription incompatible</title>
+  Option incompatible
+</page>
+
+<page tag="offre_souscr_nok" descr="souscription impossible">
+  <title>Souscription impossible</title>
+  Vous ne pouvez acceder a cette offre eXclusive. Pour plus d'infos contactez votre service clients au 700 (37cts/mn)
+</page>
+
+<page tag="error">
+<redirect src="erl://svc_limande:redirect_by_code?50=#solde_insuff,51=#limite_subscr,52=#offre_term,53=#offre_susp_quoti,54=#offre_susp_mensu,55=#offre_desact,60=#horaire_souscr_nok,81=#offre_incomp,89-93=#offre_souscr_nok,?=#pb_tech"/>
+</page>
+
+<!--Pages dynaliques-->
+<page tag="menu" hist="dohist" menutext="notext" descr="Liste des offres disponibles">
+  <title>Liste des offres</title>
+  <include src="erl://svc_limande:display_page?menu_page"/>
+</page>
+
+<page tag="menu_offre" hist="donthist" menutext="notext" descr="Liste des offres disponibles">
+  <title>Liste des offres</title>
+  <include src="erl://svc_limande:display_page?offer_page"/>
+</page>
+
+<page tag="description_offre" hist="donthist" menutext="notext" descr="Description d'une offre">
+  <title>Description d'une offre</title>
+  <include src="erl://svc_limande:display_page?description_page"/>
+</page>
+
+<page tag="mentions_legales_offre" hist="donthist" menutext="notext" descr="Mentions Legales d'une offre">
+  <title>Mentions Legales d'une offre</title>
+  <include src="erl://svc_limande:display_page?mentions_legales_page"/>
+</page>
+
+<page tag="mentions_legales_offre_2" hist="donthist" menutext="notext" descr="Mentions Legales d'une offre page 2/2">
+  <title>Mentions Legales d'une offre Page 2/2</title>
+  <include src="erl://svc_limande:display_page?mentions_legales_page_2"/>
+</page>
+
+<page tag="souscrire_offre" hist="donthist" menutext="notext" descr="Soucrire une offre">
+  <title>Soucrire une offre</title>
+  <include src="erl://svc_limande:display_page?souscrire_page"/>
+</page>
+
+</pages>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+
+<pages descr="scripts pour le service : option Total TV mensuelle">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_total_tv_mensu&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Total TV mensuelle page offre incompatible">
+    <title>option option Total TV mensuelle page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Total TV mensuelle page offre incompatible">
+    <title>option option Total TV mensuelle page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle deja active">
+    <title>option Total TV mensuelle deja active</title>
+    Votre option Total TV mensuelle est actuellement activee.
+    <a href="#supprimer">Supprimer l'option</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="supprimer" cost="free_pt"  backtext="notext" hist="dohist" cost="free_pt">
+    Merci de confirmer la suppression de votre option Total TV mensuelle.  
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_total_tv_mensu&amp;#desinscr_success,#failure">Confirmer</a>
+  </page>
+
+
+  <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_mobi,35=#conditions_pp,39=#conditions_pp,40=#conditions_pp,41=#conditions_pp,42=#conditions_pp,43=#conditions_pp,44=#conditions_pp,51=#conditions_mobi,default=#conditions_mobi"/>
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle solde insuffisant">
+    <title>option Total TV mensuelle solde insuffisant</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="conditions_mobi" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P1/5">
+    <title>option Total TV mensuelle page conditions</title>
+    Option Totale TV valable en France metropolitaine reservee aux clients mobicarte et click la mobicarte.
+    Acces et connexions illimitees en France metropolitaine ...
+    <a href="#conditions_2">Suite</a>
+  </page>
+  <page tag="conditions_pp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P1/5">
+    <title>option Total TV mensuelle page conditions</title>
+    Option Total TV valable en France metropolitaine et reservee aux clients d'une offre prepayee Orange.
+    Acces et connexions illimitees en France metropolitaine...
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P2/5">
+    <title>option Total TV mensuelle page conditions</title>
+    ...a plus de 60 chaines de television et a toutes les videos proposees sur Orange
+    World (hors contenus payants). Liste des chaines susceptible d'evolution...
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P3/5">
+    <title>option Total TV mensuelle page conditions</title>
+    ...Services accessibles sur reseaux et depuis un terminal compatibles.
+    Option non compatible avec l'options TV. Le prix de l'option est preleve chaque mois... 
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P4/5">
+    <title>option Total TV mensuelle page conditions</title>
+    ...sur le compte du client sous reserve d'un credit suffisant.
+    A defaut, l'option sera suspendue et reprendra automatiquement a date anniversaire si le credit...
+    <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Total TV mensuelle page conditions P5/5">
+    <title>option Total TV mensuelle page conditions</title>
+    ...est a nouveau suffisant. Resiliation possible au au 220 ou au #123#.
+    <a href="#supprimer">Supprimer l'option</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO apres confirmation desinscription">
+    <title>option illimite KDO apres confirmation desnscription</title>
+    La suppression de votre option Total TV mensuelle a bien ete prise en compte.<br/>
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>
+
+ 

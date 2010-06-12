@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Options Mobicarte">
+
+<page cost="freept">
+    <include src="erl://svc_options_mobi:restitution?opt_jinf&amp;Option journee infinie=opt_jinf.xml#restit_ac&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_sinf&amp;Option soiree infinie=opt_sinf.xml#restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_weinf&amp;Option WE infini=opt_weinf.xml#restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_seminf&amp;Option semaine infinie=#semaine_infinie_restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_numprefp&amp;Option numero prefere 20min=opt_numprefp.xml#restit_ac,Option numero prefere 20min=opt_numprefp.xml#restit_ep,Option numero prefere 20min=opt_numprefp.xml#restit_pe&amp;br"/>
+     <include src="erl://svc_options_mobi:restitution?opt_pack_duo_journee&amp;Option Duo Journee=opt_tt_shuss.xml#restit_sms_ac_voix_ac,Option Duo Journee=opt_tt_shuss.xml#restit_sms_ac_voix_ep,Option Duo Journee=opt_tt_shuss.xml#restit_sms_ep_voix_ac,Option Duo Journee=opt_tt_shuss.xml#restit_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_voyage&amp;Bonus sans frontiere=opt_voyage.xml#restitution_avec_cred,Bonus sans frontiere=opt_voyage.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_roaming&amp;Bonus decouverte sans frontiere=#roaming_restit_avec_cred,Bonus decouverte sans frontiere=#roaming_restit_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_europe&amp;Option Europe=opt_europe.xml#restitution_avec_cred,Option Europe=opt_europe.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_maghreb&amp;Option Maghreb=opt_maghreb.xml#restitution_avec_cred,Option Maghreb=opt_maghreb.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_sms_quoti&amp;Option SMS=options_sms.xml#rdl_sms_quoti_princ_sec,Option SMS=options_sms.xml#rdl_sms_quoti_princ_no_sec,Option SMS=options_sms.xml#rdl_sms_quoti_no_princ_sec,Option SMS=options_sms.xml#rdl_sms_quoti_no_princ_no_sec,&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_sms_mensu&amp;Option SMS mensuelle=options_sms.xml#rdl_sms_mensu_princ_sec,Option SMS mensuelle=options_sms.xml#rdl_sms_mensu_princ_no_sec,Option SMS mensuelle=options_sms.xml#rdl_sms_mensu_no_princ_sec,Option SMS mensuelle=options_sms.xml#rdl_sms_mensu_no_princ_no_sec,&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_ssms&amp;Soiree SMS=opt_ssms.xml#restitution_avec_cred,Soiree SMS=opt_ssms.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_we_sms&amp;Option WE SMS=#we_sms_restit_avec_cred,Option WE SMS=#we_sms_restit_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_erech_smsmms&amp;Recharge SMS/MMS=#erech_smsmms_ac,Recharge SMS/MMS=#erech_smsmms_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_vacances&amp;Option MMS=opt_vacances.xml#restit_avec_cred,Option MMS=opt_vacances.xml#restit_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_ow_3E_mobi&amp;Option Decouverte multimedia=opt_ow_3E_mobi.xml#restitution_avec_cred,Option Decouverte multimedia=opt_ow_3E_mobi.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_ow_6E_mobi&amp;Option Internet=opt_ow_6E_mobi.xml#restitution_avec_cred,Option Internet=opt_ow_6E_mobi.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_ow_10E_mobi&amp;Option Orange World 10E=opt_ow_10E_mobi.xml#restitution_avec_cred,Option Orange World 10E=opt_ow_10E_mobi.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_easy_voice&amp;Option Illimite fixe-mobiles Famille=#easy_voice_ac,Option Illimite fixe-mobiles Famille=#easy_voice_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_illimite_mobi&amp;Option Illimite entre mobiles=#illi_mobi_mobi_ac,Option Illimite entre mobiles=#illi_mobi_mobi_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_we_ow&amp;Option WE OW=#opt_we_ow&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_appelprixunique&amp;Option Appel a prix unique=opt_appelprixunique.xml#restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_afterschool&amp;Option After school=opt_afterschool.xml#restitution_avec_cred,Option After school=opt_afterschool.xml#restitution_sans_cred&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_tv&amp;Option TV=option_TV.xml#restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_total_tv&amp;Option Totale TV=opt_total_tv.xml#restitution&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_sport&amp;Option Sport=opt_sport.xml#restit_ac&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_musique&amp;Option Musique=opt_musique.xml#restit_ac&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_surf&amp;Option Surf=opt_surf.xml#restit_ac&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_mms_mensu&amp;Option 10 MMS mensuelle=opt_mms_mensu.xml#mms_mensu_ac_princ_ac,Option 10 MMS mensuelle=opt_mms_mensu.xml#mms_mensu_ep_princ_ac,Option 10 MMS mensuelle=opt_mms_mensu.xml#mms_mensu_ac_princ_inf_2E,Option 10 MMS mensuelle=opt_mms_mensu.xml#mms_mensu_ep_princ_inf_2E,&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_surf_mensu&amp;Option surf mensuelle=opt_surf_mensu.xml#surf_mensu_ac_princ_ac,Option surf mensuelle=opt_surf_mensu.xml#surf_mensu_ep,Option surf mensuelle=opt_surf_mensu.xml#surf_mensu_ac_princ_ep,Option surf mensuelle=opt_surf_mensu.xml#surf_mensu_ep,&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_bp_10_mms&amp;Bon plan 10MMS=opt_bp_10_mms.xml#restit_ac,Bon plan 10MMS=opt_bp_10_mms.xml#restit_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_msn_mensu_mobi&amp;Option mensuelle Orange Messenger by Windows Live=/mcel/acceptance/Mes_options_mobi/opt_msn_mensu_mobi.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?opt_msn_journee_mobi&amp;Option journee Orange Messenger by Windows Live=/mcel/acceptance/Mes_options_mobi/opt_msn_journee_mobi.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:restitution?winning_50sms&amp;50 SMS 7 jours=#game_50sms&amp;nobr"/> 
+  </page>
+  
+<page tag="erech_smsmms_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Erech SMS/MMS AC">
+    <title>SV Option Mobi: Erech SMS/MMS AC</title>
+    Vous avez  jusqu'au <include src="erl://svc_options:print_end_credit?opt_erech_smsmms"/> inclus pour utiliser
+    les <include src="erl://svc_options:print_balance?opt_erech_smsmms&amp;sms"/> SMS
+    ou  <include src="erl://svc_options:print_balance?opt_erech_smsmms&amp;mms"/> MMS de votre recharge SMS/MMS.
+  </page>
+ 
+  <page tag="erech_smsmms_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Erech SMS/MMS EP">
+    <title>SV Option Mobi: Erech SMS/MMS EP</title>
+    Votre recharge SMS/MMS est actuellement epuisee
+  </page>
+
+<!-- Option Week-end SMS: Restitution -->
+
+  <page tag="we_sms_restit_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Week-end SMS avec credit">
+    <title>Page de restitution a l'option Week-end SMS avec credit</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_rdl_mult&amp;sms"/>SMS
+    inclus dans votre option WE SMS a utiliser avant le
+    <include src="erl://svc_compte:print_fin_promo?cpte_rdl_mult&amp;mobi"/> inclus.<br/>
+  </page>
+  
+  <page tag="we_sms_restit_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Week-end SMS sans credit">
+    <title>Page de restitution a l'option Week-end SMS sans credit</title>
+    Votre option WE SMS est actuellement epuisee.<br/>
+  </page>
+
+<!-- Option Bonus Decouverte Sans Frontiere: Restitution -->
+
+  <page tag="roaming_restit_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Bonus Decouverte Sans Frontiere (roaming)
+        avec credit">
+    <title>Page de restitution a l'option roaming avec cred</title>
+    Il vous reste <include src="erl://svc_options:print_balance?opt_roaming"/> E
+    inclus dans votre
+    <include src="erl://svc_options:print_commercial_name?opt_roaming"/> valables
+    jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_roaming"/> pour
+    telephoner et recevoir des appels depuis l'etranger.<br/>
+  </page>
+  
+  <page tag="roaming_restit_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Bonus Decouverte Sans Frontiere (roaming)
+	sans credit">
+    <title>Page de restitution a l'option roaming sans cred</title>
+    Votre
+    <include src="erl://svc_options:print_commercial_name?opt_roaming"/> est
+    actuellement epuise.<br/>
+  </page>
+
+  <page tag="semaine_infinie_restitution" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option weekend infini">
+    <title>Page de restitution a l'option weekend infini</title>
+    Vous benecifiez aujourd'hui et jusqu'au 
+    <include src="erl://svc_options:print_end_credit?opt_seminf"/> d'appels
+    illimites vers fixes et mobiles Orange.
+  </page>
+
+<!-- Option illimite fixes-mobiles Famille/Easy Voice-->
+
+<page tag="easy_voice_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Option illimite fixes-mobiles Famille av credit">
+    <title>SV Option Mobi:Option illimite fixes-mobiles Famille av credit</title>
+    L'option
+    <include src="erl://svc_options:print_commercial_name?opt_easy_voice"/> (24h/24
+    et 7j/7) vous fait beneficier de
+    communications illimitees vers les numeros Orange et fixe jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_easy_voice&amp;rnv"/> inclus.
+  </page>
+ 
+  <page tag="easy_voice_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Option illimite fixes-mobiles Famille ss credit">
+    <title>SV Option Mobi: Option illimite fixes-mobiles Famille ss credit</title>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_easy_voice"/> n'est
+    plus activee.
+    Pour en beneficier a nouveau vous devrez avoir un credit positif
+    le <include src="erl://svc_options:print_end_credit?opt_easy_voice&amp;rnv"/>.
+  </page>
+
+<!-- Option illimite inter-mobiles -->
+
+<page tag="illi_mobi_mobi_ac" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: Option illimite mobiles-mobiles av credit">
+    <title>SV Option Mobi:Option illimite mobiles-mobiles av credit</title>
+        L'option illimite entre mobiles (24h/24 et 7j/7) est active
+        et elle vous fait beneficier de communications illimitees
+        vers les numeros Orange
+</page>
+
+  <page tag="illi_mobi_mobi_ep" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: Option illimite mobiles-mobiles ss credit">
+    <title>SV Option Mobi: Option illimite mobiles-mobiles ss credit</title>
+	Votre option illimite entre mobiles n'est plus activee.
+	Pour en beneficier a nouveau vous devrez avoir un credit positif le
+        <include src="erl://svc_options:print_end_credit?opt_illimite_mobi&amp;dlv"/>.
+</page>
+
+  <page tag="opt_we_ow" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: WE OW">
+    <title>SV Option Mobi: Family Talk av credit</title>
+    Vous beneficiez d'un acces illimite a Orange World jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_we_ow&amp;dlv"/> inclus.
+  </page>
+
+  <page tag="game_50sms" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Jeu 50SMS avec credit">
+    <title>Page de restitution a l'option Jeu 50SMS avec credit</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?refillgame_50sms&amp;sms"/> SMS
+    valable jusqu'au
+    <include src="erl://svc_options:print_end_credit?winning_50sms&amp;dlv"/> inclus.
+    Envoyez aussi des MMS avec un tel. compatible
+  </page>
+
+</pages>

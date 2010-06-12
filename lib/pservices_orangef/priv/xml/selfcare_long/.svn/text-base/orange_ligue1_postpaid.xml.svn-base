@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF nouveautés page">
+   <page>
+     <redirect src="#start"/>
+   </page>
+
+  <page tag="start">
+    <redirect src="erl://svc_smsinfos:start?#menu_ligue1&amp;#menu_ligue1&amp;OL1"/>
+  </page>
+
+ <page tag="menu_ligue1" cost="free_pt" descr="OL1_postpaid_menu">
+   <title>menu Orange Ligue 1</title>
+      OL1: Les options Resultats et Club vous permettent de suivre par
+      SMS tous les Matchs de Ligue 1<br/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?ligue1&amp;#resultats&amp;Resultats"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?ligue1&amp;#club&amp;Club"/>
+      <a href="#infos_plus">+ d'infos</a><br/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?ligue1&amp;#modif_resil&amp;Modifications/Resiliation"/>
+ </page>
+
+<!-- + d'infos -->
+ <page tag="infos_plus" hist="dohist" cost="free_pt" descr="OL1_postpaid_info1">
+   <title>+ d'infos P1</title>
+      Orange ligue1: Pour recevoir directement sur votre mobile l'essentiel
+      de l'info qui vous interesse..<br/>
+      <a href="#infos_plus_2">Suite</a>
+ </page>
+
+<page tag="infos_plus_2" hist="dohist" cost="free_pt" descr="OL1_postpaid_info2">
+   <title>+ d'infos P2</title>
+     Les conditions legales sont disponibles sur le site www.orange.fr ou
+     aupres de votre service clients<br/>
+     <a href="#infos_plus_3">Suite</a>
+ </page>
+
+  <page tag="infos_plus_3" hist="dohist" cost="free_pt" descr="OL1_postpaid_info3">
+    <title>+ d'infos P3</title>
+    Vous pouvez a tout moment resilier votre inscription en appelant le
+    733(prix d'un appel) ou en naviguant sur le #123#.
+  </page>
+  
+<!-- Resultats -->
+
+<page tag="resultats">
+    <redirect src="erl://svc_smsinfos:acces_inscription?ligue1&amp;#resultats_menu"/>
+</page>
+
+<page tag="resultats_menu" cost="free_pt" descr="OL1_postpaid_resultat">
+   <title>Resultats L1</title>
+      Vous recevez par  SMS le score de tous les matchs de Ligue 1, 
+      le classement a jour,et l'actualite pour
+      <include src="erl://svc_smsinfos:rubrique_prix?ligue1"/><br/>
+      <a href="erl://svc_smsinfos:verif_ligue1?00">Confirmez</a><br/>
+ </page>
+
+<page tag="club">
+    <redirect src="erl://svc_smsinfos:acces_inscription?ligue1&amp;#club_menu"/>
+</page>
+
+<page tag="club_menu" cost="free_pt" descr="OL1_postpaid_club">
+   <title>Resultats L1</title>
+      Vous suivez en direct par SMS l'evolution du score des matchs et 
+      l'actualite de votre club prefere
+      pour <include src="erl://svc_smsinfos:rubrique_prix?ligue1"/><br/>
+      <a href="#form_options_club">Souscrire</a><br/>
+ </page>
+
+ <page tag="form_options_club" backtext="notext" menutext="notext" descr="OL1_postpaid_club_saisie" nav="stop">
+    <title>SMSINFOS: Dmd Ville Club</title>
+    <form action="erl://svc_smsinfos:verif_ligue1">
+    <entry kind="alphanum">
+      <prompt>Vous venez de demander le service SMS OL1 avec l'Option Club,
+      veuillez saisir les trois premieres lettres de
+      la ville de votre Club. Tapez 0 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+ 
+<page tag="form_options_club_nok" menutext="notext" descr="OL1_postpaid_club_erreur" nav="stop">
+    <title>SMSINFOS: Dmd Villes Club</title>
+    <form action="erl://svc_smsinfos:verif_ligue1">
+    <entry kind="alphanum">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez saisir a nouveau les trois premieres lettres de la ville
+      de votre Club. Tapez 0 pour revenir a la page precedente</prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="form_options_club_modif" backtext="notext" menutext="notext" descr="OL1_postpaid_mod_club" nav="stop">
+    <title>SMSINFOS: Dmd Ville Club</title>
+    <form action="erl://svc_smsinfos:verif_ligue1">
+    <entry kind="alphanum">
+      <prompt>Veuillez saisir les trois premieres lettres de
+      la ville de votre Club. Tapez 0 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="modif_options_club_end">
+ <redirect src="#menu_ligue1"/>
+</page>
+
+<!-- Cas doublons MONACO MONTPELIER -->
+
+ <page tag="modification_club" cost="free_pt" descr="OL1_postpaid_club_MON">
+   <title>Modification Club</title>
+      Si vous souhaitez vous abonner à SMS Infos ligue1:<br/>
+      <include src="erl://svc_smsinfos:include_links"/>
+ </page>
+
+<!-- Modification/Resiliation -->
+
+<page tag="modif_resil" hist="donthist" cost="free_pt" descr="OL1_postpaid_modres">
+   <title>Menu Modif/Resil</title>
+   Tapez le numero de la rubrique que vous souhaitez modifier/resilier<br/>
+    <include src="erl://svc_smsinfos:print_rubrique_active?ligue1&amp;#resil_ligue1&amp;Resultats"/>
+    <include src="erl://svc_smsinfos:print_rubrique_active?ligue1&amp;#modif_club1&amp;Club"/>
+</page>
+
+<page tag="resil_ligue1" hist="donthist" cost="free_pt" descr="OL1_postpaid_res_resultat1">
+   <title>Resil Ligue 1</title>
+      Vous etes actuellement abonne a la rubrique Resultats.
+      Tapez 0 pour revenir en arriere ou 1
+      si vous souhaitez resilier<br/>
+      <a href="#confirm_resil_ligue1">Resilier</a>
+ </page>
+
+<page tag="modif_club1" hist="donthist" cost="free_pt" descr="OL1_postpaid_modres_club">
+   <title>Resil Ligue 1</title>
+      Vous etes actuellement abonne a la rubrique Club. Vous souhaitez:<br/>
+      <a href="#form_options_club">Changer de club</a><br/>
+      <a href="#confirm_resil_club1">Resilier</a>
+ </page>
+
+
+<page tag="confirm_resil_club1" hist="donthist" cost="free_pt" descr="OL1_postpaid_res_club">
+   <title>Confirm Resil Ligue 1</title>
+      Vous souhaitez resilier votre abonnement a la rubrique Orange Ligue 1 option Club.
+      Cette resiliation sera immediate mais le mois en cours sera entierement facture<br/>
+      <a href="erl://svc_smsinfos:resil?ligue1">Confirmez</a>
+ </page>
+
+<page tag="confirm_resil_ligue1" hist="donthist" cost="free_pt" descr="OL1_postpaid_res_resultat2">
+   <title>Resil Ligue 1</title>
+     Vous souhaitez resilier votre abonnement a la rubrique Orange Ligue 1 option Resultats.
+     Cette resiliation sera immediate mais le mois en cours sera entierement facture<br/>
+      <a href="erl://svc_smsinfos:resil?ligue1">Confirmez</a>
+ </page>
+
+ <page tag="success_resil" hist="donthist" cost="free_pt" descr="OL1_postpaid_resiliation_succes">
+   <title>Resil OL1 OK</title>
+      Votre resiliation a bien ete prise en compte.<br/>
+      <a href="sms_infos.xml#menu1">Pour souscrire a une autre rubrique SMS Infos</a>
+ </page>
+ 
+<page tag="modif_club1_success" hist="donthist" cost="free_pt" descr="OL1_postpaid_mod_club_succes">
+   <title>Modif Meteo OK</title>
+      Votre modification d'abonnement a SMS Infos
+      <include src="erl://svc_smsinfos:descr_rubrique?ligue1"/> sera prise
+      en compte sous 48h.<br/>
+      <a href="sms_infos.xml#menu1">Si vous souhaitez vous inscrire a une rubrique SMS Infos</a>
+ </page>
+
+
+<!-- Inscription -->
+<page tag="success_postcmo">
+  <redirect src="#success_abo"/>
+</page>
+
+ <page tag="success_abo" hist="donthist" cost="free_pt" descr="OL1_postpaid_souscription_succes_abo">
+   <title>Inscription OK: Abonnement</title>
+      Votre abonnement a SMS infos <include src="erl://svc_smsinfos:descr_rubrique?ligue1"/> facture
+      <include src="erl://svc_smsinfos:rubrique_prix"/>, a bien ete pris en compte<br/>
+      <a href="sms_infos.xml#menu1">Si vous souhaitez vous inscrire a une rubrique SMS Infos</a>
+ </page>
+
+ <page tag="success_sms" hist="donthist" cost="free_pt" descr="OL1_postpaid_souscription_succes_sms">
+   <title>Inscription OK: SMS MT</title>
+      Votre abonnement a SMS infos <include src="erl://svc_smsinfos:descr_rubrique?ligue1"/> facture au SMS a
+      <include src="erl://svc_smsinfos:print_prix"/> Euros, a bien ete pris en compte.<br/>
+      <a href="sms_infos.xml#menu1">Si vous souhaitez vous inscrire a une rubrique SMS Infos</a>
+ </page>
+
+<!-- Error Pages -->
+
+<page tag="credit_insuffisant" cost="free_pt" descr="OL1_postpaid_solde_insufisant">
+    <title>Mobi : Solde insuffisant</title>
+    Votre credit mobicarte est insuffisant.<br/>
+    Tapez 1 pour recharger ou 0 pour revenir en arriere<br/>
+    <a href="recharge.xml">Recharger</a>
+</page>
+
+  <page tag="system_failure" cost="free_pt" descr="OL1_postpaid_indispo_service">
+    La souscription à ce service est momentanément indisponible
+    par le #123#, vous pouvez souscrire a OL1 ou
+    modifier vos options au 733 (prix d'un appel) ou sur orange.fr
+ </page>
+
+ <page tag="temporary" nav="end" cost="free_pt" descr="OL1_postpaid_indispo_service">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+
+</pages>

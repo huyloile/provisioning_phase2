@@ -1,0 +1,32 @@
+<!-- value from spec finally not used...
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <situationActiveResponse xmlns="urn:orange:weu:ssi">
+         <resultat xmlns="">
+            <codeRetour>0</codeRetour>
+            <commentaire>Succ&#xE8;s</commentaire>
+         </resultat>
+         <situationActive xmlns="">
+	   <situation>
+	     <idSituation>51</idSituation>
+	     <libelleSituation>en deplacement</libelleSituation>
+	   </situation>
+         </situationActive>
+      </situationActiveResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+-->
+
+<!-- ERROR on format from preprod logs 20090415 finally becomes the proper value-->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<situationActiveResponse xmlns="urn:orange:weu:ssi">
+ <resultat xmlns="">
+  <codeRetour>0</codeRetour>
+  <commentaire>Succ&#xE8;s</commentaire>
+ </resultat>
+ <situationActive xmlns="">
+  <idSituation>29</idSituation>
+  <libelleSituation>&#xE0; mon bureau</libelleSituation>
+ </situationActive>
+</situationActiveResponse></soapenv:Body></soapenv:Envelope>

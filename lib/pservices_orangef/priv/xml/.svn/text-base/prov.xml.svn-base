@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="reject msg mobi">
+
+  <page tag="notmobi" nav="end" log="SC_Enotmobi" cost="system_free_pt" descr="Mobi : not mobi">
+    <title>Mobi : not mobi</title>
+    Vous n'avez pas accès à ce service réservé aux mobicartes.
+  </page>
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="system_free_pt" descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+
+  <page tag="notdeclared" nav="end" log="SC_Enotdecl" cost="system_free_pt" descr="Mobi : MSISDN non declaré">
+    <title>Mobi : MSISDN not declared</title>
+    Le numéro de votre mobicarte n'est pas ouvert. Veuillez contacter
+    votre service-clients. Merci.
+ </page>
+
+  <page tag="notidentified">
+    <redirect src="erl://svc_util:redirect_size?130&#notidentified_long&#notidentified_short"/>
+  </page>
+
+  <page tag="notidentified_long" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Mobi : mobi not identified">
+    <title>Mobi : mobi not identified</title>
+    Mobicarte suspendue: merci de vous rendre dans un point de vente mobicarte
+    avec une pièce d'identité.
+  </page>
+
+  <page tag="notidentified_short" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Reject : mobi not identified">
+    <title>Reject : mobi not identified</title>
+    Mobicarte suspendue: votre identité ne nous est pas parvenue.
+  </page>
+
+  <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Mobi :Cpte sursitaire">
+    <title>Mobi : Cpte sursitaire</title>
+    la mobicarte<br/>
+    La date limite de rechargement est dépassée.<br/>
+    Votre mobicarte est définitivement inutilisable.</page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Mobi : Cpte sursitaire">
+    <title>Mobi : Cpte sursitaire</title>
+    Votre mobicarte est définitivement inutilisable.</page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="Mobi : Cpte suspendu">
+    <title>Mobi : Cpte suspendu</title>
+    la mobicarte<br/>
+    Compte mobicarte suspendu : vos appels sont bloqués.<br/>
+    Veuillez contacter le service-clients mobicarte.</page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="system_free_pt" descr="Mobi : Cpte suspendu">
+    <title>Mobi : Cpte suspendu</title>
+    votre mobicarte est suspendu : vos appels sont bloqués.<br/></page>
+
+  <page tag="resilie">
+   <redirect src="erl://svc_util:redirect_size?130&#resilie_long&#resilie_short"/>
+  </page>
+
+  <page tag="resilie_long" nav="end" log="SC_Eres" cost="system_free_pt" descr="Mobi : Cpte resilie">
+    <title>Mobi : Cpte resilie</title>
+    la mobicarte<br/>
+    La date limite de rechargement est dépassée.<br/>
+    Votre mobicarte est définitivement inutilisable.</page>
+
+  <page tag="resilie_short" nav="end" log="SC_Eres" cost="system_free_pt" descr="Mobi : Cpte resilie">
+    <title>Mobi : Cpte resilie</title>
+    la mobicarte<br/>
+    Votre mobicarte est définitivement inutilisable.</page>
+
+  <page tag="not_compatible" backtext="notext" cost="system_free_pt" menutext="notext" nav="end" descr="Suivi Conso : Terminal non compatible">
+   <title>Suivi Conso : Terminal non compatible</title>
+   Votre terminal ne permet pas d'accéder au service.
+  </page>
+
+
+</pages>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini
+END
+opim_mini.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/opim_mini.xml
+END
+bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/bzh_cmo.xml
+END
+selfcare_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/selfcare_cmo.xml
+END
+selfcare.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/selfcare.xml
+END
+selfcare_omer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/selfcare_omer.xml
+END
+spider.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/spider.xml
+END
+selfcare_omer_new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_mini/selfcare_omer_new.xml
+END

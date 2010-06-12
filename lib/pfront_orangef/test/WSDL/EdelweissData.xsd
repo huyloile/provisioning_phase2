@@ -1,0 +1,355 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="urn:sachem.data.ecare" xmlns:tns="urn:edelweiss.data.ecare" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:edelweiss.data.ecare">
+ <xs:import namespace="urn:sachem.data.ecare"  schemaLocation="WSDL/SachemData.xsd" />    
+    <xs:complexType name="activationNouvelleCarteSim">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nouveauNumImsi" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nouveauNumNsce" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType abstract="true" name="objetMetierEdelweiss"/>
+    <xs:complexType name="membre">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeCourt" type="xs:string"/>
+                    <xs:element minOccurs="0" name="membre" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="compte">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="credit" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="dateLimiteValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="montantFidelisation" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="planTarifaire" type="tns:codeLibelle"/>
+                    <xs:element name="pourcentageFidelisation" type="xs:short"/>
+                    <xs:element minOccurs="0" name="typeCompte" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteGestion" type="tns:codeLibelle"/>
+                    <xs:element minOccurs="0" name="uniteRestitution" type="tns:codeLibelle"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="codeLibelle">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" type="xs:string"/>
+                    <xs:element name="identifiant" type="xs:int"/>
+                    <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="serviceEtPrestation">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="renouvellementMobile">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeMotifSuspension" type="xs:string"/>
+                    <xs:element minOccurs="0" name="datePremiereUtilisation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="infoPortage" type="tns:infoPortage"/>
+                    <xs:element minOccurs="0" name="libelleMotifSuspension" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoPortage">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateDemandePortage" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateEmissionBon" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="datePortage" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateValiditeBon" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="etatPortage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="motifRefus" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naturePortage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numBon" type="xs:string"/>
+                    <xs:element name="valide" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="option">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateDebut" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateFin" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateSouscription" type="xs:dateTime"/>
+                    <xs:element name="etat" type="xs:short"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="infos" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="libelle" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="typeCarte">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element name="langue" type="xs:int"/>
+                    <xs:element name="monnaie" type="xs:int"/>
+                    <xs:element name="numerotation" type="xs:int"/>
+                    <xs:element name="offrePrepayee" type="xs:int"/>
+                    <xs:element name="planMobicarte" type="xs:int"/>
+                    <xs:element name="typeCarte" type="xs:int"/>
+                    <xs:element minOccurs="0" name="valeur" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoCPUK">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="clePuk" type="xs:string"/>
+                    <xs:element minOccurs="0" name="clePuk2" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargement">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="comptes" nillable="true" type="tns:compte"/>
+                    <xs:element minOccurs="0" name="dateLimiteValiditeDossier" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="mediaPost">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codPostal" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="donneesGU">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeSO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codeTypeGU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="etatGU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idGU" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="infosMembres" nillable="true" type="tns:infoMembreGU"/>
+                    <xs:element minOccurs="0" name="libelleGU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="libelleSO" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoMembreGU">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="civiliteMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codeTypeGenerique" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codeTypeMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="etatMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identifiantMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="intiTypeMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomMembre" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numClientMembre" type="xs:string"/>
+                    <xs:element name="souscripteur" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rechargementCB">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="numAutorisationPaiement" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rechargement" type="tns:rechargement"/>
+                    <xs:element name="tracage" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="actionComA5">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listeMembres" nillable="true" type="tns:membre"/>
+                    <xs:element minOccurs="0" name="typeAction" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="preActivationCarteSim">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateOperation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="nouveauIMSI" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nouveauNSCE" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nouveauNumAppel" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="infoUtilisateur">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element name="adresseEmailInvalide" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="civiliteParrain" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePlanTarifaire" type="xs:string"/>
+                    <xs:element name="cprNum" type="xs:int"/>
+                    <xs:element minOccurs="0" name="creditCarte" type="xs:decimal"/>
+                    <xs:element name="creditInitialSecondes" type="xs:long"/>
+                    <xs:element minOccurs="0" name="creditInitialTaxe" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateDernierChgtEtat" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateInscriptionProgrammeTempsEnPlus" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="datePremiereUtilisation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateValiditeCarte" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateValiditeCredit" type="xs:dateTime"/>
+                    <xs:element name="dosOption" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dureeValiditeJours" type="xs:string"/>
+                    <xs:element name="ecpNum" type="xs:int"/>
+                    <xs:element name="escNum" type="xs:int"/>
+                    <xs:element minOccurs="0" name="etatCompte" type="ns1:codeLibelle"/>
+                    <xs:element minOccurs="0" name="etatPrincipal" type="ns1:codeLibelle"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="etatsSecondaires" nillable="true" type="ns1:codeLibelle"/>
+                    <xs:element minOccurs="0" name="infoPortage" type="tns:infoPortage"/>
+                    <xs:element minOccurs="0" name="libPlanTarifaire" type="xs:string"/>
+                    <xs:element name="mailingPublicitaireRefuse" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="nomParrain" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numImsi" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numPartenaire" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numUtilisateur" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numeroGroupe" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="options" nillable="true" type="ns1:codeLibelle"/>
+                    <xs:element name="smsPublicitaireRefuse" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="societe" type="xs:string"/>
+                    <xs:element name="soldeSecondes" type="xs:long"/>
+                    <xs:element minOccurs="0" name="telephoneProfessionnel" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeCarte" type="tns:typeCarte"/>
+                    <xs:element minOccurs="0" name="utilisateur" type="tns:utilisateur"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="utilisateur">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse3" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse4" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresseEMail" type="xs:string"/>
+                    <xs:element minOccurs="0" name="civilite" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateNaissance" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="nom" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numTelFixe" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pays" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prenom" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="modificationOption">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateFinValidite" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="solde" type="xs:decimal"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="demandeClientAll">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeOrigine" type="xs:string"/>
+                    <xs:element minOccurs="0" name="conclusion" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contact" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="descriptionSite" type="xs:string"/>
+                    <xs:element minOccurs="0" name="etat" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groupe" type="xs:string"/>
+                    <xs:element minOccurs="0" name="id" type="xs:string"/>
+                    <xs:element minOccurs="0" name="resolution" type="xs:string"/>
+                    <xs:element minOccurs="0" name="responsable" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="sousConclusion" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="modificationCoordonnees">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse3" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresse4" type="xs:string"/>
+                    <xs:element minOccurs="0" name="adresseEMail" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateNaissance" type="xs:dateTime"/>
+                    <xs:element name="mailingPublicitaireRefuse" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="nom" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nomSociete" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numTelFixe" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prenom" type="xs:string"/>
+                    <xs:element name="smsPublicitaireRefuse" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="telephoneProfessionnel" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="actionPlanTarifaire">
+        <xs:complexContent>
+            <xs:extension base="tns:objetMetierEdelweiss">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="typeAction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="N"/>
+            <xs:enumeration value="A"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="codeAction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Q"/>
+            <xs:enumeration value="V"/>
+            <xs:enumeration value="R"/>
+            <xs:enumeration value="C"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

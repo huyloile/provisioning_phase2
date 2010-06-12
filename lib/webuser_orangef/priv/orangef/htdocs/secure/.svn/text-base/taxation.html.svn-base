@@ -1,0 +1,28 @@
+<table>
+<tr><td><A name="sec001"><U>sec001:</U></A></td><td>0.001 Euro par seconde<br>0.06 Euro par minute</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="sec002"><U>sec002:</U></A></td><td>0.006 Euro pour les 3 premières secondes<br>puis 0.002 Euro par seconde</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="sec0025"><U>sec0025:</U></A></td><td>0.0025 Euro par seconde<br>0.15 Euro par minute</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt1"><U>Plan tarifaire 1:</U></A></td><td>0.15 euro les 5 premières secondes<br>0.5 euro pour le pamier 5-10 secondes<br>0.1 euro par palier de 5 secondes supplémentaires</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt2"><U>Plan tarifaire 2:</U></A></td><td>0.15 euro par page</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt3"><U>Plan tarifaire 3:</U></A></td><td>1 euro par palier de 5 secondes</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt4"><U>Plan tarifaire 4:</U></A></td><td>0.01 euro par octet envoyé</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt_test_of1"><U>Plan tarifaire Orange France 1:</U></A></td><td>0.1 euro par page pour mobicarte<br>0.2 euro par page pour CMO<br>gratout pour postpaid</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt_test_act"><U>Plan tarifaire à l'acte:</U></A></td><td>0.15 euro par page</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt_test_act2"><U>Plan tarifaire à l'acte 2:</U></A></td><td>1 euro par page</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="pt_test_vol"><U>Plan tarifaire au volume:</U></A></td><td>0.001 euro par octet envoyé</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="system_free_pt"><U>Page système gratuite:</U></A></td><td>La taxation précédente est suspendue</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><A name="free_pt"><U>Page gratuite:</U></A></td><td>La taxation est suspendue</td></tr>
+</table>
+

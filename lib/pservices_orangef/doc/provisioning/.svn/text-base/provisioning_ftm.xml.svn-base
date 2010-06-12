@@ -1,0 +1,2514 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+ "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+[
+   <!ENTITY clcm          SYSTEM "../../../../../doc/clcm_bookinfo.xml">
+   <!ENTITY glossary-gsm  SYSTEM "../../../../../doc/glossary_gsm.xml">
+ ]>
+
+<book lang="fr">
+ <bookinfo>
+  <productname>Provisioning Orange</productname>
+  <title>Procédure de provisioning</title>
+  <subtitle>Specifications Fonctionnelles</subtitle>
+  <productnumber>Phase 2</productnumber>
+
+  &clcm;
+    
+    <abstract><title>Résumé</title>
+      <para>Les services USSD déployés par Orange France nécessitent la gestion de profils utilisateurs au niveau de la plate-forme Cellcube. Ces profils combinent des données techniques, des données commerciales et des données de personnalisation de services. Ces données sont obtenues par interrogation des diverses plates-formes disponibles chez Orange France</para>
+    </abstract>
+    
+    <revhistory>
+      <revision>
+	<revnumber>0.1</revnumber>
+	<date>2001-12-10</date>
+	<authorinitials>PR</authorinitials>
+	<revremark>Création du document</revremark>
+      </revision>
+      <revision>
+	<revnumber>0.2</revnumber>
+	<date>2001-12-18</date>
+	<authorinitials>SD</authorinitials>
+	<revremark>Modifications aprés relecture interne</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.0</revnumber>
+	<date>2001-12-31</date>
+	<authorinitials>PR</authorinitials>
+	<revremark>Prise en compte de la procédure d'auto-provisioning CMO</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.1</revnumber>
+	<date>2002-02-06</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Prise en compte de éléments de Migration Sachem</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.2</revnumber>
+	<date>2002-03-11</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Ajout d'un module adaptation aux Terminaux</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.3</revnumber>
+	<date>2002-04-12</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Passage en Black-liste</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.4</revnumber>
+	<date>2002-05-10</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Passage à la requête d'identification A3</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.5</revnumber>
+	<date>2002-10-09</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Différents niveaux de provisioning</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.6</revnumber>
+	<date>2002-12-17</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Optimisation pour le suivi-conso Postpaid</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.7</revnumber>
+	<date>2003-01-28</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Services pour les terminaux de Niveaux 3</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.8</revnumber>
+	<date>2003-04-02</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Passage des godets en Euros</revremark>
+      </revision>
+      <revision>
+	<revnumber>1.9</revnumber>
+	<date>2003-11-06</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Gestion des clients DME</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.0</revnumber>
+	<date>2004-01-12</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Interaction avec OCF</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.1</revnumber>
+	<date>2004-05-24</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Évolution Provisioning de niveau 1 et 2</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.2</revnumber>
+	<date>2004-06-17</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Évolution Traitements Batch OCF-RDP</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.3</revnumber>
+	<date>2004-10-13</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Gestion profile Breizh Postpaid</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.4</revnumber>
+	<date>2005-01-13</date>
+	<authorinitials>FC</authorinitials>
+	<revremark>Ajout du segment technologique</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.5</revnumber>
+	<date>2005-02-22</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Modification fonctionement du Batch OCF-RDP</revremark>
+      </revision>
+      <revision>
+	<revnumber>2.6</revnumber>
+	<date>2005-04-04</date>
+	<authorinitials>FC</authorinitials>
+	<revremark>Passage aux mises à jour par lot OCF-RDP en continu
+        </revremark>
+      </revision>
+       <revision>
+	<revnumber>2.6</revnumber>
+	<date>2005-04-05</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Gestion des clients Bzh GP et Bzh CMO
+        </revremark>
+      </revision>
+       <revision>
+	 <revnumber>2.7</revnumber>
+	 <date>2005-05-13</date>
+	 <authorinitials>SB</authorinitials>
+	 <revremark>Gestion des clients Tele2 postpaid
+	 </revremark>
+      </revision>
+      <revision>
+	 <revnumber>2.8</revnumber>
+	 <date>2005-07-01</date>
+	 <authorinitials>FC</authorinitials>
+	 <revremark>Provisioning suivi conso Spider
+	 </revremark>
+      </revision>
+      <revision>
+	 <revnumber>2.9</revnumber>
+	 <date>2005-12-09</date>
+	 <authorinitials>SB</authorinitials>
+	 <revremark>Provisioning suivi conso Spider Prepaid
+	 </revremark>
+      </revision>
+    </revhistory>
+  </bookinfo>
+
+  <chapter id="ch1">
+    <title>Introduction</title>
+    <section>
+      <title>Objet</title>
+      <para>Le présent document constitue le dossier de spécifications fonctionnelles des procédures de provisioning mises en oeuvre au niveau de la plate-forme Cellcube de Cellicium hébergée pour le compte de Orange France.</para>
+      <para>Les procédures permettent de répondre aux besoins de base soulevés par les applications demandées par Orange France, tout en ayant un impact minimal sur le système d'information.</para>
+    </section>
+    <section>
+      <title>Domaine</title>
+      <para>Ce document décrit les procédures de provisioning mises en oeuvre par Cellicium dans le cadre de la plate-forme de services USSD de Orange France.</para>
+      <para>Le présent dossier est rédigé à  l'usage exclusif et confidentiel de Orange France et de Cellicium.</para>
+    </section>
+    <section>
+   <title>Document de référence</title>
+   <informaltable frame="all">
+    <tgroup cols="6" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="1*"/>
+     <colspec colwidth="2*"/>
+     <colspec colwidth="3*"/>
+     <colspec colwidth="5*"/>
+     <colspec colwidth="2*"/>
+     <colspec colwidth="3*"/>
+     <thead>
+      <row>
+       <entry>N°</entry>
+       <entry>Source</entry>
+       <entry>Auteur</entry>
+       <entry>Référence</entry>
+       <entry>Date</entry>
+       <entry>Titre</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>[1]</entry>
+       <entry>Orange</entry>
+       <entry>Loic LE DIEU DE VILLE</entry>
+       <entry></entry>
+       <entry>16&#47;11&#47;01</entry>
+       <entry>Service ecare Compte Mobile Orange en USSD
+	Cahier des charges v1.0</entry>
+      </row>
+       <row>
+       <entry>[2]</entry>
+       <entry>Orange</entry>
+       <entry>Loic LE DIEU DE VILLE</entry>
+       <entry></entry>
+       <entry>20&#47;11&#47;01</entry>
+       <entry>Service ecare Mobicarte en USSD 
+	Cahier des charges v1.1</entry>
+      </row>
+      <row>
+       <entry>[3]</entry>
+       <entry>Cellicium</entry>
+       <entry>Sébastien BECUWE</entry>
+       <entry>Cellicium_SF_OrangeFR _ecarecmo_v37</entry>
+       <entry>20&#47;04&#47;04</entry>
+       <entry>Spécification Fonctionnelle - Ecare CMO</entry>
+      </row>
+      <row>
+       <entry>[4]</entry>
+       <entry>Cellicium</entry>
+       <entry>Sébastien BECUWE</entry>
+       <entry>Cellicium_SF_OrangeFR _ecaremobi_v48</entry>
+       <entry>26&#47;04&#47;04</entry>
+       <entry>Spécification Fonctionnelle - Ecare Mobicarte</entry>
+      </row>
+      <row>
+       <entry>[5]</entry>
+       <entry>Cellicium</entry>
+       <entry>Patrick REMY</entry>
+       <entry>SF_OrangeFr_flash</entry>
+       <entry>11&#47;12&#47;01</entry>
+       <entry>Spécification Fonctionnelle - Flash Nouveautés</entry>
+      </row> 
+      <row>
+       <entry>[6]</entry>
+       <entry>Cellicium</entry>
+       <entry>Sébastien BECUWE</entry>
+       <entry>Cellicium_SF_OrangeFr _GestionGodet_v05</entry>
+       <entry>19&#47;04&#47;04</entry>
+       <entry>Spécification Fonctionnelle - Gestion des Godets</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </section>
+  <section>
+   <title>Contact</title>
+   <para>Cellicium se tient à  la disposition de Orange France pour répondre aux éventuelles questions et apporter les précisions qui pourront être jugées nécessaires</para>
+   <para>Exploitation</para>
+   <address>
+    <phone>Tel: 01 41 98 67 48</phone>
+    <fax>Fax: 01 41 68 67 47</fax>
+    <email>exploitation@cellicium.com</email>
+   </address>
+  </section>
+ </chapter>
+ 
+ <!--CHAPITRE 2 : GENERALITES -->
+
+ <chapter id="ch2">
+  <title>Généralités</title>
+  <section>
+   <title>Rappel de l'environnement</title>
+   <para>Orange France a mené une expérimentation d'un service d'ecare mobicarte en USSD dans le courant du second semestre 2001. Cette expérimentation se basait sur la plate-forme Cellcube de Cellicium.</para>
+   <para>La définition fonctionnelle de ce service, ainsi que la nature des interfaces techniques, rendait possible son implémentation sous la forme d'un moteur de transcription des informations mises à  disposition par le SDP sous une forme attractive pour l'utilisateur</para>
+   <para>En effet, l'identité du client remontée par le réseau via l'USSD Center est suffisante pour réaliser l'ensemble des interactions avec la plate-forme de gestion des comptes prépayés.</para>
+  </section>
+  <section>
+   <title>Besoins</title>
+   <para>Le service demandé par Orange France pour l'ouverture commerciale du service intègre un service d'adaptation de la navigation en fonction du terminal ainsi qu'un service de «Flash Nouveautés».</para>
+   <section><title>Adaptation aux spécificités des terminaux</title>
+    <para>On souhaite pouvoir adapter le service aux spécificités des terminaux dont les caractéristiques principales en USSD sont la taille des messages acceptés ainsi que la navigation (gestion du protocole USSD en phase 1 ou 2). En effet, certains terminaux ne supportent pas des tailles de paquets de 182 caractères ou/et utilisent le protocole USSD en phase 2 avec un comportement phase 1 ; ces terminaux ont donc une navigation « dégradée ».</para>
+   </section>
+   <section><title>Flash Nouveauté</title>
+    <para>Le service «flash nouveauté» est décrit en détail dans le document [5].</para>
+    <para>La mise en oeuvre de ce service nécessite la persistance d'une information de compteur d'une session à l'autre, pour chacun des clients accédant à la plate-forme.</para>
+    <para>La plate-forme Cellcube intègre un système de gestion de bases de données de profils qui permet de répondre à ce besoin. Ce système permet de stocker à la fois des données de profil technique, telles que la correspondance entre IMSI et MSISDN, et des données de profil de services spécifiques aux applications USSD.</para>
+    <para>Le développement du service « Flash Nouveautés » fait donc usage de ce système et impose la mise en place des procédures de gestion de cette base.</para>
+    <para>La procédure de provisioning, qui n'est pas spécifique à ce service, a comme objectif d'initialiser et maintenir en cohérence la base de données des profils, en s'appuyant sur les données et systèmes externes avec lesquels la plate-forme Cellcube interagit
+    </para>
+   </section>
+   <section><title>Les différents niveaux de provisioning</title>
+    <para>Afin d'optimiser le nombre d'interrogation aux différentes bases du SI, différents niveaux de provisioning ont été introduit.</para>
+    <para>Pour chaque code de service, il est possible de choisir un niveau de provisioning. Nous avons défini quatre niveaux de provisioning qui se nomment :</para>
+    <itemizedlist>
+     <listitem><para>Niveau 3 : Provisioning suivi-conso</para>
+     </listitem>
+     <listitem><para>Niveau 2 : Provisioning complet</para></listitem>
+     <listitem><para>Niveau 1 : Identification</para></listitem>
+     <listitem><para>Niveau 0 : « Aucun Provisioning »</para></listitem>
+    </itemizedlist>
+    <para>Le dernier niveau de provisioning ne doit être utilisé qu'en situation de test.</para>
+   </section>
+  </section>
+  
+  <section><title>Environnement technique</title>
+   <para>L'architecture des plate forme SI utilisé par Cellcube se compose des éléments suivants :</para>
+   <figure id="schema_si"><title>Cellcube et le SI d'Orange France</title>
+    <mediaobject>
+     <imageobject>
+      <imagedata fileref="../images/archi_si_of.png" format="JPG" scale="70"/>
+     </imageobject>
+    </mediaobject> 
+   </figure>
+   <para>La procédure de provisioning doit composer avec ces différentes interfaces dont certaines ne sont disponibles que pour le service de suivi-conso (DISE /ECARE postpaid/ECARE Bzh GP).</para>
+   <para>Les informations concernant les clients USSD sont mises à jour soit :</para>
+   <itemizedlist>
+    <listitem><para>En temps réels : Les changements d'état intervenant au niveau des systèmes de gestion commerciale (résiliation, modification de paramètres d'abonnement, etc..) ne sont pas notifiés en tant que tels à la plate-forme Cellcube. La procédure de provisioning devra donc opérer des déductions pour identifier ces cas de figure.</para>
+    </listitem>
+    <listitem><para>Par lot&nbsp;: la plate-forme OCF-RDP nous envoie à différents moments de la journée via CFT des fichiers contenant les différentes modifications de profil des clients inscrits.</para>
+    </listitem>
+   </itemizedlist>
+  </section>
+  
+  <section><title>Restrictions</title>
+  <para>Le processus de prise de commande des clients non mobicarte repose sur un flux d'informations entre le système d'abonnements et les différentes bases du SI. Il existe ainsi un décalage entre les bases Temps Réels (Sachem) et les bases mise à jour  par Batch (OCF, DISE, CVF). En effet, les clients non prépayés peuvent être actif sur le réseau mais inconnu de certaines bases SI</para>
+   <para>Ce décalage implique une période pendant laquelle le client sera considéré par Cellcube comme de souscription inconnu. En revanche, dès la prise de commande entièrement aboutie, la procédure de provisioning de Cellcube détectera le nouveau statut, et mettra à jour sa base locale afin d'y intégrer l'offre commerciale pertinente du client.</para>
+  </section>
+   <section><title>Principe Général</title>
+  <para>L'objectif principal du provisioning est de tenir à jour les données correspondant aux profils du client. Ces données dont certaines sont stockées en base sont soit récupérées des différentes bases SI d'orange, soit déduites.</para>
+   <para>Les différents provisisonings se décomposent en trois phases :</para>
+   <itemizedlist>
+      <listitem><para>Initialisation : il s'agit ici de récupérer le profil client en fonction de son IMSI s'il existe ainsi ou/et de récupérer les données générales envoyées par OCF(TAC,Niveau de service USSD, MSISDN, Segment Commercial)</para>
+      </listitem>
+     <listitem><para>Identification : L'objectif de cette phase est d'identifier aux niveaux des différentes bases SI le type de client ( profil  commercial) lorsqu'il s'agit d'un nouveau client ou de gérer la ré-interrogation des bases SI dans le cas d'un changement d'offre. Cette étape dépend du type de provisioning choisi</para>
+     </listitem>
+     <listitem><para>Initialisation de la fonction de facturation : Cette fonction initialise les différentes structures de données nécessaire à la facturation(dépend du type de facturation demandé). En particulier, c'est dans cette phase que le solde des « clients connus » est récupéré (en fonction du provisioning choisi).Cette étape peut contenir un filtrage des états pathologiques pour les clients prépayés.</para>
+     </listitem>
+   </itemizedlist>
+   
+   <figure id="principe_gene"><title>Principe Générale</title>
+   <mediaobject>
+      <imageobject>
+       <imagedata fileref="../images/principe_provisioning.png" format="PNG" scale="60"/>
+      </imageobject>
+   </mediaobject> 
+   </figure>
+   </section>
+   <section><title>Évolutions Apportées</title>
+   <section><title>Version 1.4</title>
+    <para>Le principal changement provient du passage à une requête unique « A3 » et de l'introduction de la notion de comptes multiples. De plus, les informations renvoyées par cette requête correspondent au modèle de données Sachem contrairement aux évolutions précédentes.</para>
+     <para>Les évolutions majeures effectuées sont donc :</para>
+     <itemizedlist>
+       <listitem><para>passage à un modèle de données Sachem</para>
+       </listitem>
+      <listitem><para>gestion des comptes SMS, WAP, KDO.</para>
+      </listitem>
+     </itemizedlist>
+     <para>Les données utilisées pour la gestion des cas pathologiques sont donc différentes et par conséquent de nouveaux cas sont apparus. Par exemple, l'état SV : suspendu pour vol. Il est donc nécessaire qu'Orange France valide les messages renvoyés par Cellcube pour ces cas pathologiques nouveaux.</para>
+   </section>
+    <section><title>Version 1.5</title>
+    <para>Le lancement du service d'identification du numéro a mis en évidence le besoin d'une procédure de provisioning allégée afin de limiter la charge générée sur les plate-formes du SI de Orange France par les services dont la logique peut se passer des informations de profil commercial des abonnés.</para>
+     <para>C'est pourquoi la version 1.4 a introduit la notion de niveau de provisioning Ces niveaux sont au nombre de trois :</para>
+     <itemizedlist>
+       <listitem><para>Niveau 2 : provisioning complet, permettant la facturation, le filtrage des cas pathologiques, ? Ce niveau de provisioning implique l'interrogation systématique des plate-formes du SI de Orange France lors de chaque appel.</para>
+       </listitem>
+      <listitem><para>Niveau 1 : identification : L'identification de la souscription du client n'est réalisée qu'à la première connexion. Les connexions ultérieures ne génèrent aucune interrogation des plate-formes du SI de Orange France. Ce niveau de provisioning est particulièrement adapté aux services dont le fonctionnement n'est conditionné par aucune des données du profil commercial du client. Le client ne sera pas traité comme un client anonyme, et en particulier, ses connexions pourront être visualisées via l'interface ECARE.</para>
+      </listitem>
+      <listitem><para>Niveau 0 : aucun provisioning : il s'agit alors de fonctionner sans aucune interface avec le SI de Orange France. Aucune détection de la souscription n'est réalisée. Ce mode peut convenir à des situations de test, mais n'est pas conseillé en environnement opérationnel.
+      Chaque code de service peut se voir attribuer un niveau de provisioning différent. Par exemple, le suivi-conso #123# est en provisioning complet et le service d'identification du numéro #121# est sur mode identification.</para>
+      </listitem>
+     </itemizedlist>
+    </section>
+    <section><title>Version 1.6</title>
+    <para>Au cours du quatrième trimestre 2002, le suivi-conso pour les clients post payés a été lancé. Dans le cadre de ce projet, une interface a été mise en place entre le portail Cellcube et une plate-forme du SI de Orange France disposant du profil commercial des clients post-payés.</para>
+     <para>Un quatrième niveau de provisioning spécifique au suivi-conso a donc été développé afin d'optimiser la procédure appliquée aux clients post-payés, en limitant les interrogations de la base SACHEM.</para>
+    </section>
+    <section><title>Version 1.7</title>
+    <para>Au cours du premier trimestre 2003, le suivi-conso pour les clients dont les terminaux sont de niveau 3 a été lancé. Dans le cadre de ce projet, des messages de rejets dont la longueur est inférieure à 64 caractères ont été introduits.</para>
+     <para>Cette version inclut aussi l'ajout de l'état « Résilié ADV » dans les cas de détection de transfert, de fluidité.</para>
+    </section>
+    <section><title>Version 1.8</title>
+    <para>L'arrivée de Sachem G1R6 et la migration des godets en euros impliquent la gestion d'une table intégrant le ratio à utiliser en fonction des informations DCL_NUM (type d'offre), TCP_NUM(type de godet) et PTF_NUM(plan tarifaire). Afin de clarifier le fonctionnement de Cellcube sur cette partie liée au service selfcare Mobicarte et CMO, nous ajoutons à ce document un paragraphe entièrement dédié à cette nouvelle fonctionnalité.</para>
+    </section>
+    <section><title>Version 1.9</title>
+     <para>Au cours du troisième trimestre 2003, le suivi-conso pour les clients DME sera lancé. Il est donc nécessaire d'intégrer la gestion des clients DME dans le provisioning afin d'interroger la base DISE nécessaire au suivi-conso DME. Cette version intègre donc la gestion d'un nouveau profil DME pour tous les différents niveaux de provisioning. Comme convenu avec Orange seul le niveau de provisioning spécifique au suivi-conso interrogera DISE.</para>
+     <para>Dans cette version, nous avons aussi supprimé le chapitre concernant la gestion des Godets. Pour toutes informations concernant la gestion des godets Prépayés, nous vous invitons à vous reporter au document « Gestion des Godets ».</para>
+    </section>
+    <section><title>Version 2.0</title>
+     <para>Au cours du premier trimestre 2004, Orange France souhaite mettre en place un flux de provisioning entre Cellcube et OCF-RDP. L'échange d'informations entre OCF-RDP et Cellcube se fera en temps réels et en flux Batch.</para>
+     <para>En particulier, le profilage (gestion de l'IMEI) ne passera plus vers  le MWP mais utilisera l'interface XML/RPC avec OCF-RDP.
+     La gestion du profilage avec MWP sera supprimé une fois la migration OCF-RDP terminée et après un période d'observation fixé à un mois à partir de la mise en production de la gestion d'OCF-RDP.</para>
+    </section>
+    <section><title>Version 2.1</title>
+    <para>Au court du second semestre 2004, Orange France souhaite faire évoluer la gestion du provisioning. L'objectif est d'utiliser l'information segment commercial fournis par OCF-RDP pour identifier le profil du client. </para>
+     <para>De plus, le lancement de l'offre OMER ajoute la gestion d'une nouvelle souscription.</para>
+    </section>
+    <section><title>Version 2.2</title>
+    <para>Suite aux changements de fonctionnement de RDP (réception de dizaine de fichiers d'environ 5000 entrées), il est devenu nécessaire de prévoir une modification du traitement des fichiers de provisioning RDP. De plus, la limitation à 50.000 MAJ  par nuit prévu au départ est largement dépassée (~150.000 MAJ/jour).</para>
+    <para>Afin de conserver une synchronisation journalière avec OCF-RDP sans impact sur la QoS du service, les évolutions suivantes doivent être mise en place :</para>
+    <itemizedlist>
+      <listitem><para>Bufferisation des ordres de suppression</para>
+      </listitem>
+      <listitem><para>Modification de la gestion des Modifications</para>
+      </listitem>
+    </itemizedlist>
+    </section>
+    <section><title>Version 2.3</title>
+    <para>Au cours du dernier trimestre 2004, Orange France lance en MVNO des profiles de client Breizh Mobile Postpaid.L'objectif de cette évolution est de gérer un nouveau type de souscription "bzh_gp".Ce type de souscription ne sera renseigné que par OCF.</para>
+    </section>
+    <section><title>Version 2.4</title>
+    <para>
+      Orange France souhaite pouvoir adapter les services USSD en fonction de
+      la technologie du mobile de ses abonnés. Pour ce faire, elle associe à
+      chaque abonné un segment technologique. Cellcube prend connaissance du
+      segment technologique d'un client de deux façons&nbsp;: par interrogation
+      d'OCF-RDP en temps réel et par lot OCF-RDP. Le segment technologique est
+      stocké dans une table SQL spécifique à Orange France. (Il est possible
+      d'effectuer une redirection dans un service en fonction du segment
+      technologique.)
+    </para>
+    </section>
+    <section><title>Version 2.5</title>
+    <para>
+      Les fichiers de provisioning OCF-RDP comportent des mises à jour et des
+      suppressions de profil client. Ces deux types de modification se
+      faisaient jusqu'ici de nuit dans une plage horaire fixe. Pour les mises à
+      jour, il est désormais possible de spécifier des plages horaires pendant
+      lesquelles les requêtes seront effectuées à une fréquence déterminée. Il
+      est ainsi possible d'adapter la fréquence des mises à jour selon la
+      charge de la plate-forme au long de la journée tout en traitant plus
+      rapidement les modifications envoyées par OCF-RDP.
+    </para>
+    </section>
+     <section><title>Version 2.6</title>
+    <para>Au cours du deuxième trimestre 2005, Orange France lance le suivi-conso des MVNO de profile Breizh Mobile Postpaid et Bzh CMO.
+    L'objectif de cette évolution est de gérer les types de souscription "bzh_gp" et "bzh_cmo" pour tous les niveaux de provisioning.
+    Le type de souscription "bzh_gp" sera renseigné par OCF; pour "bzh_cmo" par OCF et Sachem.
+     </para>
+    </section>
+    <section><title>Version 2.7</title>
+    <para>Au cours du mois du juin 2005, Orange France lance le suivi-conso des MVNO de profile Tele2 Postpaid.
+    L'objectif de cette évolution est de gérer le types de souscription "tele2_gp" pour tous les niveaux de provisioning.
+    Le type de souscription "tele2_gp" sera renseigné par OCF.
+     </para>
+    </section>
+    <section><title>Version 2.9</title>
+    <para>Au cours du mois du janvier 2006, Orange France lance le suivi-conso des client Prepaid via Spider.
+    L'objectif de cette évolution est d'interogger spider pour les clients Prepaid (mobi , cmo) hors MVNO.
+     </para>
+    </section>
+  </section>
+ </chapter>
+
+<!-- CHAPRITRE 3 -->
+
+ <chapter id="ch3"><title>Principes de gestion de profils</title>
+  <para>Cellcube gère en standard la possibilité de stocker des données de profil de plusieurs types :</para>
+  <itemizedlist>
+   <listitem><para>profil utilisateurs</para>
+   </listitem>
+   <listitem><para>profil de personnalisation de service</para>
+   </listitem>
+   <listitem><para>profil de session</para>
+   </listitem>
+  </itemizedlist>
+  
+  <section><title>Identifiant interne</title>
+   <section><title>Principes</title>
+    <para>Un client GSM dispose d'une variété d'identifiant utilisés par le réseau dans le cadre de ses procédures (IMSI, TMSI, MSISDN), par le système d'information de l'opérateur (numéro d'abonné, nom, adresse) voire par des plate-formes de services à valeur ajoutée (login, pseudo, etc?).</para>
+    <para>Chacun de ces identifiants peut être amené à changer au cours du cycle de vie du client. Ainsi l'IMSI attribué à client est modifié lors des procédures de renouvellement de carte SIM, l'ancien IMSI étant barré afin de se prémunir de toute fraude. De même, le MSISDN peut-être amené à changer, notamment à la demande explicite de l'utilisateur.</para>
+    <para>Il est cependant primordial que les données de profil de l'utilisateur et de personnalisation stockée au niveau de la plate-forme Cellcube restent disponibles lors d'opérations de ce type.</para>
+    <para>C'est pourquoi la plate-forme Cellcube gère un identifiant interne lui permettant de désigner de manière non équivoque un client.</para>
+    <para>Cet identifiant sert ensuite de clé à l'ensemble des autres tables, et notamment à la table des profils utilisateurs dans laquelle sont stockées les données techniques (IMSI, MSISDN) de chaque client.</para>
+    <para>Cet identifiant interne est attribué dans un référentiel propre à la plate-forme lors de la première connexion du client. Cet identifiant est ensuite maintenu tout au long du cycle de vie de l'utilisateur au sein de la plate-forme.</para>
+   </section>
+   <section><title>Clients non identifiés</title>
+    <para>Les clients qui n'auront pas pu être identifiés par la procédure de provisioning décrite dans le présent document seront qualifiés de «non identifiés». Il pourra s'agir notamment de clients Orange faisant leur premier accès au service pendant une période d'indisponibilité de l'une des bases SI utilisées par la phase d'identification.</para>
+    <para>Ces clients auront accès à un service propre. Dans la version actuelle, ce service sera restreint à une page d'erreur, tel que décrit au paragraphe §5.2.6.2.</para>
+    <para>Il pourrait tout à fait être envisagé, dans un second temps d'étendre ce service, à un sous-ensemble pertinent du service commercial.C'est pourquoi ces clients se voient attribuer un identifiant interne temporaire. Sa durée de vie sera limitée à la session.
+    </para>
+   </section>
+  </section>
+  <section><title>Profils utilisateurs</title>
+   <para>La table des profils utilisateurs regroupe l'ensemble des données personnelles non spécifiques d'un service pour chacun des utilisateurs accédant à la plate-forme Cellcube.</para>
+   <para>Ces données peuvent être classifiées en quatre types :</para>
+   <itemizedlist>
+    <listitem><para>données techniques</para>
+    </listitem>
+    <listitem><para>données commerciales</para>
+    </listitem>
+    <listitem><para>données de service</para>
+    </listitem>
+    <listitem><para>données complémentaires</para>
+    </listitem>
+   </itemizedlist>
+   <section><title>Données techniques</title>
+    <para>Il s'agit là des identifiants techniques propres au client et notamment :
+     <itemizedlist>
+      <listitem><para>IMSI</para>
+      </listitem>
+      <listitem><para>MSISDN</para>
+      </listitem>
+      <listitem><para>IMEI</para>
+      </listitem>
+     </itemizedlist>
+    </para>
+    <section><title>IMSI</title>
+     <para>C'est l'identifiant pertinent remonté par le réseau dans le cadre des échanges USSD. Cette donnée sera donc toujours présente, et servira de base pour déterminer l'identifiant interne attribué au client.</para>
+    </section>
+    <section><title>MSISDN</title>
+     <para>Le numéro d'appel du client sera indispensable pour rendre des services à base de SMS, et très utile pour l'ensemble de la gestion du customer care.
+      Le réseau d'Orange France fournit le numéro d'appel lorsqu'il s'agit d'une session USSD phase2 uniquement. Lors d'une session phase 1 cette donnée n'est pas transmise dans le cadre des échanges USSD.</para>
+      <para>La plate-forme Cellcube prend donc en charge sa récupération auprès du système d'information de l'opérateur.</para>
+     <section><title>Clients prépayés</title>
+      <para>La récupération du MSISDN des clients prépayés est réalisée lors de l'interrogation du SDP lors de la première session USSD du client. Les interrogations réalisées lors des accès ultérieurs permettent de gérer les modifications de ce paramètre.</para>
+     </section>
+     <section><title>Clients postpayés</title>
+      <para>Dans l'architecture actuelle, Cellcube ne dispose d'aucune interface avec le SI post-payé de Orange France autre que celle avec la plate-forme ECARE permettant de rendre le service de suivi-conso postpaid.</para>
+       <para>Le profil des utilisateurs postpayés contiendra le numéro d'appel uniquement dans le cas ou celui-ci est remontée par le réseau. Dans le cas où il s'agit d'une connexion au service « suivi-conso » et que le réseau n'a pas remonté le numéro d'appel, la plate-forme ECARE remonte ce numéro d'appel.</para>
+      <para>En évolution, il serait envisageable mettre en place des interfaces avec des plate-formes annexes du système d'information (notamment « médiateur » ou « magic box »). Le numéro d'appel pourrait alors être obtenu, et mis à disposition de l'ensemble des applications USSD.</para>
+     </section>
+    </section>
+    <section><title>IMEI</title>
+     <para>L'IMEI est l'identifiant du terminal de l'utilisateur. A l'heure actuelle, il ne peut être récupéré facilement sur le réseau. Nous interrogeons donc une base extérieur OCF afin de récupérer l'IMEI du client.</para>
+    </section>
+   </section>
+   <section><title>Données commerciales</title>
+    <para>L'implémentation actuelle des services USSD d'Orange France permet de déterminer le type de souscription des clients accédant à la plate-forme de services.</para>
+<para>Plus précisément, le profil des utilisateurs inclut un paramètre pouvant prendre l'une des six valeurs suivantes :</para>
+ <itemizedlist>
+     <listitem><para><emphasis>MOBI</emphasis> : le client est identifié comme bénéficiant d'une offre mobicarte. Son compte est géré par la plate-forme SACHEM.</para>
+      </listitem>
+     <listitem><para><emphasis>OMER</emphasis> : le client est identifié comme bénéficiant d'une offre OMER. Son compte est géré par la plate-forme SACHEM.</para>
+      </listitem>
+     <listitem><para><emphasis>CMO</emphasis> : le client a souscrit à un Compte Mobile Orange ou un Forfait 1h avec Compte mobile. Son compte est géré par la plate-forme SACHEM.</para>
+      </listitem>
+     <listitem><para><emphasis>post-payé</emphasis> : Forfait grand public en vente direct (service via le #123# rendu par ECARE).</para>
+      </listitem>
+     <listitem><para><emphasis>DME</emphasis> : Client Entreprise (connu de DISE).</para>
+      </listitem>
+     <listitem><para><emphasis>Bzh_gp</emphasis> : Breizh Grand public (connu de OCFet ECARE Bzh).</para>
+      </listitem>
+      <listitem><para><emphasis>Bzh_cmo</emphasis> : Breizh CMO (connu de OCF et Sachem).</para>
+      </listitem>
+      <listitem><para><emphasis>tele2_gp</emphasis> : Tele2 Grand Public (connu de OCF).</para>
+      </listitem>
+      <listitem><para><emphasis>tele2_pp</emphasis> : Tele2 Grand Public (connu de OCF et Sachem).</para>
+      </listitem>
+     <listitem><para><emphasis>ANON</emphasis> : client anonyme dont la souscription n'est ni mobicarte, ni OMER, ni cmo, ni postpaid en vente directe, ni DME. (voir provisioning suivi-conso). Ce profil ne peut-être déduit que lors du provisioning suivi-conso</para>
+     </listitem>
+    </itemizedlist>  
+    <para>Le profil commercial peut provenir de donnée renvoyé par OCF/RDP qui permet l'identification des souscription : mobi, omer, cmo, postpaid, et dme. </para>
+    <para>Ce type de souscription sert de critère majeur pour les procédures de :</para>
+    <itemizedlist>
+      <listitem><para>filtrage des cas pathologiques, dans le cas des offres prépayées</para>
+      </listitem>
+     <listitem><para>aiguillage initial, les clients mobicarte / CMO accédant à des services de self-care différents</para>
+     </listitem>
+    </itemizedlist>  
+    <para>Ce paramètre est utilisé afin de présenter des portails de service différents aux clients des différentes offres commerciales d'Orange France, afin de mieux en cibler les contenus.</para>
+   </section>
+   <section><title>Données de service</title>
+    <para>Il s'agit ici des données spécifiques à la plate-forme Cellcube, mais partagées par l'ensemble des services USSD.</para>
+    <para>On y trouve notamment :</para>
+     <itemizedlist>
+      <listitem><para>la langue de service, utilisée par les différentes applications, afin de présenter leur contenu de la manière la plus pertinente possible</para>
+     </listitem>
+     <listitem><para>la monnaie de préférence</para>
+     </listitem>
+      <listitem><para>etc?</para>
+     </listitem> 
+     </itemizedlist>  
+     <para>Les services actuels ne font qu'un usage limité de ces données</para>
+   </section>
+   <section><title>Données complémentaires</title>
+    <para>En évolutions, en fonction des possibilités d'initialisation de ces données, il sera possible d'enrichir les profils utilisateurs de données complémentaires qui pourraient permettre une meilleure personnalisation des applications USSD.</para>
+    <para>Il pourrait s'agir des données suivantes:</para>
+    <itemizedlist>
+     <listitem><para>nom</para>
+     </listitem>
+     <listitem><para>adresse</para>
+     </listitem>
+     <listitem><para>password</para>
+     </listitem>
+     <listitem><para>@IP</para>
+     </listitem>
+     <listitem><para>etc?.</para>
+     </listitem>
+    </itemizedlist> 
+   </section>
+  </section>
+
+  <section>
+      <title>Profil utilisateur complémentaire spécifique Orange France</title>
+      <para>
+      Afin de stocker les informations spécifiques aux clients Orange France (a
+      priori indépendantes d'un service particulier) de telle sorte à faciliter
+      la fouille de données, on emploie une table spécifique indexée par
+      l'identifiant de la table de profil utilisateur générique. Elle sert
+      actuellement à stocker le segment technologique.
+      </para>
+      <para>
+      L'accès aux informations stockées dans cette table se fait à l'initiative
+      des applications.
+      </para>
+  <section><title>Segment technologique</title>
+      <para>
+      Le premier appel (à l'intérieur d'une session donnée) à une fonction
+      effectuant une redirection selon le segment technologique du client
+      déclenche une recherche dans la table. La valeur du segment technologique
+      est ensuite stockée dans le contexte de session. Ainsi, si de nouveaux
+      appels aux fonctions de redirection selon le segment technologique sont
+      effectués dans la même session, il n'y aura pas de nouvelle interrogation
+      de la base de données.
+      </para>
+      <para>
+      On ne stocke que des segments technologiques connus (communiqués par
+      Orange France). Dans le cas où un segment technologique inconnu est reçu
+      d'OCF, que ce soit par interrogation en temps réel ou par traitement de
+      lot, on stocke une valeur particulière (voir la liste des segments
+      technologiques, <xref linkend="table_segs_techs"/>).
+      </para>
+  </section>
+  </section>
+
+  <section><title>Profil de personnalisation de service</title>
+   <para>En plus des données de profil spécifiques au client, la plate-forme Cellcube donne la possibilité de stocker des données de personnalisation propres à un service spécifique dans une table dédiée.</para>
+   <para>Cette table est utilisée par les applications souhaitant pouvoir récupérer des données propres à un client, d'un accès à l'autre.</para>
+   <para>On pourrait comparer l'usage qui peut être fait de cette table à la façon dont les applications web utilisent les cookies.</para>
+   <section><title>Données</title>
+    <para>La table peut contenir des données quelconques. L'encodage et le décodage de ces données sont propres à chaque application.</para>
+    <para>Les données sont indexées dans la table par le couple :</para>
+    <itemizedlist>  
+     <listitem><para>identifiant interne du client</para>
+      </listitem>
+     <listitem><para>identifiant de l'application</para>
+     </listitem>
+    </itemizedlist> 
+    <para>L'utilisation de l'identifiant interne permet ici d'assurer la persistance de ces données de personnalisation lors des divers changements de profil potentiels des clients.</para>
+    <para>La table permet également de gérer la date de première création du profil de service, ainsi que la date de sa dernière modification. Ces données pourront servir de base à d'éventuels traitements batch massifs de purge.</para>
+   </section>
+   <section><title>Modes d'accès</title>
+    <para>L'accès aux données stockées dans cette table est laissé à l'initiative de l'application.</para>
+    <para>En particulier, les données stockées dans cette table ne sont pas récupérées systématiquement lors de l'ouverture de la session.</para>
+   </section>
+   <section><title>Exemples</title>
+    <section><title>Bookmark</title>
+     <para>Le service de gestion des bookmarks fait usage de la table des profils de service afin de stocker les liens ajoutés par l'utilisateur.</para>
+    </section>
+    <section><title>Flash Nouveautés</title>
+     <para>Le service de « Flash Nouveautés » intégré notamment dans les services de selfcare mobicarte et Compte mobile Orange en USSD stocke dans la table des profils de service les compteurs de visite de chacune des instances du service.</para>
+    </section>
+   </section>
+  </section>
+  <section><title>Profil de session</title>
+   <para>Chaque session applicative se voit attribuer un profil lors de son ouverture. Ce profil est ensuite mis à disposition des applications pendant la durée de la session, avant d'être supprimé lors de la coupure la session applicative, quelle qu'en soit la cause (inactivité, rupture applicative, coupure réseau,?)</para>
+   <section><title>Données</title>
+    <para>Ce profil de session intègre notamment :</para>
+    <itemizedlist>
+     <listitem><para>le profil utilisateur, en particulier ses paramètres techniques, et son offre commerciale</para>
+     </listitem>
+     <listitem><para>les caractéristiques techniques de la session, en particulier :</para>
+      <itemizedlist>
+       <listitem><para>le support utilisé (USSD phase 1 ou phase 2) avec le code de service composé</para>
+       </listitem>
+       <listitem><para>horodatage de la session</para>
+       </listitem>
+       <listitem><para>historique de navigation</para>
+       </listitem>
+      </itemizedlist>
+     </listitem>
+     <listitem><para>le profil de taxation :</para>
+      <itemizedlist>
+	 <listitem><para>le mode de taxation : dans le cas du projet Orange France, il s'agira d'une taxation en temps différé</para>
+       </listitem>
+       <listitem><para>les données de taxation courante (prix, solde, plan tarifaire courant, etc?)</para>
+       </listitem>
+      </itemizedlist>
+     </listitem>
+     <listitem><para>l'environnement applicatif, dans lequel les applications peuvent stocker des informations dont la durée de vie ne dépasse pas celle de la session.</para> 
+     </listitem>
+    </itemizedlist>
+    <para>Le profil de session intègre de données de localisation de l'utilisateur (VLR_NUMBER renvoyé par l'USSDC).</para>
+   </section> 
+   <section><title>Initialisation</title>
+    <para>Le profil de session est initialisé sur la base de sources multiples :</para>
+    <itemizedlist>
+     <listitem><para>base de données des profils utilisateurs</para>
+     </listitem>
+     <listitem><para>paramètres techniques obtenus à l'interface avec l'USSDC</para>
+     </listitem>
+     <listitem><para>données issues de la procédure de provisioning</para>
+     </listitem>
+    </itemizedlist>
+   </section>
+   <section><title>Utilisation</title>
+    <para>La plupart des applications font usage de ce profil de session pour adapter leur traitement. L'application de routage initial constitue la première de ces applications. Elle implémente l'arbre décisionnel qui route le client vers la page d'accueil adéquate en fonction de son profil (dans l'implémentation actuelle, seul le paramètre de type de souscription est utilisé) et du code de service composé.</para>
+   </section>
+  </section>
+ </chapter>
+
+
+<!-- CHAPITRE 4: Procédure d'initialisation-->
+ <chapter id="ch4"><title>Procédure d'initialisation</title>
+  <para>Quelque soit le niveau de provisioning choisi, nous réalisons les procédures suivantes :</para>
+  <itemizedlist>
+   <listitem><para>Recherche du profil dans la base de données</para>
+   </listitem>
+   <listitem><para>Détection renouvellement de la carte SIM </para>
+   </listitem>
+   <listitem><para>Adaptation au type de terminal</para>
+   </listitem>
+  </itemizedlist>
+  <para>Ces quelques procédures correspondent aux règles minimal de notre provisioning et par conséquent il s'agit du niveau 0 ou « Aucun provisioning ».</para>
+  <section><title>Recherche du profil dans la base locale</title>
+   <para>La première phase consiste à interroger la base de données de profils locale, afin de rapatrier un profil existant.</para>
+   <para>La recherche se fait sur la base de l'IMSI du client qui a été fourni par l'USSD-C dans le message d'ouverture de la session.</para>
+   <para>Dans le cas où la recherche serait infructueuse, on enclenche les traitements spécifiques aux nouveaux clients.</para>
+   <para>Dans le cas où le client serait connu, on récupère :</para>
+   <itemizedlist>
+    <listitem><para>son identifiant interne</para>
+    </listitem>
+    <listitem><para>son offre commerciale</para>
+    </listitem>
+    <listitem><para>son MSISDN</para>
+   </listitem>
+    <listitem><para>son IMEI</para>
+    </listitem>
+   </itemizedlist>
+   <para>Les traitements spécifiques aux clients non anonymes sont ensuite enclenchés.</para>
+    <figure id="get_profile"><title>Récupération du profile en Base</title>
+    <mediaobject>
+     <imageobject>
+      <imagedata fileref="../images/get_profile.jpg" format="JPEG" scale="60"/>
+     </imageobject>
+    </mediaobject> 
+   </figure>
+  </section>
+
+  <section><title>Renouvellement carte SIM</title>
+   <para>Il s'agit ici d'identifier les cas de renouvellements de carte SIM.</para>
+   <para>Pour ce faire, une recherche est lancée dans la base de profils utilisateurs, pour déterminer l'existence d'un profil avec un IMSI différant de l'IMSI remontée par le réseau uniquement par son numéro de version.</para>
+   <para>Si un profil correspondant est trouvé, on le rapatrie, avant d'enclencher la procédure suivante appliquée aux clients non anonymes.</para>
+   <section><title>Conditions d'apparition</title>
+    <para>Un client peut demander le renouvellement de sa carte SIM suite à la perte ou au vol de sa carte précédente.</para>
+    <para>Lors de cette procédure, l'IMSI précédent est barré au niveau du réseau, et un nouvel IMSI est attribué à la carte renouvelée.</para>
+    </section>
+   <section><title>Détection par Cellcube</title>
+    <para>Orange France gère l'attribution des IMSI de ses abonnés en réservant l'un des digits comme indicateur de numéro de version, comme indiqué ci dessous.</para>
+    <para>IMSI = 208 01 HH V NNNNNNN      V étant le numéro de version</para>
+<para>Lors d'une procédure de renouvellement de carte SIM, l'IMSI attribué à la nouvelle carte est obtenu en incrémentant le numéro de version de l'IMSI initial.</para>
+    <para>Lors de la première connexion du client avec sa nouvelle carte SIM, le nouvel IMSI sera inconnu de la base. En revanche, la base aura connaissance d'un IMSI différant uniquement par le numéro de version.</para>
+   </section>
+   <section><title>Actions à réaliser</title>
+    <para>Il s'agit dans ce cas de modifier le profil utilisateur existant afin qu'il intègre l'IMSI avec son nouveau numéro de version. Le client pourra ainsi récupérer l'ensemble de ses données de profil utilisateur et service.</para>
+   </section>
+  </section>
+
+  <section><title>Adaptation au type de terminal</title>
+   <para>Afin d'augmenter le pourcentage de mobiles compatibles avec les services USSD, une fonction d'adaptation de la navigation en fonction du type de terminal est implémentée. L'adaptation peut porter sur les éléments suivants :</para>
+   <itemizedlist>
+    <listitem><para>taille des messages envoyés, afin de contourner les dysfonctionnements de certains terminaux incapables de traiter des messages de taille donnée.</para>
+    </listitem>
+    <listitem><para>mode de navigation, afin de permettre aux clients disposant de terminaux s'annonçant USSD phase 2, mais implémentant mal cette fonctionnalité, d'accéder à un service minimal.</para>
+    </listitem>
+   </itemizedlist>
+   <para>Cette adaptation est faite sur la base de l'IMEI du terminal du client, récupéré auprès d'une base extérieure à la plate-forme Cellcube.</para>
+   <section><title>Mode de fonctionnement</title>
+    <para>L'adaptation du service au terminal de l'utilisateur se fait en deux phases. Dans un premier temps, Cellcube récupère l'IMEI du client auprès de la base de Profilage.</para> 
+    <para>La base de Profilage utilisé est la base RDP (plateforme OF interrogeable via http sur le VPN unique)</para>
+    <para>L'information renvoyée est stockée dans le profil technique du client.</para>
+    <para>Dans un second temps, l'IMEI du client est utilisé pour définir la longueur des messages supportés par le terminal, ainsi que le mode de navigation à appliquer. 
+     La base de Profilage n'est interrogée que lors de la première connexion du client, ou lors de la première connexion d'un client suivant une ré-initialisation de son IMEI par le biais de l'outil de customer care. </para>
+    </section>
+
+   <section><title>Profilage à l'aide d'OCF-RDP</title>
+    <section><title>Principes</title>
+     <para>Afin d'adapter la navigation en fonction des terminaux, nous utilisons la base OCF-RDP. Cette base permet de connaître TAC et Niveau de service USSD (USSD Level) associés à un IMSI ou MSISDN donné. Ainsi à partir du TAC et de l'USSD Level nous pouvons appliquer des règles de navigation.</para>
+     <para>OCF-RDP renvoie d'autres données spécifiques à certains services email, MMS, etc., ou génériques (segment technologique), mais celles-ci ne sont pas utilisées pour la gestion du provisioning. Les données présentes dans OCF-RDP concernent tous les clients d'Orange France.</para>
+     <para>L'interrogation en temps réels de cette base se base sur le protocole XML/RPC sur http.</para>
+     <para>D'autres part, OCF-RDP renvoie de manière quotidienne un flux d'information sur les modifications de profil des utilisateurs du service. Le traitement par Batch de ces informations est traité dans le paragraphe Flux OCF-RDP.</para>
+     <para>L'interrogation se fait via la requête « subscribeByImsi » lorsque qu'il s'agit d'un nouveau client et « getUserInformationByImsi » lorsqu'il s'agit d'une mise à jour  (reset de l'IMEI).</para>
+     </section>
+    <section><title>Procédure d'interrogation : Conditions d'apparitions</title>
+     <para>Cette procédure n'est déclenchée que lorsque le client ne dispose pas de profil en base, ou lorsque son IMEI est explicitement noté en base comme devant être obtenu par interrogation d'OCF-RDP. Lorsqu'il s'agit d'un nouveau client, nous interrogeons OCF-RDP via la requête « subscribeByImsi » afin d'être prévenue de toute modification de son profil à terme.</para>
+     <para>Dans le cas où le client souhaite une mise à jour de son IMEI, seule une modification manuelle du profil de l'abonné via l'interface customer care permettra de lui attribuer la valeur d'IMEI spécifique qui déclenchera l'interrogation du OCF-RDP lors du prochain accès. Dans ce cas, nous interrogeons OCF-RDP via la requête « GetUserInformationByImsi », et modifions la base de profil  afin d'intégrer la valeur correcte de son IMEI.</para>
+     <para>En revanche, si le client change de terminal, l'IMEI qui lui avait été attribué lors de sa première connexion et qui a été stocké dans la base de profils n'est pas automatiquement invalidé. Les modifications d'IMEI sont envoyées par OCF-RDP via un fichier XML qui sera traitée par Flux Batch (cf Flux OCF-RDP).</para>
+     </section>
+    <section><title>Nouveaux Clients</title>
+     <para>Afin de recevoir par flux batch les modifications de profil des clients utilisant l'USSD tous nouveaux clients doivent s'inscrire à OCF-RDP. L'inscription se fait en même temps que le premier profilage grâce à la requête « subscribeByImsi ».</para>   
+     <section><title>Cas classique</title>
+      <para>Dans le cas, où la requête « SubscribeByImsi » aboutit à une souscription réussie (ResponseCode=true) et à la réception des données (MSIDN, TAC, USSD Level).</para> 
+      <figure id="ocf_souscription"><title>OCF-RDP: Souscription</title>
+       <mediaobject>
+	<imageobject>
+	 <imagedata fileref="../images/SubscribeByImsi.jpg" format="JPEG" scale="300"/>
+	</imageobject>
+     </mediaobject> 
+      </figure>
+      <para>Les données suivantes sont utilisées :</para>
+      <itemizedlist>
+       <listitem><para>MSISDN</para>
+       </listitem>
+       <listitem><para>TAC</para>
+       </listitem>
+       <listitem><para>UL</para>
+       </listitem>
+       <listitem><para>SegCo (interprété en Profil Commercial cf Tableaux SegCO OCF) et stocké dans le profil.</para>
+       </listitem>
+       <listitem><para>TechnologicalSegment est stocké dans le profil du contexte de session et dans la table de profil complémentaire Orange France.</para>
+       </listitem>
+      </itemizedlist>
+      <para>Ensuite, nous passons  à l'Adaptation au terminal.</para>
+     </section>
+     <section><title>Cas d'erreurs</title>
+      <para>Les différents cas d'erreurs sont :</para>
+      <itemizedlist>
+       <listitem><para>IMSI inconnu</para>
+       </listitem>
+       <listitem><para>Multiple souscription</para>
+       </listitem>
+       <listitem><para>Non Réponse (TO, connexion HS)</para>
+       </listitem>
+      </itemizedlist>
+      <para>Suivant le type de provisioning la gestion de ces erreurs peuvent différer.</para>
+     </section>
+    </section>
+    <section><title>Clients dont l'IMEI est à « Null »</title>
+     <para>Lorsque que l'on souhaite mettre à jour l'IMEI d'un client, il suffit de reseter l'IMEI de celui-ci. Cette procédure est disponible sur l'outil de service client. Dans ce cas, le client est déjà inscrit en base OCF-RDP et nous avons uniquement besoin de récupérer son profile courant grâce à la  requête « getUserInformationByImsi ».</para>
+     <para>En cas d'échec, il est possible de fournir le service en donnant de manière temporaire un IMEI par défaut.</para>
+     <section><title>Cas classique</title>
+      <para>Dans le cas, où la requête « GetUserInformationByImsi » aboutit à la réception des données (MSIDN, TAC, USSD Level).</para>
+      <figure id="ocf_getuser"><title>OCF-RDP: Récupération Profile</title>
+       <mediaobject>
+	<imageobject>
+	 <imagedata fileref="../images/GetUserByImsi.jpg" format="JPEG" scale="300"/>
+	</imageobject>
+       </mediaobject> 
+      </figure>
+      <para>Les données suivantes sont utilisées :</para>
+      <itemizedlist>
+       <listitem><para>MSISDN</para>
+       </listitem>
+       <listitem><para>TAC</para>
+       </listitem>
+       <listitem><para>UL</para>
+       </listitem>
+       <listitem><para>TechnologicalSegment est stocké dans le profil du contexte de session mais pas dans la table de profil complémentaire Orange France.</para>
+       </listitem>
+      </itemizedlist>
+      <para>Le champ SegCo n'est pas utilisé dans le cadre d'une mise à jour de l'IMEI . Cela permet d'éviter d'écraser la souscription « ANON » (qui n'existe que dans le provisioning suivi-conso). Exemple: cas des clients postpaid en vente indirect</para> 
+      <para>Ensuite, nous passons  à l'Adaptation au terminal.</para>
+     </section>
+     <section><title>Cas d'erreur</title>
+      <para>En cas d'échec, le client se voit affecter un service en Niveau 1. Un reset par Batch de nuit de tous les IMEI des IMSI impliqués est effectuée par la suite. 
+       Nous stockons dans un fichier tous les IMSI dont l'interrogation OCF tombe en échec afin d'effectuer un reset de l'IMEI par batch de nuit avant la mise en synchronisation du flux Batch OCF-RDP (cf Reset des IMEI).</para>
+      <para>Par défaut, nous permettons une continuation du service dans ce cas.</para>
+     </section>
+    </section>
+   </section>
+   <section><title>Adaptation au terminal</title>
+    <para>L'IMEI est formé à partir du TAC et du niveau de service USSD en complétant le TAC par des caractères X, avec pour dernier caractère l'USSD_LEVEL.
+     Ce qui nous donne par exemple 100007XXXXXXXX1 pour un code TAC « 100007 » et niveau de service de 1.</para>
+     <para>L'adaptation au terminal se fait de la manière suivante :</para>
+    <itemizedlist>
+     <listitem><para>1- appel de la fonction générique de correspondance entre le TAC et les informations de profilage (phase, longueur de message en navigation, longueur du message en fin de session, ..).</para>
+     </listitem>
+     <listitem><para>2- surcharge de l'information longueur du message en navigation en fonction du niveau de service USSD (1 -> 181, 2-> 130, 3-> 64, 4->63).</para>
+     </listitem>
+    </itemizedlist>
+   </section>
+   <section><title>Mise à jour du MSISDN</title>
+    <para>L'MSISDN provenant d'OCF-RDP est stockée dans le profil courant.</para>
+    <para>Dans le cas d'un client « prépayé » si Sachem renvoie un MSISDN différent, nous considérons que les données renvoyées par Sachem sont pré-prondérantes.</para>
+    <para>Dans le cas contraire, nous considérons que le MSISDN fournis par OCF est à jour pour interroger les autres bases du SI.</para>
+   </section>
+  </section>
+ </chapter>
+
+ <chapter><title>Règles de gestion communes</title>
+  <para>Comme décrit au paragraphe 3, la plate-forme Cellcube gère un certain nombre de données de profil pour chacun des clients accédant à ses services.</para>
+  <para>Au cours du cycle de vie normal d'un client Orange France, ces données peuvent être amenées à changer. La plate-forme Cellcube doit donc se doter des procédures de provisioning adéquates, permettant de garantir la cohérence et la pertinence de ces données.</para>
+  <para>Ces procédures doivent d'autre part prendre en compte un certain nombre de contraintes imposées par l'architecture technique déployée dans le cadre du projet Orange France.</para>
+  <para>L'objectif des paragraphes suivants et de répertorier les évènements commun au niveau de provisioning 1 à 3 ayant un impact sur la gestion des données de profil, ainsi que les règles de gestion s'y appliquant. Ces différents évènement correspondent aux différentes interactions entres les données du SI d'Orange France et de la plate-forme cellcube.</para>
+  <section><title>Clients en période d'auto provisioning</title>
+   <para>Les clients en période d'auto-provisioning sont des cliens inconnu de toutes les bases SI ("anon" en niv3, postpaid en niv 2, 
+accès interdit en niv 1).</para>
+   <para>Ces clients principalement dont l'offre est de type forfait( "postpaid", "dme", "cmo") sont pendant une période inconnu d'OCF, d'ECARE ou de DISE</para>
+   <para>Le comportement du service diffère en fonction du provisioning choisie</para>
+   <para>Ces clients sont</para>
+   <itemizedlist>
+    <listitem><para>de souscription "anon" en provisioning suivi-conso</para>
+    </listitem>
+    <listitem><para>de souscription "postpaid" en provisioning Niv 2</para>
+    </listitem>
+    <listitem><para>n'ont pas accès aux service en provisioning Niv 1</para>
+    </listitem>
+   </itemizedlist>
+   
+   <para>Pendant la phase transitoire, ces clients peuvent donc accéder au service d'e-care en USSD. En revanche, le client aura accès à l'ensemble des services auxquels un client postpayé classique aurait accès, ce qui pourrait se révéler problématique en cas de commercialisation de services payants. En effet, il ne serait pas possible de facturer ces services pendant cette phase transitoire.</para>
+   <para>Cependant, dès la procédure de prise de commande entièrement aboutie, c'est-à-dire dès que l'ordre de création complet est parvenu au différentes base SI de la  part du système ABO, le statut correct du client est récupéré et mis à jour.</para>
+  </section>
+  <section><title>Résiliation d'un client</title>
+   <section><title>Cas d'apparition</title>
+    <para>Résiliation de la souscription</para>
+   </section>
+   <section><title>Détection par Cellcube</title>
+    <para>Les ordres de résiliation sont transmis par OCF-RDP en flux Batch. Tous les clients dont l'état du dossier est « Clôt » (état=70) seront supprimé de la base Cellcube.</para>
+   </section>
+   <section><title>Actions</title>
+    <para>Suppression des entrées de la base Clients. Chaque nuit, le flux batch OCF-RDP traite cette action.</para>
+   </section>
+  </section>
+
+  <section><title>Ré-attribution du MSISDN</title>
+   <section><title>Cas d'apparition</title>
+    <para>Après résiliation d'une souscription, le MSISDN est gelé pendant une période fixée par l'opérateur.</para>
+    <para>A l'issue de cette période de gel, le numéro d'appel pourra être ré attribué à un nouveau client.</para>
+   </section>
+   <section><title>Détection par Cellcube</title>
+    <para>Lors de son premier accès à la plate-forme de service, le nouveau client se voit appliquer la règle appliquée au client anonyme.</para>
+   </section>
+   <section><title>Actions</title>
+    <para>Il convient de créer un nouveau profil entièrement indépendant du profil du précédent détenteur du MSISDN.</para>
+   </section>
+  </section>
+  <section><title>Mise à jour de la base de profils</title>
+   <para>Lors de la fermeture de la session, la base de données locale de profils est mise à jour, afin d'en intégrer les éventuelles modifications identifiées au cours de la session.</para>
+   <para>En particulier, toutes les détections de modifications des données techniques ou commerciales lors de la phase de provisioning pour un client existant sont reportées dans la base locale en fin de session.</para>
+  <para>La base complémentaire Orange France n'est pas mise à jour à cette occasion.</para>
+  </section>
+ </chapter>
+ 
+ <!-- Provisioning de Niveau 0 -->
+ <chapter id="ch6"><title>Niveau 0 : aucun provisioning</title>
+  <para>Le fait de ne pas provisionner un client sur un service implique la possibilité de sessions anonymes.</para> 
+  <para>Une session anonyme correspond à un nouveau client qui se connecte à un service USSD sans qu'une procédure d'identification ou de provisioning ne soit été réalisée.</para>
+  <para>Ces sessions de clients inconnus en base ne génèrent aucune information consultable. Il ne s'agit pas d'un client connu. De ce fait aucun log de session n'est enregistré.</para> 
+  <para>Seules les procédures décrites au paragraphe 4 sont appliquées aux clients.</para>
+ </chapter>
+
+ <!-- Provisioning de Niveau 1-->
+ <chapter id="ch7"><title>Niveau 1 : identification</title>
+  <section><title>Introduction</title>
+   <para>Ce niveau de provisioning a été créé en vue d'alléger le système SI externe à Cellicium dans le cadre de services à forte charge.</para>
+   <para>L'identification complète du client n'est réalisée que lors de son premier accès à la plate-forme. Aucun filtrage des états pathologiques n'est réalisé.</para>
+   <para>L'identification est réalisée grâce à l'interprétation du champ SegCO renvoyé par OCF lors de la souscription du client.</para>
+   <para>Aucune interrogation du SI d'Orange France n'est effectuée si aucune facturation temps réels n'est demandée.</para>
+   <para>Le schéma suivant décrit succinctement le principe fonctionnel de ce type de provisioning.</para>
+   <figure id="identify_user"><title>Provisioning de niveau 1</title>
+    <mediaobject>
+     <imageobject>
+      <imagedata fileref="../images/identify_user.png" format="PNG" scale="45"/>
+     </imageobject>
+    </mediaobject> 
+   </figure>
+   <para>L'identification ne se fait qu'au premier accès de ce fait, ce provisioning détecte les évènements suivants :</para>
+   <itemizedlist>
+    <listitem><para>accès initial au service</para>
+    </listitem>
+    <listitem><para>changement de MSISDN pour un même utilisateur</para>
+    </listitem>
+    <listitem><para>Erreur OCF</para>
+    </listitem>
+   </itemizedlist>
+   <para>Par contre, les évènements suivants ne sont pas détectés en temps réels par ce provisioning</para>
+   <itemizedlist>
+    <listitem><para>Changement d'offre commerciale: fluidité</para>
+    </listitem>
+    <listitem><para>Indisponibilité SDP, CVF, ou DISE</para>
+    </listitem>
+   </itemizedlist>
+  </section>
+  <section><title>Phase d'identification</title>
+   <para>Lors de la phase d'initialisation une requête de souscription "subscribeByImsi" est effectuée(cf chapitre procédure d'initialisation), la réponse à cette requête sert d'identification</para>
+   <section><title>Identification du client</title>
+    <para>Un client est considéré comme identifié si :</para>
+    <itemizedlist>
+     <listitem><para>la souscription a réussi</para>
+     </listitem>
+     <listitem><para>le segment commerciale est connu(cf Annexe table de correspondance SegCO profile commerciale)</para>
+     </listitem>
+    </itemizedlist>
+    <para>Nous utilisons le segment commercial renvoyé par OCF pour identifier le client.</para>
+    <para>Un identifiant unique est créé en base et les données du profil enregistrées.</para>
+   </section>
+   <section><title>Non Identification du client</title>
+    <para>Un client ne peut être identifié dans les cas suivants:</para>
+    <itemizedlist>
+     <listitem><para>IMSI inconnu d'OCF</para>
+      </listitem>
+     <listitem><para>Souscription OCF a échoué</para>
+     </listitem>
+    </itemizedlist>
+    <para>L'identification du client se basant sur le segment commercial de la réponse OCF, il est impossible d'identifier un client inconnu d'OCF.</para>
+    <para> De ce fait, un message d'erreur de type « non accès » est renvoyé aux clients d'IMSI inconnu</para>
+    <para>Dans le cas, ou la requête « SubscribeByImsi » ne reçoit pas de réponse, le client se verra proposé un message de type « service indisponible »</para>
+   </section>
+  </section>
+   <section><title>Initialisation de la fonction de facturation</title>
+   <para>Dans le cas d'un client non anonyme seul les procédures décrites au paragraphe 4 sont appliquées. Le profil commercial en base Cellcube est considéré comme « digne de confiance »</para>
+   <para>La plate-forme Cellcube déployée pour Orange France ne dispose pas de l'option de facturation avancée. Toutes les sessions font donc usage de la fonction de facturation standard.</para>
+  </section>
+  <section><title>Règles de gestion</title>
+   <section><title>Changement de MSISDN</title>
+    <section><title>Conditions d'apparition</title>
+     <para>Orange France donne la possibilité à ses clients, sous certaines conditions, de changer de numéro d'appel, tout en conservant la même carte SIM. Il peut s'agir, en particulier, d'une procédure pilotée par le service client suite à une plainte.</para>
+    </section>
+    <section><title>Détection par Cellcube</title>
+      <para>A chaque début de session, la plate-forme de service récupère du réseau le MSISDN des clients phase 2.</para>
+     <para>Lors d'une requête de reset de l'IMEI, nous récupérons le MSISDN d'OCF</para>
+     <section><title>Actions à réaliser</title>
+      <para>Il s'agit ici de faire évoluer le profil utilisateur, afin de répercuter la modification du paramètre MSISDN.</para>
+      <para>Les données de profil de services sont conservées, et restent accessibles au client.</para>
+      </section>
+    </section>
+   </section>
+   <section><title>Changement d'offre commerciale</title>
+    <para>Les différents changements d'offre commerciale ne sont pas détecté en temps réels.</para>
+    <para>Par contre, le traitement par batch d'OCF-RDP détecte ces changements</para> 
+   </section>
+  </section>
+  </chapter>   
+  
+  <!-- Provisioning de Niveau 2-->
+  
+  <chapter id="ch8"><title>Niveau 2 : le provisioning complet</title>
+    <section><title>Introduction</title>
+      <para>Le chapitre suivant décrit la procédure de provisioning appliquée dans le cadre de la plate-forme de services USSD mise en place pour Orange France. Cette procédure se déroule lors de l'ouverture de la session, que celle-ci ait lieu en USSD phase 1 ou USSD phase 2.</para>
+      <para>Ce provisioning doit être utilisé pour les services qui nécessitent l'accès aux fonctions de facturation ou le filtrage d'accès en fonction de l'état du compte client(prépayé uniquement).</para>
+      <para>En revanche, le service de suivi-conso se verra attribué le niveau de provisioning 3 spécifiquement optimisé pour ce cas de figure.</para>
+      <para>Cette phase de provisioning débute après les procédures d'initialisation décrites plus hauts</para>
+      <figure id="identify_niv2"><title>Provisioning de niveau 2</title>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="../images/identify_niv2_v2.png" format="PNG" scale="35"/>
+	  </imageobject>
+	</mediaobject> 
+      </figure>
+    </section>
+    <section><title>Gestion des Erreurs OCF</title>
+      <para>L'identification du client se basant en partie sur le segment commerciale de la réponse OCF, l'identification ne peut-être complétée si le client est inconnu d'OCF.</para>
+      <para> De ce fait, un message d'erreur de type « non accès » est renvoyé aux clients d'IMSI inconnu</para>
+      <para>Dans le cas, ou la requête « SubscribeByImsi » ne reçoit pas de réponse, le client se verra proposer un message de type « service indisponible »</para>
+    </section>
+    <section><title>Phase Identification</title>
+      <section><title>Interrogation Séquentielle</title>
+	<figure id="boucle_niv2_new"><title>Interrogation Séquentielle Nouveaux clients</title>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="../images/boucle_id_niv2.png" format="PNG" scale="40"/>
+	    </imageobject>
+	  </mediaobject> 
+	</figure>
+
+	<figure id="boucle_niv2"><title>Interrogation Séquentielle clients non prépayé</title>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="../images/boucle_id_niv2_connu.png" format="PNG" scale="40"/>
+	    </imageobject>
+	  </mediaobject> 
+	</figure>
+	<para>La procédure d'interrogation séquentielle est enclenchée pour les clients ne disposant d'aucun profil dans la base et ne correspondant pas à un renouvellement de carte SIM.</para>
+	<para>Elle est aussi enclenchée pour les clients connu non prépayé afin de détecter d'éventuel changement d'offre commercial vers des offres prépayées.</para>
+	<para>L'ordre d'interrogation cherche à minimiser le nombre d'opérations, en commençant par la base la plus importante, à savoir la base mobicarte, avant d'enchaîner sur la base Compte mobile Orange.</para>
+	<section><title>Requête</title>
+	  <para>L'interrogation du SDP mobicarte et CMO se fait grâce à la requête A4, permettant de récupérer l'ensemble des paramètres du client, sur la base de son IMSI.</para>
+	</section>
+	<section><title>Non Identification Mobicarte et OMER</title>
+	  <para>Les codes de retour suivant sont interprétés par la procédure de provisioning comme traduisant le fait que le client ne bénéficie pas de l'offre mobicarte:</para>
+	  <itemizedlist>
+	    <listitem><para>statut « 10 : clé inconnue »</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =TR (transformé)</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =RO (résilié opérateur)</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =RA (résilié adv)</para>
+	    </listitem>
+	  </itemizedlist>
+	  <para>Dans chacun de ces cas de figure, l'interrogation se poursuit par une interrogation de la base CMO.</para>
+	</section>
+	<section><title>Non Identification CMO ou bzh_cmo</title>
+	  <para>Les codes de retour suivant sont interprétés par la procédure de provisioning comme traduisant le fait que le client ne bénéficie pas de l'offre cmo:</para> 
+	  <itemizedlist>
+	    <listitem><para>statut « 10 : clé inconnue »</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =TR (transformé)</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =RO (résilié opérateur)</para>
+	    </listitem>
+	    <listitem><para>statut « 00 », état principal =RA (résilié adv)</para>
+	    </listitem>
+	  </itemizedlist>
+	</section>
+	<section><title>Identification Prépayé</title>
+	  <para>Dans le cas où le SDP Sachem identifierait le client (réponse avec statut égal à « 00 »), et que son état ne correspond à aucun des états traités plus haut, la phase d'interrogation est interrompue, et la procédure enchaîne sur la phase d'initialisation de la fonction de facturation.</para>
+	  <para>Si le profil obtenu est différent du profil initialement connu, les modifications seront reportées dans la base locale lors de la fermeture de la session, comme indiqué au paragraphe 5.4</para>
+	</section>
+	<section><title>Bilan</title>
+	  <para>La phase d'interrogation se termine par un bilan qui n'est effectué que dans les cas où aucun des SDP n'a pu identifier le client.</para>
+	  <para>Dans le cas où l'interrogation Sachem serait soldée par un échec tel décrit plus haut, le client est considéré comme "non identifié".</para>
+	  <para>Pour les nouveaux clients, dans le cas où l'interrogation se serait soldée par une non-identification, le profile de souscription reçu d'OCF (cas nouveaux client) est utilisé (« dme », «bzh_gp», «tele2_gp», ou « postpaid »).La phase d'interrogation séquentielle a pu initialiser un profil non anonyme, il est donc inséré dans la base, qui lui attribue un identifiant unique.</para>
+	  <para>Pour les clients non-prépayé, le profil de souscription initial est maintenu</para>
+	</section>
+	<section><title>Erreur</title>
+	  <para>Tous les autres types de réponse sont interprétés comme des erreurs temporaires.</para>
+	  <para>La procédure d'interrogation séquentielle se poursuit cependant. Le traitement est identique à celui décrit en cas d'indisponibilité d'OCF.</para>
+	</section>
+	<section><title>Traitement des clients "VA"</title>
+	  <para>L'état VA indique que le client n'a encore passé aucune communication. En particulier, le décompte de la durée de validité de son crédit n'a pas encore été initialisé.</para>
+	  <para>Dans le cas où un tel client se connecterait au service selfcare prépayé en USSD, il convient de procéder à l'initialisation de ce décompte. Sans cette initialisation préalable, il deviendrait possible au client d'obtenir son numéro d'appel, sans avoir initialisé son décompte, et ainsi de bénéficier d'une carte pouvant être appelée sans limite de validité.</para>
+	  <para>L'initialisation se fait en générant un pseudo-ordre de taxation à destination du SDP mobicarte, par le biais d'une requête SVI_B. (Requête Sachem « B »)</para>  
+	  <para>Dans le cas ou cette pseudo-taxe réussie le client passe à l'état actif et on relance le provisioning. Dans le cas contraire, il s'agit d'une erreur dans d'accès à le base sachem et on renvoie une message d'indisponibilité temporaire.</para>
+	  <para>L'état VA indique que le client n'a encore passé aucune communication. En particulier, le décompte de la durée de validité de son crédit n'a pas encore été initialisé.</para>
+	</section>
+      </section>
+      <section><title>Initialisation de la fonction de facturation</title>
+	<section><title>Clients prépayés</title>
+	  <section><title>Filtrage des cas pathologiques</title>
+	    <para>La fonction de filtrage des cas pathologiques commence par récupérer le profil administratif du client auprès du SDP Sachem, par le biais d'une interrogation du type identification (A4)</para>
+	    <section><title>Non-identification</title>
+	      <para>Dans le cas où l'interrogation du SDP nous indiquerait que le client n'est plus connu du SDP, la procédure de provisioning ré-enclenche l'interrogation séquentielle, tout en conservant l'identifiant attribué au client, afin de ne pas perdre son profil de services.</para>
+	    </section>
+	    <section><title>Identification</title>
+	      <para>Si le client est correctement identifié, on enclenche les traitements d'initialisation de la fonction de facturation.</para>
+	    </section>
+	    <section><title>Erreur SDP</title>
+	      <para>En cas d'erreur, le client est routé vers une page d'erreur</para>
+	    </section>
+	  </section>
+	</section>
+	<section><title>Clients postpayés , DME , BZH_GP Tele2_gp ou ANON</title>
+	  <section><title>Changement d'offre commerciale</title>
+	    <para>Lors d'un accès à la plate-forme de services par un client identifié dans la base de profils comme étant postpayé, une procédure d'interrogation de la plate-forme de gestion des comptes prépayés est enclenchée.</para>
+	    <para>Cette procédure permet de détecter les passage d'une offre commerciale postpayée (Forfait) vers une offre commerciale prépayée mobicarte , OMER , Compte Mobile Orange ou Bzh CMO.</para>
+	    <para>En revanche, il ne sera pas possible de détecter les modifications d'offre commerciale internes au domaine des offres post-payées.</para>
+	  </section>
+	  <section><title>Erreur SDP</title>
+	    <para>En cas d'erreur, le client est routé vers une page d'erreur</para>
+	  </section>
+	</section>
+	<section><title>Initialisation de la fonction de facturation</title>
+	  <para>La plate-forme Cellcube déployé pour Orange France ne dispose pas de l'option de facturation avancée. Toutes les sessions font donc usage de la fonction de facturation standard.</para>
+	</section>
+      </section>
+    </section>
+  </chapter>
+
+ <!-- CHAPITRE 9: Provisioning Suivi-Conso -->
+
+ <chapter id="ch9"><title>Niveau 3: Le provisioning Suivi-Conso</title>
+ <section><title>Introduction</title>
+   <para>Ce chapitre décrit la procédure de provisioning appliquée pour le
+   service de suivi conso #123#.</para>
+
+   <para>L'objectif est ici de limiter la charge sur les bases Sachem lorsque
+   Cellcube sait que le client est postpayé.</para>
+
+   <para>Le fonctionnement du provisioning pour les services e-care est le
+   suivant&nbsp;: dans le cas d'un client non présent dans la table des profils
+   et pour lequel OCF n'a pas d'information, on interroge Spider G1R2,
+   Spider DME G1R1, Sachem Mobi (MVNO) , Sachem CMO (MVNO) puis BZH GP. La procédure d'interrogation s'interrompt dès
+   qu'une base indique qu'elle connaît le client. Lorsque le client est dans la
+   table des profils ou qu'OCF a retourné sa souscription, on interroge d'abord
+   sa base, puis en cas de réponse «&nbsp;client inconnu&nbsp;», les autres dans
+   l'ordre utilisé pour un client inconnu (mais en sautant la base déjà
+   interrogée).</para>
+
+   <para>L'interrogation des bases «&nbsp;BZH GP&nbsp;» dans le schéma correspondent à l'envoi d'une requête HTTP afin de demander le
+   code XML de la page à présenter au client.</para>
+
+   <para>Tous les arcs de succès d'une interrogation de base ne sont pas
+   affichés afin d'alléger le schéma.</para>
+
+   <figure id="identify_niv3"><title>Provisioning de niveau 3</title>
+    <mediaobject>
+     <imageobject>
+      <imagedata fileref="../images/identify_niv3.png" format="PNG" scale="35"/>
+     </imageobject>
+    </mediaobject> 
+   </figure>
+  </section>
+  <section><title>Interface SI et Interaction</title>
+   <section><title>OCF/RDP: Erreur lors du profilage</title>
+    <section><title>Cas IMSI inconnu</title>
+     <para>Dans le cas, où OCF-RDP nous renvoie « IMSI inconnu » (FaultCode=11), nous considérons par défaut qu'il s'agit d'un client non intégré pour le moment en base OCF et dans ce cas le client se voient affecter une valeur d'IMEI par défaut. Cette valeur par défaut correspond à un niveau de service optimum : Niveau 1.</para>
+     <para>D'autres part, l'IMSI de ce client est stocké dans un fichier permettant la ré interrogation par Flux Batch (Ré-initialisation des souscription OCF)</para>
+    </section>
+    <section><title>Cas Multiple souscription</title>
+     <para>Dans le cas, où OCF-RDP nous renvoie « Souscription Multiple » (FaultCode=13), le client se voient affecter une valeur d'IMEI par défaut et non la valeur entraînant une ré interrogation lors du prochain accès. Cette valeur par défaut correspond à un niveau de service optimum : Niveau 1.</para>
+    </section>
+    <section><title>Cas Non Réponse</title>
+     <para>Son IMSI est stocké dans un fichier Batch permettant le reset de l'IMEI (cf Reset des IMEI).</para>
+     <para>Dans le cas, où OCF-RDP nous ne répond pas, ou renvoie une réponse inattendu, le client se voient affecter une valeur d'IMEI par défaut et non la valeur entraînant une ré interrogation lors du prochain accès. Cette valeur par défaut correspond à un niveau de service optimum : Niveau 1.</para>
+     <para>D'autres part, l'IMSI de ce client est stockés dans un fichier permettant la ré interrogation par Flux Batch (Ré-initialisation des souscription OCF ).</para>
+    </section>
+    <section><title>Segment technologique</title>
+     <para>
+     Lorsque l'interrogation à OCF a échoué et que le client a pu être
+     identifié en interrogeant les autres bases, on enregistre une valeur
+     «&nbsp;échec de l'interrogation OCF&nbsp;» dans la table de profil
+     complémentaire Orange France. Par défaut, le client sera ensuite considéré
+     comme possédant un mobile 2G dans le déroulement des services. Dans le cas
+     où le client ne peut être identifié, cette information n'est pas stockée.
+     </para>
+    </section>
+   </section>
+   <section><title>Interaction Cellcube - Spider G1R2</title> 
+    <para>L'interface Spider via le protocole SOAP entre la plate-forme cellcube et Spider permet de renseigner Cellcube sur toutes les informations des comptes:</para>
+    <itemizedlist>
+      <listitem><para>Mobicarte</para>
+      </listitem>
+      <listitem><para>CMO</para>
+      </listitem>
+      <listitem><para>Postpaid</para>
+      </listitem>
+     </itemizedlist>
+     <para>Lorsque le client est connu comme Mobicarte et CMO , l'offre Prepaid est indiqué dans la request. De même pour postpaid, l'offre postpaid est indiqué
+     lors de la première requête.</para> 
+     <section><title>Détection des changements d'offre</title>
+     <para>La détection d'un changement d'offre se fera à partir des évènements suivant :</para>
+     <itemizedlist>
+      <listitem><para>État principal à Résilié</para>
+      </listitem>
+      <listitem><para>Abonné inconnu</para>
+      </listitem>
+       <listitem><para>Souscription client différentes</para>
+      </listitem>
+     </itemizedlist>
+     <para>Dans ce cas, soit spider répond avec la nouvelle offre du client soit on ré-enclenche une phase d'interrogation des bases afin de pouvoir identifier la nouvelle offre du client.</para>
+    </section>
+   </section>
+   <section><title>Interaction Cellcube - Spider G1R1 DME</title>
+    <para>L'interface SOAP entre la plate-forme cellcube et Spider permet d'afficher le suivi-conso pour les clients dme. Si spider répond que le cient est prepaid ou postpaid, on considére qu'il a répondu client inconnu.</para>
+    <para>En effet, le suivi-conso des clients Mobicarte, CMo et Postpaid nécessite que les informations renvoyé soit conformes aux contrat d'interface Spider G1R2.</para>
+    </section>
+  <section><title>Interaction Cellcube -ECARE Bzh</title>
+    <para>L'interface XML/HTTP entre la plate-forme cellcube et Bzh permet d'afficher le suivi-conso pour les clients Bzh GP. Cette interface n'a pas comme fonction initiale de renseigner Cellcube sur les différents états des comptes postpayés.</para>
+    <para>Cette interface a cependant été enrichie afin de fournir quelques données techniques de base permettant d'améliorer la procédure de provisioning.</para>
+    <section><title>Détection des changements d'offre</title>
+    <para>La plate-forme ECARE renvoie une page XML contenant une redirection vers une fonction particulière(svc_home:not_bzh_gp), dans le cas où le client n'est pas connu de la base. Le client est considérer comme étant anonyme "anon".</para>
+    <para>La ré-intérogration séquentielle se fera lors de la session suivante à moins qu'OCF ne mettent les informations à Jour avant( Delta T2).</para>
+    </section>
+   </section>
+  </section>
+  <section><title>Phase d'identification des nouveaux clients</title>
+   <para>Le traitement des clients anonymes est réalisé par l'intérogation séquentielle de toutes les Bases.</para>
+   <para>La boucle d'identification n'est pas utilisé si le client est identifié par OCF comme tele2 postpaid</para>
+  </section>
+  <section><title>Phase d'identification des Clients Connu en Base</title>
+  <section><title>Clients prepayés et postpayés</title>
+    <para>Lorsque la phase initiale de recherche de profil dans la base locale de profils permet d'identifier un client comme étant postpayé/prepayé, la procédure de provisioning exécute une requête Spider G1R2 pour vérifier la validaté de la souscription puis enchaîne directement sur la phase d'initialisation de la fonction de taxation.</para>
+    <para>Le cas des changements d'offre sera traité grâce à la procédure décrite au paragraphe « 9.2.3.2 Détection des changements d'offre »</para>
+   </section>
+   <section><title>Client DME</title>
+    <para>Lorsque la phase initiale de recherche de profil dans la base locale de profils permet d'identifier un client comme étant DME, la procédure de provisioning exécute une requête Spider G1R1 pour vérifier la validaté de la souscription puis enchaîne directement sur la phase d'initialisation de la fonction de taxation.</para>
+   </section>
+    <section><title>Client BZH GP</title>
+    <para>Lorsque la phase initiale de recherche de profil dans la base locale de profils permet d'identifier un client comme étant BZH GP, la procédure de provisioning enchaîne directement sur la phase d'initialisation de la fonction de taxation.</para>
+   </section>
+    <section><title>Client Tele2</title>
+    <para>Lorsque la phase initiale de recherche de profil dans la base locale de profils permet d'identifier un client comme étant Tele2, la procédure de provisioning enchaîne directement sur la phase d'initialisation de la fonction de taxation.</para>
+   </section>
+    <section><title>Client MVNO Prepaid</title>
+    <para>Lorsque la phase initiale de recherche de profil dans la base locale de profils permet d'identifier un client comme étant un MVNO Prepaid (OMER, Bzh_cmo, Tel2 PP), la procédure de provisioning éxecute une requête Sachem pour vérifier la validaté de la souscription puis enchaîne directement sur la phase d'initialisation de la fonction de taxation.</para>
+   </section>
+   <section><title>Non Identification</title> 
+    <para>Si le client n'est pas identifié comme étant ni prépayé, ni postpaid, ni DME alors on le considère comme un client « ANON » et le client est aiguillé vers la page d'erreur suivante :</para>
+<informaltable frame="all">
+    <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="2*"/>
+     <colspec colwidth="5*"/>
+     <colspec colwidth="1*"/>
+	<thead>
+      <row>
+       <entry>Description</entry>
+       <entry>Message</entry>
+       <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>Accès interdit</entry>
+       <entry align="left"><simplelist>
+	 <member>
+	  <computeroutput>Vous n'avez pas accès à ce service.
+	  </computeroutput>
+	 </member>
+	</simplelist>
+       </entry>
+	  <entry>Fin de session</entry>
+      </row>
+     </tbody>
+    </tgroup>
+    </informaltable>
+   </section>
+  </section>
+ </chapter>
+
+ <!-- CHAPITRE 11: Filtrage des cas pathologiques -->
+
+
+ <chapter id="ch11"><title>Filtrage des cas pathologique</title>
+  <para>La fonction de filtrage des cas pathologiques a pour objet d'interdire l'accès au portail de services aux clients correspondants à certains profils. Elle s'attache en particulier à aiguiller les clients prépayés mobicarte ou Compte mobile Orange dont l'état administratif ne leur permet pas de continuer la navigation, vers des pages d'erreurs spécifiques.</para>
+  <para>Dans le cas du provisioning de type suivi-conso, elle filtre de la même manière les cas pathologiques des clients DME.</para>
+  <para>Par contre, ce filtrage n'est pas appliqué au service dont le provisioning est de niveau 0 et 1 car les sessions des clients contiennent les informations nécessaires à ce filtrage.</para>
+  <section><title>Clients Inconnu</title>
+   <para>On retrouve ici les clients pour lesquels l'interrogation séquentielle n'a pas pu déterminer un profil commercial. Il s'agit des clients qui ne sont ni mobicarte, ni CMO, ni postpaid, ni DME.</para>
+   <para>Il s'agit aussi des clients inconnu d'OCF (Prov Niv1 et 2)</para>
+   <para>Ces clients se verront présenter la page suivante :</para>
+   <informaltable frame="all">
+    <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="2*"/>
+     <colspec colwidth="5*"/>
+     <colspec colwidth="1*"/>
+	<thead>
+      <row>
+       <entry>Description</entry>
+       <entry>Message</entry>
+       <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>Accès interdit</entry>
+       <entry align="left"><simplelist>
+	 <member>
+	  <computeroutput>Vous n'avez pas accès à ce service.
+	  </computeroutput>
+	 </member>
+	</simplelist>
+       </entry>
+	  <entry>Fin de session</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </section>
+  <section><title>Clients Prépayé</title>
+   <para>Le filtrage appliqué ici s'appuie sur l'ensemble des paramètres remontés lors de l'interrogation Sachem.</para> 
+   <section><title>Traitement des états pathologiques Mobicarte</title>
+    <para>L'étape suivante consiste en l'analyse du champ ETAT_PRINCIPAL. L'objectif est de rejeter les comptes qui sont dans un état pathologique, et qui ne peuvent donc accéder aux fonctionnalités du portail de services.</para>
+    <section><title>Terminal de niveau 1 et 2</title>
+     <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Mobicarte suspendue : Merci de vous rendre dans un point de vente mobicarte avec une pièce d'identité.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	  <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	  <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>la mobicarte</computeroutput>
+	    <computeroutput>Compte mobicarte suspendu : vos appels sont bloqués.</computeroutput>
+	    <computeroutput>Veuillez contacter le service-client mobicarte.</computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	  <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>la mobicarte</computeroutput>
+	    <computeroutput>Compte mobicarte suspendu : vos appels sont bloqués.</computeroutput>
+	    <computeroutput>Veuillez contacter le service-client mobicarte.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       <row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>la mobicarte</computeroutput>
+	     <computeroutput>Compte mobicarte suspendu : vos appels sont bloqués.</computeroutput>
+	     <computeroutput>Veuillez contacter le service-client mobicarte.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	  <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>la mobicarte</computeroutput>
+	    <computeroutput>La date limite de rechargement est dépassée.</computeroutput>
+	    <computeroutput>Votre mobicarte est définitivement inutilisable </computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RA</entry>
+	 <entry>Sursitaire Résilié ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.</computeroutput>
+	   </member>
+	  </simplelist>
+	  </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RO</entry>
+	 <entry>Résilié Opérateur</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.</computeroutput>
+	    </member>
+	  </simplelist>
+	  </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>TR</entry>
+	 <entry>Transformé</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.</computeroutput>
+	    </member>
+	  </simplelist>
+	  </entry>
+	 <entry>Fin de session</entry>
+	</row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+    </section>
+    <section><title>Terminal de niveau 3</title>
+      <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Mobicarte suspendue : votre identité ne nous est pas parvenue.</computeroutput>
+	    </member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre  mobicarte est suspendue : vos appels sont bloqués.
+	     </computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre  mobicarte est suspendue : vos appels sont bloqués.
+	     </computeroutput>
+	   </member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre  mobicarte est suspendue : vos appels sont bloqués.
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre mobicarte est définitivement inutilisable 
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RA</entry>
+	 <entry>Sursitaire Résilié ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.
+	    </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RO</entry>
+	 <entry>Résilié Opérateur</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>TR</entry>
+	 <entry>Transformé</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobile.
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+     <para>A l'issue du traitement des cas pathologiques, il ne nous reste que les mobicartes actives.</para>
+    </section>
+   </section>
+<section><title>Traitement des états pathologiques OMER</title>
+    <para>L'étape suivante consiste en l'analyse du champ ETAT_PRINCIPAL. L'objectif est de rejeter les comptes qui sont dans un état pathologique, et qui ne peuvent donc accéder aux fonctionnalités du portail de services.</para>
+    <section><title>Terminal de niveau 1 et 2</title>
+     <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte Breizh Mobile suspendu : Merci de vous rendre dans un point de vente Breizh Mobile avec une pièce d'identité.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	  <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	  <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte Breizh Mobile suspendu : vos appels sont bloqués. Veuillez contacter le service-client Breizh Mobile.</computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	  <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte Breizh Mobile suspendu : vos appels sont bloqués. Veuillez contacter le service-client Breizh Mobile.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       <row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte Breizh Mobile suspendu : vos appels sont bloqués. Veuillez contacter le service-client Breizh Mobile.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	  <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte Breizh Mobile</computeroutput>
+	    <computeroutput>La date limite de rechargement est dépassée.
+	    Votre Compte Breizh Mobile est définitivement inutilisable
+	    </computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+     </tbody>
+       </tgroup>
+    </informaltable>
+    </section>
+    <section><title>Terminal de niveau 3</title>
+      <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Compte suspendu : votre identité ne nous est pas parvenue.</computeroutput>
+	    </member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte est suspendu : vos appels sont bloqués.
+	     </computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte est suspendu : vos appels sont bloqués.
+	     </computeroutput>
+	   </member>
+	  </simplelist>
+	 </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	     <computeroutput>Votre Compte est suspendu : vos appels sont bloqués.
+	 </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte est définitivement inutilisable 
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+     <para>A l'issue du traitement des cas pathologiques, il ne nous reste que les mobicartes actives.</para>
+    </section>
+   </section>
+   <section><title>Traitement des états pathologiques CMO</title>
+    <para>L'étape suivante consiste en l'analyse du champ ETAT_PRINCIPAL. L'objectif est de rejeter les comptes qui sont dans un état pathologique, et qui ne peuvent donc accéder aux fonctionnalités du portail de services.</para>
+    <section><title>Terminal de niveau 1 et 2</title>
+      <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+	</row>
+       </thead>
+       <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu. Vous ne pouvez pas accéder à ce service.</computeroutput>
+	    <computeroutput>Contactez votre service clients Orange.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu. Vous ne pouvez pas accéder à ce service.</computeroutput>
+	    <computeroutput>Contactez votre service clients Orange.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu. Vous ne pouvez pas accéder à ce service.</computeroutput>
+	    <computeroutput>Contactez votre service clients Orange.</computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu. Vous ne pouvez pas accéder à ce service.</computeroutput>
+	    <computeroutput>Contactez votre service clients Orange.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est résilié. </computeroutput>
+	     <computeroutput>Votre compte est définitivement inutilisable.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RA</entry>
+	 <entry>Sursitaire Résilié ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est résilié. Vous ne pouvez pas accéder à ce service.</computeroutput>
+	     <computeroutput>Contactez votre service clients Orange.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RO</entry>
+	 <entry>Résilié Opérateur</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobiles Orange.</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>TR</entry>
+	 <entry>Transformé</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobiles Orange.</computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+     </section>
+    <section><title>Terminal de niveau 3</title>
+       <informaltable frame="all">
+      <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="1*"/>
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Val</entry>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+      </row>
+     </thead>
+     <tbody>
+	<row>
+	 <entry>SI</entry>
+	 <entry>Suspendu pour non identification</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu.</computeroutput>
+	    </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SF</entry>
+	 <entry>Suspendu pour Fraude</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu.</computeroutput> 
+	 </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SV</entry>
+	 <entry>Suspendu pour Vol</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu</computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SA</entry>
+	 <entry>Suspendu par ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est suspendu.</computeroutput>
+	    </member>
+	  </simplelist>
+	  </entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>SR</entry>
+	 <entry>Sursitaire</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Votre Compte Mobile est résilié. </computeroutput>
+	   </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RA</entry>
+	 <entry>Sursitaire Résilié ADV</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobiles Orange.
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>RO</entry>
+	 <entry>Résilié Opérateur</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobiles Orange.</computeroutput>
+	 </member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+	<row>
+	 <entry>TR</entry>
+	 <entry>Transformé</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Service réservé aux clients Mobicarte ou Compte Mobiles Orange.
+	     </computeroutput></member>
+	  </simplelist></entry>
+	 <entry>Fin de session</entry>
+	</row>
+       </tbody>
+       </tgroup>
+     </informaltable>
+     <para>A l'issue du traitement des cas pathologiques, il ne nous reste que les clients Compte Mobile actifs.</para>
+    </section>
+   </section>
+  </section>
+ </chapter>
+
+
+<!-- CHAPITRE 12: OCF BATCH -->
+ 
+  <chapter id="ch12"><title>Traitement Batch lié au provisioning</title>
+    <section><title>Récupération sur Erreur</title>
+      <section><title>Table "ocf_repair"</title>
+	<para>Cette table , nommée "ocf_repair", permet de stocker sur disque tous les ordres de reprise sur erreur OCF. Elle a pour index l'IMSI, et possède quatre champs:</para>
+	<itemizedlist>
+	  <listitem><para>"IMSI" IMSI du client</para>
+	  </listitem>
+	  <listitem><para>"type" peut avoir les valeurs get_user et subscribe et unsubcribe</para>
+	  </listitem>
+	  <listitem><para>"date" :date UNIX de l'insertion</para>
+	  </listitem>
+	  <listitem><para>"error": Code d'erreur renvoyé par OCF</para>
+	  </listitem>
+	  </itemizedlist>
+	<para>Il s'agit d'un table non distribuée. Il existe donc une table "ocf_repair" sur chacun des serveurs traitant du trafic. Chacune de ces tables est complètement indépendante. De cette manière le processus de reprise sur erreurs peut  fonctionner même en cas de panne d'un ou plusieurs serveurs</para>
+      </section>
+      <section><title>Reset des IMEI</title>
+	<para>Lors de la procédure de profilage avec OCF-RDP, le service est rendu même si l'interface avec OCF-RDP est indisponible. Dans le cas d'une mise à jour de l'IMEI, si l'interface est indisponible on rend le service aux clients via un IMEI par défaut de niveau 1 et l'on stocke l'IMSI concernée dans la table "ocf_repair".</para>
+	<para>Chaque nuit, les IMEI de tous les IMSI dont le type est égal à get_user sont mise à null. Une fois le reset effectué, l'IMSI est supprime de la table.</para> 
+      </section>
+      <section><title>Ré-initialisation des souscription OCF</title>
+	<para>Lors de la procédure de profilage avec OCF-RDP, le service peut être rendu si l'interface OCF-RDP est hors service(Cas provisioning suivi-conso). Dans le cas d'interrogation d'un nouveau client, le service est rendu même si l'inscription a échoué et dans ce cas l'IMSI du client est stocké dans la table "ocf_repair" avec le type "subscribe"</para>
+	<para>De la même manière, cette table est utilisée pour bufferiser, les requêtes de desouscription à OCF</para>
+	<para>Les cas de reprise sur erreur prennent en compte les évènements suivants:</para>
+	<itemizedlist>
+	  <listitem><para>Timeout OCF</para>
+	  </listitem>
+	  <listitem><para>Cas client Inconnu</para>
+	  </listitem>
+	  <listitem><para>tous cas de non réponse</para>
+	  </listitem>
+	</itemizedlist>
+        <para>La table "ocf_repair" sur chacun des serveurs de session est utilisé pour relancer les requêtes « subscribeByImsi ». Tous les jours durant une période commençant à 9h00,  nous effectuons au maximum 3 re-tentatives de souscription. Si l'une des tentatives réussies, nous mettons à jour l'IMEI du client. Dans le cas contraire, l'IMSI est conservé et l'on passe à l'IMSI suivant.</para>
+	<para>Afin d'éviter une surcharge de l'interface OCF-RDP, le délai entre le traitement de chaque IMSI est configurable (par défaut 1 seconde), de même que le nombre de re-tentative. </para>
+	<para>Afin d'éviter de conserver les IMSI en retry qui ne sont plus utilisé par un client donné, les IMSI dont la date d'inscription au retry date de plus d'un mois et dont l'inactivité USSD dépasse 15 jours sont supprimés de la liste des retry</para>  
+      </section>
+  </section>
+  <section><title>Flux OCF-RDP</title>
+  <section><title>Principe</title>
+  <para>Chaque jour OCF-RDP nous envoie par CFT des fichiers XML contenant les
+  modifications de profil des clients USSD. Ces fichiers sont stockés dans le
+  répertoire « /home/cft/ocf ». Ils contiennent au maximum 5.000
+  modifications.</para>
+
+  <para>Nous distinguons deux catégories d'entrées&nbsp;: les mises à jour et
+  les suppressions. Les mises à jour sont effectuées en continu à une fréquence
+  ajustable selon l'heure. Les suppressions sont effectuées chaque nuit dans
+  une plage horaire fixe. Les paramètres actuels sont les suivants&nbsp;: les
+  mises à jour sont effectuées au rythme de 3 par seconde de minuit à 18h et de
+  22h à minuit&nbsp;; les suppressions sont effectuées à partir de 1h et
+  s'arrêtent au plus tard à 5h.</para>
+
+  <para>D'autre part, on n'effectue pas plus de 10.000 suppressions par jour.
+  Les fréquences des mises à jour limitent leur nombre à 216.000 par jour. On
+  pourra cependant envisager d'effectuer jusqu'a 250.000 mises à jour par 24h.
+  Au delà, les temps de réponse SQL pendant l'exécution de ce batch se
+  dégraderaient et nous ne pourrions garantir la QoS du service. Par ailleurs,
+  il est indispensable que le nombre de clients par fichier reste inférieur à
+  5.000.</para>
+
+  </section>
+  <section><title>Formats</title>
+  <para>Le fichier XML reçu par Cellcube est de la forme suivante :</para>
+  <example id="rdp_batch"><title>OCF Batch</title>
+  <programlisting>
+    &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+      &lt;ListeClient&gt;
+       &lt;Client etatDossier="10"&gt;
+           &lt;AttributClient nomAttribut="MSISDN"&gt;33612345678&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut="ancienMSISDN"&gt;33600000000&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='IMSI'&gt;111110625412582&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='segCo'&gt;F3LOF&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='TechnologicalSegment'&gt;UMTS1&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='TAC'&gt;000001&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='tacUssdLevel'&gt;1&lt;/AttributClient&gt;
+       &lt;/Client&gt;
+       &lt;Client etatDossier="70"&gt;
+           &lt;AttributClient nomAttribut="MSISDN"&gt;33612345678&lt;/AttributClient&gt;
+           &lt;AttributClient nomAttribut='IMSI'&gt;111110625412582&lt;/AttributClient&gt;
+       &lt;/Client&gt;
+      &lt;/ListeClient&gt;
+     </programlisting>
+	</example>
+	<para>Cellcube « parse » le fichier XML de manière séquentielle et
+	effectue l'action nécessaire à chaque fois qu'une structure client est
+	détectée (et qu'il s'agit d'une mise à jour, les suppressions faisant
+	l'objet d'un traitement à part).
+        </para>
+	<para>Les données utilisées par Cellcube sont :</para>
+	<itemizedlist>
+	  <listitem><para>IMSI et Ancien IMSI</para>
+	  </listitem>
+	  <listitem><para>MSISDN et Ancien MSISDN</para>
+	  </listitem>
+	  <listitem><para>TAC et USSD Level</para>
+	  </listitem>
+	  <listitem><para>Segment Commercial</para>
+	  </listitem>
+	  <listitem><para>Segment technologique</para>
+	  </listitem>
+	</itemizedlist>
+      </section>
+
+      <section><title>Traitements</title>
+
+	<section><title>Mise en tampon et pré-traitement</title>
+
+        <para>Tous les quarts d'heure, on effectue un pré-traitement visant à
+        extraire les suppressions des fichiers XML et à les regrouper par
+        10.000 au plus dans des fichiers de nom de la forme
+        delete_imsi.[a-z][a-z]. Au terme du pré-traitement, nous déplaçons les
+        fichiers XML et les fichiers de suppression dans le répertoire
+        /home/cft/ocf/do. Ils pourront être traités à partir de ce
+        moment.</para>
+
+	</section>
+
+	<section><title>Procédure de traitement</title>
+
+	  <para>Nous traitons les fichiers XML (de nom de la forme
+	  USSD[0-9][0-9][0-9]) un par un, par ordre de numéro de séquence,
+	  indépendemment de la machine sur laquelle ils se trouvent. Il est
+	  convenu que le numéro de séquence (chiffres après USSD) est
+	  incrémental. Si notre frontal normal tombe en panne, le frontal de
+	  secours prend le relai et traite les fichiers qu'il reçoit. Les
+	  fichiers restés sur le frontal normal seront traités dès la remise en
+	  service de ce dernier. Dès ce moment, tous les fichiers seront
+	  traités dans l'ordre, de nouveau indépendemment de la machine sur
+	  laquelle ils sont stockés.</para>
+
+          <para>Au terme du traitement d'un fichier, s'il n'y a pas d'autre
+          fichier à traiter, la prochaine vérification de la présence de
+          fichiers dans /home/cft/ocf/do s'effectue 15 minutes plus
+          tard.</para>
+
+          <para>La fréquence associée à une plage horaire n'est prise en compte
+          que pour les fichiers dont le traitement débute dans la plage. Un
+          fichier dont le traitement à commencé dans la plage précédente
+          conserve la fréquence de mise à jour correspondante durant tout son
+          traitement.</para>
+
+          <para>Sur demande auprès de Cellicium, il est possible d'interrompre
+          le traitement des mises à jour. La suspension est effective après la
+          fin du traitement du fichier en cours. De la même manière, il est
+          possible de reprendre le traitement. Cette opération a un effet
+          immédiat.</para>
+
+	  <para>Chaque jour, nous supprimons les IMSI contenu dans l'un de
+	  fichiers de type "delete_imsi.[a-z][a-z]" présent dans le répertoire
+	  (« /home/cft/ocf/do ») de io0 et/ou de io1.</para>
+
+	  <para>Une fois les mises à jours relatives à un fichier effectuées,
+	  le fichier est déplacé dans le répertoire (« /home/cft/ocf/old »)
+	  afin de permettre la reprise sur erreur. Tous les jours à 7h00, les
+	  fichiers traités pendant la nuit sont archivés (avec
+	  compression). Cette archive est conservé 7 jours dans le répertoire
+	  (« /home/cft/ocf/old/backup »)</para>
+
+	  <para>Des statistiques portant sur le nombre d'entrées, de mises à
+	  jour et de suppressions effectuées par jour sont disponibles sur
+	  demande.</para>
+
+	</section>
+	<section><title>Mise à jour</title>
+	  <para>A partir de l'IMSI (ou Ancien IMSI si existant), nous récupérons de la base Cellcube l'UID (identifiant unique du client) et l'IMEI de celui-ci.</para>
+	  <para>Suivant les données récupérées de la balise Client, nous mettons à jour la base clients avec les informations IMSI, MSIDN, IMEI, SOUSCRIPTION et segment technologique à partir de l'UID (identifiant unique).</para> 
+	  <para>Les différents événements traités sont les suivants</para>
+	  <itemizedlist>
+	    <listitem><para>Changement d'MSISDN</para>
+	    </listitem>
+	    <listitem><para>Changement d'IMSI</para>
+	    </listitem>
+	    <listitem><para>Changement de profil Commerciale</para>
+	    </listitem>
+	    <listitem><para>Changement de segment technologique</para>
+	    </listitem>
+	    <listitem><para>Changement d'IMEI : TAC, D'USSD Level</para>
+	    </listitem>
+	  </itemizedlist>
+	</section>
+	<section><title>Suppression des clients</title>
+	  <para>Les ordres de suppressions arrivent régulièrement en masse (entre 150.000 et 250.000) dans la même journée (particulièrement en fin de mois). Or la suppression d'un client est une tâche coûteuse en ressources, tâche susceptible de perturber les temps de réponse de la base de profils de Cellcube.</para>
+	  <para>Les ordres de suppression sont donc traités par tranche de 10.000 surpressions par jour. Cette tranche de 10.000 permet de supprimer entre 290.000 et 300.000 clients par mois. La Suppression de tous les IMSI contenu dans l'un des fichiers delete_imsi.[a-z][a-z]" est effectué aprés les mise à jour. Entre chaque suppression, une pause d'au minimum 50 ms est effectuée afin de ne pas perturbé le trafic USSD</para> 
+	</section>
+	<section><title>Suppression des clients Inactifs</title>
+	  <para>Afin de libérer de la ressource, un script de suppresion des clients Inactifs a été mise en place. Ce script supprime par défaut 10.000 clients par jours dont la dernière session date de plus de 12 mois. Le nombre de suppression par jour et le nombre de mois est configurable</para>
+	  <para>Lors de chaque suppression, on enregistre dans la liste des retry, un ordre de de-souscription OCF (unsubscribe). Afin de désiscrire ces clients de la base OCF</para>
+	</section>
+	<section><title>Cas particulier</title>
+	  <section><title>Mise à Jour de L'IMEI</title>
+	    <para>Afin de pouvoir traiter de manière transparente la migration de la base Client, il est possible d'autoriser ou non la baisse de niveau de service d'un client.</para>
+	    <para>Si la baisse de Niveau de service n'est pas autorisée, le niveau de service pris pour calculer l'IMEI OF est le plus élevé entre celui provenant de la base et le niveau de service inclus dans la structure client (1 le plus élevé). Sinon, nous prenons l'USSD Level contenu dans la structure client.</para>
+	    <para>Ensuite, l'IMEI est formé par le TAC complété par des caractères 'X' avec le niveau de service en dernier caractère.</para>
+	  </section>
+	  <section><title>Changement de souscription</title>
+	    <para>La souscription du client est calculée à partir du Segment commercial (cf Tableaux SegCO OCF).</para>
+	  </section>
+      </section>
+	<section><title>Cas d'erreur</title>
+	  <para>Un fichier nommé « batchocf_error.txt » contient toutes les erreurs générées pendant le batch OCF. Il est ainsi possible de rependre manuellement les traitements non effectuées pendant le batch de nuit.</para>
+	<section><title>Souscription Inconnu</title>
+	    <para>Si le segment commercial remonté n'est pas connu. Nous remontons une alarme de niveau faible (pas de SMS envoyé) et nous ignorons l'éventuel changement de souscription. Par contre, les autres champs seront mis à jour.</para>
+	  </section>
+	<section><title>Doublons</title>
+	    <para>La requête ayant retournée un doublon est enregistré. Une analyse devra être effectué manuellement dans ce cas afin de supprimer le profil le plus ancien.</para>
+	  </section>
+	  <section><title>SQL Timeout</title>
+	  <para>Dans ce cas, nous enregistrons la requête qui est tombé en Timeout dans un log journalier afin de re-éditer celle-ci ultérieurement.
+     </para>
+	  </section>
+	  <section><title>Client Inconnu en base Cellcube</title>
+	    <para>Ce cas ne devrait pas se présenter mais au cas où nous recevons des informations de clients dont le profil a été supprimé, un compteur a été mise en place.</para>
+	  </section>
+	</section>
+	<section><title>Paramètre de Configuration</title>
+	<para>Les paramètres de configuration du batch de traitement RDP sont les suivants:</para>
+	<itemizedlist>
+	    <listitem><para>Répertoire contenant les fichiers RDP (ex: "/home/cft/ocf/do") </para>
+	    </listitem>
+	    <listitem><para>Répertoire de Backup (ex: "/home/cft/old")</para>
+	    </listitem>
+	    <listitem><para>Nombre Maximum de mise à jour (ex: 200.000)</para>
+	    </listitem>
+	    <listitem><para>Nombre Maximum de suppression (ex: 10.000)</para>
+	  </listitem>
+	   <listitem><para>Heure Limite de fin de traitement (ex: 05h00)</para>
+	  </listitem>
+	   <listitem><para>Baisse de Niveau USSD autorisée (Val: true ou false)</para>
+	  </listitem>
+	   <listitem><para>Pause entre chaque delete en ms (ex: 100 ms)</para>
+	  </listitem>
+	  </itemizedlist>
+	</section>
+      </section>
+    </section>
+    <section><title>Résumé des tâches</title>
+      <para>Chaque Nuit à partir de minuit, les tâches suivantes sont lancées :</para>
+      <itemizedlist>
+	<listitem><para>Reset de tous les IMEI stockées dans la base "ocf_repair" (sur tous les back-ends l'un aprés l'autre). Afin d'éviter la surcharge des bases SQL, ce traitement se fera serveur par serveur à partir de 00h00 Heure de Paris.</para>
+	</listitem>
+	<listitem><para>Traitement des données batch OCF-RDP : lancement à 01h00</para>
+	</listitem>
+	<listitem><para>Supression des clients Inactifs : lancement après le Batch OCF-RDP</para>
+	</listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+  
+<!-- Annexe -->
+  <chapter id="ch13"><title>Annexe</title>	
+  <section><title>Tableaux SegCO OCF</title>
+  <informaltable frame="all">
+    <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="1*"/>
+     <colspec colwidth="6*"/>
+     <colspec colwidth="2*"/>
+     <thead>
+      <row>
+       <entry>SegCo</entry>
+       <entry>Description</entry>
+       <entry>Profil</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>30FLO</entry>
+       <entry>Forfait Flotte 30s</entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>30JOU</entry>
+       <entry>Forfait journalier 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>30LOF</entry>
+       <entry>Forfait Orange 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>30PTG</entry>
+       <entry>Forfait partagé Orange 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>A2LOF</entry>
+       <entry>Forfait Orange rentrée 2003</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>A30FL</entry>
+       <entry>Abonnement Flotte 30s</entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>AB30F</entry>
+       <entry>Abonnement Orange 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>ABFLO</entry>
+       <entry>Abonnement flotte</entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>ABLOF</entry>
+       <entry>Abonnement loft</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>ABOLA</entry>
+       <entry>Abonnement OLA</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>ABONW</entry>
+       <entry>Abonnement OLA NEWS</entry>
+       <entry>CMO</entry>
+      </row>
+      <row>
+       <entry>ABVEN</entry>
+       <entry>Abonnement vendeur Orange</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>CPP02</entry>
+       <entry>CPP02   Carte pré-payée</entry>
+       <entry>OMER</entry>
+      </row>
+      <row>
+       <entry>CPP01</entry>
+       <entry>Mobicarte</entry>
+       <entry>MOBI</entry>
+      </row>
+      <row>
+       <entry>F2LOF</entry>
+       <entry>Forfait Orange sec ss surtaxe</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>F2PTG</entry>
+       <entry>For partagé Org sec ss surtaxe</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>F3LOF</entry>
+       <entry>forfait Orange mars 2003</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>F3PTG</entry>
+       <entry>for partagé Org mars 2003</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FRFLO</entry>
+       <entry>Forfait Flotte</entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>FRJOU</entry>
+       <entry>Forfait Loft</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FRLOF</entry>
+       <entry>Forfait Loft</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FRNOR</entry>
+       <entry>Forfait non Orange 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FROLA</entry>
+       <entry>Forfait non Orange 30s</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FRPAR</entry>
+       <entry>Forfait OLA mutualisé</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>FRPTG</entry>
+       <entry>Forfait partagé Orange</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>GPRS1</entry>
+       <entry>GPRS segment commercial 1</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>GPTST</entry>
+       <entry>Test Beta GPRS</entry>
+       <entry>postpaid</entry>
+      </row>
+      <row>
+       <entry>UMTSE</entry>
+       <entry></entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>FR3G0</entry>
+       <entry></entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>FR3G1</entry>
+       <entry></entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>FL3G0</entry>
+       <entry></entry>
+       <entry>DME</entry>
+      </row>
+      <row>
+       <entry>BZHF1</entry>
+       <entry>Client Breitz Mobile Grand Public</entry>
+       <entry>BZG_GP</entry>
+      </row>
+      <row>
+       <entry>BZHF2</entry>
+       <entry>Client Breitz Mobile CMO</entry>
+       <entry>BZH_CMO</entry>
+      </row>
+       <row>
+       <entry>TL2F1</entry>
+       <entry>Client Tele2 Postpaid</entry>
+       <entry>tele2_gp</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </section>
+  
+  <section><title>Requête Sachem « B »</title>
+   <para>Le format de la requête SVI_B :</para>
+   <informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="1*"/>
+     <colspec colwidth="6*"/>
+     <tbody>
+      <row>
+       <entry>Q</entry>
+       <entry>B MSISDN DTA V1 V2[1] V2[2] NUM N1 N2</entry>
+      </row>
+      <row>
+       <entry>R</entry>
+       <entry>B MSISDN STATUT</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+   <para>Les valeurs utilisées pour les différents paramètres de cet ordre sont les suivantes :</para>
+   <informaltable frame="all">
+    <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="2*"/>
+     <colspec colwidth="4*"/>
+     <colspec colwidth="1*"/>
+     <colspec colwidth="2*"/>
+     <thead>
+      <row>
+       <entry>Nom</entry>
+       <entry>Description</entry>
+       <entry>Format</entry>
+       <entry>Valeur</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>MSISDN</entry>
+       <entry>numéro du compte mobicarte</entry>
+       <entry>%d</entry>
+       <entry></entry>
+      </row>
+      <row>
+       <entry>DTA</entry>
+       <entry>Date d'appel au format Unix, sous notation hexadécimale</entry>
+       <entry>%x</entry>
+       <entry>Date de l'appel</entry>
+      </row>
+      <row>
+      <entry>V1</entry>
+      <entry>Durée de l'appel en secondes</entry>
+      <entry>%d</entry>
+      <entry>0</entry>
+     </row>
+      <row>
+       <entry>V2[1]</entry>
+       <entry>Coût radio de l'appel</entry>
+       <entry>%d</entry>
+       <entry>0 :non utilisé</entry>
+      </row>
+      <row>
+       <entry>V2[2]</entry>
+       <entry>Monnaie</entry>
+       <entry>%d</entry>
+       <entry>1 : euros</entry>
+      </row>
+      <row>
+       <entry>NUM</entry>
+       <entry>Numéro appelé</entry>
+       <entry>%s</entry>
+       <entry>« #123# »</entry>
+      </row>
+      <row>
+       <entry>N1</entry>
+       <entry>Durée facturée</entry>
+       <entry>%d</entry>
+       <entry>0 : non utilisé</entry>
+      </row>
+      <row>
+       <entry>N2</entry>
+       <entry>Coût facturé</entry>
+       <entry>%d</entry>
+       <entry>0</entry>
+      </row> 
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </section>
+
+  <section id="table_segs_techs">
+   <title>Segments technologiques</title>
+   <para>
+   Les valeurs stockées par cellcube pour le segment technologique ainsi que
+   leur signification sont indiquées ci-dessous. Actuellement, un client est
+   considéré comme «&nbsp;2G&nbsp;» par les fonctions de redirection selon le
+   segment technologique pour tous les codes marqués d'un astérisque.
+   </para>
+
+   <informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="1*"/>
+     <colspec colwidth="5*"/>
+     <thead>
+      <row>
+       <entry>Code</entry>
+       <entry>Signification</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>*OCF n'a pas encore été interrogé</entry>
+       <entry></entry>
+      </row>
+      <row>
+       <entry>*La requête à OCF a échoué</entry>
+       <entry>La dernière requête en temps réel à OCF a échoué et le client a
+         pu être identifié par un autre moyen (interrogation réussie de Sachem,
+         par exemple)</entry>
+      </row>
+      <row>
+       <entry>*OCF n'a pas l'information</entry>
+       <entry>OCF a envoyé une balise "segment technologique" vide</entry>
+      </row>
+      <row>
+       <entry>*OCF n'a rien retourné</entry>
+       <entry>OCF n'a pas envoyé de balise "segment technologique"</entry>
+      </row>
+      <row>
+       <entry>*OCF a retourné un code inconnu</entry>
+       <entry>OCF a retourné un code qui ne fait pas partie de la liste des
+         codes connus communiquée par Orange France</entry>
+      </row>
+      <row>
+       <entry>TRM3G</entry>
+       <entry>Le client possède un terminal 3G</entry>
+      </row>
+      <row>
+       <entry>UMTS1</entry>
+       <entry>Le client possède un terminal 3G et bénéficie d'au moins un
+         service 3G</entry>
+      </row>
+     </tbody>
+     </tgroup>
+   </informaltable>
+  </section>
+
+ </chapter>
+
+</book>

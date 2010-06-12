@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <setRechargementParentChildResponse xmlns="urn:m8o.francetelecom.com">
+            <setRechargementParentChildReturn>
+                <ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+                    <item>
+                        <ns1:UUID>1</ns1:UUID>
+                        <ns1:channel>1</ns1:channel>
+                        <ns1:lang>FR</ns1:lang>
+                        <ns1:statusCode>bb00</ns1:statusCode>
+                        <ns1:statusDescription>Successfull set invocation</ns1:statusDescription>
+                        <ns1:statusName>SetSuccess</ns1:statusName>
+                        <ns1:statusType>0</ns1:statusType>
+                    </item>
+                </ns1:statusList>
+                <ns2:activationPrestation xmlns:ns2="urn:m8o.francetelecom.com:wsdl:topup">false</ns2:activationPrestation>
+                <ns3:compte xmlns:ns3="urn:m8o.francetelecom.com:wsdl:topup">
+                    <item>
+                        <ns3:credit>25.500</ns3:credit>
+                        <ns3:dateLimiteValidite>2038-01-19T03:14:07.000Z</ns3:dateLimiteValidite>
+                        <ns3:montantFidelisation>500.000</ns3:montantFidelisation>
+                        <ns3:planTarifaire>
+                            <ns4:code xmlns:ns4="urn:m8o.francetelecom.com:wsdl:common">CMO1</ns4:code>
+                            <ns5:identifiant xmlns:ns5="urn:m8o.francetelecom.com:wsdl:common">113</ns5:identifiant>
+                            <ns6:libelle xmlns:ns6="urn:m8o.francetelecom.com:wsdl:common">Compte mobile</ns6:libelle>
+                        </ns3:planTarifaire>
+                        <ns3:pourcentageFidelisation>5</ns3:pourcentageFidelisation>
+                        <ns3:typeCompte>
+                            <ns7:code xmlns:ns7="urn:m8o.francetelecom.com:wsdl:common">PRINC</ns7:code>
+                            <ns8:identifiant xmlns:ns8="urn:m8o.francetelecom.com:wsdl:common">1</ns8:identifiant>
+                            <ns9:libelle xmlns:ns9="urn:m8o.francetelecom.com:wsdl:common">Principal</ns9:libelle>
+                        </ns3:typeCompte>
+                        <ns3:uniteGestion>
+                            <ns10:code xmlns:ns10="urn:m8o.francetelecom.com:wsdl:common">EUR</ns10:code>
+                            <ns11:identifiant xmlns:ns11="urn:m8o.francetelecom.com:wsdl:common">1</ns11:identifiant>
+                            <ns12:libelle xmlns:ns12="urn:m8o.francetelecom.com:wsdl:common">Euros</ns12:libelle>
+                        </ns3:uniteGestion>
+                        <ns3:uniteRestitution xsi:nil="true"/>
+                    </item>
+                </ns3:compte>
+                <ns13:dateLimiteValiditeDossier xmlns:ns13="urn:m8o.francetelecom.com:wsdl:topup">2038-01-19T03:14:07.000Z</ns13:dateLimiteValiditeDossier>
+            </setRechargementParentChildReturn>
+        </setRechargementParentChildResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

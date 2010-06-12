@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Option Zap Zone">
+  
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_pack_ado&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique&amp;#solde_insuff_promo"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Zap Zone deja active">
+    <title>option Option Zap Zone deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/> est actuellement activee.<br/>
+  </page>
+  
+ <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Zap Zone offre incompatible">
+    <title>option Option Zap Zone offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile
+   (0,37E/min.). Merci de votre appel.
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Zap Zone solde insuffisant classique">
+    <title>option Option Zap Zone solde insuffisant classique</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_pack_ado"/> sur
+    votre compte.  Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Zap Zone menu generique">
+    <title>option Option Zap Zone menu generique</title>
+    Avantage Zap zone:  -de 18 ans? 8 megaoctets offerts pour surfer, bloguer et chatter sur le site zap zone.
+    Profitez en, c'est gratuit !<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_pack_ado&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Souscrire</a><br/>
+    <a href="#mention_legales">Mentions Legales</a>
+  </page>
+
+  <page tag = "mention_legales" hist="dohist" cost="freept"
+        descr="Option Zap Zone: Mentions Legales P1/5">
+    <title>Mentions Legales P1/5</title>
+    Option reservee aux clients mobile Orange, hors forfait bloque M6 Mobile dont l'utilisateur de la ligne a -de 18 ans.Contenu:Acces au portail multimedia ZapZone<br/>
+    <a href = "#mentions_legales_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "mentions_legales_suite_1"  hist="dohist" cost="freept"
+        descr="Option Zap Zone: Mentions Legales P2/5">
+    <title>Mentions Legales P2/5</title>
+    8 megaoctets pour acceder au portail ZapZone,a la TV,a la video et a la musique sur Internet,Gallery et Orange World utilisables depuis la France Metropolitaine<br/>
+    <a href = "#mentions_legales_suite_2" >Suite</a>
+  </page>
+
+  <page tag = "mentions_legales_suite_2" hist="dohist" cost="freept"
+        descr="Option Zap Zone: Mentions Legales P3/5">
+    <title>Mentions Legales P3/5</title>
+    Le filtre parental gratuit pour bloquer l'acces aux sites sensibles (charme, rencontres, etc). Un avantage par ados, 8 megaoctets hors usages mail, GPS et<br/>
+    <a href = "#mentions_legales_suite_3" >Suite</a>
+  </page>
+
+  <page tag = "mentions_legales_suite_3" hist="dohist" cost="freept"
+        descr="Option Zap Zone: Mentions Legales P4/5">
+    <title>Mentions Legales P4/5</title>
+    Orange Messenger by Windows Live. Acces et connexions aux chaines de TV, aux videos et aux services de la rubrique musique proposés sur le portail Orange World.<br/>
+    <a href = "#mentions_legales_suite_4" >Suite</a>
+  </page>
+
+  <page tag = "mentions_legales_suite_4" hist="dohist" cost="freept"
+        descr="Option Zap Zone: Mentions Legales P5/5">
+    <title>Mentions Legales P5/5</title>
+    Sont egalement inclus les usages de type streaming TV, video ou musique disponibles sur Internet (identfication selon le protocole RTSP).
+  </page>
+  
+ <!-- Commun -->
+ 
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	nav="stop" descr="option Option Zap Zone page apres confirmation">
+    <title>option Option Zap Zone page apres confirmation</title>
+    Vous beneficiez desormais de l'avantage <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>. Vos 8 megaoctets pour decouvrir le site Zone11-18 sont valables 1 mois.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Zap Zone page apres confirmation">
+    <title>option Option Zap Zone page apres confirmation</title>
+    Vous beneficiez desormais de l'avantage <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>. Vos 8 megaoctets pour decouvrir le site Zone11-18 sont valables 1 mois.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Zap Zone page apres confirmation">
+    <title>option Option Zap Zone page apres confirmation</title>
+    Vous beneficiez desormais de l'avantage <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>. Vos 8 megaoctets pour decouvrir le site Zone11-18 sont valables 1 mois.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Zap Zone page apres confirmation">
+    <title>option Option Zap Zone page apres confirmation</title>
+    Vous beneficiez desormais de l'avantage <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>. Vos 8 megaoctets pour decouvrir le site Zone11-18 sont valables 1 mois.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Zap Zone page apres confirmation">
+    <title>option Option Zap Zone page apres confirmation</title>
+    Vous beneficiez desormais de l'avantage <include src="erl://svc_options:print_commercial_name?opt_pack_ado"/>. Vos 8 megaoctets pour decouvrir le site Zone11-18 sont valables 1 mois.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+ <page tag="desinscr_failure" backtext="notext" cost="free_pt" 
+		descr="Option Zap Zone: Echec">
+    <title>Echec Suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+
+</pages>

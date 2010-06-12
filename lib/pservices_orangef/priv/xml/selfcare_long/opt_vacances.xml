@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Vacances MMS">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_vacances&amp;#generique&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS deja active">
+    <title>option Vacances MMS deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> est
+    deja activee.Vous ne pourrez
+    resouscrire a cette option qu'une fois votre option en cours epuisee.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page offre incompatible">
+    <title>option Vacances MMS page offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile (0,37E/min.). Merci
+    de votre appel.
+  </page>
+    
+  <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot, 40=#solde_insuff_foot, 41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS solde insuffisant">
+    <title>option Vacances MMS solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_vacances"/> sur
+    votre compte mobicarte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS solde insuffisant M6">
+    <title>option Vacances MMS solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_vacances"/> sur
+    votre compte principal.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+   <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS solde insuffisant Foot">
+    <title>option Vacances MMS solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_vacances"/> sur
+    votre compte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+   <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS solde insuffisant Click">
+    <title>option Vacances MMS solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_vacances"/> sur
+    votre compte principal.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS menu generique">
+    <title>option Vacances MMS menu generique</title>
+    Profitez de 30% de reduction sur vos MMS photo ou video avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>.<br/>
+    <a href="#info">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="info" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page info">
+    <title>option Vacances MMS pasge info</title>
+    Envie de partager les bons moments de votre vie avec vos proches ?
+    Oubliez l'appareil photo jetable et profitez de votre mobile avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/>...<br/>
+    <a href="#info2">Suite</a><br/>
+  </page>
+
+  <page tag="info2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page info2">
+    <title>option Vacances MMS pasge info2</title>
+    ...25 MMS texte, photo ou video valables 1 mois pour seulement
+    <include src="erl://svc_options:print_option_price?opt_vacances"/> soit
+    une reduction de 30% sur vos MMS photo ou video.<br/>
+   <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+    <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>
+
+  <page tag="conditions_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions">
+    <title>option Vacances MMS page conditions</title>
+    Offre reservee aux clients mobicarte et disponible du
+    <include src="erl://svc_options:print_commercial_start_date?opt_vacances&amp;dmy"/> au
+    <include src="erl://svc_options:print_commercial_end_date?opt_vacances&amp;dmy"/> inclus.
+    MMS metropolitains (texte/photo/video) disponible depuis un mobile compatible...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions M6">
+    <title>option Vacances MMS page conditions M6</title>
+    Offre reservee aux clients d'une offre prepayee Orange et disponible du
+    <include src="erl://svc_options:print_commercial_start_date?opt_vacances&amp;dmy"/> au
+    <include src="erl://svc_options:print_commercial_end_date?opt_vacances&amp;dmy"/> inclus.
+    MMS metropolitains disponibles depuis un mobile compatible...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions foot">
+    <title>option Vacances MMS page conditions Foot</title>
+    Offre reservee aux clients d'une offre prepayee Orange et disponible du
+    <include src="erl://svc_options:print_commercial_start_date?opt_vacances&amp;dmy"/> au
+    <include src="erl://svc_options:print_commercial_end_date?opt_vacances&amp;dmy"/> inclus.
+    MMS metropolitains disponibles depuis un mobile compatible...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+
+  <page tag="conditions_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions Click">
+    <title>option Vacances MMS page conditions Click</title>
+    Offre reservee aux clients mobicarte click la mobicarte et disponible du
+    <include src="erl://svc_options:print_commercial_start_date?opt_vacances&amp;dmy"/> au
+    <include src="erl://svc_options:print_commercial_end_date?opt_vacances&amp;dmy"/> inclus.
+    MMS metropolitains (texte/photo/video) disponible depuis<br/>
+    <a href="#conditions_suite_click1">Suite</a>
+  </page>
+
+  <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions suite 1">
+    <title>option Vacances MMS page conditions suite 1</title>
+    ...hors MMS surtaxes et MMS Carte Postale. MMS utilisables pendant 31 jours
+    a compter du jour de la souscription.Option incompatible avec l'option duo journee...<br/>
+    <a href="#conditions_suite2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite_click1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions suite Click 1">
+    <title>option Vacances MMS page conditions suite Click 1</title>
+     un mobile compatible hors MMS surtaxes et MMS Carte Postale. MMS utilisables pendant 31 jours
+    a compter du jour de la souscription.Option incompatible avec<br/>
+    <a href="#conditions_suite_click2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions suite 2">
+    <title>option Vacances MMS page conditions suite 2</title>
+    ...et la recharge SMS/MMS. Reduction de 30% calculee sur la base du prix
+    du MMS photo ou video en France metropolitaine a 0,30 euro/MMS.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="conditions_suite_click2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page conditions suite Click 2">
+    <title>option Vacances MMS page conditions suite Click 2</title>
+    l'option duo journee et la recharge SMS/MMS. Reduction de 30% calculee sur la base du prix
+    du MMS photo ou video en France metropolitaine a 0,30 euro/MMS.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page souscrire">
+    <title>option Vacances MMS page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> pour
+    <include src="erl://svc_options:print_option_price?opt_vacances"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_vacances&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page apres confirmation">
+    <title>option Vacances MMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> sera
+    activee. Merci de votre appel.
+  </page>
+  
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page apres confirmation">
+    <title>option Vacances MMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page apres confirmation">
+    <title>option Vacances MMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page apres confirmation">
+    <title>option Vacances MMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Vacances MMS page apres confirmation">
+    <title>option Vacances MMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="nouveaute" cost="free_pt" descr="Option Vacances MMS page nouveaute">
+    <title>Option Vacances MMS page nouveaute</title>
+    -50% sur vos MMS photos ou videos: 25 MMS valables 1 mois pour slt 
+    <include src="erl://svc_options:print_option_price?opt_vacances"/> !
+    Profitez-en pour envoyer des photos insolites de vos vacances à vos proches.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_vacances&amp;Souscrire=opt_vacances.xml,Souscrire=opt_vacances.xml&amp;nobr"/>
+  </page>
+
+  <page tag="restit_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Vacances MMS avec
+	cred">
+    <title>Page de restitution a l'option Vacances MMS avec cred</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;mms"/> MMS
+    inclus dans votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> a
+    utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> inclus.
+    MMS utilisables sur la base 1 MMS texte = 1 photo = 1 MMS video
+  </page>
+  
+  <page tag="restit_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Vacances MMS sans
+	cred">
+    <title>Page de restitution a l'option Vacances MMS sans cred</title>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_vacances"/> est
+    actuellement epuisee.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_vacances&amp;Resouscrire a l'option MMS=opt_vacances.xml,Resouscrire a l'option MMS=opt_vacances.xml&amp;nobr"/>
+  </page>
+
+</pages>

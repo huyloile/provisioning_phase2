@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Direct Callback">
+
+ <page cost="freept" descr="Redirect Direct callback">
+   <redirect src="erl://svc_callback:redirect_to_direct_callback?#direct_callback_form&amp;/orangef/home.xml#not_allowed"/>
+ </page>
+
+ <page tag="direct_callback_form" menutext="notext" cost="freept" descr="Form to enter dest nb for #133">
+  <title>Formulaire Callback</title>
+   <form action="erl://svc_callback:pull_init_direct_callback">
+    <entry>
+     <prompt>Callback<br/>
+     Vous pouvez taper directement #133*00XXXXXXXXXXX# (n0 appele  format international) depuis votre mobile<br/>
+     Sinon taper repondre puis le numero de votre choix
+      </prompt>
+    </entry>
+  </form>
+ </page>
+
+<!-- Messages à renvoyer après interrogation de PRISM -->
+
+ <page tag="success" nav="end" descr="Callback réussi">
+ Vous allez bientot recevoir un appel et etre mis en relation avec votre correspondant au bout de quelques secondes.
+ </page>
+
+ <page tag="error2_4" menutext="notext" backtext="notext"  descr="Erreur Callback : crédit épuisé" nav="stop">
+  Votre credit est epuise/insuffisant.Pour pouvoir appeler veuillez recharger votre compte.
+ </page>
+
+ <page tag="error3_9" backtext="notext" menutext="notext" descr="Erreur Callback : service indisponible" nav="stop">
+  Le service est momentanement indisponible. Veuillez renouveler votre appel au #133# ulterieurement.
+ </page>
+
+ <page tag="error5" menutext="notext" descr="Erreur Callback : numéro inaccessible" nav="stop">
+ Nous ne pouvons pas donner suite a votre appel.Ce numero est inaccessible depuis l'etranger.
+ </page>
+
+ <page tag="error8" menutext="notext" descr="Erreur Callback : appel vers pays inconnu non autorisé" nav="stop">
+  Vous ne pouvez passer d'appels que vers la France et le pays visite.
+ </page>
+
+ <page tag="error8_country" menutext="notext" descr="Erreur Callback : appel vers pays connu non autorisé" nav="stop">
+  Vous ne pouvez passer d'appels que vers les pays suivants : France
+  et <subst name="COUNTRY"/>
+ </page>
+
+ <page tag="error6_7" backtext="notext" menutext="notext" descr="Erreur Callback : pas accès au service" nav="stop">
+  Vous n'avez pas acces a ce service.
+ </page>
+
+<!-- Messages d'erreur -->
+
+ <page tag="unavailable" menutext="notext" cost="freept" descr="Erreur Callback : erreur inconnue" nav="end">
+  Ce service est temporairement indisponible
+ </page>
+
+</pages>

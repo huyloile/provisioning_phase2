@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Omer selfcare pages">
+
+ <page cost="freept">
+    <redirect src="erl://svc_selfcare:omer_select_home"/>
+ </page>
+
+ <page tag="principal_ac_odr_ac" backtext="notext" hist="donthist" cost="free_pt" volatile="true" nav="end">
+   <redirect src="#principal_ac"/>
+ </page>
+ <page tag="principal_ac_odr_ep" backtext="notext" hist="donthist" cost="free_pt" volatile="true" nav="end">
+   <redirect src="#principal_ac"/>
+ </page>
+  
+ <page tag="principal_ep_odr_ac" backtext="notext" hist="donthist" cost="free_pt" volatile="true" nav="end">
+   <redirect src="#principal_ep"/>
+ </page>
+ <page tag="principal_ep_odr_ep" backtext="notext" hist="donthist" cost="free_pt" volatile="true" nav="end">
+   <redirect src="#principal_ep"/>
+ </page>
+
+ <page tag="principal_ac" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 3 compte principal actif"
+  nav="end">
+  <title>Omer suivi conso Niv 3 compte principal actif</title>
+  Breizh Mobile: <include src="erl://svc_compte:print_solde?cpte_princ"/>E a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+ </page>
+
+ <page tag="principal_ep" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Omer suivi conso Niv 3 compte principal epuise"
+  nav="end">
+  <title>Omer suivi conso Niv 3 compte principal epuise</title>
+  Merci de recharger au 224 avant le
+  <include src="erl://svc_selfcare:fin_validite"/>.
+ </page>
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" 
+ descr="Service indisponible">
+  <title>Omer : Service indisponible</title>
+  Le service est momentanement interrompu. Veuillez recommencer ulterieurement.
+  <br/>Merci.
+ </page>
+
+</pages>

@@ -1,0 +1,146 @@
+#!/bin/sh
+
+Code=1234;
+read BODY
+
+MSISDN=""
+ORDRE=""
+CODE=""
+IMSI=""
+VERSION=""
+ORIGINE=""
+##echo ${BODY%%[=]*}
+x=`expr "$BODY" : '.*MSISDN=\([0-9]*\)'` && MSISDN="$x"
+y=`expr "$BODY" : '.*ORDRE=\([0-Z]*\)'` && ORDRE="$y"
+z=`expr "$BODY" : '.*CODE=\([0-9]*\)'` && CODE="$z"
+t=`expr "$BODY" : '.*IMSI=\([0-9]*\)'` && IMSI="$t"
+v=`expr "$BODY" : '.*VERSION=\([0-9]*\)'` && VERSION="$v"
+w=`expr "$BODY" : '.*ORIGINE=\([0-Z]*\)'` && ORIGINE="$w"
+
+
+function affiche {
+    case $ORIGINE in
+	*CMO)
+	    affiche_cmo;;
+	*MOB)
+	    affiche_mobi
+    esac
+}
+
+function affiche_cmo {
+    case $ORDRE in
+	"RC25")
+	    rc25;;
+	"VCOD")
+	    vcod;;
+	"MCOD")
+	    mcod;;
+	*)
+	    echo "Request unknow";;
+    esac
+}
+
+function affiche_mobi {
+    case $ORDRE in
+	"RC25")
+	    rc25_mobi;;
+	"VCOD")
+	    vcod;;
+	"MCOD")
+	    mcod;;
+	*)
+	    echo "Request unknow";;
+    esac
+}
+
+
+
+function rc25 {
+    case $MSISDN in
+	    *001)
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=3;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT==1111222233";;
+	    *002)
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=2;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT==1111222233";;
+	    *003)
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=1;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT==1111222233";;	
+	    *004)
+	    ##code inhibé
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=0;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+	    *005)
+	    ##code écrasé initial
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=-1;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;	
+	    *006)
+	    ##code écrasé CC
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=-2;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+	    *007)
+	    ##incident technique SDA
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=-3;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+	    *008)
+	    ##DOssier inconnu
+		echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI;NADV=;NB_TENTATIVE=;NUM_CLIENT=";;
+	    *009)
+	    ##DOssier inconnu
+		echo "STATUT=401;MSISDN=$MSISDN;IMSI=$IMSI;NADV=;NB_TENTATIVE=;NUM_CLIENT=;STATUT_LIBELLE=Ordre inconnu";;
+	    *)
+		echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=11;NB_TENTATIVE=1;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+	esac
+}
+
+function vcod {
+    case $CODE in
+	1234*)
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI";;
+	*)
+	    case $MSISDN in
+		*011)
+	    #dossier inconnu
+		    echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI";;
+		*012)
+	    #code inhibé
+		    echo "STATUT=0158;MSISDN=$MSISDN;IMSI=$IMSI";;
+		*013)
+	    #code ecrasé initial
+		    echo "STATUT=0157;MSISDN=$MSISDN;IMSI=$IMSI";;
+		*014)
+	    #code ecrasé CC
+		    echo "STATUT=0159;MSISDN=$MSISDN;IMSI=$IMSI";;
+		*)
+	    #code errone
+		    echo "STATUT=0156;MSISDN=$MSISDN;IMSI=$IMSI";;
+	    esac
+    esac
+}
+
+function mcod {
+    case $MSISDN in
+	*020)
+	    echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI";;
+	*)
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI";;
+    esac
+}
+	    
+	
+function rc25_mobi {
+    case $MSISDN in
+	*012)
+	    ##DOssier inconnu
+	    echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI;NADV=;NB_TENTATIVE=;NUM_CLIENT=";;
+	*013)
+	    ## Erreur CVF
+	    echo "STATUT=401;MSISDN=$MSISDN;IMSI=$IMSI;NADV=;NB_TENTATIVE=;NUM_CLIENT=;STATUT_LIBELLE=Ordre inconnu";;
+	*014)
+	    ## NADV nok
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=TEST;NB_TENTATIVE=1;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+	*)
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=208011111111111;NADV=BY;NB_TENTATIVE=1;CODE_PLAN_TARIFAIRE=PTE;NUM_CLIENT=1111222233";;
+    esac
+}
+
+
+
+cat <<EOF
+Content-Type: text/xml
+
+`affiche`
+EOF

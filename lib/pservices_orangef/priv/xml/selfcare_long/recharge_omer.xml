@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+
+ <page tag="start">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#main_long&amp;#main_short"/>
+ </page>
+
+  <page tag="main_long" hist="donthist" log="SCC_rechmen">
+	<redirect src="erl://svc_recharge:start_recharge"/>
+  </page>
+
+  <page tag="main_short" hist="donthist" nav="end" descr="terminal incompatible">
+    Votre terminal ne permet pas d'acceder au service.
+  </page>
+
+  <page tag="cag" menutext="notext" descr="Rechargement Omer: Formulaire">
+    <title>Rechargement Omer: Formulaire</title>
+    <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+		<prompt>Tapez sans leur faire mal les 14 chiffres de votre code de rechargement.<br/>
+			Appuyez sur * pour annuler. Attention, vous n'avez que 3 essais.
+		</prompt>
+    </entry>
+  </form>
+  </page>
+
+  <!-- Succes page with D4 -->
+  
+<page tag="sucess_cpte" descr="Rechargement Omer: Reussi">
+	<title>Rechargement Omer Reussi: Cpte_Princ</title>
+	C'est parti ! Vous avez effectue un rechargement d'un montant de 
+	<include src="erl://svc_recharge:montant_recharge"/>E.
+	Le solde de votre credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/>E
+	valable jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>. A bientot.
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="weinf_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_weinf">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_erech_europe">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_erech_maghreb">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_erech_smsmms">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge Omer: Fermeture">
+    <title>Recharge Omer: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Réessayer ultérieurement.
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement Omer: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+     Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="bad_code_ph2" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement Omer: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+  
+<page tag="bad_code_ph1"  backtext="notext" descr="Rechargement Omer: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse.Pour recharger composez #12*, puis les 14 chifffres
+    de votre code de rechargement, puis # et OK ou envoi.
+  </page>
+
+  <page tag="system_failure" nav="end"  descr="Rechargement Omer: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+     Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+ <page tag="badprofil" nav="end" descr="not cmo">
+     Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="incompatible" backtext="notext" nav="end" descr="Rechargement Omer: recharge incompatible">
+    <title>Reject : recharge incompatible avec credit</title>
+     Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end" descr="Rechargement Omer: recharge promotionnelle">
+    <title>Reject : rech promo</title>
+     Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="incompatible_offre" descr="Reject : recharge incompatible avec votre offre"><title>Reject : recharge incompatible avec offre</title>
+        Erreur<br/>
+        Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+</pages>

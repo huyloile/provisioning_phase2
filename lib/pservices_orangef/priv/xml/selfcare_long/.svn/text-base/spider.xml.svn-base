@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  <page tag="one2one" descr=" ">
+    <redirect src="erl://svc_spider:redirect_by_fileRestitutionType?RF=#rf,ND=#nd,NA=#na,?=#suiviconso1erepage_sans_sousmenu"/>
+  </page>
+
+
+  <page tag="postpaid" descr=" ">
+    <redirect src="erl://svc_spider:redirect_by_fileRestitutionType?RF=#rf,ND=#nd,NA=#na,?=#suiviconso1erepage"/>
+  </page>
+
+  <page tag="prepaid">
+    <redirect src="#suiviconso1erepage"/>
+  </page>
+  
+  <page tag="rf" descr="suivi conso postpaid niv 1 retard de facturation"
+	hist="dohist">
+    Depuis le <include src="erl://svc_spider:print_dateProchFactuPlus1?~s"/> vous disposez a nouveau de votre forfait et de vos options eventuelles.
+  </page>
+
+  <page tag="nd" descr="suivi conso postpaid niv 1 nouveau dossier"
+	hist="dohist" menutext="notext">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+
+  <page tag="na" descr="suivi conso postpaid niv 1 acces refuse"
+	hist="dohist" menutext="notext">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="no_resp" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+    <redirect src="erl://svc_util:redir_subscription?dme=#dme_no_resp,postpaid=#postpaid_no_resp,mobi=/mcel/acceptance/mobi/Home_page_mobi.xml#spider_reponse,cmo=#cmo_no_resp,default=#default_no_resp"/>
+  </page>
+
+  <page tag="default_no_resp" nav="end" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Service Indisponible. Nous vous invitons a consulter votre compte sur www.orange.fr>espace client
+  </page>
+  <page tag="dme_no_resp" nav="end" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+  <page tag="postpaid_no_resp"  descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+<!--     Service Indisponible. Nous vous invitons a appeler le 740 (appel gratuit) ou a vous rendre sur www.orange.fr>espace client pour consulter votre compte-->
+        Suivi conso momentanement indisponible, merci de vous reconnecter ulterieurement.
+	<include src="erl://svc_of_plugins_spider:print_spider_error_code"/><br/>
+	<a href="#menu">Menu</a>
+  </page>
+  
+  <page tag="cmo_no_resp" descr="suivi conso non disponible">
+    <redirect src="erl://svc_util_of:redirect_by_bool?cmo_menu_without_spider&amp;#cmo_no_resp_menu&amp;#cmo_no_resp_end"/>
+  </page>
+  <page tag="mobi_no_resp"  descr="suivi conso non disponible">
+    <redirect src="erl://svc_util_of:redirect_by_bool?mobi_menu_without_spider&amp;#mobi_no_resp_menu&amp;#mobi_no_resp_end"/>
+  </page>
+  <page tag="cmo_no_resp_end" nav="end" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Service Indisponible. Nous vous invitons a appeler le 740 (appel gratuit) ou a vous rendre sur www.orange.fr>espace client pour consulter votre compte
+  </page>
+  <page tag="mobi_no_resp_end" nav="end" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Service Indisponible. Nous vous invitons a consulter votre compte sur www.orange.fr>espace client
+  </page>
+  <page tag="cmo_no_resp_menu" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Suivi-conso indisponible. Merci de reessayer ulterieurement.<br/>
+     <a href="#menu">Menu</a><br/>
+     <a href="/mcel/acceptance/cmo/Home_page.xml#rechargement">Recharger</a>
+  </page>
+  <page tag="mobi_no_resp_menu" descr="suivi conso non disponible"
+	hist="dohist" menutext="notext">
+     Suivi-conso indisponible. Merci de reessayer ulterieurement.<br/>
+     <a href="#menu">Menu</a><br/>
+     <a href="selfcare.xml#recharge">Recharger</a>
+  </page>
+
+  <page tag="suiviconso1erepage" descr="suivi conso postpaid/prepaid niv 1"
+	hist="dohist">
+    <redirect src="erl://svc_spider:redirect_by_typeRestitution?FORF=#forfait,AJUST=#ajustable,ABON=#abonnement,LIB=#sans_credit,PTF=#mobi,CPTMOB=#cmo,?=#restitGodetAError"/>
+  </page>
+
+  <page tag="suiviconso1erepage_sans_sousmenu" descr="suivi conso postpaid/prepaid niv 1"
+	hist="dohist">
+    <redirect src="erl://svc_spider:redirect_by_typeRestitution?FORF=#forfait_sans_sousmenu,AJUST=#ajustable,ABON=#abonnement,LIB=#sans_credit,PTF=#mobi,CPTMOB=#cmo,?=#restitGodetAError"/>
+  </page>
+
+  <page tag="forfait" descr="suivi conso postpaid niv 1 forfait">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#forfait_ep&amp;#forfait_ac"/>
+  </page>
+
+  <page tag="forfait_sans_sousmenu" descr="suivi conso postpaid niv 1 forfait">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#forfait_ep_sans_sousmenu&amp;#forfait_ac_sans_sousmenu"/>
+  </page>
+
+  <page tag="forfait_ac" descr="suivi conso postpaid niv 1 forfait ac" backtext="notext">
+    <include src="#forfait_ac_sans_sousmenu"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+
+  <page tag="forfait_ac_sans_sousmenu" descr="suivi conso postpaid niv 1 forfait ac" backtext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_libelle?1&amp;~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;rollOver&amp; %2Breport ~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;bonus&amp; %2Bbonus ~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;balance&amp; : ~s"/><br/>
+    <include src="erl://svc_spider:print_dateProchFactu?Validite: ~s inclus%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+  </page>
+
+  <page tag="forfait_ep" descr="suivi conso postpaid niv 1 forfait ep" backtext="notext">
+    <include src="#forfait_ep_sans_sousmenu"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+
+  <page tag="forfait_ep_sans_sousmenu" descr="suivi conso postpaid niv 1 forfait ep" backtext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_libelleepuise?1&amp;~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;rollOver&amp; %2Breport ~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;bonus&amp; %2Bbonus ~s"/> : epuise<br/>
+    <include src="erl://svc_spider:print_dateProchFactuPlus1?Renouvele: ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+  </page>
+  
+  <page tag="ajustable" descr="suivi conso postpaid niv 1 ajustable" backtext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_libelle?1&amp;~s"/>
+    <include src="erl://svc_spider:print_credits?1&amp;consumed&amp; : ~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Prochaine fact: ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?consumed&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+  
+  <page tag="abonnement" descr="suivi conso postpaid niv 1 abonnement" backtext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf2?Montant consomme: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Prochaine fact: ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?hfAdv_hfInf&amp;1"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+  
+  <page tag="sans_credit" descr="suivi conso postpaid niv 1 sans credit" backtext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_libelle?1&amp;~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Prochaine fact: ~s%0A"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+  
+  <page tag="mobi" descr="suivi conso mobi niv 1">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#mobi_ep&amp;#mobi_ac"/>
+  </page>
+
+  <page tag="mobi_ac" descr="suivi conso mobi niv 1 solde ac">
+    <include src="erl://svc_spider:print_libelle?1&amp;~s: "/>
+    <include src="erl://svc_spider:print_credits?1&amp;balance&amp;~s%0A"/>
+    <include src="erl://svc_spider:print_dateDesactivation?dmy&amp;Validite: ~s%0A"/>
+    <include src="erl://svc_spider:print_dateValidite?dmy&amp;Votre numero est valide jsq: ~s.%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+
+  <page tag="mobi_ep" descr="suivi conso mobi niv 1 solde ep">
+    <include src="erl://svc_spider:print_libelleepuise?1&amp;~s: "/>epuise<br/>
+    <include src="erl://svc_spider:print_dateValidite?dmy&amp;Votre numero est valide jsq: ~s.%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+    <a href="spider.xml#recharge_init">Recharger</a>
+  </page>
+  
+  <page tag="recharge_init"  cost="free_pt">
+    <redirect src="erl://svc_util_of:consultation_sachem?selfcare.xml#recharge&amp;#serv_indisp"/>
+  </page>
+ 
+  <page tag="cmo" descr="suivi conso cmo niv 1">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#cmo_ep&amp;#cmo_ac"/>
+  </page>
+
+  <page tag="cmo_ac" descr="suivi conso cmo niv 1 solde ac" backtext="notext">
+    <include src="erl://svc_spider:print_libelle?1&amp;~s: "/>
+    <include src="erl://svc_spider:print_credits?1&amp;balance&amp;~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactuPlus1?Prochaine fact.: ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+
+  <page tag="cmo_ep" descr="suivi conso cmo niv 1 solde ep" >
+    <include src="erl://svc_spider:print_libelleepuise?1&amp;~s"/>: epuise<br/>
+    <include src="erl://svc_spider:print_dateProchFactuPlus1?Prochaine fact.: ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:restitGodets?1&amp;B"/>
+    <include src="erl://svc_spider:lienSousMenu"/>
+  </page>
+  
+  <page tag="restitGodetAError" descr="suivi conso niv 1 restitution impossible du godet A" nav="end" menutext="notext">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="suiviconsoplus" hist="dohist" descr="suivi conso postpaid niv 1 suivi conso plus">
+    <include src="erl://svc_spider:lienSiGodetsCouD?suivi conso detaille%0A&amp;#suiviconsodetaille"/>
+    <include src="erl://svc_spider:lienSiAjustableEtbonus?Mes bonus%0A&amp;#mesbonus"/>
+    <include src="erl://svc_spider:lien_offre_boost?Mes Avantages%0A&amp;#boosts"/>
+    <include src="erl://svc_spider:lienSiGodetsF?Suivi conso&amp;#miro"/>
+  </page>
+
+
+  <page tag="suiviconsodetaille" backtext="notext" hist="dohist" descr="suivi conso postpaid niv 1 suivi conso detaille">
+    <include src="erl://svc_spider:suiviconsodetaille"/>---<br/>
+    <a href="#suiviconsoplus" key="8">Precedent</a>
+  </page>
+
+  <page tag="suiviconsodetaille_item"  backtext="notext" hist="dohist" descr="suivi conso niv 1 suivi conso detaille">
+    <include src="erl://svc_spider:display_page?suivi_conso_detaille"/>---<br/>
+    <a href="#suiviconsodetaille" key="8">Precedent</a>
+  </page>
+
+  <page tag="mesbonus" hist="dohist" descr="suivi conso postpaid niv 1 restitution des bonus">
+    <include src="erl://svc_spider:print_credits?1&amp;bonus&amp;Vous beneficiez de ~s de bonus Orange offerts jusqu'au renouvellement de votre forfait%0A"/>
+  </page>
+  
+  <page tag="boosts" hist="dohist" descr="suivi conso postpaid/prepaid niv 1 offres boosts">
+    <include src="erl://svc_spider:restit_offre_boost"/>
+  </page>
+
+  <page tag="miro" hist="dohist" descr="suivi conso miro">
+    <include src="erl://svc_spider:restit_offre_miro?page1"/><br/>
+  </page>
+
+  <page tag="miro_page2" hist="dohist" descr="suivi conso miro page 2">
+    <include src="erl://svc_spider:restit_offre_miro?page2"/><br/>
+  </page>
+  
+  <page tag="menu" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare.xml#mainmenu,cmo=selfcare_cmo_new.xml#mainmenu,postpaid=#menu_postpaid"/>
+  </page>
+
+  <page tag="accueil" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=file://mcel/acceptance/mobi/Home_page_mobi.xml#sachem_consultation,cmo=selfcare_cmo_new.xml#mainmenu,postpaid=#menu_postpaid"/>
+  </page>
+
+  <page tag="query_sachem" descr=" ">
+    <redirect src="erl://svc_util_of:consultation_sachem?#query_sachem_ok&amp;#query_sachem_nok"/>
+  </page>
+
+  <page tag="query_sachem_ok" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare.xml#mainmenu,cmo=selfcare_cmo.xml#mainmenu"/>
+  </page>
+
+  <page tag="query_sachem_nok" descr="suivi conso spider prepaid Menu indisponible">
+    L'acces au menu est indisponible.
+  </page>
+
+  <page tag="menu_postpaid" descr=" ">
+    <redirect src="file:/mcel/acceptance/Home_page_postpaid.xml"/>  </page>
+
+  <!-- DME -->
+  <page tag="dme" hist="dohist">
+    <redirect src="erl://svc_spider:redirect_by_identifiant?0003=#id0003,0002=#id0002,0001=#id0001,0013=#id0013,0007=#id0007,0014=#id0014,0008=#id0008,0011=#id0011,0009=#id0009,0010=#id0010,0012=#id0010,0015=#id0015,0016=#id0016,0017=#id0017,0018=#id0018,0019=#id0019,0021=#id0010,0022=#id0022,0023=#id0023,0024=#id0024,0025=#id0025,0026=#id0026,0050=#id0050,?=#restitGodetAError"/>
+  </page>
+  
+  <page tag="id0003" backtext="notext" descr="suivi conso dme niv 1 id 3">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#id0003_ep&amp;#id0003_ac"/>
+  </page>
+  
+  <page tag="id0003_ep" backtext="notext" descr="suivi conso dme niv 1 id 3 solde epuise">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s,"/>votre forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp; %2Bbonus de ~s~s"/> indiquait:<br/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp;Depassement de: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Renouvellement forfait le ~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0003_ac" backtext="notext" descr="suivi conso dme niv 1 id 3 solde actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s,"/>votre forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp; %2Bbonus de ~s~s"/> indiquait:<br/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;Solde forfait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Valable jusqu'au: ~s inclus%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0002" backtext="notext" descr="suivi conso dme niv 1 id 2">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0002_ep&amp;#id0002_ac"/>
+  </page>
+
+  <page tag="id0002_ac" backtext="notext" descr="suivi conso dme niv 1 id 2 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;votre conso optima indiquait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp;Dont ~s~s de bonus Orange%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: <include src="erl://svc_spider:print_XXh?forfait ~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0002_ep" backtext="notext" descr="suivi conso dme niv 1 id 2 epuise">
+    A cette date, aucune conso sur votre forfait optima<br/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp;Bonus Orange: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: <include src="erl://svc_spider:print_XXh?forfait ~s"/><br/>
+  </page>
+
+  <page tag="id0001" backtext="notext" descr="suivi conso dme niv 1 id 1">
+    <redirect src="erl://svc_spider:redir_si_montant_nul?hfDise&amp;#id0001_ep&amp;#id0001_ac"/>
+  </page>
+
+  <page tag="id0001_ac"  backtext="notext" descr="suivi conso dme niv 1 id 1 actif">
+    Vous disposez d'un abonnement Orange.<br/>
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    le montant de vos communications depuis votre derniere facture s'elevait
+    a <include src="erl://svc_spider:print_montant?hfDise&amp;~s EUR"/><br/>
+  </page>
+
+  <page tag="id0001_ep"  backtext="notext" descr="suivi conso dme niv 1 id 1 epuise">
+    Vous disposez d'un abonnement Orange.<br/>
+    A cette date, nous n'avons enregistre aucune communication sur votre abo
+    depuis votre derniere facture<br/>
+  </page>
+
+  <page tag="id0013"  backtext="notext" descr="suivi conso dme niv 1 id 13">
+    <redirect src="erl://svc_spider:redir_si_montant_nul?hfDise&amp;#id0013_ep&amp;#id0013_ac"/>
+  </page>
+  
+  <page tag="id0013_ac"  backtext="notext" descr="suivi conso dme niv 1 id 13 actif">
+    Vous disposez d'un abonnement Data.<br/>
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>le montant de vos communications depuis votre derniere facture s'elevait
+    a <include src="erl://svc_spider:print_montant?hfDise&amp;~s EUR"/><br/>
+  </page>
+  
+  <page tag="id0013_ep"  backtext="notext" descr="suivi conso dme niv 1 id 13 epuise">
+    Vous disposez d'un abonnement Data.<br/>
+    A cette date, nous n'avons enregistre aucune communication sur votre abo depuis votre
+    derniere facture<br/>
+  </page>
+  
+  <page tag="id0007"  backtext="notext" descr="suivi conso dme niv 1 id 7">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0007_ep&amp;#id0007_ac"/>
+  </page>
+
+  <page tag="id0007_ac"  backtext="notext" descr="suivi conso dme niv 1 id 7 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;vous aviez consomme ~s~s de communications nationales%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Autre Conso: ~s EUR (international, numeros speciaux, roaming, SMS)%0A"/>
+  </page>
+  
+  <page tag="id0007_ep"  backtext="notext" descr="suivi conso dme niv 1 id 7 epuise">
+    A cette date, nous n'avons enregistre aucune communication nationale<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Autre Conso: ~s EUR (international, numeros speciaux, roaming, SMS)%0A"/>
+  </page>
+
+  <page tag="id0014"  backtext="notext" descr="suivi conso dme niv 1 id 14">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0014_ep&amp;#id0014_ac"/>
+  </page>
+
+  <page tag="id0014_ac"  backtext="notext" descr="suivi conso dme niv 1 id 14 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;vous aviez consomme ~s~s de communications nationales%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Autre Conso: ~s EUR (SMS, roaming, etc)%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactuPlus1?Renouvellement forfait le ~s%0A"/>
+  </page>
+
+  <page tag="id0014_ep"  backtext="notext" descr="suivi conso dme niv 1 id 14 epuise">
+    A cette date, nous n'avons enregistre aucune communication nationale<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Autre Conso: ~s EUR (international, numeros speciaux, roaming, SMS)%0A"/>
+  </page>
+
+  <page tag="id0008"  backtext="notext" descr="suivi conso dme niv 1 id 8">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0008_ep&amp;#id0008_ac"/>
+  </page>
+
+  <page tag="id0008_ac"  backtext="notext" descr="suivi conso dme niv 1 id 8 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;conso forfait optima: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dureeHfDise?Dont ~s de visiophonie%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0008_ep"  backtext="notext" descr="suivi conso dme niv 1 id 8 epuise">
+    A cette date, aucune conso sur votre forfait optima et visiophonie<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0011"  backtext="notext" descr=" ">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#id0011_ep&amp;#id0011_ac"/>
+  </page>
+
+  <page tag="id0011_ac" descr="suivi conso dme niv 1 id 11 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;Votre conso: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    Votre forfait partage mobiles <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp; %2B ~s~s de bonus"/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;: ~s~s"/><br/>
+  </page>
+
+  <page tag="id0011_ep"  backtext="notext" descr="suivi conso dme niv 1 id 11 epuise">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;Votre conso: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    Votre forfait partage mobiles <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;bonus&amp;TEMPS&amp; %2B ~s~s de bonus"/> est epuisee.<br/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;VALEU&amp;Depassement de: ~s~s%0A"/>
+  </page>
+
+  <page tag="id0009"  backtext="notext" descr=" ">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0009_ep&amp;#id0009_ac"/>
+  </page>
+
+  <page tag="id0009_ac"  backtext="notext" descr="suivi conso dme niv 1 id 9 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;Votre conso: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forf: ~s EUR%0A"/>
+    Conso du forfait partage mobiles + bonus: <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;~s~s"/><br/>
+    Meilleur choix: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0009_ep"  backtext="notext" descr="suivi conso dme niv 1 id 9 epuise">
+    A cette date, aucune conso<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    Conso du forfait partage mobiles + bonus: epuise<br/>
+    Meilleur choix: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0010"  backtext="notext" descr=" ">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0010_ep&amp;#id0010_ac"/>
+  </page>
+
+  <page tag="id0010_ac"  backtext="notext" descr="suivi conso dme niv 1 id 10 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;Vous aviez consomme ~s~s de communication nationale%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0010_ep"  backtext="notext" descr="suivi conso dme niv 1 id 10 epuise">
+    A cette date, nous n'avons enregistre aucune communication nationale<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0015"  backtext="notext" descr=" ">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0015_ep&amp;#id0015_ac"/>
+  </page>
+
+  <page tag="id0015_ac"  backtext="notext" descr="suivi conso dme niv 1 id 15 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;Votre conso forfait Intense Entreprises indiquait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0015_ep"  backtext="notext" descr="suivi conso dme niv 1 id 15 epuise">
+    A cette date, vous n'avez pas consomme sur votre forfait Intense Entreprises<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0016"  backtext="notext" descr=" ">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0016_ep&amp;#id0016_ac"/>
+  </page>
+
+  <page tag="id0016_ac"  backtext="notext" descr="suivi conso dme niv 1 id 16 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;TEMPS&amp;Votre conso forfait heures Business Everywhere optima indiquait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+  
+  <page tag="id0016_ep"  backtext="notext" descr="suivi conso dme niv 1 id 16 epuise">
+    A cette date, vous n'avez pas consomme sur votre forfait heures Business Everywhere<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima: forfait <include src="erl://svc_spider:print_XXh?~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+  
+  <page tag="id0017"  backtext="notext" descr="suivi conso dme niv 1 id 17">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#id0017_ep&amp;#id0017_ac"/>
+  </page>
+  
+  <page tag="id0017_ac"  backtext="notext" descr="suivi conso dme niv 1 id 17 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    <include src="erl://svc_spider:print_XXh?votre forfait heures Business Everywhere ~s indiquait:%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;Solde forfait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Valable jusqu'au: ~s inclus"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp; Conso hors forfait: ~s EUR"/><br/>
+  </page>
+  
+  <page tag="id0017_ep"  backtext="notext" descr="suivi conso dme niv 1 id 17 epuise">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    <include src="erl://svc_spider:print_XXh?votre forfait heures Business Everywhere ~s indiquait%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp;Depassement de: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Renouvellement forfait le ~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0018"  backtext="notext" descr="suivi conso dme niv 1 id 18">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0018_ep&amp;#id0018_ac"/>
+  </page>
+  
+  <page tag="id0018_ac"  backtext="notext"  descr="suivi conso dme niv 1 id 18 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;TEMPS&amp;Votre conso Optima Europe indiquait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima : <include src="erl://svc_spider:print_XXh?forfait ~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+  
+  <page tag="id0018_ep"  backtext="notext"descr="suivi conso dme niv 1 id 18 epuise">
+    A cette date, vous n'avez pas consomme sur votre option Optima Europe<br/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix optima : <include src="erl://svc_spider:print_XXh?forfait ~s"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp; %2B~s~s"/><br/>
+  </page>
+
+  <page tag="id0019"  backtext="notext" descr="suivi conso dme niv 1 id 19">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#id0019_ep&amp;#id0019_ac"/>
+  </page>
+  
+  <page tag="id0019_ac"  backtext="notext" descr="suivi conso dme niv 1 id 19 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s%0A"/>
+    Votre forfait Business Everywhere International indiquait:<br/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;Solde credit 2H Wi-Fi roaming: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso Hors Forfait: ~s EUR%0A"/>
+  </page>
+  
+  <page tag="id0019_ep"  backtext="notext" descr="suivi conso dme niv 1 id 19 epuise">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, "/>
+    votre forfait Business Everywhere International indiquait un depassement de <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp;~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+  </page>
+
+  <page tag="id0022"  backtext="notext" descr="dme niv 1 id 22">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0022_ep&amp;#id0022_ac"/>
+  </page>
+  
+  <page tag="id0022_ac"  backtext="notext" descr=" ">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;VALEU&amp;Votre conso: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forf: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;totalConsumed&amp;VALEU&amp;Conso du forfait partage mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix: forfait ~s~s%0A"/>
+  </page>
+  
+  <page tag="id0022_ep"  backtext="notext" descr=" ">
+    A cette date, aucune conso
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;totalConsumed&amp;VALEU&amp;Conso du forfait partage mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix: forfait ~s~s%0A"/>
+  </page>
+
+  <page tag="id0023"  backtext="notext" descr="dme niv 1 id 23">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0023_ep&amp;#id0023_ac"/>
+  </page>
+  
+  <page tag="id0023_ac"  backtext="notext" descr=" ">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;VALEU&amp;Votre conso du forfait partage mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+  </page>
+  
+  <page tag="id0023_ep"  backtext="notext" descr=" ">
+    A cette date, aucune conso sur votre forfait partage mobiles
+   <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+   </page>
+
+  <page tag="id0024" backtext="notext"  descr="dme niv 1 id 24">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0024_ep&amp;#id0024_ac"/>
+  </page>
+  
+  <page tag="id0024_ac"  backtext="notext" descr=" ">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;VALEU&amp;Votre conso: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;totalConsumed&amp;VALEU&amp;Conso du forfait fixes-mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix: forfait ~s~s%0A"/>
+  </page>
+  
+  <page tag="id0024_ep"  backtext="notext" descr=" ">
+    A cette date, aucune conso
+   <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;totalConsumed&amp;VALEU&amp;Conso du forfait fixes-mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix: forfait ~s~s%0A"/>
+   </page>
+
+  <page tag="id0025"  backtext="notext" descr="dme niv 1 id 25">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0025_ep&amp;#id0025_ac"/>
+ </page>
+  
+  <page tag="id0025_ac"  backtext="notext" descr=" ">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;VALEU&amp;Votre conso forfait fixes-mobiles: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+  </page>
+  
+  <page tag="id0025_ep"  backtext="notext" descr=" ">
+    A cette date, aucune conso sur votre forfait fixes-mobiles
+   <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait: ~s EUR%0A"/>
+   </page>
+
+  <page tag="id0026"  backtext="notext" descr="dme niv 1 id 26">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0026_ep&amp;#id0026_ac"/>
+  </page>
+  
+  <page tag="id0026_ac"  backtext="notext" descr=" ">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s, a ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;consumed&amp;VALEU&amp;Votre conso forfait Intense Entreprises indiquait: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    <include
+    src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix optima: forfait ~s~s%0A"/>
+  </page>
+  
+  <page tag="id0026_ep"  backtext="notext" descr=" ">
+    A cette date, vous n'avez pas consomme sur votre forfait Intense Entreprises
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;standard&amp;VALEU&amp;Meilleur choix optima: forfait ~s~s%0A"/>
+   </page>
+
+  <page tag="id0050"  backtext="notext" descr="suivi conso dme niv 1 id 50">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Votre dernier appel date du ~s a ~s.%0A"/>
+    Le suivi Conso pourra vous renseigner sur vos consommations a partir du<include src="erl://svc_spider:print_dateProchFactuPlus1? ~s%0A"/>
+  </page>
+
+  <page tag="dme_suiviconsoplus" menutext="notext" descr=" ">
+    <include src="erl://svc_spider:dme_suiviconsoplus"/>
+  </page>
+  
+  <page tag="serv_indisp" descr="service indisponible" nav="end">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="acces_refuse" descr="acces refuse" nav="end">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="prob_technique" descr="prob technique" nav="end">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="dossier_inconnu" descr="dossier inconnu" nav="end">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+  
+</pages>

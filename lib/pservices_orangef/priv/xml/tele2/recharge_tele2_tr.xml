@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page">
+
+  <page menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire</title>
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok&amp;#recharge_ok_roaming&amp;#recharge_ok_sms&amp;#bad_code1">
+    <entry kind="digits">
+      <prompt>Saisissez les 14 chiffres de votre code de rechargement situes
+							sur votre ticket de rechargement puis validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="recharge_ok" descr="Rechargement Tele2: OK">
+    <title>Rechargement Tele2: OK</title>
+		Vous venez de recharger <include src="erl://svc_recharge:montant_recharge"/> EUR sur votre carte Tele2 mobile.<br/>
+		Le nouveau solde de votre carte Tele2 mobile est de <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+  </page>
+
+  <page tag="recharge_ok_roaming" descr="Rechargement roaming Tele2: OK">
+    <title>Rechargement Tele2: OK</title>
+    Rechargement confirme.
+    Vous disposez de <include src="erl://svc_compte:print_solde?cpte_roaming"/>E de credit pour appeler depuis les Etats-Unis, le Maroc, l'Algerie, la Tunisie et la Turquie.
+    Credit valable jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_roaming&amp;dmyy"/>.<br/>
+  </page>
+
+  <page tag="recharge_ok_sms" descr="Rechargement sms illim Tele2: OK">
+    <title>Rechargement SMS Tele2: OK</title>
+<!--    Rechargement confirme.
+    Vous disposez de SMS illimites en France metropolitaine vers tous les
+    operateurs (hors no speciaux)
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmyy"/>.<br/>-->
+    Vous venez de recharger <include src="erl://svc_recharge:montant_recharge"/>EUR sur votre compte. <br/>
+    Nouveau solde de votre compte: <include src="erl://svc_compte:print_solde?cpte_sms_ill"/>EUR soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_sms_ill"/> min valables jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms_ill"/>.
+  </page>
+
+  <page tag="bad_code1" menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire apres code invalide 1</title>		
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok&amp;#recharge_ok_roaming&amp;#recharge_ok_sms&amp;#bad_code2">
+    <entry kind="digits">
+      <prompt>Ce code n'est pas valide.<br/>
+      Merci de retaper votre code et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="bad_code2" menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire apres code invalide 2</title>		
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok&amp;#recharge_ok_roaming&amp;#recharge_ok_sms&amp;#bad_code">
+    <entry kind="digits">
+      <prompt>Merci de retaper une derniere fois le code de rechargement compose
+							des 14 chiffres situes sur votre ticket de rechargement.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" log="SCCrech_Ebadcode" 
+	descr="Code de rechargment tele2 refuse">
+    <title>Code de rechargment tele2 refuse</title>
+    Rechargement refuse : votre code n'est pas correct.<br/>
+    Merci de verifier votre code et de renouveler l'operation<br/>    
+    <a href="selfcare.xml#sc_pp2_niv1" key="0">Retour</a>
+  </page>
+
+  <page tag="system_failure" descr="Rechargement Tele2: OK">
+    <title>Rechargement Tele2: OK</title>
+		Suite a un probleme technique nous ne pouvons crediter votre carte pour l'instant.<br/>
+		Si le probleme persiste contactez votre service clients au 456 (prix com nat)<br/>
+	</page>
+
+  <page tag="incompatible" log="SCCrech_Efail" descr="Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+		Service reserve aux clients d'une offre prepayee Tele2 mobile. 
+	</page>
+
+  <page tag="badprofil" log="SCCrech_Efail" descr="Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+		Service reserve aux clients d'une offre prepayee Tele2 mobile. 
+	</page>
+
+  <page tag="promo" log="SCrech_Epromo" backtext="notext" nav="end" descr="recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Votre recharge promotionnelle ne vous permet pas de recharger un
+    compte epuise ou perime. Merci.
+  </page>
+
+<!-- Tele2 pp2-->
+
+  <page tag="menu_pp2" descr="Rechargement Tele2 PP2: MenuOK">
+    <title>Rechargement Menu Tele2 </title>
+    TELE2 MOBILE<br/>
+    Si vous disposez d'un code de rechargement, tapez 1 puis validez<br/>
+    Sinon, tapez 2 puis validez
+    <a href="#recharge_pp2">Recharger</a><br/>
+    <a href="#aide_pp2">Aide</a><br/>
+  </page>
+
+  <page tag="aide_pp2" descr="Rechargement Tele2 PP2: MenuOK">
+    <title>Rechargement Tele2: OK</title>
+    TELE2 MOBILE<br/>
+    Vous pouvez acheter des recharges chez votre revendeur habituel ou sur www.tele2mobile.fr<br/>
+    Pour recharger immediatement par carte bancaire, appelez le 430<br/>
+    <a href="selfcare.xml" key="0">Retour</a><br/>
+  </page>
+
+  <page  tag="recharge_pp2" menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire</title>
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok_pp2&amp;#recharge_ok_roaming_pp2&amp;#recharge_ok_sms_pp2&amp;#bad_code1_pp2">
+    <entry kind="digits">
+      <prompt>TELE2 MOBILE<br/>
+      Pour recharger, tapez les 14 chiffres de votre code de rechargement puis validez.   
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="recharge_ok_pp2" descr="Rechargement Tele2: OK">
+    <title>Rechargement Tele2: OK</title>
+    Vous venez de recharger <include src="erl://svc_recharge:montant_recharge"/>EUR sur votre compte.<br/>
+    Nouveau solde de votre compte: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> valables
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.<br/>
+
+  </page>
+  <page tag="recharge_ok_roaming_pp2" descr="Rechargement Roaming Tele2: OK">
+    <title>Rechargement Tele2: OK</title>
+    Rechargement confirme.
+    Vous disposez de <include src="erl://svc_compte:print_solde?cpte_roaming"/>E de credit pour appeler depuis les Etats-Unis, le Maroc, l'Algerie, la Tunisie et la Turquie.
+    Credit valable jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_roaming&amp;dmyy"/>.<br/>
+  </page>
+
+  <page tag="recharge_ok_sms_pp2" descr="Rechargement sms illim Tele2: OK">
+    <title>Rechargement SMS Tele2: OK</title>
+<!--    Rechargement confirme.
+    Vous disposez de SMS illimites en France metropolitaine vers tous les
+    operateurs (hors no speciaux)
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmyy"/>.<br/>-->
+    Vous venez de recharger <include src="erl://svc_recharge:montant_recharge"/>EUR sur votre compte. <br/>
+    Nouveau solde de votre compte: <include src="erl://svc_compte:print_solde?cpte_sms_ill"/>EUR soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_sms_ill"/> min valables jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms_ill"/>.
+  </page>
+<!--
+  <page tag="saisir_num_prefere" descr="Saisir le numero prefere">
+    <title>Saisir le numero prefere</title>
+    <form action="erl://svc_recharge_tele2:verif_no_prefere">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Veuillez entrer les 10 chiffres de votre numero prefere. Uniquement numeros fixes
+      et mobiles en France metropolitaine.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="saisie_no_prefere_nok" hist="donthist" backtext="notext" menutext="notext" descr="Incorrect numero prefere">
+    <title>Incorrect numero prefere</title>
+    Numero de telephone incorrect<br/>
+    Merci de verifier que le numero de telephone est un fixe ou un mobile en France metropolitaine et de
+    renouveler l'operation.<br/>
+    <a href="#saisir_num_prefere" key="0">Retour</a>
+  </page>
+
+  <page tag="saisie_no_prefere_end" nav="end" descr="Incorrect numero prefere">
+    <title>Incorrect numero prefere</title>
+    Numero de telephone incorrect<br/>
+    Merci de verifier que le numero de telephone est un fixe ou un mobile en France metropolitaine et de
+    renouveler l'operation.
+  </page>
+
+  <page tag="confirm_num_prefere" descr="Confirmer or modifier numero prefere">
+    <title>Confirmer or modifier numero prefere</title>
+    Votre numero prefere est le <include src="erl://svc_options:print_numero_prefere"/><br/>
+    <a href="erl://svc_recharge_tele2:do_confirm?opt_numpref_tele2">Confirmer</a><br/>
+    <a href="#saisir_num_prefere">Modifier</a>
+  </page>  
+  
+  <page tag="recharge_num_prefere_ok" hist="donthist" backtext="notext" menutext="notext" descr="Recharge 20E et numero prefere: OK">
+    <title>Recharge 20E et numero prefere: OK</title>
+    Rechargement confirme<br/><br/>
+    Vous disposez de 4h de communications vers votre numero prefere
+    <include src="erl://svc_options:print_numero_prefere"/>,
+    jusqu'au <include src="erl://svc_options:print_date_end_opt?opt_numpref_tele2"/><br/>
+    <a href="selfcare.xml#sc_pp2_niv1" key="0">Retour</a>
+</page>
+-->
+  <page tag="bad_code1_pp2" menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire apres code invalide 1</title>		
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok_pp2&amp;#recharge_ok_roaming_pp2&amp;#recharge_ok_sms&amp;#bad_code2_pp2">
+    <entry kind="digits">
+      <prompt>Ce code n'est pas valide.<br/>
+      Merci de retaper votre code et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="bad_code2_pp2" menutext="notext" descr="Rechargement Tele2: Formulaire">
+    <title>Rechargement Tele2: Formulaire apres code invalide 2</title>		
+    <form action="erl://svc_recharge_tele2:process_code?tele2&amp;#recharge_ok_pp2&amp;#recharge_ok_roaming_pp2&amp;#recharge_ok_sms&amp;#bad_code_pp2">
+    <entry kind="digits">
+      <prompt>Merci de retaper une derniere fois le code de rechargement compose
+      des 14 chiffres situes sur votre ticket de rechargement.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="bad_code_pp2" hist="donthist" backtext="notext" log="SCCrech_Ebadcode" 
+	descr="Code de rechargment tele2 refuse">
+    <title>Code de rechargment tele2 refuse</title>
+    Rechargement refuse : votre code n'est pas correct.<br/>
+    Merci de verifier votre code et de renouveler l'operation<br/>    
+    <a href="selfcare.xml#sc_pp2_niv1" key="0">Retour</a>
+  </page>
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Service indisponible">
+    <title>Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+</pages>
+
+
+

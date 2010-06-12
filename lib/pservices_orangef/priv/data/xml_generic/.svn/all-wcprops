@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic
+END
+callCsl_param_gen.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_param_gen.mapping
+END
+callMod_cp.error
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMod_cp.error
+END
+callCsl_param_gen.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_param_gen.xml
+END
+callMod_cp.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMod_cp.mapping
+END
+callMaj_op.error
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_op.error
+END
+callMaj_op.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_op.mapping
+END
+callMaj_nopt.error
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_nopt.error
+END
+callMod_cp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMod_cp.xml
+END
+callCsl_doscp.error
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_doscp.error
+END
+callMaj_nopt.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_nopt.mapping
+END
+callRec_tck.error
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callRec_tck.error
+END
+callCsl_doscp.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_doscp.mapping
+END
+callRec_tck.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callRec_tck.mapping
+END
+callMaj_op.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_op.xml
+END
+callMaj_nopt.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callMaj_nopt.xml
+END
+callCsl_op.error
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_op.error
+END
+callCsl_doscp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_doscp.xml
+END
+callTra_credit.error
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callTra_credit.error
+END
+callCsl_op.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_op.mapping
+END
+callRec_tck.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callRec_tck.xml
+END
+callCsl_tck.error
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_tck.error
+END
+callTra_credit.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callTra_credit.mapping
+END
+callCsl_tck.mapping
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_tck.mapping
+END
+callCsl_op.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_op.xml
+END
+callTra_credit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callTra_credit.xml
+END
+callCsl_tck.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_tck.xml
+END
+callCsl_param_gen.error
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/data/xml_generic/callCsl_param_gen.error
+END

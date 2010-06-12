@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : Option Payante Numero Prefere">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page_with_init?opt_numprefp&amp;#solde_insuff&amp;#generique&amp;#failure"/>
+  </page>
+  
+  <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere solde insuffisant">
+    <title>Option Payante Numero Prefere solde insuffisant</title>
+    Bonjour, pour souscrire a l'option Mon numero prefere 20mn, vous devez
+    disposer de <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/> sur votre
+    compte mobicarte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere solde insuffisant M6">
+    <title>Option Payante Numero Prefere solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option Mon numero prefere 20mn, vous devez
+    disposer de <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/> sur votre
+    compte principal.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere solde insuffisant Foot">
+    <title>Option Payante Numero Prefere solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option Mon numero prefere 20mn, vous devez
+    disposer de <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/> sur votre compte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere menu generique">
+    <title>Option Payante Numero Prefere menu generique</title>
+    Avec l'opt.Mon numero Prefere 20mn, vos appels vers 1 No fixe ou mobile
+    0range en Fr.metro sont privilegies pdt 1 semaine pour <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/>.<br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page conditions">
+    <title>Option Payante Numero Prefere page conditions</title>
+    20 min de com.metropolitaines vers 1 N.fixe (hors No speciaux) ou N.de
+    mobile Orange a utiliser dans les 7 jours suivant la date de souscription
+    de l'option.<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page conditions suite 1">
+    <title>Option Payante Numero Prefere page conditions suite 1</title>
+    Au-dela des 20 min, les communications metropolitaines vers le No prefere
+    vous seront tarifees a 0.30E/min jusqu'a la fin de la date de validite de
+    l'option 1<br/>
+    <a href="#conditions_suite2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page conditions suite 2">
+    <title>Option Payante Numero Prefere page conditions suite 2</title>
+    Communications decomptees a la seconde au-dela de la 1ere minute
+    indivisible. No prefere non modifiable pendant la duree de validite de
+    l'option..<br/>
+    <a href="#conditions_suite3">Suite</a>
+  </page>
+
+  <page tag="conditions_suite3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page conditions suite 3">
+    <title>Option Payante Numero Prefere page conditions suite 3</title>
+    Souscription au 220 ou au #123# entre 02h00 et 23h59<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page d'enregistremement du num">
+    <title>Option Payante Numero Prefere page souscrire</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_numprefp&amp;#confirmer&amp;#erreur_saisie">
+      <entry kind="digits" type="password">
+	<prompt>Tapez les 10 chiffres de votre numero prefere puis validez.
+	Vous avez le choix entre un numero fixe ou mobile Orange.</prompt>
+      </entry>
+    </form>
+  </page>
+
+   <page tag="erreur_saisie" backtext="notext" cost="free_pt"
+	 descr="Opt. SMS: Echec">
+    <title>Erreur de saisie du Numero Prefere</title>
+    Votre numero prefere doit comporter 10 chiffres et etre un numero de
+    telephone fixe ou un numero de mobile Orange de France metropolitaine.<br/>
+    <a href="#souscrire">Enregistrez votre numero</a>
+  </page>
+ 
+  <page tag="confirmer">
+    <redirect src="erl://svc_options_mobi:redirect_if_numpref_diff?#numpref_diff&amp;#numpref_ndiff"/>
+  </page>
+
+  <page tag="numpref_ndiff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page de confiration sans num pref gratuit">
+    <title>Option Payante Numero Prefere page de confirmation sans num pref gratuit</title>
+    Vous allez souscrire a l'opt.Mon Numero Prefere 20 mn pour <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_numprefp&amp;#success,#solde_insuff,#failure">Confirmer</a>
+  </page>
+
+  <page tag="numpref_diff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page de confiration avec num pref gratuit">
+    <title>Option Payante Numero Prefere page de confirmation avec num pref gratuit</title>
+    En souscrivant a l'option numero prefere 20 mn, vous acceptez que votre
+    numero soit enregistre et applique a votre option Mon Numero Prefere a
+    0.30E/min<br/>
+    <a href="#numpref_ndiff">Accepter</a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="Option Payante Numero Prefere page apres confirmation">
+    <title>Option Payante Numero Prefere page apres confirmation</title>
+    Votre souscription a l'option Mon Numero Prefere 20 mn vers
+    le <subst name="NUM_PREF"/> valable jusqu'au <subst name="DATE_FIN"/> a
+    bien ete prise en compte. Merci de votre appel.
+  </page>
+  
+  <page tag="hno" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Option Payante Numero Prefere page HNO">
+    <title>Option Payante Numero Prefere page HNO</title>
+    Vous pourrez souscrire l'option Mon numero Prefere 20mn a partir de 02h00
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. Numero Prefere: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="nouveaute" cost="free_pt" descr="Option Numero Prefere Payante page nouveaute">
+    <title>Option Numero Prefere Payante page nouveaute</title>
+    Du <include
+    src="erl://svc_options:print_commercial_start_date?opt_numprefp&amp;dm"/> au
+    <include
+     src="erl://svc_options:print_commercial_end_date?opt_numprefp&amp;dmy"/>,
+     privilegiez vos communications vers votre numero prefere ! 20 minutes
+     valables 1 semaine pour <include
+    src="erl://svc_options:print_option_price?opt_numprefp"/>.
+    Alors profitez-en !<br/>
+    <a href="opt_numprefp.xml">Souscrire</a>
+  </page>
+
+   <page tag="restit_ac" cost="free_pt" hist="donthist"
+        volatile="true" descr="Page de restitution a l'Option Payante Numero Prefere AC">
+    <title>Page de restitution a l'Option Payante Numero Prefere AC</title>
+    Votre Opt.Mon Numero Prefere 20 mn est activee vers le
+    0<include src="erl://svc_options:print_malin"/>. Il vous reste <include
+    src="erl://svc_options:print_balance_min?opt_numprefp"/> a utiliser jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_numprefp"/> inclus.
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="restit_ep" cost="free_pt" hist="donthist"
+        volatile="true" descr="Page de restitution a l'Option Payante Numero Prefere EP">
+    <title>Page de restitution a l'Option Payante Numero Prefere EP</title>
+    Vos appels vers le 0<include src="erl://svc_options:print_malin"/> sont
+    a 0.30E/mn jusqu'au <include
+    src="erl://svc_options:print_end_credit?opt_numprefp"/> avec votre Option
+    Mon Numero Prefere 20mn<br/>
+  </page>
+
+  <page tag="restit_pe" cost="free_pt" hist="donthist"
+        volatile="true" descr="Page de restitution a l'Option Payante Numero Prefere PE">
+    <title>Page de restitution a l'Option Payante Numero Prefere PE</title>
+    La date de validite de votre option Mon Numero Prefere 20 mn est
+    depassee<br/>
+  </page>
+
+</pages>

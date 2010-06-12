@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+
+
+  <page tag="rechargement_mobi" cost="free_pt" descr="Redirection Recharge">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#redirection_recharge"/>
+  </page>
+
+  <page descr="appelle-moi: filtre des sessions sans MSISDN">
+    <redirect src="erl://svc_util:filter_msisdn?#consult_sachem&amp;#no_msisdn"/>
+  </page>
+
+  <page tag="consult_sachem" descr="consult sachem">
+    <redirect src="erl://svc_of_plugins:sachem_consultation?#check_access&amp;#error_sachem_consultation"/>
+  </page>
+  
+  <page tag="check_access">
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#redir_roamer,#not_allowed"/>
+  </page>
+  
+  <page tag ="redir_roamer" descr="appelle-moi: Redirection des roamers">
+    <redirect src="erl://svc_roaming:redir_roaming_network?noroaming=#redir_size,default=#no_roaming"/>
+  </page>
+
+  <page tag="redir_size" descr="appelle-moi: Redirection par niveau">
+    <redirect src=
+      "erl://svc_util:redirect_size?64&amp;#redir_subscription&amp;#not_compatible"/>
+  </page>
+
+  <page tag="redir_subscription" descr="appelle-moi: Redirection par souscription">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#do_mobi,cmo=#redir_declinaison,symacom=#do_symacom,default=#not_allowed"/>
+  </page>
+
+  <page tag="redir_declinaison" descr="appelle-moi: Redirection par declinaison">
+    <redirect src="erl://svc_util_of:redir_declinaison?1=#not_allowed,default=#do_cmo"/>
+  </page>
+
+  <page tag="do_mobi" descr="appelle-moi MOBI : Verif format et condition, envoie SMS">
+    <redirect src="erl://svc_call_me_back:verify_send?mobi&amp;#confirm_ok_mobi&amp;#invalid_format&amp;#invalid_num_dest&amp;#invalid_solde&amp;#invalid_date&amp;#invalid_num"/>
+  </page>
+
+  <page tag="do_cmo" descr="appelle-moi CMO : Verif format et condition, envoie SMS">
+    <redirect src="erl://svc_call_me_back:verify_send?cmo&amp;#confirm_ok_cmo&amp;#invalid_format&amp;#invalid_num_dest&amp;#invalid_solde&amp;#invalid_date&amp;#invalid_num"/>
+  </page>
+
+  <page tag="do_symacom" descr="appelle-moi MVNO SYMACOM MOBILE : Verif format et condition, envoie SMS">
+    <redirect src="erl://svc_call_me_back:verify_send?symacom&amp;#confirm_ok_symacom&amp;#invalid_format&amp;#invalid_num_dest&amp;#invalid_solde&amp;#invalid_date&amp;#invalid_num_symacom"/>
+  </page>
+
+  <page tag="confirm_ok_mobi" descr="appelle-moi MOBI : CMB OK, redir">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#ok_mobi_long&amp;#ok_mobi_short"/>
+  </page>
+
+  <page tag="confirm_ok_cmo" descr="appelle-moi CMO  : CMB OK, redir">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#ok_cmo_long&amp;#ok_cmo_short"/>
+  </page>
+
+  <page tag="confirm_ok_symacom" descr="appelle-moi SYMACOM  : CMB OK, redir">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#ok_symacom_long&amp;#ok_symacom_short"/>
+  </page>
+
+  <page tag="ok_mobi_long" descr="appelle-moi MOBI : CMB OK, long">
+      Votre correspondant va etre prevenu. N'oubliez pas de recharger
+      votre compte !<br/>
+      <a href="#rechargement_mobi">Recharger</a><br/>
+   </page>
+
+  <page tag="ok_cmo_long"
+    descr="appelle-moi CMO : CMB OK, long">
+      Votre correspondant va etre prevenu. N'oubliez pas de recharger 
+      votre compte !<br/>
+      <a href="/mcel/acceptance/cmo/rechargement/accueil_rechargement.xml">Recharger</a><br/>
+   </page>
+
+  <page tag="ok_symacom_long" descr="appelle-moi SYMACOM : CMB OK, long">
+      Un SMS lui a ete envoye. Rechargez votre compte sur le *144#.
+   </page>
+
+  <page tag="ok_mobi_short" 
+    descr="appelle-moi MOBI : CMB OK, court" nav="end">
+      Un SMS lui a ete envoye. Rechargez votre compte sur le #123#.
+  </page>
+
+  <page tag="ok_cmo_short" 
+    descr="appelle-moi CMO : CMB OK, court" nav="end">
+      Un SMS lui a ete envoye. Rechargez votre compte sur le #123#.
+  </page>
+  <page tag="ok_symacom_short" 
+    descr="appelle-moi SYMACOM : CMB OK, court" nav="end">
+      Un SMS lui a ete envoye. Rechargez votre compte sur le *144#.
+  </page>
+
+  <page tag="confirm_nok" descr="appelle-moi: Service indisponible, redir">
+    <redirect src=
+      "erl://svc_util:redirect_size?130&amp;#confirm_nok_long&amp;#confirm_nok_short"/>
+  </page>
+
+  <page tag="confirm_nok_long" descr="appelle-moi: Service indisponible, long" 
+    nav="end">
+      Le service est temporairement indisponible.
+      Veuillez nous en excuser, et vous reconnecter ultérieurement.
+      Merci.
+  </page>
+
+  <page tag="confirm_nok_short" descr="appelle-moi: Service indisponible, court" 
+    nav="end">
+      Le service est temporairement indisponible.
+  </page>
+  
+  <page tag="invalid_format" descr="appelle-moi: Format de commande non valide" nav="end">
+      Veuillez reformuler votre demande :<br/>
+      #122*numero_du_destinataire#
+  </page>
+
+  <page tag="invalid_num_dest" descr="appelle-moi: Numéro de mobile seulement" nav="end">
+      Ce service ne fonctionne que vers les no Mobiles. Merci
+  </page>
+
+  <page tag="invalid_solde" descr="appelle-moi: Solde > 1, redir">
+    <redirect src=
+      "erl://svc_util:redirect_size?130&amp;#invalid_solde_long&amp;#invalid_solde_short"/>
+  </page>
+  <page tag="invalid_solde_long" descr="appelle-moi: Solde > 1, long" nav="end">
+      Vous n'avez pas acces au service : votre solde est superieur a 1 EUR
+  </page>
+  <page tag="invalid_solde_short" descr="appelle-moi: Solde > 1, court" nav="end">
+      Vous n'avez pas acces au service car votre solde est > a 1EUR
+  </page>
+
+  <page tag="invalid_date" descr="appelle-moi: Délai 1 semaine dépassé, redir">
+    <redirect src=
+      "erl://svc_util:redirect_size?130&amp;#invalid_date_long&amp;#invalid_date_short"/>
+  </page>
+  <page tag="invalid_date_long" descr="appelle-moi: Délai 1 semaine dépassé, long" 
+    nav="end">
+      La semaine de validite du service est depassee. Il sera a nouveau accessible le mois prochain
+  </page>
+  <page tag="invalid_date_short" descr="appelle-moi: Délai 1 semaine dépassé, court" 
+    nav="end">
+      La semaine de validite du service est depassee
+  </page>
+
+  <page tag="invalid_num" descr="appelle-moi: Nb de CMB autorisé atteint, redir">
+    <redirect src=
+      "erl://svc_util:redirect_size?130&amp;#invalid_num_long&amp;#invalid_num_short"/>
+  </page>
+  <page tag="invalid_num_long" descr="appelle-moi: Nb de CMB autorise atteint, long" nav="end">
+      Vous avez utilise tous vos messages pour ce mois-ci. Pour appeler a nouveau rechargez votre compte sur le #123#
+  </page>
+  <page tag="invalid_num_short" descr="appelle-moi: Nb de CMB autorise atteint, court" nav="end">
+      Vous avez utilise tous vos messages pour ce mois-ci
+  </page>
+
+
+  <page tag="invalid_num_symacom" descr="appelle-moi SYMACOM: Nb de CMB autorise atteint, redir">
+    <redirect src=
+      "erl://svc_util:redirect_size?130&amp;#invalid_num_long_symacom&amp;#invalid_num_short_symacom"/>
+  </page>
+  <page tag="invalid_num_long_symacom" descr="appelle-moi SYMACOM: Nb de CMB autorise atteint, long" nav="end">
+      Vous avez utilise tous vos messages. Pour appeler a nouveau rechargez votre compte sur le *144#
+  </page>
+  <page tag="invalid_num_short_symacom" descr="appelle-moi: Nb de CMB autorisé atteint, court" nav="end">
+      Vous avez utilise tous vos messages
+  </page>
+
+  <page tag="not_compatible" descr="appelle-moi: Terminal non compatible" nav="end">
+      Votre terminal ne vous permet pas d'acceder a ce service
+  </page>
+  
+  <page tag="not_allowed" descr="appelle-moi: Restriction aux Mobicartes et CMO" nav="end">
+      Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="no_roaming" descr="appelle-moi: Restriction aux non roamers" nav="end">
+      Ce service n'est pas disponible a l'etranger. Merci
+  </page>
+
+  <page tag="no_msisdn" descr="appelle-moi: Restriction aux sessions avec MSISDN non-renseigné" nav="end">
+      Nous ne disposons pas d'informations necessaires a ce service
+  </page>
+
+
+  <page tag="dest_msisdn_in_bl" descr="Call Me Back: Numero de destination en black list">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#dest_msisdn_in_black_list_long&amp;#dest_msisdn_in_black_list_short"/>
+  </page>
+
+  <page tag="dest_msisdn_in_black_list_long" descr="Call Me Back: Numero de destination en black list, long" nav="end">
+    Desole, votre correspondant ne souhaite pas recevoir de message du service Orange-Appelle moi, merci de votre comprehension
+  </page>
+
+  <page tag="dest_msisdn_in_black_list_short" descr="Call Me Back: Numero de destination en black list, court" nav="end">
+    Desole, votre correspondant ne souhaite pas recevoir de message du service Orange-Appelle moi, merci de votre comprehension
+  </page>
+
+  <page tag="chapi_chapo">RRRRRRGGGGGGG</page>
+
+  <page tag="error_sachem_consultation" descr="consult sachem error" menutext="notext" backtext="notext" nav="end">
+    Service indisponible.
+    Merci de vous reconnecter ulterieurement.
+  </page>
+
+</pages>

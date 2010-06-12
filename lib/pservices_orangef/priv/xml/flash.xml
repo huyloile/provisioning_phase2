@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Service Flash">
+
+<page tag="temporary" hist="donthist">
+     <lang>
+        <fr>
+          Le service est momentanément interrompu. Veuillez recommencer
+          ultérieurement.
+        </fr>
+        <en>The service is currently unavailable. Please reconnect.</en>
+     </lang>
+</page>
+
+<page tag="noaccess" hist="donthist">
+    <lang>
+      <fr>Vous n'avez pas accès à ce service.</fr>
+      <en>You cannot access this service.</en>
+    </lang>
+</page>
+
+</pages>

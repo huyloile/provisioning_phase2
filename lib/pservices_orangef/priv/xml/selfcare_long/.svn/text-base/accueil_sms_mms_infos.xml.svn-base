@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Accueil sms mms infos">
+
+  <page descr="Interrogation plateforme SMSM MMS infos">
+    <redirect src="erl://svc_mmsinfos:redirect_by_SMIlistOptions_status?SMS&amp;#menu_classique&amp;#menu_promo&amp;#temporary"/>
+  </page>
+
+
+  <page tag="menu_classique" descr="Menu classqieu">
+    <title>Sms mms infos: menu classique</title>
+   SMS MMS Infos<br/>
+   Recevez des infos quotidiennes par SMS sur votre mobile.<br/>
+   <a href="sms_infos.xml">SMS Infos</a><br/>
+   <a href="orange_ligue1.xml">SMS Orange Ligue 1</a><br/>
+   <a href="mmsinfos.xml">MMS Infos</a><br/>
+   <a href="mmsinfos_video.xml">MMS Infos video</a><br/>
+ </page>
+
+ <page tag="menu_promo" cost="free_pt" hist="dohist" descr="Sms mms infos: menu Promo">
+   <title>Sms mms infos: menu Promo</title>
+   Se divertir, s'informer, connaitre la meteo...
+   Orange vous offre votre premiere rubrique SMS ou MMS pendant 30 jours (hors SMS Orange L1).<br/>
+   <a href="#menu_promo2">Suite</a>
+ </page>
+
+ <page tag="menu_promo2" cost="free_pt" hist="dohist" descr="Sms mms infos: menu Promo">
+   <title>Sms mms infos: menu Promo2</title>
+   SMS MMS Infos<br/>
+   Recevez des infos quotidiennes par SMS sur votre mobile.<br/>
+   <a href="sms_infos.xml">SMS Infos</a><br/>
+   <a href="orange_ligue1.xml">SMS Orange Ligue 1</a><br/>
+   <a href="mmsinfos.xml">MMS Infos</a><br/>
+   <a href="mmsinfos_video.xml">MMS Infos video</a><br/>
+ </page>
+ <page tag="temporary" cost="free_pt" hist="dohist" descr="Temporary">
+  <title>tmporary page</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+ </page> 
+</pages>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1
+END
+sachemService
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/sachemService
+END
+orchideeService
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/orchideeService
+END
+sachemService.yaws
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/sachemService.yaws
+END
+edelweissService
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/edelweissService
+END
+orchideeService.yaws
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/orchideeService.yaws
+END
+edelweissService.yaws
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/asm-ws-8.2.0.1/edelweissService.yaws
+END

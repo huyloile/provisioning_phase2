@@ -1,0 +1,118 @@
+Contacts projet Orange France
+
+DIP/SVA (chef de projet)
+------------------------
+       - Remi PERRAUD
+           - 01 55 22 18 84
+           - remi.perraud@orangefrance.com
+       - Benedicte MAZEREEL
+	   - 01 55 22 58 60
+	   - bmazereel.ext@orangefrance.com
+
+UNS (exploitation Orange France)
+--------------------------------
+Heures ouvrables:
+       - MC2/PIS : Groupe exploitation
+	   - tel : 01 55 45 95 85
+	   - fax : 01 55 45 93 49
+	   - experts.pis@francetelecom.com
+       - OPE : responsable projet operationnel
+           - alerte.ope@francetelecom.com
+       - sva/DRI
+           - tel : 01 44 62 19 77
+           - sva.dri@francetelecom.com
+       - Alain TANT : responsable d'exploitation
+           - tel : 01 55 45 93 02
+	   - mob : 06 08 09 60 93
+       - Chantal CATTAN : responsable service
+           - tel : 01 55 45 93 24
+	   - mob : 06 08 09 59 96
+           - chantal.cattan@orangefrance.com
+       - Marcel RATEL
+           - tel : 01 55 45 93 21
+           - marcel.ratel@francetelecom.com
+
+Heures non ouvrables:
+       - Centre National de Surveillance et de Supervision du Reseau
+           - tel : 01 55 45 94 44  
+	   - fax : 01 55 45 99 77        	   
+
+PROSODIE
+--------
+       - support HO / HNO
+           - 0801 63 32 10
+       - Prosodie Rouen standard:
+           - 02 32 19 09 00
+       - Vincent Tardieu
+           - 02 32 19 29 35
+       - Guillaume Gregoire
+           - 02 32 19 09 24
+       - Philippe Le Dreau
+           - 02 32 19 09 33
+
+SDP Sachem de test:
+-------------------
+	-Prosodie: Marc lecuyer
+		 02 32 19 09 16
+	-Orange:  Cyril Chardain
+		 01 55 22 55 70
+
+TRANSPAC
+--------
+       - Centre Support Client:
+           - 0800 029 019  Transmission
+           - 0800 024 014  Administration IP
+           - FR : contrat n° 08910 01 20, routeur R292
+	   - X25 1 : @ 94 46 48 72 (512 kb/s)
+	   - X25 2 : @ 94 40 48 54 (512 kb/s)
+       - Yvon ROTA (Commercial):
+           - 02 40 67 74 52
+
+Clients passerelle XML/HTTP
+---------------------------
+       - Widecard (*141# preprod)
+         <wha.balc033@rd.francetelecom.com>
+         <laurent.feurer@rd.francetelecom.com>
+         <marine.andrieux@rd.francetelecom.com>
+
+       - m-Ticketing (jamais active)
+         <xavier.piednoir@rd.francetelecom.com>
+           - 02 31 75 92 39
+
+CVF / POSTPAID
+--------------
+	0800 383 000 + no de code: 1230.
+
+DISE
+----
+Supervision HNO et HO : 01 49 14 60 60
+Responsale DISE : Jean-Pierre DIAZ : 01 49 14 60 16
+Responsable Pôle : Christine Baffie : 01 48 15 76 63
+Interlocuteur principal : Banga Sumba : 01 49 14 60 17		   
+
+
+HUB BMO
+-------
+Supervision HNO et HO : 01 55 88 42 46
+
+
+One To One (OTO) : supervision HNO et HO
+----------------
+SD PROD Point d'Entree Unique Incident Orange DCE/ITP/D2P
+08 00 50 32 30
+sd.prod@orangefrance.com
+
+
+MQSeries:
+---------
+Support IBM : 0 810 631 020
+N° client : 838639
+N° contrat : 100317
+N° site : 7366463
+
+
+Acces oleane:
+-------------
+Ref : 0201091674
+no contrat:63408-70
+Numero Support: 0 825 81 82 81

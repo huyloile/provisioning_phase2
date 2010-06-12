@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page for Virgin Postpaid">
+
+  <page>
+   <!--redirect src="http://virgin_gp/suiviconso/xml_suiviconso.php"/-->
+   <redirect src="erl://svc_util_of:redir_mvno?virgin_gp&amp;/orangef/selfcare_mvno.xml#anon"/>
+  </page>
+
+</pages>

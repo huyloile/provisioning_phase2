@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <getRcodResponse>
+      <return>
+	<codPlanTarifaire>ESEW3</codPlanTarifaire>
+	<libPlanTarifaire>forfait infini 3H</libPlanTarifaire>
+	<listeRcodItem>
+	  <codeNiveau>3</codeNiveau>
+	  <nbTentatives>3</nbTentatives>
+	</listeRcodItem>
+	<nombreServicesOptionnelsContentBilling>0</nombreServicesOptionnelsContentBilling>
+	<numAdv>VD</numAdv>
+	<numClient>0061712420</numClient>
+	<numImsi>20801661312485</numImsi>
+      </return>
+    </getRcodResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

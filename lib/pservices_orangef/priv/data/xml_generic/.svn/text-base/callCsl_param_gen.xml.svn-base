@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callCsl_param_gen>
+      <sac:params>
+        <sac:name>PARAMETRE</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(csl_param_gen.PARAMETRE.)"?></sac:value>
+      </sac:params>
+    </sac:callCsl_param_gen>
+  </soapenv:Body>
+</soapenv:Envelope>

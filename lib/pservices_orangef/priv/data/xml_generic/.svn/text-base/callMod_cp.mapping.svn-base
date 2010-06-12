@@ -1,0 +1,6 @@
+[
+ {xmlnode, "returnItems", "/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn/values"},
+ {value, "svcName",
+"/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn/serviceName/text()"},
+ {value, "statut",
+"/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn/statut/text()"}].

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <isRechargementParentChildPossibleResponse>
+      <return>
+	<dateProchainRechargementMobicarte>2015-04-25T09:13:37.23</dateProchainRechargementMobicarte>
+	<idDossier>8198060</idDossier>
+	<prestationsCmo>
+	  <code>1GM12</code>
+	  <montant>5</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM13</code>
+	  <montant>10</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM14</code>
+	  <montant>15</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM15</code>
+	  <montant>25</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM15</code>
+	  <montant>35</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM16</code>
+	  <montant>50</montant>
+	</prestationsCmo>
+	<prestationsCmo>
+	  <code>1GM17</code>
+	  <montant>75</montant>
+	</prestationsCmo>
+	<prestationsMobicarte xsi:nil="true"/>				
+      </return>
+    </isRechargementParentChildPossibleResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

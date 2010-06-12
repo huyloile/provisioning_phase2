@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+ <pages descr="Options CMO">
+  <page cost="freept">
+    <redirect src="erl://svc_selfcare_cmo:menu?#first_promo"/>
+   </page>
+
+  <page tag="first_promo">
+    <!-- init sdp_state and pathological filtering  -->
+    <redirect src="erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+
+   <page tag="promo_sms">
+     <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_sms_noel&amp;ac=#promo_sms_ac,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+
+<!-- Promo SMS-->
+   <page tag="promo_sms_ac" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: SMS promotionels">
+    <title>SMS Promo</title>
+    Credit offfert par Orange:
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/> inclus.
+    Vous pouvez aussi envoyer des MMS (1 MMS Photo = 3 SMS) si votre telephone
+    est compatible.<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+ 
+   <page tag="promo_base_sms" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Promo base SMS">
+    <title>Promo Base SMS</title>
+    KDO Orange:
+    <include src="erl://svc_compte:print_solde?cpte_promo_base_sms&amp;sms"/> SMS
+    valables les Week-ends jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_promo_base_sms&amp;dlv"/> inclus.
+    Vous pouvez aussi envoyer des MMS (1 MMS photo = 3 SMS) si votre telephone est compatible<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+ 
+   <page tag="a_sms">
+     <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_asms&amp;ac=#a_sms_ac,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+
+ <page tag="a_sms_ac" menutext="notext" cost="free_pt"  hist="donthist" descr="SV Promo CMO: SMS promotionels">
+    <title>SMS Promo</title>
+    Cadeau Orange:
+    <include src="erl://svc_compte:print_solde?cpte_asms&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_asms"/> incl.
+    Vous pouvez aussi envoyer des MMS (1 MMS photo= 3 SMS) si votre telephone
+    est compatible.<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+ <page tag="a_voix">
+     <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_avoix&amp;ac=#a_voix_ac,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+<page tag="a_voix_ac" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Godet promotionels voix">
+    <title>SMS Promo</title>
+    Cadeau Orange:
+    <include src="erl://svc_compte:print_solde_min?cpte_avoix"/> de
+    comm. nationales vers Orange et fixes à utiliser le week-end du
+    vendredi 21h au lundi 08h jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_avoix"/>. inclus<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+
+<page tag="m5_mnt_voix" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: M5 MINUTES VOIX">
+    <title>Option M5 MINUTES VOIX</title>
+		Prime M5 minute voix : <include src="erl://svc_compte:print_solde?cpte_m5_mnt_voix&amp;min"/>.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<page tag="a_wap">
+     <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_awap&amp;ac=#a_wap_ac,ep=#a_wap_ep,pe=#a_wap_pe,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+ <page tag="a_wap_ac" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Godet promotionels WAP AC">
+    <title>Promo WAP</title>
+    Credit offert par Orange:
+    <include src="erl://svc_compte:print_solde?cpte_awap&amp;ko"/> (utilisables
+    en min) valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_awap"/> inclus
+    pour consulter les services Orange sur le wap. Profitez-en !<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<page tag="a_wap_ep" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Godet promotionels WAP EP">
+    <title>Promo WAP</title>
+    Vous avez utilise toutes vos communications Orange World offertes par Orange<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<page tag="a_wap_pe" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Godet promotionels WAP PE">
+    <title>Promo WAP</title>
+    Vous avez depasse la date limite d'utilisation de vos communications Orange World offertes par Orange.<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<!-- godets espadon SMS-->
+<page tag="cpte_esp_sms">
+     <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_esp_sms&amp;ac=#cpte_esp_sms_ac,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+<page tag="cpte_esp_sms_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Promo CMO: 500 MMS a l'activation">
+    <title>500 MMS a l'activation</title>
+    Credit offert par Orange: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_esp_sms&amp;mms"/>MMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_esp_sms"/> minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<!-- godets espadon voix-->
+<page tag="cpte_esp_voix">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_stim_voix=#stim_voix,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+
+<!-- godets espadon Voix-->
+<page tag="stim_voix" menutext="notext" cost="free_pt" hist="donthist" descr="SV Promo CMO: Stim Voix">
+    <title>Stim voix</title>
+    Cadeau Orange: jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_esp_voix"/> vos
+    com. vers Orange &amp;amp;
+    fixes sont gratuites &amp; illimitees du lundi au vendredi
+    entre 14h et 16h en France metro ! Profitez-en !<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<page tag="cpte_esp_mul">
+   <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_esp_mult&amp;ac=#cpte_esp_mul_ac,default=erl://svc_selfcare_cmo:next_promo"/>
+  </page>
+<!-- godets espadon Multimedia-->
+
+<page tag="cpte_esp_mul_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Promo CMO: Espadon Orange World">
+    <title>Espadon Orange World</title>
+    Cadeau orange: jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_esp_mult"/> toutes
+    vos communications sur Orange World
+    sont gratuites &amp; illimitées! Profitez-en pour decouvrir tous les services disponibles!<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+  </page>
+
+<!-- OW -->
+<page tag="opt_ow_deco" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Promo CMO: PROMO OW DECO">
+    <title>Options OW DECO</title>
+    Option Orange World: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_deco&amp;ko"/> ou <include src="erl://svc_compte:print_solde?cpte_deco&amp;min"/> d'acces
+    a Orange World offerts par Orange valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_deco"/> inclus.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_promo"/>
+ </page>
+
+<!-- BONUS -->
+
+<page tag="ola_bonus_first" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus du debut au 5ème mois">
+    <title>Bonus</title>
+    Orange vous remercie de votre fidelite avec les Bonus Orange: des 6 mois
+    d'anciennete, vous benificierez de 5% de credit en + sur tous vos
+    rechargements !
+  </page>
+
+<page tag="ola_bonus_inter" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus: message intermediare ">
+    <title>Bonus</title>
+    Orange vous remercie de votre fidelite avec les Bonus Orange:
+    vous benificiez de <include src="erl://svc_compte:print_bonus"/>%
+    de credit en plus sur le montant de tous vos rechargements !Profitez-en !
+  </page>
+
+<page tag="ola_bonus_teasing_2" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus: teasing 2 mois avant">
+    <title>Bonus</title>
+    Bonus Orange: vous beneficiez de
+    <include src="erl://svc_compte:print_bonus"/>% de credit en plus
+    sur le montant de tous vos rechargements. Et dans deux mois, vos
+    Bonus augmentent encore de 5%!
+  </page>
+
+<page tag="ola_bonus_teasing_1" cost="free_pt" menutext="notext" hist="donthist" volatile="true" descr="Bonus: teasing 1 mois avant">
+    <title>Bonus</title>
+    Bonus Orange: vous beneficiez de
+    <include src="erl://svc_compte:print_bonus"/>% de credit en plus
+    sur le montant de tous vos rechargements. Et le mois prochain, vos
+    Bonus augmentent encore de 5%!
+  </page>
+
+<page tag="olax_bonus_first" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus du debut au 5ème mois">
+    <title>Bonus</title>
+    Orange vous remercie de votre fidelite avec les Bonus Orange: des 6 mois
+    d'anciennete, vous benificierez tous les mois de 5% de temps en + sur
+    votre forfait !
+  </page>
+
+<page tag="olax_bonus_inter" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus: message intermediare ">
+    <title>Bonus</title>
+    Orange vous remercie de votre fidelite avec les Bonus Orange:
+    vous benificiez tous les mois
+    de <include src="erl://svc_compte:print_bonus"/>%
+    de temps en plus sur votre forfait, profitez-en !!
+  </page>
+
+<page tag="olax_bonus_teasing_2" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus: teasing 2 mois avant">
+    <title>Bonus</title>
+    Orange vous offre tous les mois
+    <include src="erl://svc_compte:print_bonus"/>% de temps en + sur votre
+    forfait avec les Bonus Orange. Et dans deux mois, vos
+    Bonus Orange augmentent de 5%!
+  </page>
+
+<page tag="olax_bonus_teasing_1" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="Bonus: teasing 1 mois avant">
+    <title>Bonus</title>
+    Orange vous offre tous les mois
+    <include src="erl://svc_compte:print_bonus"/>% de temps en + sur votre
+    forfait avec les Bonus Orange. Et le mois prochain, vos
+    Bonus Orange augmentent de 5%!
+  </page>
+
+
+  <page tag="temporary" nav="end" cost="free_pt" descr="Suivi Conso: Service indisponible">
+    <title>Suivi Conso: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+
+</pages>

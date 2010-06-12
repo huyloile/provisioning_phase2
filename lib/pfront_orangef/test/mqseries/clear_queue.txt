@@ -1,0 +1,5 @@
+clear qlocal(TEST_QUEUE_IN)
+clear qlocal(TEST_QUEUE_OUT)
+display qlocal(TEST_QUEUE_OUT) CURDEPTH
+display qlocal(TEST_QUEUE_IN) CURDEPTH
+end

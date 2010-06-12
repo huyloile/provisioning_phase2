@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin
+END
+rcm_mcc.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_mcc.pgi
+END
+rcm_dmcc.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_dmcc.pgi
+END
+recharge_prepaid.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/recharge_prepaid.cgi
+END
+rcm_ident40.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_ident40.pgi
+END
+rcm_sda.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_sda.pgi
+END
+rcm_pay.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_pay.pgi
+END
+rcm_info.pgi
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/cgi-bin/rcm_info.pgi
+END

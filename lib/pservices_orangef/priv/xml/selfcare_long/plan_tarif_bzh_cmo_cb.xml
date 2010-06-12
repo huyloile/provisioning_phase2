@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="free_pt" hist="dohist">
+    <redirect src="erl://svc_plan_tarif_omer:check_solde?#menu&amp;#not_enough_credit_pt"/>
+  </page>
+
+  <page tag="menu" cost="free_pt" hist="dohist">
+    <redirect src="erl://svc_util_of:redir_declinaison?59=#redir_by_plan,62=#redir_by_plan2,63=#redir_by_plan3,64=#redir_by_plan4,?=#redir_by_plan"/>
+  </page>
+  
+  <page tag="redir_by_plan" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO CB1: Menu" hist="dohist" menutext="notext">
+    <title>Changement de plan tarifaire Bzh CMO CB</title>
+    <include src="erl://svc_plan_tarif_omer:redir_by_plan?pcmo_sec_cb1=#changer_pour_min_cb1,pcmo_min_cb1=#changer_pour_sec_cb1"/>.
+  </page>
+  
+  <page tag="redir_by_plan2" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO CB1: Menu" hist="dohist" menutext="notext">
+    <title>Changement de plan tarifaire Bzh CMO CB</title>
+    <include src="erl://svc_plan_tarif_omer:redir_by_plan?pcmo_sec_cb2=#changer_pour_min_cb2,pcmo_min_cb2=#changer_pour_sec_cb2"/>.
+  </page>
+  
+  <page tag="redir_by_plan3" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO CB1: Menu" hist="dohist" menutext="notext">
+    <title>Changement de plan tarifaire Bzh CMO CB</title>
+    <include src="erl://svc_plan_tarif_omer:redir_by_plan?pcmo_sec_cb3=#changer_pour_min_cb3,pcmo_min_cb3=#changer_pour_sec_cb3"/>.
+  </page>
+  
+  <page tag="redir_by_plan4" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO CB1: Menu" hist="dohist" menutext="notext">
+    <title>Changement de plan tarifaire Bzh CMO CB</title>
+    <include src="erl://svc_plan_tarif_omer:redir_by_plan?pcmo_sec_cb4=#changer_pour_min_cb4,pcmo_min_cb4=#changer_pour_sec_cb4"/>.
+  </page>
+  
+  <page tag="changer_pour_sec_cb1" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB: vers plan seconde" backtext="notext">
+    <title>Changement de plan Bzh CMO CB: vers plan seconde</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_min_cb1=minute"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec_cb1">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+  
+  <page tag="changer_pour_min_cb1" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO: vers plan minute" backtext="notext">
+    <title>Changement de plan Bzh CMO: vers plan minute"</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec_cb1=seconde"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min_cb1">
+    Changer de plan et passer sur le plan 'facturation minute'</a>
+  </page>
+  
+  <page tag="changer_pour_sec_cb2" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB2: vers plan seconde ">
+    <title>Changement de plan Bzh CMO CB2: vers plan seconde</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_min_cb2=minute"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec_cb2">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+  
+  <page tag="changer_pour_min_cb2" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB2: vers plan minute">
+    <title>Changement de plan Bzh CMO CB2: vers plan minute"</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec_cb2=seconde"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min_cb2">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+
+  <page tag="changer_pour_sec_cb3" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB3: vers plan seconde ">
+    <title>Changement de plan Bzh CMO CB3: vers plan seconde</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_min_cb3=minute"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec_cb3">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+  
+  <page tag="changer_pour_min_cb3" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB3: vers plan minute">
+    <title>Changement de plan Bzh CMO CB3: vers plan minute"</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec_cb3=seconde"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min_cb3">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+  
+<page tag="changer_pour_sec_cb4" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB4: vers plan seconde ">
+    <title>Changement de plan Bzh CMO CB4: vers plan seconde</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_min_cb4=minute"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec_cb4">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+  
+  <page tag="changer_pour_min_cb4" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO CB4: vers plan minute">
+    <title>Changement de plan Bzh CMO CB4: vers plan minute"</title>
+    Vous êtes actuellement sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec_cb4=seconde"/>.
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min_cb4">
+    Changer de plan et passer sur le plan 'facturation seconde'</a>
+  </page>
+
+  <page tag="msg_gratuite" backtext="notext">
+    <include src="erl://svc_plan_tarif_omer:include_msg_gratuite?#2_grat&amp;#1_grat&amp;#0_grat"/>
+  </page>
+  
+  <page tag="2_grat" backtext="notext">
+    Vos deux premieres modifications de plan tarifaire sont gratuites
+  </page>
+  
+  <page tag="1_grat" backtext="notext">
+    Vous pouvez encore changer une fois gratuitement de plan tarifaire
+  </page>
+  
+  <page tag="0_grat" backtext="notext">
+    Ce changement vous sera facture
+    <include src="erl://svc_plan_tarif_omer:print_prix_du_changement"/>
+  </page>
+  
+  <page tag="change_pt_success" cost="free_pt"
+	descr="plan tarifaire: Changement reussi" nav="end">
+    <title>plan tarifaire: Changement reussi</title>
+    Bravo. vous etes desormais sur le plan
+    <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec_cb1=seconde des la premiere seconde,pcmo_min_cb1=seconde apres la premiere mn indivisible,pcmo_sec_cb2=seconde des la premiere seconde,pcmo_min_cb2=seconde apres la premiere mn indivisible,pcmo_sec_cb3=seconde des la premiere seconde,pcmo_min_cb3=seconde apres la premiere mn indivisible,pcmo_sec_cb4=seconde des la premiere seconde,pcmo_min_cb4=seconde apres la premiere mn indivisible"/>
+  </page>  
+  
+  <!--error pages -->
+  
+  <page tag="not_enough_credit_pt" cost="free_pt" 
+	descr="plan tarifaire: Credit insuffisant" nav="end">
+    <title>plan tarifaire: Credit insuffisant</title>
+    Desole. mais votre credit n'est pas suffisant pour pouvoir changer de plan tarifaire.<br/>
+    Vous devez recharger votre compte avant de changer de plan. 
+  </page>
+  
+  <page tag="change_pt_error" cost="free_pt" backtext="notext"
+	descr="plan tarifaire: Erreur SDP">
+    <title>plan tarifaire: Erreur SDP</title>
+    La modification de plan tarifaire ou de plage horaire est
+    techniquement impossible pour le moment: veuillez nous en excuser et
+    renouveler cette operation ulterieurement.
+  </page>
+  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="plan tarifaire : service indisponible">
+    <title>plan tarifaire : temporary error</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>

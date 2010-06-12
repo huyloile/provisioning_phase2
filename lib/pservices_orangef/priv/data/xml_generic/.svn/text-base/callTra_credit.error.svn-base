@@ -1,0 +1,10 @@
+[
+{"emeteur_inactif","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-34']"},
+{"recepteur_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-35']"},
+{"transfer_inexistant","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-36']"},
+{"meme_emeteur_recepteur","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-37']"},
+{"solde_insuffisant","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-42']"},
+{"emeteur_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-95']"},
+{"type_ACTION_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-98']"},
+{"creation_cpte_dest_pb","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut='-108']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn[statut!='0']"}].

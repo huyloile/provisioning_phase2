@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<isRechargementParentChildPossibleResponse xmlns="urn:orchidee.service.ecare/G8">
+			<return>
+				<dateProchainRechargementCmo>2015-04-25T09:13:37.22</dateProchainRechargementCmo>
+				<dateProchainRechargementMobicarte>1993-05-02T06:49:28.19</dateProchainRechargementMobicarte>
+				<idDossier>string</idDossier>
+				<prestationsCmo>
+					<code>string</code>
+					<montant>-7297.805094196054907</montant>
+				</prestationsCmo>
+				<prestationsCmo>
+					<code>string</code>
+					<montant>7734.614905803945093</montant>
+				</prestationsCmo>
+				<prestationsCmo>
+					<code>string</code>
+					<montant>-8251.405094196054907</montant>
+				</prestationsCmo>
+				<prestationsMobicarte>
+					<code>string</code>
+					<montant>-7955.205094196054907</montant>
+				</prestationsMobicarte>
+				<prestationsMobicarte>
+					<code>string</code>
+					<montant>-9491.085094196054907</montant>
+				</prestationsMobicarte>
+				<prestationsMobicarte>
+					<code>string</code>
+					<montant>-3889.505094196054907</montant>
+				</prestationsMobicarte>
+				<prestationsMobicarte>
+					<code>string</code>
+					<montant>-440.305094196054907</montant>
+				</prestationsMobicarte>
+				<prestationsMobicarte>
+					<code>string</code>
+					<montant>9419.114905803945093</montant>
+				</prestationsMobicarte>
+			</return>
+		</isRechargementParentChildPossibleResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

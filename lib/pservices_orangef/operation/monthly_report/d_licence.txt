@@ -1,0 +1,23 @@
+sum;count,session_routing_v2,{session_end,{subscription,"cmo";Sessions CMO
+sum;count,session_routing_v2,{session_end,{subscription,"mobi";Sessions Prépayés
+sum;count,session_routing_v2,{session_end,{subscription,"postpaid";Sessions Postpayés
+sum;count,session_routing_v2,{session_end,{subscription,;Sessions dans la journée
+avg;billed_session_duration,{ussd,2};Durée moyenne d'une session phase 2
+sum;new_imsi;Nouveaux clients
+max;{count,sql_replication_supervisor,{total,"users"}};Nombre de clients total
+sum;{interface,ussd_specific,outgoing_msg;Messages USSD envoyés
+sum;{interface,ussd_specific,incoming_msg;Messages USSD reçus
+sum;{interface,httpclient_specific;Requêtes HTTP;
+max;{interface,ussd_specific,outgoing_msg;Messages USSD envoyés à l'heure chargée
+max;{interface,ussd_specific,incoming_msg;Message USSD reçus à l'heure chargée
+max;{interface,httpclient_specific;Requêtes HTTP à l'heure chargée
+max;count,session_routing_v2,session_end_ok;Sessions à l'heure chargée
+sum;license.*rate_exceeded.*,msg;Messages USSD rejetés pour dépassement de licence
+max;license_info.*,msg;Messages USSD à l'heure chargée
+sum;send_message_failed;Echecs d'envoi de message USSD
+sum;{internal,session_routing_v2,session_end_err};Erreurs Cellcube
+
+
+
+
+

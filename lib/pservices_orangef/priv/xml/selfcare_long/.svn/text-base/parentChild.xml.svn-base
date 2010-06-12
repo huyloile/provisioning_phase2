@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  <page descr="auth">
+    <redirect src="erl://svc_parentChild:auth"/>
+  </page>
+  
+  <page tag="PC_saisie_codeconf" 
+	descr="Parent child premiere saisie du code confidentiel">
+    <form action="erl://svc_parentChild:tester_validite_saisie_codeconf">
+      <entry kind="digits" type="password">
+	<prompt>Ce service est securise. Pour y acceder composez votre code
+	confidentiel a 4 chiffres, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+  
+  <page tag="PC_codeconf_bloque"
+	descr="Parent child code confidentiel bloqué" nav="end">
+    Votre code d'acces a ete invalide. Pour beneficier a nouveau de ce service,
+    nous vous invitons a contacter votre service client en composant le 700
+    depuis votre mobile Orange
+  </page>
+  
+  <page tag="PC_codeconf_ecrase" descr="Parent child code confidentiel ecrase">
+    <form action="erl://svc_parentChild:tester_validite_init_codeconf">
+      <entry kind="digits" type="password">
+	<prompt>Votre code confidentiel a ete supprime. Composez votre nouveau
+	code confidentiel a 4 chiffres, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+  
+  <page tag="PC_nonrepASM" descr="Non reponse de l'AS Métier" nav="end">
+    Le service "recharge pour un proche" est indisponible. Orange vous remercie
+    de votre appel.
+  </page>
+  
+  <page tag="PC_saisie_codeconf_erreur"
+	descr="Parent child saisie du code confidentiel erronée">
+    <form action="erl://svc_parentChild:tester_validite_saisie_codeconf">
+      <entry kind="digits" type="password">
+	<prompt>
+	  Nous n'avons pas reconnu votre code confidentiel. Composez de nouveau
+	  votre code confidentiel a 4 chiffres, puis validez
+	</prompt>
+      </entry>
+    </form>
+  </page>
+  
+  <page tag="PC_saisie_codeconf_epuise" nav="end"
+	descr="Parent child 3 erreurs lors de la saisie du code confidentiel">
+    Vous avez epuise toutes vos tentatives. Votre code confidentiel est
+    supprime. Nous vous conseillons d'appeler votre service client en composant
+    le 700.
+  </page>
+  
+  <page tag="PC_init_codeconf"
+	descr="Parent Child initialisation du code conf.">
+    <form action="erl://svc_parentChild:tester_validite_init_codeconf">
+      <entry kind="digits" type="password">
+	<prompt>Pour creer votre code confidentiel, veuillez saisir les 4
+	chiffres de votre choix, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="PC_init_codeconf_confirm"
+	descr="Parent Child confirmation d'initialisation du code conf.">
+    Vous avez compose le <include src="erl://svc_parentChild:print_field?codeSaisi"/>. Pour valider ce code, tapez 1.<br/>
+    <a href="erl://svc_parentChild:set_code_conf">valider</a>
+  </page>
+  
+  <page tag="PC_init_codeconf_erreur"
+	descr="Parent Child erreur dans initialisation du code conf.">
+    <form action="erl://svc_parentChild:tester_validite_init_codeconf">
+      <entry kind="digits" type="password">
+	<prompt>Nous n'avons pas reconnu votre code confidentiel. Pour creer
+	votre code confidentiel, veuillez saisir les 4 chiffres de votre
+	choix, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+  
+  <page tag="PC_init_codeconf_epuise" nav="end"
+	descr="Parent Child tentative d'initialisation du code conf. Epuisee">
+    Nous n'avons toujours pas reconnu votre code confidentiel
+  </page>
+  
+  <page tag="PC_init_codeconf_succes"
+	descr="Parent Child succes de l'initialisation du code conf">
+    Votre code confidentiel a bien ete cree.<br/>
+    <a href="erl://svc_parentChild:check_eligib_rechargeur">continuer</a>
+  </page>
+  
+  <page tag="PC_eligi_noninscrit" nav="end"
+	descr="Parent child rechargeur non inscrit">
+    Pour acceder a ce service, vous devez prealablement vous inscrire aupres
+    de votre Service Client en composant le 700 depuis votre mobile Orange
+  </page>
+  
+  <page tag="PC_eligi_plafond" nav="end"
+	descr="Parent child rechargeur a atteint son plafond de rechargement">
+    Vous avez deja atteint le montant maximum autorise pour les 30 jours
+    ecoules, vous pourrez recharger a nouveau a partir
+    du <include src="erl://svc_parentChild:print_field?dateProchRecharg"/>
+  </page>
+
+  <page tag="PC_eligi_erreur" nav="end"
+	descr="Parent child  probleme dossier rechargeur">
+    La situation de votre dossier ne permet pas l'acces a ce service
+  </page>
+
+  <page tag="PC_saisie_MSISDN" descr="Parent Child saisie du MSISDN du rechargé">
+    <form action="erl://svc_parentChild:redir_saisie_msisdn">
+      <entry kind="digits">
+	<prompt>Pour effectuer un rechargement, veuillez saisir les 10 chiffres
+	du numero mobile Orange a recharger, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="PC_saisie_MSISDN_erreur1" descr="Parent Child saisie du MSISDN du rechargé: ne commence pas par 06">
+    <form action="erl://svc_parentChild:redir_saisie_msisdn">
+      <entry kind="digits">
+	<prompt>Composez a nouveau votre numero de mobile Orange a recharger
+	commencant par "06", puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+  
+  <page tag="PC_saisie_MSISDN_erreur2" descr="Parent Child saisie du MSISDN du rechargé ne comporte pas 10 chiffres">
+    <form action="erl://svc_parentChild:redir_saisie_msisdn">
+      <entry kind="digits">
+	<prompt>Attention le numero saisi n'est pas valide ou comporte trop
+	de chiffres. Composez a nouveau le numero de mobile Orange a
+	recharger, puis validez</prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="PC_saisie_MSISDN_erreur3" descr="Parent Child saisie du MSISDN du rechargé ne comporte pas que des chiffres">
+    <form action="erl://svc_parentChild:redir_saisie_msisdn">
+      <entry kind="digits">
+	<prompt>Desole, nous n'avons pas reconnu le numero que vous avez
+	compose. Composez a nouveau votre numero de mobile Orange</prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="PC_saisie_MSISDN_NOK" nav="end"
+	descr="Parent Child saisie du MSISDN du rechargé invalide">
+    Desole, ce numero de mobile ne peut etre recharge
+  </page>
+
+  <page tag="PC_saisie_MSISDN_epuise" descr="Parent Child saisie du MSISDN du rechargé: tentative epuisee">
+Desole, nous n'avons pas reconnu le numero que vous avez compose.
+  </page>
+
+  <page tag="PC_saisie_MSISDN_confirm" descr="Parent Child saisie du MSISDN du rechargé: confirmation">
+    Vous avez compose le <include src="erl://svc_parentChild:print_field?msisdnRecharge"/><br/>
+    <a href="erl://svc_parentChild:check_eligib_recharge">valider</a><br/>
+    <a href="erl://svc_parentChild:reinit_and_redir_saisi_msisdn">modifier</a>
+  </page>
+
+  <page tag="PC_select_montant" descr="Parent Child liste des recharges possibles">
+    Veuillez selectionner le montant de votre recharge dans la liste suivante,
+    puis validez<br/>
+    <include src="erl://svc_parentChild:print_liens_montant"/>
+  </page>
+
+  <page tag="PC_echec_choix_montant" descr="PC_echec_choix_montant" nav="end">
+    echec choix du montant
+  </page>
+  
+  <page tag="PC_confirm_montant" descr="Parent Child confirmation de la recharge choisie">
+    Vous avez selectionne la recharge <include src="erl://svc_parentChild:print_field?recharge"/><include src="erl://svc_parentChild:print_validite"/><br/>
+    <a href="erl://svc_parentChild:set_rechargement">Confirmer</a><br/>
+    <a href="#PC_saisie_MSISDN_confirm">Modifier</a>
+  </page>
+
+  <page tag="PC_Succes" descr="Parent Child rechargement effectué avec succes">
+    Votre rechargement a bien ete effectue. Nous vous remercions.<br/>
+  </page>
+
+  <page tag="PC_echec_rechargement" descr="PC_echec_rechargement" nav="end">
+    echec rechargement
+  </page>
+  
+
+</pages>

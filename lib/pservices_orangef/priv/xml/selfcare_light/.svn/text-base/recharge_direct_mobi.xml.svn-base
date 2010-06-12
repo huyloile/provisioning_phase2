@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+<!--Service de rechargement MOBICARTE-->
+<page>
+  <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+</page>
+
+<page tag="start">
+  <redirect src="erl://svc_recharge:is_forbidden?#recharge_allowed"/>
+</page>
+
+<page tag="recharge_allowed">
+  <redirect src="erl://svc_util:direct_access_length?14&amp;#direct_recharge&amp;#rech_light"/>
+</page>
+
+  <page tag="rech_light" descr="Rechargement Direct rappel" nav="end">
+    <title>Rappel Rechargement direct</title>
+    Saisissez #124*Code_a_14_chiffres# pour recharger
+  </page>
+
+  <page tag="direct_recharge">  
+    <!-- Switch to the correct home page depending on the profile  -->
+    <!-- attention pas de messages intermédaire-->
+    <redirect src="erl://svc_recharge:recharge_form"/>
+  </page>
+<!-- Script lié au rechargement -->
+
+       
+  <page tag="cag" backtext="notext" menutext="notext" descr="Rechargement Mobi: Form ph2">
+      <title>Rechargement Mobi: Form ph2</title>
+  <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+      <prompt>Saisissez #124*Code_a_14_chiffres#</prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" log="SC_rechph1" descr="Rechargement Mobi: Form ph1">
+  <title>Rechargement Mobi: Form ph1</title>
+  <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+      <prompt>
+        Saisissez #124*Code_a_14_chiffres#
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Rechargement Serie Limitee 7 euros -->
+<page tag="recharge_limite_7" descr="Rechargement Mobi Reussi: Option TV Illimitee deja active">
+     <title>Rechargement Mobi Reussi:Option TV Illimitee deja active</title>
+	Vous avez recharge votre compte de <include src="erl://svc_recharge:montant_recharge"/> euros
+	valable 7j + 7j de surf + 1 contenu a telecharger dans 48h.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+	a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+ </page>
+<!-- Recharge Serie Limitee 20 euros  -->
+
+<page tag="rech_20E_limitee" 
+      descr="Recharge 20 euros par TLR Mobi Reussie: Special Vacances 1_2">
+      Rechargement reussi. Choisissez votre illimite soir offert en France metro:<br/>
+	<include src="erl://svc_options_mobi:proposer_lien?rech_20E_tlr_mobi&amp;illimite TV=#unlimited_TV&amp;br"/>
+	<include src="erl://svc_options_mobi:proposer_lien?rech_20E_tlr_mobi&amp;illimite SMS=#unlimited_SMS&amp;br"/>
+	<include src="erl://svc_options_mobi:proposer_lien?rech_20E_tlr_mobi&amp;illimite Voix vers Orange=#unlimited_Voice&amp;br"/>
+	<include src="erl://svc_options_mobi:proposer_lien?rech_20E_tlr_mobi&amp;%2Bd'infos=#plus_infos&amp;br"/>
+</page>
+
+<page tag="rech_20E_messages" 
+      descr="Recharge 20 euros par TLR Mobi Reussie: Special Vacances 1_2">
+  Vous avez recharge votre compte de 20E valables 1 mois. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros 
+  a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+  <a href="#plus_infos_messages">Plus d'infos</a><br/>
+</page>
+
+<page tag="plus_infos_messages"
+      descr="Recharge 20 euros serie limitee messages illimites plus d'infos">
+  SMS, MMS et Orange Messenger illimite de 21h a 00h jusqu'au jj/mm/aa sous reserve de compatibilite mobile. Details de l'offre et conditions sur orange.fr
+</page>
+
+
+<page tag="rech_20E_musique" 
+      descr="Recharge 20 euros musique par ticket OK">
+      Vous avez recharge votre compte de 20E valables 1 mois. Votre nouveau credit est <include src="erl://svc_compte:print_solde?cpte_princ"/> 
+        euros a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/>.<br/>
+<!--     <a href="#plus_infos_musique">Plus d'infos</a><br/> -->
+</page>
+
+<page tag="rech_SL_7E_MessgIllim" backtext="notext"
+    descr="Recharge 7 euros messages illimites">
+    <title> Recharge 7 euros messages illimites </title>
+      Rechargement reussi. Jusqu'au <include src="erl://svc_of_plugins:print_date_end_opt?rech_7E_cb_mobi"/>,
+      profitez de vos SMS/MMS en ILLIMITE vers TOUS les operateurs et des messages instantanes avec Orange Messenger en ILLIMITE.
+</page>
+
+<page tag="plus_infos_musique"
+      descr="Recharge 20 euros Musique plus d'infos">
+      3 titres dispo sur Orange World dans 48h et radio, video-clips et surf sur OW illimites
+      jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/> sous reserve de compatibilite mobile.
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : TV illimite -->
+
+<page tag="unlimited_TV" descr="Recharge 20 euros par TLR Mobi : Choix TV Illimite">
+	Vous souhaitez acceder gratuitement a 20 chaines de TV, de 21h a minuit, 7j/7 pdt 1 mois
+	(ss reserve de compatibilite mobile)<br/>
+     <a href="#unlimited_TV_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_TV_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix TV Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?1&amp;#unlimited_TV_ok"/>
+</page>
+
+<page tag="unlimited_TV_ok" backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec TV Illimite">
+	Vous avez recharge 20E valables 1 mois.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite TV jusqu'au <include src="erl://svc_options:print_date_end_opt?rech_20E_tlr_mobi"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : SMS illimite -->
+
+<page tag="unlimited_SMS"  
+      descr="Recharge 20 euros par TLR Mobi : Choix SMS Illimite">
+	Vous souhaitez envoyer gratuitement vos sms vers tous les operateurs de 21h a 00h, 7j/7 pendant 1 mois<br/>
+     <a href="#unlimited_SMS_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_SMS_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix SMS Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?2&amp;#unlimited_SMS_ok"/>
+</page>
+
+<page tag="unlimited_SMS_ok"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec SMS Illimite">
+	Vous avez recharge 20 euros.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite SMS de 21h a 00h
+	jusqu'au <include src="erl://svc_options:print_date_end_opt?rech_20E_tlr_mobi"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : Voix illimite -->
+
+<page tag="unlimited_Voice"  
+      descr="Recharge 20 euros par TLR Mobi : Choix Voix Illimite">
+	Vous souhaitez appeler gratuitement vers les mobiles Orange de 21h a minuit, 7j/7 pendant 1 mois<br/>
+     <a href="#unlimited_Voice_confirm">Confirmer</a><br/>
+</page>
+
+<page tag="unlimited_Voice_confirm"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi : Choix Voice Illimite confirme">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?3&amp;#unlimited_Voice_ok"/>
+</page>
+
+<page tag="unlimited_Voice_ok"  backtext="notext" 
+      descr="Recharge 20 euros par TLR Mobi Reussie avec Voix Illimite">
+	Vous avez recharge 20E.<br/>
+	Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant
+	le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+	Vous beneficiez de l'illimite vers Orange de 21h a 00h
+	jusqu'au <include src="erl://svc_options:print_date_end_opt?rech_20E_tlr_mobi"/><br/>
+</page>
+
+<!-- Recharge Serie Limitee 20 euros  : Plus d'infos -->
+
+<page tag="plus_infos" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	La recharge 20E offre l'illimite, de 21h a 00h, de votre choix pdt 1 mois.
+	illimite tv: connexions illimites en Fr metro a 20 chaines TV et videos<br/>
+     <a href="#plus_infos_suite">Suite</a><br/>
+</page>
+
+<page tag="plus_infos_suite" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	sur Orange world (hors contenus payants).<br/>
+	Services accessibles sur reseaux et depuis terminal compatible.
+	illimite voix: appels voix illimites 
+     <a href="#plus_infos_suite_1">Suite</a><br/>
+</page>
+
+<page tag="plus_infos_suite_1" descr="Recharge 20 euros par TLR Mobi : Plus d'infos">
+	en France metro vers les mobiles Orange (hors num speciaux). 
+	illimite SMS: SMS metro (non surtaxes) vers tous les operateurs. 
+	Conditions sur Orange.fr<br/>
+</page>
+
+  <page tag="sucess" descr="rechargement direct sucess" nav="end">
+    <title>Rechargement Mobicarte en direct</title>
+    Votre compte vient d'etre recharge<br/>
+    Nouveau Solde sur le #123#.
+  </page>
+  
+ 
+<!-- Succes page with D4 -->
+
+<page tag="sucess_cpte">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#sucess_cpte&amp;#sucess"/>
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#sucess_sms&amp;#sucess"/>
+</page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#sucess_cpte_sms&amp;#sucess"/>
+</page>
+
+<page tag="sucess_promo_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#sucess_promo_sms&amp;#sucess"/>
+</page>
+
+<page tag="sucess_cpte_promo_sms">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#sucess_cpte_promo_sms&amp;#sucess"/>
+</page>
+
+<page tag="success_vacances">
+  <redirect src="erl://svc_util:redirect_size?181&amp;/orangef/selfcare_long/recharge.xml#success_vacances&amp;#sucess"/>
+</page>
+
+
+<!-- Erecharge Journee infinie -->
+ <page tag="succes_jinf_avec_souscription" descr="Succes rechargement Mobi Journee infinie">
+     <title>"Succes rechargement Mobi Journee infinie"</title>
+     Vous beneficiez de vos journees infinies incluses dans votre recharge serie limitee 45E
+     jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_jinf_voix"/>. Dans
+     quelques instants, vous recevrez un SMS de confirmation.
+ </page>
+
+<page tag="succes_jinf_sans_souscription" descr="Echec rechargement Mobi Journee infinie">
+     <title>"Echec rechargement Mobi Journee infinie"</title>
+     L'activation des journees infinies incluses dans votre recharge serie limitee 45E a echoue. Pour en beneficier, veuillez appeler votre service clients au 722 (0,37E/minute)
+ </page>
+
+<!-- Erecharge WE infini-->
+<page tag="weinf_deja_actif" nav="end" descr="Rech Direct MOBI: WE inf et Option deja active">
+     <title>Rechargement MOBI Reussi: WE inf et Option deja active</title>
+     WE infini deja active.<br/>
+     <include src="erl://svc_recharge:montant_recharge"/> euros credites sur votre compte.
+</page>
+
+<page tag="succes_weinf" nav="end" descr="Rech Direct MOBI: WE inf reussi">
+      <title>Rechargement MOBI Reussi: We inf</title>
+      La souscription a votre Week End infini est bien enregistree.
+ </page>
+
+<page tag="succes_weinf_ss_souscription" descr="Rech Direct MOBI: WE inf + echec souscription">
+     <title>Rechargement MOBI Reussi: WE inf +echec souscription</title>
+     Echec activation Week End infini<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>E credites sur votre compte.
+ </page>
+
+<!-- Erecharge Europe-->
+<page tag="europe_deja_actif" nav="end" descr="Rech Direct MOBI: Europe deja active">
+     <title>Rechargement MOBI Reussi: Europe et Option deja active</title>
+     Option Europe deja activee.<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>E credites sur votre compte.
+</page>
+
+<page tag="succes_europe" nav="end" descr="Rech Direct MOBI: Europe reussi">
+      <title>Rechargement MOBI Reussi: Europe</title>
+      La souscription a votre option Europe est bien enregistree
+ </page>
+
+<page tag="succes_europe_ss_souscription" descr="Rech Direct MOBI: Europe + echec souscription">
+     <title>Rechargement MOBI Reussi: Europe +echec souscription</title>
+     Echec activation option Europe.<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>E credites sur votre compte.
+ </page>
+
+<!-- Erecharge Maghreb-->
+<page tag="maghreb_deja_actif" nav="end" descr="Rech Direct MOBI: Europe et Option deja active">
+     <title>Rechargement MOBI Reussi: Maghreb et Option deja active</title>
+     Option Maghreb deja activee.<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>E credites sur votre compte.
+</page>
+
+<page tag="succes_maghreb" nav="end" descr="Rech Direct MOBI: Maghreb reussi">
+      <title>Rechargement MOBI Reussi: Maghreb</title>
+      La souscription a votre option Maghreb est bien enregistree
+ </page>
+
+<page tag="succes_maghreb_ss_souscription" descr="Rech Direct MOBI: Maghreb inf + echec souscription">
+     <title>Rechargement MOBI Reussi: Maghreb +echec souscription</title>
+     Echec activation option Maghreb.<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>E credites sur votre compte.
+ </page>
+
+<!-- Erecharge SMS/MMS-->
+<page tag="erech_smsmms_incompatible" nav="end" descr="Rech Direct MOBI: E rech SMS/MMS incompatible">
+     <title>Rechargement MOBI Reussi: E rech SMS/MMS incompatible</title>
+     Echec activation recharge SMS<br/>
+     <include src="erl://svc_recharge:montant_recharge"/>euros credites sur votre compte
+</page>
+
+<page tag="succes_erech_smsmms" nav="end" descr="Rech Direct MOBI: Erech SMS/MMS reussi">
+      <title>Rechargement MOBI Reussi: Erech SMS/MMS</title>
+      L'activation de votre recharge SMS est bien enregistree
+ </page>
+
+<page tag="succes_erech_smsmms_ss_souscription" nav="end" descr="Rech Direct MOBI: Erech SMS/MMS + echec souscription">
+     <title>Rechargement MOBI Reussi: Maghreb +Erech SMS/MMS souscription</title>
+     Echec activation recharge SMS
+     <include src="erl://svc_recharge:montant_recharge"/>euros credites sur votre compte
+ </page>
+
+<!-- Rechargement Série Limitée 20Euros :TV Illimitée -->
+<page tag="unlimit_tv_deja_actif" descr="Rechargement Mobi Reussi: Option TV Illimitee deja active">
+     <title>Rechargement Mobi Reussi:Option TV Illimitee deja active</title>
+     Vous avez deja souscrit a l'option TV Illimitee. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 31 jours sur votre compte principal.
+ </page>
+
+<page tag="unlimit_vce_deja_actif" descr="Rechargement Mobi Reussi: Option Appels Illimites deja active">
+     <title>Rechargement Mobi Reussi:Option Appels Illimites deja active</title>
+     Vous avez deja souscrit a l'option Illimitee Voix. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 31 jours sur votre compte principal.
+ </page>
+
+<page tag="unlimit_sms_deja_actif" descr="Rechargement Mobi Reussi: Option SMS Illimite deja active">
+     <title>Rechargement Mobi Reussi:Option SMS Illimite deja active</title>
+     Vous avez deja souscrit a l'option SMS Illimitee. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 31 jours sur votre compte principal.
+ </page>
+
+ <page tag="success_unlimited_tv" descr="Rechargement Mobi Reussi:20Euros :TV Illimitée">
+     <title>Rechargement Mobi Reussi + Option TV Illimite</title>
+     Vous avez recharge votre compte de 20 euros + l'illimite TV
+     offert valables 1 mois. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+     a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.
+ </page>
+
+ <page tag="success_unlimited_vce" descr="Rechargement Mobi Reussi:20Euros :Appels Illimitée">
+     <title>Rechargement Mobi Reussi + Option Appels Illimite</title>
+     Vous avez recharge votre compte de 20 euros + l'illimite voix
+     offert valables 1 mois. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+     a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.
+ </page>
+
+ <page tag="success_unlimited_sms" descr="Rechargement Mobi Reussi:20Euros :SMS Illimitée">
+     <title>Rechargement Mobi Reussi + Option SMS Illimite</title>
+     Vous avez recharge votre compte de 20 euros + l'illimite sms
+     offert valables 1 mois. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+     a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.
+ </page>
+
+<page tag="tv_ss_souscription" descr="Rechargement Mobi 20Euros Reussi: + echec souscription TV Illimitée">
+     <title>Rechargement Mobi 20Euros Reussi: + echec souscription TV Illimitée</title>
+     Votre inscription a TV Illimitee n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+ </page>
+
+<page tag="voix_ss_souscription" descr="Rechargement Mobi 20Euros Reussi: + echec souscription Appels Illimitée">
+     <title>Rechargement Mobi 20Euros Reussi: + echec souscription Appels Illimitée</title>
+     Votre inscription a Appels Illimitee n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+ </page>
+
+<page tag="sms_ss_souscription" descr="Rechargement Mobi 20Euros Reussi: + echec souscription SMS Illimitée">
+     <title>Rechargement Mobi 20Euros Reussi: + echec souscription SMS Illimitée</title>
+     Votre inscription a SMS Illimitee n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+ </page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge Mobi: Fermeture">
+    <title>Recharge Mobi: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Reessayer ulterieurement.
+  </page>
+
+  <page tag="badprofil" nav="end" descr="not mobi">
+    <title>Reject : not mobi</title>
+    Vous n'avez pas acces a ce service reserve aux mobicartes.
+    Veuillez contacter votre service client.
+  </page>
+  
+  <page tag="incompatible" backtext="notext" nav="end">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end">
+    <redirect src="#reject"/>  
+  </page>
+
+  <page tag="bad_code_ph2">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="bad_code_ph1">
+    <redirect src="#reject"/>    
+  </page>
+
+  <page tag="reject" backtext="notext" nav="end" descr="#124# CMO: Reject">
+    <title>Reject : rech promo</title>
+    Rechargement refuse.
+  </page>
+
+  <page tag="bad_code">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="system_failure" descr="Reject : Rechargement momentanement impossible" nav="end">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu.
+  </page>
+
+  <page tag="incompatible_offre" descr="Reject : recharge incompatible avec votre offre"><title>Reject : recharge incompatible avec offre</title>
+        Erreur<br/>
+        Rechargement refuse car les caracteres saisis correspondent a une recharge non compatible avec votre offre.
+  </page>
+
+  <!-- Recharge Serie Limitee 10 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_10E" backtext="notext">
+     Vous avez recharge votre compte de 10E. Votre nouveau credit est de
+     <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant le
+     <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_10E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_10E_suite">
+      Profitez en + de vos 20 minutes d'appels offerts de 7h a 17h vers tous les operateurs jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?2&amp;dmyy"/> en France metropolitaine.<br/>
+  </page>
+
+  <!-- Recharge Serie Limitee 20 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_20E" backtext="notext">
+      Vous avez recharge votre compte de 20E. Votre nouveau credit est de
+      <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_20E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_20E_suite">
+      Profitez en + de vos 40 minutes d'appels offerts de 7h a 17h vers tous les operateurs jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?3&amp;dmyy"/> en France metropolitaine.<br/>
+  </page>
+
+  <!-- Recharge Serie Limitee 30 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_30E" backtext="notext">
+      Vous avez recharge votre compte de 30E. Votre nouveau credit est de
+      <include src="erl://svc_compte:print_solde?cpte_princ"/> euros a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_30E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_30E_suite">
+      Profitez en + de vos 60 minutes d'appels offerts de 7h a 17h vers tous les operateurs jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?4&amp;dmyy"/> en France metropolitaine.<br/>
+  </page>
+
+</pages>

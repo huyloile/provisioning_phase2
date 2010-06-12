@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="script pour le service : option unik">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:redirect_if_option_is_activated?opt_unik&amp;#opt_unik_active,#redirect_by_plan"/>
+  </page>
+
+<page tag="redirect_by_plan" descr="Redirection by plan">
+  <title>Redirect by plan</title>
+  <redirect src="erl://svc_selfcare:redirect_by_plan?classique_sec=#opt_unik_no_active,default=#unik_without_classical_plan"/>
+</page>
+
+<page tag="unik_without_classical_plan" nav="stop" descr="Message pour client autre que plan classique">
+  <title>Message pour client autre que plan classique</title>
+  Pour souscrire au bon plan unik, vous devez etre sur le plan tarifaire classique seconde. Changez gratuitement de plan tarifaire sur le menu #123# ou en appelant le 223.
+</page>
+
+<page tag="opt_unik_active" descr="option unik active">
+  <title>menu option active</title>
+  Bonjour, votre option unik est deja activee.<br/>
+  <a href="#desinscr_opt_unik">Supprimer l'option</a><br/>
+  <a href="#conditions_1_active">Conditions</a>
+</page>
+
+<page tag="opt_unik_no_active" descr="option unik pas active">
+  <title>menu option pas active</title>
+  Avec le bon plan Unik, doublez votre temps de parole 
+  vers les mobiles Orange en France metro 24h/24 et 7J/7..<br/>
+  <a href="#info1">Suite</a><br/>
+  <a href="#conditions_1">Conditions</a>
+</page>
+
+<page tag="info1" descr="Information Unik">
+  <title>information unik</title>
+  Pour 3E par mois, vos appels depuis votre mobile unik connecte a une livebox en France
+  metropolitaine sont a moitie prix. Pour devenir client unik il faut...<br/>
+  <a href="#info2">Suite</a>
+</page>
+
+<page tag="info2" descr="Information Unik">
+  <title>information unik</title>
+  ...reunir les trois conditions suivantes : avoir un mobile unik compatible,
+  avoir une livebox et enfin souscrire au bon plan unik.<br/>
+  <a href="#souscrire">Souscrire au bon plan unik</a><br/>
+  <a href="#conditions_1">Conditions</a>
+</page>
+
+<page tag="souscrire" descr="Souscrire option">
+  <title>Souscrire option unik</title>
+  <a href="erl://svc_options_mobi:do_subscription?opt_unik&amp;#sous_cpt_princ,#opt_deja_active,#solde_insuff,#failure,#sous_cpt_princ,#sous_cpt_bp,#sous_cpt_credt,#sous_cpt_princ">Confirmer</a>
+</page>
+
+<page tag="conditions_1" descr="Conditions">
+  <title>Conditions</title>
+  Offre reservee aux clients mobicarte beneficiant du plan classique seconde
+  et disposant d'un acces internet haut debit Orange (minimum 1 megamax) ou de la fibre...<br/>
+  <a href="#conditions_2">Suite</a>
+</page>
+
+<page tag="conditions_2" descr="Conditions">
+  <title>Conditions</title>
+  ...Orange, d'une livebox Wi-Fi et d'un mobile unik compatible (liste sur www.orange.fr).
+  Soit une reduction de 50% sur vos appels voix... <br/>
+  <a href="#conditions_3">Suite</a>
+</page>
+
+
+<page tag="conditions_3" descr="Conditions">
+  <title>Conditions</title>
+  ...(hors Num speciaux, Num de services, appels au 722) et un prix de 0,27E/min.
+  Bon plan reconduit chaque mois sous reserve d'un credit suffisant..<br/>
+  <a href="#conditions_4">Suite</a>
+</page>
+
+
+<page tag="conditions_4" descr="Conditions">
+  <title>Conditions</title>
+  ...A defaut,le bon plan sera suspendu et reprendra automatiquement a date anniversaire 
+  si le credit est a nouveau suffisant...<br/>
+  <a href="#conditions_5">Suite</a>
+</page>
+
+<page tag="conditions_5" descr="Conditions">
+  <title>Conditions</title>
+  ...Souscription et suppression au #123#. Details dans les conditions specifiques 
+  disponibles sur www.orange.fr.<br/>
+  <a href="#souscrire">Souscrire</a>
+</page>
+
+
+<page tag="conditions_1_active" descr="Conditions">
+  <title>Conditions</title>
+  Offre reservee aux clients mobicarte beneficiant du plan classique seconde 
+  et disposant d'un acces internet haut debit Orange (minimum 1 megamax) ou de la fibre...<br/>
+  <a href="#conditions_2_active">Suite</a>
+</page>
+
+<page tag="conditions_2_active" descr="Conditions">
+  <title>Conditions</title>
+  ...Orange, d'une livebox Wi-Fi et d'un mobile unik compatible (liste sur www.orange.fr).
+  Soit une reduction de 50% sur vos appels voix...<br/>
+  <a href="#conditions_3_active">Suite</a>
+</page>
+
+<page tag="conditions_3_active" descr="Conditions">
+  <title>Conditions</title>
+  ...(hors Num speciaux, Num de services, appels au 722) et un prix de 0,27E/min.
+  Bon plan reconduit chaque mois sous reserve d'un credit suffisant..<br/>
+  <a href="#conditions_4_active">Suite</a>
+</page>
+
+
+<page tag="conditions_4_active" descr="Conditions">
+  <title>Conditions</title>
+  ...A defaut,le bon plan sera suspendu et reprendra automatiquement a date anniversaire 
+  si le credit est a nouveau suffisant...<br/>
+  <a href="#conditions_5_active">Suite</a>
+</page>
+
+
+<page tag="conditions_5_active" descr="Conditions">
+  <title>Conditions</title>
+  ...Souscription et suppression au #123#. Details dans les conditions specifiques 
+  disponibles sur www.orange.fr.<br/>
+  <a href="#desinscr_opt_unik">Supprimer le bon plan</a>
+</page>
+
+<page tag="desinscr_opt_unik" descr="suppression">
+  <title>suppresion</title>
+  Merci de confirmer la suppression de votre bon plan unik.
+  Si vous supprimez votre bon plan maintenant, vous perdez immediatement le benefice de celle-ci.<br/>
+  <a href="#desinscr_opt_unik1">Confirmer</a>
+</page>
+
+<page tag="desinscr_opt_unik1" descr="desinscription option unik">
+  <title>Option desinscrire unik</title>
+  <redirect src="erl://svc_options_mobi:do_unsubscription?opt_unik&amp;#desinscr_success,#failure"/>
+</page>
+
+
+<page tag="desinscr_success" backtext="notext" cost="free_pt" descr="Opt. unik">
+  <title>Echec Souscription</title>
+  La suppression de votre bon plan unik a bien ete pris en compte. 
+  Merci de votre appel..<br/>
+</page>
+
+
+
+<page tag="failure" backtext="notext" cost="free_pt" descr="Opt. unik">
+  <title>Echec Souscription</title>
+  Le service est momentanement interrompu. Veuillez recommencer
+  ulterieurement.<br/>
+  Merci.
+</page>
+
+
+<page tag="sous_cpt_princ" nav="stop" descr="souscription unik cpt princ">
+  <title>Souscription Unik cpt princ</title>
+  Vous avez souscrit au bon plan unik pour 3E. Ce montant a ete debite de votre compte.
+  Vous devez pour la premiere connexion avec votre livebox saisir la clef..<br/>
+  <a href="#Suite_sous_info_1">Suite</a>
+</page>
+
+<page tag="Suite_sous_info_1" descr="info sous 1">
+  <title>Info sous info</title>
+  ...wep dans votre mobile. Un pictogramme apparaitra alors sur votre telephone avec le nom de la livebox.
+  Vous pourrez alors beneficier d'appels a moitie prix..<br/>
+  <a href="#Suite_sous_info_2">Suite</a>
+</page>
+
+<page tag="Suite_sous_info_2" descr="info sous 2">
+  <title>Info sous info</title>
+  ..Pour plus d'informations sur l'appairage,aller sur le site www.unik.orange.fr, dans la rubrique Besoin d'aide.<br/>
+</page>
+
+<page tag="sous_cpt_bp" nav="stop" descr="souscription unik cpt bp">
+  <title>souscription unik bp</title>
+  Vous avez souscrit au bon plan unik pour 3E. Ce montant a ete debite de votre compte bons plans.
+  Vous devez pour la premiere connexion avec votre livebox saisir la clef..<br/>
+  <a href="#Suite_sous_info_1">Suite</a>
+</page>
+
+<page tag="sous_cpt_credt" nav="stop" descr="souscription unik cpt credit">
+  <title>souscription unik credit</title>
+  Vous avez souscrit au bon plan unik pour 3E. Ce montant a ete debite de votre compte credit offert.
+  Vous devez pour la premiere connexion avec votre livebox saisir la clef..<br/>
+  <a href="#Suite_sous_info_1">Suite</a>
+</page>
+
+<page tag="solde_insuff" descr="solde insuff">
+  <title>souscription solde insuff</title>
+  Bonjour, pour souscrire au bon plan unik, vous devez disposer de plus de 3E sur votre compte. Orange vous remercie de votre appel.<br/>
+  <a href="selfcare.xml#recharge">Recharger</a>
+</page>
+
+
+<page tag="failure" backtext="notext" cost="free_pt" descr="Opt. J INF: Echec">
+  <title>Echec Souscription</title>
+  Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+  Merci.
+</page>
+
+<page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+      descr="option unik deja active">
+  <title>option unik deja active</title>
+  Bonjour, votre option Unik est deja activee.<br/>
+  Orange vous remercie de votre appel.
+</page>
+
+
+</pages>
+

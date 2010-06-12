@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page">
+
+  <page hist="bookmark">
+    <title><lang><fr>Accueil</fr><en>HomePage</en></lang></title>
+    <!-- Do provisioning and switch to the correct home page depending
+         on the type of session (anonymous/identified), type of
+         subscription (prepaid/postpaid), provisioned services,
+         service code, ... -->
+    <redirect src="erl://svc_home:home?#choose_provisioning"/>
+  </page>
+
+  <page tag="choose_provisioning"> 
+    <redirect src="erl://svc_util:map?service_code&amp;prov_type_by_sc&amp;#with_provisioning"/>
+  </page>
+
+  <page tag="with_provisioning">
+    <redirect src="erl://svc_home:init_session?#niveau_provisioning"/> 
+  </page> 
+ 
+  <page tag="without_provisioning">
+    <redirect src="#check_access"/> 
+  </page> 
+
+  <page tag="niveau_provisioning"> 
+    <redirect src="erl://svc_home:niveau_provisioning?#check_access"/> 
+  </page> 
+  
+  <page tag="check_access"> 
+     <redirect src="erl://svc_home:check_services_access?#init_roaming,#not_allowed"/> 
+  </page> 
+   
+  <page tag="init_roaming"> 
+    <redirect src="erl://svc_roaming:init_roaming?#roaming_done"/> 
+  </page> 
+ 
+  <page tag="roaming_done"> 
+     <redirect src="erl://svc_util:is_auth?auth.xml&amp;#service"/> 
+  </page> 
+
+   <page tag="service">
+    <redirect src="erl://svc_util:map_acl_not_filtred?service_code&amp;auth_by_sc_acl&amp;#bad_code"/>
+  </page>
+
+  
+<!--- Pages des différents services -->
+
+<page tag="#123">
+      <redirect src="erl://svc_util:direct_access_string?**&amp;erl://svc_home:version&amp;#selfcare"/>
+  </page>
+
+  <page tag="#133">
+      <redirect src="selfcare_light/direct_callback.xml"/>
+  </page>
+
+ <page tag="#124">
+      <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_light/recharge_direct_mobi.xml,cmo=selfcare_light/recharge_direct_cmo.xml,bzh_cmo=selfcare_light/recharge_direct_bzh_cmo.xml,default=#anon"/>
+  </page>
+
+  <page tag="#147">
+      <redirect src="/mcel/acceptance/mipc_vpbx/home.xml"/>
+  </page>
+
+ <page tag="is_recharge">
+      <!-- not use actually -->
+      <redirect src="erl://svc_util:direct_access_length?14&amp;#direct_recharge&amp;#selfcare"/>
+  </page>
+
+  <page tag="selfcare">
+    <!-- Switch to the correct home page depending on the USSD size  -->
+    <redirect src="erl://svc_util:redirect_size?181&amp;#123_long&amp;#123_light"/>
+  </page>
+
+  <page tag="123_long">
+    <redirect src="erl://svc_roaming:redir_roaming_network?ansi=#123_long_ansi,default=#123_long_by_subs"/>
+  </page>
+
+  <page tag="123_long_by_subs">
+    <redirect src="erl://svc_util_of:redir_sce?#123_long_by_subs_new&amp;#123_long_by_subs_old"/>
+  </page>
+
+  <page tag="123_long_ansi">
+    <redirect src="erl://svc_util_of:redir_sce?#123_long_ansi_new&amp;#123_long_ansi_old"/>
+  </page>
+
+  <page tag="123_long_by_subs_new">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#123_mobi_181,cmo=selfcare_long/selfcare_cmo_new.xml,postpaid=#123_postpaid_181,dme=#123_dme_181,omer=selfcare_long/selfcare_omer.xml,bzh_gp=#sv_bzh,bzh_cmo=selfcare_long/bzh_cmo.xml,default=#anon"/>
+  </page>
+
+  <page tag="123_long_ansi_new">
+    <redirect src="erl://svc_util:redir_subscription?cmo=selfcare_long/selfcare_cmo_new.xml,default=#123_long_ansi_first_page"/>
+  </page>
+
+  <page tag="123_long_by_subs_old">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_long/selfcare.xml,cmo=selfcare_long/selfcare_cmo.xml,postpaid=#123_postpaid_181,dme=#123_dme_181,omer=selfcare_long/selfcare_omer.xml,bzh_gp=#sv_bzh,bzh_cmo=selfcare_long/bzh_cmo.xml,default=#anon"/>
+  </page>
+
+  <page tag="123_long_ansi_old">
+    <redirect src="erl://svc_util:redir_subscription?cmo=selfcare_long/selfcare_cmo.xml,default=#123_long_ansi_first_page"/>
+  </page>
+
+  <page tag="123_long_ansi_first_page" descr="#123 : Première page en réseau ANSI" menutext="notext" backtext="notext" hist="donthist" ismenu="false">
+    Bienvenue sur le suivi conso #123#, pour continuer tapez repondre puis 1<br/>
+    <a href="#123_long_by_subs">Continuer</a>
+  </page>
+  
+  <page tag="123_light">
+     <redirect src="erl://svc_util:redirect_size?130&amp;#123_niv2&amp;#123_niv3"/>
+  </page>
+
+  <page tag="123_niv2">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_light/selfcare.xml,cmo=selfcare_light/selfcare_cmo.xml,postpaid=#123_postpaid_130,dme=#123_dme_130,omer=selfcare_light/selfcare_omer.xml,bzh_gp=#sv_bzh,bzh_cmo=selfcare_light/bzh_cmo.xml,default=#anon"/>
+  </page>
+
+  <page tag="123_niv3">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_mini/selfcare.xml,cmo=selfcare_mini/selfcare_cmo.xml,postpaid=#123_postpaid_n130,dme=#123_dme_n130,omer=selfcare_mini/selfcare_omer.xml,bzh_gp=#sv_bzh,bzh_cmo=selfcare_mini/bzh_cmo.xml,default=prov.xml#not_compatible"/>
+  </page>
+
+  <page tag="123_postpaid_181">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=#123_postpaid181_spider,undefined=#123_postpaid_181_cvf"/>
+  </page>
+
+  <page tag="123_postpaid181_spider" descr=" ">
+    <redirect src="erl://svc_spider:redirect_by_produit?PRO=#123_postpaid181_spider_pro,?=#123_postpaid181_spider_gp"/>
+  </page>
+
+  <page tag="123_postpaid181_spider_gp">
+    <redirect src="erl://svc_roaming:redir_roaming_network?camel=selfcare_long/roaming_postpaid_gp.xml,nocamel=selfcare_long/roaming_postpaid_gp.xml,ming=selfcare_long/roaming_postpaid_gp.xml,ansi=selfcare_long/roaming_postpaid_gp.xml,default=#123_postpaid181_spider_sce"/>
+  </page>
+
+  <page tag="123_postpaid181_spider_pro">
+    <redirect src="erl://svc_roaming:redir_roaming_network?camel=selfcare_long/roaming_postpaid_pro.xml,nocamel=selfcare_long/roaming_postpaid_pro.xml,ming=selfcare_long/roaming_postpaid_pro.xml,ansi=selfcare_long/roaming_postpaid_pro.xml,default=#123_postpaid181_spider_sce"/>
+  </page>
+
+
+  <page tag="123_postpaid181_spider_sce">
+    <redirect src="erl://svc_util_of:redir_sce?selfcare_long/spider_postpaid_sce.xml&amp;selfcare_long/spider.xml#postpaid"/>
+  </page>
+
+  
+  <page tag="123_postpaid_181_cvf">
+    <redirect src="http://192.168.129.89/suiviconso.cgi?longueur=181"/>
+  </page>
+  
+  <page tag="123_postpaid_130">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=selfcare_light/spider.xml#postpaid,undefined=#123_postpaid_130_cvf"/>
+  </page>
+  
+  <page tag="123_postpaid_130_cvf">
+    <redirect src="http://192.168.129.89/suiviconso.cgi?longueur=130"/>
+  </page>
+
+  <page tag="123_postpaid_n130">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=selfcare_mini/spider.xml#postpaid,undefined=#123_postpaid_n130_cvf"/>
+  </page>
+  
+  <page tag="123_postpaid_n130_cvf">
+    <redirect src="http://192.168.129.89/suiviconso.cgi?longueur=64"/>
+  </page>
+
+  <page tag="123_mobi_181">
+    <redirect src="erl://svc_util_of:redir_new_mobi?/mcel/acceptance/mobi/Home_page_mobi.xml&amp;selfcare_long/selfcare.xml"/>
+  </page>
+
+  <page tag="123_dme_181">
+    <redirect src="erl://svc_util_of:redir_menu_dme?/mcel/acceptance/Home_page_dme.xml&amp;#123_dme_181_selfcare"/>
+  </page>
+
+
+  <page tag="123_dme_181_selfcare">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=selfcare_long/spider.xml#dme"/>
+  </page>
+  
+  <page tag="123_dme_130">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=selfcare_light/spider.xml#dme"/>
+  </page>
+  
+  <page tag="123_dme_n130">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=selfcare_mini/spider.xml#dme"/>
+  </page>
+
+   <page tag="sv_bzh">
+    <!--redirect src="http://bzh_gp/suiviconso/xml_suiviconso.php"/-->
+    <redirect src="erl://svc_util_of:redir_mvno?bzh_gp&amp;#temporary"/>
+  </page>
+
+  <page tag="sv_sondage_preprod">
+    <redirect src="http://itwprojets1.123interview.com:9002/USSD/"/>  
+  </page>
+  
+  <page tag="sv_sondage">
+    <redirect src="http://itwprojets1.123interview.com:8085/USSD/"/>  
+  </page>
+
+  <page tag="direct_recharge">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_long/recharge.xml#direct_access,cmo=selfcare_long/recharge_cmo.xml,default=#anon"/>
+  </page>
+
+  <page tag="#140" nav="end">Pour acceder a ce service, veuillez composer dorenavant le *141#<br/>Merci.</page>
+
+   <page tag="#146">
+     <redirect src="erl://svc_util:redir_subscription?mobi=#call_me,cmo=#call_me,postpaid=#call_me,default=#anon"/>
+  </page>
+
+  <page tag="call_me">
+    <redirect src="/demos/comm/callme.xml#callme"/></page>
+
+  <page tag="anon" nav="end">
+    <lang>
+      <fr>Vous n'avez pas acces a ce service.</fr>
+      <en>You cannot access this service.</en>
+    </lang>
+  </page>
+
+  <page tag="auth_preprod" nav="end">
+    <lang>
+      <fr>Vous n'avez pas accès à ce service.<br/></fr>
+      <en>You cannot access this service.<br/></en>
+    </lang>
+  </page>
+
+ <page tag="bad_code" hist="donthist" nav="end" log="EBadCode">
+   <title>Bad code</title>   
+      <lang>
+        <fr>numéro non attribué. Veuillez renouveler votre appel.<br/></fr>
+        <en>Unavailable service code.<br/></en>
+      </lang>
+ </page>
+
+  <page tag="bad_choice" hist="donthist" log="EBadChoice">
+   <title>Bad choice</title>
+     <lang>
+       <fr>Choix non disponible.</fr>
+       <en>No such entry.</en>
+     </lang>
+  </page>
+
+  <page tag="desync" hist="donthist" nav="end" log="EDesync"
+    cost="system_free_pt">
+   <title>Desync req</title>
+     <lang>
+       <fr>Votre session a été interrompue.<br/>Veuillez vous reconnecter.</fr>
+       <en>Your session has timed out.<br/>Please reconnect.</en>
+     </lang>
+  </page>
+
+  <page tag="not_allowed" hist="donthist" nav="end" cost="system_free_pt" log="ENotAllowed">
+   <title>Not_allowed req</title>
+     <lang>
+       <fr>Vous n'avez pas acces a ce service.</fr>
+       <en>You do not have access to this service.</en>
+     </lang>
+  </page>
+
+  <page tag="not_allowed_leogourou" hist="donthist" nav="end" cost="system_free_pt" log="LeoGourouNotAllowed">
+  <title>Not_allowed leo gourou</title>
+     Vous n'avez pas acces a ce service. Utilisez plutot le *149#.
+  </page>
+
+  <page tag="not_allowed_mvno" hist="donthist" nav="end" cost="system_free_pt" log="MVNONotAllowed">
+  <title>Not_allowed MVNO</title>
+  Vous n'avez pas acces a ce service.<br/>
+  Pour acceder a votre suivi conso, merci d'appeler le numero *144# depuis votre mobile (appel gratuit).
+  </page>
+
+  <page tag="not_allowed_internet_everywhere" hist="donthist" nav="end" cost="system_free_pt" log="InternetEverywhereNotAllowed">
+  <title>Not_allowed Internet Everywhere</title>
+  Vous n'avez pas acces a ce service.<br/>
+  Pour acceder a votre suivi conso, telechargez depuis votre ordinateur le nouveau kit de connexion sur orange.fr > rubrique assistance
+  </page>
+
+  <page tag="access_denied" hist="donthist" log="EAccDenied" cost="system_free_pt">
+   <title>Access denied</title>
+     <lang>
+       <fr>Votre solde courant ne vous permet pas de consulter la page
+           demandée.</fr>
+       <en>Your current balance is too low to view this page.</en>
+     </lang>
+  </page>
+
+  <page tag="sms_ok" hist="donthist" log="SMS" cost="system_free_pt">
+     <lang>
+       <fr>Le message vous a été envoyé par SMS.</fr>
+       <en>Message successfully sent as SMS.</en>
+     </lang>
+  </page>
+  <page tag="sms_nok" hist="donthist" log="ESMS" cost="system_free_pt">
+     <lang>
+       <fr>Impossible de vous envoyer le message par SMS actuellement.</fr>
+       <en>Temporarily unable to send the message as SMS.</en>
+     </lang>
+  </page>
+
+  <page tag="price" hist="donthist" cost="system_free_pt" log="SYSPrice">
+   <title>Session price</title>
+    <lang>
+      <fr>Prix de la session courante : </fr>
+      <en>Cost of ongoing session : </en>
+    </lang>
+   <include src="erl://svc_home:session_price"/>
+  </page>
+
+ <page tag="epuise">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#epuise_long&amp;#epuise_short"/>
+  </page>
+
+<page tag="perime">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#perime_long&amp;#perime_short"/>
+  </page>
+
+  <page tag="epuise_long" log="SC_Eep" cost="free_pt" backtext="notext" descr="Mobi - Cpte Princ EP" nav="stop">
+    <title>Accés interdit car EP</title>
+    la mobicarte<br/>
+    Ce service est inacessible car votre crédit est épuisé. <br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    <a href="recharge.xml" key="0">Recharger</a></page>
+
+  <page tag="perime_long" log="SC_Eper" cost="free_pt" backtext="notext" descr="Mobi : Compte périmé" nav="stop">
+    <title>Accés non autorisé</title>
+    la mobicarte<br/>
+    Ce service est inacessible car votre date de validité 
+    du crédit dépassée.<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    <a href="recharge.xml" key="0">Recharger</a></page>
+
+<page tag="perime_short" log="SC_Eper" cost="free_pt" backtext="notext" menutext="notext" nav="end" descr="Accés service non autorisé : Compte périmé">
+    <title>Accés non autorisé</title>
+    Service inaccessaible: Date de validité du crédit dépassée.<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/></page>
+
+  <page tag="epuise_short" log="SC_Eep" cost="free_pt" backtext="notext" menutext="notext" nav="end" descr="Accés service non autorisé">
+    <title>Accés non Autorisé</title>
+    Service inacessible: Crédit épuisé.<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/></page>
+
+  <page tag="help">
+     <lang>
+       <fr>
+          >Aide<br/>
+          0:retour<br/>
+          00:menu<br/>
+          000:accueil<br/>
+          99:aide<br/>
+          991:signet<br/>
+          992:coût<br/>
+          993:copie SMS<br/>
+       </fr>
+       <en>
+          >Help<br/>
+          0:back<br/>
+          00:menu<br/>
+          000:home<br/>
+          99:help<br/>
+          991:bookmark<br/>
+          992:cost<br/>
+          993:SMS copy<br/>
+       </en>
+     </lang>
+  </page>
+
+ <page tag="version" nav="end" cost="free_pt">
+    <title>Reject : Version</title>
+    Vous êtes sur la plate-forme <subst name="SYSTEM_ID"/>.<br/>
+    Merci.<br/>
+  </page>
+
+
+<!-- Error pages -->
+
+ <page tag="temporary" nav="end" cost="free_pt" descr="Service indisponible">
+    <title>Reject : temporary error</title>
+    Le service est temporairement indisponible. Veuillez nous en excuser,
+    et vous reconnecter ultérieurement. Merci.<br/>
+  </page>
+
+ <page tag="ocf_prov_failed" nav="end" cost="free_pt" descr="Service indisponible">
+    <title>Reject : temporary error</title>
+    Le service est temporairement indisponible. Veuillez nous en excuser,
+    et vous reconnecter ultérieurement. Merci.<br/>
+  </page>
+
+ <page tag="prov_failed">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#prov_failed_long&amp;#prov_failed_short"/>
+  </page>
+
+  <page tag="prov_failed_long">
+    <redirect src="erl://svc_util:redir_subscription?dme=#dme_prov_failed_long,postpaid=#postpaid_prov_failed_long,default=#sdp_prov_failed_long"/>
+  </page>
+  <page tag="prov_failed_short">
+    <redirect src="erl://svc_util:redir_subscription?dme=#dme_prov_failed_short,postpaid=#postpaid_prov_failed_short,default=#sdp_prov_failed_short"/>
+  </page>
+
+  <page tag="sdp_prov_failed_long" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+ <page tag="sdp_prov_failed_short" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+ <page tag="dme_prov_failed_long" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+ <page tag="dme_prov_failed_short" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+ <page tag="postpaid_prov_failed_long" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+ <page tag="postpaid_prov_failed_short" nav="end" descr="Service indisponible">
+     <lang>
+        <fr>Service indisponible. Merci de vous reconnecter ulterieurement.</fr>
+        <en>Service temporarily unavailable.<br/></en>
+     </lang>
+  </page>
+
+  <page tag="spider_service_indisponible" descr="Spider: service indisponible">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#spider_service_indisponible_long&amp;#spider_service_indisponible_short"/>
+  </page>
+
+  <page tag="spider_service_indisponible_short" nav="end" descr="Spider: service indisponible">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="spider_service_indisponible_long" nav="end" descr="Spider: service indisponible">
+    <redirect src="file:/orangef/selfcare_long/spider.xml#no_resp"/>
+  </page>
+
+
+  <page tag="spider_acces_refuse" nav="end" descr="Spider: acces refuse">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="spider_probleme_technique" nav="end" descr="Spider: probleme technique">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="spider_dossier_inconnu" nav="end" descr="Spider: dossier inconnu">
+    Ce service est disponible 48h apres votre 1ere communication.
+  </page>
+
+  <page tag="as_metier_failure" nav="end" descr="ASMetier failure">
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+ </pages>

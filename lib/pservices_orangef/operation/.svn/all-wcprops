@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation
+END
+cvs_audit_summary.sh
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/cvs_audit_summary.sh
+END
+stats.sh
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/stats.sh
+END
+checkout.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/checkout.sh
+END

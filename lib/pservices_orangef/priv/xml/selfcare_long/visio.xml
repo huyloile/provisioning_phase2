@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : activation visio">
+  
+  <page>
+    <redirect src="erl://svc_activ_opt_mobi:redir_by_opt_status?opt_visio&amp;#opt_deja_active&amp;#generique"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option visio deja active">
+    <title>option visio deja active</title>
+    Bonjour, la visiophonie est deja activee.<br/>
+    Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option visio menu generique">
+    <title>option visio menu generique</title>
+    Activation de la visiophonie<br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Activer</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+   <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>
+
+  <page tag="conditions_gen" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions">
+    <title>option visio page conditions</title>
+    Service accessible aux clients mobicarte et click la mobicarte sur un plan decompte
+    a la seconde des la premiere seconde...<br/>
+    <a href="#conditions_suite1">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+  <page tag="conditions_m6" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions M6">
+    <title>option visio page conditions M6</title>
+   Service accessible aux clients d'une offre prepayee Orange sur un plan
+   decompte a la seconde des la premiere seconde (ex : Soir&amp;WE)...<br/>
+    <a href="#conditions_suite1">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+  <page tag="conditions_foot" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions Foot">
+    <title>option visio page conditions Foot</title>
+   Service accessible aux clients d'une offre prepayee Orange sur un plan
+   decompte a la seconde des la premiere seconde (ex : Soir&amp;WE)...<br/>
+    <a href="#conditions_suite1">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+  <page tag="conditions_click" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions">
+    <title>option visio page conditions</title>
+    Service accessible aux clients mobicarte et click la mobicarte sur un plan decompte
+    a la seconde des la premiere seconde...<br/>
+    <a href="#conditions_suite1">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+
+ <page tag="conditions_suite1" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions suite 1">
+    <title>option visio page conditions suite 1</title>
+    Visiophonie disponible entre terminaux et sur reseaux compatibles.
+    Les communications visio sont decomptees a la seconde...<br/>
+    <a href="#conditions_suite2">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+ <page tag="conditions_suite2" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions suite 2">
+    <title>option visio page conditions suite 2</title>
+    des la premiere seconde (les 15 premiere secondes sont gratuites)
+    au tarif du plan a la seconde du client<br/>
+    <a href="#conditions_suite3">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+ <page tag="conditions_suite3" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions suite 3">
+    <title>option visio page conditions suite 3</title>
+    Service disponible pour les appels en France metropolitaine,
+    les mobiles visio Orange et les mobiles visio des operateurs proposant...<br/>
+    <a href="#conditions_suite4">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+ <page tag="conditions_suite4" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions suite 4">
+    <title>option visio page conditions suite 4</title>
+    un reseau compatible, Wanadoo visio, PC equipes du logiciel de visiophonie,
+    en France metropolitaine et Monaco...<br/>
+    <a href="#conditions_suite5">Suite</a><br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+ <page tag="conditions_suite5" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page conditions suite 5">
+    <title>option visio page conditions suite 5</title>
+    ...et vers correspondants Ma Ligne visio en France metropolitaine.<br/>
+    <a href="erl://svc_activ_opt_mobi:souscrire?opt_visio&amp;#success">Choisir</a>
+  </page>
+
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option visio page activer">
+    <title>option visio page activer</title>
+    Votre demande a ete prise en compte et sera effective sous 72h
+    sous reserve que votre mobile soit compatible visio.<br/>
+    Merci de votre appel
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. J INF: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="mobile_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option visio page mobile incompatible">
+    <title>option visio mobile incompatible</title>
+    Bonjour, vous ne pouvez pas activer la visiophonie car votre mobile
+    n'est pas compatible visio. Pour + d'infos contactez votre service clients au 722<br/>
+    <a href="#mobile_incomp_suite">suite</a>
+  </page>
+
+  <page tag="mobile_incomp_suite" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option visio page mobile incompatible suite">
+    <title>option visio mobile incompatible suite</title>
+    ...depuis votre mobile (0,37 E/min.). Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="nouveaute_visio" cost="free_pt" hist="dohist" volatile="true"
+	descr="Page du menu nouveaute de l'option Visio">
+    <title>Page du menu nouveaute de l'option Visio</title>
+    Parce que c'est tellement mieux de se voir quand on se parle, avec
+    La mobicarte et la visiophonie c'est possible, alors vous etes prets ?<br/>
+    <a href="visio.xml">Activer</a>
+  </page>
+
+</pages>
+
+ 

@@ -1,0 +1,2 @@
+define qlocal(TEST_QUEUE_IN)
+define qlocal(TEST_QUEUE_OUT)

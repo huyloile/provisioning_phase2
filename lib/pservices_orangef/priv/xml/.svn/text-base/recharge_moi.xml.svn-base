@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  <page descr="Recharge-moi: filtre des sessions sans MSISDN">
+    <redirect src="erl://svc_util:filter_msisdn?#check_access&amp;#no_msisdn"/>
+  </page>
+  
+  <page tag="check_access">
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#redir_roamer,#not_allowed"/>
+  </page>
+  
+  <page tag="redir_roamer" descr="Recharge-moi: Redirection des roamers">
+    <redirect src="erl://svc_roaming:redir_roaming_network?noroaming=#redir_size,default=#no_roaming"/>
+  </page>
+
+  <page tag="redir_size" descr="Recharge-moi: Redirection par niveau">
+    <redirect src="erl://svc_util:redirect_size?64&amp;#redir_subscription&amp;#not_compatible"/>
+  </page>
+
+  <page tag="redir_subscription" descr="Recharge-moi: Redirection par souscription">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#service,cmo=#service,default=#not_allowed"/>
+  </page>
+
+  <page tag="service" descr="Recharge-moi: Verif format et conditions, envoi SMS">
+    <redirect src="erl://svc_recharge_moi:checks_and_send_sms?#sms_sent_redir&amp;#bad_dest_msisdn_format&amp;#not_a_mobile_msisdn&amp;#balance_too_high_redir&amp;#rolling_periods_cond_redir&amp;#sms_failure_redir&amp;#dest_msisdn_in_black_list"/>
+  </page>
+
+  <page tag="dest_msisdn_in_black_list" descr="Recharge-moi: Numero de destination en black list">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#dest_msisdn_in_black_list_long&amp;#dest_msisdn_in_black_list_short"/>
+  </page>
+
+  <page tag="dest_msisdn_in_black_list_long" descr="Recharge-moi: Numero de destination en black list, long" nav="end">
+    Desole, votre correspondant ne souhaite pas recevoir
+    de message du service Orange-Recharge pour moi, merci de
+    votre comprehension
+  </page>
+
+  <page tag="dest_msisdn_in_black_list_short" descr="Recharge-moi: Numero de destination en black list, court" nav="end">
+    Desole, votre correspondant ne souhaite pas recevoir de message
+    du service Orange-Recharge pour moi, merci de votre comprehension
+  </page>
+
+
+  <page tag="sms_sent_redir" descr="Recharge-moi: SMS envoye, redir">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#sms_sent_long&amp;#sms_sent_short"/>
+  </page>
+
+  <page tag="sms_sent_long" descr="Recharge-moi: SMS envoye, long" nav="end">
+    Votre correspondant va etre prevenu. Un SMS lui demandant de recharger
+    votre compte lui a ete envoye.
+  </page>
+
+  <page tag="sms_sent_short" descr="Recharge-moi: SMS envoye, court" nav="end">
+    Un SMS demandant de recharger votre compte a ete envoye.
+  </page>
+
+  <page tag="sms_failure_redir" descr="Recharge-moi: Service indisponible, redir">
+    <redirect src="erl://svc_util:redirect_size?130&amp;#sms_failure_long&amp;#sms_failure_short"/>
+  </page>
+
+  <page tag="sms_failure_long" descr="Recharge-moi: Service indisponible, long" nav="end">
+    Le service est temporairement indisponible.
+    Veuillez nous en excuser, et vous reconnecter ultérieurement.
+    Merci.
+  </page>
+
+  <page tag="sms_failure_short" descr="Recharge-moi: Service indisponible, court"  nav="end">
+    Le service est temporairement indisponible.
+  </page>
+  
+  <page tag="bad_dest_msisdn_format" descr="Recharge-moi: Format de commande non valide" nav="end">
+    Veuillez reformuler votre demande :<br/>
+    #126*numero_du_destinataire#
+  </page>
+
+  <page tag="not_a_mobile_msisdn" descr="Recharge-moi: Numéro de mobile seulement" nav="end">
+    Ce service ne fonctionne que vers les no Mobiles. Merci
+  </page>
+
+  <page tag="balance_too_high_redir" descr="Recharge-moi: Solde trop eleve, redir">
+    <redirect src="erl://svc_util:redirect_size?130&amp;#balance_too_high_long&amp;#balance_too_high_short"/>
+  </page>
+
+  <page tag="balance_too_high_long" descr="Recharge-moi: Solde > 1, long" nav="end">
+    Vous n'avez pas acces au service : votre solde est superieur a 1 EUR
+  </page>
+
+  <page tag="balance_too_high_short" descr="Recharge-moi: Solde > 1, court" nav="end">
+    Vous n'avez pas acces au service car votre solde est > a 1EUR
+  </page>
+
+  <page tag="rolling_periods_cond_redir" descr="Recharge-moi: nombre maximum par periode atteint, redir">
+    <redirect src="erl://svc_util:redirect_size?181&amp;#rolling_periods_cond_long&amp;#rolling_periods_cond_short"/>
+  </page>
+
+  <page tag="rolling_periods_cond_long" descr="Recharge-moi: nombre maximum par periode atteint, long">
+    Vous avez utilise tous vos messages pour ce mois-ci. Pour recharger
+    vous-meme votre compte tapez repondre puis 1 ou RDV sur le #123# (gratuit).
+    <a href="#redir_recharge">Recharger</a>
+  </page>
+
+  <page tag="redir_recharge">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare_long/selfcare.xml#recharge,cmo=/mcel/acceptance/cmo/rechargement/accueil_rechargement.xml"/>
+  </page>
+
+  <page tag="rolling_periods_cond_short" descr="Recharge-moi: nombre maximum par periode atteint, court" nav="end">
+    Vous avez utilise tous vos messages pour ce mois-ci. Merci
+  </page>
+
+  <page tag="not_compatible" descr="Recharge-moi: Terminal non compatible" nav="end">
+    Votre terminal ne vous permet pas d'acceder a ce service
+  </page>
+  
+  <page tag="not_allowed" descr="Recharge-moi: Restriction aux Mobicartes et CMO" nav="end">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="no_roaming" descr="Recharge-moi: Restriction aux non roamers" nav="end">
+    Ce service n'est pas disponible a l'etranger. Merci
+  </page>
+
+  <page tag="no_msisdn" descr="Recharge-moi: Restriction aux sessions avec MSISDN non renseigne" nav="end">
+    Nous ne disposons pas d'informations necessaires a ce service
+  </page>
+</pages>

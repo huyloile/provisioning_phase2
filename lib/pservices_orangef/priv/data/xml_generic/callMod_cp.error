@@ -1,0 +1,13 @@
+[
+{"solde_insuffisant","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-42']"},
+{"operation_irrealisable","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-70']"},
+{"plan_tarifaire_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-72']"},
+{"chg_etat_cpte_impossible","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-74']"},
+{"date_limite_validite_non_dispo","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-75']"},
+{"type_renouvel_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-76']"},
+{"renouvel_cpte_impossible","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-77']"},
+{"compte_absent","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-94']"},
+{"numid_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-95']"},
+{"format_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-98']"},
+{"erreur_technique","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut='-99']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callMod_cpResponse/callMod_cpReturn[statut!='0' and '1']"}].

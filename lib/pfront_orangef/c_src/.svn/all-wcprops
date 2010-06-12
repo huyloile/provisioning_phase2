@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/c_src
+END
+mqseries_port_get.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/c_src/mqseries_port_get.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/c_src/Makefile
+END
+mqseries_port.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/c_src/mqseries_port.c
+END

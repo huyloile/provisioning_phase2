@@ -1,0 +1,809 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long
+END
+opt_sinf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_sinf.xml
+END
+bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/bzh_cmo.xml
+END
+opt_musique_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_musique_mensu.xml
+END
+opt_illimite_kdo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_illimite_kdo.xml
+END
+souscrire_options_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/souscrire_options_cmo.xml
+END
+opt_forf_sms_postpaid_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_forf_sms_postpaid_gp.xml
+END
+nouveautes_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/nouveautes_cmo.xml
+END
+opt_esf_20_france_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_20_france_pro.xml
+END
+opt_illimite_kdo_v2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_illimite_kdo_v2.xml
+END
+opt_bp_10_mms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_bp_10_mms.xml
+END
+opt_esf_30_france_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_30_france_pro.xml
+END
+opt_esf_60_france_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_60_france_pro.xml
+END
+transfert_credit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/transfert_credit.xml
+END
+opt_ow_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_cmo.xml
+END
+janus_bonus_decouvrir.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_bonus_decouvrir.xml
+END
+opt_jinf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_jinf.xml
+END
+opt_mobi_nouveautes_orange_sport.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_mobi_nouveautes_orange_sport.xml
+END
+selfcare_one2one.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_one2one.xml
+END
+opt_musique.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_musique.xml
+END
+janus_bonus_changer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_bonus_changer.xml
+END
+opt_esf_20_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_20_pro.xml
+END
+opt_sport.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_sport.xml
+END
+options_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/options_cmo.xml
+END
+selfcare_cmo_new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_cmo_new.xml
+END
+opt_zap_quoti.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_zap_quoti.xml
+END
+opt_tt_shuss.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_tt_shuss.xml
+END
+recharge_cmo_tlr.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_cmo_tlr.xml
+END
+opt_ow_postpaid_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_postpaid_gp.xml
+END
+recharge_cb_umobile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_cb_umobile.xml
+END
+janus_suiviconsoplus_sans_perso.xml
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_suiviconsoplus_sans_perso.xml
+END
+opt_10mn_europe_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_10mn_europe_gp.xml
+END
+options_sms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/options_sms.xml
+END
+opt_appelprixunique.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_appelprixunique.xml
+END
+limande_post.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/limande_post.xml
+END
+selfcare_omer_new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_omer_new.xml
+END
+recharge.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge.xml
+END
+plan_tarifaire.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/plan_tarifaire.xml
+END
+opt_tv_max.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_tv_max.xml
+END
+plan_tarifaire_free.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/plan_tarifaire_free.xml
+END
+opt_esf_30_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_30_pro.xml
+END
+recharge_cmo_cb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_cmo_cb.xml
+END
+opt_forf_sms_postpaid_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_forf_sms_postpaid_pro.xml
+END
+spider_postpaid_sce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/spider_postpaid_sce.xml
+END
+opt_esf_20_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_20_gp.xml
+END
+spider.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/spider.xml
+END
+opt_esf_30_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_30_gp.xml
+END
+promo_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/promo_cmo.xml
+END
+opt_ow_postpaid_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_postpaid_pro.xml
+END
+opt_esf_60_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_60_gp.xml
+END
+opt_pass_vacances.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_pass_vacances.xml
+END
+callback.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/callback.xml
+END
+opt_sport_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_sport_mensu.xml
+END
+sv_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/sv_options.xml
+END
+opt_esf_30_france_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_30_france_gp.xml
+END
+janus_bonus_choisir.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_bonus_choisir.xml
+END
+opt_ikdo_vx_sms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ikdo_vx_sms.xml
+END
+opt_internet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_internet.xml
+END
+recharge_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_cmo.xml
+END
+limande_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/limande_mobi.xml
+END
+opt_ow_10E_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_10E_mobi.xml
+END
+opt_pack_voeux_smsmms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_pack_voeux_smsmms.xml
+END
+opt_esf_45_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_45_pro.xml
+END
+opt_pack_noel_mms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_pack_noel_mms.xml
+END
+opt_weinf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_weinf.xml
+END
+recharge_cb_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_cb_mobi.xml
+END
+opt_afterschool.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_afterschool.xml
+END
+sachem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/sachem.xml
+END
+accueil_sms_mms_infos.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/accueil_sms_mms_infos.xml
+END
+opt_esf_20_france_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_20_france_gp.xml
+END
+opt_esf_45_france_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_45_france_pro.xml
+END
+opt_vacances.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_vacances.xml
+END
+janus_bonus_decouvrir_cible.xml
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_bonus_decouvrir_cible.xml
+END
+opt_ow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow.xml
+END
+opt_ow_6E_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_6E_mobi.xml
+END
+opt_ssms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ssms.xml
+END
+opt_voyage.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_voyage.xml
+END
+opt_bsf_postpaid_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_bsf_postpaid_pro.xml
+END
+opim_long.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opim_long.xml
+END
+plan_tarif_bzh_cmo_cb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/plan_tarif_bzh_cmo_cb.xml
+END
+opt_mms_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_mms_mensu.xml
+END
+opt_total_tv_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_total_tv_mensu.xml
+END
+opt_10mn_europe_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_10mn_europe_pro.xml
+END
+recharge_umobile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_umobile.xml
+END
+parentChild.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/parentChild.xml
+END
+opt_media_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_media_cmo.xml
+END
+opt_surf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_surf.xml
+END
+souscrire_opt_m6.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/souscrire_opt_m6.xml
+END
+opt_owunite.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_owunite.xml
+END
+opt_kdo_sinf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_kdo_sinf.xml
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/Makefile
+END
+opt_total_tv.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_total_tv.xml
+END
+m5.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/m5.xml
+END
+option_TV.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/option_TV.xml
+END
+janus_bonus_choisir_promo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_bonus_choisir_promo.xml
+END
+opt_esf_60_pro.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_60_pro.xml
+END
+selfcare.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare.xml
+END
+callback_test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/callback_test.xml
+END
+opt_esf_45_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_45_gp.xml
+END
+noel.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/noel.xml
+END
+opt_cityzi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_cityzi.xml
+END
+promo_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/promo_mobi.xml
+END
+opt_ow_3E_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_ow_3E_mobi.xml
+END
+opt_surf_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_surf_mensu.xml
+END
+limande.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/limande.xml
+END
+janus_suiviconsoplus_perso.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/janus_suiviconsoplus_perso.xml
+END
+redirect_oto_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/redirect_oto_cmo.xml
+END
+mmsinfos_video.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/mmsinfos_video.xml
+END
+opt_tv_mensu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_tv_mensu.xml
+END
+selfcare_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_cmo.xml
+END
+jeu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/jeu.xml
+END
+opt_bsf_postpaid_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_bsf_postpaid_gp.xml
+END
+redirect_oto_postpaid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/redirect_oto_postpaid.xml
+END
+visio.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/visio.xml
+END
+sms_infos.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/sms_infos.xml
+END
+selfcare_long.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_long.xml
+END
+selfcare_omer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/selfcare_omer.xml
+END
+opt_zap_zone.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_zap_zone.xml
+END
+plan_tarif_bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/plan_tarif_bzh_cmo.xml
+END
+orange_ligue1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/orange_ligue1.xml
+END
+recharge_bzh_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_bzh_cmo.xml
+END
+orange_ligue1_postpaid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/orange_ligue1_postpaid.xml
+END
+opt_unik.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_unik.xml
+END
+redirect_oto_mobi.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/redirect_oto_mobi.xml
+END
+mmsinfos.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/mmsinfos.xml
+END
+opt_forf_sms_cmo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_forf_sms_cmo.xml
+END
+nouveautes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/nouveautes.xml
+END
+resiliation_options_postpaid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/resiliation_options_postpaid.xml
+END
+recharge_omer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/recharge_omer.xml
+END
+plan_tarifaire_omer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/plan_tarifaire_omer.xml
+END
+opt_esf_60_france_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_60_france_gp.xml
+END
+opt_esf_45_france_gp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_esf_45_france_gp.xml
+END
+opt_sms_illimite.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_sms_illimite.xml
+END
+opt_numprefp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_numprefp.xml
+END
+opt_internet_max.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/selfcare_long/opt_internet_max.xml
+END

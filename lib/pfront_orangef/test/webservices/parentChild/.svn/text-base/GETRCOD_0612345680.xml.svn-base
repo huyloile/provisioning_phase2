@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+ <getRcodResponse xmlns="urn:sda.service.ecare/G8">
+            <return>
+                <ns1:codPlanTarifaire xmlns:ns1="urn:sda.service.ecare/G8:wsdl">ESEW3</ns1:codPlanTarifaire>
+                <ns2:libPlanTarifaire xmlns:ns2="urn:sda.service.ecare/G8:wsdl">forfait infini 3H</ns2:libPlanTarifaire>
+                <ns3:listeRcodItem xmlns:ns3="urn:sda.service.ecare/G8:wsdl">
+                    <ns3:codeNiveau>3</ns3:codeNiveau>
+                    <ns3:nbTentatives>-1</ns3:nbTentatives>
+                </ns3:listeRcodItem>
+                <ns4:nombreServicesOptionnelsContentBilling xmlns:ns4="urn:sda.service.ecare/G8:wsdl">0</ns4:nombreServicesOptionnelsContentBilling>
+                    <ns5:numAdv xmlns:ns5="urn:m8o.francetelecom.com:wsdl:resource">VD</ns5:numAdv>
+                    <ns6:numClient xmlns:ns6="urn:m8o.francetelecom.com:wsdl:resource">0061712420</ns6:numClient>
+                    <ns7:numImsi xmlns:ns7="urn:m8o.francetelecom.com:wsdl:resource">20801661312485</ns7:numImsi>
+            </return>
+        </getRcodResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,6 @@
+[
+{"ticket_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn[statut='-78']"},
+{"ticket_inaccessible","/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn[statut='-79']"},
+{"format_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn[statut='-98']"},
+{"erreur_technique","/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn[statut='-99']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn[statut!='0']"}].

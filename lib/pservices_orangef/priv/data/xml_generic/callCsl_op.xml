@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callCsl_op>
+      <sac:params>
+        <sac:name>DOS_NUMID</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(csl_op.DOS_NUMID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>PCT_MONTANT</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(csl_op.PCT_MONTANT.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>UNT_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(csl_op.UNT_NUM.)"?></sac:value>
+      </sac:params>
+    </sac:callCsl_op>
+  </soapenv:Body>
+</soapenv:Envelope>

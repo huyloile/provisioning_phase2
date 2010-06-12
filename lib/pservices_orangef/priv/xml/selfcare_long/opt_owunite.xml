@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  
+  <page backtext="notext" descr="Orange World a l'unite" cost="freet_pt">
+    <title>Menu Orange World a l'unite</title>
+    <redirect src="erl://svc_options_mobi:first_page?opt_owunite&amp;#opt_deja_active&amp;#page_vide&amp;#page_vide&amp;#generique"/>
+  </page> 
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World a l'unite page offre incompatible">
+    <title>option Orange World a l'unite page offre incompatible</title>
+    Bonjour, vous ne pouvez pas activer Orange World a l'unite. Pour +d'infos contactez
+    votre service clients Orange mobile au 722 depuis votre mobile (0,37 E/min). Merci de votre appel.<br/>
+  </page>
+
+  <page tag="offre_incomp_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World a l'unite page offre incompatible suite">
+    <title>option Orange World a l'unite page offre incompatible suite</title>
+    depuis votre mobile (0,37 E/min.). Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="generique" backtext="notext" descr="Orange World a l'unite" 
+	cost="freet_pt">
+    <title>Menu Orange World a l'unite</title>
+    Orange World a l'unite :<br/>
+    <a href="#infos">Decouvrir</a><br/>
+    <a href="#tarifs">Conditions et tarifs</a><br/>
+    <a href="#do_activation">Choisir</a>     
+  </page> 
+  
+  <page tag="success" nav="end" cost="free_pt">
+    Votre demande d'activation a ete prise en compte et sera
+    effective sous 24h.<br/>
+    Merci de votre appel<br/>
+  </page>
+  
+  <page tag="opt_deja_active" nav="end" cost="free_pt">
+    Bonjour, Orange World a l'unite est deja active. Orange vous remercie de
+    votre appel.
+  </page>
+  
+  <page tag="infos" descr="O.World Décourvir: Page 1" cost="free_pt">
+    <title>Or World:Découvrir P1</title>
+    Avec Orange World a l'unite, vous accedez a l'ensemble des
+    services Orange World avec un tarif avantageux pour vos com
+    WAP et WEB<br/>
+    <a href="#infos_2">Suite</a><br/>
+    <a href="#do_activation">Choisir</a>
+  </page>
+  
+  <page tag="infos_2" descr="O.World Décourvir: Page 2" cost="free_pt">
+    <title>Or World:Découvrir P3</title>
+    Si vous disposez d'un mobile compatible GPRS, vous payez
+    au volume de donnees echangees 0.15E/10Ko ou a la duree: 0.15E/min*<br/>
+    <a href="#do_activation">Choisir</a>
+  </page>
+  
+  <page tag="tarifs" descr="O.World Tarifs: Page 1" cost="free_pt">
+    <title>Tarif : Page 1</title>
+    *Facturation au volume depuis un terminal GPRS parametre sur le
+    GPRS. Facturation a la duree depuis un terminal WAP non GPRS ou<br/>
+    <a href="#tarifs_2">Suite</a><br/>
+    <a href="#do_activation">Choisir</a>
+  </page>
+  
+  <page tag="tarifs_2" descr="O.World Tarifs: Page 2" cost="free_pt">
+    <title>Tarif : Page 2</title>
+    ou depuis un terminal GPRS non parametre sur le GPRS. GPRS
+    disponible dans la zone de couverture du reseau GPRS d'Orange<br/>
+    <a href="#do_activation">Choisir</a>
+  </page>
+
+   <page tag="do_activation">
+     <redirect src="erl://svc_options_mobi:do_subscription?opt_owunite&amp;#success,#opt_deja_active,#system_failure"/>
+  </page>
+
+  <page tag="page_vide">
+  </page>
+  
+  <!-- Error Pages -->
+   
+  <page tag="system_failure" nav="end">
+    Service temporairement indisponible
+  </page>
+ 
+</pages>

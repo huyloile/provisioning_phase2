@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Carrefour selfcare pages">
+
+  <page descr="Carrefour prepaid: redir by USSD level">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#sc_level12&amp;#sc_level3"/>
+  </page>
+  
+  <page tag="sc_level12" descr="Carrefour prepaid:Redirection fonction etat compte princ">
+   <redirect src="erl://svc_carrefour:select_home_niv1"/>
+  </page>
+
+  <!--Niv 1-->
+
+ <page tag="ac_niv1" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso 180">
+  <title>Carrefour suivi conso 180 :Niv 1 cpte princ actif</title>
+  Bienvenue sur Carrefour Mobile<br/>
+  Au <include src="erl://svc_util_of:print_today_datetime?dmhm"/> Vous
+  disposez d'un solde de
+  <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+  sur votre compte rechargeable.<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+  </page>
+  
+ <page tag="ep_niv1" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso epuise 180">
+  <title>Carrefour suivi conso epuise 180 : Niv 1</title>
+  Votre compte est epuise merci de le recharger<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+ </page>
+
+ <page tag="suivi_conso_plus" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso +">
+  <title>Carrefour suivi conso +</title>
+  Compte Europe : <include src="erl://svc_compte:print_solde?forf_carrefour_z1"/> euros jusqu'au
+  <include src="erl://svc_options:print_account_dlv?forf_carrefour_z1&amp;dmy"/><br/>
+  Compte Maghreb/Turquie/Amerique du Nord : <include src="erl://svc_compte:print_solde?forf_carrefour_z2"/> euros jusqu'au
+  <include src="erl://svc_options:print_account_dlv?forf_carrefour_z2&amp;dmy"/><br/>
+  Compte Monde : <include src="erl://svc_compte:print_solde?forf_carrefour_z3"/> euros jusqu'au
+  <include src="erl://svc_options:print_account_dlv?forf_carrefour_z3&amp;dmy"/><br/>
+  <include src="erl://svc_of_mvno:print_active_account?carrefour_prepaid&amp;cpte_sms_ill&amp;#rech_sms_ill_page"/>
+</page>
+<page tag="rech_sms_ill_page" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso +">
+  Recharge SMS illimites (metrop. hors SMS surtaxes) jusqu'au
+  <include src="erl://svc_of_plugins:print_end_credit?cpte_sms_ill&amp;dm"/>
+</page>
+<!--Niv2-->
+
+ <page tag="ac_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso 130">
+  <title>Carrefour suivi conso 130 :Niv 2 cpte princ actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> Vous
+  disposez d'un solde de
+  <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+  sur votre compte rechargeable.<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+ </page>
+ 
+ <page tag="ep_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso epuise 130">
+  <title>Carrefour suivi conso epuise 130 : Niv 2</title>
+  Votre compte est epuise merci de le recharger<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+ </page>
+
+<!--Niv3-->
+  
+  <page tag="sc_level3" descr="Carrefour prepaid:Redirection fonction type de terminal">
+   <redirect src="erl://svc_carrefour:select_home_niv3"/>
+  </page>
+  
+  <page tag="act_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso 64">
+  <title>Carrefour suivi conso 64:Niv 3 cpt princ actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> Solde
+  compte rechargeable =
+  <include src="erl://svc_compte:print_solde?cpte_princ"/> euros<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+ </page>
+
+  <page tag="ep_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Carrefour suivi conso epuise 64">
+  <title>Carrefour suivi conso epuise 64 :Niv 3</title>
+  Votre compte est epuise merci de le recharger<br/>
+  <a href="recharge_carrefour.xml">Recharger</a><br/>
+  <a href="#suivi_conso_plus">Suivi conso +</a><br/>
+ </page>
+
+  <page tag="notidentified">
+    <redirect src="erl://svc_util:redirect_size?130&#notidentified_long&#notidentified_short"/>
+  </page>
+
+  <page tag="notidentified_long" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Carrefour Prepaid : not identified">
+    <title>Carrefour Prepaid : not identified</title>
+    Compte Carrefour Prepaid suspendue: merci de vous rendre dans un point de vente
+    Carrefour Prepaid avec une piece d'identite.
+  </page>
+
+  <page tag="notidentified_short" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Reject : Carrefour Prepaid not identified">
+    <title>Carrefour Prepaid : not identified</title>
+    Compte suspendue: votre identite ne nous est pas parvenue.
+  </page>
+
+  <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Carrefour Prepaid :Cpte sursitaire">
+    <title>Carrefour Prepaid : Cpte sursitaire</title>
+    Compte Carrefour Prepaid<br/>
+    La date limite de rechargement est depassee. Votre Compte Carrefour Prepaid
+    est definitivement inutilisable.
+  </page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Carrefour Prepaid : Cpte sursitaire">
+    <title>Carrefour Prepaid : Cpte sursitaire</title>
+    Votre Compte est definitivement inutilisable.</page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="Carrefour Prepaid : Cpte suspendu">
+    <title>Carrefour Prepaid : Cpte suspendu</title>
+    Compte Carrefour Prepaid suspendu : vos appels sont bloques.<br/>
+    Veuillez contacter le service-clients Carrefour Prepaid.</page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="system_free_pt" descr="Carrefour Prepaid : Cpte suspendu">
+    <title>Carrefour Prepaid : Cpte suspendu</title>
+    Votre Compte est suspendu : vos appels sont bloques.<br/></page>
+
+  <page tag="resilie">
+   <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+ 
+</pages>

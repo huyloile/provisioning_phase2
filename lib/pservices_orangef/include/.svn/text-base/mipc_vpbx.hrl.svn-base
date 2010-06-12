@@ -1,0 +1,14 @@
+-record(mipc_vpbx, { profile = undefined }).
+-define(ServiceName,"mipcvpbx").
+-define(immediat, "I").
+-define(recherche_contact, "RC").
+-define(conditionnel, "C").
+-define(occupation, "O").
+-define(non_response, "NR").
+-define(Max_situation,6).
+
+-define(MIPC,mipc).
+-define(VPBX,vpbx).
+-define(MIPC_TYPE_OFFRE,"MIPC").
+-define(VPBX_TYPE_OFFRE,"VPBX").
+-define(VPBX_TYPE_OFFRE1,"VPBx").

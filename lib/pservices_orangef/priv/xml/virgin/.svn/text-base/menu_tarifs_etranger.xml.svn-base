@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Virgin selfcare pages">
+
+  <page tag="tarifs_etranger_menu" backtext="notext" menutext="notext" cost="free_pt"
+	descr="Virgin suivi conso Niv 1 Menu tarifs a l etranger">
+    <title>Virgin suivi conso Niv 1 Menu tarifs a l etranger</title>	
+    <a href="#tarifs_etranger_1">Connaitre les tarifs a l'etranger</a><br/>
+	<a href="selfcare_virgin_pp.xml#sc_niv12" key="0">Retour au suivi conso</a>
+  </page>
+
+  <page tag="tarifs_etranger_1" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger 1">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger 1</title>
+    Les destinations sont classees en 4 zones tarifaires : Europe, Suisse/Andorre, Maghreb/Amerique du Nord/Turquie et " Reste du monde ".<br/>
+	<a href="#tarifs_etranger_menu" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+    <a href="#tarifs_etranger_suite_1">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_1" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 1">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 1</title>
+    Un seul tarif est applique par zone pour vos appels voix vers la France Metropolitaine ou la zone de votre destination. Prix/mn des appels emis depuis et<br/>
+	<a href="#tarifs_etranger_1" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_2">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_2" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 2">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 2</title>
+    vers: la zone Europe =0.514E, (sauf Suisse-Andorre =1E15), la zone Maghreb/Amerique du Nord/Turquie=1.40E, la zone "Reste du monde"=3E. Prix/mn des appels<br/>
+	<a href="#tarifs_etranger_suite_1" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_3">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_3" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 3">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 3</title>
+    recus depuis : la zone Europe = 0.227E, (sauf Suisse-Andorre =0.65E), la zone Maghreb/Amerique du Nord/Turquie = 0.75E, la zone "Reste du monde" = 1.50E.<br/>
+	<a href="#tarifs_etranger_suite_2" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_4">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_4" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 4">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 4</title>
+    En zone UE, vos appels sont decomptes a la sec des la 1ere sec pour la reception, a la sec au-dela de 30sec indivisibles pour les emissions d'appel en UE<br/>
+	<a href="#tarifs_etranger_suite_3" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_5">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_5" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 5">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 5</title>
+    et vers la France. Dans les autres pays, facturation a la sec au-dela de la 1ere min indivisible. Envoi d'1 SMS vers ou depuis etranger: 0.30E (0,1315E<br/>
+	<a href="#tarifs_etranger_suite_4" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_6">suite</a>
+  </page>
+  
+  <page tag="tarifs_etranger_suite_6" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 6">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 6</title>
+    depuis UE vers UE), reception gratuite. Envoi d'1 MMS vers ou depuis etranger: 1.10E. Reception d'un MMS: 0.80E. Prix des connexions data depuis<br/>
+	<a href="#tarifs_etranger_suite_5" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a><br/>
+	<a href="#tarifs_etranger_suite_7">suite</a>
+  </page>
+
+  <page tag="tarifs_etranger_suite_7" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Virgin suivi conso Niv 1 tarifs a l etranger suite 7">
+    <title>Virgin suivi conso Niv 1 tarifs a l etranger suite 7</title>
+    etranger:0,30E TTC/10ko.<br/>
+	<a href="#tarifs_etranger_suite_6" key="0">retour</a><br/>
+	<a href="#tarifs_etranger_menu" key="00">menu</a>
+  </page>
+  
+</pages>

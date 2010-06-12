@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/ocfrdp
+END
+ocfrdp_fake.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/ocfrdp/ocfrdp_fake.erl
+END
+ocfrdp_fake.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/ocfrdp/ocfrdp_fake.hrl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/ocfrdp/Makefile
+END

@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <consulterParametrageReelResponse xmlns="urn:orange:weu:ssi">
+         <resultat xmlns="">
+            <codeRetour>0</codeRetour>
+            <commentaire>Succ&#xE8;s</commentaire>
+         </resultat>
+         <parametrageNumeroUnique xsi:nil="true" xmlns=""/>
+         <parametrageRenvois xmlns="">
+            <typeRenvoi>RC</typeRenvoi>
+            <versNumerosLibres>
+               <premierNumero>33660007002</premierNumero>
+               <listeNumeros>
+                  <numero>33260002001</numero>
+                  <numero>33260002002</numero>
+               </listeNumeros>
+               <boiteVocale>8</boiteVocale>
+            </versNumerosLibres>
+            <versAssistante xsi:nil="true"/>
+            <saufAppelsEmisDepuis xsi:nil="true"/>
+         </parametrageRenvois>
+      </consulterParametrageReelResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

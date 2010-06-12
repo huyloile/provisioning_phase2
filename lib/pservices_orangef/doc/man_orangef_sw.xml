@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" 
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+ [ <!ENTITY clcm                 SYSTEM "../../../../doc/clcm_bookinfo.xml">
+   <!ENTITY params_cc            SYSTEM "params_cc.xml">
+   <!ENTITY biblio_cc            SYSTEM "../../../doc/biblio_cc.xml">
+   <!ENTITY biblio_oma           SYSTEM "../../../lib/oma/doc/biblio_oma.xml">
+   <!ENTITY biblio_gsm           SYSTEM "../../../../doc/biblio_gsm.xml">
+   <!ENTITY glossary_gsm         SYSTEM "../../../../doc/glossary_gsm.xml">
+   <!ENTITY glossary_cc          SYSTEM "../../../doc/glossary_cc.xml">
+ ]>
+
+<book>
+  <bookinfo>
+
+    <productname>ORANGE_SW</productname>
+    <title>Cellcube USSD portal</title>
+    <subtitle>Reference manual</subtitle>
+    <productnumber>MAN_ORANGE_SW</productnumber>
+    <edition>0.0</edition>
+
+    &clcm;
+
+    <abstract><title>Abstract</title>
+      <para>Ce document décrit les procédures d'installation, d'opération 
+	de maintenance pour la plate-forme et les développements spécifiques 
+	Orange France.
+      </para>
+      <para>Ce document vient compléter le document d'architecture technique
+      </para>
+    </abstract>
+
+<!--
+    <revhistory>
+      <revision>
+	<revnumber>0.1</revnumber>
+	<date>2004-12-09</date>
+	<authorinitials>SB</authorinitials>
+	<revremark>Converted</revremark>
+      </revision>
+    </revhistory>
+-->
+
+  </bookinfo>
+
+  <!-- -->
+
+  <chapter><title>Introduction</title>
+    <section><title>Purpose</title>
+      <para>
+        Ce document décrit les procédures d'installation, d'opération de 
+	maintenance pour la plate-forme et les développements spécifiques à 
+	Orange France.
+      </para>
+    </section>
+
+    <section><title>Scope</title>
+      <para>Ce document couvre uniquement la plate-forme et les développements 
+	spécifiques à Orange France.</para>
+      <para>Pour les instructions concernant OMA GUI, voir 
+	<citation>MAN_OMA</citation>.</para>
+      <para>Pour les instructions concernant Cellcube, voir 
+	<citation>FS_CELLCUBE_SW</citation> et 
+	<citation>MAN_CELLCUBE_SW</citation>.</para>
+      <para>Pour toutes informations concernant l'implementation de services 
+	avec l'interface XML/HTTP , voir <citation>IS_XML_HTTP_CELLCUBE</citation>.
+      </para>
+    </section>
+
+  </chapter>
+
+  <!-- -->
+
+  <chapter><title>Installation et configuration initiale</title>
+
+    <section id="config_os"><title>Configuration Specification de l'OS Linux</title>
+
+      <section><title>Synchronisation Temporelle</title>
+	<para>TODO decrire la configuration <command>ntp</command>.</para>
+      </section>
+  </section>
+
+  </chapter>
+
+  <!-- -->
+
+  <chapter><title>Operation procedures</title>
+    <section id="monthly_log_bck"><title>Procédure de sauvegarde mensuelle des logs de session</title>
+      <para>
+	Quand on est après le 16 du mois et que l'on est d'astreinte, il faut 
+	copier les logs de sessions sur les DATs "mensuelles", habituellement 
+	conservées dans le sac du portable d'astreinte.
+      </para>
+      <orderedlist>
+	<listitem><para>Se connecter sur admin0 en tant que root,
+	  </para></listitem>
+	<listitem>
+	  <para>Sortir la bande des logs nocturnes avec la commande :
+	  </para>
+	  <para>
+	    <computeroutput>mt -f /dev/nst0 offline</computeroutput>
+	  </para></listitem>
+	<listitem><para>Aller mettre la DAT d'astreinte à la place 
+	    (admin0 est un 2U dans la baie HP au 23 Nov 2005),
+	  </para></listitem>
+	<listitem><para>Positionner la DAT à la fin des données :
+	  </para>
+	  <para>
+	    <computeroutput>mt -f /dev/nst0 eod</computeroutput>
+	  </para></listitem>
+	<listitem><para>Effectuer la sauvegarde (MM est donc à remplacer par 
+	    le mois précédent, i.e. 05 pour le mois de mai) :
+	  </para>
+	  <para>
+	    <computeroutput>nice tar -cvf /dev/nst0 /mnt/backup/save_logs/logs_2005MM*</computeroutput>
+	  </para></listitem>
+	<listitem><para>Dans le cas où tout s'est bien passé (MM ...) :
+	  </para>
+	  <para>
+	    <computeroutput>rm /mnt/backup/save_logs/logs_2005MM*</computeroutput>
+	  </para></listitem>
+	<listitem><para>Remettre en place la DAT des sauvegardes nocturnes, et
+	    étiqueter la DAT mensuelle.
+	  </para></listitem>
+      </orderedlist>
+      <para>
+      </para>
+      <para>
+	A noter que nous ne devons pas garder les sauvegardes pendant plus 
+	d'un an.
+      </para>
+    </section>
+
+  </chapter>
+
+  <!-- -->
+
+  <chapter id="config_params"><title>Configuration parameters</title>
+    <formalpara><title>Note</title><para>
+        For each parameter, the <emphasis>Updating policy</emphasis> section specifies whether changes take effect immediately,
+        when application processes restart, or when the logical node restarts.
+    </para></formalpara>
+    &params_cc;
+  </chapter>
+
+  <!-- -->
+
+  <bibliography><title>References</title>
+    &biblio_oma;
+    &biblio_gsm;
+    &biblio_cc;
+  </bibliography>
+
+  <glossary>
+    &glossary_gsm;
+    &glossary_cc;
+  </glossary>
+
+</book>

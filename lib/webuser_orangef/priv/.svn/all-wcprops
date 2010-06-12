@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv
+END
+create-webuser_of-tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/create-webuser_of-tables.sql
+END
+messages_fr.csv
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/messages_fr.csv
+END

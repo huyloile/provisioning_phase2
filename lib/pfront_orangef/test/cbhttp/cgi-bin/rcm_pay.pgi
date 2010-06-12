@@ -1,0 +1,160 @@
+#!/bin/sh
+
+read BODY
+MSISDN=""
+IMSI=""
+ORDRE=""
+VERSION=""
+ORIGINE=""
+
+##echo ${BODY%%[=]*}
+x=`expr "$BODY" : '.*MSISDN=\([0-9]*\)'` && MSISDN="$x"
+y=`expr "$BODY" : '.*ORDRE=\([0-Z]*\)'` && ORDRE="$y"
+t=`expr "$BODY" : '.*IMSI=\([0-9]*\)'` && IMSI="$t"
+z=`expr "$BODY" : '.*VERSION=\([0-9]*\)'` && VERSION="$z"
+w=`expr "$BODY" : '.*ORIGINE=\([0-Z]*\)'` && ORIGINE="$w"
+
+
+function affiche {
+    case $ORIGINE in
+	*CMO)
+	    affiche_cmo;;
+	*MOB)
+	    affiche_mobi
+    esac
+}
+
+
+function affiche_cmo {
+    case $VERSION in
+	*1)
+	    pay;;
+	*)
+	    pay_v2
+    esac
+}
+function affiche_mobi {
+    case $VERSION in
+	*)
+	    pay_mobi_v2
+    esac
+}
+
+
+function pay {
+    case $MSISDN in
+	*041)
+	    echo "STATUT=0296;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*042)
+	    echo "STATUT=0297;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*043)
+	    echo "STATUT=0301;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*044)
+	    echo "STATUT=0302;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*045)
+	    echo "STATUT=0303;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*046)
+	    echo "STATUT=0314;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*047)
+	    echo "STATUT=0298;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*048)
+	    echo "STATUT=0401;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=;STATUT_LIBELLE=error";;
+	*049)
+	    echo "STATUT=0499;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=;UNT_NUM=;BON_PCT=;BONUS_MONTANT=";;
+	*)
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;SOLDE=6000;UNT_NUM=1;BON_PCT=5;BONUS_MONTANT=500";;
+    esac
+}
+
+function pay_v2 {
+    case $MSISDN in
+	*041)
+	    echo "STATUT=0296;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*042)
+	    echo "STATUT=0297;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*043)
+	    echo "STATUT=0301;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*044)
+	    echo "STATUT=0302;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*045)
+	    echo "STATUT=0303;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*046)
+	    echo "STATUT=0314;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*047)
+	    echo "STATUT=0298;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*048)
+	    echo "STATUT=0401;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=error";;
+	*049)
+	    echo "STATUT=0499;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*050)
+	    echo "STATUT=0300;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*051)
+	    echo "STATUT=0304;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*)
+	    ## cas classique
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;NB_CPT=1;TCP_NUM=1;CPP_DATE_LV=3f8ff668;SOLDE=6000;UNT_NUM=1;BON_PCT=5;BONUS_MONTANT=1000";;   
+    esac
+}
+
+function pay_mobi_v2 {
+    case $MSISDN in
+	*041)
+	    echo "STATUT=0296;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*042)
+	    echo "STATUT=0297;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*043)
+	    echo "STATUT=0340;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*044)
+	    echo "STATUT=0314;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*045)
+	    echo "STATUT=0344;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*046)
+	    echo "STATUT=0345;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*047)
+	    echo "STATUT=0350;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*048)
+	    echo "STATUT=0351;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=error";;
+	*049)
+	    echo "STATUT=0352;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=error";;
+	*050)
+	    echo "STATUT=0353;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=error";;
+	*051)
+	    echo "STATUT=0370;MSISDN=$MSISDN;IMSI=$IMSI;STATUT_LIBELLE=error";;
+	*052)
+	    echo "STATUT=0352;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*053)
+	    echo "STATUT=0353;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*054)
+	    echo "STATUT=0370;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*055)
+	    echo "STATUT=0371;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*056)
+	    echo "STATUT=0372;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*057)
+	    echo "STATUT=0373;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*058)
+	    echo "STATUT=0377;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*059)
+	    echo "STATUT=0399;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*060)
+	    echo "STATUT=0499;MSISDN=$MSISDN;IMSI=$IMSI;";;
+	*061)
+	    ## cas rech multiple
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;NB_CPT=2;TCP_NUM=1:4;CPP_DATE_LV=1066399336:3f8ff668;SOLDE=6000:1000;UNT_NUM=1:1;BON_PCT=5:5;BONUS_MONTANT=500:100";; 
+	*062)
+	    ## cas rechargement série limitée noël
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;NB_CPT=2;TCP_NUM=1:111;CPP_DATE_LV=1066399336:3f8ff668;SOLDE=21000:20000;UNT_NUM=1:1;BON_PCT=5:5;BONUS_MONTANT=0:0";;   
+	*063)
+	    ## cas rechargement serie limitee 7 euros
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;NB_CPT=2;TCP_NUM=1:113;CPP_DATE_LV=1066399336:3f8ff668;SOLDE=7000:20000;UNT_NUM=1:1;BON_PCT=5:5;BONUS_MONTANT=0:0";;   
+	*)
+	    ## cas classique
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;NB_CPT=1;TCP_NUM=1;CPP_DATE_LV=1066399336;SOLDE=6000;UNT_NUM=1;BON_PCT=5;BONUS_MONTANT=500";;   
+    esac
+}
+
+cat <<EOF
+Content-Type: text/xml
+
+`affiche`
+EOF

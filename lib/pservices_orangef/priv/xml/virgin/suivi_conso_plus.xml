@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Suivi conso plus page">
+  <page descr="Virgin prepaid: redir vers suivi conso plus">
+    <include src="erl://svc_virgin:select_suivi_conso_plus"/>
+  </page>
+
+  <page tag="ac_ac_ac" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte multi-usage, cpte voix, cpte sms">
+    <title>Virgin suivi conso plus Actif: cpte multi-usage, cpte voix, cpte sms</title>
+    - Bonus minutes : <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_opt_voix_virgin"/><br/>
+    - Bonus SMS : <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_opt_sms_virgin"/><br/>
+    - XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+  
+   <page tag="ac_ac_ep" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte multi-usage, cpte voix Epuise: cpte sms">
+    <title>Virgin suivi conso plus Actif: cpte multi-usage, cpte voix Epuise: cpte sms</title>
+    - Bonus minutes : <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_opt_voix_virgin"/><br/>
+    - XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+  
+
+  <page tag="ac_ep_ac" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte multi-usage, cpte voix, cpte sms">
+    <title>Virgin suivi conso plus Actif: cpte multi-usage, cpte voix, cpte sms</title>
+    - Bonus SMS : <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_opt_sms_virgin"/><br/>
+    - XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+
+  <page tag="ac_ep_ep" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte multi-usage Epuise: cpte voix, cpte sms">
+    <title>Virgin suivi conso plus Actif: cpte multi-usage Epuise: cpte voix, cpte sms</title>
+    - XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+
+  <page tag="ep_ac_ac" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte voix, cpte sms Epuise: cpte multi-usage">
+    <title>Virgin suivi conso plus Actif: cpte voix, cpte sms Epuise: cpte multi-usage, cpte voix</title>
+    - Bonus minutes : <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_opt_voix_virgin"/><br/>
+    - Bonus SMS : <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_opt_sms_virgin"/><br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+
+  <page tag="ep_ac_ep" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte voix Epuise: cpte multi-usage, cpte sms">
+    <title>Virgin suivi conso plus Actif: cpte voix Epuise: cpte multi-usage, cpte sms</title>
+    - Bonus minutes : <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_opt_voix_virgin"/><br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+
+  <page tag="ep_ep_ac" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Actif: cpte sms Epuise: cpte multi-usage, cpte voix">
+    <title>Virgin suivi conso plus Actif: cpte sms Epuise: cpte multi-usage, cpte voix</title>
+    - Bonus SMS : <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_opt_sms_virgin"/><br/>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+  
+  <page tag="ep_ep_ep" backtext="notext" cost="free_pt" backtext="notext" menutext="notext"
+        volatile="true" descr="Virgin suivi conso plus Epuise: cpte multi-usage, cpte voix cpte sms">
+    <title>Virgin suivi conso plus Epuise: cpte multi-usage, cpte voix cpte sms</title>
+    <a href="selfcare_virgin_pp.xml#sc_niv12" key="0">retour au suivi conso</a>
+  </page>
+
+
+</pages>
+
+

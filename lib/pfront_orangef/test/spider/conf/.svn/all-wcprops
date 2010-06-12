@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/spider/conf
+END
+httpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/spider/conf/httpd.conf
+END
+mime.types
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/spider/conf/mime.types
+END

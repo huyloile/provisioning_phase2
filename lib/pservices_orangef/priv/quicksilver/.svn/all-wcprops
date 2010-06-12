@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/quicksilver
+END
+create-quicksilver.sql
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/quicksilver/create-quicksilver.sql
+END
+populate-quicksilver.sql
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/quicksilver/populate-quicksilver.sql
+END
+quicksilver.csv
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/quicksilver/quicksilver.csv
+END

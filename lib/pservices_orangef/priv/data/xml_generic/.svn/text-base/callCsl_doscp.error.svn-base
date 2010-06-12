@@ -1,0 +1,8 @@
+[{"dossier_inaccessible","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-79']"},
+{"aucun_compte_trouve","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-92']"},
+{"plus_d_un_compte_trouve","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-96']"},
+{"dossier_non_trouve","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-97']"},
+{"format_requete_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-98']"},
+{"incident_technique","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-99']"},
+{"version_non_supportee","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut='-101']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callCsl_doscpResponse/callCsl_doscpReturn[statut!='0']"}].

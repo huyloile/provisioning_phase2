@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+
+<pages descr="scripts pour le service : option SMS illimite">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_sms_illimite&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option SMS illimite page offre incompatible">
+    <title>option option SMS illimite page offre
+    incompatible</title>
+    Vous diposez de l'option SMS quotidienne qui est incompatible avec le bon plan 1 numero SMS illimite.
+    Pour beneficier de celui-ci, supprimez l'option SMS. Merci de votre appel.
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite deja active">
+    <title>option SMS illimite deja active</title>
+    Bonjour, votre bon plan 1 numero SMS illimite est deja activee. Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+  
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite solde insuffisant">
+    <title>option SMS illimite solde insuffisant</title>
+    Bonjour, pour souscrire au bon plan 1 numero SMS illimite,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite solde insuffisant M6">
+    <title>option SMS illimite solde insuffisant M6</title>
+    Bonjour, pour souscrire au bon plan 1 numero SMS illimite,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite solde insuffisant foot">
+    <title>option SMS illimite solde insuffisant foot</title>
+    Bonjour, pour souscrire au bon plan 1 numero SMS illimite,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite solde insuffisant Click">
+    <title>option SMS illimite solde insuffisant Click</title>
+    Bonjour, pour souscrire au bon plan 1 numero SMS illimite,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  
+  
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite menu generique">
+    <title>option SMS illimite menu generique</title>
+    Decouvrez le bon plan 1 numero SMS illimite: 
+    pour <include src="erl://svc_options:print_option_price?opt_sms_illimite"/> 
+    envoyez des SMS en illimite 24/24, 7j/7 vers le num de votre choix pdt 31 jours
+    <a href="#plus_dinfos">+ d'infos</a><br/>
+    <a href="#souscrire">Souscrire</a>
+    <a href="#conditions">Conditions</a><br/>
+  </page>
+  
+  <page tag="plus_dinfos" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page + d'infos">
+    <title>option SMS illimite page + d'infos</title>
+    Avec le bon plan 1 n° SMS illimite, envoyez des SMS en France metro vers 1 num
+    de votre choix en illimite pendant 31j pour
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    Le num choisi est valable 31 jours<br/>
+    <a href="#plus_dinfos_suite">Suite</a>
+  </page>
+
+  <page tag="plus_dinfos_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page + d'infos">
+    <title>option SMS illimite page + d'infos suite </title>
+    ... et ne peut pas etre change pendant cette periode. 
+    Vous pouvez suivre dans la rubrique suivi conso detaille ce bon plan.
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page conditions P1/3">
+    <title>option SMS illimite page conditions</title>
+    Option valable en France metropolitaine a souscrire du 04/10/07 au 14/11/07 
+    et reservee aux clients mobicarte ayant actives leur ligne entre le 01/09/07 et le...
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page conditions P2/3">
+    <title>option SMS illimite page conditions</title>
+    ...30/09/07. SMS illimites en France metropolitaine vers 1 numero de mobile
+    d'un operateur metropolitain (hors sms surtaxes et non convertibles en MMS ).
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page conditions P3/3">
+    <title>option SMS illimite page conditions</title>
+    Option valable pour 1 seul et meme numero de mobile par periode de 31 jours.
+    Option valable 31 jours a compter de la souscription. Le prix de l'option est preleve...
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page conditions P3/3">
+    <title>option SMS illimite page conditions</title>
+    ...sur le compte du client sous reserve d'un credit suffisant.
+    Souscription au 220 et le #123#.
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+
+ <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page souscrire">
+    <title>option SMS illimite page souscrire</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_sms_illimite&amp;#souscrire2&amp;#erreur_saisie">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	Merci de bien vouloir saisir les 10 chiffres du numero de votre choix. C'est a vous !
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+  <page tag="souscrire2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Le numero que vous venez de choisir est le <include src="erl://svc_options:print_numero_sms_illimite"/>,
+    merci de confirmer ce choix.<br/>
+    <a href="#souscrire3">Confirmer</a>
+  </page>
+
+  <page tag="souscrire3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Vous allez souscrire au bon plan 1 numero SMS illimite pour
+    <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    <a href="erl://svc_options_mobi:do_subscription?opt_sms_illimite&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+   </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	nav="stop" descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre bon plan 1 numero SMS illimite sera activee.
+    Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Vous avez souscrit au bon plan 1 numero SMS illimite pour <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Vous avez souscrit au bon plan 1 numero SMS illimite pour <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Vous avez souscrit au bon plan 1 numero SMS illimite pour <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option SMS illimite page apres confirmation">
+    <title>option SMS illimite page apres confirmation</title>
+    Vous avez souscrit au bon plan 1 numero SMS illimite pour <include src="erl://svc_options:print_option_price?opt_sms_illimite"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre bon plan sera activee.
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="erreur_saisie" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le numero saisi n'est pas  un numero d'un operateur en France metropolitaine.
+    <a href="#souscrire">Recommencer</a>
+  </page>
+ 
+  
+</pages>
+
+ 

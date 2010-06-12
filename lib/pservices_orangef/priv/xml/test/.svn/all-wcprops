@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/test
+END
+postpaid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/test/postpaid.xml
+END
+taxation.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/test/taxation.xml
+END
+test_flash.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/test/test_flash.xml
+END

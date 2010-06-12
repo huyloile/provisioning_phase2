@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  <page tag="postpaid" descr=" ">
+    <redirect src="erl://svc_spider:redirect_by_fileRestitutionType?RF=#rf,ND=#nd,NA=#na,?=#suiviconso1erepage"/>
+  </page>
+
+  <page tag="rf" descr="suivi conso postpaid niv 1 retard de facturation"
+	hist="dohist" >
+    Depuis le <include src="erl://svc_spider:print_dateProchFactuPlus1?~s"/> vous disposez a nouveau de votre forfait et de vos options eventuelles.
+  </page>
+
+  <page tag="nd" descr="suivi conso postpaid niv 1 nouveau dossier"
+	hist="dohist" menutext="notext">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+
+  <page tag="na" descr="suivi conso postpaid niv 1 acces refuse"
+	hist="dohist" menutext="notext">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="suiviconso1erepage" descr="suivi conso postpaid/prepaid niv 1"
+	hist="dohist">
+    <redirect src="erl://svc_spider:redirect_by_typeRestitution?FORF=#forfait,?=#restitGodetAError"/>
+  </page>
+
+  <page tag="forfait" descr="suivi conso postpaid niv 1 forfait">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#forfait_ep&amp;#forfait_ac"/>
+  </page>
+
+  <page tag="forfait_ac" descr="suivi conso postpaid niv 1 forfait ac" backtext="notext" menutext="notext">
+    <include src="erl://svc_spider:print_dateReactu?~s "/>
+    solde forfait <include src="erl://svc_spider:print_XXh?~s:"/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;~s~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Conso hors forfait:~sEUR"/>
+  </page>
+
+  <page tag="forfait_ep" descr="suivi conso postpaid niv 1 forfait ep" backtext="notext" menutext="notext">
+    <include src="erl://svc_spider:print_dateReactu?Au ~s "/>
+    <include src="erl://svc_spider:print_libelleepuise?1&amp;~s "/>
+    <include src="erl://svc_spider:print_XXh?~s "/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp;depasse de ~s~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Hors forfait:~sEUR"/>
+   </page>
+  
+  <page tag="restitGodetAError" descr="suivi conso niv 1 restitution impossible du godet A" nav="end" menutext="notext">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+</pages>

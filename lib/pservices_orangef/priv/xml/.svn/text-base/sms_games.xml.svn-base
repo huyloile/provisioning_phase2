@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+<!-- Filtres -->
+    <page descr="Jeux SMS: sms_games" nav="end">
+       <!--redirectsrc="erl://svc_util:redirect_size?181&amp;#check_access&amp;#not_compatible"/-->
+       Ce service est actuellement ferme.
+    </page>
+	
+	<page tag="check_access">
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#filter_sub,/orangef/home.xml#not_allowed"/>
+	</page>
+    <page tag="filter_sub">
+       <redirect src="erl://svc_util:redir_subscription?mobi=#filter_state,cmo=#filter_state,postpaid=#filter_state,dme=#filter_state,monacell_postpaid=#filter_state,monacell_prepaid=#filter_state,default=/orangef/home.xml#not_allowed"/>
+    </page>    
+    <page tag="filter_state">
+       <redirect src="erl://svc_home:filter_state_limit?#filter"/>
+    </page>
+    <page tag="filter">
+       <redirect src="erl://svc_util:filter_msisdn?#check_ansi&amp;#not_msisdn"/>
+    </page>
+
+   <page tag="check_ansi">
+    <redirect src="erl://svc_roaming:redir_roaming_network?ansi=#ansi,default=#init"/>
+   </page>
+
+   <page tag="ansi" descr="Menu Jeux SMS Orange ANSI" menutext="notext"
+	 backtext="notext" hist="bookmark" ismenu="false">
+     <title>Jeux SMS ANSI</title>
+     Bienvenue sur l'annuaire des jeux SMS Orange, pour continuer tapez repondre puis 1<br/>
+     <a href="#init">Continuer</a>
+   </page>
+
+   <page tag="init">
+     <redirect src="erl://svc_sms_games:init?#start"/>
+   </page>
+
+<!-- Accueil -->
+    <page tag="start" menutext="notext" backtext="notext" descr="Jeux SMS: Page d'accueil">
+    	Gagnez en ce moment 3 lecteurs MP3 a disque dur Sony<br/>
+       <!--a href="#concours">En concours</a><br/-->
+       <a href="#reflexion">Reflexion</a><br/>
+       <a href="#ludique">Ludique/Simulation</a><br/>
+       <a href="#action">Action</a><br/>
+       <a href="#casino">Casino/Strategie</a><br/>
+       <a href="#tarif">Tarif</a>
+    </page>
+
+<!-- Concours -->
+    <!--page tag="concours" backtext="notext" descr="Jeux SMS: concours">
+        <a href="#KiCdonc_blondes">KiCdonc special blondes</a><br/>
+    </page-->
+
+
+
+<!-- Reflexion -->
+    <page tag="reflexion" backtext="notext" descr="Jeux SMS: reflexion">
+        <a href="#KiCdonc_blondes">KiCdonc Special Blondes</a><br/>
+				<a href="#petit_bac"></a>Petit Bac<br/>
+        <a href="#Trivial">Trivial Pursuit</a><br/>
+        <a href="#pendu">Pendu</a><br/>
+        <!--a href="#KiCdonc">KiCdonc</a><br/-->
+        <a href="#melimemo">Meli Memo</a><br/>
+    </page>
+
+<!-- Ludique -->
+    <page tag="ludique" backtext="notext" descr="Jeux SMS: ludique">
+        <a href="#astro">Compatibilite Astro</a><br/>
+        <a href="#numerologie">Numerologie</a><br/>
+        <a href="#affiniteprenoms">Affinite Prenoms</a><br/>
+        <a href="#fermland">Fermland</a><br/>
+        <a href="#mygirl">My Girl</a><br/>
+        <a href="#myboy">My Boy</a><br/>
+        <a href="#labySic">Laby Music</a><br/>
+    </page>
+
+<!-- Action -->
+    <page tag="action" backtext="notext" descr="Jeux SMS: action">
+        <a href="#marvelbattle">Marvel Battle</a><br/>
+        <a href="#mafiosi">Mafiosi</a><br/>
+        <a href="#boxeur">Boxeur</a><br/>
+    </page>
+
+<!-- Casino -->
+    <page tag="casino" backtext="notext" descr="Jeux SMS: casino">
+        <a href="#Blackjack">Black Jack</a><br/>
+        <a href="#chifumi">Chi Fu Mi</a><br/>
+    </page>
+
+<!-- Tarifs -->
+    <page tag="tarif" menutext="notext" backtext="notext" descr="Jeux SMS: Tarifs">
+        Pour jouer, chaque SMS sera facture:<br/>
+        Le Boxeur, Mafiosi: 0.05E+cout d'envoi d'un SMS<br/>
+        Fermland, Meli Melo, My Girl, My Boy: 0.20E+cout d'envoi d'un SMS<br/>
+ 	<a href="#tarif_suite">Suite</a>
+    </page>
+
+    <page tag="tarif_suite" descr="Jeux SMS: Tarifs - Suite"> 
+			Compatibilite Astro &amp; numerologie: 0.35E+cout d'envoi d'un SMS<br/>
+			Autres jeux: 0.10E+cout d'envoi d'un SMS
+    </page>
+
+<!-- Tous les jeux -->
+    <page tag="all_games" descr="Jeux SMS: Liste des jeux" menutext="notext" 
+    backtext="notext">
+       Tous les jeux<br/>
+       <!--a href="#concours">En concours</a><br/-->
+       <a href="#reflexion">Reflexion</a><br/>
+       <a href="#ludique">Ludique/Simulation</a><br/>
+       <a href="#action">Action</a><br/>
+       <a href="#casino">Casino/Strategie</a><br/>
+       <a href="#start" key="00">Menu</a>
+    </page>
+
+<!-- Petit Bac-->
+    <page tag="petit_bac" menutext="notext" backtext="notext" descr="Jeux SMS: Petit Bac">	
+	Petit Bac<br/>
+	<!--a href="#Kdos_petit_bac"></a>Les Kdos<br/-->
+	<a href="erl://svc_sms_games:send_mes?BAC&amp;20555">Jouer</a><br/>
+	<a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+     <page tag="Kdos_petit_bac" menutext="notext" descr="Kdos petit bac">
+       	Les Kdos!<br/>
+	Du 15/05/06 au 15/06/06<br/>
+	1er prix : Un appareil photo numerique, d'une valeur unitaire de 300 E TTC<br/>
+	2eme au 4ieme prix : Un lecteur de DvD portable unitaire de 235 E TTC<br/>
+	5eme au 10eme  prix : Un DvD "Les noces funebres" -, d'une valeur unitaire de 28 E TTC
+    </page>
+
+<!-- Trivial -->
+    <page tag="Trivial" menutext="notext" backtext="notext" 
+    descr="Jeux SMS:  Trivial Pursuit">
+        Trivial Pursuit<br/>
+        <!--a href="#Kdos_trivial">les Kdos</a><br/-->
+        <a href="erl://svc_sms_games:pre_send?TP&amp;20239&amp;#inscription_10">
+        Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_trivial" menutext="notext" descr="Jeux SMS: Kdos Trivial Pursuit">
+        Les Kdos!<br/>
+	Du 15/05/06 au 15/06/06<br/>
+	1er prix : Un appareil photo numerique, d'une valeur unitaire de 280 E TTC<br/>
+	Du 2eme au 6ieme prix : une mini TV LCD, d'une valeur unitaire de 82 E TTC<br/>
+	Du 7eme au 8ieme prix : Un DvD interactif jeu trivial pursuit, d'une valeur unitaire de 68 E TTC<br/>
+	Du 9eme au 14eme prix : un jeu PC Trivial Pursuit. Valeur du lot : 20 E TTC<br/>
+	Du 14eme au 20eme prix : Un jeu Sudoku tactile, d'une valeur unitaire de 11 E TTC       
+   </page>
+
+<!-- Pendu -->
+    <page tag="pendu" menutext="notext" backtext="notext" descr="Jeux SMS: Menu Pendu">
+        Pendu<br/>
+        <!--a href="#Kdos_pendu">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?PEN&amp;20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_pendu" menutext="notext" descr="Kdos Pendu">
+         Les Kdos!<br/>
+         Du 14/04/06 au 15/05/06<br/>
+         1er prix: Un Ipod Nano 30Go, d'une valeur unitaire de 350 E TTC<br/>
+         2eme prix: Une console PSP, d'une valeur unitaire de 200 E TTC<br/>
+         3eme prix: Un coffret DVD "Les Soprano" - saison 1, d'une valeur unitaire de 54 E TTC<br/>
+         Du 4eme au 7eme prix: Un lot de 2 romans de Patricia Cornwell. Valeur du lot: 35 E TTC<br/>
+         Du 8eme au 10eme prix: Un DVD du film "The Island", d'une valeur unitaire de 24 E TTC<br/>
+    </page>
+
+<!-- KiCdonc -->
+    <page tag="KiCdonc" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: KiCdonc People">
+        KiCdoncSeries TvUS<br/>
+        <a href="erl://svc_sms_games:send_mes?KIC&amp;20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="KiCdonc_blondes" menutext="notext" backtext="notext" descr="Jeux SMS: Menu KiCdonc Special Blondes">
+        KiCdonc Special Blondes<br/>
+        <!--a href="#Kdos_KiCdonc_blondes">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?KIC&amp;20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_KiCdonc_blondes" menutext="notext" descr="Kdos KiCdonc Special Blondes">
+        Les Kdos!<br/>
+				Du 15/06/06 au 18/07/06<br/>
+				1er au 3eme prix: Lecteur MP a disque dur Sony NWA1000.<br/>
+				Valeur: 210E TTC<br/>
+				Du 4eme au 10eme prix: Un coffret DVD special blondes
+				(la revanche d'une blonde, la blonde contre-attaque, Thelma et Louise, Saved).<br/>
+				Valeur: 35 E TTC<br/>
+				Du 11eme au 15 prix: Un lot de 2 BD "Les Blondes" (Tomes 1&amp;2).<br/>
+				Valeur: 22E TTC<br/>
+				Du 16eme au 20eme prix: DVD du film "Les hommes preferent les blondes" (Marilyn Monroe)<br/>
+				Valeur du lot: 15 E TTC
+    </page>
+
+<!-- Meli Memo -->
+    <page tag="melimemo" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Meli Memo">
+        Meli Memo<br/>
+        <a href="erl://svc_sms_games:send_mes?MOT&amp;23030">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_melimemo" menutext="notext" descr="Kdos Meli Memo">
+      Les kdos!<br/>
+      Du 28/02/05 au 28/03/05, jouez a Meli Memo et gagnez:<br/>
+      1er: 1 appareil photo numerique<br/>
+      2e au 10e : 1 DVD du film "La ferme se rebelle"
+   </page>
+
+<!-- Ludique/simulation -->
+
+<!-- Compatibilite astro--->
+    <page tag="astro" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Compatibilite astro">
+        Compatibilite Astro<br/>
+        <a href="erl://svc_sms_games:send_mes?COMP&amp;20775">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+<!-- Numerologie -->
+    <page tag="numerologie" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Numerologie">
+        Numerologie<br/>
+        <a href="erl://svc_sms_games:send_mes?NUM&amp;20774">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+<!-- Affinite Prenoms -->
+   <page tag="affiniteprenoms" menutext="notext" backtext="notext" 
+   descr="Jeux SMS: Affinite Prenoms">
+       Affinite Prenoms<br/>
+       <!--a href="#Kdos_affiniteprenoms">les Kdos</a><br/-->
+       <a href="erl://svc_sms_games:send_mes?LOVE&amp;23030">Jouer</a><br/>
+       <a href="#all_games" key="00">Tous les jeux</a>
+   </page>
+
+   <page tag="Kdos_affiniteprenoms" descr="Jeux SMS: Kdos Affinite Prenoms">
+      Les kdos !<br/>
+      Du 15/03/06 au 17/04/06<br/>
+      1er prix et 2ieme prix: 1 camescope numerique, d'une valeur unitaire de 265E TTC<br/>
+      3ieme prix: 1 mini chaine HIFI d'une valeur unitaire de 200E TTC<br/>
+      Du 4ieme au 20ieme  prix: 1 DVD "Tout pour Plaire" d'une valeur unique de 29E TTC
+   </page>
+
+<!-- Fermland -->
+    <page tag="fermland" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Fermland">
+        Fermland<br/>
+        <!--a href="#Kdos_fermland">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?FER&amp;23030">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_fermland" descr="Jeux SMS: Kdos Fermland">
+      Les kdos!<br/>
+      Du 05/03/06 au 15/04/06 gagnez:<br/>
+      1er prix : Un appareil photo numerique, d'une valeur unitaire de 300E TTC<br/>
+      2eme prix : Un lecteur DVD portable, d'une valeur unitaire de 215E TTC<br/>
+      3eme prix : Un assistant personnel, d'une valeur unitaire de 145E TTC<br/>
+      Du 4eme au 10eme prix : Un DVD du film "Camping à la ferme", d'une valeur unitaire de 28E TTC
+   </page>
+
+<!-- Mygirl -->
+    <page tag="mygirl" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Mygirl">
+        Mygirl<br/>
+        <!--a href="#Kdos_mygirl">les Kdos</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?GIRL&amp;23030">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_mygirl" descr="Jeux SMS: Kdos My Girl">
+      Les kdos!<br/>
+      Du 08/02/06 au 28/02/06 gagnez:<br/>
+      1er prix: Un WE a Prague de 3 jours &amp; 2 nuits (valeur 885E)<br/>
+      2ieme prix: Un diner dans l'Orient Express (valeur 565E)<br/>
+      3ieme prix: Randonnee a cheval pour 2 personnes (valeur 235E)<br/>
+      Du 4ieme au 10ieme prix: DVD collector Franck Dubosq (valeur 26E).
+   </page>
+
+<!-- My Boy -->
+    <page tag="myboy" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: My Boy">
+        My Boy<br/>
+        <!--a href="#Kdos_myboy">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?BOY&amp;23030">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_myboy" descr="Jeux SMS: Kdos My Boy">
+      Les kdos!<br/>
+      Du 08/02/06 au 28/02/06 gagnez:<br/>
+      1er prix: Un WE a Prague de 3 jours &amp; 2 nuits (valeur 885E)<br/>
+      2ieme prix: Un diner dans l'Orient Express (valeur 565E)<br/>
+      3ieme prix: Randonnee a cheval pour 2 personnes (valeur 235E)<br/>
+      Du 4ieme au 10ieme prix: DVD collector Franck Dubosq (valeur 26E).
+   </page>
+
+<!-- LabyMusic -->
+    <page tag="labySic" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Laby Music">
+        Laby Music<br/>
+        <!--a href="#Kdos_labySic">Les Kdos</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?LABY&amp;20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+    <page tag="Kdos_labySic" menutext="notext" descr="Jeux SMS: Kdos
+        LabyMusic">
+         Les kdos!<br/>
+         Du 01/01/06 au 31/01/06 gagnez:<br/>
+	 1er prix; Un Ipod Nano 2Go et sa housse d'une valeur de 250E TTC<br/>
+	 du 2ieme au 10ieme prix: de maniere aleatoire un DVD musical parmi
+	 les DVDs musicaux de Jenifer (valeur 23E), de U2 (valeur 22E),
+	 de M (valeur 28E) et des Enfoires (valeur 26E).<br/>
+    </page>
+
+<!-- Action -->
+<!-- Marvel Battle -->
+   <page tag="marvelbattle" menutext="notext" backtext="notext" 
+   descr="Jeux SMS: Marvel Battle">
+       Marvel Battle<br/>
+       <!--a href="#Kdos_marvelbattle">les Kdos!</a><br/-->
+       <a href="erl://svc_sms_games:send_mes?BMJEU&amp;20333">Jouer</a><br/>
+       <a href="#all_games" key="00">Tous les jeux</a>
+   </page>
+
+   <page tag="Kdos_marvelbattle" descr="Jeux SMS: Kdos Marvel Battle">
+      Les kdos!<br/>
+      Du 13/02/06 au 31/03/06)<br/>
+      1er prix: 1 PSP +1 jeu Spider-man 2+ Film 4 fantastiques (valeur 373,98E))<br/>
+      2ieme prix: Ensemble de 4 livres marvel Deluxe(Valeur 73,5E))<br/>
+      Du 3ieme au 6ieme  prix: 1 DVD des 4 fantastiques (valeur 19,99E)
+   </page>
+
+<!-- Mafiosi -->
+    <page tag="mafiosi" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Mafiosi">
+        Mafiosi<br/>
+        <a href="erl://svc_sms_games:pre_send?MAF&amp;20666&amp;#inscription_mafiosi">S'inscrire</a><br/>
+        <a href="erl://svc_sms_games:send_mes?MAF&amp;20666">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+<!-- Le Boxeur -->
+    <page tag="boxeur" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Le Boxeur">
+        Le Boxeur<br/>
+        <!--a href="#Kdos_boxeur">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:pre_send?BOX&amp;20666&amp;#inscription_boxeur">
+        S'inscrire</a><br/>
+        <a href="erl://svc_sms_games:send_mes?BOX&amp;20666">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_boxeur" menutext="notext" descr="Jeux SMS: Kdos Le Boxeur">
+      Les kdos!<br/>
+      Du 01/07/05 au 31/07/05, jouez au Boxeur et gagnez:<br/>
+      1er au 3e: Un coffret collector du film " Rocky " (5 DVD)<br/>
+      4e au 10e: 1 paire de gants de boxe
+   </page>
+
+<!-- Casino/strategie-->
+<!-- Blackjack -->
+    <page tag="Blackjack" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Blackjack">
+        Black Jack<br/>
+        <!--a href="#Kdos_blackjack">les Kdos!</a><br/-->
+        <a href="erl://svc_sms_games:send_mes?BJK&amp;20555">Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_blackjack" menutext="notext" backtext="notext" 
+   descr="Jeux SMS: Kdos Blackjack">
+         Les kdos!<br/>
+         Du 01/11/05 au 30/11/05 gagnez:<br/>
+         1er: Un mini Apple Ipod, d'une valeur de 260E TTC<br/>
+         2e au 10eme prix: Un DVD du film "Casino", d'une valeur de 22E TTC
+   </page>
+
+<!-- Chi Fu Mi -->
+    <page tag="chifumi" menutext="notext" backtext="notext" 
+    descr="Jeux SMS: Chi Fu Mi">
+        Chi Fu Mi<br/>
+        <a href="erl://svc_sms_games:pre_send?CHI INS&amp;20555&amp;#inscription_chi">
+        S'inscrire</a><br/>
+        <a href="erl://svc_sms_games:send_mes?CHI INS&20555&#conf_ok_10">
+        Jouer</a><br/>
+        <a href="#all_games" key="00">Tous les jeux</a>
+    </page>
+
+   <page tag="Kdos_chifumi" menutext="notext" descr="Jeux SMS: Kdos Chifumi">
+         Les kdos!<br/>
+         Du 31/01/05 au 27/02/05, jouez a Chi Fu Mi et gagnez:<br/>
+         1er: un Apple IPOD<br/>
+         2e au 10e: un DVD du film "Jeux d'enfants"
+    </page>
+
+<!-- Inscriptions -->
+    <page tag="inscription_10" backtext="notext" menutext="notext" descr="Jeux SMS: Saisie pseudo 10">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_10">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caracteres max):
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="inscription_05" backtext="notext" menutext="notext" descr="Jeux SMS: Saisie pseudo 05">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_05">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caracteres max):
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="inscription_chi" backtext="notext" menutext="notext" descr="Jeux SMS: Saisie pseudo Chi Fu Mi">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_10">
+      <entry>
+        <prompt>
+          Pour participer au jeu,
+          envoyez votre pseudo
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="inscription_mafiosi" backtext="notext" menutext="notext" descr="Jeux SMS: Saisie pseudo Mafiosi">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_10">
+      <entry>
+        <prompt>
+          Mafiosi<br/>
+          Pour participer au jeu,
+          envoyez votre pseudo
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+    <page tag="inscription_boxeur" backtext="notext" menutext="notext" descr="Jeux SMS: Saisie pseudo Le Boxeur">
+     <form action="erl://svc_sms_games:post_send?#conf_ok_10">
+      <entry>
+        <prompt>
+          Le Boxeur<br/>
+          Pour participer au jeu,
+          envoyez votre pseudo
+        </prompt>
+      </entry>
+    </form>
+    </page>
+
+<!-- Msg de confirmation / erreur -->
+    <page tag="confirm_nok" nav="end" descr="Jeux SMS: SMS en cours d'envoi, nok">
+        Le SMS est en cours d'envoi.
+    </page>
+
+    <page tag="conf_ok_20" nav="end" descr="Jeux SMS: SMS en cours d'envoi, 20">
+        Le SMS est en cours d'envoi.
+        <!--Vous allez bientôt recevoir un SMS. Pour jouer, repondez par SMS. 0.20 E/envoi hors cout du SMS.-->
+    </page>
+
+    <page tag="conf_ok_05" nav="end" descr="Jeux SMS: SMS en cours d'envoi, 05">
+        Le SMS est en cours d'envoi.
+        <!--Vous allez bientôt recevoir un SMS. Pour jouer, repondez par SMS. 0.05 E/envoi hors cout du SMS.-->
+    </page>
+
+    <page tag="conf_ok_10" nav="end" descr="Jeux SMS: SMS en cours d'envoi, 10">
+        Le SMS est en cours d'envoi.
+        <!--Vous allez bientôt recevoir un SMS. Pour jouer, repondez par SMS. 0.10 E/envoi hors cout du SMS.-->
+    </page>
+
+    <page tag="not_compatible" descr="Jeux SMS: Terminal non compatible" nav="end">
+        Votre terminal ne vous permet pas d'acceder a ce service
+    </page>
+
+    <page tag="epuise" descr="Jeux SMS: Mobi - Cpte Princ Epuisé" nav="end">
+      Ce service est inacessible car votre credit est epuise. <br/>
+      Merci de recharger avant le
+      <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    </page>
+
+    <page tag="perime" descr="Jeux SMS: Mobi - Compte périmé" nav="end">
+      Ce service est inacessible car votre date de validite 
+      du credit depassee.<br/>
+      Merci de recharger avant le
+      <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    </page>
+
+    <page tag="not_msisdn" descr="Jeux SMS: Numéro du mobile inconnu" nav="end">
+        Nous n'avons pas assez d'information pour vous permettre d'acceder a ce service.
+    </page>
+</pages>

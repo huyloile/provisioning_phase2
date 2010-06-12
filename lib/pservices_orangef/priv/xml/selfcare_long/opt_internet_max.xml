@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Option Internet Max">
+  
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_internet_max_pp&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Internet Max deja active">
+    <title>option Option Internet Max deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> est actuellement activee.<br/>
+    <a href = "#supprimer">Supprimer l'option</a><br/>
+    <a href = "#conditions">Conditions</a><br/>
+  </page>
+  
+   <page tag="supprimer" cost="free_pt"  backtext="notext" hist="dohist" cost="free_pt">
+     Merci de confirmer la suppression de votre option Internet Max. 
+    Si vous supprimez votre option maintenant, vous perdez immediatement le benefice de celle-ci.
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_internet_max_pp&amp;#desinscr_success,#desinscr_failure">Confirmer</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="donthist" cost="free_pt" nav="stop"
+	descr="Option Internet Max: confirmation desnscription">
+    <title>Option Internet Max: confirmation desnscription</title>
+    La suppression de votre option Internet Max a bien ete prise en compte. 
+    Merci de votre appel.
+  </page>
+
+ <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Internet Max offre incompatible">
+    <title>option Option Internet Max offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile
+   (0,37E/min.). Merci de votre appel.
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Internet Max solde insuffisant classique">
+    <title>option Option Internet Max solde insuffisant classique</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/> sur
+    votre compte.  Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Internet Max menu generique">
+    <title>option Option Internet Max menu generique</title>
+    Avec l'option Internet Max, profitez de tout Orange World et d'Internet en illimite pour seulement 9E.
+    <a href="#infos_1">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="infos_1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Internet Max page plus d infos">
+    <title>option Option Internet Max page plus d'infos</title>
+    Toute l'actu, le sport, les services pratique (trafic, meteo) le chat et le blog Orange et Internet en illimite 24h/24 sont disponibles sur votre mobile Orange<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+  </page>
+
+
+  <page tag = "conditions" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P1/11">
+    <title>Conditions P1/11</title>
+    Option <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> a souscrire et valable en France metropolitaine.
+    Acces et connexions illimitees 24H/24 aux services du Portail Orange World<br/>
+    <a href = "#conditions_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_1"  hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P2/11">
+    <title>Conditions P2/11</title>
+    (hors Gallery, Internet, streaming audio et TV, videos des univers TV et Musique, Orange Messenger by Windows Live, et hors contenus et telechargements payants).<br/>
+    <a href = "#conditions_suite_2" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_2" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P3/11">
+    <title>Conditions P3/11</title>
+    Acces et connexions illimitees a tout lnternet et Gallery en France metropolitaine (hors telechargements de fichiers, contenus et services payants).<br/>
+    <a href = "#conditions_suite_3" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_3" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P4/11">
+    <title>Conditions P4/11</title>
+    Les services de Voix sur IP, peer to peer et Newsgroups sont interdits.
+    Les usages en mode modem sont factures en dehors de l'option. Afin de maintenir une qualite<br/>
+    <a href = "#conditions_suite_4" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_4" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P5/11">
+    <title>Conditions P5/11</title>
+    de service optimale sur son reseau pour l'ensemble de ses clients, Orange pourra limiter le debit au dela d'un usage de 200Mo/mois. Sont egalement inclus<br/>
+    <a href = "#conditions_suite_5" >Suite</a>
+  </page>
+
+
+  <page tag = "conditions_suite_5" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P6/11">
+    <title>Conditions P6/11</title>
+    la reception et l'envoi de mails et de pieces jointes en mode GPRS, EDGE, 3G ou 3G+ dans la limite de 10 Mo par mois.
+    Service accessible depuis tout compte mail<br/>
+    <a href = "#conditions_suite_6" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_6" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P7/11">
+    <title>Conditions P7/11</title>
+    utilisant les protocoles IMAP4, POP3 ou SMTP (hors services payants et voila.fr),
+    en France metropolitaine et dans les zones de couverture du reseau Orange France.<br/>
+    <a href = "#conditions_suite_7" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_7" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P8/11">
+    <title>Conditions P8/11</title>
+    Services accessibles sur reseaux et depuis un terminal compatibles.
+    Voir details de l'option, Conditions Specifiques et liste des mobiles compatibles sur...<br/>
+    <a href = "#conditions_suite_8" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_8" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P9/11">
+    <title>Conditions P9/11</title>
+    ...www.orange.fr. Option incompatible avec l'option Internet.
+    L'option sera valable 31 jours consecutifs a compter de la date d'activation de l'option...<br/>
+    <a href = "#conditions_suite_9" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_9" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P10/11">
+    <title>Conditions P10/11</title>
+    intervenant sous 48h a compter de la souscription et renouvelee tous les mois. Le prix de l'option<br/>
+    <a href = "#conditions_suite_10" >Suite</a>
+  </page>
+
+   <page tag="conditions_suite_10" cost="free_pt">
+    <redirect src="erl://svc_options_mobi:first_page?opt_tv_max&amp;#conditions_suite_10_supprimer&amp;#failure&amp;#failure&amp;#conditions_suite_10_souscrire&amp;#failure&amp;#failure"/>
+  </page>
+
+  <page tag = "conditions_suite_10_souscrire" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P11/11">
+    <title>Conditions P11/11</title>
+    sera preleve sur le compte du client chaque mois sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href = "#souscrire">Souscrire</a>
+  </page>
+
+  <page tag = "conditions_suite_10_supprimer" hist="dohist" cost="freept"
+        descr="Option Internet Max: Conditions P11/11">
+    <title>Conditions P11/11</title>
+    sera preleve sur le compte du client chaque mois sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href = "#supprimer" >Supprimer l'option</a>
+  </page>
+
+   <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Option Internet Max page souscrire">
+    <title>option Option Internet Max page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> pour
+    <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/>.
+    Cette option est renouvelee chaque mois a date anniversaire pour <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/> par mois.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_internet_max_pp&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+ <!-- Commun -->
+ 
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	nav="stop" descr="option Option Internet Max page apres confirmation">
+    <title>option Option Internet Max page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Internet Max page apres confirmation">
+    <title>option Option Internet Max page apres confirmation</title>
+    Vous avez souscrit a l'option Internet Max pour 9E. Ce montant a ete debite de votre compte principal. Attention, votre option Internet Max sera activee dans 48h.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Internet Max page apres confirmation">
+    <title>option Option Internet Max page apres confirmation</title>
+    Vous avez souscrit a l'option Internet Max pour 9E. Ce montant a ete debite de votre compte bons plans. Attention, votre option Internet Max sera activee dans 48h.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Internet Max page apres confirmation">
+    <title>option Option Internet Max page apres confirmation</title>
+    Vous avez souscrit a l'option Internet Max pour 9E. Ce montant a ete debite de votre compte credit offert. Attention, votre option Internet Max sera activee dans 48h.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Option Internet Max page apres confirmation">
+    <title>option Option Internet Max page apres confirmation</title>
+    Vous avez souscrit a l'option Internet Max pour 9E. Ce montant a ete debite de votre compte credit dixit. Attention, votre option Internet Max sera activee dans 48h.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+ <page tag="desinscr_failure" backtext="notext" cost="free_pt" 
+		descr="Option Internet Max: Echec">
+    <title>Echec Suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+<!-- Restitution -->
+
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist" 
+	volatile="true" descr="Page de restitution a l'option Option Internet Max
+	avec cred">
+    <title>Page de restitution a l'option Option Internet Max avec cred</title>
+    Vous avez jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_internet_max_pp"/> inclus
+    pour utiliser vos
+    <include src="erl://svc_options:print_balance_min?opt_internet_max_pp"/> ou
+    <include src="erl://svc_options:print_balance?opt_internet_max_pp&amp;ko"/> d'acces
+    au portail Orange World via votre option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/>.
+  </page>
+  
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Option Internet Max
+	sans cred">
+    <title>Page de restitution a l'option Option Internet Max sans cred</title>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> est
+    actuellement epuisee.<br/>
+    <a href="opt_internet_max.xml">Resouscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/></a>
+  </page>
+
+<!-- PROMO -->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Internet Max menu generique promo">
+    <title>option Option Internet Max menu generique promo</title>
+    Votre 1ere option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> est
+    offerte jusqu'au
+    <include src="erl://svc_options:print_commercial_end_date?opt_internet_max_pp&amp;dmy"/>.
+    Surfez a petit prix et accedez sans contrainte aux services Orange World.<br/>
+    <a href="#souscrire_promo">Profiter de la promo</a><br/>
+    <a href="#conditions_promo">Conditions</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Internet Max page souscrire Promo">
+    <title>option Option Internet Max page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> offerte.
+    L'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> est
+    non compatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_3E_mobi"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_internet_max_pp&amp;#success,#opt_deja_active,#solde_insuff_promo,#failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+  <page tag="souscrire_promo_apres_cond" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Internet Max page souscrire Promo">
+    <title>option Option Internet Max page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> offerte.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_internet_max_pp&amp;#success,#opt_deja_active,#solde_insuff_promo,#failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+  <page tag="solde_insuff_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Option Internet Max solde insuffisant promo">
+    <title>option Option Internet Max solde insuffisant promo</title>
+    Bonjour, pour beneficier de votre 1ere souscription option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> offerte,
+    vous devez disposer d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/>.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo">
+    <title>option Option Internet Max page conditions promo</title>
+    Offre valable en France metropolitaine. 1er mois offert pour toute 1ere
+    souscription a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/> avant le
+    <include src="erl://svc_options:print_commercial_end_date?opt_internet_max_pp&amp;dmy"/> inclus
+    et...<br/>
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+    
+  <page tag="conditions_promo2" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_promo2_gen,35=#conditions_promo2_m6,default=#conditions_promo2_gen"/>
+  </page>
+
+  <page tag="conditions_promo2_gen" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 2">
+    <title>option Option Internet Max page conditions promo 2</title>
+    ...reservee aux clients mobicarte ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_internet_max_pp&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_internet_max_pp&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/>...<br/> 
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+
+  <page tag="conditions_promo2_m6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo M6 2">
+    <title>option Option Internet Max page conditions promo M6 2</title>
+    ...reservee aux clients d'une offre prepayee Orange ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_internet_max_pp&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_internet_max_pp&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_internet_max_pp"/>...<br/> 
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+
+  <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 3">
+    <title>option Option Internet Max page conditions promo 3</title>
+    ...10 Mo pour naviguer sur Orange world, Gallery et Internet.
+    Communications WAP et WEB en France metropolitaine (sous reserve que
+    votre fournisseur d'acces ait...<br/>
+    <a href="#conditions_promo4">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo4" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 4">
+    <title>option Option Internet Max page conditions promo 4</title>
+    ...demande a etre inclus dans l'offre). Ces communications sont
+    decomptees de l'option choisie au Ko au-dela d'un premier palier de 10Ko indivisible...<br/>
+    <a href="#conditions_promo5">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo5" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 5">
+    <title>option Option Internet Max page conditions promo 5</title>
+    ...en 3G/EDGE/GPRS ou a la seconde des la 1re seconde en CSD,
+    le cas echeant. Disponibles depuis un terminal compatible.
+    Liste sur www.orange.fr > mobile...<br/>
+    <a href="#conditions_promo6">Suite</a>
+  </page>
+
+  <page tag="conditions_promo6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 6">
+    <title>option Option Internet Max page conditions promo 6</title>
+    ...En cas de perte des reseaux 3G, EDGE et GPRS, il sera propose
+    aux clients de continuer en CSD a concurrence de 10h sur l'option
+    <include src="erl://svc_options:print_commercial_name?opt_internet_max_pp"/>...<br/>
+    <a href="#conditions_promo7">Suite</a>
+  </page>
+
+  <page tag="conditions_promo7" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 7">
+    <title>option Option Internet Max page conditions promo 7</title>
+    ...Offre incompatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_3E_mobi"/>.
+    Detail de l'offre et conditions specifiques sur www.orange.fr>mobile. L'option est...<br/>
+    <a href="#conditions_promo8">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo8" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Option Internet Max page conditions promo 8">
+    <title>option Option Internet Max page conditions promo 8</title>
+    ...valable 31 jours a compter de la souscription.
+    Souscription au 220 et #123# (appels gratuits)<br/>
+    <a href="#souscrire_promo_apres_cond">Profiter de la promo</a>
+  </page>
+
+</pages>

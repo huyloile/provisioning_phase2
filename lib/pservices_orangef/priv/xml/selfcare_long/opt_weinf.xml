@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Weekend Infini">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_weinf&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <!-- SCRIPTS DE L OPTION WEEK END INFINI -->
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini deja active">
+    <title>option we infini deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/> est
+    deja activee pour ce Weekend.
+    Orange vous remercie
+    de votre appel.
+ </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini menu generique">
+    <title>option we infini menu generique</title>
+    Avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/>,
+    profitez de communications illimitees le
+    weekend vers les fixes et les mobiles orange
+    pour seulement <include src="erl://svc_options:print_option_price?opt_weinf"/>.
+    <br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+    <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+
+ <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option we infini solde insuffisant">
+   <title>option we infini solde insuffisant</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_weinf"/>, vous
+   devez disposer de
+   <include src="erl://svc_options:print_option_price?opt_weinf"/> sur
+   votre compte. Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option we infini solde insuffisant M6">
+   <title>option we infini solde insuffisant M6</title>
+   Bonjour, pour souscrire a l'option
+   <include src="erl://svc_options:print_commercial_name?opt_weinf"/>, vous
+   devez disposer de
+   <include src="erl://svc_options:print_option_price?opt_weinf"/> sur
+   votre compte principal. Orange vous remercie de votre appel.<br/>
+   <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee Infinie solde insuffisant Foot">
+    <title>option journee Infinie solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/>, vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_weinf"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee Infinie solde insuffisant Click">
+    <title>option journee Infinie solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/>, vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_weinf"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini page conditions">
+    <title>option we infini page conditions</title>
+    Appels voix illimites en France metropolitaine de vendredi minuit
+    au dimanche minuit, vers les no fixes et mobiles Orange...<br/>
+    <a href="#conditions_suite">Suite</a>
+  </page>
+  
+  <page tag="conditions_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini page suite des conditions">
+    <title>option we infini page suite des conditions</title>
+    ...(hors no speciaux, no courts, no d'acces wap et web, appels emis
+    depuis des boitiers et appels vers les plates-formes telephoniques)...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+
+ <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option we Infini page conditions suite (1)">
+    <title>option we Infini page conditions suite(1)</title>
+     ...dans la limite de 3 heures maximum par appel. Appels directs entre
+     personnes physiques pour un usage personnel non lucratif direct...<br/>
+    <a href="#conditions_suite2">Suite</a>
+   </page>
+
+   <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option we Infini page conditions suite (2)">
+    <title>option we Infini page conditions suite(2)</title>
+    ...Option non disponible les jours feries et veilles de jours feries
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini page souscrire">
+    <title>option we infini page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/> pour
+    <include src="erl://svc_options:print_option_price?opt_weinf"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_weinf&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer
+    </a>
+  </page>
+
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option we infini page apres confirmation">
+    <title>option we infini page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option week-end infini sera active. Merci de votre appel.
+  </page>
+  
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option we infini page apres confirmation">
+    <title>option we infini page apres confirmation</title>
+    Vous avez souscrit a l'option we infini pour
+    <include src="erl://svc_options:print_option_price?opt_weinf"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option week-end infini sera activee.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option we infini page apres confirmation">
+    <title>option we infini page apres confirmation</title>
+    Vous avez souscrit a l'option we infini pour
+    <include src="erl://svc_options:print_option_price?opt_weinf"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre option week-end infini sera activee.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option we infini page apres confirmation">
+    <title>option we infini page apres confirmation</title>
+    Vous avez souscrit a l'option we infini pour
+    <include src="erl://svc_options:print_option_price?opt_weinf"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option week-end infini sera activee.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option we infini page apres confirmation">
+    <title>option we infini page apres confirmation</title>
+    Vous avez souscrit a l'option we infini pour
+    <include src="erl://svc_options:print_option_price?opt_weinf"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre option week-end infini sera activee.
+  </page>
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option we infini page offre incompatible">
+    <title>option we infini page offre incompatible</title>
+    Bonjour,vous ne pouvez souscrire l'option
+    <include src="erl://svc_options:print_commercial_name?opt_weinf"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile (0,37 E/min).
+    Merci de votre appel.
+  </page>
+
+  <page tag="nouveaute" cost="free_pt" descr="Option WE infini page
+	du menu nouveaute">
+    <title>Option WE infini page du manu nouveaute</title>
+    Du 18/11 au 19/01/05 : votre WE
+    à <include src="erl://svc_options:print_option_price?opt_weinf"/>: appels
+    illimites vers Orange &amp; fixes du vendredi minuit au dimanche minuit.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_weinf&amp;Souscription=opt_weinf.xml&amp;nobr"/>
+  </page>
+
+  <page tag="restitution" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option weekend infini">
+    <title>Page de restitution a l'option weekend infini</title>
+    Vous beneficiez ce weekend d'appels illimites vers fixes et mobiles Orange.
+  </page>
+
+</pages>

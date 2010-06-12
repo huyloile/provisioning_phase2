@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Virgin selfcare pages">
+
+  <page descr="Virgin prepaid: redir en fonction niveau USSD">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#sc_niv12&amp;#sc_niv3"/>
+  </page>
+  
+  <page tag="sc_niv12" descr="Virgin prepaid:Redirection fonction etat compte princ">
+   <!--redirect src="erl://svc_virgin:select_home_niv1"/-->
+   <redirect src="erl://svc_virgin:select_home"/>
+  </page>
+
+  <!-- PC Novembre 2008 -->
+  <page tag="ac_ac_oneoftwo_ok" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte princ, cpte ODR, Ok: cpte rsi or cpte osi">
+    <title>Virgin suivi conso Actif: cpte princ, cpte ODR, Actif: cpte rsi or cpte osi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+        <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/> jusqu
+	    <include src="erl://svc_compte:print_fin_credit_default?cpte_restit&amp;dm"/><br/>
+    et <include src="erl://svc_compte:print_solde?cpte_odr"/>E jusqu
+        <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    SMS illimites jusqu <include src="erl://svc_virgin:print_dlv_max?dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ac_ac_ep_ep" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte princ, cpte ODR Epuise: cpte rsi, cpte osi">
+    <title>Virgin suivi conso Actif: cpte princ, cpte ODR Epuise: cpte rsi, cpte osi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre magot vaut <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/> ou
+	<include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/> SMS jusqu
+	<include src="erl://svc_compte:print_fin_credit_default?cpte_restit&amp;dm"/><br/>
+    et <include src="erl://svc_compte:print_solde?cpte_odr"/>E jusqu
+        <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ac_ep_oneoftwo_ok" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte princ Epuise: cpte Odr Ok: cpte rsi or cpte osi">
+    <title>Virgin suivi conso Actif: cpte princ, cpte ODR Epuise: cpte rsi, cpte osi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre cagnotte s'eleve a <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/> jusqu
+	<include src="erl://svc_compte:print_fin_credit_default?cpte_restit&amp;dm"/>.<br/>
+    SMS illimites jusqu <include src="erl://svc_virgin:print_dlv_max?dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+  
+  <page tag="ac_ep_ep_ep" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte princ Epuise: cpte Odr, cpte rsi and cpte osi">
+    <title>Virgin suivi conso Actif: cpte princ Epuise: cpte Odr, cpte rsi and cpte osi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre magot vaut <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/> ou
+	<include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/> SMS
+	jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_restit&amp;dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+  
+  <page tag="ep_ac_ac_undefined" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte Odr cpte rsi, Epuise: cpte princ, Undefined: cpte osi">
+    <title>Virgin suivi conso Actif: cpte Odr cpte rsi, Epuise: cpte princ, Undefined: cpte osi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre cagnotte s'eleve a <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/> jusqu
+	<include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    SMS illimites jusqu <include src="erl://svc_virgin:print_dlv_max?dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ep_ac_ep_ac" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte Odr cpte osi, Epuise: cpte princ cpte ori">
+    <title>Virgin suivi conso Actif: cpte Odr cpte osi, Epuise: cpte princ cpte rsi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre magot vaut <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/> jusqu
+	<include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    SMS illimites jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_osi&amp;dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ep_ac_ep_ep" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte Odr Epuise: cpte princ cpte osi cpte rsi">
+    <title>Virgin suivi conso Actif: cpte Odr Epuise: cpte princ cpte osi cpte rsi</title>
+    <include src="erl://svc_virgin:print_tarif_very"/>!<br/>
+    Votre cagnotte s'eleve a <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+        soit <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/> jusqu
+	<include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case1"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>  
+  
+  <page tag="ep_ep_ac_undefined" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte Odr Epuise: cpte princ cpte osi cpte rsi">
+    <title>Virgin suivi conso Actif: cpte Odr Epuise: cpte princ cpte osi cpte rsi</title>    
+    <include src="erl://svc_virgin:redirect_compte_bonus?case2"/>
+    SMS illimites jusqu <include src="erl://svc_virgin:print_dlv_max?dm"/>.<br/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ep_ep_ep_ac" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Actif: cpte osi Epuise: cpte princ cpte odr cpte rsi">
+    <title>Virgin suivi conso Actif: cpte Odr Epuise: cpte princ cpte osi cpte rsi</title>
+    <include src="erl://svc_virgin:redirect_compte_bonus?case2"/>et retrouver les SMS illimites<br/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <page tag="ep_ep_ep_ep" backtext="notext" menutext="notext" cost="free_pt"
+        volatile="true" descr="Virgin suivi conso Epuise: cpte princ cpte odr cpte rsi cpte osi">
+    <title>Virgin suivi conso Epuise: cpte princ cpte odr cpte rsi cpte osi</title>    
+    <include src="erl://svc_virgin:redirect_compte_bonus?case2"/>
+    <include src="erl://svc_virgin:redirect_compte_data"/>
+
+    <a href="recharge_virgin.xml" key="2">recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="3">menu</a>
+  </page>
+
+  <!-- Godet MN et Godet SMS : Case 1 (case1 -> 7) -->
+  <page tag="ac_ac_case1" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+    Offert par la maison:
+    <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu
+    <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_voix_virgin&amp;dm"/> et
+    <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_sms_virgin&amp;dm"/>.<br/>
+  </page>
+  
+  <page tag="ac_ep_case1" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+    Offert par la maison:
+    <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu
+    <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_voix_virgin&amp;dm"/>.<br/>
+  </page>
+  
+  <page tag="ep_ac_case1" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+    Offert par la maison:
+    <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+    jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_sms_virgin&amp;dm"/>.<br/>
+  </page>
+  
+  <!-- Godet MN et Godet SMS : Case 2 (8 -> 10)-->
+  <page tag="ac_ac_case2" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+      Cagnotte: <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu
+      <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_voix_virgin&amp;dm"/> et
+      <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+      jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_sms_virgin&amp;dm"/> offert par la maison.<br/>
+      Pour l ettofer, vous pouvez recharger sur virginmobile.fr<br/>
+  </page>
+  
+  <page tag="ac_ep_case2" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+      Cagnotte: <include src="erl://svc_compte:print_solde?cpte_opt_voix_virgin&amp;min"/> jusqu
+      <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_voix_virgin&amp;dm"/> offert
+      par la maison.<br/>
+      Pour l ettofer, vous pouvez recharger sur virginmobile.fr<br/>
+  </page>
+  
+  <page tag="ep_ac_case2" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">
+      Cagnotte: <include src="erl://svc_compte:print_solde?cpte_opt_sms_virgin&amp;sms"/> SMS
+      jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_sms_virgin&amp;dm"/> offert
+      par la maison.<br/>
+      Pour l ettofer, vous pouvez recharger sur virginmobile.fr<br/>
+  </page>
+
+  <page tag="ep_ep_case2" descr="Virgin suivi conso plus: cpte voix actif, cpte sms actif">  
+      Votre credit est a bout. Pas de stress: vous pouvez le recharger 24h/24 et 7j/7 sur virginmobile.fr<br/>
+  </page>
+
+  <!-- Godet Credit data -->
+  <page tag="credit_data" descr="Virgin Credit data actif">
+       Godet data: encore <include src="erl://svc_compte:print_solde?cpte_data_virgin&amp;ko"/> jusqu <include src="erl://svc_compte:print_fin_credit_default?cpte_data_virgin&amp;dm"/>.<br/>
+  </page>
+  
+  <!--Niv 1-->
+  
+  <page tag="ac_ac_ac_ac_niv1" backtext="notext" cost="free_pt"
+	volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR, cpte OPT; Epuise: rien">
+    <title>Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR, cpte OPT; Epuise: rien</title>
+    Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+    Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+    jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+    <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS<br/>
+    Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+    XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+    jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    <a href="recharge_virgin.xml">Recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+  </page>
+  
+  <page tag="ac_ac_ac_ep_niv1" menutext="menu" backtext="notext" cost="free_pt"
+	volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR; Epuise: cpte OPT">
+    <title>Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR; Epuise: cpte OPT</title>
+    Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+    Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+    jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+    <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+    Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+    XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+    jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+    Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+    jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+    <a href="recharge_virgin.xml">Recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page> 
+
+ <page tag="ac_ac_ep_ep_niv1" backtext="notext" cost="free_pt"
+       volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ; Epuise: cpte ODR, cpte OPT">
+   <title>Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ; Epuise: cpte ODR, cpte OPT</title>
+   Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+   Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+   jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+   <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+   Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+   XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+   jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+   <a href="recharge_virgin.xml">Recharger</a><br/>
+   <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page> 
+
+<page tag="ac_ep_ep_ep_niv1" backtext="notext" cost="free_pt"
+       volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ; Epuise:  option XTRAJ, cpte ODR, cpte OPT">
+   <title>Virgin suivi conso Niv 1 Actif: cpte princ; Epuise: option XTRAJ, cpte ODR, cpte OPT</title>
+   Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+   Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+   jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+   <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+   Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+   <a href="recharge_virgin.xml">Recharger</a><br/>
+   <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page>
+
+ <page tag="ac_ac_ep_ac_niv1" menutext="menu" backtext="notext" cost="free_pt"
+       volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, XTRAJ, cpte OPT; Epuise: cpte ODR">
+   <title>Virgin suivi conso Niv 1 Actif: cpte princ, XTRAJ, cpte OPT; Epuise: cpte ODR</title>
+   Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+   Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+   jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+   <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+   Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+   XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+   jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+   <a href="recharge_virgin.xml">Recharger</a><br/>
+   <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page>
+
+<page tag="ac_ep_ac_ac_niv1" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR, cpte OPT; Epuise: XTRAJ">
+  <title>Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR, cpte OPT; Epuise: XTRAJ</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page>
+
+<page tag="ac_ep_ac_ep_niv1" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR; Epuise: XTRAJ, cpte OPT">
+  <title>Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR; Epuise: XTRAJ, cpte OPT</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+ 
+<page tag="ac_ep_ep_ac_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte princ, cpte OPT; Epuise: XTRAJ, cpte ODR">
+  <title>Virgin suivi conso Niv 1 Actif: cpte princ, cpte OPT; Epuise: XTRAJ, cpte ODR</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ep_ep_ac_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte OPT; Epuise: cpte princ, cpte XTRAJ, cpte ODR ">
+  <title>Virgin suivi conso Niv 1 Actif: cpte OPT; Epuise: cpte princ, cpte XTRAJ, cpte ODR</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ac_ep_ep_niv1" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte XTRAJ; Epuise: cpte princ, cpte ODR, cpte OPT">
+  <title>Virgin suivi conso Niv 1 Actif: cpte XTRAJ; Epuise: cpte princ, cpte ODR, cpte OPT</title>
+  Votre credit XTRAJ est en forme: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_opt_virg"/>ou 
+  <include src="erl://svc_compte:print_solde?cpte_opt_virg&amp;sms"/>SMS a consommer
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ac_ep_ac_niv1" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte OPT; Epuise: cpte princ, cpte ODR">
+  <title>Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte OPT; Epuise: cpte princ, cpte ODR</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ep_ac_ep_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte ODR; Epuise: cpte princ, cpte XTRAJ, cpte OPT">
+  <title>Virgin suivi conso Niv 1 Actif: cpte ODR; Epuise: cpte princ, cpte XTRAJ, cpte OPT</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ep_ac_ac_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte ODR, cpte OPT; Epuise: cpte princ, cpte XTRAJ">
+  <title>Virgin suivi conso Niv 1 Actif: cpte ODR, cpte OPT; Epuise: cpte princ, cpte XTRAJ</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ac_ac_ep_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte princ, cpte OPT">
+  <title>Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte princ, cpte OPT</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ac_ac_ac_niv1" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR, cpte OPT; Epuise: cpte princ">
+  <title>Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR, cpte OPT; Epuise: cpte princ</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a. <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ep_ep_ep_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 1 Actif: rien; Epuise: cpte princ, XTRAJ, cpte ODR, cpte OPT">
+  <title>Virgin suivi conso Niv 1 Actif: rien; Epuise: cpte princ, XTRAJ, cpte ODR, cpte OPT</title>
+  Votre credit est epuise.<br/>
+  Pour conserver votre numero, rechargez votre compte avant le <include src="erl://svc_options:number_validity_end"/>.<br/>
+  Recharges disponibles en point de vente ou sur virginmobile.fr<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ac_ac_ac_rsi_niv1" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI: Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR, cpte OPT">
+  <title>RSI: Virgin suivi conso Niv 1 Actif: cpte princ, option XTRAJ, cpte ODR, cpte OPT</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/><br/>.
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+    <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+ <page tag="ac_ac_ep_rsi_niv1" menutext="menu" backtext="notext" cost="free_pt"
+       volatile="true" descr="RSI: Virgin suivi conso Niv 1 Actif: cpte princ, XTRAJ, cpte OPT; Epuise: cpte ODR">
+   <title>RSI: Virgin suivi conso Niv 1 Actif: cpte princ, XTRAJ, cpte OPT; Epuise: cpte ODR</title>
+   Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+   jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+   Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+   XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+   jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/><br/>.
+   <a href="recharge_virgin.xml">Recharger</a><br/>
+   <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page>
+
+<page tag="ac_ep_ac_rsi_niv1" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR, cpte OPT; Epuise: XTRAJ">
+  <title>RSI:Virgin suivi conso Niv 1 Actif: cpte princ, cpte ODR, cpte OPT; Epuise: XTRAJ</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+ </page>
+
+<page tag="ac_ep_ep_rsi_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 1 Actif: cpte princ ou OPT; Epuise: XTRAJ, cpte ODR">
+  <title>RSI:Virgin suivi conso Niv 1 Actif: cpte princ ou OPT; Epuise: XTRAJ, cpte ODR</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ac_ac_rsi_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte princ, cpte OPT">
+  <title>RSI:Virgin suivi conso Niv 1 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte princ, cpte OPT</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+<page tag="ep_ep_ac_rsi_niv1" menutext="menu" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 1 Actif: cpte ODR; Epuise: cpte princ, cpte XTRAJ, cpte OPT">
+  <title>RSI:Virgin suivi conso Niv 1 Actif: cpte ODR; Epuise: cpte princ, cpte XTRAJ, cpte OPT</title>
+  Votre credit: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>et
+  SMS illimites a consommer jusqu'au
+  <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  <a href="recharge_virgin.xml">Recharger</a><br/>
+  <a href="menu_tarifs_etranger.xml#tarifs_etranger_menu" key="2">Menu</a>
+</page>
+
+
+<!--Niv2-->
+
+<page tag="ac_ac_ac_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 tout est actif">
+  <title>Virgin suivi conso Niv 2 tout est actif</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+</page>
+
+<page tag="ac_ac_ac_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 cpte princ, option 30J, cpte odr et cpte opt epuise">
+  <title>Virgin suivi conso Niv 2 cpte princ, option offre 30J, cpte odr actifs et cpte opt epuise</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E jusq.
+  <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+</page>
+
+<page tag="ac_ac_ep_ac_niv2" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 2 cpte princ, cpte opt et cpte odr actifs, option offre 30J epuise">
+  <title>Virgin suivi conso Niv 2 cpte princ, cpte opt et compte odr 30J actifs, option offre 30J epuise</title>
+   Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+   Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+   jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+   <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+   Validite: <include src="erl://svc_virgin:print_dlv"/>.
+   XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E jusq.
+   <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>
+ </page>
+
+ <page tag="ac_ac_ep_ep_niv2" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 2 cpte princ et option 30J actifs, cpte odr et cpte opt epuises">
+  <title>Virgin suivi conso Niv 2 cpte princ et option offre 30J actifs, cpte odr et cpte opt epuises</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E jusq.
+  <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>
+</page>
+
+<page tag="ac_ep_ac_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 actif: cpte princ, cpte odr, cpte opt, epuise: opt 30J">
+  <title>Virgin suivi conso Niv 2 actif: cpte princ, cpte odr, cpte opt, epuise: opt 30J</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.
+</page>
+
+<page tag="ac_ep_ac_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte princ, cpte odr; Epuise: Option 30J, cpte opt">
+  <title>Niv2 Actif: cpte princ, cpte odr; Epuise: Option 30J, cpte opt</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.
+</page>
+
+<page tag="ac_ep_ep_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte princ, cpte opt; Epuise: cpte XTRAJ, cpte ODR">
+  <title>Niv2 Actif: cpte princ, cpte opt; Epuise: cpte XTRAJ, cpte ODR</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.
+</page>
+
+<page tag="ac_ep_ep_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte princ, Epuise: cpte XTRAJ, cpte ODR, cpte opt">
+  <title>Niv2 Actif: cpte princ, Epuise: cpte XTRAJ, cpte ODR, cpte opt</title>
+  Votre tarif: <include src="erl://svc_virgin:print_tarif"/>.<br/>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  Validite: <include src="erl://svc_virgin:print_dlv"/>.
+</page>
+
+<page tag="ep_ep_ep_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: rien, Epuise: cpte princ, cpte XTRAJ, cpte ODR, cpte opt">
+  <title>Niv2 Actif: rien, Epuise: cpte princ, cpte XTRAJ, cpte ODR, cpte opt</title>
+  Votre credit est epuise. Pour conserver votre numero, rechargez votre compte avant le
+  <include src="erl://svc_virgin:print_dlv"/>.
+</page>
+
+<page tag="ep_ac_ep_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte XTRAJ, Epuise: cpte princ, cpte ODR, cpte opt">
+  <title>Niv2 Actif: cpte XTRAJ, Epuise: cpte princ, cpte ODR, cpte opt</title>
+  Votre credit XTRAJ est en forme: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  soit jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_opt_virg"/>ou 
+  <include src="erl://svc_compte:print_solde?cpte_opt_virg&amp;sms"/>SMS a consommer jusqu'au
+  <include src="erl://svc_compte:print_fin_credit?cpte_opt_virg"/>.
+</page>
+
+<page tag="ep_ep_ac_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte ODR, Epuise: cpte princ, cpte XTRAJ, cpte opt">
+  <title>Niv2 Actif: cpte ODR, Epuise: cpte princ, cpte XTRAJ, cpte opt</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS a consommer jusqu'au
+  <include src="erl://svc_compte:print_fin_credit?cpte_odr"/>.
+</page>
+
+<page tag="ep_ep_ep_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Niv2 Actif: cpte opt, Epuise: cpte princ, cpte XTRAJ, cpte ODR">
+  <title>Niv2 Actif: cpte opt, Epuise: cpte princ, cpte XTRAJ, cpte ODR</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms"/>SMS a consommer jusqu'au
+  <include src="erl://svc_virgin:print_dlv"/>.
+</page>
+
+<page tag="ep_ac_ac_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte ODR, cpte opt; Epuise: cpte_princ">
+  <title>Virgin suivi conso Niv Actif: cpte XTRAJ, cpte ODR, cpte opt, Epuise: cpte_princ</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  jusqu'au <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+</page>
+
+<page tag="ep_ep_ac_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 Actif: cpte ODR, cpte opt; Epuise: cpte_princ, cpte XTRAJ">
+  <title>Virgin suivi conso Niv 2 Actif: cpte ODR, cpte opt; Epuise: cpte_princ, cpte XTRAJ</title>
+  Votre credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  a consommer jusqu'au <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+</page>
+
+<page tag="ep_ac_ep_ac_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte opt; Epuise: cpte_princ, cpte ODR">
+  <title>Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte opt; Epuise: cpte_princ, cpte ODR</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_restit_sms&amp;sms"/>SMS
+  a consommer jusqu'au <include src="erl://svc_virgin:print_dlv"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>
+</page>
+
+<page tag="ep_ac_ac_ep_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte odr; Epuise: cpte_princ, cpte opt">
+  <title>Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte_princ, cpte opt</title>
+  Votre credit est en forme: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS
+  a consommer jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_odr"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>
+</page>
+
+<page tag="ac_ac_ac_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI :Virgin suivi conso Niv 2 tout est actif">
+  <title>RSI: Virgin suivi conso Niv 2 tout est actif</title>
+  Credit:<include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite:<include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dm"/>.<br/>
+  XTRAJ:<include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq.<include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.<br/>
+  Autre compte:<include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq.<include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.
+</page>
+
+<page tag="ac_ac_ep_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 2 cpte princ ou opt et cpte odr actifs, option offre 30J epuise">
+  <title>RSI:Virgin suivi conso Niv 2 cpte princ ou cpte opt et compte odr 30J actifs, option offre 30J epuise</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>
+</page>
+
+<page tag="ac_ep_ac_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 2 actif: cpte princ ou opt, cpte odr, epuise: opt 30J">
+  <title>RSI:Virgin suivi conso Niv 2 actif: cpte princ ou opt, cpte odr, epuise: opt 30J</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  Autre compte: <include src="erl://svc_compte:print_solde?cpte_odr"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.
+</page>
+
+<page tag="ac_ep_ep_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Niv2 Actif: cpte princ ou cpte opt; Epuise: cpte XTRAJ, cpte ODR">
+  <title>RSI:Niv2 Actif: cpte princ ou cpte opt; Epuise: cpte XTRAJ, cpte ODR</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_restit_solde"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_restit_min"/>et SMS illimites.<br/>
+  Validite: <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.
+</page>
+
+<page tag="ep_ac_ac_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte odr; Epuise: cpte_princ, cpte opt">
+  <title>RSI:Virgin suivi conso Niv 2 Actif: cpte XTRAJ, cpte ODR; Epuise: cpte_princ, cpte opt</title>
+  Credit: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>ou
+  <include src="erl://svc_compte:print_solde?cpte_odr&amp;sms"/>SMS
+  jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.<br/>
+  XTRAJ: <include src="erl://svc_compte:print_solde?cpte_opt_virg"/>E
+  jusq. <include src="erl://svc_compte:print_fin_credit_default?cpte_opt_virg&amp;dm"/>.
+</page>
+
+<page tag="ep_ep_ac_rsi_niv2" backtext="notext" cost="free_pt"
+      volatile="true" descr="RSI:Niv2 Actif: cpte ODR, Epuise: cpte princ, cpte XTRAJ, cpte opt">
+  <title>RSI:Niv2 Actif: cpte ODR, Epuise: cpte princ, cpte XTRAJ, cpte opt</title>
+  Votre credit: <include src="erl://svc_compte:print_solde?cpte_odr"/>E soit
+  jusqu'a <include src="erl://svc_compte:print_solde_min_sec?cpte_odr"/>et
+  SMS illimites a consommer jusqu'au
+  <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/>.
+</page>
+
+<!--Niv3-->
+  
+  <page tag="sc_niv3" descr="Virgin prepaid:Redirection fonction type de terminal">
+   <redirect src="erl://svc_virgin:select_home_niv3"/>
+  </page>
+  
+  <page tag="act_niv3" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 3 cpt princ actif">
+  <title>Virgin suivi conso Niv 3 cpt princ actif</title>
+  <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit jusqu'a
+  <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/>de com. avant le
+  <include src="erl://svc_options:print_account_dlv?cpte_princ&amp;dmy"/>.
+ </page>
+
+  <page tag="ep_niv3" backtext="notext" cost="free_pt"
+  volatile="true" descr="Virgin suivi conso Niv 3 cpt princ epuise">
+  <title>Virgin suivi conso Niv 3 cpt princ epuise</title>
+   Merci de recharger au 224 avant le <include src="erl://svc_options:number_validity_end"/>
+ </page>
+
+<!--Souscriptions d'options-->
+
+ <page tag="souscrire_opt_30" menutext="notext" hist="dohist" cost="free_pt"
+  volatile="true" descr="Souscription d'options multi usage">
+  <title>Virgin Souscription d'options</title>
+  Realisez des economies en choisissant de souscrire a une offre XTRA J,
+  et beneficiez du tarif imbattable de 27 cts par min<br/>
+  <a href="#offre30j">Souscrire une offre XTRA J</a><br/>
+ </page>
+
+ <!--les offres 30J-->
+
+ <page tag="offre30j" backtext="notext" hist="dohist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre 30J">
+  <title>Souscription a l'offre 30J</title>
+  Choisir l'offre XTRA J a deduire du compte:<br/>
+  <include src="erl://svc_virgin:print_if_act_opt?opt3_virg_30j&amp;10eur - 37mn - 15j=opt_virgin.xml#first_page_opt3&amp;br"/>
+  <include src="erl://svc_virgin:print_if_act_opt?opt2_virg_30j&amp;20eur - 75mn - 30j=opt_virgin.xml#first_page_opt2&amp;br"/>
+  <include src="erl://svc_virgin:print_if_act_opt?opt4_virg_30j&amp;30eur - 111mn - 45j=opt_virgin.xml#first_page_opt4&amp;nobr"/>
+ </page>
+
+ <!--l'offre GPRS-->
+ 
+ <page tag="gprs" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre GPRS">
+  <title>Souscription a l'offre GPRS</title>
+   Choisir l'option (valable 1 mois) qui sera deduite de votre compte:<br/>
+   <a href="opt_virgin.xml#first_page_opt_data">Option GPRS 5Mo pour 3E</a><br/>
+ </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. 30J: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="notidentified">
+    <redirect src="erl://svc_util:redirect_size?130&#notidentified_long&#notidentified_short"/>
+  </page>
+
+  <page tag="notidentified_long" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Virgin Prepaid : not identified">
+    <title>Virgin Prepaid : not identified</title>
+    Compte Virgin Prepaid suspendue: merci de vous rendre dans un point de vente
+    Virgin Prepaid avec une piece d'identite.
+  </page>
+
+  <page tag="notidentified_short" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Reject : Virgin Prepaid not identified">
+    <title>Virgin Prepaid : not identified</title>
+    Compte suspendue: votre identite ne nous est pas parvenue.
+  </page>
+
+  <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Virgin Prepaid :Cpte sursitaire">
+    <title>Virgin Prepaid : Cpte sursitaire</title>
+    Compte Virgin Prepaid<br/>
+    La date limite de rechargement est depassee. Votre Compte Virgin Prepaid
+    est definitivement inutilisable.
+  </page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Virgin Prepaid : Cpte sursitaire">
+    <title>Virgin Prepaid : Cpte sursitaire</title>
+    Votre Compte est definitivement inutilisable.
+</page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="Virgin Prepaid : Cpte suspendu">
+    <title>Virgin Prepaid : Cpte suspendu</title>
+    Compte Virgin Prepaid suspendu : vos appels sont bloques.<br/>
+    Veuillez contacter le service-clients Virgin Prepaid.</page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="system_free_pt" descr="Virgin Prepaid : Cpte suspendu">
+    <title>Virgin Prepaid : Cpte suspendu</title>
+    Votre Compte est suspendu : vos appels sont bloques.<br/></page>
+
+  <page tag="resilie">
+   <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+ <!--Tarif a l'Etranger COMPTE BLOQUE 1 2 et 3-->
+
+ <page tag="etranger_1" cost="freept"
+       descr="Tarif Etranger 1">
+   <title>tarif etranger 1</title>
+   Les destinations sont classees en 4 zones tarifaires : Europe, Suisse/Andorre, Maghreb/Amerique du Nord/Turquie et " Reste du monde ".<br/>
+   <a href="#etranger_2">suite</a>
+ </page>
+ 
+ <page tag="etranger_2" cost="freept"
+       descr="Tarif Etranger 2">
+   <title>tarif etranger 2</title>
+   Un seul tarif est applique par zone pour vos appels voix vers la France Metropolitaine ou la zone de votre destination. Prix/mn des .<br/>
+   <a href="#etranger_3">suite</a>
+ </page>
+
+ <page tag="etranger_3" cost="freept"
+       descr="Tarif Etranger 3">
+   <title>tarif etranger 3</title>
+   Appels emis depuis et vers: la zone Europe =0,55E, (sauf Suisse et Andorre =1E15), la zone Maghreb/Amerique du Nord/Turquie=1,40E, la .<br/>
+   <a href="#etranger_4">suite</a>
+ </page>
+
+ <page tag="etranger_4" cost="freept"
+       descr="Tarif Etranger 4">
+   <title>tarif etranger 4</title>
+   zone "Reste du monde"=3E. Prix/mn des appels reçus depuis : la zone Europe = 0,263E, (sauf Suisse et Andorre =0,65E), la zone Maghreb/ .<br/>
+   <a href="#etranger_5">suite</a>
+ </page>
+
+ <page tag="etranger_5" cost="freept"
+       descr="Tarif Etranger 5">
+   <title>tarif etranger 5</title>
+   Amerique du Nord/Turquie = 0,75E, la zone "Reste du monde" = 1,50E. Vos appels sont hors forfait et decomptes a la sec au-dela de la .<br/>
+   <a href="#etranger_6">suite</a>
+ </page>
+
+ <page tag="etranger_6" cost="freept"
+       descr="Tarif Etranger 6">
+   <title>tarif etranger 6</title>
+   1ere minute indivisible. L'envoi d'1 SMS vers ou depuis l'etranger: 0,30E, la reception est gratuite. Envoi d'1 MMS vers ou depuis .<br/>
+   <a href="#etranger_7">suite</a>
+ </page>
+
+ <page tag="etranger_7" cost="freept"
+       descr="Tarif Etranger 7">
+   <title>tarif etranger 7</title>
+   l'etranger: 1,10E. Reception d'un MMS: 0,80E. Prix des connexions data depuis l'etranger: 0,30E TTC/10ko hors forfait .<br/>
+ </page>
+
+</pages>

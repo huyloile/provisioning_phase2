@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callCsl_doscp>
+    <sac:params>
+      <sac:name>CLE</sac:name>
+      <sac:type>Short</sac:type>
+      <sac:value><?DYNSTRING "$(csl_doscp.CLE.)"?></sac:value>
+    </sac:params>
+    <sac:params>
+      <sac:name>IDENTIFIANT</sac:name>
+      <sac:type>String</sac:type>
+      <sac:value><?DYNSTRING "$(csl_doscp.IDENTIFIANT.)"?></sac:value>
+    </sac:params>
+    <sac:params>
+      <sac:name>DOS_ACTIV</sac:name>
+      <sac:type>Short</sac:type>
+      <sac:value><?DYNSTRING "$(csl_doscp.DOS_ACTIV.)"?></sac:value>
+      </sac:params>
+    </sac:callCsl_doscp>
+  </soapenv:Body>
+</soapenv:Envelope>

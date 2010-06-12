@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: Promo Europe sans frontiere 20 EUR">
+
+  <page hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20">
+    <title>Postpaid GP Euro ss Frontier 20</title>
+    Option Europe sans frontiere 20E (au lieu de 30E) : 40 min pour passer vos
+    appels + 40 min offertes pour recevoir vos appels depuis les pays<br/>
+    <a href="#esf_20_suite">Suite</a>
+  </page>
+
+  <page tag="esf_20_suite" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20">
+    <title>Postpaid GP Euro ss Frontier 20 suite</title>
+    de la zone Europe ou 80 min d'appels depuis la France metropolitaine vers
+    les pays de la zone Europe.<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?esf_20_gp&amp;#esf_20,#error_msg">Souscrire</a><br/>
+    <a href="#esf_20_mentions_leg" key="7">Mentions legales</a>
+  </page>
+
+  <page tag="esf_20" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 20">
+    <title>Postpaid GP Euro ss Frontier 20</title>
+    <redirect src="erl://svc_subscr_asmetier:get_option_incomp?esf_20_gp&amp;#esf_20_souscrire,#esf_20_incomp,#error_msg"/>
+  </page>
+
+  <page tag="esf_20_souscrire" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 20 souscrire">
+    <title>Postpaid GP Euro ss Frontier 20 souscrire</title>
+    Vous allez souscrire a l'option Europe sans frontiere 20E.
+    Votre compte sera debite de 20E tous les mois.<br/>
+    <a href="erl://svc_subscr_asmetier:souscrire?esf_20_gp&amp;#esf_20_add,#esf_20_add">Valider</a>
+  </page>
+
+  <page tag="esf_20_incomp" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 20 incompatible">
+    <title>Postpaid GP Euro ss Frontier 20 incompatible</title>
+    <include src="erl://svc_subscr_asmetier:print_opt_incomp?esf_20_gp"/><br/>
+    <a href="roaming_postpaid_gp.xml#bons_plans">Autres options a l'etranger</a>
+  </page>
+
+  <page tag="esf_20_add" hist="dohist" cost="free_pt" nav="stop"
+        descr="Postpaid GP Euro ss Frontier 20 valider">
+    <title>Postpaid GP Euro ss Frontier 20 valider</title>
+    Vous avez souscrit a l'option Europe sans frontiere 20E.
+    Vous avez 40 mn pour appeler et 40 mn pour recevoir vos
+    appels dans la zone Europe<br/>
+    <a href="#esf_20_add_suite">Suite</a>
+  </page>
+
+  <page tag="esf_20_add_suite" hist="dohist" cost="free_pt"
+        descr="Postpaid GP Euro ss Frontier 20 valider 2">
+    <title>Postpaid Euro ss Frontier 20 valider 2</title>
+    ou 80min pour appeler les pays de la zone Europe depuis la France
+    metropolitaine.
+  </page>
+
+  <page tag="esf_20_mentions_leg" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg1">
+    <title>Postpaid Euro ss Frontier 20</title>
+    Option mensuelle sans engagement, valable apres acceptation
+    du dossier par Orange France, sur les communications voix
+    emises depuis la<br/>
+    <a href="#esf_20_mentions_leg_2">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_2" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg2">
+    <title>Postpaid Euro ss Frontier 20</title>
+    France metropolitaine vers les pays de la zone Europe,
+    ou depuis ces pays vers le reste du monde. Appels
+    decomptes a la seconde apres une<br/>
+    <a href="#esf_20_mentions_leg_3">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_3" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg3">
+    <title>Postpaid Euro ss Frontier 20</title>
+    1ere min indivisible. Minutes non reportables
+    d'un mois sur l'autre. En cas de resiliation ou de
+    changement d'option Europe sans frontiere<br/>
+    <a href="#esf_20_mentions_leg_4">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_4" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg4">
+    <title>Postpaid Euro ss Frontier 20</title>
+    le credit restant est perdu. Les appels depuis et vers
+    les autres pays sont decomptes des options Europe sans
+    frontiere aux tarifs en vigueur<br/>
+    <a href="#esf_20_mentions_leg_5">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_5" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg5">
+    <title>Postpaid Euro ss Frontier 20</title>
+    Option non cumulable et incompatible avec toute offre relative
+    aux appels vers et depuis l'etranger. Credit equivalent a 40 mn
+    d'appels emis<br/>
+    <a href="#esf_20_mentions_leg_6">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_6" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg6">
+    <title>Postpaid Euro ss Frontier 20</title>
+    +40 mn d'appels reçus dans les pays de la zone Europe sauf Suisse et
+    Andorre : credit equivalent a 23 min 27 d'appels emis + 40 mn d'appels<br/>
+    <a href="#esf_20_mentions_leg_7">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_7" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg7">
+    <title>Postpaid Euro ss Frontier 20</title>
+    recus ou Credit equivalent a 13 mn 45 d'appel emis + 40 mn d'appel recus
+    dans les pays suivants : Albanie, Bielorussie,<br/>
+    <a href="#esf_20_mentions_leg_8">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_8" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg8">
+    <title>Postpaid Euro ss Frontier 20</title>
+    Bosnie-Herzegovine, Croatie, Georgie, Macedoine, Moldavie, Serbie, Ukraine,
+    Montenegro, Kosovo. Voir liste des pays dans la fiche tarifaire<br/>
+    <a href="#esf_20_mentions_leg_9">Suite</a>
+  </page>
+
+  <page tag="esf_20_mentions_leg_9" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 20 m leg9">
+    <title>Postpaid Euro ss Frontier 20</title>
+    en vigueur et sur www.orange.fr.
+  </page>
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Postpaid: Service indisponible">
+    <title>Postpaid: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="system_failure" cost="free_pt" descr="Forfait SMS Postpaid GP : Echec souscription failure">
+  <redirect src="/orangef/postpaid_gp.xml#temporary"/>
+  </page>
+
+</pages>

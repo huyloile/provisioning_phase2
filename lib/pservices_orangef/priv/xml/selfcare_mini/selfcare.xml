@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="freept">
+    <redirect src="erl://svc_selfcare:start_light?#redir_compte"/>
+  </page>
+  
+  <page tag="redir_compte" cost="freept">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=spider.xml#prepaid,undefined=#redir_compte_sdp"/>
+  </page>
+    
+ <!--
+     <page tag="redir_compte_sdp" cost="freept">
+     <redirect src="erl://svc_selfcare:select_home_niv3"/>
+     </page>
+  -->
+
+  <page tag="redir_compte_sdp" cost="freept">
+    <title>Pas de response Spider</title>
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <!--cas H: solde du compte principal non nul, sms ep, wap ac-->
+  <page tag="princ_ac_sms_ep_wap_ac">
+    <title>Suivi Conso Mobi cas H</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?zap=#princ_ac_sms_ep_zap,zap_promo=#princ_ac_sms_ep_zap,m6_prepaid=#princ_ac_sms_ep_wap_ac_m6_prepaid,default=#princ_ac_sms_ep_default"/>
+  </page>
+
+  <!--cas E: solde du compte principal non nul, sms ep, wap ep-->
+  <page tag="princ_ac_sms_ep_wap_ep">
+    <title>Suivi Conso Mobi cas E</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?zap=#princ_ac_sms_ep_zap,zap_promo=#princ_ac_sms_ep_zap,m6_prepaid=#princ_ac_sms_ep_wap_ep_m6_prepaid,default=#princ_ac_sms_ep_default"/>
+  </page>
+
+  <page tag="princ_ac_sms_ep_default" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ AC- Niv 3" nav="end">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=
+    <include src="erl://svc_compte:print_solde_min?cpte_princ"/> de
+    com.nationales jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+   <page tag="princ_ac_sms_ep_zap" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi ZAP - Cpte Princ  AC- niv 3"
+	nav="end">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=<!---->
+    jusqu'a <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/>SMS
+    en heures zap a utiliser av.
+    le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+ <page tag="princ_ac_sms_ep_wap_ac_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ AC- SMS EP- WAP AC M6 Prepaid Niv 3" nav="end">
+    <title>Suivi Conso Mobi Niv3 - Cpte Princ AC- SMS EP- WAP AC M6 Prepaid</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+ <page tag="princ_ac_sms_ep_wap_ep_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ AC- SMS EP- WAP EP M6 Prepaid Niv 3" nav="end">
+    <title>Suivi Conso Mobi Niv3- Cpte Princ AC- SMS EP- WAP EP M6 Prepaid</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR a
+    utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+  </page>
+
+  <!-- cas C: solde du compte principal non nul, sms ac, wap ac-->
+  <page tag="princ_ac_sms_ac_wap_ac">
+    <title>Suivi Conso Mobi cas C</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?zap=#princ_ac_sms_ep_zap,zap_promo=#princ_ac_sms_ep_zap,m6_prepaid=#princ_ac_sms_ac_wap_ac_m6_prepaid,default=#princ_ac_sms_ep_default"/>
+  </page>
+
+  <!-- cas D: solde du compte principal non nul, sms ac, wap ep-->
+  <page tag="princ_ac_sms_ac_wap_ep">
+    <title>Suivi Conso Mobi cas D</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?zap=#princ_ac_sms_ep_zap,zap_promo=#princ_ac_sms_ep_zap,m6_prepaid=#princ_ac_sms_ac_wap_ep_m6_prepaid,default=#princ_ac_sms_ep_default"/>
+  </page>
+
+ <page tag="princ_ac_sms_ep_zap" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi ZAP - Cpte Princ  AC- niv 3"
+	nav="end">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=
+    jusqu'a <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS
+    en heures ZAP a utilise av.
+    le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+ <page tag="princ_ac_sms_ac_wap_ac_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ AC- SMS AC- WAP AC M6 Prepaid Niv 3" nav="end">
+    <title>Suivi Conso Mobi Niv3 - Cpte Princ AC- SMS AC- WAP AC M6 Prepaid</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR,
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+
+ <page tag="princ_ac_sms_ac_wap_ep_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ AC- SMS AC- WAP EP M6 Prepaid Niv 3" nav="end">
+    <title>Suivi Conso Mobi Niv3- Cpte Princ AC- SMS AC- WAP EP M6 Prepaid</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+  </page>
+
+  <!-- cas N: solde du compte principal ep, sms ac, wap ac-->
+  <page tag="princ_ep_sms_ac_wap_ac">
+    <title>Suivi Conso Mobi cas N</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ac_m6_prepaid,default=#princ_ep_sms_ac_default"/>
+  </page>
+
+  <!-- cas M: solde du compte principal ep, sms ac, wap ep-->
+  <page tag="princ_ep_sms_ac_wap_ep">
+    <title>Suivi Conso Mobi cas M</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ep_m6_prepaid,default=#princ_ep_sms_ac_default"/>
+  </page>
+
+  <page tag="princ_ep_sms_ac_default" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi mesure - Cpte Princ EP et SMS AC- niv 3"
+	nav="end">
+    <title>Suivi Conso</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;euro"/> EUR=
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+  </page>
+  
+  <page tag="princ_ep_sms_ac_wap_ac_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ EP- SMS AC- WAP AC M6 Prepaid Niv 3"
+	nav="end">
+    <title>Suivi Conso Mobi Niv3- Cpte Princ EP- SMS AC- WAP AC M6 Prepaid</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+  </page>
+
+  <page tag="princ_ep_sms_ac_wap_ep_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ EP- SMS AC- WAP AC M6 Prepaid Niv 3"
+	nav="end">
+    <title>Suivi Conso Mobi Niv3- Cpte Princ EP- SMS AC- WAP AC M6 Prepaid</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+  </page>
+
+  <!--cas P: solde du compte principal ep, sms ep, wap ac-->
+  <page tag="princ_ep_sms_ep_wap_ac">
+    <title>Suivi Conso Mobi cas H</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ep_wap_ac_m6_prepaid,default=#epuise"/>
+  </page>
+
+  <page tag="princ_ep_sms_ep_wap_ac_m6_prepaid" backtext="notext" hist="donthist"
+	cost="free_pt" volatile="true"
+	descr="Suivi Conso : Mobi- Cpte Princ EP- SMS EP- WAP AC M6 Prepaid Niv 3"
+	nav="end">
+    <title>Suivi Conso Mobi Niv3- Cpte Princ EP- SMS EP- WAP AC M6 Prepaid</title>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_wap"/>
+  </page>
+
+<page tag="epuise">
+    <redirect src="erl://svc_selfcare:redirect_by_plan?zap=#epuise_zap,zap_promo=#epuise_zap,default=#epuise_default"/>
+  </page>
+
+  <page tag="epuise_zap" cost="free_pt" backtext="notext"
+	descr="Suivi conso :Mobi ZAP- Cpte Princ EP" nav="end">
+    <title>Suivi conso</title>
+    Orange ZAP<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/>
+  </page>
+
+  <page tag="epuise_default" cost="free_pt" backtext="notext"
+	descr="Suivi conso :Mobi - Cpte Princ EP" nav="end">
+    <title>Suivi conso</title>
+    la mobicarte<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/>
+  </page>
+  
+  <page tag="perime" cost="free_pt" backtext="notext"
+	descr="Mobi : Compte perime" nav="end">
+    <title>Suivi-Conso</title>
+    la mobicarte<br/>
+    Date de validite du credit depassee.<br/>
+  </page>
+  
+  <!-- Error pages -->
+  <page tag="temporary" nav="end" cost="free_pt"
+	descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu.
+  </page>
+  
+  <page tag="notmobi" nav="end" cost="free_pt"
+	descr="Mobi : not mobi">
+    <title>Mobi : not mobi</title>
+    Vous n'avez pas acces a ce service reserve aux mobicartes.
+  </page>
+  
+</pages>
+
+

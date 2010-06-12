@@ -1,0 +1,27 @@
+#!/bin/sh
+
+read BODY
+MSISDN=""
+ORDRE=""
+##echo ${BODY%%[=]*}
+x=`expr "$BODY" : '.*MSISDN=\([0-9]*\)'` && MSISDN="$x"
+y=`expr "$BODY" : '.*ORDRE=\([0-Z]*\)'` && ORDRE="$y"
+
+function dmcc {
+    case $MSISDN in
+	*061)
+	    echo "STATUT=0152;MSISDN=$MSISDN";;
+	*062)
+	    echo "STATUT=0401;MSISDN=$MSISDN;STATUT_LIBELLE=error format";;
+	*063)
+	    echo "STATUT=0499;MSISDN=$MSISDN";;
+	*)
+	    echo "STATUT=0000;MSISDN=$MSISDN";;
+    esac
+}
+
+cat <<EOF
+Content-Type: text/xml
+
+`dmcc`
+EOF

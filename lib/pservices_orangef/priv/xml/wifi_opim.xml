@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+   <page descr="WIFI">
+       <redirect src="erl://svc_util:redirect_size?64&#operation_4_7_06&#not_compatible"/>
+   </page>
+
+    <page tag="operation_4_7_06">
+       <redirect src="erl://svc_util_of:interrupt_service?operation_wifi&amp;#filter&amp;#failed"/>
+    </page>
+
+    <page tag="filter">
+       <redirect src="erl://svc_wifi:filter_imsi"/>
+    </page>
+
+    <page tag="list_opt">
+       <redirect src="erl://svc_wifi:get_listServiceOptionnel"/>
+    </page>
+
+    <page tag="ok_long" nav="end" descr="Mot de passe WIFI Entreprise" hist="donthist">
+       Bienvenue sur Orange Wifi Access.<br/>
+       Votre mot de passe est: <include src="erl://svc_wifi:password"/><br/>
+       <include src="erl://svc_wifi:info"/>
+    </page>
+
+    <page tag="ok_light" nav="end" descr="Mot de passe WIFI Entreprise" hist="donthist">
+       Bienvenue sur Orange Wifi Access.<br/>
+       Votre mot de passe est: <include src="erl://svc_wifi:password"/>
+    </page>
+
+    <page tag="ok_mini" nav="end" descr="Mot de passe WIFI Entreprise" hist="donthist">
+       Bienvenue sur Orange Wifi Access.<br/>
+       Votre mot de passe est: <include src="erl://svc_wifi:password"/>
+    </page>
+
+  <page tag="ok_long_gp" nav="end" descr="Mot de passe WIFI GP" hist="donthist">
+       Mot de passe = <include src="erl://svc_wifi:password"/><br/>
+    </page>
+
+  <page tag="ok_light_gp" nav="end" descr="Mot de passe WIFI GP" hist="donthist">
+       Mot de passe = <include src="erl://svc_wifi:password"/><br/>
+    </page>
+
+    <page tag="ok_mini_gp" nav="end" descr="Mot de passe WIFI GP" hist="donthist">
+       Mot de passe = <include src="erl://svc_wifi:password"/><br/>
+    </page>
+
+    <page tag="not_wifi_user" nav="end" descr="Pas abonné à WIFI">
+       Sur demande du titulaire du compte vous n'avez pas acces au #125#
+    </page>
+
+    <page tag="en_cours" nav="end" descr="En cours de comm. WIFI">
+       Vous etes deja en cours de communication WIFI
+    </page>
+
+    <page tag="gele" nav="end" descr="Accès WIFI gelé">
+       Par securite attendez 15 mn avant de renouveler votre demande
+    </page>
+
+    <page tag="suspendu_flotte" nav="end" descr="Suspendu: gestionnaire de flotte">
+       Compte suspendu.<br/>Merci de contacter votre service client au 1016 (prix d'1 com vers mobiles France)
+    </page>
+
+    <page tag="suspendu_client" nav="end" descr="Suspendu: contact centre client">
+       Compte suspendu<br/>Appelez le 1016 (prix d'1 com vers mobiles France)
+    </page>
+
+    <page tag="resilie" nav="end" descr="Résilié">
+       Votre compte est resilie
+    </page>
+
+    <page tag="not_authorized" nav="end" descr="Service WIFI non autorisé">
+       Mauvaises saisies de vos codes<br/>merci de rappeler ulterieurement
+    </page>
+
+    <page tag="not_identify" nav="end" descr="Client Non identifié">
+       Vous ne pouvez acceder a ce service
+    </page>
+
+    <page tag="bad_subscription" nav="end" descr="Mauvaise souscription">
+       Vous n'avez pas acces a ce service, appelez votre service client
+    </page>
+
+    <page tag="not_compatible" descr="Pas compatible" nav="end">
+       Votre terminal ne vous permet pas d'acceder a ce service
+    </page>
+
+    <page tag="failed">
+       <redirect src="erl://svc_util:redirect_size?130&#failed_long&#failed_short"/>
+    </page>
+
+    <page tag="failed_long" nav="end" descr="Service indisponible">
+       Ce service est momentanement indisponible.
+       Merci de renouveler votre appel ulterieurement.
+    </page>
+
+    <page tag="failed_short" nav="end" descr="Service indisponible">
+       Ce service est momentanement indisponible.
+    </page>
+
+    <page tag="wifi_prov_failed" descr="Problème de povisioning WIFI (+130)" backtext="notext" menutext="notext" hist="donthist">
+       Exceptionnellement, pour obtenir votre mot de passe, merci d'appeler votre Service Client au 3901 (prix d'1 com vers mobiles France)
+    </page>
+
+    <page tag="wifi_prov_failed_light" nav="end" descr="Problème de povisioning WIFI (-130)">
+       Merci d'appeler le Service Client au 3901 (prix d'1 com vers mobiles France)
+    </page>
+
+</pages>

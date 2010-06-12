@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+ <pages descr="Options CMO">
+  <page cost="freept">
+    <!-- init sdp_state and pathological filtering  -->
+     <redirect src="erl://svc_selfcare_cmo:menu?#first_options"/>
+   </page>
+
+  <page tag="first_options">
+     <redirect src="erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<!-- Options SMSX, SMSY and OSL -->
+
+<!--page tag="sms_infos_v2" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: SMS infos V2">
+  <title>Options SMS infos V2</title>
+  Options SMS Infos et Orange Ligue 1 : recevez par SMS toute l'info
+  qui vous interesse<br/>
+  <a href="sms_infos.xml">+d'infos</a>
+  </page-->
+
+<!-- CMO M6 MObile CDC MOBI-CMO v11.5: M6 SMS MMS illimites-->
+<!-- CMO M6 SMS MMS illimites: SV se termine au 02 mars 2006--> 
+<page tag="m6_mmsms_ac">   
+   <redirect src="erl://svc_selfcare_cmo:redirect_dcl_cmo?opt_m6_smsmms&amp;#m6_mmsms_v12&amp;#m6_mmsms_v34&amp;#m6_mmsms_30_31&amp;#m6_mmsms_32_33"/>
+  </page>
+
+ <page tag="m6_mmsms_v12" cost="free_pt" menutext="notext" backtext="notext" 
+      hist="donthist" volatile="true" descr="Suivi Conso : M6 SMS/MMS illimite DCL 14 ou 18">
+	<title>Suivi Conso : M6 SMS/MMS illimite DCL 14 ou 18</title>
+  Option SMS &amp; MMS illimites: SMS, MMS photo/video
+	illimites de 20h45 a minuit vers tous les numeros Orange et
+	M6 mobile by Orange depuis la France metropolitaine<br/>
+  <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+</page>  
+
+ <page tag="m6_mmsms_v34" cost="free_pt" menutext="notext" backtext="notext" 
+      hist="donthist" volatile="true" descr="Suivi Conso : M6 SMS/MMS illimite DCL 22 ou 23">
+	<title>Suivi Conso : M6 SMS/MMS illimite DCL 22 ou 23</title>
+  Option SMS &amp; MMS illimites: SMS, MMS photo/video
+	illimites le soir de 22h a 0h et le we du vend. 22h au dim. 0h vers num
+  Orange depuis la France metropolitaine.<br/>
+  <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+</page>  
+
+ <page tag="m6_mmsms_30_31" cost="free_pt" menutext="notext" backtext="notext" 
+      hist="donthist" volatile="true" descr="Suivi Conso : M6 SMS/MMS illimite DCL 30 ou 31">
+	<title>Suivi Conso : M6 SMS/MMS illimite DCL 30 ou 31</title>
+		Option SMS &amp; MMS illimites: SMS, MMS photo/video illimites le week end vers
+		tous les numeros Orange et M6 mobile by Orange depuis la France metropolitaine<br/>
+  <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+</page>  
+
+ <page tag="m6_mmsms_32_33" cost="free_pt" menutext="notext" backtext="notext" 
+      hist="donthist" volatile="true" descr="Suivi Conso : M6 SMS/MMS illimite DCL 32 ou 33">
+	<title>Suivi Conso : M6 SMS/MMS illimite DCL 32 ou 33</title>
+		Option SMS &amp; MMS illimites: SMS, MMS photo/video illimites le soir de 22h a 8h et
+		le we du vend. 22h au dim. 0h vers num Orange depuis la France metropolitaine.<br/>
+  <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+</page>  
+
+<!--page tag="ow_tv1" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW TV+SURF">
+    <title>Option OW TV+SURF</title>
+    Option TV+Surf:Vous pouvez suivre les chaines nat., la TNTet toutes les videos actu, musique,
+    sport, humour en illimite 24h/24 et 7j/7. Tte la navigation incluse !<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="ow_tv2" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW TV TOTAL">
+    <title>Options OW TV TOTAL</title>
+    Option Totale TV : Vous pouvez profiter de ttes les chaines TV (InfoSport, LCI, M6 Hits...)
+    et de ttes les videos musique, sport,  humour, cinema...en illimite !<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page-->
+
+<page tag="ow_spo" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW SPORT">
+    <title>Option TV SPORT</title>
+    Option Sport : Vous pouvez suivre les plus grands evenement sportifs et regarder
+    les chaines TV et les videos de sport sur OW en illimite 24h/24 et 7j/7<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="ow_musique" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW MUSIQUE">
+    <title>Option OW MUSIQUE</title>
+		Option Musique : Vous pouvez ecouter les nouveautes, decouvrir l'actu de vos artistes preferes,
+		acceder a ttes les radios et TV musicales en illimites 24h/24 7j/7<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="ow_tv" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW TV">
+    <title>Option OW TV</title>
+    Option TV : Vous pouvez suivre les chaines nationales, la TNTet regarder toutes les videos actu, musique,
+    sport, humour en illimite 24h/24 et 7j/7.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="ow_surf" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW SURF">
+    <title>Option OW SURF</title>
+    Option Surf : Vous pouvez naviguer a l'infini sur le portail Orange World: actus, services vie pratique,
+		le mail Orange, Orange Messenger, les blogss, l'album photo...<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="ow_tout" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION OW TOUT ILLIMITE">
+    <title>Options OW TOUT ILLIMITE</title>
+    Option Tout illimite: Vous pouvez acceder a pres de 30 chaines TV, a la TV a la demande, a ttes les radios,
+		a l'ecoute des titres en itllimité, navigation incluse!<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option multimedia -->
+<page tag="media_decouvrt" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Decouverte Multimedia">
+    <title>Suivi Conso: Option Decouverte Multimedia</title>
+		Option decouverte multimedia: il vous reste
+		<include src="erl://svc_compte:print_solde?forf_orangex&amp;euro"/> EUR equivalents a
+		<include src="erl://svc_compte:print_solde?forf_orangex&amp;ko"/> de navigation.<br/>
+		Votre option sera renouvelee le <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="media_decouvrt_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+		descr="SV Options CMO: Decouverte Multimedia Epuisee">
+    <title>Suivi Conso: Option Decouverte Multimedia epuisee</title>
+		Votre option de navigation est epuisee. Elle sera renouvelee le
+    <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="media_internet" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Internet">
+    <title>Suivi Conso: Option Internet</title>	
+		Option internet: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_orangex&amp;euro"/>EUR equivalents a
+		<include src="erl://svc_compte:print_solde?forf_orangex&amp;ko"/> (utilisables en min) de navigation.<br/>
+		Votre option sera renouvelee le <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="media_internet_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+		descr="SV Options CMO: Option Internet Epuisee">
+    <title>Suivi Conso: Option Internet epuisee</title>
+		Votre option de navigation est epuisee. Elle sera renouvelee le
+    <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="media_internet_plus" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: PLus Internet">
+    <title>Suivi Conso: Option Plus Internet</title>
+		Option plus d'internet: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_orangex&amp;euro"/> EUR equivalents a
+		<include src="erl://svc_compte:print_solde?forf_orangex&amp;ko"/> (utilisables en min) de navigation.<br/>
+		Votre option sera renouvelee le <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="media_internet_plus_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+		descr="SV Options CMO: Option Internet Plus Epuisee">
+    <title>Suivi Conso: Option Internet Plus epuisee</title>
+		Votre option de navigation est epuisee. Elle sera renouvelee le
+    <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- -->
+<page tag="five_min" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION ENCORE 5MIN">
+    <title>Options Encore 5min</title>
+    Option Encore 5 minutes : il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_five_min&amp;min"/> pour
+    appeler vos 2no (Orange ou fixes) lorsque votre forfait et votre
+    compte mobile sont épuisés.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="2num_pref_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPT 2 NUM PREF ACT">
+    <title>Options 2 NUM PREF CREDIT</title>
+    Option mes 2 no preferes: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_two_numpref&amp;min"/> valables
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_two_numpref"/> inclus.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="2num_pref_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPT 2 NUM PREF EP">
+    <title>Options 2 NUM PREF EP</title>
+    Option mes 2 no preferes: credit epuise.<br/>
+    Renouvele le <include src="erl://svc_compte:print_fin_credit?cpte_two_numpref"/> en
+    fin de journee.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="3num_kdosms_ac" menutext="notext" cost="free_pt" hist="donthist"
+      volatile="true" descr="SV Options CMO: OPT 3 NUM KDO SMS actif">
+    <title>Option 3 NUM KDO SMS actif</title>
+    3 no KDO SMS : vos SMS sont illimites 24h/24 7j/7 vers vos 3 no Kdo Orange
+    depuis la France metropolitaine sous reserve de credit > 0Eur
+  </page>
+
+<page tag="journee_ow_cmo" menutext="notext" cost="free_pt" hist="donthist"
+      volatile="true" descr="SV Options CMO: OPT JOURNEE OW CMO ACTIF">
+    <title>Option JOURNEE OW CMO ACTIF</title>
+    Journee Orange World : Vous beneficiez aujourd'hui jusqu'a minuit d'un acces
+    illimite au portail OW: surf, videos, TV, chat... (hors contenus payants)
+  </page>
+
+<page tag="journee_ow_zap" menutext="notext" cost="free_pt" hist="donthist"
+      volatile="true" descr="SV Options CMO: OPT JOURNEE OW CMO ACTIF">
+    <title>Option JOURNEE OW CMO ACTIF</title>
+    Journee Orange World : Vous beneficiez aujourd'hui jusqu'a minuit d'un acces
+    illimite au portail ZAP: surf, videos, TV, chat... (hors contenus payants)
+  </page>
+
+ <page tag="big_ff_cmo_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: GROS FF CMO">
+    <title>Options Forfait 30E</title>
+    Forfait: <include src="erl://svc_compte:print_solde?big_forf_cmo"/>EUR
+    = <include src="erl://svc_compte:print_solde?big_forf_cmo&amp;min"/> com
+    nat. au tarif normal <br/>
+    Forfait renouvele le <include src="erl://svc_compte:print_fin_credit?big_forf_cmo"/> en fin
+    de journee.<br/>
+    Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (choix 2 du menu pour recharger)<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+ <page tag="big_ff_cmo_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: GROS FF CMO EP">
+    <title>Options Forfait 30E</title>
+     Forfait epuise: renouvele le <include src="erl://svc_compte:print_fin_credit?big_forf_cmo"/> en fin
+     de journee.<br/>
+     Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+     (choix 2 du menu pour recharger)<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_smsx_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait 30 SMS Actif">
+    <title>Options Forfait 30 SMS</title>
+    Forfait Orange World: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_smsx&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?forf_smsx"/> inclus.
+    Vous pouvez aussi envoyer des MMS(1MMS = 3 SMS) si votre telephone
+    est compatible<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_smsx_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait 30 SMS Epuise">
+    <title>Options Forfait 30 SMS</title>
+    Les SMS/MMS de votre forfait Orange World sont epuises. Il sera renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_smsx"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_smsy_ac" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait 80 SMS">
+    <title>Options Forfait 80 SMS</title>
+    Forfait SMS/MMS: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_smsy&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?forf_smsy"/> inclus.
+    Vous pouvez aussi envoyer des MMS(1MMS = 3 SMS) si votre telephone
+    est compatible<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_smsy_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait 80 SMS Epuise">
+    <title>Options Forfait 80 SMS</title>
+    Votre forfait SMS/MMS est epuise, il sera renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_smsy"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+
+<page tag="osl" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO:  OSL">
+    <title>Options OSL</title>
+   Option OSL: vous beneficiez tous les mois d'un acces illimite au service Orange World.
+   Profitez-en !<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="num_pref_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: numero prefere">
+    <title>Options Numero Prefere AC</title>
+    Option numeros Kdos: appels illimites 24h/24, 7j/7
+    vers vos n° Kdos Orange depuis et vers la France metropolitaine 
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="num_pref_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: numero prefere">
+    <title>Options Numero Prefere EP</title>
+    Option numeros Kdos: appels illimites 24h/24, 7j/7
+    vers vos n° Kdos Orange depuis et vers la France metropolitaine 
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+
+<page tag="forf_orangex_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Orange-X Actif">
+    <title>Options Orange X Actif</title>
+    Forfait Orange World: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_orangex&amp;euro"/>EUR
+    equivalents a
+    <include src="erl://svc_compte:print_solde?forf_orangex&amp;ko"/> (utilisables
+    en min) de navigation.
+    Votre option sera renouvelee le
+    <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_orangex_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait 30 SMS Epuise">
+    <title>Options Forfait 30 SMS</title>
+    Votre forfait de navigation Orange World est epuise, il sera renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_orangex"/> en fin
+    de journee<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- godets espadon voix-->
+<page tag="cpte_esp_voix">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_weinf=#we_infini,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="we_infini" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Weekend VOix">
+    <title>WE voix</title>
+    Week-end infini: communications gratuites et illimitees vers les fixes
+    et les mobiles Orange en France le week-end du vendredi minuit au
+    dimanche minuit jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_esp_voix"/><br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- godets weekend voix TCP : 36-->
+<page tag="cpte_we_voix">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_we_voix=#we_voix,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="we_voix">
+   <redirect src="erl://svc_selfcare_cmo:redirect_date?opt_we_voix&amp;#we_voix_sa_su&amp;#we_voix_mo_fr"/>
+  </page>
+
+  <page tag="we_voix_sa_su" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: we voix">
+    <title>Option WE voix pendant we</title>
+    Option heures week-end: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_we_voix&amp;min"/> 
+    vers Orange et fixes valables ce week-end du samedi 00h01 au dimanche 23h59.
+  </page>
+
+<page tag="we_voix_mo_fr" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: we voix sem">
+    <title>Option WE voix en semaine</title>
+    Option heures week-end: vous beneficiez d'une heure de communications vers les No Orange
+    et fixes tous les week-ends, du samedi 00h01 au dimanche 23h59.
+  </page>
+
+<!-- TCP 33 Soiree infini &amp; Semaine infinie-->
+
+ <page tag="cpte_rdl_voix">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_sinf=#soiree_infini,opt_seminf=#semaine_infinie,opt_jinf=#journee_inf,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="soiree_infini" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Soiree Infini">
+    <title>Soiree Infini</title>
+    Soiree Infinie : communications gratuites et illimitees vers les fixes et
+    les mobiles Orange en France aujourd'hui de 21h a minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="semaine_infinie" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Semaine Infinie">
+    <title>Semaine Infinie</title>
+    Semaine Infinie : Appels illimites vers Orange et fixes valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_rdl_voix"/> minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+  <page tag="journee_inf" menutext="notext" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Options CMO: Journee Infinie">
+    <title>CMO Journee Infinie</title>
+    Journee Infinie: communications gratuites et illimitees vers les fixes et
+    les mobiles Orange en France aujourd'hui de 7 a 17h<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+  
+<!-- RDL SMS: TCP 34 Soiree SMS &amp; SMS Quotidien -->
+
+<page tag="cpte_rdl_mult">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_sms_hebdo=#sms_hebdo,opt_ssms=#soiree_sms,opt_we_sms=#we_sms,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="sms_hebdo" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: SMS Hebdo">
+    <title>SMS Hebdo</title>
+    Bon Plan SMS/MMS hebdo: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_rdl_mult&sms"/> SMS
+    val. jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_rdl_mult"/>.
+    Vous pouvez aussi envoyer des MMS(1 MMS photo=3 SMS) si votre telephone est compatible<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="sms_quoti" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: SMS Quotidien">
+    <title>SMS Quotidien</title>
+   <redirect src="erl://svc_selfcare_cmo:redirect_credit?opt_sms_quoti&amp;#rdl_sms_quoti_princ_sec&amp;#rdl_sms_quoti_princ_no_sec&amp;#rdl_sms_quoti_no_princ_sec&amp;#rdl_sms_quoti_no_princ_no_sec"/>
+  </page>
+
+<!-- Restitution -->
+  
+  <page tag="rdl_sms_quoti_princ_sec" cost="free_pt" descr="Options Promo SMS 1">
+    <title>Restitution options SMS 1</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.
+    Vous disposerez a nouveau de 6 SMS le <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien"/>.
+  </page>
+
+  <page tag="rdl_sms_quoti_princ_no_sec" cost="free_pt" descr="Options Promo SMS 2">
+    <title>Restitution options SMS 2</title>
+    Vous avez utilise aujourd'hui la totalite des SMS de votre option SMS,
+    vous disposerez a nouveau de 6 SMS le <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien"/>.
+  </page>
+
+  <page tag="rdl_sms_quoti_no_princ_sec" cost="free_pt" descr="Options Promo SMS 3">
+    <title>Restitution options SMS 3</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.
+    Vous beneficierez a nouveau de 6 SMS/jour quand le credit de votre compte rechargeable sera superieur a 0,50E.
+  </page>
+
+  <page tag="rdl_sms_quoti_no_princ_no_sec" cost="free_pt" descr="Options Promo SMS 4">
+    <title>Restitution options SMS 4</title>
+    Votre option SMS est actuellement suspendue.
+    Vous beneficierez automatiquement de 6 SMS/jour quand le credit de votre compte rechargeable sera superieur a 0,50E.
+  </page>
+
+
+<page tag="soiree_sms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Soiree SMS">
+    <title>Soiree SMS</title>
+    <include src="erl://svc_compte:print_solde?cpte_rdl_mult&amp;sms"/>SMS
+    (hors SMS surtaxes) a consommer ce soir entre 21h et minuit.
+    SMS utilisables en MMS avec 1 MMS =3 SMS<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="we_sms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Week-end SMS">
+    <title>Week-end SMS</title>
+    Week-End SMS :<include src="erl://svc_compte:print_solde?cpte_rdl_mult&amp;sms"/>SMS
+    valables du <include src="erl://svc_compte:print_debut_promo?cpte_rdl_mult"/> jusqu'au
+    <include src="erl://svc_compte:print_fin_promo?cpte_rdl_mult&amp;cmo"/>.
+    SMS utilisables en MMS avec un tel. compatible (1 MMS = 3 SMS).<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- RDL ORANGE WORLD: TCP 35 Nuit KDO SMS -->
+<page tag="cpte_rdl_sms">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_kdo_sms=#kdo_sms,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="kdo_sms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Nuit Kdo SMS">
+    <title>Kdo SMS</title>
+    Nuit Kdo SMS: SMS illimites du
+    <include src="erl://svc_compte:print_debut_promo?cpte_rdl_sms"/> au
+    <include src="erl://svc_compte:print_fin_promo?cpte_rdl_sms&amp;cmo"/>.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Forfait SMS TCP : 37 -->
+
+  <page tag="forf_sms_etudiant" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Etudiante">
+    <title>Option Etudiante</title>
+    Option Etudiante: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_sms_promo&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?forf_sms_promo"/> minuit.
+    Vous pouvez aussi envoyer des MMS (1 MMS photo=3 SMS) si votre telephone
+    est compatible.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="forf_sms_hebdo" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: SMS Hebdo">
+    <title>Option Etudiante</title>
+    Forfait SMS Hebdomadaire: il vous reste
+    <include src="erl://svc_compte:print_solde?forf_sms_promo&amp;sms"/> SMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?forf_sms_promo"/> minuit.
+    Vous pouvez aussi envoyer des MMS (1 MMS photo=3 SMS) si votre telephone
+    est compatible.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Pack Noel * TCP: 43-->
+ <page tag="cpte_pack_noel">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?pack_sms=#pack_sms,pack_mms=#pack_mms,opt_vacances=#vacances,opt_tt_shuss_sms=#tt_shuss,opt_sms_surtaxe=#promo_sms_surtaxe,opt_bp_10_mms=#bonplan_10mms,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+  <page tag="pack_sms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Pack SMS Noel">
+    <title>Option Pack SMS Noel</title>
+    Pack Voeux SMS/MMS: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;sms"/> SMS valables
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> minuit.
+    Vous pouvez aussi envoyer des MMS (1 MMS photo=3 SMS) si votre telephone est compatible<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="pack_mms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Pack MMS Noel">
+    <title>Option Pack MMS Noel</title>
+    Pack Noel MMS: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;mms"/> MMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="vacances" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Vacances MMS">
+    <title>Option Vacances MMS</title>
+    Option MMS:
+    il vous reste <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;mms"/> MMS
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="tt_shuss" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Option Duo Journee">
+    <title>Option Duo Journee</title>
+    Option Duo Journee: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;sms"/> SMS valables jusqu'a ce soir 21h.
+    Vous pouvez aussi envoyer des MMS(1 MMS =3 SMS) si votre telephone est compatible<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+  <page tag="promo_sms_surtaxe" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Promo SMS surtaxe">
+    <title>Option Promo SMS surtaxe</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;euro"/> euros offerts par Orange a utiliser en SMS
+   (services Orange et SMS+) valables jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> inclus.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="bonplan_10mms" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO:Bon Plan 10MMS">
+    <title>Option Bon Plan 10MMS</title>
+    Option 10 MMS: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;mms"/> MMS
+    a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_packnoel"/> inclus.
+    MMS utilisables sur la base 1 MMS texte = 1 photo = 1 MMS video<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+
+<!-- Surprise Voix * TCP: 42-->
+<page tag="cpte_surprise_voix" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Tout Shuss">
+    <title>Option Tt shuss</title>
+    Option Duo Journee: il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_surprise_voix&amp;min"/> 
+    valables aujourd'hui entre 9h et 21h.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- After School * TCP: 51-->
+<page tag="afterschool_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: After School avec credit">
+    <title>After School avec credit</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_aftersch_cmo&amp;min"/> de
+    communications vers Orange et fixe sur votre
+    option After School a utiliser avant ce soir minuit.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="afterschool_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: After School sans credit">
+    <title>After School sans credit</title>
+    Votre option After School est actuellement epuisee. Pour soucrire a nouveau
+    une option After School, appelez le 220 (appel gratuit).<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- PROMO TOUS USAGE * TCP : 20 -->
+<!-- mettre voyage en dernier pas de controles de bit d'options-->
+  <page tag="activ_euros">
+   <redirect src="erl://svc_selfcare_cmo:redirect_opt?opt_europe=#europe,opt_maghreb=#maghreb,opt_voyage=#voyage,opt_roaming=#roaming,opt_pass_voyage_6E=#pass_vacances,default=erl://svc_selfcare_cmo:next_options"/>
+  </page>
+
+<page tag="voyage" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Voyage">
+    <title>Credit d'activation voix</title>
+    Bonus Sans Frontiere:
+    <include src="erl://svc_compte:print_solde?cpte_aeuros"/> Euros
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_aeuros"/> inclus pour
+    telephoner et recevoir vos appels depuis l'etranger.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="europe" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Europe">
+    <title>Credit d'activation voix</title>
+    Option Europe: 
+    <include src="erl://svc_compte:print_solde?cpte_aeuros&amp;min"/> valables
+    jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_aeuros"/> inclus pour
+    telephoner dans l'union Europeenne et en Suisse.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="maghreb" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Maghreb">
+    <title>Credit d'activation voix</title>
+    Option Maghreb:
+    <include src="erl://svc_compte:print_solde?cpte_aeuros&amp;min"/> valables
+    jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_aeuros"/> inclus pour
+    telephoner au maroc, en Algeris et en Tunisie.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="roaming" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Roaming">
+    <title>Credit d'activation roaming</title>
+    Bonus Decouverte Sans Frontiere:
+    <include src="erl://svc_options:print_balance?opt_roaming"/> EURos
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_aeuros"/> inclus pour
+    telephoner et recevoir vos appels depuis l'etranger.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="pass_vacances" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Pass vacances">
+    <title>Credit Pass vacances</title>
+		Pass vacances: <include src="erl://svc_compte:print_solde?cpte_aeuros&amp;min"/> inclus
+		pour appeler vers la France ou le pays visite et
+    <include src="erl://svc_compte:print_solde?cpte_pass_mtc&amp;min"/> d'appels
+		recus gratuits valables jsq'au <include src="erl://svc_compte:print_fin_credit?cpte_aeuros"/><br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option Family Talk/Easy Voice TCP_NUM = 55-->
+
+<page tag="easy_voice_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Family Talk av credit">
+    <title>SV Option Mobi: Family Talk av credit</title>
+    Vous beneficiez de communications illimitees vers les numeros Orange
+    et fixe de l'option Family Talk (24h/24 et 7j/7).<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+ 
+  <page tag="easy_voice_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: Family Talk ss credit">
+    <title>SV Option Mobi: Family Talk ss credit</title>
+    Votre option Family Talk n'est plus activee.
+    Pour en beneficier a nouveau vous devrez avoir un credit positif
+    le <include src="erl://svc_options:print_end_credit?opt_easy_voice"/>.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option illimite mo mobile (illimite entre mobiles), ID = DE 1853, TCP_NUM = 55 -->
+<page tag="illimite_entre_mobile" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: OPTION Illimite entre mobile">
+    <title>Options Illimite entre mobile</title>
+		Option illimite mobile Famille : vous beneficiez de l'option illimite mobile Famille.<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Compte option BONS PLANS TCP_NUM = 59-->
+
+<page tag="bons_plans_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option CMO: Cpte Bons Plans av credit">
+    <title>SV Option CMO: Cpte Bons Plans av credit</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_bons_plans&amp;euro"/> euros
+    a utiliser jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_bons_plans"/> pour
+    profiter d'un bon plan a activer sur le 220
+    ou le #123# (appels gratuits)<br/>
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+ 
+  <page tag="bons_plans_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option CMO: Cpte Bons Plans ss credit">
+    <title>SV Option CMO: Cpte Bons Plans ss credit</title>
+    Votre compte bons plans est epuise mais vous pouvez toujours
+    souscrire a de nouveaux bons plans avec votre credit recharge
+    en appelant le 220 ou sur le #123# (appels gratuits)
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option ZAP MMS Illimite TCP_NUM = 67-->
+
+ <page tag="cpte_zap_mms" cost="free_pt" hist="donthist"
+	volatile="true" descr="SV Option Mobi: ZAP MMS illimites">
+    <title>SV Option Mobi: ZAP MMS illimite</title>
+    Option MMS illimites apres les cours : vos MMS sont illimites
+    de 17h a 00h en semaine et non stop le mercredi et le week-end en France metro.
+    <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option Report-->
+
+<page tag="report" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Report">
+    <title>Options report</title>
+   Option report du credit: chaque mois le credit non utilise est reporte
+   (dans la limite montant du forfait)
+   sur le mois suivant sans date limite de validite!<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option Kdo vois on net M5 (30 minutes voix) ID = DE1722, TCP_NUM = 80 -->
+<page tag="m5_kdo_voix_net" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Kdo voix on net M5">
+    <title>Option Kdo voix on net M5</title>
+   Vous disposez d'une prime voix
+   de <include src="erl://svc_compte:print_solde?cpte_m5_kdo_vx_net&amp;min"/> a utiliser
+   avant <include src="erl://svc_compte:print_fin_credit?cpte_m5_kdo_vx_net"/><br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option M5 : 10 min voix (kdo voix international M5) ID = DE 1809, TCP_NUM = 81 -->
+<page tag="m5_kdo_voix_internat" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Kdo voix international M5">
+    <title>Options Kdo voix international M5</title>
+   Vous disposez d'une prime voix
+   de <include src="erl://svc_compte:print_solde?cpte_m5_kdo_vx_internat&amp;min"/> a utiliser
+   avant <include src="erl://svc_compte:print_fin_credit?cpte_m5_kdo_vx_internat"/><br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Option M5 WE voix illimite ID = DE 1808, TCP_NUM = 94 -->
+<page tag="m5_we_voix_ill" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: M5 WE voix illimite">
+    <title>Option M5 WE voix illimite</title>
+		Vous disposez d'une prime WE illlimite<br/>
+   <include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Prime M5 20 SMS. ID: DE1810, TCP_NUM = 100, PTF_NUM = 137 -->
+<page tag="m5_20_sms_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Prime M5 20 SMS active">
+    <title>Prime M5 20 SMS activee</title>
+		M5 : <include src="erl://svc_compte:print_solde?cpte_m5_20_sms&amp;sms"/> SMS valables
+		jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_m5_20_sms"/> inclus.<br/>
+		Vous pouvez aussi envoyer des MMS (1 MMS = 3 SMS) si votre telephone est compatible<br/>
+		<include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="m5_20_sms_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Prime M5 20 SMS epuisee">
+    <title>Prime M5 20 SMS epuisee</title>
+		M5 : votre credit de 20 SMS est epuise.<br/>
+		Plus d'info sur votre programme de fidelite en vous connectant sur www.orange.fr<br/>
+		<include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Prime M5 voix roaming. ID: DE1859, TCP_NUM = 101, PTF_NUM = 72 -->
+<page tag="m5_vx_rmg_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+	descr="SV Options CMO: Prime M5 voix roaming active">
+    <title>Prime M5 voix roaming activee</title>
+		M5 : <include src="erl://svc_compte:print_solde?cpte_m5_vx_rmg&amp;min"/> de
+		comm. depuis zone 1 vers France ou vers le pays visite
+		jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_m5_vx_rmg"/> inclus.<br/>
+		<include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<page tag="m5_vx_rmg_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+	descr="SV Options CMO: Prime M5 voix roaming epuisee">
+    <title>Prime M5 voix roaming epuisee</title>
+		M5 : votre credit de 10 min depuis la zone 1 vers la France est epuise.<br/>
+		Plus d'info sur votre prog de fidelite en vous connectant sur www.orange.fr<br/>
+		<include src="erl://svc_selfcare_cmo:print_next_link_options"/>
+  </page>
+
+<!-- Short version (all cases) -->
+
+   <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Suivi Conso: Service indisponible">
+    <title>Suivi Conso: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+
+</pages>

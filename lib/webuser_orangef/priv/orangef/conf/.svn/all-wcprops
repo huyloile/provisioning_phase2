@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/conf
+END
+httpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/conf/httpd.conf
+END
+mime.types
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webuser_orangef/priv/orangef/conf/mime.types
+END

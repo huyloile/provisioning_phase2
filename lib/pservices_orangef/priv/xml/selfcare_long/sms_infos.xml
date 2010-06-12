@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF nouveautés page">
+  <page>
+    <redirect src="erl://svc_smsinfos:redirect_by_SMIlistOptions_status?SMS&amp;#menu_classique1&amp;#menu_promo1&amp;#temporary"/>
+  </page>
+
+ <page tag="menu_classique1" cost="free_pt" hist="dohist" descr="SMSINFOS: menu">
+   <title>menu page 1</title>
+      SMS Infos: Vous souhaitez vous inscrire a la rubrique:<br/> 
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?meteo&amp;#meteo_menu&amp;Meteo"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?horoscope&amp;#horo_menu&amp;Horoscope"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?actu&amp;#actu_menu&amp;Actualites"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?sport&amp;#sport_menu&amp;Sport"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?blague&amp;#blague_menu&amp;Blagues"/>
+      <a href="#menu_classique2">Suite des rubriques</a><br/>
+      <a href="#infos_plus">+ d'infos</a>
+ </page>
+
+<page tag="menu_classique2" cost="free_pt" hist="dohist" descr="SMSINFOS: menu 2">
+   <title>menu page 2</title>
+      Suite de la liste des rubriques SMS Infos:<br/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?tv&amp;#tv_menu&amp;Programme TV"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?people&amp;#people_menu&amp;People"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?cine&amp;#cine_menu&amp;Cinema"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?loto&amp;#loto_menu&amp;Loto Euromillions Keno"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?quinte&amp;#quinte_menu&amp;Quinte"/>
+      <include src="erl://svc_smsinfos:print_modification?#modif_resil"/>
+      <a href="#infos_plus">+ d'infos</a>
+ </page>
+
+ <page tag="menu_promo1" cost="free_pt" hist="dohist" descr="SMSINFOS: menu">
+   <title>menu page 1</title>
+      SMS Infos: Vous souhaitez vous inscrire a la rubrique:<br/> 
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?meteo&amp;#meteo_menu_promo&amp;Meteo"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?horoscope&amp;#horo_menu_promo&amp;Horoscope"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?actu&amp;#actu_menu_promo&amp;Actualites"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?sport&amp;#sport_menu_promo&amp;Sport"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?blague&amp;#blague_menu_promo&amp;Blagues"/>
+      <a href="#menu_promo2">Suite des rubriques</a><br/>
+      <a href="#infos_plus">+ d'infos</a>
+ </page>
+
+<page tag="menu_promo2" cost="free_pt" hist="dohist" descr="SMSINFOS: menu 2">
+   <title>menu page 2</title>
+      Suite de la liste des rubriques SMS Infos:<br/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?tv&amp;#tv_menu_promo&amp;Programme TV"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?people&amp;#people_menu_promo&amp;People"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?cine&amp;#cine_menu_promo&amp;Cinema"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?loto&amp;#loto_menu_promo&amp;Loto Euromillions Keno"/>
+      <include src="erl://svc_smsinfos:print_rubrique_inactive?quinte&amp;#quinte_menu_promo&amp;Quinte"/>
+      <a href="#infos_plus">+ d'infos</a>
+ </page>
+
+
+
+<!-- + d'infos -->
+ <page tag="infos_plus" hist="dohist" cost="free_pt" descr="SMSINFOS:+ d'infos P1">
+   <title>+ d'infos P1</title>
+      SMS Infos: Pour recevoir directement sur votre mobile l'essentiel de l'info
+      qui vous interesse..<br/>
+      <a href="#infos_plus_2">Suite</a>
+ </page>
+
+<page tag="infos_plus_2" hist="dohist" cost="free_pt" descr="SMSINFOS:+ d'infos P2">
+   <title>+ d'infos P2</title>
+      Les conditions legales sont disponibles sur le site www.orange.fr ou
+     aupres de votre service clients<br/>
+      <a href="erl://svc_util:redir_subscription?mobi=#infos_plus_3_mobi,default=#infos_plus_3">Suite</a>
+ </page>
+
+<page tag="infos_plus_3_mobi" hist="dohist" cost="free_pt" descr="SMSINFOS: + d'infos P3 (mobi)">
+   <title>+ d'infos P3</title>
+   Vous pouvez a tout moment resilier votre inscription sur le #123#.
+ </page>
+
+<page tag="infos_plus_3" hist="dohist" cost="free_pt" descr="SMSINFOS:+ d'infos P3">
+   <title>+ d'infos P3</title>
+   Vous pouvez a tout moment resilier votre inscription sur le #123#.
+ </page>
+
+
+
+
+<!-- SMS INFOS SCRIPTS -->
+
+
+<page tag="meteo_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil METEO">
+   <title>Accueil METEO</title>
+    Meteo:<br/>
+    Recevez par SMS tous les apres-midi les previsions
+    meteo du lendemain pour <include src="erl://svc_smsinfos:print_prix?meteo"/> euros <include src="erl://svc_smsinfos:include_text?no_promo"/>.<br/>
+   <a href="#form_meteo">Confirmez</a>
+ </page>
+
+ <page tag="meteo_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Meteo Promo" menutext="notext">
+   <title>Accueil Meteo  Promo</title>
+   Meteo:<br/>
+   Recevez tous les jours les previsions meteo du lendemain.
+   Cette option est gratuite pendant 30j puis vous sera facturee <include src="erl://svc_smsinfos:print_prix?meteo"/> Euro <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+  <a href="#form_meteo">Confirmez</a>
+ </page>
+
+
+<page tag="actu_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil ACTUALITES" menutext="notext">
+   <title>Accueil ACTUALITES</title>
+   Actu: Recevez les dernieres breves d'actualite generale et locale pour <include src="erl://svc_smsinfos:print_prix?actu"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/>.<br/>
+   <a href="erl://svc_smsinfos:subscribe?actu_gene">Pour recevoir l'actu Generale</a><br/>
+   <a href="#form_actu_locale">Pour recevoir l'actu Generale et Locale</a>
+ </page>
+
+ <page tag="actu_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Actualites Promo" menutext="notext">
+   <title>Accueil Actualites Promo</title>
+   Actualite: Recevez les dernieres breves d'actualite generale et locale.
+   Cette option sera gratuite pendant 30j puis sera facturee <include src="erl://svc_smsinfos:print_prix?actu"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/>.<br/>
+   <a href="erl://svc_smsinfos:subscribe?actu_gene">Pour recevoir l'actu Generale</a><br/>
+   <a href="#form_actu_locale">Pour recevoir l'actu Generale et Locale</a>
+ </page>
+
+
+<page tag="horo_menu" hist="donthist" cost="free_pt" descr="SMSINFOS : Acueil HOROSCOPE">
+   <title>Accueil HOROSCOPE</title>
+   Horoscope:<br/>
+   Recevez par SMS chaque matin votre horoscope du jour pour <include src="erl://svc_smsinfos:print_prix?horoscope"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/>.<br/>
+   <a href="#form_horo">Confirmez</a>
+ </page>
+
+ <page tag="horo_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Horoscope Promo">
+   <title>Accueil Horoscope Promo</title>
+   Horoscope:<br/>
+   Recevez tous les jours votre horoscope.
+   Cette option sera gratuite pendant 30j puis vous sera facturee <include src="erl://svc_smsinfos:print_prix?horoscope"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="#form_horo">Confirmez</a>
+ </page>
+
+
+<page tag="sport_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Sport">
+   <title>Accueil Sport</title>
+   Sport: Recevez par SMS les dernieres infos sportives, pour <include src="erl://svc_smsinfos:print_prix?sport"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+   <a href="erl://svc_smsinfos:subscribe?sport">Souscrire</a>
+ </page>
+
+<page tag="sport_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Sport Promo">
+   <title>Accueil Sport Promo</title>
+   Sport: Recevez les dernieres infos sportives.
+   Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?sport"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+   <a href="erl://svc_smsinfos:subscribe?sport">Souscrire</a>
+ </page>
+
+
+<page tag="tv_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil TV">
+   <title>Accueil TV</title>
+   Programme TV:
+   Chaque matin le programme de votre soiree sur votre mobile,
+   pour <include src="erl://svc_smsinfos:print_prix?tv"/> Euros <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+   <a href="erl://svc_smsinfos:subscribe?tv">Confirmez</a>
+ </page>
+
+<page tag="tv_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil TV Promo">
+   <title>Accueil TV Promo</title>
+   Programme TV:
+   Recevez chaque matin le programme de la soiree.
+   Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?tv"/> Euros <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+       <a href="erl://svc_smsinfos:subscribe?tv">Confirmez</a>
+ </page>
+
+
+<page tag="people_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil PEOPLE">
+   <title>Accueil PEOPLE</title>
+   People:<br/>
+   Recevez par SMS tous les potins de vos stars preferees pour <include src="erl://svc_smsinfos:print_prix?people"/> EUR par mois.
+   <!--<include src="erl://svc_smsinfos:include_text?no_promo"/>-->
+   <br/>
+   <a href="erl://svc_smsinfos:subscribe?people">Confirmez</a>
+ </page>
+
+<page tag="people_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil People Promo">
+   <title>Accueil People Promo</title>
+   People:<br/>
+   Recevez tous les potins de vos people preferees.
+   Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?people"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/>.<br/>
+   <a href="erl://svc_smsinfos:subscribe?people">Confirmez</a>
+ </page>
+
+
+<page tag="cine_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Cinema">
+   <title>Accueil Cinema</title>
+   Cinema:<br/>
+   Recevez par SMS toute l'actualite du Cinema, les films a voir, le box office, les sorties en salle... 
+   pour <include src="erl://svc_smsinfos:print_prix?cine"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe?cine">Souscrire</a>
+ </page>
+
+<page tag="cine_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Promo Cinema">
+   <title> Accueil Promo Cinema</title>
+   Cinema:<br/>
+   Recevez par SMS toute l'actualite du Cinema, les films a voir...
+    Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?cine"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe?cine">Souscrire</a>
+ </page>
+
+
+<page tag="loto_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Loto" menutext="notext" backtext="notext">
+   <title>Accueil Loto</title>
+   Loto Euromillions Keno:<br/>
+   Recevez par SMS les resultats de chaque tirage pour <include src="erl://svc_smsinfos:print_prix?loto"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;1">Confirmez Loto,Euromillions</a><br/>
+      <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;2">Confirmez Keno</a><br/>
+      <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;3">Confirmez Loto,Euromillions et Keno</a>
+ </page>
+
+<page tag="loto_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Loto Promo" menutext="notext">
+   <title>Accueil Loto Promo</title>
+   Loto Euromillions Keno:<br/>
+   Recevez par SMS les resultats de chaque tirage.
+   Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?loto"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+   <a href="#loto_menu_promo_page2">Suite</a>
+</page>
+      
+<page tag="loto_menu_promo_page2" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Loto Promo Page 2" 
+menutext="notext">
+   Choisissez:<br/>
+   <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;1">Confirmez Loto,Euromillions</a><br/>
+   <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;2">Confirmez Keno</a><br/>
+   <a href="erl://svc_smsinfos:subscribe_loto?loto&amp;3">Confirmez Loto,Euromillions et Keno</a>
+ </page>
+
+
+<page tag="quinte_menu" hist="donthist" cost="free_pt" descr="SMSINFO: Acueil Quinte">
+   <title>Accueil Quinte</title>
+   Quinte: Recevez les resultats et les rapports de la course du jour, pour <include src="erl://svc_smsinfos:print_prix?quinte"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe?quinte">Confirmez</a>
+ </page>
+
+<page tag="quinte_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Quinte Promo">
+   <title>Accueil Quinte Promo</title>
+   Quinte: Recevez les resultats et les rapports de la course du jour.
+   Cette option est gratuite pendant 30j et facturee <include src="erl://svc_smsinfos:print_prix?quinte"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe?quinte">Confirmez</a>
+ </page>
+
+
+<page tag="blague_menu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil BLAGUES">
+   <title>Accueil BLAGUES</title>
+   Blagues: Recevez par SMS la blague du jour, pour <include src="erl://svc_smsinfos:print_prix?blague"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+   <a href="erl://svc_smsinfos:subscribe?blague">Souscrire</a>
+ </page>
+
+<page tag="blague_menu_promo" hist="donthist" cost="free_pt" descr="SMSINFOS : Acueil Blague">
+   <title>Accueil Blagues</title>
+   Blagues: Recevez une blague par jour.
+   Cette option sera gratuite pendant 30j puis facturee <include src="erl://svc_smsinfos:print_prix?blague"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_smsinfos:subscribe?blague">Souscrire</a>
+ </page>
+
+
+
+
+
+<!-- Modification/Resiliation -->
+
+<page tag="modif_resil" hist="dohist" cost="free_pt" descr="SMSINFOS: Acueil Modifications">
+   <title>Accueil Modifications</title>
+      Vous etes actuellement abonne aux rubriques suivantes:<br/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?meteo&amp;#modif_or_resil_meteo&amp;Meteo"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?horoscope&amp;#modif_or_resil_horo&amp;Horoscope"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?actu&amp;#modif_or_resil_actu&amp;Actualites"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?sport&amp;erl://svc_smsinfos:resil?sport&amp;Sport"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?blague&amp;erl://svc_smsinfos:resil?blague&amp;Blagues"/>
+      <a href="#modif_resil2">Suite</a>
+  </page>    
+
+<page tag="modif_resil2" hist="dohist" cost="free_pt" descr="SMSINFOS: Acueil Modifications P2">
+   <title>Accueil Modifications</title>
+      <include src="erl://svc_smsinfos:print_rubrique_active?tv&amp;erl://svc_smsinfos:resil?tv&amp;Programme TV"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?people&amp;erl://svc_smsinfos:resil?people&amp;People"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?cine&amp;erl://svc_smsinfos:resil?cine&amp;Cinema"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?loto&amp;erl://svc_smsinfos:resil?loto&amp;Loto Euromillions Keno"/>
+      <include src="erl://svc_smsinfos:print_rubrique_active?quinte&amp;erl://svc_smsinfos:resil?quinte&amp;Quinte"/>
+ </page>
+
+
+
+<page tag="modif_or_resil_meteo" hist="donthist" descr="MMSINFOS: modif ou resil">
+   <title>Accueil Modif/Resil</title>
+    Vous etes actuellement abonne a la rubrique Meteo pour le departement
+    <include src="erl://svc_smsinfos:print_compl_rubrique?meteo"/><br/>
+    Souhaitez-vous::<br/>
+      <a href="#form_meteo_modif">Modifier le departement</a><br/>
+      <a href="erl://svc_smsinfos:resil?meteo">Resilier votre abonnement</a><br/>
+
+</page>
+
+<page tag="modif_or_resil_horo" hist="donthist" descr="MMSINFOS: modif ou resil">
+   <title>Accueil Modif/Resil</title>
+    Vous etes actuellement abonne a la rubrique Horoscope pour le signe<br/>
+    <include src="erl://svc_smsinfos:print_compl_rubrique?horoscope"/>
+    Vous souhaitez:<br/>
+      <a href="#form_horo_modif">Modifier le signe astrologique</a><br/>
+      <a href="erl://svc_smsinfos:resil?horoscope">Resilier votre abonnement</a><br/>
+</page>
+
+<page tag="modif_or_resil_actu" hist="donthist" descr="MMSINFOS: modif ou resil">
+   <title>Accueil Modif/Resil</title>
+         Vous etes actuellement abonne a la rubrique Actu generale et Actu <include src="erl://svc_smsinfos:print_compl_rubrique?actu"/><br/>
+	  Vous souhaitez:<br/>
+      <a href="#form_actu_locale_modif">Modifier le numero de departement</a><br/>
+      <a href="erl://svc_smsinfos:resil?actu">Resilier votre abonnement</a>
+      <!--a href="#confirm_resil_actu">Resilier votre abonnement</a-->
+</page>
+
+<!--page tag="confirm_resil_actu" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Resiliation">
+	Vous souhaitez resilier votre abonnement a la rubrique actualite.<br/>
+	Cette resiliation sera immediate mais le mois en cours sera entierement facture<br/>
+  <a href="erl://svc_smsinfos:resil?actu">Confirmez</a>
+</page-->
+
+<page tag="modif_horo" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Modif Horoscope">
+   <title>Accueil Modif Horoscope</title>
+      Vous etes actuellement abonne a la rubrique Horoscope pour le signe <include src="erl://svc_smsinfos:descr_rubrique?horoscope"/>.<br/>
+      Souhaitez-vous:<br/>
+      <a href="#form_horo_modif">Changer de signe</a><br/>
+      <a href="erl://svc_smsinfos:confirm_resil?horo&amp;#confirm_resil_page2">Resilier votre abonnement</a>
+ </page>
+
+<page tag="modif_actu_locale" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Modif Actu locale">
+   <title>Accueil Modif Actu Locale</title>
+      Vous etes actuellement abonne a la rubrique Actu generale et Actu <include src="erl://svc_smsinfos:descr_rubrique?actu"/>.<br/>
+      Souhaitez-vous:<br/>
+      <a href="#form_actu_locale_modif">Modifier le numero de departement</a><br/>
+      <a href="erl://svc_smsinfos:confirm_resil?actu&amp;#confirm_resil_page2">Resilier votre abonnement</a>
+ </page>
+
+
+<!-- Modification Meteo -->
+
+ <page tag="form_meteo_modif" backtext="notext" menutext="notext" descr="SMSINFOS: Demande departement Meteo" nav="stop">
+    <title>SMSINFOS: Dmd departement</title>
+    <form action="erl://svc_smsinfos:modif_meteo">
+    <entry kind="digits">
+      <prompt>Pour modifier votre abonnement au service SMS Meteo veuillez
+      saisir les 2 chiffres du departement de votre ville
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="form_meteo" backtext="notext" menutext="notext" descr="SMSINFOS: Demande departement Meteo" nav="stop">
+    <title>SMSINFOS: Dmd departement</title>
+    <form action="erl://svc_smsinfos:subscribe_meteo">
+    <entry kind="digits">
+      <prompt>Pour vous inscrire au service SMS Meteo veuillez saisir les
+      2 chiffres du departement de votre ville
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_meteo_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande dtpt Meteo: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd departement</title>
+    <form action="erl://svc_smsinfos:subscribe_meteo">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez saisir à nouveau les deux chiffres de votre departement
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+ <page tag="form_meteo_modif_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande dtpt Meteo: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd departement</title>
+    <form action="erl://svc_smsinfos:modif_meteo">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez saisir a nouveau les deux chiffres de votre departement
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<page tag="modif_meteo_success" hist="dohist" cost="free_pt" nav="stop" descr="SMSINFOS: Modif Meteo OK">
+   <title>Modif Meteo OK</title>
+      Votre modification d'abonnement a SMS infos Meteo
+      <include src="erl://svc_smsinfos:descr_rubrique?meteo"/> a bien ete prise
+      en compte.<br/>
+      <a href="sms_infos.xml">Si vous souhaitez vous inscrire a une autre rubrique
+      </a>
+ </page>
+
+ <page tag="fac_type_meteo" hist="dohist" cost="free_pt" descr="SMSINFOS Mobi: Meteo choix facturation">
+   <title>Meteo choix facturation</title>
+      Cette option sera gratuite pendant 30j. Puis facturee selon l'abonnement souhaite:<br/>
+      <a href="erl://svc_smsinfos:inscrire?meteo&amp;no_descr&amp;A"><include src="erl://svc_smsinfos:print_prix?meteo"/>E
+       pour 30 jours</a><br/>
+      <a href="erl://svc_smsinfos:inscrire?meteo&amp;no_descr&amp;M">0,10E a chaque SMS reçu,
+      illimite dans le temps resiliable a tout moment</a>
+ </page>
+
+
+
+<!-- Modification Horoscope-->
+
+ <page tag="form_horo" backtext="notext" menutext="notext" descr="SMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Signes</title>
+    <form action="erl://svc_smsinfos:subscribe_horo">
+    <entry kind="digits">
+      <prompt>Veuillez preciser votre date de naissance au format jjmm.
+      Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+      <br/>Tapez 8 pour revenir a la page precedente.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_modif" menutext="notext" descr="SMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Signes</title>
+    <form action="erl://svc_smsinfos:modif_horo">
+    <entry kind="digits">
+      <prompt>Pour modifier votre signe astrologique, veuillez preciser
+      votre date de naissance au format jjmm.
+      Exemple 0204 pour le 2 Avril<br/>
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_smsinfos:subscribe_horo">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_modif_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_smsinfos:modif_horo">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<page tag="modif_horo_success" hist="dohist" cost="free_pt" nav="stop" descr="SMSINFOS: Modif Horoscope OK">
+   <title>Modif Horoscope OK</title>
+      Votre modification d'abonnement a SMS infos Horoscope
+      <include src="erl://svc_smsinfos:descr_rubrique"/> a bien
+      ete prise en compte.<br/>
+      <a href="sms_infos.xml">Si vous souhaitez vous inscrire a une autre rubrique
+      </a>
+ </page>
+
+
+<!-- Modification Actualite locale -->
+
+ <page tag="form_actu_locale" backtext="notext" menutext="notext" descr="SMSINFOS: Demande departement actu locale" nav="stop">
+    <title>SMSINFOS: Dmd actu locale</title>
+    <form action="erl://svc_smsinfos:subscribe_actu_locale">
+    <entry kind="digits">
+      <prompt>Pour vous inscrire au service SMS Actualite veuillez saisir les
+      2 chiffres de votre departement
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<page tag="form_actu_locale_modif" backtext="notext" hist="dohist" menutext="notext" descr="SMSINFOS: Demande departement actu locale" nav="stop">
+    <title>SMSINFOS: Dmd actu locale</title>
+    <form action="erl://svc_smsinfos:modif_actu_locale">
+    <entry kind="digits">
+      <prompt>Pour modifier votre abonnement au service SMS Actu
+      veuillez saisir les 2 chiffres du departement de votre ville
+      <br/>Tapez 8 pour revenir en arriere
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+ <page tag="form_actu_locale_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande departement actu+ Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_smsinfos:subscribe_actu_locale">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez recomposer les 2 chiffres du departement de votre ville
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_actu_locale_modif_nok" backtext="notext" menutext="notext" descr="SMSINFOS: Demande departement actu+ Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_smsinfos:modif_actu_locale">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre demande.<br/>
+      Veuillez recomposer les 2 chiffres du departement de votre ville
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Resiliation -->
+
+<page tag="confirm_resil_page1" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Resiliation">
+  Vous etes actuellement abonne a la rubrique
+  Infos <include src="#descr_rubrique"/>
+  <br/>Tapez 8 pour revenir en arriere ou 1 si vous souhaitez resilier votre abonnement<br/>
+  <a href="#confirm_resil_page2">Resilier</a><br/>
+</page>
+
+<page tag="confirm_resil_page2" hist="donthist" cost="free_pt" descr="SMSINFOS: Acueil Resiliation">
+  Vous souhaitez resilier votre abonnement a la rubrique
+  <include src="#descr_rubrique"/><br/>
+  Cette resiliation sera immediate mais le mois en cours sera entierement facture<br/>
+  <a href="erl://svc_smsinfos:resil">Confirmez</a>
+</page>
+
+<page tag="success_resil" hist="donthist" backtext="notext" cost="free_pt" descr="SMSINFOS: Sucess Resiliation">
+   <title>Inscription OK: Abonnement</title>
+      Votre resiliation a bien ete prise en compte.<br/>
+      <a href="sms_infos.xml">Pour souscrire a une autre rubrique</a>
+ </page>
+
+<!-- Inscription -->
+
+ <page tag="success_abo" hist="donthist" cost="free_pt" nav="stop" descr="SMSINFOS: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre abonnement a SMS infos
+      <include src="erl://svc_smsinfos:descr_rubrique"/> pour
+      <include src="erl://svc_smsinfos:rubrique_prix"/> a bien
+      ete pris en compte<br/>
+      <a href="sms_infos.xml">Si vous souhaitez vous inscrire a une autre rubrique
+      </a>
+ </page>
+
+ <page tag="success_sms" hist="donthist" cost="free_pt" nav="stop" descr="SMSINFOS: Sucess inscription SMS">
+   <title>Inscription OK: SMS MT</title>
+      Votre abonnement a SMS infos
+      <include src="erl://svc_smsinfos:descr_rubrique"/> a bien ete pris en compte.<br/>
+      <a href="sms_infos.xml">Si vous souhaitez vous inscrire a une autre rubrique</a>
+ </page>
+
+ <page tag="success_postcmo" hist="donthist" cost="free_pt" nav="stop" descr="SMSINFOS: Sucess Abo CMO POSTPAID">
+   <title>Inscription OK: Abo Post CMO</title>
+      Votre abonnement a SMS Infos
+      <include src="erl://svc_smsinfos:descr_rubrique"/> a bien
+      ete pris en compte<br/>
+      <a href="sms_infos.xml">Si vous souhaitez vous inscrire a une autre rubrique</a>
+ </page>
+
+<page tag="descr_rubrique">
+    <include src="erl://svc_smsinfos:print_rubrique_en_cours?meteo=Meteo,horo=Horoscope,actu=Actualites,sport=Sport,blague=Blagues,tv=Progammes TV,people=People,cine=Cinema,loto=Loto Euromillions Keno,quinte=Quinte"/>
+  </page>
+
+<!-- Error Pages -->
+ 
+<page tag="credit_insuffisant" cost="free_pt" descr="SMSINFOS: Solde insufisant">
+    <title>Mobi : Solde insuffisant</title>
+    Votre credit mobicarte est insuffisant.<br/>
+    Tapez 1 pour recharger ou 0 pour revenir en arriere<br/>
+    <a href="recharge.xml">Recharger</a>
+</page>
+
+ <page tag="system_failure" nav="end" cost="free_pt" descr="SMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.</page>
+           
+<page tag="temporary" nav="end" cost="free_pt" descr="SMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.</page>
+
+</pages>

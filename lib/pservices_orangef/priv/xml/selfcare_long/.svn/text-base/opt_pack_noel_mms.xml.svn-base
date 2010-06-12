@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option soiree SMS">
+  
+  <page>
+  </page>
+  
+  <page tag="restit_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Pack Noel
+	MMS avec solde">
+    <title>Page de restitution a l'option Pack Noel MMS avec solde</title>
+    Vous avez jusqu'au <include
+    src="erl://svc_options:print_end_credit?opt_pack_noel_mms"/> inclus
+    pour utiliser les <include
+    src="erl://svc_options:print_balance?opt_pack_noel_mms&amp;mms"/> MMS (non
+    utilisables en SMS) de votre pack Noel MMS.
+  </page>
+ 
+  <page tag="restit_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Pack Noel MMS
+	sans solde">
+    <title>Page de restitution a l'option Pack Noel MMS avec solde</title>
+    Votre pack Noel MMS est actuellement epuise.
+  </page>
+
+
+</pages>
+
+ 

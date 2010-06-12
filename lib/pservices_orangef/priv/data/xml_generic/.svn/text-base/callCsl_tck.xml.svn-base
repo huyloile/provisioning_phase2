@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callCsl_tck>
+      <sac:params>
+        <sac:name>TYPE_CLE</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(csl_tck.TYPE_CLE.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>VALEUR_CLE</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(csl_tck.VALEUR_CLE.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(csl_tck.MSISDN.)"?></sac:value>
+      </sac:params>
+    </sac:callCsl_tck>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: Forfait SMS GP">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="Forfait SMS Postpaid GP : souscription" cost="freept">
+   <title>Menu souscription Forfait SMS GP</title>
+   Choisissez votre option SMS/MMS (1 MMS = 3 SMS):<br/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_30_gp&amp;#impact_sms_30&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_80_gp&amp;#impact_sms_80&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_130_gp&amp;#impact_sms_130&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_210_gp&amp;#impact_sms_210&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_300_gp&amp;#impact_sms_300&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?orange_messenger_gp&amp;#impact_orange_messenger&amp;nobr"/> 
+   </page>
+
+<!-- Get Impact Souscription Service Optionnel --------------------------------------------------->
+<page tag="impact_sms_30" hist="dohist" descr="Forfait SMS Postpaid GP : impact souscription 30 SMS">
+   <title>Impact souscription 30 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_30_gp&amp;#add_sms_30,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_80" hist="dohist" descr="Forfait SMS Postpaid GP : impact souscription 80 SMS">
+   <title>Impact souscription 80 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_80_gp&amp;#add_sms_80,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_130" hist="dohist" descr="Forfait SMS Postpaid GP : impact souscription 130 SMS">
+   <title>Impact souscription 130 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_130_gp&amp;#add_sms_130,#error_msg"/>
+  </page>
+   
+<page tag="impact_sms_210" hist="dohist" descr="Forfait SMS Postpaid  GP: impact souscription 210 SMS">
+   <title>Impact souscription 210 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_210_gp&amp;#add_sms_210,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_300" hist="dohist" descr="Forfait SMS Postpaid GP : impact souscription 300 SMS">
+   <title>Impact souscription 300 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_300_gp&amp;#add_sms_300,#error_msg"/>
+  </page>
+
+<page tag="impact_orange_messenger" hist="dohist" descr="Forfait orange messenger postpaid : impact souscription orange messenger">
+   <title>Impact souscription orange messenger</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?orange_messenger_gp&amp;#orange_messenger,#error_msg"/>
+  </page>
+	
+
+<!--  Texts Souscription --------------------------------------------------->
+<page tag="add_sms_30" hist="dohist" descr="Forfait SMS Postpaid GP : tentative souscription 30 SMS">
+   <title>Confirmation souscription 30 SMS</title>
+   Vous souhaitez souscrire a l'option 30 SMS/10 MMS a 3E/mois.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_30_gp&amp;#success_add_gp,#fail_promo_sms_30_gp,#fail_fonct_gp">Valider</a>
+  </page>
+
+<page tag="add_sms_80" hist="dohist" descr="Forfait SMS Postpaid GP : tentative souscription 80 SMS">
+   <title>Confirmation souscription 80 SMS</title>
+   Vous souhaitez souscrire a l'option 80 SMS/26 MMS a 7,5E par mois.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_80_gp&amp;#success_add_gp,#fail_promo_sms_80_gp,#fail_fonct_gp">Valider</a>
+  </page>
+
+<page tag="add_sms_130" hist="dohist" descr="Forfait SMS Postpaid GP : tentative souscription 130 SMS">
+   <title>Confirmation souscription 130 SMS</title>
+   Vous souhaitez souscrire a l'option 130 SMS/43 MMS a 12E/mois.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_130_gp&amp;#success_add_gp,#fail_promo_sms_130_gp,#fail_fonct_gp">Valider</a>
+  </page>
+   
+<page tag="add_sms_210" hist="dohist" descr="Forfait SMS Postpaid  GP: tentative souscription 210 SMS">
+   <title>Confirmation souscription 210 SMS</title>
+   Vous souhaitez souscrire a l'option 180 SMS/60 MMS + 30 SMS vers Orange a 18E/mois.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_210_gp&amp;#success_add_gp,#fail_promo_sms_210_gp,#fail_fonct_gp">Valider</a>
+  </page>
+
+<page tag="add_sms_300" hist="dohist" descr="Forfait SMS Postpaid GP : tentative souscription 300 SMS">
+   <title>Confirmation souscription 300 SMS</title>
+   Vous souhaitez souscrire a l'option 250 SMS/83 MMS + 50 SMS vers Orange a 25E/mois.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_300_gp&amp;#success_add_gp,#fail_promo_sms_300_gp,#fail_fonct_gp">Valider</a>
+  </page>
+
+<page tag="orange_messenger" hist="dohist" descr="Forfait SMS Postpaid GP : tentative souscription orange messenger">
+   <title>Confirmation souscription orange messenger</title>
+   OM by Windows Live Envoyez, recevez en illimite vos messages. depuis un mobile compatible pour 4E / mois.<br/> 
+   <a href="erl://svc_subscr_asmetier:souscrire?orange_messenger_gp&amp;#success_sousc_messenger_gp,#fail_fonct_gp,#fail_fonct_gp">Valider</a>
+   </page>
+
+
+<!--  Texts Souscription sans promo --------------------------------------------------->
+<page tag="fail_promo_sms_30_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option musique redirection vers souscription sans promo">
+   <title>Souscription option musique redirection vers souscription sans promo</title>
+	Vous avez deja beneficie d'une promotion sur cette option,
+	apres confirmation vous profiterez de l'option sans la promotion<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_30_ss_promo_gp&amp;#success_add_gp,#success_add_gp">Valider</a>
+</page>
+
+<page tag="fail_promo_sms_80_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option musique redirection vers souscription sans promo">
+   <title>Souscription option musique redirection vers souscription sans promo</title>
+	Vous avez deja beneficie d'une promotion sur cette option,
+	apres confirmation vous profiterez de l'option sans la promotion<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_80_ss_promo_gp&amp;#success_add_gp,#success_add_gp">Valider</a>
+</page>
+
+<page tag="fail_promo_sms_130_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option musique redirection vers souscription sans promo">
+   <title>Souscription option musique redirection vers souscription sans promo</title>
+	Vous avez deja beneficie d'une promotion sur cette option,
+	apres confirmation vous profiterez de l'option sans la promotion<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_130_ss_promo_gp&amp;#success_add_gp,#success_add_gp">Valider</a>
+</page>
+
+<page tag="fail_promo_sms_210_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option musique redirection vers souscription sans promo">
+   <title>Souscription option musique redirection vers souscription sans promo</title>
+	Vous avez deja beneficie d'une promotion sur cette option,
+	apres confirmation vous profiterez de l'option sans la promotion<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_210_ss_promo_gp&amp;#success_add_gp,#success_add_gp">Valider</a>
+</page>
+
+<page tag="fail_promo_sms_300_gp" backtext="notext" hist="dohist" descr="OW Postpaid GP : Souscription option musique redirection vers souscription sans promo">
+   <title>Souscription option musique redirection vers souscription sans promo</title>
+	Vous avez deja beneficie d'une promotion sur cette option,
+	apres confirmation vous profiterez de l'option sans la promotion<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_300_ss_promo_gp&amp;#success_add_gp,#success_add_gp">Valider</a>
+</page>
+
+<!-- Result pages --------------------------------------------------->
+
+<page tag="success_add_gp" backtext="notext" hist="dohist" descr="Forfait SMS Postpaid GP : Souscription Reussie">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option
+   <include src="erl://svc_subscr_asmetier:print_opt"/>. Vous
+   pouvez l'utiliser en SMS ou MMS(avec 1 MMS=3 SMS).
+   Vous serez averti de l'activation de votre option par SMS.
+</page>
+
+<page tag="success_sousc_messenger_gp" backtext="notext" hist="dohist" descr="Forfait orange messenger : Souscription Reussie">
+   <title>Souscription Messenger Reussi</title>
+   Vous avez souscrit a l'option mensuelle Orange Messenger by Windows Live. Vous serez averti de son activation par SMS.
+</page> 
+
+<page tag="success_add_first" backtext="notext" hist="dohist" descr="Forfait SMS Postpaid GP : Souscription Reussie">
+   <title>Souscription Reussi, pas d'autre option SMS</title>
+   Vous avez souscrit a l'option
+   <include src="erl://svc_subscr_asmetier:print_opt"/>. Vous
+   pouvez l'utiliser en SMS ou MMS(avec 1 MMS=3 SMS).
+   Vous serez averti de l'activation de votre option par SMS.
+</page>
+
+<page tag="fail_fonct_gp" hist="dohist" descr="OW Postpaid GP : Erreur fonctionnelle 8: client non elligible a souscrire">
+   <title>Erreur fonctionnelle 8: client non elligible a souscrire</title>
+	Vous n'etes pas elligible a ce service, veuillez contacter le 700 (prix com. au tarif normal).<br/>
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="Forfait SMS Postpaid GP : Echec souscription failure">
+  <redirect src="/orangef/postpaid_gp.xml#temporary"/>
+</page>
+
+</pages>

@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callTra_credit>
+      <sac:params>
+        <sac:name>DOS_NUMID</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(tra_credit.DOS_NUMID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TRA_MSISDN_RECEVEUR</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(tra_credit.TRA_MSISDN_RECEVEUR.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TRA_TRC_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(tra_credit.TRA_TRC_NUM.)"?></sac:value>
+      </sac:params>
+    </sac:callTra_credit>
+  </soapenv:Body>
+</soapenv:Envelope>

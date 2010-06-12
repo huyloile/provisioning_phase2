@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option soiree Infinie/Tchatche">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_sinf&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie/Tchatche deja active">
+    <title>option soiree Infinie/Tchatche deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/> est deja
+    activee. Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie menu generique">
+    <title>option soiree Infinie menu generique</title>
+    Avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>, profitez de
+    communications illimitees de 21h a minuit ce soir vers les fixes et les
+    mobiles orange pour
+    <include src="erl://svc_options:print_option_price?opt_sinf"/>.<br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+ <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option soiree Infinie/Tchatche solde insuffisant">
+   <title>option soiree Infinie/Tchatche solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>, vous
+    devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_sinf"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option soiree Infinie/Tchatche solde insuffisant M6">
+   <title>option soiree Infinie/Tchatche solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>, vous
+    devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_sinf"/> sur votre
+    compte principal. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option soiree Infinie/Tchatche solde insuffisant Foot">
+   <title>option soiree Infinie/Tchatche solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>, vous
+    devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_sinf"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option soiree Infinie/Tchatche solde insuffisant Click">
+   <title>option soiree Infinie/Tchatche solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>, vous
+    devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_sinf"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie page conditions">
+    <title>option soiree Infinie page conditions</title>
+    Appels voix illimites en France metropolitaine le soir de la
+    souscription de 21h a minuit, vers les Nos fixes et mobiles Orange...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+
+  <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie page conditions suite1 ">
+    <title>option soiree Infinie page conditions  suite1</title>
+    ...(hors No speciaux, No courts, No d'acces wap et web,
+    appels emis depuis des boitiers et appels vers les plates-formes telephoniques)...<br/>
+    <a href="#conditions_suite2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option soiree infinie page conditions suite (2)">
+    <title>option soiree Infinie page conditions suite(2)</title>
+     ...dans la limite de 3 heures maximum par appel. Appels directs entre
+     personnes physiques pour un usage personnel non lucratif direct...<br/>
+    <a href="#conditions_suite3">Suite</a>
+   </page>
+
+   <page tag="conditions_suite3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option soiree infinie page conditions suite (3)">
+    <title>option soiree Infinie page conditions suite(3)</title>
+    ...Option non disponible les jours feries et veilles de jours feries.<br/>
+     <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie page souscrire">
+    <title>option soiree Infinie page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/> pour
+    <include src="erl://svc_options:print_option_price?opt_sinf"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_sinf&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+<!-- Commun -->
+
+  <page tag="success" nav="stop" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree Infinie/Tchatche page apres confirmation">
+    <title>option soiree Infinie/Tchatche page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.  Dans quelques instants,
+    votre option <include src="erl://svc_options:print_option_price?opt_sinf"/> sera activee. Merci de votre appel.<br/>
+  </page>
+  <page tag="success_princ" nav="stop" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree infini page apres confirmation">
+    <title>option soiree infini page apres confirmation</title>
+    Vous avez souscrit une soiree infinie pour <include src="erl://svc_options:print_option_price?opt_sinf"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_option_price?opt_sinf"/> sera activee.
+  </page>
+  <page tag="success_bp" nav="stop" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree infini page apres confirmation">
+    <title>option soiree infini page apres confirmation</title>
+    Vous avez souscrit une soiree infinie pour <include src="erl://svc_options:print_option_price?opt_sinf"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_option_price?opt_sinf"/> sera activee.
+  </page>
+  <page tag="success_offert" nav="stop" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree infini page apres confirmation">
+    <title>option soiree infini page apres confirmation</title>
+    Vous avez souscrit une soiree infinie pour <include src="erl://svc_options:print_option_price?opt_sinf"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_option_price?opt_sinf"/> sera activee.
+  </page>
+  <page tag="success_dixit" nav="stop" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree infini page apres confirmation">
+    <title>option soiree infini page apres confirmation</title>
+    Vous avez souscrit une soiree infinie pour <include src="erl://svc_options:print_option_price?opt_sinf"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_option_price?opt_sinf"/> sera activee.
+  </page>
+
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option soiree Infinie/Tchatche page offre incompatible">
+    <title>option option soiree Infinie/Tchatche page offre
+    incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_sinf"/>.Pour
+    +d'infos contactez votre service clients Orange
+    mobile au 722 (0,37 E/min). Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="restitution" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option soiree Infine/Tchatche">
+    <title>Page de restitution a l'option soiree Infinie/Tchatche</title>
+    Vous beneficiez actuellement d'appels illimites vers fixes et mobiles
+    Orange.
+  </page>
+
+<!--PROMO-->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option soiree infinie menu generique promo">
+    <title>option soiree infinie menu generique promo</title>
+     Grace a votre promotion 1er rechargement, vous beneficiez de bons plans offerts...
+     <a href="#generique_promo2">Suite</a>
+  </page>
+
+ <page tag="generique_promo2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option soiree infinie menu generique promo 2">
+    <title>option soiree infinie menu generique promo</title>
+    Pensez a verifier le credit de votre compte bons plans (suivi conso detaille).
+    Si le credit est insuffisant, le montant du bon plan sera debite de votre compte principal...
+     <a href="#generique_promo3">Suite</a>
+  </page>
+
+ <page tag="generique_promo3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option soiree infinie menu generique promo 2">
+    <title>option soiree infinie menu generique promo</title>
+    Avec l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> (d'une valeur de 3E),
+    profitez de communications illimitees de 21h a minuit ce soir vers fixes et mobiles orange
+    <a href="#conditions_promo">Conditions</a><br/>
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option surf page souscrire Promo">
+    <title>option surf page souscrire Promo</title>
+    Vous allez souscrire a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> (bon plan d'une valeur de3E).
+    <a href="erl://svc_options_mobi:do_subscription?opt_sinf&amp;#success_promo,#opt_deja_active,#solde_insuff,#failure,#success_princ_promo,#success_bp_promo,#success_offert_promo,#success_dixit_promo">Confirmer</a>
+  </page>
+
+
+ <page tag="success_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree infinie page apres confirmation">
+    <title>option soiree infinie page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> (bon plan d'une valeur de 3E).
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> sera activee.
+  </page>
+
+  <page tag="success_princ_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> (bon plan d'une valeur de 3E).
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> sera activee.
+  </page>
+
+  <page tag="success_bp_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> grace a votre promo.
+    3E ont ete debites de votre compte bons plans.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> sera activee.
+  </page>
+  <page tag="success_offert_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> pour 3E.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> sera activee.
+  </page>
+  <page tag="success_dixit_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> grace a votre promo.
+    3E ont ete debites de votre compte dixit.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_sinf"/> sera activee.
+  </page>
+
+ <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option soiree infini page conditions promo">
+    <title>option soiree infini page conditions promo</title>
+    Appels voix illimites en France metropolitaine le soir de la souscription de 21h a minuit, vers les nos fixes et mobiles Orange...
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+ <page tag="conditions_promo2" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option soiree infini page conditions promo">
+    <title>option soiree infini page conditions promo</title>
+    ...(hors no speciaux,no courts,no d'acces wap et web, appels emis depuis des boitiers et appels vers les plates-formes telephoniques)...
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+ <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option soiree infini page conditions promo">
+    <title>option soiree infini page conditions promo</title>
+    ...dans la limite de 3 heures maximum par appel. Appels directs entre personnes physiques pour un usage personnel non lucratif direct...
+    <a href="#conditions_promo4">Suite</a>
+  </page>
+ <page tag="conditions_promo4" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option soiree infini page conditions promo">
+    <title>option soiree infini page conditions promo</title>
+    ...Option non disponible les jours feries et veilles de jours feries.
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+</pages>
+
+ 

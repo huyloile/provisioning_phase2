@@ -1,0 +1,261 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="urn:sachem.data.ecare" xmlns:tns="urn:sachem.service.ecare/G8" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:sachem.service.ecare/G8">
+    <xsd:import namespace="urn:sachem.data.ecare"  schemaLocation="WSDL/SachemData.xsd" />
+    <xsd:element name="isAlive" type="tns:isAlive"/>
+    <xsd:complexType name="isAlive">
+        <xsd:sequence/>
+    </xsd:complexType>
+    <xsd:element name="isAliveResponse" type="tns:isAliveResponse"/>
+    <xsd:complexType name="isAliveResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getCode" type="tns:getCode"/>
+    <xsd:complexType name="getCode">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nomTable" type="xsd:string"/>
+            <xsd:element name="identifiant" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getCodeResponse" type="tns:getCodeResponse"/>
+    <xsd:complexType name="getCodeResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getLibelle" type="tns:getLibelle"/>
+    <xsd:complexType name="getLibelle">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nomTable" type="xsd:string"/>
+            <xsd:element name="identifiant" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getLibelleResponse" type="tns:getLibelleResponse"/>
+    <xsd:complexType name="getLibelleResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doRechargerCache" type="tns:doRechargerCache"/>
+    <xsd:complexType name="doRechargerCache">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doRechargerCacheResponse" type="tns:doRechargerCacheResponse"/>
+    <xsd:complexType name="doRechargerCacheResponse">
+        <xsd:sequence/>
+    </xsd:complexType>
+    <xsd:element name="doRechargementCB" type="tns:doRechargementCB"/>
+    <xsd:complexType name="doRechargementCB">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="idDossier" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="montant" type="xsd:decimal"/>
+            <xsd:element minOccurs="0" name="typeRechargement" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="etatTransaction" type="xsd:short"/>
+            <xsd:element minOccurs="0" name="idTransaction" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="typeTransfert" type="xsd:short"/>
+            <xsd:element minOccurs="0" name="numMSISDN" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="dateDemandePaiement" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doRechargementCBResponse" type="tns:doRechargementCBResponse"/>
+    <xsd:complexType name="doRechargementCBResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:rechargement"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="isRechargeableParentChild" type="tns:isRechargeableParentChild"/>
+    <xsd:complexType name="isRechargeableParentChild">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="numMSISDN" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="isRechargeableParentChildResponse" type="tns:isRechargeableParentChildResponse"/>
+    <xsd:complexType name="isRechargeableParentChildResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:rechargeableParentChild"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getValeurParametre" type="tns:getValeurParametre"/>
+    <xsd:complexType name="getValeurParametre">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nomTable" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nomColonne" type="xsd:string"/>
+            <xsd:element name="identifiant" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getValeurParametreResponse" type="tns:getValeurParametreResponse"/>
+    <xsd:complexType name="getValeurParametreResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getVersion" type="tns:getVersion"/>
+    <xsd:complexType name="getVersion">
+        <xsd:sequence/>
+    </xsd:complexType>
+    <xsd:element name="getVersionResponse" type="tns:getVersionResponse"/>
+    <xsd:complexType name="getVersionResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getInfoDossier" type="tns:getInfoDossier"/>
+    <xsd:complexType name="getInfoDossier">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="numMSISDN" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getInfoDossierResponse" type="tns:getInfoDossierResponse"/>
+    <xsd:complexType name="getInfoDossierResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:infoDossier"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistoriqueRecharge" type="tns:getHistoriqueRecharge"/>
+    <xsd:complexType name="getHistoriqueRecharge">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="msisdn" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="nbRecharges" type="xsd:long"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistoriqueRechargeResponse" type="tns:getHistoriqueRechargeResponse"/>
+    <xsd:complexType name="getHistoriqueRechargeResponse">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns0:historiqueRecharge"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistoriqueSuite" type="tns:getHistoriqueSuite"/>
+    <xsd:complexType name="getHistoriqueSuite">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="curseur" type="ns0:curseur"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistoriqueSuiteResponse" type="tns:getHistoriqueSuiteResponse"/>
+    <xsd:complexType name="getHistoriqueSuiteResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:historique"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getOptionsCatalogue" type="tns:getOptionsCatalogue"/>
+    <xsd:complexType name="getOptionsCatalogue">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="numDossier" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getOptionsCatalogueResponse" type="tns:getOptionsCatalogueResponse"/>
+    <xsd:complexType name="getOptionsCatalogueResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:optionsCatalogue"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getCodesLibellesPourEdelweiss" type="tns:getCodesLibellesPourEdelweiss"/>
+    <xsd:complexType name="getCodesLibellesPourEdelweiss">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element name="idEtatDossier" type="xsd:int"/>
+            <xsd:element name="idEtatsSecondaires" type="xsd:int"/>
+            <xsd:element name="idEtatCompte" type="xsd:int"/>
+            <xsd:element name="idOptions" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getCodesLibellesPourEdelweissResponse" type="tns:getCodesLibellesPourEdelweissResponse"/>
+    <xsd:complexType name="getCodesLibellesPourEdelweissResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:codesLibellesPourEdelweiss"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistorique" type="tns:getHistorique"/>
+    <xsd:complexType name="getHistorique">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element name="idDossierSachem" type="xsd:long"/>
+            <xsd:element name="idCompteSachem" type="xsd:short"/>
+            <xsd:element minOccurs="0" name="filtre" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getHistoriqueResponse" type="tns:getHistoriqueResponse"/>
+    <xsd:complexType name="getHistoriqueResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:historique"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doModificationOption" type="tns:doModificationOption"/>
+    <xsd:complexType name="doModificationOption">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element name="idDossierSachem" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="demandeModificationOption" type="ns0:demandeModificationOption"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doModificationOptionResponse" type="tns:doModificationOptionResponse"/>
+    <xsd:complexType name="doModificationOptionResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:modificationOption"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getInfoComptes" type="tns:getInfoComptes"/>
+    <xsd:complexType name="getInfoComptes">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element name="idDossierSachem" type="xsd:long"/>
+            <xsd:element name="idDeclinaison" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getInfoComptesResponse" type="tns:getInfoComptesResponse"/>
+    <xsd:complexType name="getInfoComptesResponse">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns0:infoCompte"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getOptionsDossier" type="tns:getOptionsDossier"/>
+    <xsd:complexType name="getOptionsDossier">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="idDossierSachem" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="getOptionsDossierResponse" type="tns:getOptionsDossierResponse"/>
+    <xsd:complexType name="getOptionsDossierResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:optionsDossier"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doActionPrestation" type="tns:doActionPrestation"/>
+    <xsd:complexType name="doActionPrestation">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element name="idDossier" type="xsd:long"/>
+            <xsd:element minOccurs="0" name="infoActivationPrestation" type="ns0:demandeActionPrestation"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="doActionPrestationResponse" type="tns:doActionPrestationResponse"/>
+    <xsd:complexType name="doActionPrestationResponse">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns0:infoCompte"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="isRechargeableCB" type="tns:isRechargeableCB"/>
+    <xsd:complexType name="isRechargeableCB">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="codeEmetteur" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="numMSISDN" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="isRechargeableCBResponse" type="tns:isRechargeableCBResponse"/>
+    <xsd:complexType name="isRechargeableCBResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="return" type="ns0:rechargeableCB"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

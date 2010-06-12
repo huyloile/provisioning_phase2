@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf
+END
+magic
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/magic
+END
+access.conf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/access.conf
+END
+srm.conf
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/srm.conf
+END
+httpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/httpd.conf
+END
+httpd1.conf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/httpd1.conf
+END
+httpd2.conf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/cbhttp/conf/httpd2.conf
+END

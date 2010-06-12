@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv
+END
+tableratio.csv
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/tableratio.csv
+END
+sachem_options_old.csv
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/sachem_options_old.csv
+END
+list_0zab.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/list_0zab.txt
+END
+sachem_options.csv
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/sachem_options.csv
+END
+create-orangef-tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/create-orangef-tables.sql
+END
+asmetier_options_old.csv
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/asmetier_options_old.csv
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/Makefile
+END
+asmetier_options.csv
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/asmetier_options.csv
+END

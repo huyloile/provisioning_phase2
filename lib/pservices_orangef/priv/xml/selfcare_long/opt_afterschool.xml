@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option After School">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_afterschool&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School deja active">
+    <title>option After School deja active</title>
+    Bonjour, votre option after school est deja activee. Orange vous remercie
+    de votre appel.
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School solde insuffisant">
+    <title>option After School solde insuffisant</title>
+    Bonjour, pour souscrire a l'option After school, vous devez disposer
+    de <include src="erl://svc_options:print_option_price?opt_afterschool"/> sur
+    votre compte mobicarte. Orange vous remercie de votre appel.
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School menu generique normal">
+    <title>option After School menu generique normal</title>
+    Avec l'option After school: 1h d'appels en dehors des cours vers Orange et
+    fixes, c'est seulement
+    <include src="erl://svc_options:print_option_price?opt_afterschool"/>.<br/>
+    <a href="#infos">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="infos" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School page + d'infos">
+    <title>option After School page infos</title>
+    After school c'est 1h d'appel des 17h jusqu'a minuit ou le mercredi,
+    les we et jours feries toute la journee vers fixes et mobiles Orange<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School page conditions">
+    <title>option After School page conditions</title>
+    Souscription possible uniquement le jour meme entre 2h et 23h. Appels en
+    France metropolitaine vers Fixes et Orange, hors num speciaux et acces au
+    WAP/WEB.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School page souscrire">
+    <title>option After School page souscrire</title>
+    Vous allez souscrire a l'option After school pour
+    <include src="erl://svc_options:print_option_price?opt_afterschool"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_afterschool&amp;#success,#failure">
+      Confirmer
+    </a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School page apres confirmation">
+    <title>option After School page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option After school sera activee. Merci de votre appel.
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option After School page offre incompatible">
+    <title>option After School page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option after school. Pour + d'infos
+    contactez le service clients au 722 depuis votre mobile (0,37 E/min.).
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page restitution avec credit option After School">
+    <title>Page restitution avec credit option After School</title>
+    Il vous reste <include src="erl://svc_options:print_balance_min?opt_afterschool"/> de
+    communications vers Orange et fixe sur votre option After School a utiliser
+    avant ce soir minuit.
+  </page>
+  
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page restitution sans credit option After School">
+    <title>Page restitution sans credit option After School</title>
+    Votre option After School est actuellement epuisee. Pour soucrire a nouveau
+    une option After School, appelez le 220 (appel gratuit).<br/>
+  </page>
+
+</pages>

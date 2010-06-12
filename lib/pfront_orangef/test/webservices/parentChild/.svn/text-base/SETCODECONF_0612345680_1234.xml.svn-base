@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <setCodeConfidentielResponse xmlns="urn:m8o.francetelecom.com">
+            <setCodeConfidentielReturn>
+                <ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+                    <item>
+                        <ns1:UUID>String</ns1:UUID>
+                        <ns1:channel>1</ns1:channel>
+                        <ns1:lang>String</ns1:lang>
+                        <ns1:statusCode>7c00</ns1:statusCode>
+                        <ns1:statusDescription>Successfull set invocation</ns1:statusDescription>
+                        <ns1:statusName>SetSuccess</ns1:statusName>
+                        <ns1:statusType>0</ns1:statusType>
+                    </item>
+                </ns1:statusList>
+                <ns2:nbTentatives xmlns:ns2="urn:m8o.francetelecom.com:wsdl:resource">3</ns2:nbTentatives>
+            </setCodeConfidentielReturn>
+        </setCodeConfidentielResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

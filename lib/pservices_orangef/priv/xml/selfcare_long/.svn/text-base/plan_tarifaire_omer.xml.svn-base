@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="free_pt" descr="Changement de plan tarifaire Omer" hist="dohist">
+    <title>Changement de plan tarifaire Omer</title>
+    <redirect src="erl://svc_plan_tarif_omer:check_solde?#print_hlinks_by_plan&amp;#not_enough_credit_pt"/>
+  </page>
+  
+  <page tag="print_hlinks_by_plan" cost="free_pt"
+	descr="Changement de plan tarifaire Omer" hist="dohist">
+    <title>Changement de plan tarifaire Omer</title>
+    <!--
+      vous etes actuellement en plan <include src="erl://svc_plan_tarif_omer:print_by_plan?pomer_lanc_min=lancement minute,pomer_lanc_sec=lancement seconde,pomer_class_min=classique minute,pomer_class_sec=classique seconde"/> et vous pouvez changer
+      vers:<br/>-->
+    <include src="erl://svc_plan_tarif_omer:print_hlinks_by_plan?pomer_lanc_min:plan classique seconde=#changer_pour_lanc_sec,pomer_lanc_sec:plan classique minute=#changer_pour_lanc_min,pomer_class_min:plan classique seconde=#changer_pour_class_sec,pomer_class_sec:plan classique minute=#changer_pour_class_min"/>
+  </page>
+  
+  <page tag="changer_pour_lanc_min" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Omer vers plan classique a la seconde">
+    <title>Changement de plan Omer vers plan classique a la seconde</title>
+    Plan lancement: les appels sont factures a un tarif unique de
+    <include
+     src="erl://svc_plan_tarif_omer:print_prix_eur_min?pomer_lanc_min"/>.<br/>
+     <include src="#msg_gratuite"/><br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pomer_lanc_min">
+     choisir plan classique</a>
+  </page>
+  
+  <page tag="changer_pour_lanc_sec" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Omer vers plan classique a la seconde">
+    <title>Changement de plan Omer vers plan classique a la seconde</title>
+    Plan seconde:
+    <include
+     src="erl://svc_plan_tarif_omer:print_prix_eur_sec?pomer_lanc_sec"/>.<br/>
+     <include src="#msg_gratuite"/><br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pomer_lanc_sec">
+     choisir plan seconde</a>
+  </page>
+  
+  <page tag="changer_pour_class_min" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Omer vers plan classique a la seconde">
+    <title>Changement de plan Omer vers plan classique a la seconde</title>
+    Plan classique: les appels emis depuis l'Ouest sont factures a
+    <include
+     src="erl://svc_plan_tarif_omer:print_prix_eur_min?pomer_class_min"/>.<br/>
+     <include src="#msg_gratuite"/><br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pomer_class_min">
+     choisir plan classique</a>
+  </page>
+  
+  <page tag="changer_pour_class_sec" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Omer vers plan classique a la seconde">
+    <title>Changement de plan Omer vers plan classique a la seconde</title>
+    Plan seconde:
+    <include
+     src="erl://svc_plan_tarif_omer:print_prix_eur_sec?pomer_class_sec"/> pour
+     les appels emis depuis l'Ouest.<br/>
+     <include src="#msg_gratuite"/><br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pomer_class_sec">
+     choisir plan seconde</a>
+  </page>
+  
+  <page tag="msg_gratuite">
+    <include src="erl://svc_plan_tarif_omer:include_msg_gratuite?#2_grat&amp;#1_grat&amp;#0_grat"/>
+  </page>
+  
+  <page tag="2_grat">
+    Vos deux premieres modifications de plan tarifaire sont gratuites
+  </page>
+  
+  <page tag="1_grat">
+    Vous pouvez encore changer une fois gratuitement de plan tarifaire
+  </page>
+  
+  <page tag="0_grat">
+    Ce changement vous sera facture
+    <include src="erl://svc_plan_tarif_omer:print_prix_du_changement"/>
+  </page>
+  
+  <page tag="change_pt_success" backtext="notext" cost="free_pt"
+	descr="plan tarifaire: Changement reussi">
+    <title>plan tarifaire: Changement reussi</title>
+    Vous utilisez maintenant le plan <include src="erl://svc_plan_tarif_omer:print_by_plan?pomer_lanc_min=classique minute,pomer_lanc_sec=classique seconde,pomer_class_min=classique minute,pomer_class_sec=classique seconde"/>
+  </page>  
+  
+  <!--error pages -->
+  
+  <page tag="not_enough_credit_pt" cost="free_pt" 
+	descr="plan tarifaire: Credit insuffisant">
+    <title>plan tarifaire: Credit insuffisant</title>
+    Votre credit est insuffisant pour demander une modification du plan
+    tarifaire. Veuillez recharger votre compte.<br/>
+    <a href="recharge.xml">recharger</a>
+  </page>
+  
+  <page tag="mobirecharge_change_pt" cost="free_pt" 
+	descr="plan tarifaire: Erreur mobirecharge">
+    <title>plan tarifaire: Erreur mobirecharge</title>
+    Vous utilisez une mobi-recharge 1H et beneficiez d'une
+    tarification incompatible avec les plans tarifaires.
+  </page>
+  
+  <page tag="change_pt_error" cost="free_pt" backtext="notext"
+	descr="plan tarifaire: Erreur SDP">
+    <title>plan tarifaire: Erreur SDP</title>
+    La modification de plan tarifaire ou de plage horaire est
+    techniquement impossible pour le moment: veuillez nous en excuser et
+    renouveler cette operation ulterieurement.
+  </page>
+  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="plan tarifaire : service indisponible">
+    <title>plan tarifaire : temporary error</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>

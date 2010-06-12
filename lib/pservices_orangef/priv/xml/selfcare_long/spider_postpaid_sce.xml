@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="POSTPAID Self-care page">
+  <page cost="freept">
+<!--    <redirect src="erl://svc_spider:redirect_by_fileRestitutionType?RF=#rf,ND=#nd,NA=#na,?=#redirect_one2one"/>-->
+        <redirect src="#redirect_one2one"/>
+  </page>
+
+  <page tag="rf" descr="suivi conso postpaid niv 1 retard de facturation"
+	hist="dohist" menutext="notext">
+<!--    Depuis le <include src="erl://svc_spider:print_dateProchFactuPlus1?~s"/> vous disposez a nouveau de votre forfait et de vos options eventuelles.<br/> -->
+<!--    Choisir repondre,tapez 1,envoyez<br/> -->
+<!--    <a href="#accueil">Menu</a><br/> -->
+<!--    <a href="#Aide">Aide</a> -->
+        Pour acceder aux rubriques du #123#, nous vous invitons a regler le montant de votre 
+	facture en composant le 740 depuis votre mobile ou sur orange.fr>espace client>mes factures.
+  </page>
+
+  <page tag="nd" descr="suivi conso postpaid niv 1 nouveau dossier"
+	hist="dohist" menutext="notext">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+
+  <page tag="na" descr="suivi conso postpaid niv 1 acces refuse"
+	hist="dohist" menutext="notext">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="redirect_one2one" hist="dohist" cost="freept">
+    <redirect
+     src="erl://svc_one2one:redirect_one2one?#one2one_niv3&amp;#suiviconso1erepage"/>
+  </page>
+
+  <page tag="one2one_niv3" cost="freept" menutext="notext" backtext="notext"
+	descr="Page de suivi Conso + one2one + menu">
+    <title>Page de suivi Conso niv3 avec one2one</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?SCONOK"/>
+    <include src="erl://svc_one2one:include_one2one_niv3"/>
+    <include src="erl://svc_one2one:get_o2o_teaser"/><br/>
+    <a href="file:/orangef/o2o.xml">En savoir +</a><br/>
+    <a href="#suiviconso1erepage">Suivi conso detaille</a><br/>
+    <a href="#accueil" key="3">Menu</a>
+  </page>
+
+  <page tag="suiviconso1erepage" descr="suivi conso postpaid niv 1"
+	hist="dohist">
+    <title>Page de suivi conso premiere page</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?SCONOK"/>
+    <include src="file:/orangef/selfcare_light/spider.xml#postpaid"/>
+    Repondre<br/>
+    <a href="#accueil">Menu</a><br/>
+    <a href="file:/orangef/selfcare_long/resiliation_options_postpaid.xml">Suivi conso+</a><br/>
+    <a href="#Aide">Aide</a>
+  </page>
+
+  <page tag="Aide" descr="Postapid: Aide " backtext="notext" menutext="notext">
+    Aide<br/>
+    Pour naviguer dans le #123#, il faut d'abord appuyer sur "Repondre"
+    puis saisir le chiffre de la rubrique souhaitee, et appuyer sur "Envoyer".<br/>
+    <a href="#suite_menu">Suite</a><br/>
+    <a href="#accueil" key="9">Accueil</a>
+  </page>
+   <page tag="suite_menu" descr="Postapid: Aide " backtext="notext" menutext="notext">
+   Aide<br/>
+   Ou que vous soyez dans votre navigation, 8 vous permet de revenir a la page precedente et 9 de retourner a l'accueil.<br/>
+   <a href="#accueil" key="9">Accueil</a>
+   </page>
+  <page tag="menu" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare.xml#mainmenu,cmo=selfcare_cmo.xml#mainmenu,postpaid=#menu_postpaid"/>
+  </page>
+
+  <page tag="accueil" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare.xml#mainmenu,cmo=selfcare_cmo_new.xml#mainmenu,postpaid=#menu_postpaid"/>
+  </page>
+
+  <page tag="query_sachem" descr=" ">
+    <redirect src="erl://svc_util_of:consultation_sachem?#query_sachem_ok&amp;#query_sachem_nok"/>
+  </page>
+
+  <page tag="query_sachem_ok" descr=" ">
+    <redirect src="erl://svc_util:redir_subscription?mobi=selfcare.xml#mainmenu,cmo=selfcare_cmo.xml#mainmenu"/>
+  </page>
+
+  <page tag="query_sachem_nok" descr="suivi conso spider prepaid Menu indisponible">
+    L'acces au menu est indisponible.
+  </page>
+
+  <page tag="menu_postpaid" descr=" ">
+    <redirect src="file:/mcel/acceptance/Home_page_postpaid.xml"/>
+  </page>
+  
+  <page tag="serv_indisp" descr="service indisponible" nav="end">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="acces_refuse" descr="acces refuse" nav="end">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="prob_technique" descr="prob technique" nav="end">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <page tag="dossier_inconnu" descr="dossier inconnu" nav="end">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+  
+</pages>

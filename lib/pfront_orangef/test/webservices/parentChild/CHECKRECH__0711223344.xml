@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <checkRechargementParentChildResponse xmlns="urn:m8o.francetelecom.com">
+      <checkRechargementParentChildReturn>
+	<ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+	  <item>
+	    <ns1:UUID>1</ns1:UUID>
+	    <ns1:channel>1</ns1:channel>
+	    <ns1:lang>FR</ns1:lang>
+	    <ns1:statusCode>ba00</ns1:statusCode>
+	    <ns1:statusDescription>Successfull check invocation</ns1:statusDescription>
+	    <ns1:statusName>CheckSuccess</ns1:statusName>
+	    <ns1:statusType>0</ns1:statusType>
+	  </item>
+	</ns1:statusList>
+	<ns2:idDossierOrchidee xsi:nil="true" xmlns:ns2="urn:m8o.francetelecom.com:wsdl:topup"/>
+	<ns3:idDossierSachem xmlns:ns3="urn:m8o.francetelecom.com:wsdl:topup">302774224</ns3:idDossierSachem>
+	<ns4:mobicarte xmlns:ns4="urn:m8o.francetelecom.com:wsdl:topup">true</ns4:mobicarte>
+	<ns5:rechargement xsi:nil="true" xmlns:ns5="urn:m8o.francetelecom.com:wsdl:topup"/>
+      </checkRechargementParentChildReturn>
+    </checkRechargementParentChildResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

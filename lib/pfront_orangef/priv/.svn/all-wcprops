@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/priv
+END
+rdp.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/priv/rdp.xsl
+END
+batch_ocf_preproc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/priv/batch_ocf_preproc.sh
+END
+ussd_test
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/priv/ussd_test
+END

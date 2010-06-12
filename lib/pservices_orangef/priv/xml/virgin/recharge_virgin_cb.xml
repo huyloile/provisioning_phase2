@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+
+  <page tag="start" hist="donthist" log="SCC_rechmen">
+    <redirect src="erl://svc_recharge_cmo:start"/>
+  </page>
+
+  <page tag="cag" backtext="notext" menutext="notext" descr="Rechargement virgin pp: Formulaire">
+    <title>Rechargement virgin prepaid: Formulaire</title>
+    <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Tapez sans leur faire mal les 14 chiffres de votre code de rechargement.
+          Attention, 3 essais seulement.<br/>
+          0:Retour
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" descr="Rechargement virgin prepaid: Form ph1">
+  <title>Rechargement virgin prepaid: Form ph1</title>
+  <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Tapez sans leur faire mal les 14 chiffres de votre code de rechargement sous
+       la forme #12*Code_a_14_chiffres#,puis appuyer sur Envoi.Attention, 3 essais seulement.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <!-- Succes page with D4 -->
+  
+<page tag="sucess_cpte" descr="Rechargement Virgin CB: Reussi" menutext="notext" backtext="notext">
+     <title>Rechargement virgin Reussi: Cpte_Princ</title>
+     Vous venez de recharger <include src="erl://svc_recharge:montant_recharge?xx"/>EUR
+     sur votre compte rechargeable.
+     Nouveau solde de votre compte: <include src="erl://svc_compte:print_solde?cpte_princ&amp;euro_p"/>E
+     (duree de validite illimitee)
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="weinf_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_weinf">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_erech_europe">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_erech_maghreb">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_erech_smsmms">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge virgin: Fermeture">
+    <title>Recharge virgin: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Réessayer ultérieurement.
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement Virgin: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="bad_code_ph2" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement virgin: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci
+  </page>
+  
+<page tag="bad_code_ph1"  backtext="notext" descr="Rechargement virgin: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+</page>
+
+  <page tag="system_failure" nav="end"  descr="Rechargement virgin: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+ <page tag="badprofil" nav="end" descr="not cmo">
+    Vous n'avez pas acces a ce service reserve aux clients virgin compte bloque.
+    Veuillez contacter votre service client.
+  </page>
+
+  <page tag="incompatible" backtext="notext" nav="end" descr="Rechargement virgin: recharge incompatible">
+    <title>Reject : recharge incompatible avec credit</title>
+    Rechargement refuse. Pour utiliser cette recharge, vous devez
+    d'abord epuiser votre credit actuel.
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end" descr="Rechargement virgin: recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Votre recharge promotionnelle ne vous permet pas de recharger un
+    compte epuise ou perime. Merci.
+  </page>
+  
+
+
+</pages>

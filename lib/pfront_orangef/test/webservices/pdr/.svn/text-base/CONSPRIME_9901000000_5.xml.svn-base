@@ -1,0 +1,40 @@
+<getConsultationPrimesReponse>
+	<date>15/01/2005</date>
+	<heure>14:00:22</heure>
+	<codeRet>0</codeRet>
+	<requete>
+		<dossier>0699274545</dossier>
+		<canal>SWI</canal>
+		<idUP>15</idUP>
+	</requete>
+	<resultat>
+		<codeProduit>6</codeProduit>
+		<codeMessage>0</codeMessage>
+		<!--<dateActivation>20/01/2005</dateActivation>-->
+		<priseEnCompteTh>1</priseEnCompteTh>
+		<dateActivationTh>20/01/2005</dateActivationTh>
+		<listePaliers>
+			<descPalier>
+				<idPalier>100</idPalier>
+				<indActivation>O</indActivation>
+				<typeConso>1</typeConso>
+				<listeUPs>
+					<descUP>
+						<idUP>7</idUP>
+						<libelleUP>SMS en heures creuses</libelleUP>
+						<montant>30</montant>
+						<typeUnite>3</typeUnite>
+						<libelleUnite>SMS/libelleUnite</libelleUnite>
+					</descUP>
+					<descUP>
+						<idUP>8</idUP>
+						<libelleUP>MMS en heures creuses</libelleUP>
+						<montant>15</montant>
+						<typeUnite>4</typeUnite>
+						<libelleUnite>MMS/libelleUnite</libelleUnite>
+					</descUP>
+				</listeUPs>
+			</descPalier>
+		</listePaliers>
+	</resultat>
+</getConsultationPrimesReponse>

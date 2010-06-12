@@ -1,0 +1,30 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <listeSituationsParametreesResponse xmlns="urn:orange:weu:ssi">
+         <resultat xmlns="">
+            <codeRetour>0</codeRetour>
+            <commentaire>Succ&#xE8;s</commentaire>
+         </resultat>
+         <listeSituationsParametrees xmlns="">
+            <listeSituations>
+               <situation>
+                  <idSituation>49</idSituation>
+                  <libelleSituation>&#xE0; mon bureau</libelleSituation>
+               </situation>
+               <situation>
+                  <idSituation>50</idSituation>
+                  <libelleSituation>en r&#xE9;union</libelleSituation>
+               </situation>
+               <situation>
+                  <idSituation>51</idSituation>
+                  <libelleSituation>en d&#xE9;placement</libelleSituation>
+               </situation>
+               <situation>
+                  <idSituation>52</idSituation>
+                  <libelleSituation>en cong&#xE9;s</libelleSituation>
+               </situation>
+            </listeSituations>
+         </listeSituationsParametrees>
+      </listeSituationsParametreesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

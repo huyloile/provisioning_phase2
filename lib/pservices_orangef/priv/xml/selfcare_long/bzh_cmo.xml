@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="BZH CMO selfcare pages">
+   
+  <page cost="freept" descr="Suivi-conso Niv1: Bzh CMO">
+    <redirect src="erl://svc_bzh_cmo:redirect_compte_long"/>
+  </page>
+
+  <page tag="suivi_conso" descr="Suivi conso Bzh" backtext="notext" menutext="notext"
+  hist="donthist" cost="free_pt" volatile="true">	
+    <include src="erl://svc_of_plugins:redirect_by_compte_solde?forf_bzh&amp;0&amp;%23forf_ep&amp;%23forf_ac"/>
+	<include src="erl://svc_of_plugins:redirect_by_compte_solde?cpte_princ&amp;0&amp;%23none&amp;%23princ_ac"/>
+	<include src="erl://svc_of_plugins:redirect_by_compte_solde?cpte_odr&amp;0&amp;%23none&amp;%23odr_ac"/>
+	<include src="erl://svc_of_plugins:redirect_by_compte_solde?opt_sms&amp;0&amp;%23none&amp;%23sms_ac"/>
+    Mise a jour: <include src="erl://svc_compte:print_fin_credit_default?forf_bzh&amp;dm"/>.<br/>
+    <a href="#menu_cb" key="00">menu</a><br/>
+	<a href="recharge_bzh_cmo.xml" key="1">recharger</a>
+  </page>
+  
+  <page tag="forf_ac" descr="Ac forfait actif">
+	Credit: <include src="erl://svc_compte:print_solde_1_cipher?forf_bzh"/>E soit <include src="erl://svc_compte:print_solde_min_sec_with_format?forf_bzh&amp;mnsec"/> ou <include src="erl://svc_compte:print_solde?forf_bzh&amp;sms"/> SMS.<br/>
+  </page>
+  
+  <page tag="forf_ep" descr="Ac forfait epuise">
+	Credit epuise.<br/>
+  </page>
+  
+  <page tag="princ_ac" descr="Ac principal actif">
+	Compte rechargeable: <include src="erl://svc_compte:print_solde_1_cipher?cpte_princ"/>E.<br/>
+  </page>
+	
+  <page tag="odr_ac" descr="Ac odr actif">
+	Autre compte: <include src="erl://svc_compte:print_solde_1_cipher?cpte_odr"/>E jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>.<br/>
+  </page>
+  
+  <page tag="sms_ac" descr="Ac sms actif">
+	Encore <include src="erl://svc_compte:print_solde?opt_sms&amp;sms"/> SMS sur votre option.<br/>
+  </page>
+	
+  <page tag="menu_cb" descr="Niv2 Bzh CMO CB Menu cb" backtext="notext" menutext="notext">
+    <title>Niv21: Bzh CMO CB Menu cb</title>    
+    <a href="#etranger_1" key="1">Connaitre les tarifs a l'etranger</a><br/>	
+	<a href="#suivi_conso" key="0">Retour</a>
+  </page>
+  <page tag="none" descr="Page vide">
+  </page>
+  <!-- Tarifs a l'etranger -->
+
+  <page tag="etranger_1" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 1">
+   <title>tarif etranger 1</title>
+   Les destinations sont classees en 4 zones tarifaires : Europe, Suisse/Andorre, Maghreb/Amerique du Nord/Turquie et " Reste du monde ".<br/>   
+   <a href="#menu_cb" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_2">suite</a>
+ </page>
+ 
+ <page tag="etranger_2" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 2">
+   <title>tarif etranger 2</title>
+   Un seul tarif est applique par zone pour vos appels voix vers la France Metropolitaine ou la zone de votre destination.<br/>Prix/mn des appels emis depuis et<br/>   
+   <a href="#etranger_1" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_3">suite</a>
+ </page>
+ 
+ <page tag="etranger_3" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 3">
+   <title>tarif etranger 3</title>
+   vers: la zone Europe =0.514E, (sauf Suisse-Andorre =1E15), la zone Maghreb/Amerique du Nord/Turquie=1.40E, la zone "Reste du monde"=3E. Prix/mn des appels<br/>   
+   <a href="#etranger_2" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_4">suite</a>
+ </page>
+
+ <page tag="etranger_4" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 4">
+   <title>tarif etranger 4</title>
+   recus depuis : la zone Europe = 0.227E, (sauf Suisse-Andorre =0.65E), la zone Maghreb/Amerique du Nord/Turquie = 0.75E, la zone "Reste du monde" = 1.50E.<br/>   
+   <a href="#etranger_3" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_5">suite</a>
+ </page>
+
+ <page tag="etranger_5" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 5">
+   <title>tarif etranger 5</title>
+   En zone UE, vos appels sont decomptes a la sec des la 1ere sec pour la reception, a la sec au-dela de 30sec indivisibles pour les emissions d'appel en UE<br/>   
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_6">suite</a>
+ </page>
+
+ <page tag="etranger_6" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 6">
+   <title>tarif etranger 6</title>
+   et vers la France. Dans les autres pays, facturation a la sec au-dela de la 1ere min indivisible. Envoi d'1 SMS vers ou depuis l'etranger: 0.30E (0,1315E<br/>   
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_7">suite</a>
+ </page>
+
+ <page tag="etranger_7" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 7">
+   <title>tarif etranger 7</title>
+   depuis UE vers UE), reception gratuite. Envoi d'1 MMS vers ou depuis l'etranger: 1.10E. Reception d'un MMS: 0.80E. Prix des connexions data depuis<br/>   
+   <a href="#etranger_4" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a><br/>
+   <a href="#etranger_8">suite</a>
+ </page>
+
+ <page tag="etranger_8" cost="freept" backtext="notext" menutext="notext"
+       descr="Tarif Etranger 8">
+   <title>tarif etranger 8</title>
+   l'etranger:0,25E TTC/10ko.<br/>
+   <a href="#etranger_5" key="0">retour</a><br/>
+   <a href="#menu_cb" key="00">menu</a>
+ </page>
+
+  <!-- Error pages -->  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>bzh_cmo : Service indisponible</title>
+    Desole mais ce service est convalescent pour le moment. Vous pouvez aussi composer le 221 pour suivre votre conso
+    <!--Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+  Merci.-->
+  </page>
+
+</pages>

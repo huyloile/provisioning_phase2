@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#main_long&amp;#main_short"/>
+ </page>
+
+  <page tag="main_long">
+    <redirect src="erl://svc_recharge_cb_mobi:start?#option_desactive"/>
+  </page>
+
+  <page tag="accueil" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#sachem_consultation"/>
+  </page>
+
+  <page tag="menu_rechargement" cost="free_pt" descr="Redirection Recharge">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#redirection_recharge"/>
+  </page>
+
+  <page tag="main_short" hist="donthist" nav="end" descr="terminal incompatible">
+    <title>Terminal Incompatible</title>
+    Votre terminal ne permet pas d'acceder au service.
+  </page>
+
+<!--Dossier inconnu: 2133 -->
+  <page tag="dossier_inconnu" descr="Dossier inconnu">
+   <title>Dossier inconnu</title>
+   Ce service est reserve aux clients d'une offre avec compte mobile.
+   Pour toute information complementaire, merci de composer le 700 depuis
+   votre mobile(com nat).
+  </page>
+
+<!-- Mobile appelant non mobicarte : 3002-->
+ <page tag="not_mobi" descr="not mobi">
+   <title>Filtre mobicarte</title>
+    Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+ <page tag="error_no_msisdn" descr="Erreur Getidentification_dossier MSISDN non trouve" backtext="notext">
+   <title>Erreur Getidentification_dossier MSISDN non trouve</title>
+   Vous n'etes pas encore autorise a utiliser ce service. Veuillez appeler votre service clients au 722 (0,37EUR/min).
+  </page>
+ 
+ <page tag="error_identification" descr="Erreur identification" backtext="notext">
+   <title>Erreur identification</title>
+   Erreur<br/> 
+   Suite a un probleme technique, le service est momentanement indisponible.<br/>
+   Nous vous invitons a reessayer ulterieurement.<br/>
+  </page>
+
+ <page tag="error_not_allowed" descr="Erreur client interdit de rechargement" backtext="notext">
+   <title>Erreur client interdit de rechargement</title>
+   Vous n'etes pas autorise a utiliser ce service.<br/>
+   Vous pouvez appeler le 722 (0,37E/min) ou vous procurer une recharge dans les magasins U participants.
+  </page>
+
+<!-- Non Inscrit dans Sachem : 3003-->
+
+ <page tag="option_desactive" descr="Rech CB Mobi: Non inscrit dans Sachem">
+   <title>Non Inscrit dans Sachem</title>
+    Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans les magasins U participants.<br/>
+<!--    <a href="#menu_rechargement">Menu rechargement</a>-->
+  </page>
+
+<!-- Choix du montant: 3009-->
+<page tag="choix_montant" hist="dohist" descr="Choix du montant">
+  <title>Choix Montant</title>
+  Bienvenue sur le service de rechargement par CB.
+  Choisissez votre recharge :<br/>
+  <include src="erl://svc_recharge_cb_mobi:inc_choix_montant_rechargeU"/>
+</page>
+
+<page tag="choix_montant_suite" hist="dohist" descr="Choix du montant">
+   <title>Choix Montant</title>
+    Choisissez le montant de votre rechargement :<br/>
+    <include src="erl://svc_recharge_cb_mobi:inc_choix_montant?page2"/>
+  </page>
+
+<page tag="edition_speciale" hist="dohist" descr="Choix du montant Edition speciale">
+   <title>Choix Montant</title>
+   Choisissez votre recharge edition speciale :<br/>
+   <include src="erl://svc_recharge_cb_mobi:inc_choix_montant?special_edition"/>
+  </page>
+
+
+<!-- Recharge CB Serie illimite  -->
+
+<page tag="recharge_illimite_20E" hist="dohist" descr="Description Serie Special">
+   <title>Description Serie Special</title>
+   Vous souhaitez recharger 20E valables 1 mois et beneficier de 3 titres a telecharger sur Orange World dans 48h
+     <a href="erl://svc_recharge_cb_mobi:montant_confirme?5">Confirmer</a><br/>
+     <a href="#info_sl_20_1">+ d'infos</a><br/>
+  </page>
+<page tag="recharge_illimite_15E" hist="dohist" descr="Description Serie Special">
+   <title>Description Serie Special</title>
+   Vous souhaitez recharger 15E valables 1 mois pour passer jusqu'a 30 min d'appels dans la zone Europe et recevoir 30 min d'appels.
+     <a href="erl://svc_recharge_cb_mobi:montant_confirme?3">Confirmer</a><br/>
+     <a href="#info_sl_15_1">+ d'infos</a><br/>
+  </page>
+<page tag="recharge_illimite_7E" hist="dohist" descr="Description Serie Special">
+   <title>Description Serie Special</title>
+   Vous souhaitez recharger 7E valables 7 jours et profiter de 5 MMS Cartes Postales et de MMS illimites pendant 7 jours.
+     <a href="erl://svc_recharge_cb_mobi:montant_confirme?0">Confirmer</a><br/>
+     <a href="#info_sl_7_1">+ d'infos</a><br/>
+  </page>
+
+<page tag="info_sl_20_1" hist="dohist" descr="Info Serie Special">
+   <title>Info Special</title>
+     Credit de 20E valable 31j. 3 titres a telecharger sur Orange World dans 48h. Radio, videos-clips et surf sur Orange World illimites pendant 31j. 
+     <a href="#info_sl_20_2">Suite</a><br/>
+</page>
+<page tag="info_sl_20_2" hist="dohist" descr="Info Serie Special">
+  <title>Info Special</title>
+  Sous reserve de compatibilite mobile. Voir conditions sur www.orange.fr. 
+</page>
+
+<page tag="info_sl_15_1" hist="dohist" descr="Info Serie Special">
+  <title>Info Special</title>
+  Credit de 15E valable 31j. 30 mn d'appels voix depuis le pays visite de la zone Europe vers ce pays et la France metropolitaine.
+  <a href="#info_sl_15_2">Suite</a><br/>
+</page>
+<page tag="info_sl_15_2" hist="dohist" descr="Info Serie Special">
+  <title>Info Special</title>
+  + 30 mn d'appels reçus dans les pays de la Zone Europe. Voir details et liste des pays de la zone Europe sur www.orange.fr.
+</page>
+
+<page tag="info_sl_7_1" hist="dohist" descr="Info Serie Special">
+  <title>Info Special</title>
+  Credit de 7E valables 7 jours. MMS texte, photo, video illimites pendant 7 jours. 
+  <a href="#info_sl_7_2">Suite</a><br/>
+</page>
+<page tag="info_sl_7_2" hist="dohist" descr="Info Serie Special">
+  <title>Info Special</title>
+  + 5 MMS cartes postales offerts a envoyer dans les 7 jours suivant le rechargement. Voir details et liste des mobiles compatibles sur www.orange.fr.
+</page>
+
+
+<page tag="succes_sl_20E" descr="Rechargement CB Mobi : Confirmation rechargement" backtext="notext">
+     <title>Rechargement CB Mobi Reussi: 20 SL</title>
+     Vous avez recharge votre compte de 20 euros.
+     Nouveau credit : <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+     a utiliser avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     Profitez de vos 3 titres et de vos illimites jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sl_20E"/>.
+     <include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez !,#start_game&amp;br"/>     
+ </page>
+<page tag="succes_sl_15E" descr="Rechargement CB Mobi : Confirmation rechargement" backtext="notext">
+     <title>Rechargement CB Mobi Reussi: 15 SL</title>
+     Vous avez recharge votre compte de 15 euros.
+     Nouveau credit : <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+     a utiliser avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez !,#start_game&amp;br"/>     
+ </page>
+<page tag="succes_sl_7E" descr="Rechargement CB Mobi : Confirmation rechargement" backtext="notext">
+     <title>Rechargement CB Mobi Reussi: 20 SL</title>
+     Vous avez recharge votre compte de 7 euros.
+     Nouveau credit : <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+     a utiliser avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     Profitez de vos 5 MMS Cartes Postales et de vos MMS illimites jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sl_7E_1"/>.
+     <include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez !,#start_game&amp;br"/>     
+ </page>
+
+
+<!-- Recharge Special Vacances -->
+<page tag="recharge_vacances" descr="Rechargement Special Vacances: menu">
+     <title>Rechargement Special Vacances: menu</title>
+     Vous souhaitez recharger 20E pour vos appels pendant 1 mois depuis la zone Europe: 30min
+     pour appeler la France ou le pays visite +30min d'appels recus<br/>
+     <a href="#saisie_no_cb">confirmer</a><br/>
+     <a href="#info_vacances1">infos</a>
+ </page>
+
+<page tag="info_vacances1"  menutext ="notext" backtext="notext"
+      descr="Rechargement Special Vacances: infos 1_3">
+     <title>Rechargement Special Vacances: infos 1_3</title>
+     Credit equivalent a 30min d'appels voix emis depuis le pays visite dans la Zone Europe vers ce pays
+     et la France + 30min d'appels voix recus. Liste des pays sur orange.fr<br/>
+     <a href="#info_vacances2">Suite</a>
+</page>
+
+<page tag="info_vacances2"  menutext ="notext" backtext="notext"
+      descr="Rechargement Special Vacances: infos 2_3">
+     <title>Rechargement Special Vacances: infos 2_3</title>
+     Credit valable 31j decomptes a la sec apres une premiere min indivisible.
+     Les appels depuis autres pays sont decomptes du compte principal selon tarifs en vigueur<br/>
+     <a href="#info_vacances3">Suite</a><br/>
+</page>
+
+<page tag="info_vacances3"  menutext ="notext" backtext="notext"
+      descr="Rechargement Special Vacances: infos 3_3">
+      <title>Rechargement Special Vacances: infos 3_3</title>
+      Recharge dispo dans PDV agrees en France metropolitaine et pour clients mobicarte
+      avec le rechargement par CB au #123# (gratuit) et 224 (gratuit en France metropolitaine)<br/>
+</page>
+
+<!-- Confirmation Montant: 3010-->
+<page tag="confirm_montant" descr="Confirmation montant">
+   <title>Confirmation Montant</title>
+    Vous souhaitez recharger
+    <include src="erl://svc_recharge_cb_mobi:print?montant_bonus"/><br/>
+    <a href="erl://svc_recharge_cb_mobi:montant_confirme?none">Confirmer</a>
+</page>
+
+
+<!---- PC June 2010 -->
+  <page tag="erreur_saisie_end_1" descr="Erreur rechargment end avec 16 chiffres" backtext="notext" menutext="notext" nav="stop">
+    <title>Erreur rechargment end avec 16 chiffres</title>
+    Les informations saisies sont incorrectes. Veuillez appeler votre Service Clients au 722 (0,37EUR/min).<br/>
+    Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+  <page tag="erreur_saisie_end_2" descr="Erreur rechargment end avec 4 chiffres" backtext="notext" menutext="notext" nav="stop">
+    <title>Erreur rechargment end avec 4 chiffres</title>
+    Les informations saisies sont incorrectes. Veuillez appeler votre Service Clients au 722 (0,37EUR/min).<br/>
+    Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+  <page tag="erreur_saisie_end_3" descr="Erreur rechargment end avec 3 chiffres" backtext="notext" menutext="notext" nav="stop">
+    <title>Erreur rechargment end avec 3 chiffres</title>
+    Les informations saisies sont incorrectes. Veuillez appeler votre Service Clients au 722 (0,37EUR/min).<br/>
+    Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+  <page tag="erreur_saisie_end_4" descr="Erreur autre rechargment end avec 3 or 16 chiffres" backtext="notext" menutext="notext" nav="stop">
+    <title>Erreur rechargment end avec 3 or 16 chiffres</title>
+    Vous avez fait 3 erreurs dans les informations saisies. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+<!-- Saisie CB: 3004-->
+
+<page tag="saisie_no_cb" menutext="notext" backtext="notext" descr="1er rechargment n de CB" nav="stop">
+    <title>Rech CB MOBI: Dmd code no CB</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_no_cb">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Veuillez saisir les 16 chiffres de votre carte bancaire
+      pour confirmer votre versement et accepter les conditions du service par CB<br/>
+      1:conditions<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="saisie_no_cb_nok" menutext="notext" backtext="notext" descr="Erreur de saisie n CB" nav="stop">
+    <title>Rech CB MOBI: Dmd code no CB</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_no_cb">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Veuillez saisir les 16 chiffres de votre carte bancaire<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Saisie Date de validite: 3005-->
+<page tag="saisie_date_valid" menutext="notext" backtext="notext" descr="Saisie date de validite" nav="stop">
+    <title>Rech CB MOBI: Sasie date de validite</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_date_valid">
+    <entry kind="digits" type="password">
+      <prompt>Veuillez saisir les 4 chiffres de la date de validite
+      de votre carte bancaire.<br/>
+      1:conditions<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="saisie_date_valid_nok" menutext="notext" backtext="notext" descr="Saisie date de validite" nav="stop">
+    <title>Rech CB MOBI: Sasie date de validite</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_date_valid">
+    <entry kind="digits" type="password">
+      <prompt>Les informations saisies sont incorrectes.
+      Veuillez saisir les 4 chiffres de la date de validite
+      de votre carte bancaire.<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<!--Saisie CVX2: 3006-->
+<page tag="saisie_cvx2" menutext="notext" backtext="notext" descr="Saisie CVX2">
+    <title>Rech CB MOBI: Sasie CVX2</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_cvx2">
+    <entry kind="digits" type="password">
+      <prompt>Veuillez saisir les 3 derniers chiffres au dos
+      de votre CB a cote de votre signature (s'ils sont illisibles, contactez votre banque).<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="saisie_cvx2_nok" menutext="notext" backtext="notext" descr="Saisie CVX2" nav="stop">
+    <title>Rech CB MOBI: Sasie CVX2</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_cvx2">
+    <entry kind="digits" type="password">
+      <prompt>Les informations saisies sont incorrectes.
+      Veuillez saisir les 3 derniers chiffres au dos
+      de votre CB (si c'est illisible, contacter votre banque)<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--Saisie CVX2 (Autre rechargment): 3007-->
+
+<page tag="saisie_cvx2_cb" menutext="notext" backtext="notext" descr="Saisie CVX2" nav="stop">
+    <title>Rech CB MOBI: Saisie CVX2/CB</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_cvx2_or_cb">
+    <entry kind="digits" type="password">
+      <prompt>Veuillez saisir les 3 derniers chiffres au dos
+      de votre carte bancaire. Si vous avez change de CB,
+      saisissez les 16 chiffres de votre nouvelle CB<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="saisie_cvx2_cb_nok" menutext="notext" backtext="notext" descr="Saisie CVX2" nav="stop">
+    <title>Rech CB MOBI: Saisie CVX2/CB</title>
+    <form action="erl://svc_recharge_cb_mobi:verif_cvx2_or_cb">
+    <entry kind="digits" type="password">
+      <prompt>Les informations saisies sont incorrectes.
+      Veuillez saisir les 3 derniers chiffres au dos
+      de votre CB ou les 16 chiffres de votre nouvelle CB<br/>- - -<br/>
+      8:Precedent<br/>
+      9:Accueil
+      </prompt>
+    </entry>
+  </form>
+  </page>
+<!-- Messages infos sur 1er versement CB: 3013-->
+
+<page tag="info_first" hist="dohist">
+  <redirect src="erl://svc_recharge_cb_mobi:check_first_recharge?#main_long&amp;#saisie_cvx2_cb"/>
+</page>
+
+<page tag="autre_recharge" hist="donthist" descr="Message info 1er versement">
+   <title>Info 1er versement</title>
+    Pour plus de simplicite, lors de vos prochains rechargements
+    vous n'aurez plus qu'a saisir les 3 derniers chiffres figurant au
+    dos de votre CB.<br/>
+    <a href="erl://svc_recharge_cb_mobi:tentative_de_paiement">Continuer</a>
+    <br/>
+    <a href="selfcare.xml#recharge">Annuler</a>
+  </page>
+
+
+  <page tag="condition_cb_recharge_1" hist="donthist" descr="Condition Rechargement CB 1">
+    <title>Condition CB Rechrgement 1</title>
+    Service dispo pour les clients U mobile ayant au moins 1 mois d'anciennete.
+    10 rechargements max sur 4 comptes et plafond 150E sur 30j glissants<br/>
+    <a href="#condition_cb_recharge_2">Suite</a>
+  </page>
+
+  <page tag="condition_cb_recharge_2" hist="donthist" descr="Condition Rechargement CB 2">
+    <title>Condition CB Rechrgement 2</title>
+    Vos coordonnees bancaires seront conservees pour vos futurs rechargements.
+    Vous n'aurez plus qu'a saisir les 3 derniers chiffres au dos de votre CB.
+  </page>
+
+
+<!-- Confirmation Rechargement: 2117-->
+<page tag="succes_princ" descr="Rechargement CB Mobi : Confirmation rechargement" backtext="notext" menutext="notext">
+     <title>Rechargement CB Mobi Reussi: Cpte Princ et SMS</title>
+     Vous avez recharge votre compte de <include src="erl://svc_recharge_cb_mobi:print?montant_bonus"/><br/>
+     Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+     a utiliser avant le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <br/>---<br/>
+     <a href="#info_first" key="9">Accueil</a>
+</page>
+
+<page tag="succes_princ_sms" descr="Rechargement CB Mobi Reussi: Confirmation rechargement plug" backtext="notext">
+     <title>Rechargement CB Mobi Reussi: Cpte Princ et SMS</title>
+     Votre rechargement a bien ete effectue.<br/>
+     Compte Principal:
+     <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+     Compte SMS:
+     <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS<br/>
+     A utiliser avant
+     le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez !,#start_game&amp;br"/>
+ </page>
+
+<!-- Succes Rechargement Serie Limitee 20Euros : Illimitees soirees -->
+
+<!-- Jeu de Rechargement Instant Gagnant (du 01/05/2008 au 11/06/2008) -->
+
+  <page tag="start_game" descr="Jeu Rechargement CB Mobi: roulette">
+    <title>Jeu Rechargement CB Mobi: roulette</title>
+    <form action="erl://svc_recharge_cb_mobi:is_lucky_number">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Pour jouer, activez la roue de la chance en tapant un chiffre entre 1 et 7 et validez !
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+  <page tag="wap_push" backtext="notext"
+        descr="Jeu Rechargement CB Mobi logo: redirect send wap_push">
+    <title>Jeu Rechargement CB  Mobi logo: redirect send wap_push</title>
+    <include src="erl://svc_recharge_cb_mobi:send_sms?service_indication&amp;Grand%20Jeu%20rechargement%3A%20Vous%20avez%20gagne%201%20logo!%20Cliquez%20ici%20pour%20le%20telecharger%20avec%20un%20mobile%20compatible&amp;http%3A%2F%2Fstsl5.orange.fr&amp;automatic&amp;20776&amp;refillgame&amp;false&amp;#logo_winner&amp;#loosing_case"/>
+  </page>
+
+  <page tag="sms_clickable" backtext="notext"
+        descr="Jeu Rechargement CB Mobi logo: redirect send wap_push">
+    <title>Jeu Rechargement CB Mobi logo: redirect send wap_push</title>
+    <include src="erl://svc_recharge_cb_mobi:send_sms?clickable_sms&amp;Grand%20Jeu%20rechargement%3A%20Vous%20avez%20gagne%201%20logo!%20Cliquez%20ici%20pour%20le%20telecharger%20avec%20un%20mobile%20compatible&amp;http%3A%2F%2Fstsl5.orange.fr&amp;default_alphabet&amp;20776&amp;refillgame&amp;false&amp;#logo_winner&amp;#loosing_case"/>
+  </page>
+
+
+  <page tag="loosing_case" backtext="notext"
+        descr="Jeu Rechargement CB Mobi: PERDU">
+    <title>Jeu Rechargement CB Mobi: PERDU</title>
+    Dommage! Vous avez perdu... Retentez votre chance a votre prochain
+    rechargement avant le <include src="erl://svc_options:print_commercial_end_date?refill_game&amp;dmy"/> !
+  </page>
+
+  <page tag="logo_winner" backtext="notext"
+        descr="Jeu Rechargement CB Mobi: GAIN LOGO">
+    <title>Jeu Rechargement CB Mobi: GAIN LOGO</title>
+    Bravo ! Vous avez gagne un logo sous reserve de compatibilite
+    de votre mobile et hors cout de connexion wap...<br/>
+    <a href="#logo_winner_suite">Suite</a>
+  </page>
+
+  <page tag="logo_winner_suite"
+        descr="Jeu Rechargement CB Mobi: GAIN LOGO suite">
+    <title>Jeu Rechargement CB Mobi: GAIN LOGO suite</title>
+    ...Vous allez recevoir un SMS. Cliquez sur le lien et
+    telechargez le logo d'une valeur de 2E TTC.
+  </page>
+
+  <!-- Subscription successes via the game "Instants Gagnants" (01/05/2008-11/06/2008)-->
+
+  <page tag="success_mobile_prize" backtext="notext"
+        descr="Jeu Rechargement Mobi: GAIN MOBILE">
+    <title>Jeu Rechargement CB Mobi: GAIN MOBILE</title>
+	Bravo, vous avez gagne un mobile Samsung E250, d'une valeur de 259E.
+	Orange vous contactera prochainement afin de confirmer votre adresse.
+  </page>
+
+  <page tag="success_opt_sinf_kdo" backtext="notext"
+        descr="Jeu Rechargement CB Mobi: GAIN SOIREE INFINIE">
+    <title>Jeu Rechargement Mobi: GAIN SOIREE INFINIE</title>
+	Bravo, vous avez gagne une soiree infinie.
+	Profitez d'appels illimites ce soir de 21h a minuit en France metro vers les telephones fixes et les mobiles Orange.
+  </page>
+
+  <page tag="success_mobile_prize_2" backtext="notext"
+        descr="Jeu Rechargement CB Mobi: GAIN MOBILE AU SORT">
+    <title>Jeu Rechargement Mobi: GAIN MOBILE AU SORT</title>
+	Bravo, vous participez gratuitement au tirage au sort pour remporter une TV LCD Samsung.
+	Orange vous contactera si vous avez gagne le gros lot!
+  </page>
+
+<!-- Error pages -->
+
+  <page tag="system_failure" nav="end" descr="Rechargement CB Mobi temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement.
+  </page>
+
+ <page tag="temporary" nav="end" descr="Rechargement CB Mobi temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement.
+  </page>
+
+<!--- PC June 2010 -->
+<page tag="erreur_banque_14" backtext="notext" descr="Rechargement CB Umobile: Erreur Banque">
+    <title>Rechargement CB Umobile: Erreur Banque</title>
+    Echec rechargement<br/>
+    L'autorisation de paiement a ete refusee par votre banque.Veuillez contacter votre banque.<br/><br/>
+    Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+ <page tag="erreur_banque" backtext="notext" descr="Rechargement CB Umobile: Erreur Banque">
+    <title>Rechargement CB Umobile: Erreur Banque</title>
+    Echec rechargement<br/>
+    Votre carte bancaire presente une anomalie. Nous vous invitons a contacter votre banque.<br/><br/>
+    Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+ <page tag="erreur_banque_44" backtext="notext" descr="Rechargement CB Umobile: Erreur Banque">
+    <title>Rechargement CB Umobile: Erreur Banque</title>
+    Erreur<br/>
+    Vous avez atteint le nombre de rechargements maximum autorise sur le mois.<br/>
+    Pour recharger, rendez-vous dans les magasins U participants.<br/>
+  </page>
+
+ <page tag="erreur_banque_45" backtext="notext" descr="Rechargement CB Umobile: Erreur Banque">
+    <title>Rechargement CB Umobile: Erreur Banque</title>
+    Votre demande depasse le plafond maximum autorise. Choisissez un montant inferieur.<br/>
+    <a href="#choix_montant">Recommencer</a>
+  </page>
+
+ <page tag="erreur_cb" backtext="notext" descr="Rechargement CB Umobile: Donnees Invalides">
+    <title>Rechargement CB Umobile: Donnees Invalides</title>
+    Erreur<br/> 
+    Suite a un probleme technique, votre rechargement n'a pas pu etre effectue.<br/>
+    Pour recharger, nous vous invitons a appeler gratuitement le 224.<br/>
+  </page>
+
+ <page tag="erreur_technique" backtext="notext" descr="Rechargement CB Umobile: Erreur Technique">
+    <title>Rechargement CB Umobile: Erreur Technique</title>
+    Erreur<br/> 
+    Suite a un probleme technique, le service est momentanement indisponible.<br/>
+    Nous vous invitons a reesayer ou a appeler gratuitement le 224.<br/>    
+  </page>
+
+ <page tag="erreur_fonctionnelle" backtext="notext" descr="Rechargement CB Umobile: Erreur Fonctionnelle">
+    <title>Rechargement CB Umobile: Erreur Fonctionnelle</title>
+    Erreur<br/> 
+    Suite a un probleme technique, votre rechargement n'a pas pu etre effectue.<br/>
+    Nous vous invitons a reesayer ou a appeler gratuitement le 224.<br/>
+  </page>
+
+<!-- Erreur Reseau: 2123-->
+<page tag="erreur_reseau" nav="end" descr="Rechargement CB Mobi: Erreur Reseau">
+    <title>Reject : Timeout</title>
+    Suite a un probleme technique, votre rechargement ne peut aboutir.
+    Veuillez renouveler votre appel ulterieurement.
+  </page>
+
+<!-- Plafond depasse: 2127-->
+<page tag="plafond_depasse" descr="Rechargement CB Mobi: Plafond depasse">
+    <title>Rech CB MOBI : Plafond Depasse</title>
+    Votre plafond de versement autorise est depasse.
+    Pour realiser cette operation,appelez le 700(prix d'une com nat).
+  </page>
+
+<!-- Erreur de Saisie nb de tentatice depasse: 2125-->
+<page tag="erreur_saisie_end" descr="Rechargement CB Mobi: Erreur Saisie" nav="end">
+    <title>Rech CB MOBI : erreur saisie</title>
+    Vous avez fait 3 erreurs dans les informations saisies.<br/>
+    Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans les magasins U participants.
+  </page>
+
+<!--Pbm positionnement option -->
+<page tag="erreur_286" descr="Rechargement CB Mobi: Refus Banque Code retour =314" nav="end">
+    <title>Rech CB MOBI : erreur positionnement option </title>
+    Rechargement non effectue pour cause de positionnement adoption associees impossible
+  </page>
+
+<!--Refus Banque: 2122-->
+<page tag="erreur_314" descr="Rechargement CB Mobi: Refus Banque Code retour =314" nav="end">
+    <title>Rech CB MOBI : refus banque</title>
+    L'autorisation de paiement a ete refuse.
+    Veuillez contacter vote banque.
+  </page>
+
+<!--CVF code 344 : 3101-->
+<page tag="erreur_344" descr="Rechargement CB Mobi: Erreur CVF=344">
+    <title>Rech CB MOBI : Erreur CVF=344</title>
+    Desole, votre rechargement n'a pas ete effectue
+    car le nombre de rechargements illico autorises est depasse pour la periode.
+  </page>
+
+<!--CVF code 345: 3102-->
+<page tag="erreur_345" descr="Rechargement CB Mobi: Erreur CVF=345">
+    <title>Rech CB MOBI : Erreur CVF=345</title>
+    Desole, votre rechargement n'a pas ete effectue car votre
+    plafond de rechargement illico est depasse pour la periode. 
+  </page>
+
+<!--CVF code 350: 3111-->
+<page tag="erreur_350" descr="Rechargement CB Mobi: Erreur CVF=350">
+    <title>Rech CB MOBI : Erreur CVF=350</title>
+    Desole, votre rechargement n'a pas ete effectue car votre
+    CB a deja ete utilisee pour effectuer un rechargement illico sur un
+    autre compte mobicarte
+  </page>
+
+<!--CVF CODE 351: 3103-->
+<page tag="erreur_351" descr="Rechargement CB Mobi: Erreur CVF=351">
+    <title>Rech CB MOBI : Erreur CVF=351</title>
+    Desole, votre rechargement n'a pas ete pris en compte car vous
+    avez deja effectue un rechargement illico sur ce compte mobicarte avec une autre CB
+</page>
+
+<!--CVF CODE 52: 3104 -->
+<page tag="erreur_352" descr="Rechargement CB Mobi: Erreur CVF=352">
+    <title>Rech CB MOBI : Erreur CVF=52</title>
+    Desole, votre rechargement n'a pas ete effectue car
+    votre demande a ete refusee par Orange.
+</page>
+
+
+<!--CVF CODE 53: 3105-->
+<page tag="erreur_353" descr="Rechargement CB Mobi: Erreur CVF=353" nav="end">
+    <title>Rech CB MOBI : Erreur CVF=353</title>
+    Desole, suite a plusieurs refus bancaires vous ne pouvez plus utiliser le rechargement illico.
+    Pour + d'info, contactez votre service clients au 722 depuis le mobile (0,37 EUR/min).
+</page>
+
+
+<!--CVF CODE 70: 3106 -->
+<page tag="erreur_370" descr="Rechargement CB Mobi: Erreur CVF=370">
+    <title>Rech CB MOBI : Erreur CVF=70</title>
+    Desole, votre rechargement n'a pas ete effectue car la date
+    de validite de votre CB n'est pzs correcte
+ </page>
+
+<!--CVF CODE 71: 3107-->
+<page tag="erreur_371" descr="Rechargement CB Mobi: Erreur CVF=371">
+    <title>Rech CB MOBI : Erreur CVF=71</title>
+    Desole, votre rechargement n'a pas ete effectue car le numero
+    de votre CB n'est pas correct.
+ </page>
+
+<!--CVF CODE 72: 3108-->
+<page tag="erreur_372" descr="Rechargement CB Mobi: Erreur CVF=372 ou 373">
+    <title>Rech CB MOBI : Erreur CVF=72 ou 73</title>
+    Desole, votre rechargement n'a pas ete effectue car
+    votre CB est en opposition.
+  </page>
+
+<!--CVF CODE 77: 3109-->
+<page tag="erreur_377" descr="Rechargement CB Mobi: Erreur CVF=377">
+    <title>Rech CB MOBI : Erreur CVF=77</title>
+    Desole, votre rechargement n'a pas ete effectue car
+    la date de validite de votre CB est depasse.
+  </page>
+
+<!--CVF CODE 99: 3110-->
+<page tag="erreur_399" descr="Rechargement CB Mobi: Erreur CVF=399">
+    <title>Rech CB MOBI : Erreur CVF=79</title>
+    Desole, votre rechargement n'a pas ete effectue car
+    votre CB est refusee par Orange.
+  </page>
+
+
+<page tag="erreur_sachem" descr="Rechargement CB Mobi: Erreur CVF=399">
+    <title>Rech CB MOBI : Erreur CVF=79</title>
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement.
+  </page>
+</pages>

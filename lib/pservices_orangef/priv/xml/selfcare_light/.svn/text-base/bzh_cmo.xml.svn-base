@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="BZH CMO selfcare pages">
+   
+  <page cost="freept" descr="Suivi-conso Niv2: Bzh CMO">
+    <redirect src="erl://svc_bzh_cmo:redirect_compte"/>
+  </page>
+
+ <page tag="forf_ac_princ_ac_odr_ac">
+   <redirect src="#forf_ac_odr_ac"/>
+  </page>
+  <page tag="forf_ac_princ_ep_odr_ac">
+   <redirect src="#forf_ac_odr_ac"/>
+  </page>
+  <page tag="forf_ac_odr_ac" descr="SV Niv2 Bzh CMO: Forf AC et Odr AC" nav="end">
+    <title>Suivi-conso Niv21: Bzh CMO</title>
+    Votre forfait Breizh
+    Mobile <include src="erl://svc_compte:print_solde?forf_bzh"/>EUR valable
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?forf_bzh"/> Compte
+    rechargeable <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    Autre compte <include src="erl://svc_compte:print_solde?cpte_odr"/>EUR
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+  </page>
+
+  <page tag="forf_ac_princ_ac_odr_ep">
+   <redirect src="#forf_ac_odr_ep"/>
+  </page>
+ <page tag="forf_ac_princ_ep_odr_ep">
+   <redirect src="#forf_ac_odr_ep"/>
+  </page>
+  <page tag="forf_ac_odr_ep" descr="SV Niv2 Bzh CMO: Forf AC et Odr AC" nav="end">
+    <title>Suivi-conso Niv21: Bzh CMO</title>
+    Votre
+    forfait: <include src="erl://svc_compte:print_solde?forf_bzh"/>E soit
+    jusqu'a <include src="erl://svc_compte:print_solde?forf_bzh&amp;min"/> ou <include src="erl://svc_compte:print_solde?forf_bzh&amp;sms"/>SMS
+    a utiliser avant
+    le <include src="erl://svc_compte:print_fin_credit?forf_bzh"/> Compte
+    rechargeable: <include src="erl://svc_compte:print_solde?cpte_princ"/>E
+  </page>
+
+
+ <page tag="forf_ep_princ_ac_odr_ac">
+    Votre forfait est epuise, il sera renouvele
+    le <include src="erl://svc_compte:print_fin_credit?forf_bzh"/><br/>
+    Compte rechargeable <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    Solde autre compte <include src="erl://svc_compte:print_solde?cpte_odr"/>EUR
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+  </page>
+
+ <page tag="forf_ep_princ_ac_odr_ep">
+    Votre forfait est epuise, il sera renouvele
+    le <include src="erl://svc_compte:print_fin_credit?forf_bzh"/><br/>
+    Compte rechargeable: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (duree de validite illimitee)
+  </page>
+ 
+ <page tag="forf_ep_princ_ep_odr_ac">
+    Forfait epuise, il sera renouvele
+    le <include src="erl://svc_compte:print_fin_credit_default?forf_bzh&amp;dm"/>.
+    Vous pouvez recharger votre compte au 224.<br/>
+    Solde autre compte  <include src="erl://svc_compte:print_solde?cpte_odr"/>EUR
+    jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_odr&amp;dm"/>
+  </page>
+
+ <page tag="forf_ep_princ_ep_odr_ep">
+   Votre forfait est epuise. Il sera renouvele le <include src="erl://svc_compte:print_fin_credit?forf_bzh"/>.
+   Vous pouvez recharger votre compte en appelant gratuitement le 224.
+  </page>
+
+ <!-- Error pages -->  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>bzh_cmo : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+  Merci.</page>
+
+</pages>

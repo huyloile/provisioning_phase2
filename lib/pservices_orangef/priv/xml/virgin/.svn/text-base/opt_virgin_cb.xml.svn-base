@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+<pages descr="Souscription d'options Virgin Compte Bloque">
+
+ <!--l'offre option data GPRS-->
+ 
+<page tag="first_page_opt_data"descr="Souscription d'options Virgin prepaid">
+  <title>Souscription a l'option GPRS</title>
+    <redirect src="erl://svc_virgin_cb:first_page?opt_data_gprs&amp;#deja_act_GPRS&amp;#solde_insuff_GPRS&amp;#souscr_opt_GPRS"/>
+ </page>
+
+<page tag="souscr_opt_GPRS" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre 30J">
+  <title>Souscription a l'offre GPRS</title>
+  <redirect src="erl://svc_virgin_cb:do_subscription?opt_data_gprs&amp;#success_GPRS,#deja_act_GPRS,#solde_insuff_GPRS,#failure"/>
+ </page>
+
+ <page tag="success_GPRS" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre GPRS ok">
+  <title>Souscription a l'offre GPRS ok</title>
+  Bien joue ! Votre inscription a l'option GPRS 5Mo a ete prise en compte.
+  Cette option est valable jusqu'au
+  <include src="erl://svc_options:print_date_end_opt?opt_data_gprs"/>.<br/>
+ </page>
+
+ <page tag="deja_act_GPRS" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre 30J: deja activé">
+  <title>Souscription a l'offre 30J: dejà activé</title>
+  Mais ou aviez-vous la tete ? Vous avez deja active cette option.<br/>
+ </page>
+
+ <page tag="solde_insuff_GPRS" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Souscription d'offre 30J: solde insuff">
+  <title>Souscription a l'offre 30J: solde insuff</title>
+   Le montant de votre compte rechargeable ne vous permet pas de souscrire
+   a cette option. Restez detendu: en rechargeant, vous pourrez souscrire cette option.<br/>
+   <a href="recharge_virgin_cb.xml">Recharger</a><br/>
+ </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. 30J: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+</pages>

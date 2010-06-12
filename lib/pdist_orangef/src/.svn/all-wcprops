@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/orangef/!svn/ver/4988/branches/provisioning_phase2/lib/pdist_orangef/src
+END
+rdp_options_router.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/rdp_options_router.erl
+END
+smsinfos_router.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/smsinfos_router.erl
+END
+pdist_orangef_app.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pdist_orangef/src/pdist_orangef_app.erl
+END
+pdr.erl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/pdr.erl
+END
+tlv_router.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/tlv_router.erl
+END
+sdp_router.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/sdp_router.erl
+END
+spider.erl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/orangef/!svn/ver/4988/branches/provisioning_phase2/lib/pdist_orangef/src/spider.erl
+END
+mqseries_router.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/mqseries_router.erl
+END
+pdist_orangef.app.src
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pdist_orangef/src/pdist_orangef.app.src
+END
+pdist_orangef_sup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/pdist_orangef_sup.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pdist_orangef/src/Makefile
+END

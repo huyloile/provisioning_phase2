@@ -1,0 +1,19 @@
+
+lib/webuser_orangef/src/webuser_user_orangef.erl,428
+-define(SESSIONS_PER_PAGE9,138
+show(14,282
+modify_tag(50,1600
+draw_layout(72,2644
+make_quick_description(173,6245
+compute_quick_description(186,6697
+test_quick_desc(217,8150
+tabs_user(226,8414
+create_tabs(258,9367
+tab_content(285,10456
+update_tab_content(323,11581
+user_setting_form(347,12266
+all_sessions(374,13076
+sessions_footer(421,14500
+nav_button(436,15217
+affich_ligne(457,16111
+profile_header(489,17684

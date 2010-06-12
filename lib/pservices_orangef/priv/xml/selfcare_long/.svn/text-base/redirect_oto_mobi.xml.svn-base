@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Redirection OTO CMO">
+
+  <page cost="freept">
+  </page>
+
+  <page tag="mensu_OMWL" cost="freept" descr="Redirection Option mensuelle OMWL">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;/mcel/acceptance/mobi/bons_plans/vos_messages/om_mensuelle_wl.xml&amp;mobicarte"/>
+  </page>
+
+  <page tag="musique_mix" cost="freept" descr="Redirection Option musique mix">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_musique_mix&amp;mobicarte"/>
+  </page>
+
+  <page tag="set_option_musique_mix" cost="freept" descr="Redirection Option musique mix">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;/mcel/acceptance/mobi/bons_plans/votre_multimedia/musique_mix.xml&amp;musique_mix"/>
+  </page>
+
+  <page tag="musique_collection" cost="freept" descr="Redirection Option musique collection">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_musique_collection&amp;mobicarte"/>
+  </page>
+
+  <page tag="set_option_musique_collection" cost="freept" descr="Redirection Option musique collection">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;/mcel/acceptance/mobi/bons_plans/votre_multimedia/musique_collection.xml&amp;musique_collection"/>
+  </page>
+
+  <page tag="internet_max_journee" cost="freept" descr="Redirection Option Internet max journee">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_internet_max_journee&amp;mobicarte"/>
+  </page>
+
+  <page tag="set_option_internet_max_journee" cost="freept" descr="Redirection Option Internet max journee">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;/mcel/acceptance/mobi/bons_plans/votre_multimedia/internet_max_journee.xml&amp;internet_max_journee"/>
+  </page>
+  
+  <page tag="internet_max_weekend" cost="freept" descr="Redirection Option Internet max weekend">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_internet_max_weekend&amp;mobicarte"/>
+  </page>
+  <page tag="set_option_internet_max_weekend" cost="freept" descr="Redirection Option Internet max weekend">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;/mcel/acceptance/mobi/bons_plans/votre_multimedia/internet_max_weekend.xml&amp;internet_max_weekend"/>
+  </page>
+
+  <page tag="journee_sms_illimite" cost="freept" descr="Redirection Option Journee SMS Illimite">
+    <title>Option mensuelle OMWL</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;/mcel/acceptance/mobi/bons_plans/vos_messages/journee_sms_illimite.xml&amp;mobicarte"/>
+  </page>
+  <page tag="30_sms_mms" cost="freept" descr="Redirection Option 30 SMS MMS">
+    <title>Option 30 SMS MMS</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;/mcel/acceptance/mobi/bons_plans/vos_messages/30_sms_mms.xml&amp;mobicarte"/>
+  </page>
+  <page tag="internet_max" cost="freept" descr="Redirection Option Internet max">
+    <title>Option Internet max</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_internet_max&amp;mobicarte"/>
+  </page>
+  <page tag="set_option_internet_max" cost="freept" descr="Redirection Option Internet max weekend">
+    <title>Option Internet max</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;/mcel/acceptance/mobi/bons_plans/votre_multimedia/internet_max.xml&amp;internet_max"/>
+  </page>
+
+</pages>

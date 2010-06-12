@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><callCsl_doscpResponse xmlns="http://sachemservice"><callCsl_doscpReturn xsi:type="ns1:SachemServiceResponse" xmlns:ns1="http://sachemservice"><ns1:serviceName xsi:type="xsd:string">CSL_DOSCP</ns1:serviceName><ns1:statut xsi:type="xsd:short">-99</ns1:statut><ns1:values xsi:type="ns2:Map" xmlns:ns2="http://xml.apache.org/xml-soap"/></callCsl_doscpReturn></callCsl_doscpResponse></soapenv:Body></soapenv:Envelope>
+
+
+
+

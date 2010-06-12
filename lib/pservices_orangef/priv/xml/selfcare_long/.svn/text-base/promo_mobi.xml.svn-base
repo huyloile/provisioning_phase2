@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+ <pages descr="Promo Mobicarte">
+  <page cost="freept">
+    <!-- init sdp_state and pathological filtering  -->
+    <redirect src="erl://svc_selfcare:promo_start?#first_promo"/>
+  </page>
+
+  <page tag="first_promo">
+     <redirect src="erl://svc_selfcare:next_promo"/>
+  </page>
+
+<page tag="promobase" cost="free_pt" descr="Godet promo base SMS">
+    <title>Promo base SMS</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_promo_base_sms&amp;sms"/> SMS
+    offerts par Orange valables le week-end a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_promo_base_sms&amp;dlv"/> inclus.<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- Compte cadeau voix : Option Promo SMS acquisition - ID : DE1791 -->
+<page tag="sms" cost="free_pt" descr="SMS promotionels">
+    <title>SMS Promo</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/> SMS
+    offerts par Orange a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/> inclus<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+<!-- Compte cadeau voix : Option Promo voix acquisition - ID : DE2264 -->
+<page tag="avoix" cost="free_pt" hist="donthist" 
+        volatile="true" descr="SV Option Mobi: Option Promo voix acquisition">
+    <title>SV Option Mobi: Option Promo voix acquisition</title>
+		Il vous reste <include src="erl://svc_compte:print_solde?cpte_avoix&amp;min"/> minutes
+		d'appels offerts par Orange a utiliser du vendredi minuit au dimanche minuit
+		jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_avoix&amp;dlv"/> inclus<br/>
+</page>
+
+<page tag="we_sms_promo_encours" cost="free_pt" descr="4 WE SMS illimites:en cours">
+    <title>4 WE SMS illimite</title>
+     Vous beneficiez ce WE jusque dimanche minuit de votre promo SMS illimites.
+     Le WE prochain vous beneficierez encore de SMS illimites de vendredi minuit a dimanche minuit.<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+<page tag="we_sms_promo_fin" cost="free_pt" descr="4 WE SMS illimites:fin">
+    <title>4 WE SMS illimite fin</title>
+     C'est votre dernier WE de SMS illimites offert. Profitez-en !<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+<page tag="mms" cost="free_pt" descr="MMS promotionels">
+    <title>MMS Promo</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_esp_sms&amp;mms"/> MMS
+    offerts par Orange a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_esp_sms"/> inclus<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/> 
+</page>
+
+<page tag="we_mms_promo_encours" cost="free_pt" descr="4 WE MMS illimites:en cours">
+    <title>4 WE MMS illimite</title>
+     Vous beneficiez ce WE jusque dimanche minuit de votre promo MMS illimites.
+     Le WE prochain vous beneficierez encore de MMS illimites de vendredi minuit a dimanche minuit.<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+<page tag="we_mms_promo_fin" cost="free_pt" descr="4 WE MMS illimites:fin">
+    <title>4 WE MMS illimite fin</title>
+     C'est votre dernier WE de MMS illimites offert. Profitez-en !<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+ <page tag="opt_ow_deco" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: OW DECO">
+    <title>SV Option Mobi: OW DECOUVERTE</title>
+    Il vous reste
+    <include src="erl://svc_options:print_balance?opt_ow_deco&amp;ko"/>/<include src="erl://svc_options:print_balance_min?opt_ow_deco"/> d'acces
+    a Orange World offerts par Orange valables jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_ow_deco&amp;dlv"/> inclus.<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<page tag="promo_contenu" cost="free_pt" descr="Promo achat contenu">
+    <title>OW Promo</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_promo_contenu"/> euros d'achat de contenus
+    offerts a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_promo_contenu"/> inclus.
+    Profitez-en pour achter un logo ou une sonnerie sur Orange World.
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+ </page>
+
+  <page tag="erech_jinf" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: JOURNEE INFINIE">
+    <title>SV Option Mobi: JOURNEE INFINIE</title>
+    Vous beneficiez de vos journes infinies incluses dans votre recharge serie limitee 45E
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_jinf_voix"/>.<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+   </page>
+
+  <page tag="bons_plans" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: CPTE BONS PLANS">
+    <title>SV Option Mobi: CPTE BONS PLANS</title>
+    Il vous reste
+    <include src="erl://svc_options:print_balance?opt_bons_plans"/> euros a utiliser jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_bons_plans&amp;dlv"/> pour profiter
+    gratuitement d'un bon plan a activer sur le 220 ou le #123#" (appels gratuits)."<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+   </page>
+
+<!-- ODR ORT-->
+ <page tag="odr_ort_main" >
+     <redirect src="erl://svc_selfcare:odr_ort"/>
+  </page>
+
+<!-- ODR TOP_NUM=103 non positionnee-->
+ <page tag="no_opt_odr_inf_30" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: no ODR inf 30">
+    <title>SV Option Mobi: no ODR inf 30</title>
+    Beneficiez d'un credit de 10EUR offert en rechargeant avant le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?31&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="no_opt_odr_sup_32" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: no ODR sup 32">
+    <title>SV Option Mobi: no ODR sup 32</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ODR TOP_NUM=103 ou ORT TOP_NUM=104 positionnee, pas de rechargement-->
+ <page tag="odr_ort_no_rech" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: no ODR inf 30">
+    <title>SV Option Mobi: ODR ORT no rech</title>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ODR TOP_NUM=103 positionnee, rechargement dans 1ere periode -->
+ <page tag="opt_odr_r1_1ere_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 1 periode 1">
+    <title>SV Option Mobi: ODR rech 1 periode 1</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant entre le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?31&amp;dm"/> et le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_odr_r1_2eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 1 periode 2">
+    <title>SV Option Mobi: ODR rech 1 periode 2</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant avant le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_odr_r1_apres_periode2" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 1 apres periode 2">
+    <title>SV Option Mobi: ODR rech 1 apres periode 2</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ODR TOP_NUM=103 positionnee, rechargement dans 2eme periode -->
+ <page tag="opt_odr_r2_2eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 2 periode 2">
+    <title>SV Option Mobi: ODR rech 2 periode 2</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant entre le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/> et le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?93&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_odr_r2_3eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 2 periode 3">
+    <title>SV Option Mobi: ODR rech 2 periode 3</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant avant le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?93&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_odr_r2_apres_periode3" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 2 apres periode 3">
+    <title>SV Option Mobi: ODR rech 2 apres periode 3</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ODR TOP_NUM=103 positionnee, rechargement dans 3eme periode -->
+ <page tag="opt_odr_r3_3eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 3 periode 3">
+    <title>SV Option Mobi: ODR rech 3 periode 3</title>
+    Felicitations, vous avez beneficie de 30EUR de credit offert depuis votre
+    activation<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_odr_r3_apres_periode3" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ODR rech 3 apres periode 3">
+    <title>SV Option Mobi: ODR rech 3 apres periode 3</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ORT TOP_NUM=104 positionnee, rechargement dans 1ere periode -->
+ <page tag="opt_ort_r1_1ere_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 1 periode 1">
+    <title>SV Option Mobi: ORT rech 1 periode 1</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant entre le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?31&amp;dm"/> et le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_ort_r1_2eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 1 periode 2">
+    <title>SV Option Mobi: ORT rech 1 periode 2</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant avant le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_ort_r1_apres_periode2" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 1 apres periode 2">
+    <title>SV Option Mobi: ORT rech 1 apres periode 2</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ORT TOP_NUM=104 positionnee, rechargement dans 2eme periode -->
+ <page tag="opt_ort_r2_2eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 2 periode 2">
+    <title>SV Option Mobi: ORT rech 2 periode 2</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant entre le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?62&amp;dm"/> et le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?93&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_ort_r2_3eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 2 periode 3">
+    <title>SV Option Mobi: ORT rech 2 periode 3</title>
+    Beneficiez d'un nouveau credit de 10EUR offert en rechargeant avant le
+    <include src="erl://svc_util_of:print_d_activ_plus_days?93&amp;dm"/><br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_ort_r2_apres_periode3" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 2 apres periode 3">
+    <title>SV Option Mobi: ORT rech 2 apres periode 3</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+<!-- ORT TOP_NUM=103 positionnee, rechargement dans 3eme periode -->
+ <page tag="opt_ort_r3_3eme_periode" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 3 periode 3">
+    <title>SV Option Mobi: ORT rech 3 periode 3</title>
+    Felicitations, vous avez beneficie de 30EUR de credit offert depuis votre
+    activation<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+ <page tag="opt_ort_r3_apres_periode3" cost="free_pt" hist="donthist"
+        volatile="true" descr="SV Option Mobi: ORT rech 3 apres periode 3">
+    <title>SV Option Mobi: ORT rech 3 apres periode 3</title>
+    Rechargez vite et beneficiez jusqu'a 25% de communications en plus
+    avec le programme temps en plus
+    (inscription gratuite au service clients, 0,37E/min)<br/>
+    <include src="erl://svc_selfcare:print_next_link_promo"/>
+  </page>
+
+  
+<!-- Option journee illimites OW -->
+
+<page tag="jilli_ow" cost="free_pt" hist="donthist"
+      volatile="true"
+      descr="SV Option Mobi: Option journee illimites OW">
+  <title>SV Option Mobi:Option journee illimites OW</title>
+  Vous beneficiez aujourd'hui jusqu'a minuit d'un acces illimite au portail
+  Orange World : surf, videos, TV, chat, Gallery (hors contenus payants)
+</page>
+
+<!-- Options illimitees sur recharge SL -->
+
+<page tag="kdo_voix" cost="free_pt" hist="donthist"
+      volatile="true"
+      descr="SV Option Mobi: Option Illico serie limitee noel KDO voix">
+  <title>SV Option Mobi:Option Illico serie limitee noel KDO voix</title>
+  Vous beneficiez d'appels illimites vers les mobiles orange 7j/7 de 21h
+  a minuit, jusqu'au
+  <include src="erl://svc_compte:print_fin_credit?cpte_kdo_voix&amp;dlv"/> inclus,
+  avec la recharge serie limitee 20E de Noel
+</page>
+
+<page tag="kdo_sms" cost="free_pt" hist="donthist"
+      volatile="true"
+      descr="SV Option Mobi: Option Illico serie limitee noel KDO sms">
+  <title>SV Option Mobi:Option Illico serie limitee noel KDO sms</title>
+  Vous beneficiez de SMS gratuits et illimites vers tous les operateurs 7j/7 de 21h
+  a minuit, jusqu'au
+  <include src="erl://svc_compte:print_fin_credit?cpte_kdo_sms&amp;dlv"/> inclus,
+  avec la recharge serie limitee 20E de Noel
+</page>
+
+<page tag="kdo_tv" cost="free_pt" hist="donthist"
+      volatile="true"
+      descr="SV Option Mobi: Option Illico serie limitee noel KDO tv">
+  <title>SV Option Mobi:Option Illico serie limitee noel KDO tv</title>
+  Vous beneficiez de la TV gratuite et illimitee 7j/7 de 21h a minuit, jusqu'au
+  <include src="erl://svc_compte:print_fin_credit?cpte_kdo_tv&amp;dlv"/> inclus,
+  avec la recharge serie limitee 20E de Noel
+</page>
+
+<page tag="kdo_surf" cost="free_pt" hist="donthist"
+      volatile="true"
+      descr="SV Option Mobi: Option Illico serie limitee 7 euros : surf">
+  <title>SV Option Mobi:Option Illico serie limitee 7 euros : surf</title>
+	Vous beneficiez d'un acces + connexions illimitees aux services du portail Orange World
+	jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_kdo_surf&amp;dlv"/> inclus,
+	avec la recharge 7E Serie Limitee
+</page>
+
+<!--ERROR PAGES-->
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Suivi Conso mobi: Service indisponible">
+    <title>Suivi Conso mobi: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+ </pages>

@@ -1,0 +1,5 @@
+[{"erreur_pct_montant","/descendant::soapenv:Envelope/soapenv:Body/callCsl_opResponse/callCsl_opReturn[statut='-88']"},
+{"numid_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callCsl_opResponse/callCsl_opReturn[statut='-95']"},
+{"format_requete_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callCsl_opResponse/callCsl_opReturn[statut='-98']"},
+{"incident_technique","/descendant::soapenv:Envelope/soapenv:Body/callCsl_opResponse/callCsl_opReturn[statut='-98']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callCsl_opResponse/callCsl_opReturn[statut!='0']"}].

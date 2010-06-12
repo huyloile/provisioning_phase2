@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF MMSINFOS page">
+   <page>
+    <redirect src="erl://svc_mmsinfos:redirect_by_SMIlistOptions_status?MMSI&amp;#menu_classique&amp;#menu_promo&amp;#temporary"/>
+   </page>
+
+ <page tag="menu_classique" cost="free_pt" hist="dohist" descr="MMSINFOS: menu">
+   <title>Menu MMSinfos</title>
+      MMS<br/>
+      Vous souhaitez vous inscrire a la rubrique:<br/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?meteo&amp;#meteo_menu&amp;mms"/>
+<!--      <include src="erl://svc_mmsinfos:print_rubrique_inactive?horoscope&amp;#horo_menu&amp;mms"/>-->
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?actu&amp;#actu_menu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?ligue1&amp;#ligue1_menu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?people&amp;#people_menu&amp;mms"/>
+      <a href="#menu_classique2">Suite des rubriques</a><br/>
+      <a href="#infos_plus">+ d'infos</a><br/>
+ </page>
+
+ <page tag="menu_classique2" cost="free_pt" hist="dohist" descr="MMSINFOS: menu">
+   <title>Menu MMSinfos</title>
+      Suite de la liste des rubriques MMS Infos :<br/>
+      <!--include src="erl://svc_mmsinfos:print_rubrique_inactive?tv&amp;#tv_menu&amp;mms"/-->
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?cine&amp;#cine_menu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?humour&amp;#humour_menu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?charme&amp;#charme_menu&amp;mms"/>
+      <a href="#infos_plus">+ d'infos</a><br/>
+      <!--include src="erl://svc_mmsinfos:print_modification?#modif_or_resil&amp;#resiliation"/-->
+      <include src="erl://svc_mmsinfos:print_modification?#modif_or_resil"/>
+ </page>
+
+ <page tag="menu_promo" cost="free_pt" hist="dohist" descr="MMSINFOS: menu">
+   <title>Menu MMSinfos</title>
+      MMS<br/>
+      Vous souhaitez vous inscrire a la rubrique:<br/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?meteo&amp;#meteo_menu_promo&amp;mms"/>
+<!--      <include src="erl://svc_mmsinfos:print_rubrique_inactive?horoscope&amp;#horo_menu_promo&amp;mms"/>-->
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?actu&amp;#actu_menu_promo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?ligue1&amp;#ligue1_menu_promo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?people&amp;#people_menu_promo&amp;mms"/>
+      <a href="#menu_promo2">Suite des rubriques</a><br/>
+      <a href="#infos_plus">+ d'infos</a><br/>
+ </page>
+
+ <page tag="menu_promo2" cost="free_pt" hist="dohist" descr="MMSINFOS: menu">
+   <title>Menu MMSinfos</title>
+      Suite de la liste des rubriques MMS Infos :<br/>
+      <!--include src="erl://svc_mmsinfos:print_rubrique_inactive?tv&amp;#tv_menu_promo&amp;mms"/-->
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?cine&amp;#cine_menu_promo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?humour&amp;#humour_menu_promo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_inactive?charme&amp;#charme_menu_promo&amp;mms"/>
+      <a href="#infos_plus">+ d'infos</a><br/>
+ </page>
+ 
+<!--page tag="modif_or_resil_menu" hist="donthist" descr="MMSINFOS: modif ou resil">
+   <title>Accueil Modif/Resil</title>   
+      <a href="#modif_or_resil">Modif/Resiliations</a>
+</page-->
+
+<page tag="modif_or_resil" hist="donthist" descr="MMSINFOS: modif ou resil">
+   <title>Accueil Modif/Resil</title>
+   Vous souhaitez:<br/>
+   <include src="erl://svc_mmsinfos:print_rubrique_active?horoscope&amp;#confirm_resil_horoscope&amp;mms&amp;Modifier les parametres de l'horoscope"/>
+   <!--a href="#horo_menu_modif">Modifier les parametres de l'horoscope</a><br/-->
+   <a href="#resiliation">Resilier une rubrique</a><br/>
+</page>
+
+<!-- + d'infos -->
+ <page tag="infos_plus" hist="dohist" cost="free_pt" descr="MMSINFOS: + d'infos P1">
+   <title>+ d'infos P1</title>
+      MMS Infos c'est en image l'essentiel de l'info qui vous interesse.
+      Chaque rubrique est independante des autres.<br/>
+      <a href="#infos_plus_2">Suite</a>
+ </page>
+
+<page tag="infos_plus_2" hist="dohist" cost="free_pt" descr="MMSINFOS: + d'infos P2">
+   <title>+ d'infos P2</title>
+      Les conditions legales sont disponibles sur le site www.orange.fr ou
+     aupres de votre service client<br/>
+      <a href="#infos_plus_3">Suite</a>
+ </page>
+
+<page tag="infos_plus_3" hist="dohist" cost="free_pt" descr="MMSINFOS: + d'infos P3">
+   <title>+ d'infos P3</title>
+      L'inscription est mensuelle. Vous pouvez resilier a tout moment sur le #123#. La resiliation sera immediate,mais le mois en cours sera entierement facture
+ </page>
+
+
+<!-- MMS INFOS ACCUEIL -->
+ <page tag="meteo_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Meteo">
+   <title>Accueil Meteo</title>
+      Meteo.<br/>
+      Decouvrez en images la meteo de la semaine et du week-end.
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?meteo&amp;mms"/> EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?meteo&amp;mms">Confirmer</a>
+ </page>
+
+ <page tag="meteo_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Meteo" menutext="notext">
+   <title>Accueil Meteo</title>
+      Meteo.<br/>
+      Decouvrez en images la meteo de la semaine et du week-end.
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?meteo&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?meteo&amp;mms">Confirmer</a>
+ </page>
+
+ <page tag="horo_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Horoscope">
+   <title>Accueil Horoscope</title>
+      Horoscope:<br/>
+      Du lundi au vendredi retrouvez vos previsions astrologiques
+      completes.
+      Vous souhaitez recevoir l'horoscope:<br/>
+      <a href="#form_horo_f">feminin</a><br/>
+      <a href="#form_horo_h">masculin</a>
+ </page>
+
+ <page tag="horo_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Horoscope">
+   <title>Accueil Horoscope</title>
+      Horoscope:<br/>
+      Du lundi au vendredi retrouvez vos previsions astrologiques
+      completes.
+      Vous souhaitez recevoir l'horoscope:<br/>
+      <a href="#form_horo_f_promo">feminin</a><br/>
+      <a href="#form_horo_h_promo">masculin</a>
+ </page>
+
+
+ <page tag="horo_menu_modif" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Horoscope">
+   <title>Accueil Horoscope</title>
+   Vous recevez actuellement l'horoscope <include src="erl://svc_mmsinfos:print_horo_genre"/> 
+   pour le signe <include src="erl://svc_mmsinfos:print_horo_signe_opt_subscribed"/><br/>
+   Vous souhaitez recevoir l'horoscope.<br/>
+      <a href="#form_horo_modif_f">feminin</a><br/>
+      <a href="#form_horo_modif_h">masculin</a>
+ </page>
+
+
+<page tag="actu_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Actualite">
+   <title>Accueil Actualite</title>
+      Actualite:<br/>
+      Decouvrez 5 jours par semaine le journal de l'info en images.
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?actu&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?actu&amp;mms">Confirmer</a>
+ </page>
+
+
+<page tag="actu_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Actualite" menutext="notext">
+   <title>Accueil Actualite</title>
+      Actualite:<br/>
+      Decouvrez 5 jours par semaine le journal de l'info en images.
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?actu&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?actu&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="ligue1_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Ligue1">
+   <title>Accueil Ligue1</title>
+      Avec Orange Ligue 1 suivez en images toute l'actualite du football<br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?ligue1&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?ligue1&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="ligue1_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Ligue1" menutext="notext">
+   <title>Accueil Ligue1</title>
+      Avec Orange Ligue 1 suivez en images toute l'actualite du football
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?ligue1&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?ligue1&amp;mms">Confirmer</a>
+ </page>
+
+
+<page tag="people_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil People">
+   <title>Accueil People</title>
+      People:<br/>
+      Suivez 5 jours par semaine et en images
+      l'actu des stars et les derniers potins.
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?people&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?people&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="people_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil People" menutext="notext">
+   <title>Accueil People</title>
+      People:<br/>
+      Suivez 5j/semaine et en images l'actu des stars et les derniers potins.
+      Cette option est gratuite pendant 30j puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?people&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?people&amp;mms">Confirmer</a>
+ </page>
+
+ <page tag="tv_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil TV">
+   <title>Accueil TV</title>
+      TV:<br/>
+      Decouvrez votre programme TV de la soiree en images tous les jours de la semaine.
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?tv&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?tv&amp;mms">Confirmer</a>
+ </page>
+
+
+ <page tag="tv_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil TV Promo CMO POST" menutext="notext">
+   <title>Accueil TV Promo CMO POST </title>
+      TV:<br/>
+      Decouvrez votre programme TV de la soiree en images 7 jours sur 7.
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?tv&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?tv&amp;mms">Confirmer</a>
+ </page>
+
+
+<page tag="cine_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Cinema Promo">
+   <title>Accueil Cinema promo</title>
+      Cinema.<br/>
+      Decouvrez en images les sorties de la semaine et notre coup de coeur
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?cine&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?cine&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="cine_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Cinema Np promo" menutext="notext">
+   <title>Accueil Cinema no promo</title>
+      Cinema.<br/>
+      Decouvrez en images les sorties de la semaine et notre selection 
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?cine&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?cine&amp;mms">Confirmer</a>
+ </page>
+
+
+<page tag="humour_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Humour No promo">
+   <title>Accueil Humour No promo</title>
+      Humour.<br/>
+      5 MMS par semaine pour un mix de BD, de blagues et d'images insolites<br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?humour&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?humour&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="humour_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Humour Promo">
+   <title>Accueil Humour Promo</title>
+      Humour.<br/>
+      5 MMS par semaine pour un mix de BD et de blagues
+      Cette option est gratuite pendant 30 jours puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?humour&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?humour&amp;mms">Confirmer</a>
+ </page>
+
+
+<page tag="charme_menu" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Charme ss Promo">
+   <title>Accueil Charme</title>
+      Charme.<br/>
+      5 jours par semaine recevez des images coquines.
+      Ce service est interdit aux moins de 18 ans.
+      Il vous sera facturee <include src="erl://svc_mmsinfos:print_prix?charme&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe?charme&amp;mms">Confirmer</a>
+ </page>
+
+<page tag="charme_menu_promo" hist="donthist" cost="free_pt" descr="MMSINFOS: Accueil Charme Promo">
+   <title>Accueil Charme</title>
+  Charme.<br/>
+  Ce service est interdit aux moins de 18 ans. Cette option est gratuite pendant 30 jours
+  puis vous sera facturee <include src="erl://svc_mmsinfos:print_prix?charme&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+  <a href="erl://svc_mmsinfos:subscribe?charme&amp;mms">Confirmer</a>
+ </page>
+
+
+
+
+<!-- Modification Horoscope-->
+ <page tag="form_horo_f" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:store_horo_signe?f">
+    <entry kind="digits">
+      <prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+      Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_h" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:store_horo_signe?h">
+    <entry kind="digits">
+      <prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+      Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_f_promo" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:store_horo_promo_signe?f">
+    <entry kind="digits">
+      <prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+      Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_h_promo" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:store_horo_promo_signe?h">
+    <entry kind="digits">
+      <prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+      Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="form_horo_f_nok" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:store_horo_signe?f">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+  
+<page tag="form_horo_h_nok" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:store_horo_signe?h">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+ 
+
+<page tag="form_horo_f_nok_promo" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:store_horo_promo_signe?f">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+  
+<page tag="form_horo_h_nok_promo" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:store_horo_promo_signe?h">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+  
+
+
+  <page tag="form_horo_modif_h" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:modif_horo?h">
+      <entry kind="digits">
+	<prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+	Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+	<br/>Tapez 8 pour revenir a la page precedente
+	</prompt>
+      </entry>
+    </form>
+  </page>
+
+ <page tag="form_horo_modif_f" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande signes astro" nav="stop">
+    <title>SMSINFOS: Dmd Date de naissance</title>
+    <form action="erl://svc_mmsinfos:modif_horo?f">
+      <entry kind="digits">
+	<prompt>Veuillez preciser votre date de naissance au format jjmm.<br/>
+	Par exemple 2202 si vous etes ne(e) un 22 fevrier.
+	<br/>Tapez 8 pour revenir a la page precedente
+	</prompt>
+      </entry>
+    </form>
+  </page>
+
+ <page tag="form_horo_modif_f_nok" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:modif_horo?f">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="form_horo_modif_h_nok" hist="donthist" backtext="notext" menutext="notext" descr="MMSINFOS: Demande Horoscope: Erreur saisie" nav="stop">
+    <title>SMSINFOS: Dmd Horoscope</title>
+    <form action="erl://svc_mmsinfos:modif_horo?h">
+    <entry kind="digits">
+      <prompt>Nous n'avons pas compris votre reponse.<br/>
+      Veuillez repondre en respectant le format suivant jjmm.Par ex 2202
+      si vous etes ne un 22 fev.
+      <br/>Tapez 8 pour revenir a la page precedente
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="confirm_inscription_horo_f" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation" menutext="notext">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope
+      feminin pour le signe
+      <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?horoscope&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe_horo?f">Confirmer</a>
+ </page>
+<page tag="confirm_inscription_horo_h" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation" menutext="notext">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope
+      masculin pour le signe
+      <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?horoscope&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?no_promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe_horo?h">Confirmer</a>
+ </page>
+
+
+<page tag="confirm_inscription_horo_f_promo" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation" menutext="notext">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope
+      feminin pour le signe
+      <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?horoscope&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe_horo?f">Confirmer</a>
+ </page>
+<page tag="confirm_inscription_horo_h_promo" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation" menutext="notext">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope
+      masculin pour le signe
+      <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+      Cette option vous sera facturee <include src="erl://svc_mmsinfos:print_prix?horoscope&amp;mms"/>EUR <include src="erl://svc_smsinfos:include_text?promo"/><br/>
+      <a href="erl://svc_mmsinfos:subscribe_horo?h">Confirmer</a>
+ </page>
+
+<page tag="modif_success_h" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope masculin pour
+      le signe <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+ </page>
+
+<page tag="modif_success_f" hist="dohist" cost="free_pt" descr="MMSINFOS: INscription Horoscope Confirmation">
+   <title>Inscription Horoscope Confirmation</title>
+      Vous avez choisi de recevoir l'Horoscope feminin pour
+      le signe <include src="erl://svc_mmsinfos:print_horo_signe"/><br/>
+ </page>
+
+<!-- Resiliation -->
+<page tag="resiliation" hist="dohist" descr="MMSINFOS: Acueil Resiliation">
+   <title>Accueil Resiliation</title>
+   <redirect src="erl://svc_mmsinfos:print_menu_opts_resiliation?#resiliation_1&amp;#resiliation_2"/>
+ </page>
+
+<page tag="resiliation_1" hist="dohist" descr="MMSINFOS: Acueil Resiliation">
+   <title>Accueil Resiliation</title>
+      MMS<br/>
+      Vous souhaitez resilier la rubrique:<br/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?meteo&amp;#confirm_resil_meteo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?horoscope&amp;#confirm_resil_horoscope&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?actu&amp;#confirm_resil_actu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?ligue1&amp;#confirm_resil_ligue1&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?people&amp;#confirm_resil_people&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?cine&amp;#confirm_resil_cine&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?humour&amp;#confirm_resil_humour&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?charme&amp;#confirm_resil_charme&amp;mms"/>
+ </page>
+
+<page tag="resiliation_2" hist="dohist" descr="MMSINFOS: Acueil Resiliation">
+   <title>Accueil Resiliation</title>
+      MMS<br/>
+      Vous souhaitez resilier la rubrique:<br/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?meteo&amp;#confirm_resil_meteo&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?horoscope&amp;#confirm_resil_horoscope&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?actu&amp;#confirm_resil_actu&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?ligue1&amp;#confirm_resil_ligue1&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?people&amp;#confirm_resil_people&amp;mms"/>      
+      <include src="erl://svc_mmsinfos:print_rubrique_active?cine&amp;#confirm_resil_cine&amp;mms"/>
+      <a href="#resiliation_2_suite">Suite</a>
+ </page>
+
+<page tag="resiliation_2_suite" hist="dohist" descr="MMSINFOS: Acueil Resiliation">
+   <title>Accueil Resiliation</title>
+      MMS<br/>
+      Vous souhaitez resilier la rubrique:<br/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?humour&amp;#confirm_resil_humour&amp;mms"/>
+      <include src="erl://svc_mmsinfos:print_rubrique_active?charme&amp;#confirm_resil_charme&amp;mms"/>
+ </page>
+
+<!-- Resiliation -->
+
+<page tag="confirm_resil_meteo" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+   Infos Meteo<br/>
+  <a href="erl://svc_mmsinfos:resil?meteo&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_horoscope" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Horoscope <br/>
+  <a href="erl://svc_mmsinfos:resil?horoscope&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_actu" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Actualites<br/>
+  <a href="erl://svc_mmsinfos:resil?actu&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_ligue1" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Ligue1<br/>
+  <a href="erl://svc_mmsinfos:resil?ligue1&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_people" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos People<br/>
+  <a href="erl://svc_mmsinfos:resil?people&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_tv" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Programme TV<br/>
+  <a href="erl://svc_mmsinfos:resil?tv&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_cine" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Cinema<br/>
+  <a href="erl://svc_mmsinfos:resil?cine&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_humour" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Humour<br/>
+  <a href="erl://svc_mmsinfos:resil?humour&amp;mms">Confirmer</a><br/>
+</page>
+
+<page tag="confirm_resil_charme" hist="donthist" cost="free_pt" descr="MMSINFOS: Acueil Resiliation">
+  Vous avez choisi de resilier votre abonnement a MMS
+  Infos Charme<br/>
+  <a href="erl://svc_mmsinfos:resil?charme&amp;mms">Confirmer</a><br/>
+</page>
+
+
+
+
+<!-- Inscription/Resiliation Reussi-->
+ <page tag="success_mms" hist="donthist" volatile="true" cost="free_pt" descr="MMSINFOS Video: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre inscription a MMS infos
+      <include src="erl://svc_mmsinfos:descr_rubrique"/> a bien
+      ete prise en compte. Vous pouvez resilier a tout moment sur le #123#.
+ </page>
+
+
+
+<page tag="success_resil" hist="donthist" backtext="notext" cost="free_pt" descr="MMSINFOS Video: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre resiliation a MMS Infos
+      <include src="erl://svc_mmsinfos:descr_rubrique"/> a bien ete pris en compte.<br/>
+ </page>
+
+ <page tag="success_abo_mobi" hist="donthist" volatile="true" cost="free_pt" descr="MMSINFOS: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre abonnement a MMS infos rubrique
+      <include src="erl://svc_mmsinfos:descr_rubrique"/> a bien
+      ete pris en compte<br/>
+      Vous recevrez un SMS vous proposant de la reconduire de mois en mois
+ </page>
+
+ <page tag="success_abo_cmo" hist="donthist" volatile="true" cost="free_pt" descr="MMSINFOS: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre abonnement a MMS infos rubrique
+      <include src="erl://svc_mmsinfos:descr_rubrique"/> a bien
+      ete pris en compte. Vous pouvez resilier a tout moment sur le #123#.
+ </page>
+
+ <page tag="success_abo" hist="donthist" volatile="true" cost="free_pt" descr="MMSINFOS: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre abonnement a MMS infos rubrique
+      <include src="erl://svc_mmsinfos:descr_rubrique"/> a bien
+      ete pris en compte. Vous pouvez resilier a tout moment sur le #123#.
+ </page>
+
+<page tag="success_resil" hist="donthist" backtext="notext" cost="free_pt" descr="MMSINFOS: Sucess Abonnement">
+   <title>Inscription OK: Abonnement</title>
+      Votre resiliation a MMS Infos
+      <include src="erl://svc_mmsinfos:print_rubrique_en_cours?mmsinfos_rub"/> a bien ete pris en compte.<br/>
+ </page>
+
+<!--Message de rejet-->
+   <page tag="service_interdit" descr="MMSINFOS: Service Interdit redir">
+      <redirect src="erl://svc_util:redir_subscription?mobi=#service_interdit_mobi,default=#service_interdit_post"/>
+  </page>
+  
+  <page tag="rubrique_filtree" descr="MMSINFOS: rubrique_filtree redir">
+      <redirect src="erl://svc_util:redir_subscription?mobi=#rubrique_filtree_mobi,default=#rubrique_filtree_post"/>
+  </page>
+
+<page tag="service_interdit_mobi" cost="free_pt" descr="MMSINFOS: Service Interdit Mobi">
+    <title>Service Filtre</title>
+    Orange info: Vous ne pouvez pas vous inscrire aux rubriques MMS Infos.
+    Pour plus de renseignements contactez votre service client (0,37 EUR/mn)
+</page>
+
+<page tag="rubrique_filtree_mobi" cost="free_pt" descr="MMSINFOS: Rubrique Filtree Mobi">
+    <title>Rubrique Filtre</title>
+    Orange info: Vous ne pouvez pas vous inscrire a la rubrique MMS Infos
+    <include src="erl://svc_mmsinfos:print_rubrique_en_cours?mmsinfos_rub"/>.
+    Pour plus de renseignements contactez votre service client (0,37 EUR/mn)
+</page>
+
+<page tag="service_interdit_post" cost="free_pt" descr="MMSINFOS: Service Interdit">
+    <title>Service Filtre</title>
+    Orange info: Vous ne pouvez pas vous inscrire aux rubriques MMS Infos.
+    Pour plus de renseignements contactez votre service client (appel inclus dans le forfait)
+</page>
+
+<page tag="rubrique_filtree_post" cost="free_pt" descr="MMSINFOS: Rubrique Filtree" menutext="notext">
+    <title>Rubrique Filtre</title>
+    Orange info:<br/>
+	Vous ne pouvez pas vous inscrire a la rubrique MMS Infos
+    <include src="erl://svc_mmsinfos:print_rubrique_en_cours?mmsinfos_rub"/>.
+    Pour plus de renseignements contactez votre service client (inclus dans le forfait)
+</page>
+
+<!-- Error Pages -->
+<page tag="not_compatible" cost="free_pt" descr="MMSINFOS: Terminal Non MMS">
+    <title>Terminal Non MMS</title>
+    Votre terminal ne vous permet pas d'accéder a ce service</page>
+
+<page tag="credit_insuffisant" cost="free_pt" descr="MMSINFOS: Solde insufisant">
+    <title>Mobi : Solde insuffisant</title>
+    Votre credit mobicarte est insuffisant.<br/>
+    Tapez 1 pour recharger ou 0 pour revenir en arriere<br/>
+    <a href="recharge.xml">Recharger</a>
+</page>
+
+ <page tag="system_failure" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+           
+<page tag="temporary" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+
+</pages>

@@ -1,0 +1,4 @@
+"record_name";"path";"skey";"ikey";"gui_layout";"contents";"timestamp";"type";"version"
+"mcel_node";"[]";"{[],undefined}";"{[],undefined,undefined}";"vertical";"undefined";"0";"page";"4"
+"mcel_node";"[""acceptance"",""mobi"",""illimite_kdo_v2""]";"{[""acceptance"",""mobi"",""illimite_kdo_v2""],""menu""}";"{[""acceptance"",""mobi"",""illimite_kdo_v2""],""menu"",undefined}";"vertical";"undefined";"1222271841";"page";"4"
+"mcel_node";"[""acceptance"",""mobi"",""illimite_kdo_v2""]";"{[""acceptance"",""mobi"",""illimite_kdo_v2""],""menu""}";"{[""acceptance"",""mobi"",""illimite_kdo_v2""],""menu"",[]}";"vertical";"{mcel_plugin,{svc_core,change_service,2},[""/orangef/selfcare_long/opt_illimite_kdo_v2""],[{menutext,""notext""},{backtext,""notext""}],""Redirection Illimite Kdo"",""Mobi : Redirection Illimite Kdo""}";"1222271841";"page";"4"

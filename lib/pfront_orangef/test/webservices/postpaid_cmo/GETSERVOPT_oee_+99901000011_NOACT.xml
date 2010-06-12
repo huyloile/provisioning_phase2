@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <getServicesOptionnelsResponse xmlns="urn:orchidee.service.ecare/G8">
+			<return>
+						<code></code>
+						<inclusDansOffreType>0</inclusDansOffreType>
+						<libelle></libelle>
+						<codeCategoriePreferentielle>string</codeCategoriePreferentielle>
+						<codePere>string</codePere>
+						<codeType>string</codeType>
+		                <dateActivation>15/01/2008 14:00:22</dateActivation>
+		                <dateDesactivation>15/01/2009 14:00:22</dateDesactivation>
+		                <etat>0</etat>
+		                <libelleCategoriePreferentielle>string</libelleCategoriePreferentielle>
+		                <libellePere>string</libellePere>
+		                <libelleType>string</libelleType>
+		                <nbChangements>3</nbChangements>
+		                <nombreMaximumNumerosPreferentiels>3</nombreMaximumNumerosPreferentiels>
+		                <numerosPreferentiels>3</numerosPreferentiels>
+		                <resiliable>1</resiliable>
+		                <technologie>
+								<code></code>
+			                    <libelle></libelle>
+			                    <troisG>true</troisG>
+		               </technologie>
+			</return>
+		</getServicesOptionnelsResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  <page cost="free_pt">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#consultation_sachem_mobi,cmo=#o2o_message_cmo,postpaid=#o2o_message_postpaid"/>
+  </page>
+
+  <page tag="consultation_sachem_mobi" menutext="notext" descr="Message One to One">
+    <redirect src="erl://svc_util_of:consultation_sachem?#o2o_message_mobi&amp;/orangef/selfcare_long/selfcare.xml#menu_indisp"/>
+  </page>
+
+<page tag="o2o_message_mobi" backtext="notext" menutext="notext" descr="Message One to One">
+      <include src="erl://svc_one2one:get_o2o_message"/>
+   <br/><a href="file://mcel/acceptance/mobi/Home_page_mobi.xml#sachem_consultation" key="9">Accueil</a>
+  </page>
+  <page tag="o2o_message_cmo" backtext="notext" menutext="notext" descr="Message One to One">
+      <include src="erl://svc_one2one:get_o2o_message"/>
+      <br/><a href="file:/orangef/selfcare_long/selfcare_cmo_new.xml#mainmenu" key="9">Accueil</a>
+  </page>
+  <page tag="o2o_message_postpaid" backtext="notext" menutext="notext" descr="Message One to One">
+      <include src="erl://svc_one2one:get_o2o_message"/>
+      <br/><a href="file:/orangef/selfcare_long/spider_postpaid_sce.xml#menu" key="9">Accueil</a>
+  </page>
+</pages>
+

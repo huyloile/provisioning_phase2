@@ -1,0 +1,761 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/orangef/!svn/ver/4948/branches/provisioning_phase2/lib/pservices_orangef/test
+END
+test_plan_tarif_omer.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_plan_tarif_omer.erl
+END
+sachem.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/sachem.hrl
+END
+test_svc_options.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_options.erl
+END
+test_123_spider_fail.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_spider_fail.erl
+END
+test_144_virgin_pp2.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_virgin_pp2.erl
+END
+fake_opal_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_opal_server.erl
+END
+create50_test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/create50_test.erl
+END
+test_smspre.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_smspre.erl
+END
+online_cmo.sh
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/online_cmo.sh
+END
+docgraphs_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/docgraphs_orangef.erl
+END
+test_123_postpaid_Homepage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_Homepage.erl
+END
+test_144_monacell_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_monacell_pp.erl
+END
+test_123_postpaid_options_sms_mms.erl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_options_sms_mms.erl
+END
+test_123_callback.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_callback.erl
+END
+test_123_mobi_bonus.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bonus.erl
+END
+ocfrdp_online.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pservices_orangef/test/ocfrdp_online.erl
+END
+test_123_mobi_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_fun.erl
+END
+test_util_spider.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_util_spider.erl
+END
+test_script_xml.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_script_xml.erl
+END
+test_144_nrj_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_nrj_cb.erl
+END
+test_spider.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_spider.erl
+END
+test_123_mobi_recharge_umobile.erl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_recharge_umobile.erl
+END
+test_123_one2one.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_one2one.erl
+END
+test_123_postpaid_aide.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_aide.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/Makefile
+END
+test_123_mobi_aide.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_aide.erl
+END
+profile_manager.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/profile_manager.hrl
+END
+test_123_cmo_avantages_vacances.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_avantages_vacances.erl
+END
+test_123_mobi_recharge_mobicarte.erl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_recharge_mobicarte.erl
+END
+test_transfert_credit.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_transfert_credit.erl
+END
+test_144_tele2_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_tele2_pp.erl
+END
+sachem_offline.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/sachem_offline.erl
+END
+test_util_of.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_util_of.hrl
+END
+test_123_mobi_bons_plans_low_credit.erl
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_low_credit.erl
+END
+sachem_online.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/sachem_online.erl
+END
+one2one.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/one2one.erl
+END
+test_123_service_access.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_service_access.erl
+END
+test_123_bzh_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_bzh_pp.erl
+END
+test_123_cmo_Homepage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_Homepage.erl
+END
+test_123_cmo_recharge_prelevement.erl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_recharge_prelevement.erl
+END
+test_123_cmo_fun.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_fun.erl
+END
+test_svc_sachem.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_sachem.erl
+END
+test_svc_util_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_util_of.erl
+END
+testlimande.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/testlimande.hrl
+END
+online.sh
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/online.sh
+END
+test_123_mobi_recharge_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_recharge_cb.erl
+END
+test_144_carrefour_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_carrefour_pp.erl
+END
+test_144_eskimo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_eskimo.erl
+END
+test_123_mobi_homepage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_homepage.erl
+END
+test_plan_tarif_bzh_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_plan_tarif_bzh_cmo.erl
+END
+test_identifying_user_local.erl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_identifying_user_local.erl
+END
+test_clean.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_clean.erl
+END
+test_123_postpaid_roaming.erl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_roaming.erl
+END
+test_svc_limande.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_limande.erl
+END
+test_123_cmo_quicksilver.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_quicksilver.erl
+END
+test_123_postpaid_parentChild.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_parentChild.erl
+END
+test_125_wifi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_125_wifi.erl
+END
+test_144_virgin_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_virgin_pp.erl
+END
+test_123_mobi_bons_plans_autres_options.erl
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_autres_options.erl
+END
+test_123_cmo_options_multimedia.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_options_multimedia.erl
+END
+test_123_cmo_recharge_mobicarte.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_recharge_mobicarte.erl
+END
+test_provisioning.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_provisioning.hrl
+END
+test_123_cmo_UNIK.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_UNIK.erl
+END
+spider_online.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/spider_online.erl
+END
+test_144_opim.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_opim.erl
+END
+mipc_vpbx_online.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/mipc_vpbx_online.erl
+END
+test_svc_soap_interface_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_soap_interface_orangef.erl
+END
+test_terminal_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_terminal_of.erl
+END
+test_123_mobi_illimite_kdo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_illimite_kdo.erl
+END
+test_sachem.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_sachem.erl
+END
+test_provisioning_local.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_provisioning_local.erl
+END
+test_tech_seg_utils.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_tech_seg_utils.erl
+END
+test_annuaire.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_annuaire.erl
+END
+test_prov_selfcare_local.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4948/branches/provisioning_phase2/lib/pservices_orangef/test/test_prov_selfcare_local.erl
+END
+test_svc_subscr_asmetier.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_subscr_asmetier.erl
+END
+test_123_bzh_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_bzh_cmo.erl
+END
+test_124_mobi_direct_recharge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_124_mobi_direct_recharge.erl
+END
+test_123_cmo_recharge_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_recharge_cb.erl
+END
+test_123_cmo_options_sms_mms.erl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_options_sms_mms.erl
+END
+test_unit_test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_unit_test.erl
+END
+test_sms_games.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_sms_games.erl
+END
+test_chat.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_chat.erl
+END
+test_144_nrj_pp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_nrj_pp.erl
+END
+test_123_cmo_bons_plans.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_bons_plans.erl
+END
+test_144_ten_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_ten_cb.erl
+END
+orangef_test_error_report_handler.erl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/orangef_test_error_report_handler.erl
+END
+test_123_mobi_bons_plans_votre_multimedia.erl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_votre_multimedia.erl
+END
+test_123_cmo_suivi_conso_detaille.erl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_suivi_conso_detaille.erl
+END
+test_144_monacell_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_monacell_cb.erl
+END
+test_123_mobi_roaming.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_roaming.erl
+END
+profile_manager.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4946/branches/provisioning_phase2/lib/pservices_orangef/test/profile_manager.erl
+END
+fake_http_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_http_server.erl
+END
+test_123_postpaid_options_multimedia.erl
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_options_multimedia.erl
+END
+access_code.hrl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/access_code.hrl
+END
+test_util_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_util_of.erl
+END
+test_123_mobi_m6_soirees_sms_offerte.erl
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_m6_soirees_sms_offerte.erl
+END
+test_svc_mipc.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_mipc.erl
+END
+test_123_postpaid_sms_mms_infos.erl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_sms_mms_infos.erl
+END
+fake_mipc_vpbx_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_mipc_vpbx_server.erl
+END
+test_123_m5.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_m5.erl
+END
+test_123_mobi_bons_plans_vos_messages.erl
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_vos_messages.erl
+END
+test_144_tele2_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_tele2_cb.erl
+END
+test_svc_check_access.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_check_access.erl
+END
+test_133_cmo_direct_callback.erl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_133_cmo_direct_callback.erl
+END
+test_template.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_template.erl
+END
+fake_sms_mms_infos_smi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_sms_mms_infos_smi.erl
+END
+test_123_mobi_bons_plans_foot_variable_X.erl
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_foot_variable_X.erl
+END
+test_call_me_back.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_call_me_back.erl
+END
+asmetier_online.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/asmetier_online.erl
+END
+test_123_cmo_roaming.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_cmo_roaming.erl
+END
+test_svc_of_plugins.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_of_plugins.erl
+END
+test_133_mobi_direct_callback.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_133_mobi_direct_callback.erl
+END
+test_123_mobi_bons_plans_vos_appels.erl
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_bons_plans_vos_appels.erl
+END
+test_144_carrefour_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_carrefour_cb.erl
+END
+test_taxation_std_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_taxation_std_of.erl
+END
+create100.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/create100.erl
+END
+test_123_postpaid_bons_plans.erl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_bons_plans.erl
+END
+fake_limande_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_limande_server.erl
+END
+test_123_postpaid_suivi_conso.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_postpaid_suivi_conso.erl
+END
+ptester_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/ptester_orangef.erl
+END
+test_123_mobi_nouveautes.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_mobi_nouveautes.erl
+END
+test_fill_handsim.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_fill_handsim.erl
+END
+test_123_dme.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_123_dme.erl
+END
+test_144_virgin_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_144_virgin_cb.erl
+END
+test_svc_sondage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/test_svc_sondage.erl
+END
+fake_sondage_http_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/fake_sondage_http_server.erl
+END

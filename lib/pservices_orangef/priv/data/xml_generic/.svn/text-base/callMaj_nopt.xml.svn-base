@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callMaj_nopt>
+      <sac:params>
+        <sac:name>MSISDN</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_nopt.MSISDN.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>ACTION</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_nopt.TYPE_ACTION.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>NB_OP</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_nopt.NB_OP.)"?></sac:value>
+      </sac:params>
+      <?DYNSTRING "$(maj_nopt.REPEAT_PARA.)"?>
+    </sac:callMaj_nopt>
+  </soapenv:Body>
+</soapenv:Envelope>

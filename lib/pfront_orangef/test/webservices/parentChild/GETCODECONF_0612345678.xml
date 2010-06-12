@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <getCodeConfidentielResponse xmlns="urn:m8o.francetelecom.com">
+            <getCodeConfidentielReturn>
+                <ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+                    <item>
+                        <ns1:UUID>String</ns1:UUID>
+                        <ns1:channel>1</ns1:channel>
+                        <ns1:lang>String</ns1:lang>
+                        <ns1:statusCode>7b00</ns1:statusCode>
+                        <ns1:statusDescription>Successfull get invocation</ns1:statusDescription>
+                        <ns1:statusName>GetSuccess</ns1:statusName>
+                        <ns1:statusType>0</ns1:statusType>
+                    </item>
+                </ns1:statusList>
+                <ns2:codeConfidentielDetail xmlns:ns2="urn:m8o.francetelecom.com:wsdl:resource">
+                    <item>
+                        <ns2:codeNiveau>3</ns2:codeNiveau>
+                        <ns2:nbTentatives>3</ns2:nbTentatives>
+                    </item>
+                </ns2:codeConfidentielDetail>
+                <ns3:imsi xmlns:ns3="urn:m8o.francetelecom.com:wsdl:resource">20801661312485</ns3:imsi>
+                <ns4:nombreServicesOptionnelsContentBilling xmlns:ns4="urn:m8o.francetelecom.com:wsdl:resource">0</ns4:nombreServicesOptionnelsContentBilling>
+                <ns5:numAdv xmlns:ns5="urn:m8o.francetelecom.com:wsdl:resource">VD</ns5:numAdv>
+                <ns6:numClient xmlns:ns6="urn:m8o.francetelecom.com:wsdl:resource">0061712420</ns6:numClient>
+                <ns7:planTarifaire xmlns:ns7="urn:m8o.francetelecom.com:wsdl:resource">
+                    <ns8:code xmlns:ns8="urn:m8o.francetelecom.com:wsdl:common">ESEW3</ns8:code>
+                    <ns9:identifiant xsi:nil="true" xmlns:ns9="urn:m8o.francetelecom.com:wsdl:common"/>
+                    <ns10:libelle xmlns:ns10="urn:m8o.francetelecom.com:wsdl:common">forfait infini 3H</ns10:libelle>
+                </ns7:planTarifaire>
+            </getCodeConfidentielReturn>
+        </getCodeConfidentielResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

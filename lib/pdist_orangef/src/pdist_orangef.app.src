@@ -1,0 +1,43 @@
+{ application, pdist_orangef,
+  [ {description, "Cellcube load-balancer (Orange France)"},
+    {vsn, "%VSN_pdist_orangef%"},
+    {modules, %APP_MODULES%},
+    {registered, []},
+    {applications, [kernel, stdlib, crypto, posutils, pgsm]},
+    {env,
+     [%%%% ROUTING TABLES (pool/server links).
+  	{routings,
+		[
+		{routing,pdist_orangef, sdp, sdp_routing,sdp_router},
+		{routing,pdist_orangef, tlv, tlv_routing,tlv_router},
+ 		{routing,pdist_orangef, mqseries, mqseries_routing, 
+			mqseries_router},
+		{routing,pdist_orangef, smsinfos, smsinfos_routing, 
+			smsinfos_router},
+		{routing,pdist_orangef, rdp, rdp_options_routing, 
+			rdp_options_router}
+	
+		]},	
+      {sdp_routing,
+       [ {default, []} ]},
+      {tlv_routing,
+       [ {default, []} ]},
+
+      {smsinfos_routing,
+       [ {default, []} ]},
+      {mqseries_routing,
+       [ {default, []} ]},
+      {rdp_options_routing,
+       [ {default, []} ]},
+      {asmetier_url_prefix, "/asm-ws-8.2.0.1/"},
+      {spider_prepaidOffer, [{"MOB", "mobi"},
+                             {"CMO", "cmo"},
+                             {"M6P", "mobi"},
+                             {"M6",  "cmo"}
+                            ]},
+      {spider_entreprise_possible_subscription, ["dme", "opim"]},
+      {spider_http_url, "/spider/services/GetBalance"},
+      {spider_xmlns_url, "http://ws.spider.francetelecom.com"}
+    ]},
+    {mod, {pdist_orangef_app, []}}
+   ]}.

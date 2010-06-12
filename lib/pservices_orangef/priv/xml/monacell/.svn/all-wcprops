@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell
+END
+selfcare_monacell_cb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/selfcare_monacell_cb.xml
+END
+bons_plans_monacell_pp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/bons_plans_monacell_pp.xml
+END
+recharge_monacell_pp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/recharge_monacell_pp.xml
+END
+bons_plans_monacell_cb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/bons_plans_monacell_cb.xml
+END
+selfcare_monacell_pp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/selfcare_monacell_pp.xml
+END
+recharge_monacell_cb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/priv/xml/monacell/recharge_monacell_cb.xml
+END

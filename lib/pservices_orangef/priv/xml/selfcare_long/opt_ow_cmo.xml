@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option CMO: Forfait Orange World">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="OW: souscription" cost="freept">
+   <title>Menu souscription OW</title>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_surf&amp;#impact_ow_surf&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_spo&amp;#impact_ow_spo&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv&amp;#impact_ow_tv&amp;br"/>
+   <!--include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv1&amp;#impact_ow_tv1&amp;br"/-->
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv2&amp;#impact_ow_tv2&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_musique&amp;#impact_ow_musique&amp;br"/>   
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?ow_tv_mus_surf&amp;#impact_ow_tv_mus_surf&amp;br"/>
+   </page>
+
+<page tag="impact_ow_tv1" hist="donthist" descr="OW : impact souscription OW TV1">
+    <title>Impact souscription OW TV1</title>
+    Avec l'option TV+Surf, profitez de +de 15 chaines TV et toute la video en illimite pour 6E/mois.
+    Pour tte souscription avant le 05/07 toute la navigation incluse<br/>
+    <a href="#add_ow_tv1">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_tv2" hist="donthist" descr="OW : impact souscription OW TV2">
+    <title>Impact souscription OW TV2</title>
+    Pour 10E/mois profitez de toute la tele (+ de 50 chaines generalistes et thematiques : 
+    M6, Infosport, LCI... ) et de toutes les videos en illimite<br/>
+    <a href="#add_ow_tv2">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_spo" hist="donthist" descr="OW : impact souscription OW SPORT">
+    <title>Impact souscription OW SPORT</title>
+    Fan de sport? Suivez tous les evenements sportifs en illimite (Roland Garros, Ligue 1...)
+    avec la TV direct, les videos et les SMS infos pour seulement 9E<br/>
+    <a href="#add_ow_spo">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_surf" hist="donthist" descr="OW : impact souscription OW SURF">
+    <title>Impact souscription OW SURF</title>
+		Avec l'option Surf Naviguez a l'infini sur votre portail : 
+		ttes les actus, les services vie pratique et de communication pour 6E/mois<br/>
+    <a href="#add_ow_surf">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_tv" hist="donthist" descr="OW : impact souscription OW TV">
+    <title>Impact souscription OW TV</title>
+		Avec l'option TV, profitez de + de 15 chaines TV et de toute la tele a la demande en illimte 24h/24 et 7j/7 pour 6E/mois<br/>
+    <a href="#add_ow_tv">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_musique" hist="donthist" descr="OW : impact souscription OW MUSIQUE">
+    <title>Impact souscription OW MUSIQUE</title>
+		La musique en illimite pour 6E/mois : vos titres preferes, l'actualite musicale, 
+		les videoclips et ttes les radios et chaines TV musicales en illimite.<br/>
+    <a href="#add_ow_musique">Souscrire</a><br/>
+</page>
+
+<page tag="impact_ow_tv_mus_surf" hist="donthist" descr="OW : impact souscription OW MUSIQUE">
+    <title>Impact souscription OW MUSIQUE</title>
+		Profitez de tous les contenus de votre portail : sport, musique, TV, actu, surf... en
+		illimite pour seulement 12E / mois !<br/>
+    <a href="#add_ow_tv_mus_surf">Souscrire</a><br/>
+</page>
+
+<page tag="add_ow_tv1" hist="dohist" descr="OW TV1: souscription ">
+   <title>OW TV1: souscription</title>
+   Vous souhaitez souscrire a l'option TV+Surf. Vous serez debite chaque mois de 6E. 
+   Votre option sera activee sous 48h.<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?ow_tv1&amp;#succes_add,#succes_add">valider</a>
+  </page>
+
+<page tag="add_ow_tv2" hist="dohist" descr="OW TV2: souscription ">
+   <title>OW TV2: souscription</title>
+  Vous souhaitez souscrire a l'option Totale TV. Vous serez debite chaque mois de 10E.<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_tv2&amp;#succes_add_total_tv,#succes_add_total_tv">valider</a>
+  </page>
+
+<page tag="add_ow_tv" hist="dohist" descr="OW TV: souscription ">
+   <title>OW TV: souscription</title>
+	Vous souhaitez souscrire a l'option TV. Vous serez debite chaque mois de 6E. 
+	Votre option sera activee sous 48h.<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_tv&amp;#succes_add_tv,#succes_add_tv">valider</a>
+  </page>
+
+<page tag="add_ow_spo" hist="dohist" descr="OW TV SPORT: souscription ">
+   <title>OW TV SPORT: souscription</title>
+  Vous souhaitez souscrire a l'option Sport. Vous serez debite chaque mois de 9E. 
+  Votre option sera activee sous 48h.<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_spo&amp;#succes_add_sport,#succes_add_sport">valider</a>
+  </page>
+
+<page tag="add_ow_surf" hist="dohist" descr="OW SURF: souscription ">
+   <title>OW SURF: souscription</title>
+	Vous souhaitez souscrire a l'option Surf. Vous serez debite chaque mois de 6E.<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_surf&amp;#succes_add_surf,#succes_add_surf">valider</a>
+  </page>
+
+<page tag="add_ow_musique" hist="dohist" descr="OW MUSIQUE: souscription ">
+   <title>OW MUSIQUE: souscription</title>
+	Vous souhaitez souscrire a l'option Musique. Vous serez debite chaque mois de 6E.<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_musique&amp;#succes_add_musique,#succes_add_musique">valider</a>
+  </page>
+
+<page tag="add_ow_tv_mus_surf" hist="dohist" descr="OW MUSIQUE: souscription ">
+   <title>OW MUSIQUE: souscription</title>
+	Vous souhaitez souscrire a l'option TV - Musique - Surf<br/>
+  <a href="erl://svc_subscr_asmetier:souscrire?ow_tv_mus_surf&amp;#succes_add_ow_tv_mus_surf,#succes_add_ow_tv_mus_surf">valider</a>
+  </page>
+
+<page tag="succes_add" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+
+<page tag="succes_add_sport" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_tv" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_tv1" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_total_tv" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_musique" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_surf" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_ow_tv_mus_surf" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="O.CMO : Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+</pages>

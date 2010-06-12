@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour les bonus JANUS">
+
+  <page cost="freept" menutext="notext" backtext="notext">
+    <include src="erl://svc_of_plugins:track_kenobi_code?SCACOK"/>
+    <include src="erl://svc_of_plugins_spider:selfcare?mobi&amp;light"/>
+    <a href="#mon_bonus">Mon Bonus en cours</a><br/>
+    <a href="#suivi_recharge">Suivi recharge</a><br/>
+    <include src="erl://svc_of_plugins:proposer_lien?mobi&amp;mobi_bonus_options&amp;Options&amp;#options"/>
+  </page>
+  
+  <page tag="mon_bonus">
+	<redirect src="erl://svc_of_plugins:redirect_by_bonus_credit"/>
+  </page>
+  
+  <page tag="suivi_recharge" hist="dohist" cost="free_pt">
+	<redirect src="erl://svc_of_plugins:redirect_by_bonus_credit?#suivi_recharge_less10E,#suivi_recharge_less30E,#suivi_recharge_more30E"/>
+  </page>
+  
+  <page tag="suivi_recharge_less10E">
+        Rechargements cumules depuis le <include src="erl://svc_options_mobi:print_date_rnv_bonus?last"/>: <include src="erl://svc_of_plugins:print_bonus_solde"/>E.
+        <a href="#suivi_recharge_less10E_suite">Suite</a>
+  </page>
+
+  <page tag="suivi_recharge_less10E_suite">
+        Pour beneficier du bonus: <include src="erl://svc_of_plugins:print_avantage?next"/> a compter du <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/>, il vous manque <include src="erl://svc_of_plugins:print_need_amount_for_bonus"/>E.
+        <a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="suivi_recharge_less30E">
+	Rechargements cumules depuis le <include src="erl://svc_options_mobi:print_date_rnv_bonus?last"/>: <include src="erl://svc_of_plugins:print_bonus_solde"/>E. Au <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> vous beneficierez du bonus: <include src="erl://svc_of_plugins:print_avantage?current"/><br/>
+	<a href="#suivi_recharge_less30E_suite">Suite</a>
+  </page>
+  
+  <page tag="suivi_recharge_less30E_suite">
+	Il vous manque <include src="erl://svc_of_plugins:print_need_amount_for_bonus"/>E pour beneficier du bonus: <include src="erl://svc_of_plugins:print_avantage?next"/><br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+
+  <page tag="suivi_recharge_more30E">
+	Rechargements cumules depuis le <include src="erl://svc_options_mobi:print_date_rnv_bonus?last"/>: <include src="erl://svc_of_plugins:print_bonus_solde"/>E. Au <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> vous beneficierez du bonus: <include src="erl://svc_of_plugins:print_avantage?current"/>
+  </page>
+  
+  <page tag="options" descr="Suivi conso des options">
+    <include src="erl://svc_spider:do_suiviconsodetaille"/>
+  </page>
+
+  <page tag="bonus_appels_more10E">
+	Vous beneficiez d'appels offerts ce mois-ci. Il vous reste <include src="erl://svc_of_plugins:print_credit?mobi&amp;opt_mobi_bonus&amp;min"/> a utiliser avant le <include src="erl://svc_of_plugins:print_end_credit?opt_mobi_bonus&amp;dmy"/>. 
+  </page>
+  
+   <page tag="bonus_appels_more30E">
+	<include src="#bonus_appels_more10E"/>
+  </page>
+  
+<page tag="bonus_appels_less10E" backtext="notext">
+	Pas d'appels offerts ce mois-ci. Rechargez minimum 10E avant le <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> pour profiter d'au moins 20min d'appels offerts le mois prochain.<br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="bonus_appels_consumed">
+	Vous avez totalement consomme votre bonus voix ce mois-ci.
+  </page>
+
+  <page tag="bonus_sms_more10E">
+	Vous beneficiez de SMS offerts ce mois-ci. Il vous reste <include src="erl://svc_of_plugins:print_credit?mobi&amp;opt_mobi_bonus&amp;sms"/>SMS a utiliser avant le <include src="erl://svc_of_plugins:print_end_credit?opt_mobi_bonus&amp;dmy"/>. 
+  </page>
+  
+  <page tag="bonus_sms_more30E">
+	Vous beneficiez de SMS illimites ce mois-ci. Profitez-en jusqu'au <include src="erl://svc_of_plugins:print_end_credit?cpte_mobi_bonus_sms&amp;dmy"/>.
+  </page>
+  
+  <page tag="bonus_sms_less10E" backtext="notext">
+	Pas de SMS offerts ce mois-ci. Rechargez minimum 10E avant le <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> pour profiter d'au moins 100 SMS offerts le mois prochain.<br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="bonus_sms_consumed">
+	Vous avez totalement consomme votre bonus SMS ce mois-ci.
+  </page>
+
+  
+    <page tag="bonus_internet_more10E">
+	Vous beneficiez de temps de connexion a l'internet mobile offert ce mois-ci. Il vous reste <include src="erl://svc_of_plugins:print_credit?mobi&amp;opt_mobi_bonus&amp;min"/> a utiliser avant le <include src="erl://svc_of_plugins:print_end_credit?opt_mobi_bonus&amp;dmy"/>. 
+  </page>
+	
+   <page tag="bonus_internet_more30E">
+	<include src="#bonus_internet_more10E"/>
+  </page>
+  
+  <page tag="bonus_internet_less10E" backtext="notext" menutext="notext">
+	Pas d'internet mobile offert ce mois-ci. Rechargez minimum 10E avant le <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> pour profiter d'au moins 1h offerte d'internet mobile le mois prochain.<br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="bonus_internet_consumed">
+	Vous avez totalement consomme votre bonus internet ce mois-ci.
+  </page>
+  
+  
+    <page tag="bonus_europe_more10E">
+	Vous beneficiez d'appels offerts vers et depuis l'Europe ce mois-ci. Il vous reste <include src="erl://svc_of_plugins:print_credit?mobi&amp;opt_mobi_bonus&amp;min"/> a utiliser avant le <include src="erl://svc_of_plugins:print_end_credit?opt_mobi_bonus&amp;dmy"/>. 
+  </page>
+  
+   <page tag="bonus_europe_more30E">
+	<include src="#bonus_europe_more10E"/>
+  </page>
+  
+  <page tag="bonus_europe_less10E" backtext="notext" menutext="notext">
+	Pas d'appels offerts vers et depuis l'Europe ce mois-ci. Rechargez minimum 10E avant le <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> pour profiter d'appels offerts le mois prochain.<br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="bonus_europe_consumed">
+	Vous avez totalement consomme votre bonus d'appels vers et depuis l'Europe ce mois-ci.
+  </page>
+  
+  
+    <page tag="bonus_maghreb_more10E">
+	Vous beneficiez d'appels offerts vers et depuis le Maghreb ce mois-ci. Il vous reste <include src="erl://svc_of_plugins:print_credit?mobi&amp;opt_mobi_bonus&amp;min"/> a utiliser avant le <include src="erl://svc_of_plugins:print_end_credit?opt_mobi_bonus&amp;dmy"/>. 
+  </page>
+  
+   <page tag="bonus_maghreb_more30E">
+	<include src="#bonus_maghreb_more10E"/>
+  </page>
+  
+  <page tag="bonus_maghreb_less10E" backtext="notext" menutext="notext">
+	Pas d'appels offerts vers et depuis le Maghreb ce mois-ci. Rechargez minimum 10E avant le <include src="erl://svc_options_mobi:print_date_rnv_bonus?next"/> pour profiter d'appels offerts le mois prochain.<br/>
+	<a href="file:/mcel/acceptance/mobi/recharge/menu.xml">Recharger</a>
+  </page>
+  
+  <page tag="bonus_maghreb_consumed">
+	Vous avez totalement consomme votre bonus d'appels vers et depuis le Maghreb ce mois-ci.
+  </page>
+  
+  <page tag="error_technique">
+	Le service est temporairement indisponible. Veuillez nous en excuser, et vous reconnecter ulterieurement. Merci.
+  </page>
+  
+</pages>
+
+ 

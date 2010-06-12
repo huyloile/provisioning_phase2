@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF Souscription d'option: Menu">
+  <page>
+    <redirect src="erl://svc_subscr_asmetier:get_identification?oee&amp;#list_serv_opt,#menu_error_asmetier"/>
+  </page>
+  
+  <page tag="list_serv_opt">
+    <redirect src="erl://svc_subscr_asmetier:get_listServiceOptionnel?#menu,#menu_error_asmetier"/>
+  </page>
+  
+  <page tag="menu">
+    <redirect src="erl://svc_mmsinfos:start?#menu2"/>
+  </page>
+
+  <page tag="menu_error_asmetier">
+    <redirect src="erl://svc_mmsinfos:start?#menu_error_asmetier2"/>
+  </page>  
+
+  <page tag="menu2" descr="Souscrire Options CMO: Menu" hist="dohist">
+    <title>Souscrire Options CMO: Menu</title>
+    <a href="#bon_plan">Souscrire a un bon plan</a><br/>
+    <a href="sms_infos.xml">SMS infos</a><br/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_infos&amp;MMS infos=mmsinfos.xml&amp;br"/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_video&amp;MMS infos video=mmsinfos_video.xml&amp;br"/>
+    <a href="orange_ligue1.xml">Orange Ligue 1</a><br/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?if_profile_sms&amp;Options SMS/MMS=#forf_sms&amp;br"/>
+    <a href="#multimedia">Options Multimedia</a><br/>
+    <a href="#securite">Options securite</a><br/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?opt_m6_smsmms&amp;Option SMS-MMS illimites=souscrire_opt_m6.xml#m6_on_net&amp;br"/>
+  </page>
+
+  <page tag="menu_error_asmetier2" descr="Souscrire Options CMO: Menu" hist="dohist">
+    <title>Souscrire Options CMO: Menu</title>
+    <a href="#bon_plan">Souscrire a un bon plan</a><br/>
+    <a href="sms_infos.xml">SMS infos</a><br/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_infos&amp;MMS infos=mmsinfos.xml&amp;br"/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_video&amp;MMS infos video=mmsinfos_video.xml&amp;br"/>
+    <a href="orange_ligue1.xml">Orange Ligue 1</a><br/>
+    <a href="#multimedia">Options Multimedia</a><br/>
+    <a href="#securite">Options securite</a><br/>
+  </page>
+
+<page tag="bon_plan" cost="free_pt" hist="dohist" descr="Souscription d'option CMO: Menu bon plan">
+  <title>Souscrire Options CMO: Menu bon plan</title>
+  <a href="#bon_plan_voix">Des Bons plans "100% Voix" pour vos appels, le soir,
+  le week-end, vers l'etranger... </a><br/>
+  <a href="#bon_plan_autre">Des Bons Plans "pour communiquer autrement"</a><br/>
+  <include src="erl://svc_selfcare_cmo:proposer_lien?plan_zap&amp;Plan Heures 11-18 Vacances&amp;#activ_plan_zap&amp;br"/>
+  <include src="erl://svc_limande:proposer_lien?Offres eXclusives&amp;#offres_eXclusives&amp;nobr"/>
+</page>
+
+<page tag="bon_plan_voix" cost="free_pt" hist="dohist" descr="Souscription d'option CMO: Menu bon plan voix">
+  <title>Souscrire Options CMO: Menu bon plan voix</title>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_weinf&amp;Week-ends infinis=#weekend_infini&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_sinf&amp;Soirees infinies=#s_inf&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_jinf&amp;Journees infinies=#j_inf&amp;br"/>
+  <!--include src="erl://svc_options_cmo:proposer_lien?opt_voyage&amp;Bonus sans frontiere=#bsf&amp;br"/-->
+  <include src="erl://svc_options_cmo:proposer_lien?opt_maghreb&amp;Option Maghreb=#maghreb&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_europe&amp;Option Europe=#europe&amp;br"/>
+  <!--include src="erl://svc_options_cmo:proposer_lien?opt_afterschool&amp;Option After school=#afterschool&amp;br"/-->
+  <include src="erl://svc_options_cmo:proposer_lien?opt_pass_voyage_6E&amp;Option pass vacances=#pass_vacances&amp;nobr"/>
+</page>
+
+
+<page tag="bon_plan_autre" cost="free_pt" hist="dohist" descr="Souscription d'option CMO: Menu bon plan autrement">
+  <title>Souscrire Options CMO: Menu bon plan autrement</title>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_ssms&amp;Soirees SMS=#ssms&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_sms_quoti&amp;Bon Plan SMS quotidiens=#sms_quoti&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_vacances&amp;Option MMS=#vacances&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_pack_duo_journee&amp;Option Duo Journee=#duo_journee&amp;br"/>
+</page>
+
+<!-- Plan Heures Zap VAcances-->
+ <page tag="zap_vacances">
+    <redirect src="erl://svc_options_cmo:first_page?opt_zap&amp;#deja_active&amp;#zap_vac&amp;#credit_insuffisant&amp;#zap_vac"/>
+  </page>
+
+<page tag="zap_vac" cost="free_pt" descr="Souscrire Options CMO: 11-18 vacances">
+  <title>O.CMO 11-18 vacances</title>
+     Pour profiter de tarifs reduits 7J/7 24h/24 pendant toutes les vacances 
+     sur les appels vers Orange et fixes, les SMS et le wap<br/>
+     <a href="#zap_confirm">souscrire</a>
+ </page>
+
+<page tag="zap_confirm" menutext="notext" cost="free_pt" descr="Souscrire Options CMO: 11-18 vacances confirmation">
+     <title>O.CMO 11-18 vacances</title>
+     Vous beneficiez maintenant des heures 11-18 Vacances. Orange vous remercie de votre appel.
+ </page>
+
+<!-- Week-end infini-->
+ <page tag="weekend_infini">
+    <redirect src="erl://svc_options_cmo:first_page?opt_weinf&amp;#deja_active&amp;#weinf&amp;#credit_insuffisant&amp;#weinf"/>
+  </page>
+
+<page tag="weinf" cost="free_pt" descr="Souscrire Options CMO: WE infini">
+     <title>O.CMO WE infini</title>
+       <title>N.CMO WE illimites</title>
+     Parler sans limite : pour
+     <include src="erl://svc_options:print_option_price?opt_weinf&amp; EUR"/> vos
+     appels vers Orange et fixes 
+     sont illimites ce week-end.Offre disponible tous les week-ends
+     jusqu'au <include src="erl://svc_options:print_commercial_end_date?opt_weinf&amp;dmyy"/><br/>
+     <a href="#weekend_confirm">souscrire</a><br/>
+     <a href="#s_inf" key="9">suite</a>
+ </page>
+
+<page tag="weekend_confirm" menutext="notext" cost="free_pt" descr="Souscrire Options CMO: WE infini confirmation">
+     <title>O.CMO WE infini</title>
+     Vous allez souscrire l'option week-end infini pour le week end du
+     <include src="erl://svc_util_of:print_next_week_date?vendredi"/> au
+     <include src="erl://svc_util_of:print_next_week_date?dimanche"/>.
+     Votre compte
+     <include src="erl://svc_options:debit_account?opt_weinf"/> sera debite de
+     <include src="erl://svc_options:print_option_price?opt_weinf&amp; EUR"/><br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_weinf&amp;#deja_active,#credit_insuffisant,#weekend_success">valider</a><br/>
+</page>
+
+<page tag="weekend_success" cost="free_pt" descr="Souscrire Options CMO: We Infini succes">
+     <title>O.CMO WE infini </title>
+     Vous avez souscrit a un Week End infini. Vos appels vers Orange
+     &amp; fixes sont illimites de vend.minuit a dim. minuit.Votre
+     compte
+     <include src="erl://svc_options:debit_account?opt_weinf"/> a ete debite de
+     <include src="erl://svc_options:print_option_price?opt_weinf&amp; EUR"/><br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<page tag="weekend_suite" cost="free_pt" descr="O.CMO WE infini">
+     <title>O.CMO WE infini suite</title>
+     Option non disponible les jours fériés et veilles de jours fériés<br/>
+     <a href="#weekend_confirm">souscrire</a><br/>
+</page>
+
+<!-- Soiree Infini-->
+ <page tag="s_inf">
+    <redirect src="erl://svc_options_cmo:first_page?opt_sinf&amp;#deja_active&amp;#soiree_infini&amp;#credit_insuffisant&amp;#soiree_infini"/>
+  </page>
+
+
+<page tag="soiree_infini" cost="free_pt" descr="Souscrire Options CMO: soiree infini">
+     <title>O.CMO Soiree infini</title>
+     Beaucoup de choses a dire ou juste envie de parler? Vos appels sont
+     illimites ce soir de 21h a minuit vers Orange &amp; fixes pour
+     <include src="erl://svc_options:print_option_price?opt_sinf&amp; EUR"/> (jusqu'au
+     <include src="erl://svc_options:print_commercial_end_date?opt_sinf&amp;dmyy"/>).<br/>
+     <a href="#sinf_confirm">souscrire</a><br/>
+     <a href="#j_inf" key="9">suite</a>
+ </page>
+
+
+<page tag="sinf_confirm" cost="free_pt" descr="Souscrire Options CMO: soiree infini confirmation">
+     <title>O.CMO Soiree infini</title>
+     Vous allez souscrire a une soiree infinie valable aujourd'hui
+     de 21h a minuit.<br/>Vous serez debite de
+     <include src="erl://svc_options:print_option_price?opt_sinf&amp; EUR"/> sur
+     votre compte
+     <include src="erl://svc_options:debit_account?opt_sinf"/><br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_sinf&amp;#deja_active,#credit_insuffisant,#sinf_success">valider</a><br/>
+</page>
+
+<page tag="sinf_success" cost="free_pt" descr="Souscrire Options CMO: soiree Infini succes">
+     <title>O.CMO Soiree d ete</title>
+     Vous avez souscrit a une soiree infinie. Vos appels vers Orange
+     et fixes sont illimites ce soir entre 21h et minuit<br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<page tag="sinf_suite" cost="free_pt" descr="O.CMO Soiree infini">
+     <title>O.CMO Soiree infini suite</title>
+     Option non disponible les jours fériés et veilles de jours fériés<br/>
+     <a href="#sinf_confirm">souscrire</a><br/>
+</page>
+
+
+<!-- Journee Infinie -->
+<page tag="j_inf">
+  <redirect src="erl://svc_options_cmo:first_page?opt_jinf&amp;#deja_active&amp;#jinf_incomp&amp;#credit_insuffisant&amp;#journee_infini"/>
+</page>
+
+<page tag="jinf_incomp" cost="free_pt"
+      descr="Souscrire Options CMO: journee infini incompatibilite">
+  <title>O.CMO Journee infini incompatibilite</title>
+  Bonjour, vous ne pouvez pas souscrire a l'option journee infinie. Pour +
+  d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+  remercie de votre appel.
+</page>
+
+<page tag="journee_infini" cost="free_pt"
+      descr="Souscrire Options CMO: journee infini">
+  <title>O.CMO Journee infini</title>
+  Une journee au telephone ? Vos appels sont illimites aujourd'hui de 7h a 17h
+  vers Orange &amp; fixes (hors no speciaux) pour 3 EUR (jusqu'au
+  <include src="erl://svc_options:print_commercial_end_date?opt_jinf&amp;dmyy"/>).<br/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_jinf&amp;souscrire=#jinf_confirm&amp;br"/>
+  <include src="erl://svc_options_cmo:proposer_lien?opt_maghreb&amp;suite=#maghreb&amp;nobr&amp;9"/>
+ </page> 
+ 
+ <page tag="jinf_confirm" cost="free_pt"
+       descr="Souscrire Options CMO: journee infini confirmation">
+   <title>O.CMO Journee infini</title>
+   Vous allez souscrire a une journee infinie valable aujourd'hui de 7h a 17h.
+   Vous serez debite de 3 EUR sur votre compte
+   <include src="erl://svc_options:debit_account?opt_jinf"/><br/>
+   <include src="erl://svc_options_cmo:proposer_lien?opt_jinf&amp;valider=#jinf_do_subscription&amp;nobr"/>
+ </page>
+ 
+ <page tag="jinf_do_subscription">
+   <redirect src="erl://svc_options_cmo:do_subscription?opt_jinf&amp;#deja_active,#credit_insuffisant,#jinf_success"/>
+ </page>
+
+ <page tag="jinf_success" cost="free_pt"
+       descr="Souscrire Options CMO: journee Infini succes">
+   <title>O.CMO Journee d ete</title>
+   Vous avez souscrit a une journee infinie. Vos appels vers Orange et fixes
+   sont illimites aujourd'hui entre 7h et 17h<br/>
+   <a href="selfcare_cmo.xml#recharge">recharger</a>
+ </page>
+ 
+<!-- After school-->
+<page tag="afterschool">
+    <redirect src="erl://svc_options_cmo:first_page?opt_afterschool&amp;#deja_active&amp;#afterschool_first&amp;#credit_insuffisant&amp;#afterschool_first"/>
+  </page>
+
+<page tag="afterschool_first" cost="free_pt" descr="O.CMO After school">
+     <title>O.CMO After school</title>
+     l'option After school vous permet d'appeler 1h vers Orange &amp; fixes des
+     17h pour seulement 2 eur.<br/>
+     <a href="#afterschool_confirm">souscrire</a><br/>
+     <a href="#afterschool_suite" key="9">suite</a>
+ </page>
+
+<page tag="afterschool_confirm" cost="free_pt" descr="O.CMO After School souscr">
+     <title>O.CMO After School souscription</title>
+     En souscrivant a after school vous serez debite de 2 euros sur votre compte
+     mobile.<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_afterschool&amp;#deja_active,#afterschool_first,#credit_insuffisant,#afterschool_success">valider</a><br/>
+</page>
+
+<page tag="generique_gratuit" cost="free_pt" descr="O.CMO After school gratuit">
+     <title>O.CMO After school gratuit</title>
+     le 2 septembre, pour la rentree l'option After school est offerte! : 1 heure
+     de com. vers Orange &amp; fixes a utiliser aujourd'hui de 17h jusqu'a 00h.<br/>
+     <a href="#afterschool_conf_gratuit">souscrire</a><br/>
+     <a href="#weekend_infini" key="9">suite</a>
+ </page>
+
+<page tag="afterschool_conf_gratuit" cost="free_pt" descr="O.CMO After School gratuit souscr">
+     <title>O.CMO After School gratuit souscription</title>
+     Aujourd'hui Orange vous offre votre souscription a after school !
+     Validez pour profiter de ce cadeau.<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_afterschool&amp;#deja_active,#afterschool_first,#credit_insuffisant,#afterschool_success_gratuit">valider</a><br/>
+</page>
+
+<page tag="afterschool_success" cost="free_pt" descr="O.CMO After School success">
+     <title>O.CMO After School success</title>
+     Vous avez souscrit a after school. Vous disposez d'une heure de
+     communication vers Orange &amp; fixes a utiliser avant minuit.<br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<page tag="afterschool_suite" cost="free_pt" descr="O.CMO After School">
+     <title>O.CMO After School suite</title>
+     Souscription possible uniquement le jour meme, Appels en
+     France metropolitaine vers Fixes et Orange, hors num speciaux et
+     acces au WAP/WEB
+     <a href="erl://svc_options_cmo:do_subscription?opt_afterschool&amp;#deja_active,#afterschool_first,#credit_insuffisant,#afterschool_success">souscrire</a><br/>
+</page>
+
+<page tag="afterschool_confirm" cost="free_pt" descr="O.CMO After School">
+     <title>O.CMO After School</title>
+     En souscrivant a after school vous serez debite de 2 euros sur votre compte
+     mobile.<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_afterschool&amp;#deja_active,#afterschool_first,#credit_insuffisant,#afterschool_success">valider</a><br/>
+</page>
+
+<!-- Options Europe-->
+
+  <page tag="europe">
+    <redirect src="erl://svc_options_cmo:first_page?opt_europe&amp;#deja_active&amp;#europe_incomp&amp;#credit_insuffisant&amp;#europe_first"/>
+  </page>
+  
+  <page tag="europe_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Europe offre incompatible">
+    <title>option option Europe page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Europe. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>  
+  
+  <page tag="europe_first" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Europe menu generique">
+    <title>option Europe menu generique</title>
+	Avec l'option Europe, beneficiez
+	de <include src="erl://svc_options:print_price_in_min?opt_europe"/> de communications
+	vers les pays de l'union europeenne et la Suisse
+	pour <include src="erl://svc_options:print_option_price?opt_europe&amp; EUR"/>!
+     <a href="#europe_souscrire">souscrire</a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?opt_pass_voyage_6E&amp;suite=#pass_vacances&amp;nobr&amp;9"/>
+   </page>
+  
+  <page tag="europe_souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Europe Confirmation">
+    <title>option Europe page souscrire</title>
+    Vous allez souscrire a une option Europe valable jusqu'au
+    <include src="erl://svc_options:print_date_end_opt?opt_europe"/>.
+    Vous serez debite
+    de <include src="erl://svc_options:print_option_price?opt_europe&amp; EUR"/> sur
+    votre compte
+    <include src="erl://svc_options:debit_account?opt_europe"/><br/>
+    <a href="erl://svc_options_cmo:do_subscription?opt_europe&amp;#deja_active,#credit_insuffisant,#europe_success">valider
+    </a>
+  </page>
+  
+  <page tag="europe_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Europe Succes">
+    <title>option Europe page apres confirmation</title>
+    Vous avez souscrit a l'option Europe. vous disposez de
+   <include src="erl://svc_options:print_price_in_min?opt_europe"/> de
+   communication vers les pays de l'UE et la suisse.
+   Votre compte
+   <include src="erl://svc_options:debit_account?opt_europe"/> a ete debite
+   de <include src="erl://svc_options:print_option_price?opt_europe&amp; EUR"/><br/>
+   <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+
+<!-- Option pass vacances-->
+
+ <page tag="pass_vacances">
+   <redirect src="erl://svc_options_cmo:first_page?opt_pass_voyage_6E&amp;#pass_deja_active&amp;#option_incomp&amp;#credit_insuffisant&amp;#pass_vacances_princ"/> 
+  </page>
+
+  <page tag="option_incomp" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Pass vacances offre incompatible">
+    <title>option Pass Vacances: page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Pass Vacances. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>
+
+  <page tag="pass_deja_active" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Pass vacances deja activee">
+    <title>option Pass Vacances: page option deja activee</title>
+		Bonjour, votre option pass vacances est deja activee.<br/>
+		Orange vous remercie de votre appel<br/>
+  </page>
+
+<page tag="pass_vacances_princ" cost="free_pt" hist="dohist" descr="Souscrire Options CMO: Pass vacances">
+     <title>Opt CMO: Pass vacances</title>
+	Pour <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E&amp; EUR"/>,
+	beneficiez de <include src="erl://svc_options:print_price_in_min?opt_pass_vacances_v2_moc"/> pour
+	appeler la France ou le pays visite et
+	de <include src="erl://svc_options:print_price_in_min?opt_pass_vacances_v2_moc"/> d'appels reçus dans l'union europeenne.
+	(jusqu'au <include src="erl://svc_options:print_commercial_end_date?opt_pass_voyage_6E&amp;dmyy"/>).<br/>
+     <a href="#pass_vacances_suite">suite</a>
+ </page>
+
+<page tag="pass_vacances_suite" cost="free_pt" hist="dohist" descr="Suite Souscrire option CMO: Pass vacances">
+			<title>Opt CMO: Pass vacances suite</title>
+			Pour 5E, beneficiez de 10min pour appeler la France et le pays visite et de 10min d'appels reçus gratuits.
+			Option incompatible avec les options Maghreb et Europe<br/>
+			<a href="#pass_vacances_confirm">souscrire</a>
+</page>
+
+<page tag="pass_vacances_confirm" cost="free_pt" descr="Souscrire Options CMO: Pass vacances confirmation">
+     <title>Opt CMO: Pass vacances confirmation</title>
+			Vous allez souscrire a l'option pass vacances pour 
+			<include src="erl://svc_options:print_option_price?opt_pass_voyage_6E&amp; EUR"/>.<br/>
+			Ce montant sera debite de votre compte <include src="erl://svc_options:debit_account?opt_pass_voyage_6E"/>.<br/>
+	 		L'option sera valable pendant 31 jours consecutifs<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_pass_voyage_6E&amp;#pass_deja_active,#credit_insuffisant,#pass_vacances_success">valider</a>
+</page>
+
+<page tag="pass_vacances_success" cost="free_pt" backtext="notext" hist="dohist" descr="Souscrire Options CMO: Pass vacances success">
+     <title>Opt CMO: Pass vacances success</title>
+			Vous avez souscrit a un pass vacances. Dans quelques instants votre option sera activee.<br/>
+			Votre compte <include src="erl://svc_options:debit_account?opt_pass_voyage_6E"/> a ete debite de
+			<include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/><br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<!--Options Maghreb-->
+
+  <page tag="maghreb">
+    <redirect src="erl://svc_options_cmo:first_page?opt_maghreb&amp;#deja_active&amp;#maghreb_incomp&amp;#credit_insuffisant&amp;#maghreb_first"/>
+  </page>
+
+  <page tag="maghreb_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Maghreb offre incompatible">
+    <title>option Maghreb page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Maghreb. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>  
+  
+  <page tag="maghreb_first" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Maghreb menu generique">
+    <title>option Maghreb menu generique</title>
+	Avec l'option Maghreb, beneficiez
+	de <include src="erl://svc_options:print_price_in_min?opt_maghreb"/> de
+	communications vers l'Algerie, le Maroc et la Tunisie
+	pour <include src="erl://svc_options:print_option_price?opt_maghreb&amp; EUR"/> !<br/>
+    <a href="#maghreb_souscrire">souscrire</a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?opt_europe&amp;suite=#europe&amp;nobr&amp;9"/>
+  </page>
+
+  
+  <page tag="maghreb_souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Maghreb Confirmation">
+    <title>option Maghreb page souscrire</title>
+    Vous allez souscrire a une option Maghreb valable jusqu'au
+    <include src="erl://svc_options:print_date_end_opt?opt_maghreb"/>.
+    Vous serez debite
+    de <include src="erl://svc_options:print_option_price?opt_maghreb&amp; EUR"/> sur
+    votre compte
+    <include src="erl://svc_options:debit_account?opt_maghreb"/><br/>
+    <a href="erl://svc_options_cmo:do_subscription?opt_maghreb&amp;#deja_active,#credit_insuffisant,#maghreb_success">valider</a>
+  </page>
+  
+  <page tag="maghreb_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Maghreb Succes">
+    <title>option Maghreb page apres confirmation</title>
+    Vous avez souscrit a l'option Maghreb. vous disposez de
+    <include src="erl://svc_options:print_price_in_min?opt_maghreb"/> de
+    communication vers le Maroc, l'Algerie &amp; la Tunisie.
+    Votre compte
+    <include src="erl://svc_options:debit_account?opt_maghreb"/> a ete debite
+    de <include src="erl://svc_options:print_option_price?opt_maghreb&amp; EUR"/><br/>
+    <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+<!-- Bonus Sans Frontiere-->
+ <page tag="bsf">
+    <redirect src="erl://svc_options_cmo:first_page?opt_voyage&amp;#bonus_sans_frt&amp;#bsf_incomp&amp;#credit_insuffisant&amp;#bonus_sans_frt"/>
+  </page>
+
+<page tag="bonus_sans_frt" cost="free_pt" descr="Souscrire Options CMO: bonus sans frontiere">
+     <title>O.CMO Bonus sans frontiere</title>
+     Avec le bonus sans frontiere, 10E achetes pour vos appels emis et recus depuis l'etranger 
+     = 10E offerts! Ce credit de com. de 20E est valable 30 jours<br/>
+     <a href="#bsf_confirm">souscrire</a><br/>
+     <include src="erl://svc_options_cmo:proposer_lien?opt_maghreb&amp;suite=#maghreb&amp;nobr&amp;9"/>
+ </page>
+
+
+<page tag="bsf_confirm" cost="free_pt" descr="Souscrire Options CMO: bonus sans frontiere confirmation">
+     <title>O.CMO Bonus sans frontiere</title>
+     En souscrivant vous serez debite de
+     <include src="erl://svc_options:print_option_price?opt_voyage"/> sur
+     votre compte mobile. Offre non renouvelable &amp; incompatible avec les autres offres de com. 
+     depuis ou vers l'etranger<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_voyage&amp;#bonus_sans_frt,#credit_insuffisant,#bonus_sans_frt,#bsf_success">valider</a><br/>
+</page>
+
+<page tag="bsf_success" cost="free_pt" descr="Souscrire Options CMO: bonus sans frontiere succes">
+     <title>O.CMO Bonus sans frontiere</title>
+     Vous disposez de
+     <include src="erl://svc_options:print_balance?opt_voyage"/>E
+     pour vos communication a l'etranger. 
+     Ce credit est decompte a la sec des la 1ere sec &amp; les com.au-dela sont facturees 
+     aux tarifs en vigueur<br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<page tag="bsf_incomp" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Souscrire Options CMO: Bonus sans frontiere offre incompatible">
+    <title>option Bonus sans frontiere page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Bonus sans frontiere. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>
+  
+<!-- Options Soiree SMS-->
+
+ <page tag="ssms">
+    <redirect src="erl://svc_options_cmo:first_page?opt_ssms&amp;#deja_active&amp;#ssms_incomp&amp;#credit_insuffisant&amp;#soiree_sms"/>
+  </page>
+
+ <page tag="ssms_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Soiree SMS offre incompatible">
+    <title>option soiree SMS page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Soiree SMS. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+ </page>
+
+<page tag="soiree_sms" cost="free_pt" descr="Souscrire Options CMO: Soiree SMS: Accueil">
+     <title>O.CMO Soiree SMS</title>
+     A vos claviers ! Jusqu'au <include src="erl://svc_options:print_commercial_end_date?opt_ssms&amp;dmyy"/>,
+     profitez des soirees SMS et pour 3 EUR envoyez jusqu'a 100SMS ou 33MMS le soir meme entre 21h et
+     minuit<br/>
+     <a href="#ssms_confirm">souscrire</a><br/>
+     <a href="#ssms_suite" key="9">suite</a>
+ </page>
+
+<page tag="ssms_confirm" cost="free_pt" descr="Souscrire Options CMO: Soiree SMS Confimation">
+     <title>O.CMO Soiree SMS</title>
+     En souscrivant a une soiree SMS vous serez debite
+     de <include src="erl://svc_options:print_option_price?opt_ssms&amp; EUR"/> sur
+     votre compte
+     <include src="erl://svc_options:debit_account?opt_ssms"/>.
+     L'envoi de SMS/MMS est limite a la France
+     metropolitaine(hors num speciaux)<br/>
+     <a href="erl://svc_options_cmo:do_subscription?opt_ssms&amp;#deja_active,#credit_insuffisant,#ssms_success">valider</a>
+</page>
+
+<page tag="ssms_success" cost="free_pt" descr="Souscrire Options CMO: Soiree SMS Succes">
+     <title>O.CMO Voyage</title>
+     Vous avez souscrit a une soiree SMS. Vous disposez de 100 SMS utilisables
+     en MMS (1MMS = 3SMS) a envoyer ce soir entre 21h et minuit<br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a>
+</page>
+
+<page tag="ssms_suite" cost="free_pt" descr="O.CMO Soiree SMS">
+     <title>O.CMO Soiree SMS suite</title>
+     Option non disponible les jours fériés et veilles de jours fériés<br/>
+     <a href="#ssms_confirm">souscrire</a><br/>
+</page>
+
+<!--Options SMS Quotidien -->
+
+  <page tag="sms_quoti">
+    <redirect src="erl://svc_options_cmo:first_page?opt_sms_quoti&amp;#sms_opt_deja_active&amp;#sms_hebdo_incomp&amp;#credit_insuffisant&amp;#sms_hebdo_first"/>
+  </page>
+
+  <page tag="sms_hebdo_first" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: SMS Quotidien menu generique">
+    <title>option SMS Quotidien menu generique</title>
+    L'option SMS c'est 6 SMS par jour pour 0.50E/jour soit le SMS a 0,083E. Souscrivez une fois et c'est renouvele le temps que vous voulez, essayez vite!<br/>
+    <a href="#sms_hebdo_souscrire">souscrire</a>
+  </page>
+
+  <page tag="sms_hebdo_souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: SMS Quotidien Confirmation">
+    <title>option SMS Quotidien page souscrire</title>
+    En souscrivant l'option SMS quotidien vous serez debite de 0,50E/jour sur votre compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/>.
+    Option renouvellee chaque jour entre 23h et 1h.<br/>
+    <a href="erl://svc_options_cmo:do_subscription?opt_sms_quoti&amp;#sms_opt_deja_active,#credit_insuffisant,#sms_hebdo_success">valider</a>
+  </page>
+  
+  <page tag="sms_hebdo_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: SMS Quotidien Succes">
+    <title>option SMS Quotidien page apres confirmation</title>
+    Vous avez souscrit a l'option SMS quotidien. Vous disposez de 6 SMS ou 2
+    MMS/jour (hors SMS/MMS surtaxes et MMS carte postale) jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.<br/>
+    <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+  <page tag="sms_hebdo_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: SMS Quotidien offre incompatible">
+    <title>option SMS Quotidien page offre incompatible</title>
+    Vous ne disposez pas d'assez de credit sur votre compte mobile. Rechargez puis reessayez.<br/>
+    <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+  <page tag="sms_opt_deja_active"  backtext="notext" hist="dohist" cost="free_pt"
+        descr="Options SMS: Actif">
+    <title>Options SMS Actif</title>
+    Vous disposez deja de l'option SMS quotidien. Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.<br/>
+    <a href="#suppression_1">supprimer l'option</a><br/>
+  </page>
+
+  <page tag="suppression_1" backtext="notext" hist="donthist" cost="free_pt"
+        descr="Demande de confirmation de suppression">
+    <title>Confirmation de suppression</title>
+    Si vous supprimez votre option SMS maintenant vous ne pourrez pas
+    beneficier de vos
+    <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    restants, a utiliser avant le
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.<br/>
+    <a href="erl://svc_options_cmo:do_unsubscription?opt_sms_quoti&amp;#suppression_success,#suppression_failure">confirmer</a>  </page>
+
+  <page tag="suppression_success" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Succes de suppression option SMS">
+    <title>Succes de suppression</title>
+    La suppression de votre option SMS a bien ete prise en compte. Dans
+    quelques instants, vous recevrez un SMS de confirmation. Merci de votre appel.<br/>
+  </page>
+
+ <page tag="suppression_failure" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Echec de suppression option SMS">
+    <title>Echec de suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+  
+<!--Options Vacances-->
+
+  <page tag="vacances">
+    <redirect src="erl://svc_options_cmo:first_page?opt_vacances&amp;#vacances_first&amp;#vacances_incomp&amp;#credit_insuffisant&amp;#vacances_first"/>
+  </page>
+
+  <page tag="vacances_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Vacances offre incompatible">
+    <title>option vacances page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option MMS. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>
+  
+  <page tag="vacances_first" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Vacances menu generique">
+    <title>option Vacances menu generique</title>
+    Envie de partager de bons moments ?
+    25 MMS texte, photo ou video (valables 31 jours) pour seulement
+    <include src="erl://svc_options:print_option_price?opt_vacances&amp; EUR"/> avec
+    l'option MMS!<br/>
+    <a href="#vacances_souscrire">souscrire</a><br/>
+    <!-- 9 suite-->
+  </page>
+
+  
+  <page tag="vacances_souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Vacances Confirmation">
+    <title>Vacances Confirmation</title>
+    Option disponible
+    jusqu'au <include src="erl://svc_options:print_commercial_end_date?opt_vacances&amp;dmyy"/> et
+    incompatible avec les autres Bons Plans SMS/MMS.
+    En souscrivant vous serez debite
+    de <include src="erl://svc_options:print_option_price?opt_vacances&amp; EUR"/> sur
+    votre compte
+    <include src="erl://svc_options:debit_account?opt_vacances"/><br/>
+    <a href="erl://svc_options_cmo:do_subscription?opt_vacances&amp;#vacances_first,#credit_insuffisant,#vacances_succes">
+    valider</a>
+  </page>
+  
+  <page tag="vacances_succes" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Vacances Succes">
+    <title>Vacances Succes</title>
+    Vous avez souscrit a l'option MMS. Vous disposez de 25 MMS texte,
+    photo ou video valables 31 jours (MMS non surtaxes - France metropolitaine)<br/>
+    <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+<!--Options duo journee-->
+
+  <page tag="duo_journee">
+    <redirect src="erl://svc_options_cmo:first_page?opt_pack_duo_journee&amp;#deja_active&amp;#duo_journee_incomp&amp;#credit_insuffisant&amp;#duo_journee_first"/>
+  </page>
+
+  <page tag="duo_journee_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Duo journee offre incompatible">
+    <title>option Duo journee page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Duo Journee. Pour +
+    d'infos contactez votre service clients au 722 (0,37 E/min.). Orange vous
+    remercie de votre appel.
+  </page>
+  
+  <page tag="duo_journee_first" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Duo journee menu generique">
+    <title>option Duo journee menu generique</title>
+    Vos com. du jour a petit prix: 1h d'appels nat.hors num speciaux+15SMS
+    non surtaxes utilisables aujourd'hui de 9h a 21h pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee&amp; EUR"/> avec
+    l'option Duo Journee!<br/>
+    <a href="#duo_journee_souscrire">souscrire</a><br/>
+    <!-- 9 suite-->
+  </page>
+  
+  <page tag="duo_journee_souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Duo Journee Confirmation">
+    <title>Duo Journee Confirmation</title>
+    Option disponible jusqu'au
+    <include src="erl://svc_options:print_commercial_end_date?opt_pack_duo_journee&amp;dmyy"/> et incompatible
+    avec l'option MMS.
+    En souscrivant vous serez debite
+    de <include src="erl://svc_options:print_option_price?opt_pack_duo_journee&amp; EUR"/> 
+    sur votre compte
+    <include src="erl://svc_options:debit_account?opt_pack_duo_journee"/><br/>
+    <a href="erl://svc_options_cmo:do_subscription?opt_pack_duo_journee&amp;#deja_active,#credit_insuffisant,#duo_journee_succes">
+    valider</a>
+  </page>
+  
+  <page tag="duo_journee_succes" backtext="notext" hist="dohist" cost="free_pt"
+	descr="Souscrire Options CMO: Tout Shuss Succes">
+    <title>Tout Shuss Succes</title>
+    Vous avez souscrit a l'option Duo Journee. Vous disposez de 1h de com.nat.
+    vers mobiles &amp; fixes + 15 SMS (ou 5 MMS) utilisables aujourd'hui
+    de 9h a 21h<br/>
+    <a href="selfcare_cmo.xml#recharge">recharger</a>
+  </page>
+
+
+<!--Activ Plan Zap-->
+   <page tag="activ_plan_zap" cost="free_pt" descr="Souscrire Options CMO: Activ Plan 11-18">
+     <title>Opt CMO: Activ Plan 11-18</title>
+     Pour profiter de tarifs réduits 7J/7 24H/24
+     pendant toutes les vacances sur les appels vers Orange et fixes, les SMS et le wap
+     <a href="erl://svc_selfcare_cmo:activ_plan_zap?#success_plan_zap&amp;#failure">souscrire</a>
+</page>
+
+<page tag="success_plan_zap" cost="free_pt" descr="Souscrire Options CMO: Success Plan 11-18">
+     <title>Opt CMO: Success Plan 11-18</title>
+     Vous beneficiez maintenant des heures 11-18 vacances.
+     Orange vous remercie de votre appel
+</page>
+
+<!--offres eXclusives-->
+<page tag="offres_eXclusives" descr="Acceuil Offres eXclusives" menutext="notext">
+   <title>offres eXclusives</title>
+   Les offres exclusives vous reservent des surprises ! Profitez-en des maintenant !<br/>
+   <a href="limande.xml">En savoir +</a>
+</page>
+<!--Error page-->
+
+ <page tag="closed" cost="free_pt" descr="Opt CMO: Horaire de Fermeture">
+     <title>Opt CMO: Horaire de Fermeture</title>
+     Bonjour,<br/>
+     pour souscrire a cette option, nous vous invitons a vous reconnecter au
+     #123# a partir de 2h du matin. A tres bientot!
+</page>
+
+ <page tag="deja_active" backtext="notext" hist="dohist" cost="free_pt" descr="option deja active">
+   <title>option deja active</title>
+   Bonjour, votre option est deja activee. Orange vous remercie
+   de votre appel.
+ </page>
+
+<page tag="credit_insuffisant" cost="free_pt" descr="O.CMO soiree d'ete">
+     <title>O.CMO Credit insuffisant</title>
+     Vous ne disposez pas d'assez de credit sur votre compte mobile.
+     Rechargez puis reessayez<br/>
+     <a href="selfcare_cmo.xml#recharge">recharger</a><br/>
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service de souscription est indisponible. Orange vous remercie de votre appel.
+    <br/>
+  </page>
+
+<page tag="failure" cost="free_pt" descr="O.CMO : Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+ <page tag="system_failure" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.</page>
+
+<page tag="temporary" cost="free_pt" descr="O.CMO : Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+<!-- Autres options -->
+
+
+<page tag="forf_sms" cost="free_pt" hist="dohist" descr="O.CMO Infos Forfait SMS">
+     <title>O.CMO Inf. Forfait SMS</title>
+     Envoyez vos SMS &amp; MMS a un tarif avantageux grace aux options 30,
+     80, 130, 210 ou 300 SMS (1 MMS =3 SMS)!
+     <include src="erl://svc_options_cmo:proposer_text?opt_forf_sms&amp;1er mois offert lors de votre 1ere souscription!&amp;br"/>
+     <a href="opt_forf_sms_cmo.xml#souscrire">souscrire</a>
+ </page>
+
+
+<page tag="multimedia" cost="free_pt" hist="dohist" descr="O.CMO Souscription options multimedia">
+     <title>O.CMO Souscription options multimedia</title>
+		Decouvrez les nouvelles options illimitees Surf, Sport, TV et Musique : le premier mois est offert a la premiere souscription!<br/>
+    <a href="opt_ow_cmo.xml#souscrire">options illimite</a><br/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?if_profile_media&amp;options internet=opt_media_cmo.xml#souscrire&amp;br"/>
+ </page>
+
+<!-- Bonus Sans Frontiere-->
+<page tag="bsf" cost="free_pt" descr="Souscrire Options CMO: bonus sans frontiere">
+     <title>O.CMO Bonus sans frontiere</title>
+     Avec le bonus sans frontiere, 10E achetes pour vos appels emis et recus depuis l'etranger 
+     = 10E offerts! Ce credit de com. de 20E est valable 30 jours<br/>
+     <a href="opt_bsf_cmo.xml#souscrire">souscrire</a><br/>
+     <include src="erl://svc_options_cmo:proposer_lien?opt_maghreb&amp;suite=#maghreb&amp;nobr&amp;9"/>
+ </page>
+
+<page tag="securite" cost="free_pt" hist="dohist" descr="O.CMO Infos Securite">
+     <title>O.CMO Inf. Securite</title>
+     Options securite : 3 options au choix pour assurer votre mobile en cas
+     de vol, perte ou casse. Pour souscrire, composez le 700(comm.nat).
+ </page>
+
+<page tag="promo" cost="free_pt" hist="dohist" descr="O.CMO Promo Bon Plan">
+     <title>O.CMO Promo Bon Plan</title>
+     Bonne Nouvelle! Votre "Bon Plan" est en promo cette semaine! 
+     Pour profiter de cette reduction (jusqu'a 50%!),
+     RDV sur le 444(gratuit) ou sur Orange.fr
+ </page>
+
+</pages>

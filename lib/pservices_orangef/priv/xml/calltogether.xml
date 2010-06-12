@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+ <page>
+    <redirect src="erl://svc_util:redir_subscription?mobi=#home,cmo=#home,postpaid=#home,dme=#home,default=#anon"/>
+  </page>
+
+ <page tag="home">
+ <redirect src="erl://svc_calltogether:svcdata_null?#menu"/>
+ </page>
+
+ <page tag="menu" descr="Conférences calls" menutext="notext"
+  hist="bookmark" ismenu="true">
+  <title>Page d'accueil</title>
+  Bienvenue au service Talk Together d'Orange :<br/>
+  >Organiser une conférence :<br/>
+   <a href="#invit">Invitation par SMS</a><br/>
+   <a href="#invit">Invitation par appel</a><br/>
+  >Diffuser un message :<br/>
+   <a href="#construction">Notifier par SMS</a><br/>
+   <a href="#construction">Notifier par appel</a><br/>
+   <a href="#construction">Infos</a><br/>
+   <a href="#construction">Annuler</a>
+ </page>
+
+<page tag="invit" menutext="notext">
+    Veuillez indiquer votre nom : <br/> <br/>
+    L'accès au service est gratuit. Les communications sont déduites de
+    votre forfait. <br/>
+    <form action="erl://svc_calltogether:prompt_redirect?%23theme">
+      <entry>
+        <prompt>
+        </prompt>
+      </entry>
+    </form>
+</page>
+
+<page tag="theme" menutext="notext">
+    Veuillez indiquer le thème de la conférence : <br/> <br/>
+    L'accès au service est gratuit. Les communications sont déduites
+    de votre forfait. <br/>
+    <form action="erl://svc_calltogether:prompt_redirect?#members">
+      <entry>
+        <prompt>
+        </prompt>
+      </entry>
+    </form>
+</page>
+
+<page tag="members" menutext="notext">
+    Choix des correspondants :<br/>
+   <a href="#construction">Répertoire Orange</a><br/>
+   <a href="#construction">Groupes</a><br/>
+   <a href="#add_number">Saisie manuelle des numéros</a>
+</page>
+
+
+<page tag="add_number" menutext="notext" hist="donthist">
+    Veuillez saisir le numéro d'un membre à ajouter dans la conférence : <br/>
+    <form action="erl://svc_calltogether:list_create?#number_added&#add_number2">
+      <entry>
+        <prompt>
+        </prompt>
+      </entry>
+    </form>
+</page>
+
+<page tag="add_number2" menutext="notext" hist="donthist">
+    Numero invalide<br/>
+    Veuillez ne saisir que des chiffres : <br/>
+    <form action="erl://svc_calltogether:list_create?#number_added&#add_number2">
+      <entry>
+        <prompt>
+        </prompt>
+      </entry>
+    </form>
+</page>
+
+<page tag="number_added" menutext="notext">
+   <include src="erl://svc_calltogether:numbers_display"/>  <br/>
+   <a href="#add_number">Ajouter un numéro</a><br/>
+   <a href="#call">lancer la conférence</a><br/>
+</page>
+
+<page tag="call" nav="end">
+Une chambre téléphonique a été réservée. Les convocations sont en cours.<br/><br/>
+Vous allez être appelé pour entrer en conférence.
+</page>
+
+
+
+
+ <!-- ------------ -->
+ <!-- ERRORS PAGES -->
+ <!-- ------------ -->
+
+ <page tag="construction" descr="under_construction">
+  Cette page est en cours de construction.
+ </page>
+
+
+<page tag="anon" nav="end">
+    <lang>
+      <fr>Vous n'avez pas accès à ce service.</fr>
+      <en>You cannot access this service.</en>
+    </lang>
+  </page>
+
+</pages>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription Options M6:SMS-MMS on-net illimite">
+  <page>
+  </page>
+
+  <!-- SMS-MMS on-net illimité M6 -->
+  <page tag="m6_on_net" cost="free_pt" descr="Souscrire Option M6: Accueil SMS-MMS illimite">
+     <title>Souscrire Opt M6: Accueil SMS-MMS illimité</title>
+     Communiquez par SMS sans limite avec l'option SMS &amp; MMS illimites
+     (serie limitee a 20000 options). Profitez des 2ers mois a 1 EUR!<br/> 
+     <a href="#savoir_plus">Souscrire</a><br/>
+ </page>
+
+  <page tag="savoir_plus" hist="dohist" descr="Souscrire Opt M6: recherche opt incompatibles" cost="freept">
+   <title>Souscrire Opt M6: recherche opt incompatibles</title>
+     <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?opt_m6_smsmms&amp;#add_m6_smsmms,#error_msg"/>
+  </page>
+
+  <page tag="add_m6_smsmms" hist="dohist" descr="BSF Postpaid GP : tentative souscription BSF">
+   <title>Souscrire Opt M6: Souscription SMS-MMS illimite</title>
+     Vos SMS et MMS photo/video sans limite vers les numeros Orange
+     et M6 mobile by Orange de 20h45 a minuit pour seulement 4 EUR par mois.<br/>
+     <a href="#m6_smsmms_valid">Souscrire</a>
+  </page>
+
+<page tag="m6_smsmms_valid" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Souscrire Opt M6:Validation SMS-MMS illimite">
+     <title>Souscrire Opt M6: Validation SMS-MMS illimite</title>
+     Vous souhaitez souscrire a l'option SMS &amp; MMS illimites.
+     Vous serez debite chaque mois de 4E.<br/>
+    <a href="erl://svc_subscr_asmetier:souscrire?opt_m6_smsmms&amp;#m6_smsmms_success,#m6_smsmms_success">Valider</a>
+   </page>
+
+<page tag="m6_smsmms_success" backtext="notext"  cost="free_pt"
+        descr="Souscrire Opt M6:Success sms mms illimite"  nav="end">
+     <title>Souscrire Opt M6: Success SMS-MMS illimite</title>
+     Vous avez souscrit a l'option SMS &amp; MMS illimites.
+     Vous serez averti de l'activation de l'option par SMS.<br/>
+   </page>
+
+<page tag="error_msg" cost="free_pt" descr="CMO souscr M6 Opt: Erreur interface AS Metier">
+    <title>CMO souscr M6 Opt: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ultérieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="temporary" cost="free_pt" descr="CMO souscr M6 Opt: Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+<page tag="system_failure" cost="free_pt" descr="CMO souscr M6 Opt: Echec souscription failure">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+</pages>

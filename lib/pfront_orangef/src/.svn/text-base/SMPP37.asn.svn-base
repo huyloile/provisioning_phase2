@@ -1,0 +1,487 @@
+-- History
+-- *******
+-- MOP : 10/02/2001
+-- File created the 10th of february 2001, to describe SMPP opérations in ASN.1
+--
+-- ASN.1 is TLV encoded thus, no command length fields are used
+-- Some smpp fields are described with enumerations if all values are known
+-- some other are described as BIT STRINGS in the case of use like xx1100xx in the specification
+-- MOP 15/02/2001
+-- Entire protocol and including Cellicium's remarqs
+-- MOP 26/02/2001
+-- including celliciums remarqs : 
+-- ReceiptedMessageId length
+-- MOP 01/03/2001
+-- including celliciums INTEGER command-id codes
+--  new vlr-number optional fiels in DATA-SM
+-- MOP 18/04/2001
+-- replace-sm message-id 6 ->> 7
+-- DB 20/06/2001
+-- add all error codes (Command-status) defined by SMPP.
+
+SMPP37 {
+   iso(1) member-body(2) f(250) type-org(1) ft(16) ri(4) smpp-Protocol(12) version(3) sub-version(4)}
+
+DEFINITIONS IMPLICIT TAGS
+
+::=
+
+BEGIN
+SMPP-PDU 	::= SEQUENCE {
+--	command-length		[0] INTEGER,        not used
+	command-id		[1] CommandId,
+	command-status		[2] CommandStatus OPTIONAL,
+	command-sequence	[3] INTEGER,
+	body [4] CHOICE {
+		generic-nack  		[1] GENERIC-NACK-BODY,
+		bind-receiver  		[2] BIND-RECEIVER-BODY,
+		bind-receiver-resp  	[3] BIND-RECEIVER-RESP-BODY,
+		bind-transmitter  	[4] BIND-TRANSMITTER-BODY,
+		bind-transmitter-resp  	[5] BIND-TRANSMITTER-RESP-BODY,
+		query-sm  		[6] QUERY-SM-BODY,
+		query-sm-resp  		[7] QUERY-SM-RESP-BODY,
+		submit-sm  		[8] SUBMIT-SM-BODY,
+		submit-sm-resp  	[9] SUBMIT-SM-RESP-BODY,
+		deliver-sm  		[10] DELIVER-SM-BODY,
+		deliver-sm-resp  	[11] DELIVER-SM-RESP-BODY,
+		unbind  		[12] UNBIND-BODY,
+		unbind-resp  		[13] UNBIND-RESP-BODY,
+		replace-sm  		[14] REPLACE-SM-BODY,
+		replace-sm-resp  	[15] REPLACE-SM-RESP-BODY,
+		cancel  		[16] CANCEL-BODY,
+		cancel-resp  		[17] CANCEL-RESP-BODY,
+		bind-transceiver  	[18] BIND-TRANSCEIVER-BODY,
+		bind-transceiver-resp  	[19] BIND-TRANSCEIVER-RESP-BODY,
+		outbind  		[20] OUTBIND-BODY,
+		enquire-link  		[21] ENQUIRE-LINK-BODY,
+		enquire-link-resp  	[22] ENQUIRE-LINK-RESP-BODY,
+		submit-multi  		[23] SUBMIT-MULTI-BODY,
+		submit-multi-resp  	[24] SUBMIT-MULTI-RESP-BODY,
+		alert-notification  	[25] ALERT-NOTIFICATION-BODY,
+		data-sm  		[26] DATA-SM-BODY,
+		data-sm-resp  		[27] DATA-SM-RESP-BODY
+		}	  
+	}
+
+
+-- Command bodies
+-- SMPP Mandatory fields may be set to NULL, in ASN.1 it means field OPTIONAL
+-- if SMPP field is NULL, it is not present.
+
+GENERIC-NACK-BODY ::= NULL
+BIND-RECEIVER-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	password		[1] Password	OPTIONAL,
+	system-type		[2] SystemType	OPTIONAL,
+	interface-version	[3] INTEGER (0..255),
+	addr-ton		[4] TON		OPTIONAL,
+	addr-npi		[5] NPI		OPTIONAL,
+	address-range		[6] AddressRange	OPTIONAL
+	}
+BIND-RECEIVER-RESP-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	interface-version	[3] INTEGER (0..255) OPTIONAL
+	}
+BIND-TRANSMITTER-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	password		[1] Password	OPTIONAL,
+	system-type		[2] SystemType	OPTIONAL,
+	interface-version	[3] INTEGER (0..255),
+	addr-ton		[4] TON		OPTIONAL,
+	addr-npi		[5] NPI		OPTIONAL,
+	address-range		[6] AddressRange	OPTIONAL
+	}
+BIND-TRANSMITTER-RESP-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	interface-version	[3] INTEGER (0..255) OPTIONAL
+	}
+QUERY-SM-BODY ::= SEQUENCE {
+	message-id		[0] MessageId,
+	source-addr-ton		[1] TON			OPTIONAL,
+	source-addr-npi         [2] NPI			OPTIONAL,
+	source-addr             [3] Address		OPTIONAL
+	}
+QUERY-SM-RESP-BODY ::= SEQUENCE {
+	message-id		[0] MessageId,
+	final-date		[1] Time 	OPTIONAL,
+	message-state		[2] MessageState,
+	error-code		[3] INTEGER
+	}
+SUBMIT-SM-BODY ::= SEQUENCE {
+	service-type		[0] ServiceType OPTIONAL,
+	source-addr-ton		[1] TON			OPTIONAL,
+	source-addr-npi         [2] NPI			OPTIONAL,
+	source-addr             [3] Address		OPTIONAL	
+	}
+SUBMIT-SM-RESP-BODY ::= SEQUENCE {
+	message-id		[0] MessageId
+	}
+DELIVER-SM-BODY ::= SEQUENCE {
+	service-type		[0] ServiceType 	OPTIONAL,
+	source-addr-ton		[1] TON			OPTIONAL,
+	source-addr-npi         [2] NPI			OPTIONAL,
+	source-addr             [3] Address		OPTIONAL	,
+	dest-addr-ton		[4] TON			OPTIONAL,
+	dest-addr-npi         	[5] NPI			OPTIONAL,
+	dest-addr             	[6] Address		OPTIONAL	
+	}
+DELIVER-SM-RESP-BODY ::= SEQUENCE {
+	message-id		[0] MessageId
+	}
+UNBIND-BODY ::= NULL
+UNBIND-RESP-BODY ::= NULL
+REPLACE-SM-BODY ::= SEQUENCE {
+	message-id		[0] MessageId,
+	source-addr-ton		[1] TON			OPTIONAL,
+	source-addr-npi         [2] NPI			OPTIONAL,
+	source-addr             [3] Address		OPTIONAL,
+	schedule-delivery-time	[4] Time	 	OPTIONAL,
+	validity-period		[5] Time		OPTIONAL,
+	registered-delivery	[6] RegisteredDelivery,
+	sm-default-msg-id	[7] INTEGER,
+	sm-length		[8] INTEGER,
+	short-message		[9] ShortMessage
+	}
+REPLACE-SM-RESP-BODY ::= NULL
+CANCEL-BODY ::= SEQUENCE {
+	service-type		[0] ServiceType 	OPTIONAL,
+	message-id		[1] MessageId,
+	source-addr-ton		[2] TON			OPTIONAL,
+	source-addr-npi         [3] NPI			OPTIONAL,
+	source-addr             [4] Address		OPTIONAL,
+	dest-addr-ton		[5] TON			OPTIONAL,
+	dest-addr-npi         	[6] NPI			OPTIONAL,
+	dest-addr             	[7] Address		OPTIONAL	
+	}
+CANCEL-RESP-BODY ::= NULL
+BIND-TRANSCEIVER-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	password		[1] Password	OPTIONAL,
+	system-type		[2] SystemType	OPTIONAL,
+	interface-version	[3] INTEGER (0..255),
+	addr-ton		[4] TON		OPTIONAL,
+	addr-npi		[5] NPI		OPTIONAL,
+	address-range		[6] AddressRange	OPTIONAL
+	}
+BIND-TRANSCEIVER-RESP-BODY ::= SEQUENCE {
+	system-id		[0] SystemId,
+	interface-version	[3] INTEGER (0..255) OPTIONAL
+	}
+OUTBIND-BODY ::= SEQUENCE {
+	system-id	[0] SystemId,
+	password	[1] Password	OPTIONAL
+	}
+ENQUIRE-LINK-BODY ::= NULL
+ENQUIRE-LINK-RESP-BODY ::= NULL
+SUBMIT-MULTI-BODY ::= SEQUENCE {
+	service-type		[0] ServiceType,
+	source-addr-ton 	[1] TON	OPTIONAL,
+	source-addr-npi		[2] NPI	OPTIONAL,
+	source-addr		[3] Address	OPTIONAL,
+	number-of-dests		[4] INTEGER,
+	dest-address		[5] SEQUENCE OF 
+		CHOICE { 	dest-address [1] DestinationAddress,
+				sme-dest-address [2] SMEDestinationAddress
+		},
+	esm-class		[7] EsmClass,
+	protocol-id		[8] INTEGER,
+	priority-flag		[9] INTEGER,
+	schedule-delivery-time	[10] Time	 	OPTIONAL,
+	validity-period		[11] Time		OPTIONAL,
+	registered-delivery	[12] RegisteredDelivery,
+	replace-if-present-flag [13] NULL,
+	data-coding		[14] DataCoding,
+	sm-default-msg-id	[15] INTEGER (0..255)	OPTIONAL,
+	sm-length		[16] INTEGER (0..255),
+	short-message		[17] ShortMessage,
+	user-message-reference	[18] INTEGER		OPTIONAL,
+	source-port		[19] INTEGER		OPTIONAL,
+	source-addr-subunit	[20] INTEGER (0..255)	OPTIONAL,
+	destination-port	[21] INTEGER		OPTIONAL,
+	dest-addr-subunit	[22] INTEGER (0..255)	OPTIONAL,
+	sar-msg-ref-num		[23] INTEGER		OPTIONAL,
+	sar-total-segments	[24] INTEGER (0..255)	OPTIONAL,
+	sar-segment-seqnum	[25] INTEGER (0..255)	OPTIONAL,
+	payload-type		[26] INTEGER (0..255)	OPTIONAL,
+	message-payload		[27] MessagePayload 	OPTIONAL,
+	privacy-indicator	[28] INTEGER (0..255)	OPTIONAL,
+	callback-num		[29] CallbackNumber	OPTIONAL,
+	callback-num-pres-ind	[30] CallbackNumberIndicator	OPTIONAL,
+	callback-num-atag	[31] CallbackNumberAtag	OPTIONAL,
+	source-subaddress	[32] SubAddress 	OPTIONAL,
+	dest-subaddress		[33] SubAddress 	OPTIONAL,
+	display-time		[34] INTEGER (0..255)	OPTIONAL,
+	sms-signal		[45] INTEGER		OPTIONAL,
+	ms-validity		[36] INTEGER (0..255)	OPTIONAL,
+	ms-msg-wait-facilities	[37] MsMsgWaitFacilities 	OPTIONAL,
+	alert-on-msg-delivery 	[38] NULL		OPTIONAL,
+	language-indicator	[39] INTEGER (0..255)	OPTIONAL
+	}
+SUBMIT-MULTI-RESP-BODY ::= SEQUENCE {
+	message-id		[0] MessageId,
+	no-unsuccess		[1] INTEGER,
+	unsuccess		[2] SEQUENCE OF UnsuccessfulDeliveries OPTIONAL
+	}
+ALERT-NOTIFICATION-BODY ::= SEQUENCE {
+	source-addr-ton 	[0] TON	OPTIONAL,
+	source-addr-npi		[1] NPI	OPTIONAL,
+	source-addr		[2] Address	OPTIONAL,
+	esme-addr-ton 		[3] TON	OPTIONAL,
+	esme-addr-npi		[4] NPI	OPTIONAL,
+	esme-addr		[5] Address	OPTIONAL,
+	ms-availability-status  [6] INTEGER (0..255)	OPTIONAL
+	}
+DATA-SM-BODY ::= SEQUENCE {
+	service-type		[0] ServiceType,
+	source-addr-ton 	[1] TON	OPTIONAL,
+	source-addr-npi		[2] NPI	OPTIONAL,
+	source-addr		[3] Address	OPTIONAL,
+	dest-addr-ton		[4] TON	OPTIONAL,
+	dest-addr-npi		[5] NPI	OPTIONAL,
+	destination-addr	[6] Address OPTIONAL,
+	esm-class		[7] EsmClass,
+	registered-delivery	[8] RegisteredDelivery,
+	data-coding		[9] DataCoding,
+	source-port		[10] INTEGER		OPTIONAL,
+	source-addr-subunit	[11] INTEGER (0..255)	OPTIONAL,
+	source-network-type	[12] INTEGER (0..255)	OPTIONAL,
+	source-bearer-type	[13] INTEGER (0..255)	OPTIONAL,
+	source-telematics-id	[14] INTEGER		OPTIONAL,
+	destination-port	[15] INTEGER		OPTIONAL,
+	dest-addr-subunit	[16] INTEGER (0..255)	OPTIONAL,
+	dest-network-type	[17] INTEGER (0..255)	OPTIONAL,
+	dest-bearer-type	[18] INTEGER (0..255)	OPTIONAL,
+	dest-telematics-id	[19] INTEGER		OPTIONAL,
+	sar-msg-ref-num		[20] INTEGER		OPTIONAL,
+	sar-total-segments	[21] INTEGER (0..255)	OPTIONAL,
+	sar-segment-seqnum	[22] INTEGER (0..255)	OPTIONAL,
+	more-message-to-send	[23] INTEGER (0..255)	OPTIONAL,
+	qos-time-to-live	[24] INTEGER		OPTIONAL,
+	payload-type		[25] INTEGER (0..255)	OPTIONAL,
+	message-payload		[26] MessagePayload 	OPTIONAL,
+	set-dpf			[27] INTEGER (0..255)	OPTIONAL,
+	receipted-message-id	[28] ReceiptedMessageId OPTIONAL,
+	message-state		[29] MessageState	OPTIONAL,
+	network-error-code	[30] NetworkErrorCode 	OPTIONAL,
+	user-message-reference	[31] INTEGER		OPTIONAL,
+	privacy-indicator	[32] INTEGER (0..255)	OPTIONAL,
+	callback-num		[33] CallbackNumber	OPTIONAL,
+	callback-num-pres-ind	[34] CallbackNumberIndicator	OPTIONAL,
+	callback-num-atag	[35] CallbackNumberAtag	OPTIONAL,
+	source-subaddress	[36] SubAddress 	OPTIONAL,
+	dest-subaddress		[37] SubAddress 	OPTIONAL,
+	user-response-code	[38] INTEGER (0..255)	OPTIONAL,
+	display-time		[39] INTEGER (0..255)	OPTIONAL,
+	sms-signal		[40] INTEGER		OPTIONAL,
+	ms-validity		[41] INTEGER (0..255)	OPTIONAL,
+	ms-msg-wait-facilities	[42] MsMsgWaitFacilities 	OPTIONAL,
+	number-of-messages	[43] INTEGER OPTIONAL,
+	alert-on-msg-delivery 	[44] NULL		OPTIONAL,
+	language-indicator	[45] INTEGER (0..255)	OPTIONAL,
+	its-reply-type		[46] INTEGER (0..255)	OPTIONAL,
+	its-session-info	[47] ItsSessionInfo	OPTIONAL,
+	ussd-service-op 	[48] UssdServiceOP 	OPTIONAL,
+	vlr-number	 	[49] VLRNumber	 	OPTIONAL
+	}
+DATA-SM-RESP-BODY ::= SEQUENCE {
+	message-id		[0] MessageId,
+	delivery-failure-reason	[1] INTEGER (0..255)	OPTIONAL,
+	network-error-code	[2] NetworkErrorCode 	OPTIONAL,
+	additional-status-info-text [3] AdditionalStatusInfoText OPTIONAL,
+	dpf-result		[4] INTEGER (0..255)	OPTIONAL
+	}
+
+
+-- command-id definitions : 
+
+generic-nack           INTEGER ::= -2147483648
+bind-receiver          INTEGER ::= 1
+bind-receiver-resp     INTEGER ::= -2147483647
+bind-transmitter       INTEGER ::= 2
+bind-transmitter-resp  INTEGER ::= -2147483646
+query-sm               INTEGER ::= 3
+query-sm-resp          INTEGER ::= -2147483645
+submit-sm              INTEGER ::= 4
+submit-sm-resp         INTEGER ::= -2147483644
+deliver-sm             INTEGER ::= 5
+deliver-sm-resp        INTEGER ::= -2147483643
+unbind                 INTEGER ::= 6
+unbind-resp            INTEGER ::= -2147483642
+replace-sm             INTEGER ::= 7
+replace-sm-resp        INTEGER ::= -2147483641
+cancel                 INTEGER ::= 8
+cancel-resp            INTEGER ::= -2147483640
+bind-transceiver       INTEGER ::= 9
+bind-transceiver-resp  INTEGER ::= -2147483639
+outbind                INTEGER ::= 11
+enquire-link           INTEGER ::= 21
+enquire-link-resp      INTEGER ::= -2147483627
+submit-multi           INTEGER ::= 33
+submit-multi-resp      INTEGER ::= -2147483615
+alert-notification     INTEGER ::= 258
+data-sm                INTEGER ::= 259
+data-sm-resp           INTEGER ::= -2147483389
+
+-- Fields subtypes
+
+Address ::= OCTET STRING (SIZE (minAddress..maxAddress))
+AddressRange ::= OCTET STRING (SIZE (minAddressRange..maxAddressRange))
+AdditionalStatusInfoText ::= OCTET STRING (SIZE (minAdditionalStatusInfoText..maxAdditionalStatusInfoText))
+CommandId::= INTEGER
+CommandStatus ::= ENUMERATED {
+	esme-rok(0),
+	esme-rinvmsglen(1),
+	esme-rinvcmdlen(2),
+	esme-rinvcmdid(3),
+	esme-rinvbndsts(4),
+	esme-ralybnd(5),
+	esme-rinvprtflg(6),
+	esme-rinvregdlvflg(7),
+	esme-rsyserr(8),
+	esme-rinvsrcadr(10),
+	esme-rinvdstadr(11),
+	esme-rinvmsgid(12),
+	esme-rbindfail(13),
+	esme-rinvpaswd(14),
+	esme-rinvsysid(15),
+	esme-rcancelfail(17),
+	esme-rreplacefail(19),
+	esme-rmsgqful(20),
+	esme-rinvsertyp(21),
+	esme-rinvnumdests(51),
+	esme-rinvdlname(52),
+	esme-rinvdestflag(64),
+	esme-rinvsubrep(66),
+	esme-rinvesmclass(67),
+	esme-rcntsubdl(68),
+	esme-rsubmitfail(69),
+	esme-rinvsrcton(72),
+	esme-rinvsrcnpi(73),
+	esme-rinvdstton(80),
+	esme-rinvdstnpi(81),
+	esme-rinvsystyp(83),
+	esme-rinvrepflag(84),
+	esme-rinvnummsgs(85),
+	esme-rthrottled(88),
+	esme-rinvsched(97),
+	esme-rinvexpiry(98),
+	esme-rinvdftmsgid(99),
+	esme-rx-t-appn(100),
+	esme-rx-p-appn(101),
+	esme-rx-r-appn(102),
+	esme-rqueryfail(103),
+	esme-rinvoptparstream(192),
+	esme-roptparnotallwd(193),
+	esme-rinvparlen(194),
+	esme-rmissingoptparam(195),
+	esme-rinvoptparamval(196),
+	esme-rdeliveryfailure(254),
+	esme-runknownerr(255)
+
+	}
+DataCoding ::= BIT STRING (SIZE(8))
+DestinationAddress ::= SEQUENCE {
+	dest-addr-ton		[1] TON	OPTIONAL,
+	dest-addr-npi		[2] NPI	OPTIONAL,
+	destination-addr	[3] Address OPTIONAL
+	}
+CallbackNumber ::= OCTET STRING (SIZE (minCallbackNumber..maxCallbackNumber))
+CallbackNumberIndicator ::= BIT STRING (SIZE(8))
+CallbackNumberAtag ::= OCTET STRING (SIZE (minCallbackNumberAtag..maxCallbackNumberAtag))
+EsmClass ::= BIT STRING (SIZE(8))
+ItsSessionInfo ::= OCTET STRING (SIZE(2))
+MessageId ::= OCTET STRING (SIZE(minMessageId..maxMessageId))
+MessagePayload ::= OCTET STRING (SIZE(minMessagePayload..maxMessagePayload))
+NPI ::= ENUMERATED {
+	unknown(0),
+	isdn(1),
+	data(3),
+	telex(4),
+	landMobile (6),
+	national(8),
+	private(9),
+	ermes(10),
+	internet(14),
+	wap(18)
+	}
+MessageState ::= ENUMERATED {
+	enroute(1),
+	delivered(2),
+	expired(3),
+	deleted(4),
+	undeliverable(5),
+	accepted(6),
+	unknown(7),
+	rejected(8)
+	}
+MsMsgWaitFacilities ::= BIT STRING (SIZE(8))
+NetworkErrorCode ::= OCTET STRING (SIZE (minNetworkErrorCode..maxNetworkErrorCode))
+Password ::= OCTET STRING (SIZE (minPassword..maxPassword))
+ReceiptedMessageId  ::= OCTET STRING (SIZE(minReceiptedMessageId..maxReceiptedMessageId))
+RegisteredDelivery ::= BIT STRING (SIZE(8))
+ServiceType ::= OCTET STRING (SIZE (minServiceType..maxServiceType))
+ShortMessage ::= OCTET STRING (SIZE (minShortMessage..maxShortMessage))
+SMEDestinationAddress ::= SEQUENCE {
+	dl-name		[1] Address
+	}
+SubAddress ::= OCTET STRING (SIZE (minSubAddress.. maxSubAddress))
+SystemId ::= OCTET STRING (SIZE (minSystemId..maxSystemId))
+SystemType ::= OCTET STRING (SIZE (minSystemType..maxSystemType))
+TON ::= ENUMERATED {
+	unknown(0),
+	international(1),
+	national(2),
+	networkSpecific(3),
+	subscriberNumber(4),
+	alphanumeric(5),
+	abreviated(6)
+	}
+Time ::= OCTET STRING (SIZE(15))
+UnsuccessfulDeliveries ::= SEQUENCE {
+	dest-addr-ton		[1] TON	OPTIONAL,
+	dest-addr-npi		[2] NPI	OPTIONAL,
+	destination-addr	[3] Address OPTIONAL,
+	error-status-code	[4] CommandStatus
+	}
+UssdServiceOP ::= OCTET STRING (SIZE (1))
+VLRNumber ::= OCTET STRING (SIZE (minVLRNumber..maxVLRNumber))
+
+-- Definition of range constants
+minAddress 	INTEGER ::= 1
+maxAddress	INTEGER ::= 64
+minAdditionalStatusInfoText INTEGER ::= 1
+maxAdditionalStatusInfoText INTEGER ::= 255
+-- Rq MOP : les sources /dest Address etc... ont des format différents suivant les requêtes
+-- il me semble que c'est une erreur de la norme (encore) je passe tout à 64 max
+minAddressRange INTEGER ::= 1
+maxAddressRange INTEGER ::= 40
+minCallbackNumber INTEGER ::= 4
+maxCallbackNumber INTEGER ::= 19
+minCallbackNumberAtag INTEGER ::= 1
+maxCallbackNumberAtag INTEGER ::= 65
+minMessageId INTEGER ::= 1
+maxMessageId INTEGER ::= 64
+minMessagePayload INTEGER ::= 0
+-- voir la limite max d'un échange USSD il me semble 160 ?
+maxMessagePayload INTEGER ::= 254
+minNetworkErrorCode	INTEGER ::= 1
+maxNetworkErrorCode	INTEGER ::= 3
+minPassword	INTEGER ::= 1
+maxPassword	INTEGER ::= 9
+minReceiptedMessageId	INTEGER ::= 1
+maxReceiptedMessageId	INTEGER ::= 64
+minServiceType	INTEGER ::= 1
+maxServiceType	INTEGER ::= 6
+minShortMessage	INTEGER ::= 1
+maxShortMessage	INTEGER ::= 254
+minSubAddress INTEGER ::= 1
+maxSubAddress INTEGER ::= 22
+minSystemId	INTEGER ::= 1
+maxSystemId	INTEGER ::= 15
+minSystemType	INTEGER ::= 1
+maxSystemType	INTEGER ::= 12
+minVLRNumber	INTEGER ::= 1
+maxVLRNumber	INTEGER ::= 20
+
+
+END

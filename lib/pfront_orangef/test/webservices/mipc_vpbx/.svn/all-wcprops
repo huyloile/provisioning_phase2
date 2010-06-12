@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx
+END
+consulterSituationResponse_I_premierETsauf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consulterSituationResponse_I_premierETsauf.xml
+END
+listeSituationsParametreesResponse_4situations.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/listeSituationsParametreesResponse_4situations.xml
+END
+consultation_information_MIPC_3situations.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consultation_information_MIPC_3situations.xml
+END
+consulter_situation_no_assistante.xml
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consulter_situation_no_assistante.xml
+END
+consulter_situation_no_assistanteVPBX.xml
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consulter_situation_no_assistanteVPBX.xml
+END
+consulter_situation_no_assistante2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consulter_situation_no_assistante2.xml
+END
+situationActiveResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/situationActiveResponse.xml
+END
+activerSituationResponse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/activerSituationResponse.xml
+END
+consultation_information_VPBX_4situations.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consultation_information_VPBX_4situations.xml
+END
+consulterParametrageReelResponse_RC_premierETliste.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/test/webservices/mipc_vpbx/consulterParametrageReelResponse_RC_premierETliste.xml
+END

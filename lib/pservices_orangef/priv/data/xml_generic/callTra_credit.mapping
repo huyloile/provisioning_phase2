@@ -1,0 +1,6 @@
+[
+ {xmlnode, "returnItems", "/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn/values"},
+ {value, "svcName",
+"/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn/serviceName/text()"},
+ {value, "statut",
+"/descendant::soapenv:Envelope/soapenv:Body/callTra_creditResponse/callTra_creditReturn/statut/text()"}].

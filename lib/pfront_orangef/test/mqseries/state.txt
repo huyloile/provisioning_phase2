@@ -1,0 +1,1 @@
+display qlocal(TEST_QUEUE_OUT) CURDEPTH

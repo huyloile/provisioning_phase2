@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="reject msg omer">
+
+  <page tag="notidentified">
+    <redirect src="erl://svc_util:redirect_size?130&#notidentified_long&#notidentified_short"/>
+  </page>
+
+  <page tag="notidentified_long" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Breizh : not identified">
+    <title>Breizh : not identified</title>
+    Compte Breizh Mobile suspendue: merci de vous rendre dans un point de vente
+    Breizh Mobile avec une pièce d'identité.
+  </page>
+
+  <page tag="notidentified_short" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Reject : Breizh not identified">
+    <title>Breizh : not identified</title>
+    Compte suspendue: votre identité ne nous est pas parvenue.
+  </page>
+
+  <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Breizh :Cpte sursitaire">
+    <title>Breizh : Cpte sursitaire</title>
+    Compte Breizh Mobile<br/>
+    La date limite de rechargement est dépassée. Votre Compte Breizh
+    Mobile est définitivement inutilisable.
+  </page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Breizh : Cpte sursitaire">
+    <title>Breizh : Cpte sursitaire</title>
+    Votre Compte est définitivement inutilisable.</page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="Breizh : Cpte suspendu">
+    <title>Breizh : Cpte suspendu</title>
+    Compte Breizh Mobile suspendu : vos appels sont bloqués.<br/>
+    Veuillez contacter le service-clients Breizh Mobile.</page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="system_free_pt" descr="Breizh : Cpte suspendu">
+    <title>Breizh : Cpte suspendu</title>
+    Votre Compte est suspendu : vos appels sont bloqués.<br/></page>
+
+  <page tag="resilie">
+   <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+   <page tag="not_compatible" backtext="notext" cost="system_free_pt" menutext="notext" nav="end" descr="Suivi Conso : Terminal non compatible">
+   <title>Suivi Conso : Terminal non compatible</title>
+   Votre terminal ne permet pas d'accéder au service.
+  </page>
+
+
+</pages>

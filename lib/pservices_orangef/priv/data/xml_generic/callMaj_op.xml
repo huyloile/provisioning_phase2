@@ -1,0 +1,122 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callMaj_op>
+      <sac:params>
+        <sac:name>ACTION</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.ACTION.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>DOS_NUMID</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.DOS_NUMID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TOP_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.TOP_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>OPT_DATE_DEB_VALID</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.OPT_DATE_DEB_VALID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TRN_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.TRN_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TOP_DUREE</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.TOP_DUREE.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>PCT_MONTANT</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.PCT_MONTANT.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>OPT_INFO1</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.OPT_INFO1.)"?></sac:value>
+      </sac:params>
+   <sac:params>
+        <sac:name>OPT_INFO2</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.OPT_INFO2.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>PTF_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.PTF_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TCP_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.TCP_NUM.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TYPE_TRT</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.TYPE_TRT.)"?></sac:value>
+      </sac:params>
+       <sac:params>
+        <sac:name>MNT_INITIAL</sac:name>
+        <sac:type>Int</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MNT_INITIAL.)"?></sac:value>
+      </sac:params>
+   <sac:params>
+        <sac:name>MSISDN1</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN1.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN2</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN2.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN3</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN3.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN4</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN4.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN5</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN5.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN6</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN6.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN7</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN7.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN8</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN8.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN9</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN9.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>MSISDN10</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(maj_op.MSISDN10.)"?></sac:value>
+      </sac:params>
+    </sac:callMaj_op>
+  </soapenv:Body>
+</soapenv:Envelope>

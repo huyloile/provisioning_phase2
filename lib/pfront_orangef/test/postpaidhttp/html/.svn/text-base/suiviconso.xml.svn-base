@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Pages for testing the Selfprov evolution">
+
+  <page>
+    <title>home</title>
+    <redirect src="erl://svc_postpaid:fake"/>
+  </page>
+
+  <page tag="postpaid">
+    <redirect src="erl://svc_util_of:redir_3g?#postpaid_3g&#postpaid_default"/>
+  </page>
+  <page tag="postpaid_3g" nav="end">
+    ok postpaid 3g
+  </page>
+  <page tag="postpaid_default" nav="end">
+    ok postpaid default
+  </page>
+
+  <page tag="not_postpaid">
+   <redirect src="erl://svc_home:not_postpaid"/>
+  </page>
+
+</pages>

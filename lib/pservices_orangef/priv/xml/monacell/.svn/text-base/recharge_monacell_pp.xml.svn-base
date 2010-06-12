@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Monacell prepaid : Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+
+  <page tag="start" hist="donthist" log="SCC_rechmen">
+    <redirect src="erl://svc_recharge:start_recharge"/>
+  </page>
+
+  <page tag="cag" descr="Monacell: Saisie code TR" backtext="notext" menutext="notext">
+    <title>Monacell prepaid : Saisie code TR</title>
+    <form action="erl://svc_recharge:process_code?selfcare_monacell_pp.xml&amp;selfcare_monacell_pp.xml">
+    <entry kind="digits">
+      <prompt>
+      Veuillez saisir le code de rechargement (14 chiffres)<br/>
+      0:Retour<br/>
+      00:Menu
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" descr="Monacell: Saisie code TR USSD PHASE1">
+  <title>Monacell prepaid: Saisie code TR USSD PHASE1</title>
+  <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+      <prompt>Veuillez saisir le code de rechargement (14 chiffres) sous
+       la forme #12*Code_a_14_chiffres#,puis appuyer sur Envoi.Attention, 3 essais seulement.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <!-- Succes page with D4 -->
+  
+<page tag="sucess_cpte" backtext="notext" menutext="notext" descr="Monacell : Validation rechargement">
+     <title>Rechargement Monacell prepaid Reussi: Cpte_Princ</title>
+     Votre rechargement a ete pris en compte. Votre nouveau solde
+     est <include src="erl://svc_compte:print_solde?cpte_princ"/> Euros<br/>
+     <a href="selfcare_monacell_pp.xml" key="00">Menu</a>
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="weinf_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_weinf">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_europe_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_maghreb_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_europe">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_maghreb">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_promo_sms">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_cpte_promo_sms">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_erech_smsmms">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="europe_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="maghreb_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="recharge_illimite_media">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+ <page tag="recharge_limite_7">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge monacell: Fermeture">
+    <title>Recharge monacell: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Reessayer ulterieurement.
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement Monacell: Code de rechargement incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="bad_code_ph2" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement monacell: Code de rechargement incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+  
+<page tag="bad_code_ph1"  backtext="notext" descr="Rechargement monacell: Code de rechargement incorrect">
+    <title>Reject : bad code</title>
+     Rechargement refuse.Pour recharger composez #12*, puis les 14 chifffres
+     de votre code de rechargement, puis # et OK ou envoi.
+</page>
+
+  <page tag="system_failure" nav="end"  descr="Rechargement monacell: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.
+  </page>
+ <page tag="badprofil" nav="end" descr="not cmo">
+    Vous n'avez pas acces a ce service reserve aux clients Monacell prepaye.
+    Veuillez contacter votre service client.
+  </page>
+
+  <page tag="incompatible" backtext="notext" nav="end" descr="Rechargement monacell: recharge incompatible">
+    <title>Reject : recharge incompatible avec credit</title>
+    Rechargement refuse. Pour utiliser cette recharge, vous devez
+    d'abord epuiser votre credit actuel.
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end" descr="Rechargement monacell: recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Votre recharge promotionnelle ne vous permet pas de recharger un
+    compte epuise ou perime. Merci.
+  </page>
+
+</pages>

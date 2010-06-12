@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <consulterInformationsResponse xmlns="urn:orange:weu:ssi">
+         <resultat xmlns="">
+            <codeRetour>0</codeRetour>
+            <commentaire>Succ&#xE8;s</commentaire>
+         </resultat>
+         <reseau xmlns="">
+            <codeReseau>AlyoRes7</codeReseau>
+            <nomReseau>AlyoRes7</nomReseau>
+         </reseau>
+         <membre xmlns="">
+            <nom>alyoNomM07</nom>
+            <prenom>alyoPrenomM07</prenom>
+            <manager>false</manager>
+         </membre>
+         <nbSituationsParametrees xsi:type="ns1:IntBuffer2" xmlns="" xmlns:ns1="urn:orange:weu:ssi">3</nbSituationsParametrees>
+         <typeOffre xmlns="">MIPC</typeOffre>
+      </consulterInformationsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

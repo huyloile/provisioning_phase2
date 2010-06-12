@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<isRechargementParentChildPossibleResponse xmlns="urn:orchidee.service.ecare/G8">
+			<return>
+				<dateProchainRechargementCmo xsi:nil="true"/>
+				<!--dateProchainRechargementMobicarte>1993-05-02T06:49:28.19</dateProchainRechargementMobicarte-->
+				<dateProchainRechargementMobicarte xsi:nil="true"/>
+				<idDossier>8198055</idDossier>
+				<prestationsCmo xsi:nil="true"/>				
+				<prestationsMobicarte>
+					<item>
+						<code>1GM12</code>
+						<montant>5</montant>
+					</item>			
+					<item>
+						<code>1GM13</code>
+						<montant>10</montant>
+					</item>	
+					<item>
+						<code>1GM14</code>
+						<montant>15</montant>
+					</item>	
+					<item>
+						<code>1GM15</code>
+						<montant>25</montant>
+					</item>	
+					<item>
+						<code>1GM16</code>
+						<montant>35</montant>
+					</item>
+					<item>
+						<code>1GM16</code>
+						<montant>50</montant>
+					</item>
+					<item>
+						<code>1GM17</code>
+						<montant>75</montant>
+					</item>
+				</prestationsMobicarte>
+			</return>
+		</isRechargementParentChildPossibleResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

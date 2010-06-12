@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: Europe sans frontiere 60 EUR">
+
+  <page hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60">
+    <title>Postpaid GP Euro ss Frontier 60</title>
+    Europe sans frontiere 60E : 90mn d'appel emis + 90mn
+    d'appels recus en union europeenne (ou 180mn pour
+    appeler l'UE depuis la France<br/>
+    <a href="#esf_60_suite">Suite</a>
+  </page>
+
+  <page tag="esf_60_suite" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60">
+    <title>Postpaid GP Euro ss Frontier 60 suite</title>
+    metropolitaine). A partir du 25 juin 2007, l'option ESF 60E est a 45E.<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?esf_60_gp&amp;#esf_60,#error_msg">Souscrire</a><br/>
+    <a href="#esf_60_mentions_leg" key="7">Mentions legales</a>
+  </page>
+
+  <page tag="esf_60" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 60">
+    <title>Postpaid GP Euro ss Frontier 60</title>
+    <redirect src="erl://svc_subscr_asmetier:get_option_incomp?esf_60_gp&amp;#esf_60_souscrire,#esf_60_incomp,#error_msg"/>
+  </page>
+
+  <page tag="esf_60_souscrire" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 60 souscrire">
+    <title>Postpaid GP Euro ss Frontier 60 souscrire</title>
+    Vous allez souscrire a l'option Europe sans frontiere 60E.
+    Votre compte sera debite de 60E tous les mois.<br/>
+    <a href="erl://svc_subscr_asmetier:souscrire?esf_60_gp&amp;#esf_60_add,#esf_60_add">Valider</a>
+  </page>
+
+  <page tag="esf_60_incomp" hist="dohist" cost="free_pt"
+	descr="Postpaid GP Euro ss Frontier 60 incompatible">
+    <title>Postpaid GP Euro ss Frontier 60 incompatible</title>
+    <include src="erl://svc_subscr_asmetier:print_opt_incomp?esf_60_gp"/><br/>
+    <a href="roaming_postpaid_gp.xml#bons_plans">Autres options a l'etranger</a>
+  </page>
+
+  <page tag="esf_60_add" hist="dohist" cost="free_pt"
+        descr="Postpaid GP Euro ss Frontier 60 valider">
+    <title>Postpaid GP Euro ss Frontier 60 valider</title>
+    Vous avez souscrit a l'option Europe sans frontiere 60E.
+    Vous avez 90 mn pour appeler et 90 mn pour recevoir vos
+    appels en union europeenne<br/>
+    <a href="#esf_60_add_suite">Suite</a>
+  </page>
+
+  <page tag="esf_60_add_suite" hist="dohist" cost="free_pt"
+        descr="Postpaid GP Euro ss Frontier 60 valider 2">
+    <title>Postpaid Euro ss Frontier 60 valider 2</title>
+    ou 180min pour appeler l'UE depuis la France.
+  </page>
+
+  <page tag="esf_60_mentions_leg" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg1">
+    <title>Postpaid Euro ss Frontier 60</title>
+    Option mensuelle sans engagement, valable apres acceptation
+    du dossier par Orange France, sur les communications voix
+    emises depuis la...<br/>
+    <a href="#esf_60_mentions_leg_2">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_2" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg2">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...France metropolitaine vers les pays de la zone Europe,
+    ou depuis ces pays vers le reste du monde. Appels
+    decomptes a la seconde apres...<br/>
+    <a href="#esf_60_mentions_leg_3">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_3" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg3">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...une 1ere minute indivisible. Minutes non reportables
+    d'un mois sur l'autre. En cas de resiliation ou de
+    changement d'option Europe...<br/>
+    <a href="#esf_60_mentions_leg_4">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_4" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg4">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...sans frontiere, le credit restant est perdu. Les appels
+    depuis et vers les autres pays sont decomptes des options
+    Europe sans frontiere...<br/>
+    <a href="#esf_60_mentions_leg_5">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_5" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg5">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...aux tarifs en vigueur. Option non cumulable et incompatible
+    avec toute offre relative aux appels vers et depuis l'etranger.<br/>
+    <a href="#esf_60_mentions_leg_6">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_6" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg6">
+    <title>Postpaid Euro ss Frontier 60</title>
+    Credit equivalent a 90 mn d'appels emis + 90 mn d'appels recus
+    dans les pays de la zone Europe ou Credit equivalent a 31 mn
+    d'appel emis...<br/>
+    <a href="#esf_60_mentions_leg_7">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_7" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg7">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...+ 90 mn d'appel recus dans les pays suivants Albanie,
+    Bielorussie, Bosnie-Herzegovine, Croatie, Georgie,
+    Macedoine, Moldavie, Serbie,...<br/>
+    <a href="#esf_60_mentions_leg_8">Suite</a>
+  </page>
+
+  <page tag="esf_60_mentions_leg_8" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid GP: Euro ss Frontier 60 m leg8">
+    <title>Postpaid Euro ss Frontier 60</title>
+    ...Ukraine, Montenegro, Kosovo.
+  </page>
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Postpaid: Service indisponible">
+    <title>Postpaid: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="system_failure" cost="free_pt" descr="Forfait SMS Postpaid GP : Echec souscription failure">
+  <redirect src="/orangef/postpaid_gp.xml#temporary"/>
+  </page>
+
+</pages>

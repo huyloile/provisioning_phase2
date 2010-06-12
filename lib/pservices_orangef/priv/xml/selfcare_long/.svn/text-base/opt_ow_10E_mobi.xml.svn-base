@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Orange World 10E">
+  
+  <!--Pour les options Orange World, il est possible de resouscrire à l'option-->
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_ow_10E_mobi&amp;#generique&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E deja active">
+    <title>option Orange World 10E deja active</title>
+    Bonjour. Votre option Orange World est deja activee.
+    Vous pourrez souscrire a nouveau a l'option Orange World a partir du
+    <include src="erl://svc_options:print_end_credit?opt_ow_10E_mobi"/>.
+    Orange vous remercie de votre appel.
+    Bonjour, votre option OW est deja activee.
+    Vous ne pourrez resouscrire a l'option OW qu'une fois votre option en cours epuisee.
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="offre_incomp_OW" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E deja active">
+    <title>option Orange World 10E deja active</title>
+    Bonjour, votre option OW est deja activee.
+    Vous ne pourrez resouscrire a l'option OW qu'une fois votre option en cours epuisee.
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E offre incompatible">
+    <title>option Orange World 10E offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option Orange World 10E + d'infos aupres de votre service clients au 722 depuis votre mobile (0,37E/min.).
+  </page>
+
+ <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option Orange World 10E solde insuffisant classique">
+   <title>option Orange World 10E solde insuffisant classique</title>
+   Bonjour, pour souscrire a l'option OW 10E, vous devez disposer de plus de
+   <include src="erl://svc_options:print_option_price?opt_ow_10E_mobi"/> sur votre compte mobicarte.<br/>
+   Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+<!-- Architecture Payante-->
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E menu generique">
+    <title>option Orange World 10E menu generique</title>
+    Avec l'option Orange World 10E, accedez sans contrainte aux services
+    Orange World a un tarif privilegie...<br/>
+    <a href="#plus_dinfos_payant">+ d'infos</a><br/>
+    <a href="#conditions_payant">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="plus_dinfos_payant" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page plus d infos">
+    <title>option Orange World 10E page plus d'infos</title>
+    Avec l'option Orange World 10E, beneficiez de 25h. ou 25Mo d'acces a OW valables 1 mois pour <include src="erl://svc_options:print_option_price?opt_ow_10E_mobi"/> + la TV Live gratuite et illimitee le WE.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions_payant">Conditions</a>
+  </page>
+
+  <page tag="conditions_payant" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions">
+    <title>option Orange World 10E page conditions</title>
+    Communications WAP et WEB en France metro. permettant l'acces au portail
+    Orange World et autres portails...<br/>
+    <a href="#conditions_payant2">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 1">
+    <title>option Orange World 10E page conditions suite 1</title>
+    ...Vos communications WAP et WEB sont decomptees au Ko au-dela d'un
+    premier palier de 10Ko indivisibles ou a la seconde au-dela de la
+    premiere minute indivisible...<br/>
+    <a href="#conditions_payant3">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 2">
+    <title>option Orange World 10E page conditions suite 2</title>
+    ...Tarification au volume (Ko) depuis un terminal GPRS parametre
+    sur le GPRS et a la duree (minute) depuis un terminal WAP non GPRS ou ...<br/>
+    <a href="#conditions_payant4">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 3">
+    <title>option Orange World 10E page conditions suite 3</title>
+    ...depuis un terminal GPRS non parametre sur le GPRS.
+    GPRS disponible dans la zone de couverture du reseau GPRS d'Orange France.<br/>
+    <a href="#conditions_payant5">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 3">
+    <title>option Orange World 10E page conditions suite 3</title>
+    Offre limitee a 30 000 souscriptions par mois glissant. Acces illimite a la television en direct et a la video en Fce metropolitaine a partir du portail OW Video<br/>
+    <a href="#conditions_payant6">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 3">
+    <title>option Orange World 10E page conditions suite 3</title>
+   (hors contenus payants) sur le reseau EDGE d'Orange France pdt 31 jours a compter de la souscription, du vendredi 21H30 au lundi 8h00.<br/>
+   <a href="#conditions_payant7">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant7" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page conditions suite 3">
+    <title>option Orange World 10E page conditions suite 3</title>
+    L'option Orange World 10E n'est pas compatible avec les options Orange World 3E et 6E.<br/>
+   <a href="#souscrire">Souscrire</a><br/>
+  </page>
+
+   <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 10E page souscrire">
+    <title>option Orange World 10E page souscrire</title>
+    Vous allez souscrire a l'option Orange World 10E
+    pour <include src="erl://svc_options:print_option_price?opt_ow_10E_mobi"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ow_10E_mobi&amp;#success,#solde_insuff,#failure">Confirmer</a>
+  </page>
+
+ <!-- Commun -->
+ 
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	nav="stop" descr="option Orange World 10E page apres confirmation">
+    <title>option Orange World 10E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option Orange World 10E sera activee. Merci de votre appel.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="opt_ow_nouveaute" cost="free_pt" descr="option Orange World 10E page
+	du menu nouveaute">
+    <title>option Orange World 10E page du menu nouveaute</title>
+    Vous ne pouvez plus vous passer des infos et de services Orange World ?
+    Avec Orange World 10E c'est 25 h ou 25 Mo valables 1 mois. A vos mobiles !<br/>
+    <a href="opt_ow_10E_mobi.xml">Souscrire</a>
+  </page>
+
+<!-- Restitution -->
+
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist" 
+	volatile="true" descr="Page de restitution a l'option Orange World 10E
+	avec cred">
+    <title>Page de restitution a l'option Orange World 10E avec cred</title>
+    Vous avez jusqu'au <include src="erl://svc_options:print_end_credit?opt_ow_10E_mobi"/> inclus
+    pour utiliser
+    vos <include src="erl://svc_options:print_balance_min?opt_ow_10E_mobi"/> ou
+    <include src="erl://svc_options:print_balance?opt_ow_10E_mobi&amp;ko"/> d'acces
+    a Orange World.
+  </page>
+  
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Orange World 10E
+	sans cred">
+    <title>Page de restitution a l'option Orange World 10E sans cred</title>
+    Votre option Orange World est actuellement epuisee.<br/>
+    <a href="opt_ow_10E_mobi.xml">Resouscrire a l'option Orange World</a>
+  </page>
+
+  
+</pages>

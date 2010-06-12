@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Orange World 6E">
+  
+  <!--Pour les options Orange World, il est possible de resouscrire à l'option-->
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_ow_6E_mobi&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E deja active">
+    <title>option Orange World 6E deja active</title>
+    Bonjour. Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> est
+    deja activee.
+    Vous pourrez souscrire a nouveau a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> a
+    partir du
+    <include src="erl://svc_options:print_end_credit?opt_ow_6E_mobi"/>.
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="offre_incomp_OW" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E deja active">
+    <title>option Orange World 6E deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> est
+    deja activee.
+    Vous ne pourrez y resouscrire qu'une fois la duree de validite de
+    votre option en cours epuisee.
+    Merci de votre appel.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E offre incompatible">
+    <title>option Orange World 6E offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile
+   (0,37E/min.). Merci de votre appel.
+  </page>
+  
+   <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E solde insuffisant classique">
+    <title>option Orange World 6E solde insuffisant classique</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/> sur
+    votre compte mobicarte. Merci de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E solde insuffisant M6">
+    <title>option Orange World 6E solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/> sur
+    votre compte principal. Merci de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E solde insuffisant Foot">
+    <title>option Orange World 6E solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/> sur
+    votre compte. Merci de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E solde insuffisant Click">
+    <title>option Orange World 6E solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/> sur
+    votre compte principal. Merci de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+<!-- Architecture Payante-->
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E menu generique">
+    <title>option Orange World 6E menu generique</title>
+    Avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>,
+    surfez a petit prix ! Accedez sans contrainte aux services
+    Orange World a un tarif privilegie...<br/>
+    <a href="#plus_dinfos_payant">+ d'infos</a><br/>
+    <a href="#conditions_payant">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="plus_dinfos_payant" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page plus d infos">
+    <title>option Orange World 6E page plus d'infos</title>
+    Pour <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/> profitez
+    de 10Mo/10h valables 1 mois pour consulter les services
+    Orange World : actus, sport, horoscope, programme TV...<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions_payant">Conditions</a>
+  </page>
+
+  <page tag="conditions_payant" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions">
+    <title>option Orange World 6E page conditions</title>
+    10 Mo pour naviguer sur Orange world, Gallery et Internet.
+    Communications WAP et WEB en France metropolitaine (sous reserve que
+    votre fournisseur d'acces ait ...<br/>
+    <a href="#conditions_payant2">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 2">
+    <title>option Orange World 6E page conditions suite 2</title>
+    ...demande a etre inclus dans l'offre). Ces communications sont
+    decomptees de l'option choisie au Ko au-dela d'un premier palier de 10Ko indivisible...<br/>
+    <a href="#conditions_payant3">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 3">
+    <title>option Orange World 6E page conditions suite 3</title>
+    ...en 3G/EDGE/GPRS ou a la seconde des la 1re seconde en CSD,
+    le cas echeant. Disponibles depuis un terminal compatible.
+    Liste sur www.orange.fr > mobile. ...<br/>
+    <a href="#conditions_payant4">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 4">
+    <title>option Orange World 6E page conditions suite 4</title>
+    ...En cas de perte des reseaux 3G, EDGE et GPRS, il sera propose
+    aux clients de continuer en CSD a concurrence de 10h sur l'option Internet...<br/>
+    <a href="#conditions_payant5">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 5">
+    <title>option Orange World 6E page conditions suite 5</title>
+    ...Offre incompatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_3E_mobi"/>.
+    Detail de l'offre et conditions specifiques sur www.orange.fr>mobile.
+    L'option est...<br/>
+    <a href="#conditions_payant6">Suite</a><br/>
+  </page>
+
+  <page tag="conditions_payant6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 6">
+    <title>option Orange World 6E page conditions suite 6</title>
+    ...valable 31 jours a compter de la souscription.
+    Souscription au 220 et #123# (appels gratuits)...<br/>
+    <a href="#conditions_payant7">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions_payant7" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_payant7_gen,35=#conditions_payant7_m6,39=#conditions_payant7_foot,40=#conditions_payant7_foot,41=#conditions_payant7_foot,42=#conditions_payant7_foot,43=#conditions_payant7_foot,44=#conditions_payant7_foot,default=#conditions_payant7_gen"/>
+  </page>
+
+  <page tag="conditions_payant7_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions suite 7">
+    <title>option Orange World 6E page conditions suite 7</title>
+    ...Le prix de l'option sera preleve sur le compte mobicarte du client
+    sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+  </page>
+
+  <page tag="conditions_payant7_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions M6 suite 7">
+    <title>option Orange World 6E page conditions M6 suite 7</title>
+    ...Le prix de l'option sera preleve sur le compte principal du client
+    sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+  </page>
+
+ <page tag="conditions_payant7_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page conditions Foot suite 7">
+    <title>option Orange World 6E page conditions Foot suite 7</title>
+    ...Le prix de l'option sera preleve sur le compte du client
+    sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+  </page>
+
+   <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Orange World 6E page souscrire">
+    <title>option Orange World 6E page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> pour
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ow_6E_mobi&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+ <!-- Commun -->
+ 
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	nav="stop" descr="option Orange World 6E page apres confirmation">
+    <title>option Orange World 6E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Orange World 6E page apres confirmation">
+    <title>option Orange World 6E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Orange World 6E page apres confirmation">
+    <title>option Orange World 6E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Orange World 6E page apres confirmation">
+    <title>option Orange World 6E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Orange World 6E page apres confirmation">
+    <title>option Orange World 6E page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> sera
+    activee. Merci de votre appel.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<!-- Restitution -->
+
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist" 
+	volatile="true" descr="Page de restitution a l'option Orange World 6E
+	avec cred">
+    <title>Page de restitution a l'option Orange World 6E avec cred</title>
+    Vous avez jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_ow_6E_mobi"/> inclus
+    pour utiliser vos
+    <include src="erl://svc_options:print_balance_min?opt_ow_6E_mobi"/> ou
+    <include src="erl://svc_options:print_balance?opt_ow_6E_mobi&amp;ko"/> d'acces
+    au portail Orange World via votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>.
+  </page>
+  
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Orange World 6E
+	sans cred">
+    <title>Page de restitution a l'option Orange World 6E sans cred</title>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> est
+    actuellement epuisee.<br/>
+    <a href="opt_ow_6E_mobi.xml">Resouscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/></a>
+  </page>
+
+<!-- PROMO -->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E menu generique promo">
+    <title>option Orange World 6E menu generique promo</title>
+    Votre 1ere option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> est
+    offerte jusqu'au
+    <include src="erl://svc_options:print_commercial_end_date?opt_ow_6E_mobi&amp;dmy"/>.
+    Surfez a petit prix et accedez sans contrainte aux services Orange World.<br/>
+    <a href="#souscrire_promo">Profiter de la promo</a><br/>
+    <a href="#conditions_promo">Conditions</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E page souscrire Promo">
+    <title>option Orange World 6E page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> offerte.
+    L'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> est
+    non compatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_3E_mobi"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ow_6E_mobi&amp;#success,#opt_deja_active,#solde_insuff_promo,#failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+  <page tag="souscrire_promo_apres_cond" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E page souscrire Promo">
+    <title>option Orange World 6E page souscrire Promo</title>
+    Vous allez beneficier de votre premiere option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> offerte.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ow_6E_mobi&amp;#success,#opt_deja_active,#solde_insuff_promo,#failure,#success,#success,#success,#success">Confirmer</a>
+  </page>
+
+  <page tag="solde_insuff_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option Orange World 6E solde insuffisant promo">
+    <title>option Orange World 6E solde insuffisant promo</title>
+    Bonjour, pour beneficier de votre 1ere souscription option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> offerte,
+    vous devez disposer d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/>.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo">
+    <title>option Orange World 6E page conditions promo</title>
+    Offre valable en France metropolitaine. 1er mois offert pour toute 1ere
+    souscription a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/> avant le
+    <include src="erl://svc_options:print_commercial_end_date?opt_ow_6E_mobi&amp;dmy"/> inclus
+    et...<br/>
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+    
+  <page tag="conditions_promo2" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_promo2_gen,35=#conditions_promo2_m6,default=#conditions_promo2_gen"/>
+  </page>
+
+  <page tag="conditions_promo2_gen" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 2">
+    <title>option Orange World 6E page conditions promo 2</title>
+    ...reservee aux clients mobicarte ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_ow_6E_mobi&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_ow_6E_mobi&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/>...<br/> 
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+
+  <page tag="conditions_promo2_m6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo M6 2">
+    <title>option Orange World 6E page conditions promo M6 2</title>
+    ...reservee aux clients d'une offre prepayee Orange ayant active leur ligne entre le
+    <include src="erl://svc_options:print_commercial_start_date?opt_ow_6E_mobi&amp;dmy"/> et le
+    <include src="erl://svc_options:print_commercial_end_date?opt_ow_6E_mobi&amp;dmy"/> inclus
+    sous reserve d'un credit > a
+    <include src="erl://svc_options:print_option_price?opt_ow_6E_mobi"/>...<br/> 
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+
+  <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 3">
+    <title>option Orange World 6E page conditions promo 3</title>
+    ...10 Mo pour naviguer sur Orange world, Gallery et Internet.
+    Communications WAP et WEB en France metropolitaine (sous reserve que
+    votre fournisseur d'acces ait...<br/>
+    <a href="#conditions_promo4">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo4" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 4">
+    <title>option Orange World 6E page conditions promo 4</title>
+    ...demande a etre inclus dans l'offre). Ces communications sont
+    decomptees de l'option choisie au Ko au-dela d'un premier palier de 10Ko indivisible...<br/>
+    <a href="#conditions_promo5">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo5" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 5">
+    <title>option Orange World 6E page conditions promo 5</title>
+    ...en 3G/EDGE/GPRS ou a la seconde des la 1re seconde en CSD,
+    le cas echeant. Disponibles depuis un terminal compatible.
+    Liste sur www.orange.fr > mobile...<br/>
+    <a href="#conditions_promo6">Suite</a>
+  </page>
+
+  <page tag="conditions_promo6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 6">
+    <title>option Orange World 6E page conditions promo 6</title>
+    ...En cas de perte des reseaux 3G, EDGE et GPRS, il sera propose
+    aux clients de continuer en CSD a concurrence de 10h sur l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_6E_mobi"/>...<br/>
+    <a href="#conditions_promo7">Suite</a>
+  </page>
+
+  <page tag="conditions_promo7" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 7">
+    <title>option Orange World 6E page conditions promo 7</title>
+    ...Offre incompatible avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ow_3E_mobi"/>.
+    Detail de l'offre et conditions specifiques sur www.orange.fr>mobile. L'option est...<br/>
+    <a href="#conditions_promo8">Suite</a>
+  </page>
+ 
+  <page tag="conditions_promo8" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option Orange World 6E page conditions promo 8">
+    <title>option Orange World 6E page conditions promo 8</title>
+    ...valable 31 jours a compter de la souscription.
+    Souscription au 220 et #123# (appels gratuits)<br/>
+    <a href="#souscrire_promo_apres_cond">Profiter de la promo</a>
+  </page>
+
+</pages>

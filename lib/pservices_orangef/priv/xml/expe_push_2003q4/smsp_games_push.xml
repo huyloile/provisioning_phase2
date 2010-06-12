@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+
+  <page tag="not_compatible" descr="Unsupported handset" nav="end">
+    Votre terminal ne permet pas d'acceder au service
+  </page>
+
+  <page tag="redirect_all_games">
+    <redirect src="file:/orangef/sms_games.xml#all_games"/>
+  </page>
+
+  <page tag="conf_ok_20" nav="end" descr="Confirmation ok taxé">
+    Vous allez bientot recevoir un SMS.<br/>
+    Pour jouer, répondez par SMS.<br/>
+    0.2E/envoi hors coût du SMS
+  </page>
+
+  <page tag="conf_ok_05" nav="end" descr="Confirmation ok tax 0.05">
+    Vous allez bientot recevoir un SMS.<br/>
+    Pour jouer, répondez par SMS.<br/>
+    0.05E/envoi hors coût du SMS
+  </page>
+
+  <page tag="confirm_ok" nav="end" descr="Confirmation ok tax 0.10">
+    Vous allez bientot recevoir un SMS.<br/>
+    Pour jouer, répondez par SMS.<br/>
+    0.10E/envoi hors coût du SMS
+  </page>
+
+  <page tag="confirm_nok" nav="end" descr="Service indisponible">
+    Le service est temporairement indisponible.<br/>
+    Veuillez essayer ultérieurement.
+  </page>
+
+  <!---------- Mobile Arena ---------->
+
+  <page tag="j1_10" backtext="notext" menutext="notext">
+    Gagnez plein de Kdos avec le jeu Mobile Arena: choisissez le moment ou vos adversaires ne peuvent pas se defendre et attaquez!<br/>
+    <a href="#Arena">S'inscrire</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <page tag="Arena" backtext="notext" descr="Menu Arena">
+    Mobile Aréna<br/>
+    <a href="#Kdos_arena">Les Kdos</a><br/>
+    <a href="#aide_arena">Comment jouer?</a><br/>
+    <a href="#inscription_arena">S'inscrire</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?ATT&20666&#conf_ok_05">Attaquer</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?NOMS&20666&#conf_ok_05">Liste de joueurs</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?INFO PAUSE&20666&#conf_ok_05">Pause</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?REPRENDRE&20666&#conf_ok_05">Reprendre</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?INFO CHAT&20666&#conf_ok_05">Chat</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?SCORE&20666&#conf_ok_05">Score</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?TOP10&20666&#conf_ok_05">Highscores</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?QUITTER&20666&#conf_ok_05">Se désinscrire</a><br/>
+  </page>
+
+  <page tag="Kdos_arena" menutext="notext" descr="Kdos Arena">
+    Chaque dimanche, le premier du classement à 23h59 gagne une GameBoy Advance.<br/>
+  </page>
+
+  <page tag="aide_arena" menutext="notext" descr="Aide arena">
+    Concours Mobile Arena<br/>
+    Attaquez vos adversaires lorsqu'ils ne peuvent pas se défendre et volez-leur leurs points!<br/>
+    Lorsque vous recevez un missile, vous devez l'intercepter au plus vite en envoyant "DEF" par SMS. Vous voulez dormir? Prenez 8h de pause (5).
+  </page>
+
+  <page tag="inscription_arena" backtext="notext" menutext="notext" descr="Saisie pseudo">
+    <form action="erl://svc_sms_portal:form_send?INSC&20666&#conf_ok_05">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caractères max):
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <!---------- Trivial Pursuit ---------->
+
+  <page tag="j2_11" backtext="notext" menutext="notext">
+    Decouvrez le trivial pursuit sur votre mobile et gagnez plein de Kdos!<br/>
+    <a href="#inscription">Jouer</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <page tag="inscription" backtext="notext" menutext="notext" descr="Saisie pseudo">
+    <form action="erl://svc_sms_portal:form_send?TP&20239">
+      <entry>
+        <prompt>
+          Veuillez saisir votre pseudo (entre 4 et 10 caracteres max):
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <!---------- Wabi ---------->
+
+  <page tag="j3_12" backtext="notext" menutext="notext">
+    Un petit compagnon a elever sur votre mobile?<br/>
+<a href="erl://svc_sms_portal:send_mes?WABI&20555">Tout connaitre sur les Wabi</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <!---------- Pendu ---------->
+
+  <page tag="j4_13" backtext="notext" menutext="notext">
+    Accordez-vous un petit moment de detente en jouant au Pendu sur votre mobile.<br/>
+    <a href="erl://svc_sms_portal:send_mes?PEN&20555">Jouer</a><br/>
+    <a href="erl://svc_sms_portal:send_mes?PEN SCO&20555">Voir le classement</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <!---------- SDA ---------->
+
+  <page tag="j5_14" backtext="notext" menutext="notext">
+    Pret a tenter de relever le defi avec le jeu Seigneur des Anneaux ?<br/>
+    <a href="erl://svc_sms_portal:send_mes?SDA&20808&#conf_ok_20">Jouer</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <!---------- Black Jack ---------->
+
+  <page tag="j6_15" backtext="notext" menutext="notext">
+    Une partie de Black Jack pour bien commencer la soiree ?<br/>
+    <a href="erl://svc_sms_portal:send_mes?BJK&20555">Jouer</a><br/>
+    <a href="#redirect_bjk">Commencer une nouvelle partie</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <page tag="redirect_bjk" descr="Redirect BJK">
+    <redirect src="file:/orangef/sms_games.xml#New_game"/>
+  </page>
+
+  <!---------- Defiquizz ---------->
+
+  <page tag="j7_16" backtext="notext" menutext="notext">
+    Choisissez un adversaire et defiez-le avec une serie de questions! Que le meilleur gagne!<br/>
+    <a href="#defiquizz">Jouer</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <page tag="defiquizz" descr="defiquizz">
+    <form action="erl://svc_sms_portal:form_send?INSC&20555">
+      <entry kind="alphanum">
+        <prompt>Veuillez saisir votre pseudo (entre 4 et 10 caracteres max):</prompt>
+      </entry>
+    </form>
+  </page>
+
+  <!---------- Love Match ---------->
+
+  <page tag="j8" backtext="notext" menutext="notext">
+    Etes-vous faits l'un pour l'autre?<br/>Donnez 2 prenoms et le Love Match vous dit tout!<br/>
+    <a href="erl://svc_sms_portal:send_mes?LOVE&20555">Jouer</a><br/>
+    <a href="#redirect_all_games">Les autres jeux</a><br/>
+  </page>
+
+  <!---------- Poker ---------->
+
+  <page tag="j9" backtext="notext" menutext="notext">
+    Une partie de Poker improvisee ce soir?<br/>
+    <a href="erl://svc_sms_portal:send_mes?POK&20555">Jouer</a><br/>
+    <a href="#redirect_poker">Lancer une nouvelle partie</a><br/>
+    <a href="#redirect_all_games">Tous les jeux</a><br/>
+  </page>
+
+  <page tag="redirect_poker" descr="Redirect Arena">
+    <redirect src="file:/orangef/sms_games.xml#New_game"/>
+  </page>
+
+</pages>

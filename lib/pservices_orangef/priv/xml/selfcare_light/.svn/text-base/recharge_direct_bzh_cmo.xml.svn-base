@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+<!--Service de rechargement MOBICARTE-->
+<page>
+  <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+</page>
+
+
+<page tag="start">
+  <redirect src="erl://svc_util:direct_access_length?14&amp;#direct_recharge&amp;#rech_light"/>
+</page>
+
+  <page tag="rech_light" descr="Rech Direct Bzh CMO: rappel" nav="end">
+    <title>Rappel Rechargement direct</title>
+    Saisissez #124*Code_a_14_chiffres# pour recharger
+  </page>
+
+  <page tag="direct_recharge">  
+    <!-- Switch to the correct home page depending on the profile  -->
+    <!-- attention pas de messages intermédaire-->
+    <redirect src="erl://svc_recharge_cmo:start"/>
+  </page>
+<!-- Script lié au rechargement -->
+
+       
+  <page tag="cag" backtext="notext" menutext="notext" descr="Rech Direct Bzh CMO: Form ph2">
+      <title>Rechargement Mobi: Form ph2</title>
+      <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Saisissez #124*Code_a_14_chiffres#</prompt>
+    </entry>
+  </form>
+  </page>
+
+  <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" descr="Rech Direct Bzh CMO: Form ph1">
+  <title>Rechargement Mobi: Form ph1</title>
+  <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>
+        Saisissez #124*Code_a_14_chiffres#
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ 
+  <page tag="sucess" descr="Rech Direct Bzh CMO: sucess" nav="end">
+    <title>Rechargement CMO en direct</title>
+    <include src="erl://svc_recharge:montant_recharge"/>EUR recharges.
+    Nouveau solde:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+  </page>
+  
+ 
+<!-- Succes page with D4 -->
+
+<page tag="sucess_cpte">
+  <redirect src="#sucess"/>
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="#sucess"/>
+</page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="#sucess"/>
+</page>
+
+
+
+<!-- Erecharge WE infini-->
+
+<page tag="weinf_deja_actif">
+  <redirect src="#sucess"/>
+</page>
+
+<page tag="succes_weinf">
+  <redirect src="#sucess"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription">
+    <redirect src="#sucess"/>
+ </page>
+
+<!-- Erecharge WE Europe/Maghreb-->
+<page tag="sucess_erech_europe">
+  <redirect src="#sucess"/>
+</page>
+
+<page tag="sucess_erech_maghreb">
+  <redirect src="#sucess"/>
+</page>
+
+<page tag="sucess_erech_smsmms">
+  <redirect src="#sucess"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Rech Direct Bzh CMO: Fermeture">
+    <title>Recharge CMO: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Réessayer ultérieurement.
+  </page>
+
+  <page tag="badprofil" nav="end" descr="Rech Direct Bzh CMO: not cmo">
+    <title>Reject : not mobi</title>
+    Vous n'avez pas acces à ce service reserve aux Bzh CMO.
+  </page>
+
+
+  <page tag="incompatible" backtext="notext" nav="end">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end">
+    <redirect src="#reject"/>  
+  </page>
+
+  <page tag="bad_code_ph2">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="bad_code_ph1">
+    <redirect src="#reject"/>    
+  </page>
+
+  <page tag="reject" backtext="notext" nav="end" descr="Rech Direct Bzh CMO: Reject">
+    <title>Reject : rech promo</title>
+    rechargement refuse:code non ok, verifiez le et recommencez.
+  </page>
+
+  <page tag="bad_code">
+    <redirect src="#reject"/> 
+  </page>
+
+  <page tag="system_failure" descr="Rech Direct Bzh CMO: Rechargement momentanèment impossible" nav="end">
+    <title>Reject : system failure</title>
+    Le service est momentanément interrompu.
+  </page>
+
+  <page tag="incompatible_offre" descr="Reject : recharge incompatible avec votre offre"><title>Reject : recharge incompatible avec offre</title>
+	Erreur<br/>
+	Rechargement refuse car les caracteres saisis correspondent a une recharge non compatible avec votre offre.
+  </page>
+
+</pages>

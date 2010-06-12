@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option CMO: Forfait Orange World">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="OW: souscription" cost="freept">
+   <title>Menu souscription OW</title>
+		Naviguez sur le portail, consultez vos mails et connectez vous a internet avec les options internet.<br/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?media_decouvrt&amp;#impact_decouvrt&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?media_internet&amp;#impact_internet&amp;nobr"/>
+   <!--include src="erl://svc_subscr_asmetier:print_if_inactif?media_internet_plus&amp;#impact_internet_plus&amp;nobr"/-->
+   </page>
+
+<page tag="impact_decouvrt" hist="dohist" descr="OW : impact souscription Decouverte Multimedia">
+   <title>Impact souscription Decouverte Multimedia</title>
+	 Pour 3E / mois, beneficiez de 5Mo pour decouvrir votre portail.<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?media_decouvrt&amp;#add_decouvrt,#error_msg">souscrire get impact</a>
+  </page>
+
+<page tag="impact_internet" hist="dohist" descr="OW : impact souscription option Internet">
+   <title>Impact souscription option Internet</title>
+		Pour 6E / mois, beneficiez de 10Mo ou de 30 min de Wi Fi pour vous connecter sur internet et consulter vos mails<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?media_internet&amp;#add_internet,#error_msg">souscrire get impact</a>
+  </page>
+
+<page tag="impact_internet_plus" hist="dohist" descr="OW : impact souscription option Plus Internet">
+   <title>Impact souscription option Plus Internet</title>
+		Pour 20E / mois, beneficiez de 60Mo ou de 2h30 min de Wi Fi pour vous connecter sur internet et consulter vos mails<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?media_internet_plus&amp;#add_internet_plus,#error_msg">souscrire get impact</a>
+  </page>
+
+<page tag="add_decouvrt" hist="dohist" descr="OW : souscription decouverte multimedia">
+   <title>OW : souscription decouverte multimedia</title>
+		Vous souhaitez souscrire a l'option decouverte multimedia<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?media_decouvrt&amp;#succes_add_decouverte,#succes_add_decouverte">valider</a>
+  </page>
+
+<page tag="add_internet" hist="dohist" descr="OW : souscription option Internet">
+   <title>OW : souscription option Internet</title>
+		Vous souhaitez souscrire a l'option internet 10Mo<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?media_internet&amp;#succes_add_internet,#succes_add_internet">valider</a>
+  </page>
+
+<page tag="add_internet_plus" hist="dohist" descr="OW : souscription option Plus Internet">
+   <title>OW : souscription Plus option Internet</title>
+		Vous souhaitez souscrire a l'option plus d'internet 60Mo<br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?media_internet_plus&amp;#succes_add_internet_plus,#succes_add_internet_plus">valider</a>
+  </page>
+
+<page tag="succes_add_decouverte" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_internet" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="succes_add_internet_plus" descr="Forfait OW: Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option <include src="erl://svc_subscr_asmetier:print_opt"/>.
+   Vous serez averti de l'activation de votre option par SMS
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="O.CMO : Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+</pages>

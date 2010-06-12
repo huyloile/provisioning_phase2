@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page">
+
+  <page>
+    <!-- Switch to the correct home page depending on the USSD size  -->
+    <redirect src="erl://svc_util:redirect_size?181&amp;#123_long&amp;#123_light"/>
+  </page>
+
+  <page tag="123_light">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#mobi_light,cmo=#cmo_light,postpaid=#postpaid_light,dme=#dme_light,omer=#omer_light,bzh_gp=#123_bzh_gp_n181,bzh_cmo=#bzh_cmo_light,tele2_gp=#tele2_gp,tele2_pp=#tele2_pp,virgin_prepaid=#virgin_prepaid,virgin_comptebloque=#virgin_comptebloque,virgin_postpaid=#virgin_postpaid,ten_postpaid=#ten_postpaid,monacell_postpaid=#monacell_postpaid,default=#anon"/>
+  </page>
+
+  <page tag="123_long">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#mobi_long,cmo=#cmo_long,postpaid=#postpaid_long,dme=#dme_long,opim=#opim_long,omer=#omer_long,symacom=#symacom,bzh_gp=#123_bzh_gp_181,bzh_cmo=#bzh_cmo_long,carrefour_prepaid=#carrefour_prepaid,carrefour_comptebloq=#carrefour_comptebloq,tele2_gp=#tele2_gp,tele2_pp=#tele2_pp,tele2_comptebloque=#tele2_comptebloque,virgin_prepaid=#virgin_prepaid,virgin_comptebloque=#virgin_comptebloque,virgin_postpaid=#virgin_postpaid,ten_comptebloque=#ten_comptebloque,ten_postpaid=#ten_postpaid,monacell_prepaid=#monacell_prepaid,monacell_comptebloqu=#monacell_comptebloqu,monacell_postpaid=#monacell_postpaid,nrj_prepaid=#nrj_prepaid,nrj_comptebloque=#nrj_comptebloque,default=#anon"/>
+  </page>
+
+  <page tag="123_bzh_gp_n181">
+    <redirect src="erl://svc_util:redirect_size?130&amp;#123_bzh_gp_130&amp;#not_allowed"/>
+  </page>
+
+  <page tag="123_bzh_gp_181">
+    bzh_gp
+    <!--redirect src="http://192.168.129.89:8996/suiviconso_bzh.xml"/-->
+  </page>
+
+  <page tag="123_bzh_gp_130">
+    bzh_gp
+    <!--redirect src="http://192.168.129.89:8996/suiviconso_bzh.xml"/-->
+  </page>
+
+ <page tag="no_sv">
+    <!-- Switch to the correct home page depending on the USSD size  -->
+    <redirect src="erl://svc_util:redirect_size?181&amp;#104_long&amp;#104_light"/>
+  </page>
+
+  <page tag="104_long">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#mobi_long,cmo=#cmo_long,postpaid=#postpaid_long,dme=#dme_long,omer=#omer_long,bzh_gp=#bzh_gp_long,bzh_cmo=#bzh_cmo_long,tele2_gp=#tele2_gp,tele2_pp=#tele2_pp,virgin_prepaid=#virgin_prepaid,virgin_comptebloque=#virgin_comptebloque,virgin_postpaid=#virgin_postpaid,ten_postpaid=#ten_postpaid,carrefour_prepaid=#carrefour_prepaid,monacell_prepaid=#monacell_prepaid,monacell_postpaid=#monacell_postpaid,default=#anon"/>
+  </page>
+
+ <page tag="104_light">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#mobi_light,cmo=#cmo_light,postpaid=#postpaid_light,dme=#dme_light,omer=#omer_light,bzh_gp=#bzh_gp_light,bzh_cmo=#bzh_cmo_light,tele2_gp=#tele2_gp,tele2_pp=#tele2_pp,virgin_prepaid=#virgin_prepaid,virgin_comptebloque=#virgin_comptebloque,virgin_postpaid=#virgin_postpaid,ten_postpaid=#ten_postpaid,carrefour_prepaid=#carrefour_prepaid,monacell_prepaid=#monacell_prepaid,monacell_postpaid=#monacell_postpaid,default=#anon"/>
+  </page>
+
+  <page tag="mobi_long">
+    <redirect src="erl://svc_util_of:redir_3g?#mobi_long_3g&amp;#mobi_long_default"/>
+  </page>
+  <page tag="mobi_long_3g" nav="end">
+    mobi long 3g
+  </page>
+  <page tag="mobi_long_default" nav="end">
+    mobi long default
+  </page>
+
+  <page tag="mobi_light" nav="end">
+    mobi light
+  </page>
+
+  <page tag="cmo_long" nav="end">
+    cmo long
+  </page>
+ 
+  <page tag="cmo_light" nav="end">
+    cmo light
+  </page>
+
+ <page tag="dme_long" nav="end">
+    dme long
+  </page>
+ <page tag="opim_long" nav="end">
+    opim long
+  </page>
+ 
+  <page tag="dme_light" nav="end">
+    dme light
+  </page>
+
+  <page tag="anon" nav="end">
+    anon
+  </page>
+
+ <page tag="omer_long" nav="end">
+    omer long
+  </page>
+
+  <page tag="omer_light" nav="end">
+    omer light
+  </page>
+
+  <page tag="symacom" nav="end">
+    symacom
+  </page>
+
+
+ <page tag="bzh_cmo_long" nav="end">
+    bzh_cmo long
+  </page>
+
+  <page tag="bzh_cmo_light" nav="end">
+    bzh_cmo light
+  </page>
+
+  <page tag="postpaid_long">
+    <redirect src="erl://svc_util_of:redir_3g?#postpaid_long_3g&amp;#postpaid_long_default"/>
+  </page>
+  <page tag="postpaid_long_3g" nav="end">
+    postpaid 3g
+  </page>
+  <page tag="postpaid_long_default" nav="end">
+    postpaid default
+  </page>
+
+  <page tag="postpaid_light" nav="end">
+    postpaid light
+  </page>
+
+  <page tag="bzh_gp_long" nav="end">
+    bzh_gp long
+  </page>
+
+  <page tag="bzh_gp_light" nav="end">
+    bzh_gp light
+  </page>
+
+  <page tag="tele2_gp" nav="end">
+    tele2_gp
+  </page>
+
+  <page tag="tele2_pp" nav="end">
+   tele2_pp
+  </page>
+
+  <page tag="tele2_comptebloque" nav="end">
+    tele2_comptebloque
+  </page>
+
+  <page tag="virgin_prepaid" nav="end">
+   virgin_prepaid
+  </page>
+
+  <page tag="virgin_comptebloque" nav="end">
+   virgin_comptebloque
+  </page>
+
+  <page tag="virgin_postpaid" nav="end">
+   virgin_postpaid
+  </page>
+
+  <page tag="ten_comptebloque" nav="end">
+    ten_comptebloque
+  </page>
+
+  <page tag="ten_postpaid" nav="end">
+    ten_postpaid
+  </page>
+
+  <page tag="carrefour_prepaid" nav="end">
+    carrefour_prepaid
+  </page>
+
+  <page tag="carrefour_comptebloq" nav="end">
+    carrefour_comptebloq
+  </page>
+
+  <page tag="monacell_prepaid" nav="end">
+    monacell_prepaid
+  </page>
+
+  <page tag="monacell_comptebloqu" nav="end">
+    monacell_comptebloqu
+  </page>
+
+  <page tag="monacell_postpaid" nav="end">
+    monacell_postpaid
+  </page>
+
+  <page tag="nrj_prepaid" nav="end">
+    nrj_prepaid
+  </page>
+
+  <page tag="nrj_comptebloque" nav="end">
+    nrj_comptebloque
+  </page>
+
+   <page tag="desync" hist="donthist" nav="end" log="EDesync"
+    cost="system_free_pt">
+   <title>Desync req</title>
+     <lang>
+       <fr>Votre session a été interrompue.<br/>Veuillez vous reconnecter.</fr>
+       <en>Your session has timed out.<br/>Please reconnect.</en>
+     </lang>
+  </page>
+
+  <page tag="not_allowed" hist="donthist" nav="end" cost="system_free_pt" log="ENotAllowed">
+   <title>Not_allowed req</title>
+     <lang>
+       <fr>Vous n'avez pas accès à ce service.</fr>
+       <en>You do not have access to this service.</en>
+     </lang>
+  </page>
+
+ 
+<!-- Error pages -->
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt">
+    <title>Reject : temporary error</title>
+    Le service est temporairement indisponible. Veuillez nous en excuser,
+    et vous reconnecter ultérieurement. Merci.<br/>
+  </page>
+
+
+  <page tag="spider_service_indisponible" nav="end" descr="Spider: service indisponible">
+    spider_service_indisponible
+  </page>
+
+  <page tag="spider_acces_refuse" nav="end" descr="Spider: acces refuse">
+    spider_acces_refuse
+  </page>
+
+  <page tag="spider_probleme_technique" nav="end" descr="Spider: probleme technique">
+    spider_probleme_technique
+  </page>
+
+  <page tag="spider_dossier_inconnu" nav="end" descr="Spider: dossier inconnu">
+    spider_dossier_inconnu
+  </page>
+
+
+ </pages>

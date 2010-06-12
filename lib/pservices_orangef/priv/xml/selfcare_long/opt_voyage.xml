@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Voyage">
+  
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_voyage&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <!-- SCRIPTS DE L OPTION VOYAGE -->
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage deja active">
+    <title>option voyage deja active</title>
+    Bonjour, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> est
+    deja activee.
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page offre incompatible">
+    <title>option Voyage page offre incompatible</title>
+    Bonjour, vous ne pouvez pas souscrire au
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/>.
+    Pour + d'infos contactez votre service clients au 722 (0,37 E/min.).
+    Orange vous remercie de votre appel.
+  </page>
+
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage solde insuffisant">
+    <title>option voyage solde insuffisant</title>
+    Bonjour, pour souscrire a
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/>,
+    vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_voyage"/>
+    sur votre compte mobicarte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage menu generique">
+    <title>option voyage menu generique</title>
+    Doublez votre temps de communications depuis l'etranger avec le
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> !<br/>
+    <a href="#plus_infos">+ d'infos</a><br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+  <page tag="plus_infos" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page + d'infos">
+    <title>option voyage page + d'infos</title>
+    10 euros achetes pour vos appels emis ou recu depuis l'etranger=10 euros offerts.
+    Ce credit de communications de 20 euros est valable 30 jours!<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page conditions">
+    <title>option Voyage page conditions</title>
+    Offre valable une seule fois du
+    <include src="erl://svc_options:print_commercial_start_date?opt_voyage&amp;dmy"/> au
+    <include src="erl://svc_options:print_commercial_end_date?opt_voyage&amp;dmy"/>.
+    Credit de communications de 20E valable 30 jours et utilisable pour les appels
+    emis et recus a l'etranger...<br/>
+    <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page conditions Suite 1">
+    <title>option Voyage page conditions Suite 1</title>
+    Pour <include src="erl://svc_options:print_option_price?opt_voyage"/>, vous
+    beneficiez de 12mn de com depuis les pays de la Zone1 (appels
+    emis et recus) soit 8mn en Zone2 ou 5mn en Zone3. Valable 30j.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+    <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page conditions suite 1">
+    <title>option Voyage page conditions suite 1</title>
+    ...sur les reseaux partenaires d'Orange France.
+    Offre incompatible avec les offres et promotions de communications vers 
+    et/ou depuis l'etranger en cours...<br/>
+    <a href="#conditions_suite2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page conditions suite 2">
+    <title>option Voyage page conditions suite 2</title>
+    ...Communications decomptees a la seconde des la premiere seconde.
+    Communications hors et au-dela du crédit ...<br/>
+    <a href="#conditions_suite3">Suite</a>
+  </page>
+
+  <page tag="conditions_suite3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Voyage page conditions suite 3">
+    <title>option Voyage page conditions suite 3</title>
+    ...facturees aux  tarifs en vigueur depuis l'etranger.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page souscrire">
+    <title>option voyage page souscrire</title>
+    Vous allez souscrire au
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> pour
+    <include src="erl://svc_options:print_option_price?opt_voyage"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_voyage&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer
+    </a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page apres confirmation">
+    <title>option voyage page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> sera
+    active. Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page apres confirmation">
+    <title>option voyage page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> sera
+    active. Merci de votre appel.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page apres confirmation">
+    <title>option voyage page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> sera
+    active. Merci de votre appel.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page apres confirmation">
+    <title>option voyage page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> sera
+    active. Merci de votre appel.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option voyage page apres confirmation">
+    <title>option voyage page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> sera
+    active. Merci de votre appel.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist" volatile="true" 
+        descr="Page de restitution a l'option Bonus sans frontiere (voyage) avec credit">
+    <title>Page de restitution a l'option voyage avec credit</title>
+    Il vous reste <include src="erl://svc_options:print_balance?opt_voyage"/> E
+    inclus dans votre
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> valables
+    jusqu'au
+    <include src="erl://svc_options:print_end_credit?opt_voyage"/> pour
+    telephoner et recevoir des appels depuis l'etranger.
+  </page>
+  
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist" volatile="true" 
+        descr="Page de restitution a l'option Bonus sans frontiere (voyage) sans credit">
+    <title>Page de restitution a l'option voyage sans credit</title>
+    Votre 
+    <include src="erl://svc_options:print_commercial_name?opt_voyage"/> est
+    epuise.<br/>
+  </page>
+
+  <page tag="nouveaute" cost="free_pt" hist="dohist" volatile="true"
+	descr="Page du menu nouveaute de l'option Bonus sans frontiere">
+    <title>Page du menu nouveaute de l'option Bonus sans frontiere</title>
+    Jusqu'au 18/01/06 Orange double votre credit d'appels depuis l'etranger :
+    10E = 10E offerts ! Votre mobicarte vous accompagne partout !<br/>
+    <a href="opt_voyage.xml">Souscrire</a>
+  </page>
+  
+  
+</pages>

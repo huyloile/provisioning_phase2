@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SachemManagerService" targetNamespace="urn:sachem.service.ecare/G8" xmlns:tns="urn:sachem.service.ecare/G8" xmlns:ns1="urn:exception.ecare" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn:sachem.exception.ecare" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="urn:exception.ecare" schemaLocation="WSDL/CommunException.xsd"/>
+<import namespace="urn:sachem.exception.ecare" schemaLocation="WSDL/SachemException.xsd"/>
+<import namespace="urn:sachem.service.ecare/G8" schemaLocation="WSDL/SachemService.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="isAliveResponse">
+    <wsdl:part name="parameters" element="tns:isAliveResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOptionsDossierResponse">
+    <wsdl:part name="parameters" element="tns:getOptionsDossierResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargementCBResponse">
+    <wsdl:part name="parameters" element="tns:doRechargementCBResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionEtatDossierIncorrect">
+    <wsdl:part name="ExceptionEtatDossierIncorrect" element="ns2:ExceptionEtatDossierIncorrect">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCodesLibellesPourEdelweiss">
+    <wsdl:part name="parameters" element="tns:getCodesLibellesPourEdelweiss">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCode">
+    <wsdl:part name="parameters" element="tns:getCode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibelleResponse">
+    <wsdl:part name="parameters" element="tns:getLibelleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistorique">
+    <wsdl:part name="parameters" element="tns:getHistorique">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRechargeableParentChild">
+    <wsdl:part name="parameters" element="tns:isRechargeableParentChild">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistoriqueResponse">
+    <wsdl:part name="parameters" element="tns:getHistoriqueResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOptionsCatalogue">
+    <wsdl:part name="parameters" element="tns:getOptionsCatalogue">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOptionsCatalogueResponse">
+    <wsdl:part name="parameters" element="tns:getOptionsCatalogueResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersion">
+    <wsdl:part name="parameters" element="tns:getVersion">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCodesLibellesPourEdelweissResponse">
+    <wsdl:part name="parameters" element="tns:getCodesLibellesPourEdelweissResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getValeurParametre">
+    <wsdl:part name="parameters" element="tns:getValeurParametre">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargerCache">
+    <wsdl:part name="parameters" element="tns:doRechargerCache">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isAlive">
+    <wsdl:part name="parameters" element="tns:isAlive">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActionPrestationResponse">
+    <wsdl:part name="parameters" element="tns:doActionPrestationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ECareExceptionTechnique">
+    <wsdl:part name="ECareExceptionTechnique" element="ns1:ECareExceptionTechnique">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargementCB">
+    <wsdl:part name="parameters" element="tns:doRechargementCB">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoDossier">
+    <wsdl:part name="parameters" element="tns:getInfoDossier">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationOption">
+    <wsdl:part name="parameters" element="tns:doModificationOption">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doActionPrestation">
+    <wsdl:part name="parameters" element="tns:doActionPrestation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistoriqueRecharge">
+    <wsdl:part name="parameters" element="tns:getHistoriqueRecharge">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="parameters" element="tns:getVersionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoComptes">
+    <wsdl:part name="parameters" element="tns:getInfoComptes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoDossierResponse">
+    <wsdl:part name="parameters" element="tns:getInfoDossierResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRechargeableCBResponse">
+    <wsdl:part name="parameters" element="tns:isRechargeableCBResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRechargeableCB">
+    <wsdl:part name="parameters" element="tns:isRechargeableCB">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionDossierNonOrange">
+    <wsdl:part name="ExceptionDossierNonOrange" element="ns2:ExceptionDossierNonOrange">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ECareExceptionFonctionnelle">
+    <wsdl:part name="ECareExceptionFonctionnelle" element="ns1:ECareExceptionFonctionnelle">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doRechargerCacheResponse">
+    <wsdl:part name="parameters" element="tns:doRechargerCacheResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getValeurParametreResponse">
+    <wsdl:part name="parameters" element="tns:getValeurParametreResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInfoComptesResponse">
+    <wsdl:part name="parameters" element="tns:getInfoComptesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionOptionRequise">
+    <wsdl:part name="ExceptionOptionRequise" element="ns2:ExceptionOptionRequise">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistoriqueSuite">
+    <wsdl:part name="parameters" element="tns:getHistoriqueSuite">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistoriqueSuiteResponse">
+    <wsdl:part name="parameters" element="tns:getHistoriqueSuiteResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doModificationOptionResponse">
+    <wsdl:part name="parameters" element="tns:doModificationOptionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionOptionInterdite">
+    <wsdl:part name="ExceptionOptionInterdite" element="ns2:ExceptionOptionInterdite">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLibelle">
+    <wsdl:part name="parameters" element="tns:getLibelle">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOptionsDossier">
+    <wsdl:part name="parameters" element="tns:getOptionsDossier">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExceptionAncienneteRequise">
+    <wsdl:part name="ExceptionAncienneteRequise" element="ns2:ExceptionAncienneteRequise">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHistoriqueRechargeResponse">
+    <wsdl:part name="parameters" element="tns:getHistoriqueRechargeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCodeResponse">
+    <wsdl:part name="parameters" element="tns:getCodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isRechargeableParentChildResponse">
+    <wsdl:part name="parameters" element="tns:isRechargeableParentChildResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SachemManager">
+    <wsdl:operation name="isAlive">
+      <wsdl:input name="isAlive" message="tns:isAlive">
+    </wsdl:input>
+      <wsdl:output name="isAliveResponse" message="tns:isAliveResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCode">
+      <wsdl:input name="getCode" message="tns:getCode">
+    </wsdl:input>
+      <wsdl:output name="getCodeResponse" message="tns:getCodeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLibelle">
+      <wsdl:input name="getLibelle" message="tns:getLibelle">
+    </wsdl:input>
+      <wsdl:output name="getLibelleResponse" message="tns:getLibelleResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargerCache">
+      <wsdl:input name="doRechargerCache" message="tns:doRechargerCache">
+    </wsdl:input>
+      <wsdl:output name="doRechargerCacheResponse" message="tns:doRechargerCacheResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargementCB">
+      <wsdl:input name="doRechargementCB" message="tns:doRechargementCB">
+    </wsdl:input>
+      <wsdl:output name="doRechargementCBResponse" message="tns:doRechargementCBResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isRechargeableParentChild">
+      <wsdl:input name="isRechargeableParentChild" message="tns:isRechargeableParentChild">
+    </wsdl:input>
+      <wsdl:output name="isRechargeableParentChildResponse" message="tns:isRechargeableParentChildResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionDossierNonOrange" message="tns:ExceptionDossierNonOrange">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionEtatDossierIncorrect" message="tns:ExceptionEtatDossierIncorrect">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValeurParametre">
+      <wsdl:input name="getValeurParametre" message="tns:getValeurParametre">
+    </wsdl:input>
+      <wsdl:output name="getValeurParametreResponse" message="tns:getValeurParametreResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input name="getVersion" message="tns:getVersion">
+    </wsdl:input>
+      <wsdl:output name="getVersionResponse" message="tns:getVersionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoDossier">
+      <wsdl:input name="getInfoDossier" message="tns:getInfoDossier">
+    </wsdl:input>
+      <wsdl:output name="getInfoDossierResponse" message="tns:getInfoDossierResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoriqueRecharge">
+      <wsdl:input name="getHistoriqueRecharge" message="tns:getHistoriqueRecharge">
+    </wsdl:input>
+      <wsdl:output name="getHistoriqueRechargeResponse" message="tns:getHistoriqueRechargeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoriqueSuite">
+      <wsdl:input name="getHistoriqueSuite" message="tns:getHistoriqueSuite">
+    </wsdl:input>
+      <wsdl:output name="getHistoriqueSuiteResponse" message="tns:getHistoriqueSuiteResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOptionsCatalogue">
+      <wsdl:input name="getOptionsCatalogue" message="tns:getOptionsCatalogue">
+    </wsdl:input>
+      <wsdl:output name="getOptionsCatalogueResponse" message="tns:getOptionsCatalogueResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCodesLibellesPourEdelweiss">
+      <wsdl:input name="getCodesLibellesPourEdelweiss" message="tns:getCodesLibellesPourEdelweiss">
+    </wsdl:input>
+      <wsdl:output name="getCodesLibellesPourEdelweissResponse" message="tns:getCodesLibellesPourEdelweissResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistorique">
+      <wsdl:input name="getHistorique" message="tns:getHistorique">
+    </wsdl:input>
+      <wsdl:output name="getHistoriqueResponse" message="tns:getHistoriqueResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationOption">
+      <wsdl:input name="doModificationOption" message="tns:doModificationOption">
+    </wsdl:input>
+      <wsdl:output name="doModificationOptionResponse" message="tns:doModificationOptionResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoComptes">
+      <wsdl:input name="getInfoComptes" message="tns:getInfoComptes">
+    </wsdl:input>
+      <wsdl:output name="getInfoComptesResponse" message="tns:getInfoComptesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOptionsDossier">
+      <wsdl:input name="getOptionsDossier" message="tns:getOptionsDossier">
+    </wsdl:input>
+      <wsdl:output name="getOptionsDossierResponse" message="tns:getOptionsDossierResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doActionPrestation">
+      <wsdl:input name="doActionPrestation" message="tns:doActionPrestation">
+    </wsdl:input>
+      <wsdl:output name="doActionPrestationResponse" message="tns:doActionPrestationResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isRechargeableCB">
+      <wsdl:input name="isRechargeableCB" message="tns:isRechargeableCB">
+    </wsdl:input>
+      <wsdl:output name="isRechargeableCBResponse" message="tns:isRechargeableCBResponse">
+    </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique" message="tns:ECareExceptionTechnique">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionOptionInterdite" message="tns:ExceptionOptionInterdite">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionEtatDossierIncorrect" message="tns:ExceptionEtatDossierIncorrect">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionOptionRequise" message="tns:ExceptionOptionRequise">
+    </wsdl:fault>
+      <wsdl:fault name="ExceptionAncienneteRequise" message="tns:ExceptionAncienneteRequise">
+    </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle" message="tns:ECareExceptionFonctionnelle">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SachemManagerServiceSoapBinding" type="tns:SachemManager">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="isAlive">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="isAlive">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isAliveResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCode">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCode">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCodeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLibelle">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLibelle">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLibelleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargementCB">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doRechargementCB">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doRechargementCBResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doRechargerCache">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doRechargerCache">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doRechargerCacheResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValeurParametre">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getValeurParametre">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getValeurParametreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isRechargeableParentChild">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="isRechargeableParentChild">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isRechargeableParentChildResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionDossierNonOrange">
+        <soap:fault name="ExceptionDossierNonOrange" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionEtatDossierIncorrect">
+        <soap:fault name="ExceptionEtatDossierIncorrect" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVersion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoDossier">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInfoDossier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInfoDossierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoriqueRecharge">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getHistoriqueRecharge">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHistoriqueRechargeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoriqueSuite">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getHistoriqueSuite">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHistoriqueSuiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOptionsCatalogue">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOptionsCatalogue">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOptionsCatalogueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCodesLibellesPourEdelweiss">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCodesLibellesPourEdelweiss">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCodesLibellesPourEdelweissResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getHistorique">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getHistorique">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHistoriqueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doModificationOption">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doModificationOption">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doModificationOptionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getInfoComptes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInfoComptes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInfoComptesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOptionsDossier">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOptionsDossier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOptionsDossierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="doActionPrestation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doActionPrestation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doActionPrestationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isRechargeableCB">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="isRechargeableCB">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isRechargeableCBResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ECareExceptionTechnique">
+        <soap:fault name="ECareExceptionTechnique" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionOptionInterdite">
+        <soap:fault name="ExceptionOptionInterdite" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionEtatDossierIncorrect">
+        <soap:fault name="ExceptionEtatDossierIncorrect" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionOptionRequise">
+        <soap:fault name="ExceptionOptionRequise" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionAncienneteRequise">
+        <soap:fault name="ExceptionAncienneteRequise" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ECareExceptionFonctionnelle">
+        <soap:fault name="ECareExceptionFonctionnelle" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SachemManagerService">
+    <wsdl:port name="SachemManagerPort" binding="tns:SachemManagerServiceSoapBinding">
+      <soap:address location="http://localhost:9090/hello"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

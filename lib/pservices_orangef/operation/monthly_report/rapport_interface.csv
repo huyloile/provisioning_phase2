@@ -1,0 +1,102 @@
+## NUMBER OF SESSIONS
+count,session_routing_v2,{session_end,{subscription,;Nombre de sessions
+count,session_routing_v2,{session_end,{subscription,"mobi";Nombre de sessions OF Prépayés
+count,session_routing_v2,{session_end,{subscription,"cmo";Nombre de sessions OF CMO
+count,session_routing_v2,{session_end,{subscription,"postpaid";Nombre de sessions OF Postpayés
+count,session_routing_v2,{session_end,{subscription,"dme";Nombre de sessions DME
+count,session_routing_v2,{session_end,{subscription,"omer";Nombre de sessions Bzh Prépayés
+count,session_routing_v2,{session_end,{subscription,"bzh_cmo";Nombre de sessions Bzh CMO
+count,session_routing_v2,{session_end,{subscription,"bzh_gp";Nombre de sessions Bzh Postpayés
+count,session_routing_v2,{session_end,{subscription,"tele2_pp";Nombre de sessions Tele2 Prépayés
+count,session_routing_v2,{session_end,{subscription,"tele2_comptebloque";Nombre de sessions Tele2 CMO
+count,session_routing_v2,{session_end,{subscription,"tele2_gp";Nombre de sessions Tele2 Postpayés
+count,session_routing_v2,{session_end,{subscription,"virgin_prepaid";Nombre de sessions Virgin Prépayés
+count,session_routing_v2,{session_end,{subscription,"virgin_comptebloque";Nombre de sessions Virgin CMO
+count,session_routing_v2,{session_end,{subscription,"virgin_postpaid";Nombre de sessions Virgin Postpayés
+count,session_routing_v2,{session_end,{subscription,"carrefour_prepaid";Nombre de sessions Carrefour Prépayés
+count,session_routing_v2,{session_end,{subscription,"ten_postpaid";Nombre de sessions Ten Postpayés
+count,session_routing_v2,{session_end,{subscription,"monacell_prepaid";Nombre de sessions Monacell Prépayées
+count,session_routing_v2,{session_end,{subscription,"monacell_postpaid";Nombre de sessions Monacell Postpayés
+count,session_routing_v2,{session_end,{subscription,"anon";Nombre de sessions Echecs
+count,session_routing_v2,{session_end,{subscription,{na,anonymous};Nombre de sessions Anonymes
+## USSD INTERFACES
+{interface,ussd_specific,.*msg;Nombre de messages USSD
+{interface,ussd_specific,incoming_msg;Nombre de messages USSD entrants
+{interface,ussd_specific,outgoing_msg;Nombre de messages USSD sortants
+send_message_failed;Echecs d'envoi de message USSD
+license.*rate_exceeded.*,msg;Messages USSD rejetés pour dépassement de licence
+## INTERFACES OK
+xmlhttp,get_or_post;XMLHTTP OK
+interface,cbhttp,response_ok;CBHTTP OK
+sms_mms_infos,sms_mms_infos_response;SMSINFOS OK
+ocf_rdp,response_ok;OCF OK
+sachem,decode_result_list;SACHEM OK
+{trace,wifi_request,wifi_result};WIFI OK
+oto_request,oto_result;ONE2ONE OK
+spider.*getBalance;SPIDER OK
+trace,asmetier_webserv,[gs];AS METIER OK
+interface,ascii_over_http,request;Rechargement TELE2 OK
+mqseries_router,request;MQseries
+batch_ocfrdp,read;Batch OCF : Lectures
+batch_ocfrdp,update;Batch OCF : Mises à Jour
+batch_ocfrdp,delete;Batch OCF : Suppressions
+billing_standard_of,cdr_generated;CRA envoyés
+billing_standard_of,cdr_dme_sent;CRA DME envoyés
+billing_standard_of,unable_to_bill;CRA perdus
+billing_standard_of,cdr_dme_not_sent;CRA DME non-envoyés
+opal,consult_;OPAL OK
+## INTERFACES KO
+failure.*xmlhttp_cra;XMLHTTP KO
+interface,cbhttp,response_ko;CBHTTP KO
+failure.*svc.*infos;SMSMMSINFOS KO
+count,ocf_rdp,response_ko;OCF KO
+sachem,xml_generic_failure|svc_recharge,bad_resp_status_from_sachem|svc_recharge,bad_response_from_sachem|sachem,xml_generic_exit|svc_sachem,send_consult_account|svc_options_mobi,svi_c_op_ko;SACHEM KO
+sms_mms_infos,sms_mms_infos_timeout|sms_mms_infos,sms_mms_infos_exit|sms_mms_infos,error|sms_mms_infos,unknown_type_of_reply;SMSINFOS KO
+{failure,wifi_request,wifi_exit};WIFI KO
+warning,oto_request,[^r];ONE2ONE KO
+failure,spider;SPIDER KO
+failure,asmetier_webserv;AS METIER KO
+interface,ascii_over_http,response_ko;Rechargement TELE2 KO
+failure,svc_m5_orangef|opal,connect_failed|opal,reply_timeout|opal,tcp_closed; OPAL KO
+## RESPONSE TIME
+avg;stats,{httpclient_specific,.virgin,.*},response_time}|stats,{httpclient_specific,.vpbx,.*},response_time}|stats,{httpclient_specific,.mipc,.*},response_time}|stats,{httpclient_specific,.sondage,.*},response_time}|stats,{httpclient_specific,.bzh_gp,.*},response_time}|stats,{httpclient_specific,.ten_postpaid,.*},response_time};XMLHTTP ms
+avg;stats.*httpclient_specific.*cb_http,.*response_time;CBHTTP ms
+avg;{stats,{httpclient_specific,.smsmmsinfos,.*},response_time};SMSMMSINFOS ms
+avg;{perf,ocf_rdp,response_delay};OCF ms
+avg;{perf,sms_specific,response_time};SACHEM ms
+avg;stats,mqseries_server,{response_time,io_wifi_;WIFI ms
+avg;{stats,mqseries_server,{response_time,io_oto_;ONE2ONE ms
+avg;{stats,{httpclient_specific,.spiderG4R3,.*},response_time};SPIDER ms
+avg;stats.*httpclient_specific.*asmetier,.*response_time;AS METIER ms
+avg;stats.*httpclient_specific.*tele2_pp,.*response_time;;Rechargement TELE2 ms
+avg;{perf,ussd_specific,response_time};Cellgate ACK DELAY ms
+avg;stats.*httpclient_specific.*bzh_gp,.*response_time;Breizh Postpayés ms
+avg;stats.*httpclient_specific.*virgin,.*response_time;Virgin Postpayés ms
+avg;stats.*httpclient_specific.*ten_postpaid,.*response_time;Ten Postpayés ms
+avg;stats.*httpclient_specific.*opal,primary.*response_time;OPAL ms
+## SERVICE CODES
+count,session_routing_v2,{session_end,{service_code,"#100"}}};#100
+count,session_routing_v2,{session_end,{service_code,"#101"}}};#101
+count,session_routing_v2,{session_end,{service_code,"#102"}}};#102
+count,session_routing_v2,{session_end,{service_code,"#111"}}};#111
+count,session_routing_v2,{session_end,{service_code,"#122"}}};#122
+count,session_routing_v2,{session_end,{service_code,"#123"}}};#123
+count,session_routing_v2,{session_end,{service_code,"#124"}}};#124
+count,session_routing_v2,{session_end,{service_code,"#125"}}};#125
+count,session_routing_v2,{session_end,{service_code,"#126"}}};#126
+count,session_routing_v2,{session_end,{service_code,"#127"}}};#127
+count,session_routing_v2,{session_end,{service_code,"#140"}}};#140
+count,session_routing_v2,{session_end,{service_code,"#12"}}};#12
+count,session_routing_v2,{session_end,{service_code,"\*12"}}};*12
+count,session_routing_v2,{session_end,{service_code,"\*144"}}};*144
+count,session_routing_v2,{session_end,{service_code,"\?"}}};Codes invalides
+## UCP INTERFACES
+{count,svc_call_me_back,send_sms_orange};SMS Rappelle-moi vers Orange
+{count,svc_call_me_back,send_sms_cvf};SMS Rappelle-moi vers SFR/Bouygues
+{failure,svc_call_me_back,send_sms};Echecs SMS Rappelle-moi
+{count,svc_recharge_moi,send_sms_orange};SMS Recharge-moi vers Orange
+{count,svc_recharge_moi,send_sms_cvf};SMS Recharge-moi vers SFR/Bouygues
+{failure,svc_recharge_moi,send_sms};Echecs SMS Recharge-moi
+{trace,svc_util_of,send_sms};SMS pre-etabli vers Orange
+{count,svc_util_of,send_sms_cvf};SMS pre-etabli vers SFR/Bouygues
+{failure,svc_sms_pre,send_sms_failed};Echecs SMS pre-etabli

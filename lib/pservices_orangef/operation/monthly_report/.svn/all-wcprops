@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report
+END
+d_prisme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/d_prisme.txt
+END
+rapport_interface.csv
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/rapport_interface.csv
+END
+gforge.sh
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/gforge.sh
+END
+d_licence.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/d_licence.txt
+END
+d_rapport_qos.csv
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/d_rapport_qos.csv
+END
+d_code.csv
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/d_code.csv
+END
+rapport.erl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/rapport.erl
+END
+backup_stats.sh
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/backup_stats.sh
+END
+monthly_report.sh
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/monthly_report/monthly_report.sh
+END

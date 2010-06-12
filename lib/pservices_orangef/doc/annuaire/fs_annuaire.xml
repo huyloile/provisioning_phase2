@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+ "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+[
+   <!ENTITY clcm          SYSTEM "../../../../../doc/clcm_bookinfo.xml">
+   <!ENTITY glossary-gsm  SYSTEM "../../../../../doc/glossary_gsm.xml">
+ ]>
+
+<book lang="fr">
+ <bookinfo>
+  <productname>Annuaire</productname>
+  <title>Annuaire #111#</title>
+  <subtitle>Spécifications Fonctionnelles</subtitle>
+  <!--  for testdoc <subtitle>Functional specifications</subtitle> -->
+  <productnumber>FS_ANNUAIRE</productnumber>
+  <edition>1.2</edition>
+
+  &clcm;
+
+  <abstract><title>Abstract</title> 
+   <para>Ce document constitue les spécifications fonctionnelles de
+    l'application USSD "Annuaire". Grâce à cette application, un
+    client Orange France peut accéder en ligne à un portail
+    recensant tous les services SMS renseignés dans une base de
+    données. Ce portail propose un mode recherche à la fois par
+    éditeur, par thème et par numéro court. Une fois que le client a
+   trouvé le service qui l'intéressait, il peut le déclencher en
+   faisant envoyer un SMS-MO</para>
+   <para>Des statistiques de l'utilisation de ce service sont
+   également disponibles.</para>
+
+   <para>Il est accessible  par le #111# sur le réseau Orange France</para>
+  </abstract>
+
+  <revhistory>
+   <revision>
+    <revnumber>1.0</revnumber>
+    <date>2003-10-01</date>
+    <authorinitials>NT</authorinitials>
+    <revremark>Création du document</revremark>
+   </revision>
+   <revision>
+    <revnumber>2.0</revnumber>
+    <date>2004-04-09</date>
+    <authorinitials>NT</authorinitials>
+    <revremark>Evolutions phase 2</revremark>
+   </revision>
+   <revision>
+    <revnumber>2.2</revnumber>
+    <date>2004-07-22</date>
+    <authorinitials>NT</authorinitials>
+    <revremark>Evolutions 2.2</revremark>
+   </revision>
+    <revision>
+    <revnumber>2.2a</revnumber>
+    <date>2004-11-22</date>
+    <authorinitials>NT</authorinitials>
+    <revremark>Interdit aux clients OMER</revremark>
+   </revision>
+   <revision>
+    <revnumber>2.2b</revnumber>
+    <date>2005-06-08</date>
+    <authorinitials>NT</authorinitials>
+    <revremark>nouveautés MMS et lien chat</revremark>
+   </revision>
+  </revhistory>
+ </bookinfo>
+
+ <chapter>
+  <title>Introduction</title>
+  <section>
+   <title>Objet</title>
+   <para>Le présent document constitue le dossier de
+    spécifications fonctionnelles de l'application
+    « annuaire » pour les clients  de Orange France, via un
+    accès en USSD. Cette application sera développée et
+    hébergée sur la plate-forme Cellcube de Cellicium.</para>
+  </section>
+
+  <section>
+   <title>Domaine</title>
+   <para>Ce document décrit les fonctionnalités et principes
+    généraux de l'application annuaire.</para>
+
+   <para>Le présent dossier est rédigé à l'usage exclusif et
+     confidentiel de Orange et de Cellicium
+   </para>
+  </section>
+
+
+  <section>
+   <title>Documents de référence</title>
+
+   <informaltable frame="all">
+    <tgroup cols="6" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="1*"/>
+     <colspec colwidth="2*"/>
+     <colspec colwidth="3*"/>
+     <colspec colwidth="5*"/>
+     <colspec colwidth="2*"/>
+     <colspec colwidth="3*"/>
+     <thead>
+      <row>
+       <entry>N°</entry>
+       <entry>Source</entry>
+       <entry>Auteur</entry>
+       <entry>Référence</entry>
+       <entry>Date</entry>
+       <entry>Titre</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>[1]</entry>
+       <entry>Cellicium</entry>
+       <entry>Nicolas THAUVIN</entry>
+       <entry>ORANGE-PROPCOMM#111# PHASE1</entry>
+       <entry>05&#47;09&#47;03</entry>
+       <entry>ANNUAIRE #111# PHASE 1</entry>
+      </row>
+      <row>
+       <entry>[2]</entry>
+       <entry>Orange</entry>
+       <entry>Samuel FOSSAERT</entry>
+       <entry>CDC Annuaire V1.1</entry>
+       <entry>28&#47;08&#47;03</entry>
+       <entry>Annuaire en USSD #111#</entry>
+      </row>
+      <row>
+       <entry>[3]</entry>
+       <entry>Cellicium</entry>
+       <entry>Sébastien BECUWE</entry>
+       <entry>SF ORANGEFR PROVISIONING</entry>
+       <entry>02&#47;04&#47;03</entry>
+       <entry>Procédure de provisioning</entry>
+      </row>
+      <row>
+       <entry>[4]</entry>
+       <entry>Orange</entry>
+       <entry>Samuel FOSSAERT</entry>
+       <entry>CDC Annuaire V2.0</entry>
+       <entry>27&#47;02&#47;04</entry>
+       <entry>Annuaire en USSD #111# Phase 2</entry>
+      </row>
+      <row>
+       <entry>[5]</entry>
+       <entry>Cellicium</entry>
+       <entry>Nicolas THAUVIN</entry>
+       <entry>ORANGE-PROPCOMM#111# PHASE2</entry>
+       <entry>11&#47;03&#47;04</entry>
+       <entry>ANNUAIRE #111# PHASE 2</entry>
+      </row>
+      <row>
+       <entry>[6]</entry>
+       <entry>Orange</entry>
+       <entry>Samuel FOSSAERT</entry>
+       <entry>CDC Annuaire V2.2</entry>
+       <entry>19&#47;07&#47;04</entry>
+       <entry>Annuaire en USSD #111# Version 2.2</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </section>
+ </chapter>
+
+ <chapter>
+  <title>Evolutions</title>
+
+  <section>
+   <title>Version 2.0</title>
+   <para>Les évolutions entre la phase 1 et la phase 2 du
+    service sont les suivantes [4,5]:</para>
+   <itemizedlist>
+    <listitem><para>Remodelage des pages de service afin de permettre
+      l'aboutement de SMS via Cellgate</para>
+    </listitem>
+    <listitem><para>Base de données plus complète, avec notamment la notion de
+      services à mettre en valeur et le détail des numéros courts</para>
+    </listitem>
+    <listitem><para>Un moteur de recherche par numéro court</para>
+    </listitem>
+    <listitem><para>Un batch de nuit permettant de changer l'ordre
+      d'affichage des éditeurs dans la recherche par rubrique</para>
+    </listitem>
+   </itemizedlist>
+  </section>
+
+  <section>
+   <title>Version 2.2</title>
+   <para>La version 2.2 intègre la recherche par rubriques dès la page
+    d'accueil et supprime la recherche par numéros courts [6]</para>
+  </section>
+ </chapter>
+
+ <chapter>
+  <title>Généralités</title>
+  <para>L'USSD est particulièrement adapté à la
+   réalisation d'un service d'annuaire regroupant une multitude de
+   services SMS. En effet, le support USSD permet une navigation rapide
+   grâce à des liens permettant de consulter interactivement les
+   types de services proposés, tout en utilisant une faible bande
+   passante du réseau.</para>
+
+  <para>L'objet de cette application est de mettre à disposition
+   des clients de Orange France, via une interface USSD, un service de
+   consultation d'une base de données recensant les numéros
+   courts et les commandes associés à des services SMS
+   proposés par des éditeurs, cette base de données étant
+   renseignée par Orange France.</para>
+
+  <para>Une fois que l'utilisateur a choisi son service, il peut
+  déclencher le service SMS. Cette fonctionnalité suppose que la liaison
+  SMPP entre Cellcube et Cellgate soit établie.</para>
+
+  <section>
+   <title>Connexion</title>
+   <para>Le client Orange souhaitant accéder au service «
+    Annuaire » devra déclencher l'ouverture d'une session USSD
+    depuis son mobile, avec le code de service adéquat. Le service
+    est accessible par le code de service #111# pour tous les clients
+    Orange France de niveau 1.</para>
+  </section>
+
+  <section>
+   <title>Provisioning</title>
+   <para>La première étape de l'application au sein de
+    l'ESME Cellicium est la vérification de l'état du compte
+    du client via l'interrogation des bases SACHEM [3].Cette
+    procédure ne vérifie pas que le client a un solde suffisant pour
+    envoyer les SMS du service.
+   </para>
+   <para>Les clients dont le compte est dans un état pathologiques
+   sont cependant filtrés et n'ont pas accès au service</para>
+   <para>Le service d'annuaire est également interdit aux clients OMER</para>
+ </section>
+
+  <section>
+   <title>Facturation</title>
+   <para>Aucune facturation n'est gérée par Cellicium pour ce
+   service. En revanche, les clients se verront facturer l'envoi de
+   SMS par le SMS-C</para>
+  </section>
+ </chapter>
+
+ <chapter>
+  <title>Architecture technique</title>
+  <informalfigure id="tech">
+   <mediaobject>
+    <imageobject>
+     <imagedata fileref="annuaire_tech" format="EPS" scale="55"/>
+    </imageobject>
+     <imageobject>
+      <imagedata fileref="annuaire_tech" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <section>
+   <title>Description des échanges</title>
+   <orderedlist>
+    <listitem>
+     <para>Le client compose sur son terminal le #111# afin d'accéder
+     à l'annuaire, via l'interface USSD.</para>
+    </listitem>
+    <listitem>
+     <para>Une fois la requête transmise à l'USSD-C, celle-ci est
+     envoyée à l'ESME Cellcube qui donne en retour la page d'accueil
+     de l'annuaire en  USSD.</para>
+    </listitem>
+    <listitem>
+     <para>Dès que le client valide son choix après avoir parcouru les
+     menus proposés, Cellcube se fait passer pour le client : le
+     SMS-MO envoyé à Cellgate contient le MSISDN du client ainsi que
+     la commande correspondant à son choix. </para>
+    </listitem>
+
+    <listitem>
+     <para>Cellgate transmet le SMS-MO au SMS-C d'Orange</para>
+    </listitem>
+
+    <listitem>
+     <para>Le fournisseur de contenus reçoit le SMS-MO et répond avec
+     un SMS-MT</para>
+    </listitem>
+
+    <listitem>
+     <para>Le client reçoit la réponse (SMS-MT) via le SMS-C</para>
+    </listitem>
+   </orderedlist>
+  </section>
+
+  <section>
+   <title>Base de données</title>
+   <para>Orange fournit la base de données sous forme d'un fichier
+    Excel. Il doit d'abord être converti au format CSV afin
+    d'être exploitable par la plate-forme Cellcube. Il sera ensuite
+    rendu disponible pour tous les backends traitant les requêtes
+    USSD en le transférant dans une base de données répartie
+    sur les noeuds en questions. Une fois que cette base de données
+    est mise à jour, des requêtes peuvent y être effectuées
+    par les clients se connectant au #111#.</para>
+
+   <informalfigure id="structure">
+    <mediaobject>
+     <imageobject>
+      <imagedata fileref="annuaire_db" format="EPS" scale="50"/>
+     </imageobject>
+     <imageobject>
+      <imagedata fileref="annuaire_db" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+
+   <para>Ceci permet de garantir une haute disponibilité
+    grâce à la redondance par réplication et d'optimiser
+    les traitements en accédant à une base locale plutôt
+    que distante.</para>
+
+   <para>En cas de changement de la configuration des backends (ajout ou
+    suppression d'un noeud), il faudra intervenir manuellement
+    pour paramétrer la base de données en
+    conséquence.</para>
+  </section>
+
+   <section>
+    <title>Champs de la base de données</title>
+    <para>La base de données convertie depuis le fichier Excel
+    contient les champs suivants, avec pour chacun la précision
+    spécifiant s'il est obligatoire ou facultatif:</para>
+
+    <informaltable frame="all">
+     <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+     <colspec colwidth="2*"/>
+     <colspec colwidth="1*"/>
+     <colspec colwidth="2*"/>
+     <colspec colwidth="5*"/>
+     <thead>
+      <row>
+       <entry>Nom</entry>
+       <entry>Type</entry>
+       <entry>Obligatoire?</entry>
+       <entry>Commentaire</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>Nom commercial</entry>
+       <entry>Texte</entry>
+       <entry>Oui</entry>
+       <entry>Le nom de l'éditeur tel qu'il apparaît dans
+       l'annuaire.</entry>
+       </row>
+      <row>
+	<entry>N° court</entry>
+	<entry>Entier</entry>
+	<entry>Oui</entry>
+	<entry>Le numéro du service, utilisé pour envoyer le SMS et
+	pour le moteur de recherche</entry>
+       </row>
+       <row>
+	<entry>Rubrique</entry>
+	<entry>Texte</entry>
+	<entry>Oui</entry>
+	<entry>Catégorie générale du service</entry>
+       </row>
+       <row>
+	<entry>Thématique</entry>
+	<entry>Texte</entry>
+	<entry>Non</entry>
+	<entry>Sous-catégorie de la rubrique.
+	 Exception : la rubrique « nouveautés MMS » ne contient pas de
+	 thématique (champ vide). On suppose qu'il n'existe pas de
+	 rubrique sans thématique ayant le même nom qu'une thématique d'une
+	 autre rubrique d'un même éditeur. Si c'était le cas, en
+	 choisissant ce nom dans la liste des types de services de
+	 l'éditeur, on ne pourrait déterminer s'il s'agit de la thématique
+	 ou de la rubrique</entry>
+       </row>
+       <row>
+	<entry>Nouveau service</entry>
+	<entry>Booléen</entry>
+	<entry>Non</entry>
+	<entry>Valeur indiquant s'il s'agit d'un service à mettre en
+	valeur lors de la recherche par rubrique. La valeur "oui" ou
+	"Oui" spécifie que ce service est à mettre en valeur. Une
+	autre valeur indique le contraire</entry>
+       </row>
+       <row>
+	<entry>Règlement du jeu</entry>
+	<entry>Texte</entry>
+	<entry>Non</entry>
+	<entry>Obligation légale pour les rubriques de jeux. Les
+	textes de cette colonne seront affichés en suivant le lien «
+	règlement » lors du texte descriptif de rubrique.</entry>
+       </row>
+       <row>
+	<entry>Accroche multi rubriques</entry>
+	<entry>Texte</entry>
+	<entry>Non</entry>
+	<entry>Affichée lors de la recherche par éditeur pour choisir
+	la thématique. Ce champ doit être le même pour tous les
+	services d'un opérateur.</entry>
+       </row>
+       <row>
+	<entry>Accroche par rubrique</entry>
+	<entry>Texte</entry>
+	<entry>Oui</entry>
+	<entry>Affichée en suivant le lien "+d'infos" d'un service,
+	pour présenter une rubrique d'un éditeur</entry>
+       </row>
+      </tbody>
+     </tgroup>
+     </informaltable>
+
+    <para>Suivent cinq itérations des trois champs suivants (pour X
+     variant de 1 à 5) :</para>
+
+    <informaltable frame="all">
+     <tgroup cols="4" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="1*"/>
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+     <thead>
+      <row>
+       <entry>Nom</entry>
+       <entry>Type</entry>
+       <entry>Obligatoire?</entry>
+       <entry>Commentaire</entry>
+      </row>
+     </thead>
+     <tbody>
+       <row>
+	<entry>Commande X</entry>
+	<entry>Texte</entry>
+	<entry>Oui pour X=1, non sinon</entry>
+	<entry>Une commande du service, affichée telle quelle</entry>
+       </row>
+       <row>
+	<entry>Mot clef X</entry>
+	<entry>Texte</entry>
+	<entry>Facultatif</entry>
+	<entry>Mot clé envoyé au numéro court pour l'envoi de
+	SMS. Si le mot clef est vide, on enverra le paramètre seul</entry>
+       </row>
+       <row>
+	<entry>Paramètre X</entry>
+	<entry>Texte</entry>
+	<entry>Non</entry>
+	<entry>Nom du paramètre suivant le mot clé dans le SMS (après
+	un espace). Si ce champ est non vide, une page sera envoyée au
+	client avant l'envoi du SMS pour qu'il puisse saisir ce
+	paramètre. S'il est vide, le client n'aura pas à saisir le
+	paramètre et le SMS ne contiendra que le mot clé.</entry>
+       </row>
+       <row>
+	<entry>Service Client</entry>
+	<entry>Texte</entry>
+	<entry>Non</entry>
+	<entry>Non utilisé</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+
+    <para>Chaque triplet (Numéro court;thématique;rubrique) est unique
+    et correspond donc au maximum à 5 commandes.</para>
+
+   </section>
+
+
+  <section>
+   <title>Statistiques</title>
+   <para>Des compteurs spécifiques sont générés pour l'outil de
+   Data-Mining afin d'avoir un aperçu de la navigation effectuée par
+   les clients.</para>
+  </section>
+ </chapter>
+
+ <chapter>
+  <title>Description fonctionnelle</title>
+  <section>
+   <title>Base de Données</title>
+   <section>
+    <title>Conversion CSV</title>
+    <para>La base de données est fournie mensuellement par
+     Orange France (qui vérifiera sa validité) sous la forme
+     d'un fichier Excel. Le fichier de base de données est
+     ensuite converti au format CSV, en délimitant les champs par des
+     virgules et en entourant les champs textuels de guillemets
+     doubles.</para>
+
+    <para>Dans la colonne des noms d'éditeurs, si un nom occupe
+     plusieurs lignes (cellules fusionnées), le champ
+     apparaît vide au format CSV pour les lignes fusionnées
+     suivantes. Un tel champ vide est considéré comme une erreur.</para>
+
+    <para>En cas de deux lignes complètes fusionnées, le fichier CSV
+     contient une ligne vide dont l'application ne tient pas
+     compte.</para>
+
+    <para>Les espaces à gauche et à droite des champs
+     « nom commercial », « thématique »,
+     et «  rubrique » sont supprimés.</para>
+
+    <para>Les listes de rubriques et de thématiques sont déterminées
+     automatiquement en lisant le fichier CSV. La moindre faute de
+     frappe entraînerait donc la création d'une thématique/rubrique
+     supplémentaire (ex : sonnerie/logo et sonneries/logos).</para>
+
+    <para>Si le nombre de caractères dans un champ excède un
+     nombre paramétrable, le texte est tronqué à ce nombre
+     (400 par défaut) afin de ne pas surcharger la
+     plate-forme.</para>
+
+    <para>Erreurs de lecture du fichier CSV interrompant le processus:</para>
+
+    <itemizedlist>
+     <listitem><para>Un champ obligatoire n'est pas présent</para>
+     </listitem>
+
+     <listitem><para>Fin de ligne inattendue(manque de colonnes)</para>
+     </listitem>
+
+     <listitem><para>Pas de règlement pour un service de jeu</para>
+     </listitem>
+    </itemizedlist>
+   </section>
+
+    <section>
+    <title>Transfert</title>
+    <para>Le transfert vers la base de données répartie
+     s'effectue dans une transaction atomique. Cette dernière
+     consiste à vider la table puis à insérer les champs de
+     la nouvelle base de données. Si un problème se
+     présente pendant cette mise à jour, toute la transaction
+     est abandonnée et la base garde l'ancien contenu.</para>
+   </section>
+
+    <section>
+    <title>Encodage et mise en page</title>
+    <para>Les textes du fichier CSV sont affichés tels quels,
+     c'est à dire que s'ils contiennent des informations de mise
+     en page, elles ne seront pas interprétées (y compris les
+     sauts de ligne).</para>
+
+    <para>Cela signifie également que des caractères
+     spéciaux comme l'euro ou ceux d'insertion automatique de
+     Microsoft Office (comme les trois petits points) n'ont aucune
+     garantie d'être affichés tels quels sur le terminal du
+     client. Il est donc préférable de n'utiliser que des
+     caractères standards dans le fichier Excel.</para>
+   </section>
+
+   <section>
+    <title>Base de données tournante</title>
+    <para>La base de données « tourne » toutes les nuits, en
+     déplaçant un nombre aléatoire de services du début de la liste en
+     fin de liste, de manière à renouveler quotidiennement l'ordre d'
+     affichage des éditeurs dans la recherche par rubrique. Cette
+     opération s'effectue à minuit trente toutes les nuits.</para>
+   </section>
+  </section>
+
+  <section>
+   <title>Messages</title>
+   <section>
+    <title>Cas pathologiques</title>
+    <para>L'ensemble des clients possédant un compte se
+     trouvant dans un état pathologique se verront refuser
+     l'accès au service #111# via un message correspondant au
+     cas pathologique :</para>
+
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+      <colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry></entry>
+	<entry align="left"><simplelist>
+	  <member>
+	   <computeroutput>L'état de votre compte ne vous permet pas
+	    d'accéder à ce service.
+	   </computeroutput>
+	  </member>
+	 </simplelist>
+	</entry>
+	<entry>Fin de Session</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+   </section>
+
+   <section>
+    <title>SACHEM HS</title>
+    <para>Dans le cas où Cellcube n'a plus accès à la
+     base Sachem, la procédure de provisioning ne peut plus
+     être effectuée et le message suivant est envoyé aux
+     clients :</para>
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry></entry>
+	<entry align="left"><simplelist>
+	  <member>
+	   <computeroutput>Le service est temporairement indisponible.
+	   </computeroutput>
+	  </member>
+	  <member>
+	   <computeroutput>Veuillez nous en excuser et vous reconnecter
+	   </computeroutput>
+	  </member>
+	  <member>
+	   <computeroutput>ultérieurement.
+	   </computeroutput>
+	  </member>
+	 </simplelist></entry>
+	<entry>Fin de Session</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+   </section>
+
+   <section>
+    <title>Niveaux 2 et 3</title>
+    <para>Tous les clients Orange France de niveau 1 ont accès au service
+     d'annuaire #111#. Par contre, les terminaux de niveau 2 et 3
+     ne permettent pas d'y accéder. Ils reçoivent alors le
+     message :</para>
+
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+      <colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry></entry>
+	<entry align="left"><simplelist>
+	  <member>
+	   <computeroutput>
+	    Votre mobile ne vous permet pas d'accéder a ce service.
+	   </computeroutput>
+	  </member>
+	 </simplelist>
+	</entry>
+	<entry>Fin de Session</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+   </section>
+
+   <section>
+    <title>Clients OMER</title>
+    <para>Les clients OMER n'ont pas accès au service. Ils reçoivent le
+     message :</para>
+
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+      <colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry></entry>
+	<entry align="left"><simplelist>
+	  <member>
+	   <computeroutput>
+	    Vous n'avez pas accès à ce service.
+	   </computeroutput>
+	  </member>
+	 </simplelist>
+	</entry>
+	<entry>Fin de Session</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+   </section>
+
+   <section>
+    <title>Message d'erreur pendant la session</title>
+    <para>Le message d'erreur spécifique au service
+     d'annuaire est causés par un problème avec la base de
+     données. Les raisons peuvent être dues au fichier Excel
+     converti qui comporte des incohérences ou à la base de données
+     répartie qui est en train d'être mise à jour (l'utilisateur avait
+     saisi des informations au cours de sa session qui ne sont plus
+     valides après mise à jour, par exemple suppression d'un
+     éditeur).</para>
+
+    <para>Le message affiché est le suivant :</para>
+
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+      <colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry>Erreur annuaire</entry>
+	<entry align="left"><simplelist>
+	 <member>
+	   <computeroutput>Le service est en cours de maintenance.
+	   </computeroutput>
+	  </member>
+	 <member>
+	   <computeroutput>Veuillez nous en excuser et vous
+	   reconnecter ultérieurement.
+	   </computeroutput>
+	  </member>
+	 </simplelist>
+	 </entry>
+	<entry>Fin de Session</entry>
+       </row>
+      </tbody>
+     </tgroup>
+    </informaltable>
+   </section>
+  </section>
+
+  <section>
+    <title>Arbre</title>
+    <informalfigure id="arbre">
+     <mediaobject>
+      <imageobject>
+       <imagedata fileref="annuaire_tree" format="EPS" scale="80"/>
+      </imageobject>
+      <imageobject>
+       <imagedata fileref="annuaire_tree" format="PNG"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+
+    <para>Une fois sur la page d'accueil, le client peut parcourir
+     l'arbre de l'annuaire, ce qui lui permettra de trouver
+     le service de son choix. L'arbre dynamique est généré
+     d'après la base de données. Au cours de la navigation, un minimum
+     d'informations est conservé dans la session des utilisateurs, afin de
+     ne pas surcharger la plate-forme.</para>
+
+    <para>Il est à noter que tout au long de la navigation, un
+     lien « suite » peut apparaître si la page
+     contient trop de caractères pour le terminal du client. La
+     page est alors scindée en plusieurs parties, accessibles par
+     ce lien « suite » qui prend le premier index
+     disponible après les liens affichés dans la page
+     courante.</para>
+
+    <para>Deux autres liens spéciaux sont présents, ceux de
+     retour (index 00), qui permet de revenir à la page
+     précédente, et celui de menu (0) qui permet de revenir à la page
+     d'accueil.</para>
+
+    <para>Pour remplir les pages dynamiques (liens changeants, nom
+     d'éditeur), des requêtes sont effectuées sur la base
+     de données pour déterminer le contenu à l'aide des
+     choix précédents de l'utilisateur.</para>
+	
+    <para>Si l'utilisateur a passé la procédure de
+     provisioning et que son terminal est de niveau 1, il accède
+     à la page d'accueil:</para>
+
+    <informaltable frame="all">
+     <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+      <colspec colwidth="2*"/>
+      <colspec colwidth="5*"/>
+      <colspec colwidth="1*"/>
+      <thead>
+       <row>
+	<entry>Description</entry>
+	<entry>Message</entry>
+	<entry>Suite</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+	<entry>Menu Annuaire Orange</entry>
+	<entry align="left"><simplelist>
+	 <member>
+	  <computeroutput>Bienvenue sur le guide Orange
+	   des services SMS+</computeroutput>
+	 </member>
+	 <member>
+	  <computeroutput>Choisissez la rubrique en
+	   tapant le No</computeroutput>
+	 </member>
+	 <member><computeroutput>correspondant:</computeroutput></member>
+	 <member><computeroutput>1:chat</computeroutput></member>
+         <member><computeroutput>2:nouveautes MMS</computeroutput></member>
+	 <member><computeroutput>3:divertissement</computeroutput></member>
+	 <member><computeroutput>4:info</computeroutput></member>
+	 <member>
+	  <computeroutput>5:sonneries&#38;logos</computeroutput>
+	 </member>
+	 <member>
+	  <computeroutput>6:rech. par éditeur</computeroutput>
+	 </member>
+	 <member><computeroutput>7:aide</computeroutput></member>
+	</simplelist>
+       </entry>
+       <entry><simplelist>
+	 <member><xref linkend="rub"/></member>
+	 <member><xref linkend="ed"/></member>
+	 <member><xref linkend="help"/></member>
+	</simplelist></entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+
+   <para>La page d'accueil permet de demander à l'utilisateur
+    s'il désire trouver un service par rubrique ou par éditeur.
+    Le dernier lien permet d'afficher des
+    informations d'aide.</para>
+   
+   <para>'chat' est un lien spécial qui dirige vers le service de
+    chat Orange</para>
+   
+   <para>Les autres liens sont affichés dans l'ordre où ils
+   apparaissent dans le paramètre de configuration associé</para>
+
+   <para>La sélection d'une rubrique de la liste extraite du
+    fichier CSV va permettre d'aiguiller l'utilisateur dans sa
+    recherche. La rubrique choisie sera stockée dans la session.
+    Les rubriques sont affichés dans l'ordre
+    alphabétique.</para>
+
+   <para>En choisissant un lien, si la rubrique ne comporte pas
+    de thématiques (exemple : nouveautes MMS), le client est dirigé vers
+    la liste des éditeurs proposant ce service. Sinon, il est
+    dirigé vers la page de sélection d'une thématique de la
+    rubrique.</para>
+
+   <section id="rub">
+    <title>Recherche par rubrique</title>
+    <section id="rub_nothem">
+     <title>Editeurs proposant une rubrique de nouveautes MMS</title>
+     
+     <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Par rubrique: nouveautes MMS</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Consulter le service de chat d'un éditeur
+	     en tapant le N° correspondant:
+	     </computeroutput>
+	    </member>
+	    <member><computeroutput>1:Avedya</computeroutput></member>
+	    <member><computeroutput>2:RTL</computeroutput></member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry><xref linkend="service"/></entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+
+      <para>La liste est affichée dans l'ordre suivant :</para>
+      <orderedlist>
+       <listitem><para>Les éditeurs classés comme nouveaux dans la
+	 base de données, classés par ordre alphabétique</para>
+       </listitem>
+       <listitem><para>Le reste des éditeurs, affichés dans l'ordre de
+       leur apparition dans la base. Pour rappel, la base "tourne"
+       toute les nuits en déplaçant un nombre aléatoire de services de
+       début de liste en fin de liste.</para>
+       </listitem>
+      </orderedlist>
+
+      <para>Lorsque l'utilisateur a fait son choix, l'éditeur est
+       stocké dans la session et on est on l'envoie sur la page
+       de service de cet éditeur.</para>
+     </section>
+
+     <section id="rub_them">
+      <title>Liste des thématiques de la rubrique sélectionnée
+      (exemple : divertissement)</title>
+
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Par rubrique: choix de thématique</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Rechercher un service de divertissement
+	     en tapant le N° correspondant:
+	     </computeroutput>
+	    </member>
+	    <member>
+	     <computeroutput>1:ciné&#47;sorties</computeroutput>
+	    </member>
+	    <member><computeroutput>2:horoscope</computeroutput></member>
+	    <member><computeroutput>3:humour</computeroutput></member>
+	    <member><computeroutput>4:jeux</computeroutput></member>
+	    <member>
+	     <computeroutput>5:radio&#47;TV&#47;presse</computeroutput>
+	    </member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry><xref linkend="rub_them_ed"/></entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+
+      <para>La liste est affichée par ordre alphabétique
+       d'après toutes les thématiques appartenant à la même
+       rubrique dans le fichier CSV.</para>
+
+      <para>Le nom de rubrique (ici « de
+       divertissement ») sera inséré dynamiquement
+       précédé de la préposition adéquate en fonction
+       de la première lettre.</para>
+
+      <para>Exemple : "service de divertissement" et "service
+       d'horoscope".</para>
+
+      <para>En choisissant une thématique, elle est stockée dans la
+       session et l'utilisateur est dirigé vers la sélection d'un éditeur la
+       proposant.</para>
+
+      <section id="rub_them_ed">
+       <title>Editeurs de rubrique avec thématiques</title>
+
+       <informaltable frame="all">
+	<tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	 <colspec colwidth="2*"/>
+	 <colspec colwidth="5*"/>
+	 <colspec colwidth="1*"/>
+	 <thead>
+	  <row>
+	   <entry>Description</entry>
+	   <entry>Message</entry>
+	   <entry>Suite</entry>
+	  </row>
+	 </thead>
+	 <tbody>
+	  <row>
+	   <entry>Par rubrique: choix d'éditeur</entry>
+	   <entry align="left"><simplelist>
+	     <member>
+	      <computeroutput>Consultez les services offerts par les
+	      éditeurs en tapant le No correspondant:
+	      </computeroutput>
+	     </member>
+	     <member><computeroutput>1:123Multimédia</computeroutput></member>
+	     <member><computeroutput>2:M6</computeroutput></member>
+	     <member><computeroutput>- - -</computeroutput></member>
+	     <member><computeroutput>00:retour</computeroutput></member>
+	     <member><computeroutput>0:menu</computeroutput></member>
+	    </simplelist>
+	   </entry>
+	   <entry><xref linkend="service"/></entry>
+	  </row>
+	 </tbody>
+	</tgroup>
+       </informaltable>
+
+       <para>La liste des éditeurs proposant la thématique
+	sélectionnée est affichée de la même manière que pour les
+	nouveautes MMS à savoir :</para>
+       <orderedlist>
+	<listitem><para>D'abord les éditeurs proposant un service
+	"nouveau"</para>
+	</listitem>
+	
+	<listitem><para>Les autres éditeurs, affichés dans l'ordre
+	actuel de la base de données</para>
+	</listitem>
+       </orderedlist>
+
+       <para>En sélectionnant un éditeur, l'utilisateur est
+	dirigé vers le service adéquat de celui-ci.</para>
+      </section>
+     </section>
+    </section>
+
+    <section id="ed">
+     <title>Navigation par éditeur</title>
+     <informaltable frame="all">
+      <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+	</row>
+       </thead>
+       <tbody>
+	<row>
+	 <entry>Par éditeur: blocs</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Recherchez les services de l'éditeur de
+	    votre choix en tapant le N° du bloc
+	    </computeroutput>
+	   </member>
+	   <member>
+	    <computeroutput>correspondant a son nom:</computeroutput></member>
+	   <member><computeroutput>1:A a C</computeroutput></member>
+	   <member><computeroutput>2:D a I</computeroutput></member>
+	   <member><computeroutput>3:J a M</computeroutput></member>
+	   <member><computeroutput>4:N a R</computeroutput></member>
+	   <member><computeroutput>5:S a Z</computeroutput></member>
+	   <member><computeroutput>6:0 a 9</computeroutput></member>
+	   <member><computeroutput>- - -</computeroutput></member>
+	   <member><computeroutput>00:retour</computeroutput></member>
+	   <member><computeroutput>0:menu</computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry><xref linkend="ed_list"/></entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+
+     <para>Afin de faciliter la recherche de services par
+      éditeurs, la liste est scindée en plusieurs blocs
+      d'après leur première lettre. Le découpage de ces
+      blocs est soumis par Orange France afin de s'assurer qu'aucun
+      n'est vide. Le changement de cette liste s'effectue
+      directement dans le fichier XML du service en modifiant la
+      liste des liens correspondants.</para>
+
+     <para>Lorsque l'utilisateur a choisi le bloc, il est
+      redirigé vers la liste des éditeurs de celui-ci</para>
+
+     <section id="ed_list">
+      <title>Liste des éditeurs</title>
+
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Par éditeur: choix d'éditeur</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Consultez les services de l'éditeur de
+	     votre choix en tapant le N° correspondant:
+	     </computeroutput>
+	    </member>
+	    <member><computeroutput>1:Libération</computeroutput></member>
+	    <member><computeroutput>2:TF1</computeroutput></member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry><simplelist>
+	   <member><xref linkend="ed_them"/></member>
+	   <member><xref linkend="service"/></member>
+	  </simplelist></entry>
+	</row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+
+      <para>Cette page affiche la liste des éditeurs dans le
+       fichier CSV (classés par ordre alphabétique) dont la
+       première lettre correspond au bloc sélectionné
+       précédemment. Choisir un éditeur le stocke dans la session puis
+       l'utilisateur est dirigé vers la page de ses ou son
+       service. Si l'éditeur propose plusieurs services, la
+       page affichée sera la multi-rubriques. S'il n'en propose
+       qu'un, ce sera celle de la première commande du service en
+       question.</para>
+	
+      <section id="ed_them">
+       <title>Navigation par éditeur - page multi-rubriques (exemple :
+       Libération)</title>
+
+       <informaltable frame="all">
+	<tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	 <colspec colwidth="2*"/>
+	 <colspec colwidth="5*"/>
+	 <colspec colwidth="1*"/>
+	 <thead>
+	  <row>
+	   <entry>Description</entry>
+	   <entry>Message</entry>
+	   <entry>Suite</entry>
+	  </row>
+	 </thead>
+	 <tbody>
+	  <row>
+	   <entry>Par éditeur: choix de rubrique</entry>
+	   <entry align="left"><simplelist>
+	     <member>
+	      <computeroutput>Avec Libération, suivez
+	      l'actualité, participez a des forums, jouez au
+	      Quizz,culture générale...
+	      </computeroutput>
+	     </member>
+	     <member><computeroutput>1:actu</computeroutput></member>
+	     <member><computeroutput>2:chat</computeroutput></member>
+	     <member><computeroutput>3:jeux</computeroutput></member>
+	     <member><computeroutput>- - -</computeroutput></member>
+	     <member><computeroutput>00:retour</computeroutput></member>
+	     <member><computeroutput>0:menu</computeroutput></member>
+	    </simplelist>
+	   </entry>
+	   <entry><xref linkend="service"/></entry>
+	  </row>
+	 </tbody>
+	</tgroup>
+       </informaltable>
+
+       <para>L'accroche multi-rubriques de l'éditeur
+	renseigné dans la base de données est affichée en
+	haut de la page, suivie des liens vers les services
+	proposés, classés par ordre alphabétique. Le nom de thématique
+	choisie est stockée dans la session</para>
+
+      </section>
+     </section>
+    </section>
+
+    <section id="help">
+     <title>Aide</title>
+
+     <informaltable frame="all">
+      <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+	</row>
+       </thead>
+       <tbody>
+	<row>
+	 <entry>Aide</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Sélectionnez votre rubrique d'aide en
+	    tapant le N° correspondant:
+	    </computeroutput>
+	   </member>
+	   <member><computeroutput>1:mots clefs</computeroutput></member>
+	   <member><computeroutput>2:infos légales</computeroutput></member>
+	   <member><computeroutput>- - -</computeroutput></member>
+	   <member><computeroutput>00:retour</computeroutput></member>
+	   <member><computeroutput>0:menu</computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry><simplelist>
+	  <member><xref linkend="help_key"/></member>
+	  <member><xref linkend="help_legal"/></member>
+	 </simplelist></entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+
+     <para>La page d'aide permet d'avoir accès à un menu
+      dont les rubriques sont fixées par Orange France.</para>
+
+     <section id="help_key">
+      <title>Aide : Mots Clefs</title>
+
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Aide: mots clefs</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Pour obtenir les coordonnées d'un
+	     éditeur: envoyez CONTACT au No court du service.
+	     </computeroutput>
+	    </member>
+	    <member>
+	     <computeroutput>Pour ne plus recevoir de message en
+	      provenance d'un No court,envoyez STOP au No court.
+	     </computeroutput>
+	    </member>
+	    <member>
+	     <computeroutput>L'envoi de ces mots clefs est facture
+	      selon le palier surtaxe du No court auquel ils sont
+	      adresses+ prix d'un SMS.
+	     </computeroutput>
+	    </member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry>Page précédente ou menu</entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+     </section>
+
+     <section id="help_legal">
+      <title>Aide : Infos légales</title>
+
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Aide: infos légales</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Orange propose gratuitement et sans
+	     engagement un annuaire des services SMS a certains de ses
+	     clients. L'annuaire permet d'accéder a des services payants
+	      fournis par Orange ou par des tiers (services SMS+). Orange
+	     n'exerce aucun contrôle ou n'a aucune maîtrise sur la
+	     nature ou la qualité du contenu des services SMS+
+	     proposés par ces tiers. Toute réclamation relative au
+	     service est à adresser a l'éditeur concerné. Pour ce
+	     faire, le client enverra CONTACT par SMS au No court de
+	     cet éditeur.</computeroutput>
+	    </member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry>Page précédente ou menu</entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+     </section>
+    </section>
+
+    <section id="service">
+     <title>Services (exemple : GENYcourses)</title>
+
+     <informaltable frame="all">
+      <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+       <colspec colwidth="2*"/>
+       <colspec colwidth="5*"/>
+       <colspec colwidth="1*"/>
+       <thead>
+	<row>
+	 <entry>Description</entry>
+	 <entry>Message</entry>
+	 <entry>Suite</entry>
+	</row>
+       </thead>
+       <tbody>
+	<row>
+	 <entry>Services</entry>
+	 <entry align="left"><simplelist>
+	   <member>
+	    <computeroutput>Pour le pronostic de GENYcourses pour le
+	    TQQ,envoyez PQ au 61369 (0,35E + prix d'un
+	    SMS)
+	    </computeroutput>
+	   </member>
+	   <member><computeroutput>1:envoi du SMS</computeroutput></member>
+	   <member><computeroutput>2:+d'infos</computeroutput></member>
+	   <member><computeroutput>3:suite</computeroutput></member>
+	   <member><computeroutput>- - -</computeroutput></member>
+	  <member><computeroutput>00:retour</computeroutput></member>
+	  <member><computeroutput>0:menu</computeroutput></member>
+	  </simplelist>
+	 </entry>
+	 <entry><simplelist>
+	  <member><xref linkend="sms_ok"/></member>
+	  <member><xref linkend="sms_param"/></member>
+	  <member><xref linkend="serv_infos"/></member>
+	  <member><xref linkend="service"/></member>
+	 </simplelist></entry>
+	</row>
+       </tbody>
+      </tgroup>
+     </informaltable>
+
+     <para>L'utilisateur est arrivé sur cette page parce qu'il a
+      choisi un éditeur, une rubrique et/ou un numéro court. Pendant
+      sa navigation, ses choix ont été stockés en mémoire et sont
+      utilisés ici pour lancer une requête correspondant à ses
+      précédents choix sur la base de données répartie afin de
+      récupérer le service désiré.</para>
+
+     <para>La page de services affiche la première commande renseignée
+     dans la base de données</para>
+
+     <orderedlist>
+      <listitem>
+       <para>Le premier lien permet d'envoyer le SMS-MO qui déclenchera
+	le service. L'utilisateur est ensuite redirigé vers une page lui
+	confirmant que son SMS est en cours d'envoi, ou bien vers le
+	formulaire de paramètre si le service en nécessite un</para>
+      </listitem>
+
+      <listitem><para>Le deuxième lien permet d'avoir des détails sur le
+     service en court : le texte "accroche rubrique" est alors
+     affiché</para>
+      </listitem>
+
+      <listitem><para>Le troisième lien est facultatif et n'apparaît
+     que si le service contient plusieurs commandes et que la
+     commande courante n'est pas la dernière; dans quel cas ce lien
+     permet de passer à la commande suivante.</para>
+      </listitem>
+     </orderedlist>
+
+     <section id="sms_ok">
+      <title>Envoi de SMS-MO</title>
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Envoi de SMS-MO</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Le SMS est en cours d'envoi.</computeroutput>
+	    </member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	    <member><computeroutput>0:menu</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry>Page précédente ou menu</entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+
+      <para>Une fois que Cellcube a envoyé son SMS-MO à Cellgate, ce
+      message est renvoyé au client via le support USSD. Cela ne veut
+      pas dire qu'il va effectivement le recevoir</para>
+     </section>
+
+     <section id="sms_param">
+     <title>Formulaire de saisie de paramètre</title>
+      <informaltable frame="all">
+       <tgroup cols="3" align="left" colsep="1" rowsep="1" charoff="0">
+	<colspec colwidth="2*"/>
+	<colspec colwidth="5*"/>
+	<colspec colwidth="1*"/>
+	<thead>
+	 <row>
+	  <entry>Description</entry>
+	  <entry>Message</entry>
+	  <entry>Suite</entry>
+	 </row>
+	</thead>
+	<tbody>
+	 <row>
+	  <entry>Paramètre</entry>
+	  <entry align="left"><simplelist>
+	    <member>
+	     <computeroutput>Pour accéder au service, veuillez
+	     préciser votre No de vol</computeroutput>
+	    </member>
+	    <member><computeroutput>- - -</computeroutput></member>
+	    <member><computeroutput>00:retour</computeroutput></member>
+	   </simplelist>
+	  </entry>
+	  <entry><xref linkend="sms_ok"/></entry>
+	 </row>
+	</tbody>
+       </tgroup>
+      </informaltable>
+
+      <para>Cette page est un texte à champs affichant le texte de
+      paramètre du service permettant à l'utilisateur de savoir ce
+      qu'il doit saisir (ici un numéro de vol pour le service d'information
+      sur les aéroports de Paris). Il est ensuite redirigé vers la
+      page d'envoi de son SMS</para>
+     </section>
+
+     <section id="serv_infos">
+      <title>Plus d'informations sur un service</title>
+      <para>Cette page affiche l'accroche rubrique du service courant. Un
+      lien règlement est présent si le service en question est un
+      jeu. Ce lien règlement affiche le champ règlement de ce service
+      dans la base de données.</para>
+     </section>
+    </section>
+   </section>
+
+  <section>
+   <title>Compteurs de statistiques pour le Data-Mining</title>
+
+    <para>Afin de tenir compte des renseignements de navigation
+     obtenus grâce au contenu dynamique des pages, des compteurs sont
+     ajoutés dans les logs de session afin de recueillir le détail de
+     la navigation de chaque utilisateur. Dans les listes suivantes,
+     chaque mot commençant par une majuscule est une variable
+     correspondant au nom de la rubrique, de la thématique, de
+     l'éditeur ou du numéro court sélectionné. Les Thématiques
+     apparaissant entre parenthèses peuvent être facultatives(cas de
+     la rubrique de nouveautés MMS).
+     </para>
+
+    <section><title>Recherche par rubrique</title>
+     <itemizedlist>
+      <listitem><para>annuaire2|T|Thème</para></listitem>
+      <listitem><para>annuaire2|T|Rubrique|Thématique</para>
+      </listitem>
+      <listitem>
+       <para>annuaire2|T|Rubrique(|Thématique)?|Editeur|sX : 1&le;X&le;5
+	Xieme Commande de service</para>
+      </listitem>
+      <listitem>
+       <para>annuaire2|T|Rubrique(|Thématique)?|Editeur|i  : pages +d'infos
+	infos</para>
+      </listitem>
+      <listitem>
+       <para>annuaire2|T|Rubrique(|Thématique)?|Editeur|r  : règlement
+	(jeux)</para>
+      </listitem>
+      <listitem>
+       <para>annuaire2|T|Rubrique(|Thématique)?|Editeur|d  :
+	déclenchement SMS</para>
+      </listitem>
+     </itemizedlist>
+    </section>
+
+    <section><title>Recherche par éditeur</title>
+     <itemizedlist>
+      <listitem><para>annuaire2|E|Editeur</para></listitem>
+      <listitem><para>annuaire2|E|Editeur|Rubrique(|Thématique)?|sX</para>
+      </listitem>
+      <listitem><para>annuaire2|E|Editeur|Rubrique(|Thématique)?|i</para>
+      </listitem>
+      <listitem><para>annuaire2|E|Editeur|Rubrique(|Thématique)?|r</para>
+      </listitem>
+      <listitem><para>annuaire2|E|Editeur|Rubrique(|Thématique)?|d</para>
+      </listitem>
+     </itemizedlist>
+   </section>
+  </section>
+ </chapter>
+
+ <glossary>
+  <glossentry id="annuaire_commande">
+   <glossterm>Commande</glossterm>
+   <glossdef><para>Ensemble composé d'un numéro court, d'un mot clé et
+     éventuellement d'un paramètre.</para>
+   </glossdef>
+  </glossentry>
+
+  <glossentry id="annuaire_rubrique">
+   <glossterm>Rubrique</glossterm>
+   <glossdef><para>Catégorie générale regroupant des thématiques (ex :
+     divertissement)</para>
+   </glossdef>
+  </glossentry>
+
+  <glossentry id="annuaire_thematique">
+   <glossterm>Thématique</glossterm>
+   <glossdef><para>Sous-ensemble de la rubrique (ex : jeux dans
+     divertissement)</para>
+   </glossdef>
+  </glossentry>
+
+  <glossentry id="annuaire_service">
+   <glossterm>Service</glossterm>
+   <glossdef><para>Contenu de thématique proposé par un éditeur et
+   accessible par le biais d'une ou plusieurs commandes.(une ligne de
+   la base de données)</para>
+  </glossdef>
+  </glossentry>
+
+  <glossentry id="annuaire_texteachamps">
+   <glossterm>Texte à champs</glossterm>
+   <glossdef><para>Texte introduisant le contenu d'une page et variant avec son
+   contenu.</para>
+    <para>Ex:</para>
+    <para>Rechercher un service SMS <emphasis>de
+      personnalisation</emphasis> en tapant le N° correspondant.
+
+     Rechercher un service SMS <emphasis>de
+      divertissement</emphasis> en tapant le N° correspondant.</para>
+   </glossdef>
+  </glossentry>
+
+  <glossentry id="annuaire_textefixe">
+   <glossterm>Texte fixe</glossterm>
+   <glossdef><para>
+     Texte introduisant le contenu d'une page mais ne
+     variant pas selon son contenu (texte fixé par Orange
+     France).</para>
+   </glossdef>
+  </glossentry>
+ </glossary>
+</book>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-general-insert-case:lower
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data
+END
+norules.csv
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data/norules.csv
+END
+badtheme.csv
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data/badtheme.csv
+END
+badthemeheading.csv
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data/badthemeheading.csv
+END
+ok.csv
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data/ok.csv
+END
+noheading.csv
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/test/data/noheading.csv
+END

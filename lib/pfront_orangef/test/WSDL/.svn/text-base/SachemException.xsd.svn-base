@@ -1,0 +1,72 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:sachem.exception.ecare" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:sachem.exception.ecare">
+    <xsd:element name="ExceptionEtatDossierIncorrect" type="tns:ExceptionEtatDossierIncorrect"/>
+    <xsd:complexType name="ExceptionEtatDossierIncorrect">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ExceptionDossierNonOrange" type="tns:ExceptionDossierNonOrange"/>
+    <xsd:complexType name="ExceptionDossierNonOrange">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ExceptionAncienneteRequise" type="tns:ExceptionAncienneteRequise"/>
+    <xsd:complexType name="ExceptionAncienneteRequise">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ExceptionOptionRequise" type="tns:ExceptionOptionRequise"/>
+    <xsd:complexType name="ExceptionOptionRequise">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ExceptionOptionInterdite" type="tns:ExceptionOptionInterdite"/>
+    <xsd:complexType name="ExceptionOptionInterdite">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

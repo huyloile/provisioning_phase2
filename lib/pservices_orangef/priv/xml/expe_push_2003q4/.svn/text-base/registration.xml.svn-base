@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+
+<!--
+  <page>
+    <redirect src="erl://svc_util:direct_access_string?**&test.xml&#check_compat"/>
+  </page>
+-->
+
+  <page>
+    <redirect src="erl://svc_util:redirect_size?181&#check_registration&#not_compatible"/>
+  </page>
+
+  <page tag="check_registration">
+    <redirect src="erl://svc_simple_store:check?PUSH03Q4&#registered&#not_registered&#not_registered"/>
+  </page>
+
+  <!-- Register -->
+
+  <page tag="not_registered" descr="Not registered" hist="dohist">
+    <redirect src="#register"/>
+  </page>
+
+  <page tag="infos_register" descr="Registration info" nav="end">
+    Vous allez, a partir du 1/10, recevoir des infos sur nos jeux. Quand vous serez tente, laissez-vous diriger et gagnez des kdos. A tt moment, pour vous desinscrire, appelez le #100#
+  </page>
+
+  <page tag="register" descr="Register">
+    <redirect src="erl://svc_simple_store:set?PUSH03Q4&1&#register_ok"/>
+  </page>
+
+  <page tag="register_ok" descr="Registered successfully" backtext="notext" menutext="notext">
+    Votre inscription a bien ete prise en compte. Orange vous remercie pour votre participation.<br/>
+    A tout moment, retrouvez nos jeux sur le #101#.<br/>
+    <a href="#infos_register">plus d'informations</a>
+  </page>
+
+  <!-- Unregister -->
+
+  <page tag="registered" descr="Already registered" hist="dohist">
+    Vous participez actuellement a un test Orange et recevez des messages sur nos jeux.<br/>
+    <a href="#infos_unregister">plus d'infos</a><br/>
+    <a href="#unregister">vous desinscrire</a>
+  </page>
+
+  <page tag="infos_unregister" descr="Unregistration info" menutext="notext">
+    Ce test vous permet de recevoir des msg en exclusivite sur nos jeux. Et quand l'1 d'eux vous tente, il vous suffit de taper 1 pour y acceder et concourir.
+  </page>
+
+  <page tag="unregister" descr="Unregister">
+    <redirect src="erl://svc_simple_store:set?PUSH03Q4&0&#unregister_ok"/>
+  </page>
+
+  <page tag="unregister_ok" descr="Unregistered successfully" backtext="notext" menutext="notext" nav="end">
+    Vous ne faites plus partie de notre test.<br/>
+    Vous pouvez vous reinscrire en composant #100# ou appelez le #101# pour acceder au menu des jeux.<br/>
+    Orange vous remercie de votre aide.
+  </page>
+
+  <!-- Errors -->
+
+  <page tag="not_compatible" descr="Unsupported handset" nav="end">
+    Votre terminal ne permet pas d'acceder au service
+  </page>
+
+  <page tag="not_msisdn" descr="MSISDN missing" nav="end">
+    Nous n'avons pas assez d'information pour vous permettre d'acceder a ce service.
+  </page>
+
+</pages>

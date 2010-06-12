@@ -1,0 +1,4 @@
+"record_name";"path";"skey";"ikey";"gui_layout";"contents";"timestamp";"type";"version"
+"mcel_node";"[]";"{[],undefined}";"{[],undefined,undefined}";"vertical";"undefined";"0";"page";"4"
+"mcel_node";"[""acceptance"",""cmo""]";"{[""acceptance"",""cmo""],""empty_service""}";"{[""acceptance"",""cmo""],""empty_service"",undefined}";"vertical";"undefined";"1225213350";"page";"4"
+"mcel_node";"[""acceptance"",""cmo""]";"{[""acceptance"",""cmo""],""empty_service""}";"{[""acceptance"",""cmo""],""empty_service"",[]}";"vertical";"{mcel_page,[],[],[{pcdata,""This service is to prevent from bug #527""},br,{pcdata,""(Cannot access directories with no files)""}],{mcel_target,undefined,undefined,form_action},[{ismenu,""false""},[],[],[],[],[],{volatile,""false""},[]],[]}";"1225213350";"page";"4"

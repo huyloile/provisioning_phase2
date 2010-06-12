@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Options MMS">
+
+<!-- Resiliation-->
+
+  <page tag="resil_mms_mensu_ac" cost="free_pt" backtext="notext"
+        descr="Option MMS mensuelle ac, resiliation">
+    <title>Menu Resiliation option MMS mensuelle ac</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_supprimer_generique_ac_text?opt_mms_mensu"/><br/>
+    <a href="#supprimer_ac">Supprimer l'option</a><br/>
+    <a href="#conditions">Conditions</a>  
+  </page>
+
+  <page tag="resil_mms_mensu_ep" cost="free_pt" backtext="notext"
+        descr="Option MMS mensuelle ep, resiliation">
+    <title>Menu Resiliation option MMS mensuelle ep</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_supprimer_generique_ep_text?opt_mms_mensu"/><br/>
+    <a href="#supprimer_ep">Supprimer l'option</a><br/>
+    <a href="#conditions">Conditions</a>  
+  </page>
+
+  <page tag="supprimer_ac" cost="free_pt" backtext="notext"
+        descr="Options MMS mensuelle ac, confirmer resiliation">
+    <title>Menu Confirmer Resiliation option MMS mensuelle ac</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_confirmer_ac_text?opt_mms_mensu&amp;mms"/><br/>
+    <a href="#suppression">Confirmer</a><br/>
+  </page>
+
+  <page tag="supprimer_ep" cost="free_pt" backtext="notext"
+        descr="Options MMS mensuelle ep, confirmer resiliation">
+    <title>Menu Confirmer Resiliation option MMS mensuelle ep</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_confirmer_ep_text?opt_mms_mensu"/><br/>
+    <a href="#suppression">Confirmer</a><br/>
+  </page>
+
+  <page tag="suppression">
+    <redirect src="erl://svc_options_mobi:do_unsubscription?opt_mms_mensu&amp;#supprimer_mensu_ok,#supprimer_mensu_nok"/>
+  </page>
+
+  <page tag="supprimer_mensu_ok" cost="free_pt" backtext="notext" 
+        descr="Options SMS mensuelle:resiliation Ok">
+    <title>Option MMS mensuelle resiliee</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_ok_text?opt_mms_mensu"/><br/>
+  </page>
+
+  <page tag="supprimer_mensu_nok" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Echec de suppression option SMS mensuelle">
+    <title>Echec de suppression</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="conditions" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions 1</title>
+    <redirect src="erl://svc_util_of:redir_declinaison?51=#conditions_1_click,default=#conditions_1_gen"/>
+  </page>
+
+ <page tag="conditions_1_gen" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions 1</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_text?opt_mms_mensu&amp;1"/><br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_1_click" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions Click">
+    <title>Conditions Click 1</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_click_text?opt_mms_mensu&amp;1"/><br/>
+    <a href="#conditions_2_click">Suite</a>
+  </page>
+
+  <page tag="conditions_2" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions 2">
+    <title>Conditions 2</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_text?opt_mms_mensu&amp;2"/><br/>
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_2_click" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions Click">
+    <title>Conditions Click 2</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_click_text?opt_mms_mensu&amp;2"/><br/>
+    <a href="#conditions_3_click">Suite</a>
+  </page>
+
+  <page tag="conditions_3" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_3_gen,35=#conditions_3_gen,39=#conditions_3_foot,40=#conditions_3_foot,41=#conditions_3_foot,42=#conditions_3_foot,43=#conditions_3_foot,44=#conditions_3_foot,default=#conditions_3_gen"/>
+  </page>
+
+ <page tag="conditions_3_gen" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions 3</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_text?opt_mms_mensu&amp;3"/><br/>
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_3_foot" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions Foot 3</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_foot_text?opt_mms_mensu&amp;3"/><br/>
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_3_click" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions Click 3</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_click_text?opt_mms_mensu&amp;3"/><br/>
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions 4</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_text?opt_mms_mensu&amp;4"/><br/>
+    <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_5" cost="free_pt" backtext="notext" menutext="notext"
+        descr="Option MMS mensu:conditions">
+    <title>Conditions 5</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_suppr_conditions_text?opt_mms_mensu&amp;5"/><br/>
+    <a href="#supprimer_ac">Supprimer l'option</a><br/>
+  </page>
+
+
+<!-- Restitution -->
+  
+  <page tag="mms_mensu_ac_princ_ac" cost="free_pt"
+        descr="Restit Option MMS mensuelle, princ ac, MMS mensu ac">
+    <title>Restit option MMS mensu, princ ac, MMS ac</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_restit_mms_mensu_ac_princ_ac_text?opt_mms_mensu&amp;mms"/>
+  </page>
+
+  <page tag="mms_mensu_ep_princ_ac" cost="free_pt"
+        descr="Restit Option MMS mensuelle, princ ac, MMS mensu ep">
+    <title>Restit Option MMS mensuelle, princ ac, MMS mensu ep</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_restit_mms_mensu_ep_text?opt_mms_mensu"/>
+  </page>
+
+  <page tag="mms_mensu_ac_princ_inf_2E" cost="free_pt"
+        descr="Restit Option MMS mensuelle, princ inf 2E, MMS mensu ac">
+    <title>Restit Option MMS mensuelle, princ inf 2E, MMS mensu ac</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_restit_mms_mensu_ac_princ_ep_text?opt_mms_mensu&amp;mms"/>
+  </page>
+
+  <page tag="mms_mensu_ep_princ_inf_2E" cost="free_pt"
+        descr="Restit Option MMS mensuelle, princ inf 2E, MMS mensu ep">
+    <title>Restit Option MMS mensuelle, princ inf 2E, MMS mensu ep</title>
+    <include src="erl://text_opt_mms_mensu:mms_mensu_restit_mms_mensu_ep_text?opt_mms_mensu"/>
+  </page>
+
+</pages>
+
+

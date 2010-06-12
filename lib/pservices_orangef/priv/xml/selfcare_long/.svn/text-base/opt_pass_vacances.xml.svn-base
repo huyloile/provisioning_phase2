@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option pass vacances">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_pass_voyage_6E&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page offre incompatible">
+    <title>option pass vacances page offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/>.Pour
+    +d'infos contactez votre service clients Orange mobile au 722 (0,37 E/min).
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances deja active">
+    <title>option pass vacances deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> est
+    deja activee.<br/>
+    Orange vous remercie de votre appel.
+  </page>
+  
+  <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot, 40=#solde_insuff_foot, 41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances solde insuffisant">
+    <title>option pass vacances solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/>,
+    vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/> sur
+    votre compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances solde insuffisant m6">
+    <title>option pass vacances solde insuffisant m6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/>,
+    vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/> sur
+    votre compte principal. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances solde insuffisant Foot">
+    <title>option pass vacances solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/>,
+    vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/> sur
+    votre compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances solde insuffisant Click">
+    <title>option pass vacances solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/>,
+    vous devez disposer de
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/> sur
+    votre compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances menu generique">
+    <title>option pass vacances menu generique</title>
+    Vous partez en Europe? Avec le
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    seulement
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/> vous
+    beneficiez de 10 min pour appeler la France ou ...<br/>
+    <a href="#generique_suite">Suite</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+  
+  <page tag="generique_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances menu generique suite">
+    <title>option pass vacances menu generique suite</title>
+    ...le pays visite et Orange vous offre 10 minutes pour recevoir
+    vos appels dans l'union europeenne.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+  <page tag="conditions" backtext="notext" hist="dohist"
+	cost="free_pt" descr="option pass vacances page conditions">
+    <title>option pass vacances page conditions</title>
+    Offre valable apres acceptation du dossier par Orange France,
+    une seule fois par ligne et sur 31 jours consecutifs a compter
+    de la date d'activation....<br/>
+    <a href="#conditions2">Suite</a>
+  </page>
+
+  <page tag="conditions2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page conditions suite (2)">
+    <title>option pass vacances page conditions 2</title>
+    ...Souscription au 444, 220 et #123# (appels gratuits) ou au service
+    clients depuis la France (au 444 depuis l'etranger sous reserve
+    de compatibilite technique...<br/>
+    <a href="#conditions3">Suite</a>
+  </page>
+ 
+  <page tag="conditions3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option pass vacances page conditions suite (3)">
+    <title>option pass vacances page conditions suite(3)</title>
+    ... et d'activation prealable du mode international). Jusqu'a 61%
+    de reduction sur les appels emis et recus dans la zone Europe....<br/>
+    <a href="#conditions4">Suite</a>
+   </page>
+ 
+   <page tag="conditions4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option pass vacances page conditions suite (4)">
+    <title>option pass vacances page conditions suite(4)</title>
+    ...(soit 10 min de communication voix +10 minutes d'appel recus,
+    pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>
+    au lieu de 13E- cf.fiche tarifaire en vigueur) et jusqu'a 79% de
+    reduction...<br/>
+    <a href="#conditions5">Suite</a>
+   </page>
+
+  <page tag="conditions5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page conditions suite (5)">
+    <title>option pass vacances page conditions (5)</title>
+    ...sur les appels emis et recus dans les pays suivants:
+    Albanie, Bielorussie, Bosnie-Herzegovine, Croatie, Georgie, 
+    Macedoine, Moldavie, Serbie, Ukraine, Montenegro...<br/>
+    <a href="#conditions6">Suite</a>
+   </page>
+
+  <page tag="conditions6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page conditions suite (6)">
+    <title>option pass vacances page conditions (6)</title>
+    ...Kosovo (soit 3,45 min de communication voix +10 minutes d'appel recus,
+    pour 5E au lieu de 24E - cf.fiche tarifaire en vigueur).
+    Le credit de communication...<br/>
+    <a href="#conditions7">Suite</a>
+   </page>
+
+  <page tag="conditions7" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page conditions suite (7)">
+    <title>option pass vacances page conditions (7)</title>
+    ...porte sur des appels voix emis depuis le pays visite en Europe
+    vers la France ou le pays visite. Offre incompatible avec toute
+    option ou ...<br/>
+    <a href="#conditions8">Suite</a>
+   </page>
+
+  <page tag="conditions8" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page conditions suite (8)">
+    <title>option pass vacances page conditions (8)</title>
+    ...offre promotionnelle relative aux appels vers et depuis
+    l'etranger en vigueur.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page souscrire">
+    <title>option pass vacances page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_pass_voyage_6E&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+  
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option pass vacances page apres confirmation">
+    <title>option pass vacances page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Pass Vacances page apres confirmation">
+    <title>option Pass Vacances page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> sera activee.
+  </page>
+   <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Pass Vacances page apres confirmation">
+    <title>option Pass Vacances page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> sera activee.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Pass Vacances page apres confirmation">
+    <title>option Pass Vacances page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> sera activee.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Pass Vacances page apres confirmation">
+    <title>option Pass Vacances page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pass_voyage_6E"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> sera activee.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" 
+        descr="Opt. J INF: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="restit_ac" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option pass vacances ac">
+    <title>Page de restitution a l'option pass vacances ac</title>
+    Il vous reste
+    <include src="erl://svc_options:print_balance_min?opt_pass_voyage_6E_moc"/> de
+    com pour appeler vers la France et le pays visite et
+    <include src="erl://svc_options:print_balance_min?opt_pass_voyage_6E_mtc"/> d'appels
+    recus gratuits. Votre
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> prendra
+    fin le
+    <include src="erl://svc_options:print_end_credit?opt_pass_voyage_6E_moc&amp;dlv"/>
+  </page>
+
+  <page tag="restit_ep" cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution a l'option pass vacances ep">
+    <title>Page de restitution a l'option pass vacances ep</title>
+    Votre
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/> est
+    actuellement epuise.
+    <a href="opt_ow_3E_mobi.xml">Resouscrire au
+    <include src="erl://svc_options:print_commercial_name?opt_pass_voyage_6E"/></a>
+  </page>
+
+</pages>
+
+ 

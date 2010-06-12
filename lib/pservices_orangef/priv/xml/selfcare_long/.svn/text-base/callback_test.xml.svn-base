@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care Callback">
+
+ <page cost="freept"/>
+
+  <page tag="accueil_mobi" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#sachem_consultation"/>
+  </page>
+
+  <page tag="rechargement_mobi" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#redirection_recharge"/>
+  </page>
+
+  <page tag="suivi_conso_mobi" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#spider_reponse"/>
+  </page>
+
+
+
+ <page tag="100_888">
+  <redirect src="erl://svc_util:redir_subscription?mobi=#100_888_msisdn,default=#not_mobi"/>
+ </page>
+
+ <page tag="not_mobi" descr="Direct Callback : not mobi" nav="end">
+   <title>Filtre mobicarte</title>
+   Ce service est exclusivement reserve aux clients mobicarte.
+  </page>
+
+ <page tag="100_888_msisdn">
+  <redirect src="erl://svc_util:filter_msisdn?#100_888_roaming&amp;#no_msisdn"/>
+ </page>
+
+ <page tag="100_888_roaming">
+    <redirect src="erl://svc_roaming:redir_roaming_network?noroaming=#noroaming,default=#100_888_do"/>
+ </page>
+
+ <page tag="100_888_do">
+  <redirect src="erl://svc_callback_test:direct_callback?#no_888"/>
+ </page>
+
+ <page tag="no_888" descr="Erreur Callback : pas 888" nav="end">
+  Veuillez reformuler votre demande : composez le #100*888#
+ </page>
+
+<!-- Mobicarte -->
+
+ <page tag="mobi">
+  <redirect src="erl://svc_util:filter_msisdn?#mainmenu_mobi&amp;selfcare_long.xml#redirect_compte"/>
+ </page>
+
+<!-- rename this page to mobi_msisdn and the next one to mobi_bearer -->
+<!-- to allow direct callback -->
+ <page tag="mobi_msisdn_">
+  <redirect src="erl://svc_callback_test:direct_callback?#mobi_bearer"/>
+ </page>
+
+ <page tag="mainmenu_mobi" ismenu="true" cost="free_pt">
+    <redirect src="erl://svc_util_of:consultation_sachem?#mainmenu_mobi2&amp;#menu_indisp"/>
+ </page>
+
+ <page tag="mainmenu_mobi2" cost="freept" hist="dohist" 
+backtext="notext" menutext="notext" descr="Suivi Conso Callback : Mobi">
+  <title>Suivi conso roaming Mobi</title>
+  Vos services a l'etranger<br/>
+  <a href="#call_menu_mobi">Appeler</a><br/>
+  <a href="#rechargement_mobi">Recharger</a><br/>
+  <a href="#suivi_conso_mobi">Suivi conso</a><br/>
+  <!--include src="erl://svc_options_mobi:proposer_lien?eu_dialling_code&amp;Nos Services sur place=#services_locaux&amp;br"/-->
+  <a href="#utiliser_messagerie">Utiliser votre messagerie</a><br/>
+  <a href="/mcel/acceptance/mobi/roaming/menu_infos_tarifs.xml">Quel tarif dans quel pays</a><br/>
+  <a href="#accueil_mobi">Page accueil France</a>
+ </page>
+
+
+ <page tag="call_menu_mobi" hist="dohist" cost="freept"
+  volatile="true" descr="Callback Appeler: Mobi Phase 2">
+  <a href="#form">Appeler un correspondant</a><br/>
+  <a href="erl://svc_callback_test:pull_init?888">Appeler ma mess vocale</a><br/>
+  <a href="erl://svc_callback_test:pull_init?722">Appeler le service client</a><br/>
+  <a href="#aide_mobi">Aide</a>
+ </page>
+
+ <page tag="aide_mobi" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Mobi p1">
+   Pour appeler un fixe ou un mobile francais :
+   composez le + (ou 00) 33 et le No de votre
+   correspondant sans le 0 du debut.<br/>
+   <a href="#aide_mobi_suite1">Suite</a><br/>
+  <a href="#call_menu_mobi" key="00">Menu</a>   
+ </page>
+
+ <page tag="aide_mobi_suite1" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Mobi p2">
+   Ex : mobile : + (ou 00) 33 6 XX XX XX XX, fixe : +
+   (ou 00) 33 1 XX XX XX XX. Pour appeler un fixe ou un
+   mobile etranger : composez le...<br/>
+   <a href="#aide_mobi_suite2">Suite</a><br/>
+  <a href="#call_menu_mobi" key="00">Menu</a>   
+ </page>
+
+ <page tag="aide_mobi_suite2" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Mobi p3">
+   ...+ (ou 00) + l'indicatif international et le No de votre
+   correspondant. Ex : pour appeler le : 07951 240 075 (Royaume-Uni),...<br/>
+   <a href="#aide_mobi_suite3">Suite</a><br/>
+  <a href="#call_menu_mobi" key="00">Menu</a>  
+ </page>
+
+ <page tag="aide_mobi_suite3" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Mobi p4">
+   ...composez le +44 7951 240 075
+  <a href="#call_menu_mobi" key="00">Menu</a>
+ </page>
+
+<!-- CMO -->
+
+ <page tag="cmo">
+  <redirect
+  src="erl://svc_util:filter_msisdn?#mainmenu_cmo&amp;selfcare_long.xml#redirect_compte"/>
+ </page>
+
+<!-- rename this page to cmo_msisdn and the next one to cmo_bearer -->
+<!-- to allow direct callback -->
+ <page tag="cmo_msisdn_">
+  <redirect src="erl://svc_callback_test:direct_callback?#cmo_bearer"/>
+ </page>
+
+ <page tag="mainmenu_cmo" ismenu="true" cost="free_pt">
+    <redirect src="erl://svc_util_of:consultation_sachem?#mainmenu_cmo2&amp;#menu_indisp"/>
+ </page>
+
+ <page tag="mainmenu_cmo2"  cost="freept" hist="dohist" backtext="notext"
+       menutext="notext" descr="Suivi Conso Callback : CMO Phase 2">
+  <title>Suivi Conso roaming CMO Phase 2</title>
+  Vos services a l'etranger<br/>
+  <a href="#call_menu_cmo">Appeler</a><br/>
+  <a href="/mcel/acceptance/cmo/rechargement/accueil_rechargement.xml">Recharger</a><br/>
+  <a href="selfcare_cmo_new.xml#redir_compte">Suivi conso</a><br/>
+  <a href="#services_locaux">Nos services sur place</a><br/>
+  <!--include src="erl://svc_options_mobi:proposer_lien?eu_dialling_code&amp;Nos Services sur place=#services_locaux&amp;br"/-->
+  <a href="#utiliser_messagerie">Utiliser votre messagerie</a><br/>
+  <a href="#infos_tarifs_cmo">Quel tarif dans quel pays</a><br/>
+  <a href="/mcel/acceptance/Home_page.xml">Page accueil France</a>
+ </page>
+
+ <page tag="call_menu_cmo" hist="dohist" cost="freept"
+  volatile="true" descr="Callback Appeler: CMO Phase 2">
+  <a href="#form">Appeler un correspondant</a><br/>
+  <a href="erl://svc_callback_test:pull_init?888">Appeler ma mess vocale</a><br/>
+  <a href="erl://svc_callback_test:pull_init?700">Appeler le service client</a><br/>
+  <a href="#aide_cmo">Aide</a>
+ </page>
+
+ <page tag="aide_cmo" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Cmo p1">
+   Pour appeler un fixe ou un mobile francais :
+   composez le + (ou 00) 33 et le No de votre
+   correspondant sans le 0 du debut.<br/>
+   <a href="#aide_cmo_suite1">Suite</a><br/>
+  <a href="#call_menu_cmo" key="9">Accueil</a>   
+ </page>
+
+ <page tag="aide_cmo_suite1" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Cmo p2">
+   Ex : mobile : + (ou 00) 33 6 XX XX XX XX, fixe : +
+   (ou 00) 33 1 XX XX XX XX. Pour appeler un fixe ou un
+   mobile etranger : composez le...<br/>
+   <a href="#aide_cmo_suite2">Suite</a><br/>
+  <a href="#call_menu_cmo" key="9">Accueil</a>   
+ </page>
+
+ <page tag="aide_cmo_suite2" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Cmo p3">
+   ...+ (ou 00) + l'indicatif international et le No de votre
+   correspondant. Ex : pour appeler le : 07951 240 075 (Royaume-Uni),...<br/>
+   <a href="#aide_cmo_suite3">Suite</a><br/>
+  <a href="#call_menu_cmo" key="9">Accueil</a>  
+ </page>
+
+ <page tag="aide_cmo_suite3" hist="donthist" cost="freept" menutext="notext"
+     descr="Suivi Conso Callback: aide Cmo p4">
+   ...composez le +44 7951 240 075
+  <a href="#call_menu_cmo" key="9">Accueil</a>
+ </page>
+
+<!-- MOBI/CMO tag communs-->
+
+ <page tag="form">
+  <redirect
+  src="erl://svc_util:redirect_bearer?#form_phase2&amp;#form_phase1"/>
+ </page>  
+
+ <page tag="form_phase2" menutext="notext" cost="freept" descr="Suivi Conso
+Callback: Formulaire Phase 2">
+  <title>Formulaire Callback Phase 2</title>
+  <form action="erl://svc_callback_test:pull_init">
+   <entry>
+    <prompt>Pour appeler en France faites le 0033+le no de votre
+    correspondant. Pour appeler dans le pays visite faites le 00+indicatif pays+no de votre correspondant</prompt>
+   </entry>
+  </form>
+ </page>
+
+ <page tag="form_phase1" menutext="notext" cost="freept" descr="Suivi Conso
+Callback: Formulaire Phase 1">
+  <title>Formulaire Callback Phase 1</title>
+  <form action="erl://svc_callback_test:pull_init">
+   <entry>
+    <prompt>Vous pouvez:<br/>
+     Appeler en France en renvoyant le #12*0033+LeNoFrancais#<br/>
+     Appeler un No du pays ou vous etes en renvoyant le #12*00+IndicatifDuPays+LeNoDuCorrespondant#</prompt>
+   </entry>
+  </form>
+ </page>
+
+
+  <page tag="menu_indisp" descr="menu callback mobi/cmo indisponible : echec de la requete A4">
+    L'acces au menu est indisponible.
+  </page>
+
+
+ <!-- MOBI/CMO :Nos services sur place -->
+
+ <page tag="services_locaux" cost="freept" descr="Roaming Callback MOBI/CMO :
+  Services sur place"  hist="dohist">
+  <title>Services sur place</title>
+  <a href="#assistance_voyage">Assistance voyage</a>  
+  <!--a href="#assistance_rapatriement1">Assistance rapatriement</a-->
+  <!--a href="#room_service_eu1">Room service Europe</a-->
+ </page>
+
+ <page tag="assistance_voyage" cost="freept" descr="Roaming CMO :
+  Assistance Voyage"  hist="dohist">
+  <title>Assistance Voyage</title>
+  avec Orange et Mondial Assistance pour 10E, beneficiez de l'assistance voyage
+  (frais medicaux, rapatriement, ratage d'avion...) pour vous et<br/>
+   <a href="#assistance_voyage_2">Suite</a>
+ </page>
+ <page tag="assistance_voyage_2" cost="freept" descr="Roaming CMO :
+  Assistance Voyage Suite"  hist="dohist">
+  <title>Assistance Voyage Suite</title>
+  votre famille partout dans le monde pendant 30 jours.<br/>
+  Infos et souscription au service client (au 700 ou + (ou 00) 33 6 07 62 64 64).
+ </page>
+
+ <page tag="assistance_rapatriement1" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO : Assist rapatrimt1" >
+   <title>Assistance rapatriement1</title>
+   Assistance rapatriement : avec Orange et Mondial Assistance pour 10E,
+   beneficiez d'une couverture assistance/rapatriement pour vous et<br/>
+   <a href="#assistance_rapatriement2">Suite</a>
+ </page>
+
+ <page tag="assistance_rapatriement2" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO : Assist rapatrimt2" >
+   <title>Assistance rapatriement 2</title>
+   vos proches partout dans le monde pendant 30 jours.
+   Renseignements et souscription au service client
+   (au 722 ou + (ou 00) 33 6 07 62 64 64).<br/>
+   <a href="#assistance_rapatriement3">Suite</a>
+ </page>
+
+ <page tag="assistance_rapatriement3" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO: Assist rapatrimt3" >
+   <title>Assistance rapatriement 3</title>
+   <a href="#rapatr_mentions_leg1" key="7">Mentions legales</a>
+ </page>
+
+
+ <page tag="room_service_eu1" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO : room service1" >
+   <title>Room Service1</title>
+   Room service Europe : composez le XXX depuis votre
+   mobile Orange (1,34E/mn depuis la zone Europe)
+   service disponible en francais, pour<br/>
+   <a href="#room_service_eu2">Suite</a>
+ </page>
+
+ <page tag="room_service_eu2" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO : room service2" >
+   <title>Room Service 2</title>
+   vos recherches locales, reservations de restaurant, spectacles,
+   etc. Vous profitez egalement d'un interprete- traducteur en temps reel.<br/>
+   <a href="#room_service_eu3">Suite</a>
+ </page>
+
+ <page tag="room_service_eu3" cost="freept"
+       descr="Services sur place Roaming Callback MOBI/CMO: room service3" >
+   <title>Room Service 3</title>
+   <a href="#rooms_mentions_leg1" key="7">Mentions legales</a>
+ </page>
+
+
+ <!-- MOBI/CMO :Utilisez votre messagerie -->
+
+ <page tag="utiliser_messagerie" cost="freept" descr="Roaming Callback MOBI/CMO :
+  utiliser messagerie a l'etranger P1"  hist="dohist">
+  <title>utiliser messagerie P1</title>
+  Pour consulter votre messagerie vocale :
+  composez le 888 depuis votre mobile ou le + (ou 00)
+  33608080808  depuis votre mobile ou...<br/>
+   <a href="#msgerie_mentions_leg2">Suite</a>
+ </page>
+
+
+ <!-- MOBI/CMO :Quel tarif dans quel pays-->
+
+<!-- <page tag="infos_tarifs_mobi" cost="freept" hist="dohist" descr="Roaming MOBI : tarifs a l'etranger">
+   <redirect src="file:/orangef/selfcare_long/roaming_mobi_infos_tarifs.xml"/>
+ </page>-->
+
+ <page tag="infos_tarifs_cmo" cost="freept" hist="dohist" descr="Roaming CMO : tarifs a l'etranger">
+   <redirect src="file:/orangef/selfcare_long/roaming_cmo_infos_tarifs.xml"/>
+ </page>
+
+
+<!-- Mentions legales -->
+
+ <page tag="rooms_mentions_leg1" cost="freept"
+       descr="Services sur place Roaming MOBI/CMO:Room services Mentions Leg1" >
+   <title>Room services : mentions leg 1</title>
+   Service accessible sous reserve d'ouverture dans le pays
+   visite dans la zone Europe. Offre soumise a condition.
+ </page>
+
+ <page tag="msgerie_mentions_leg2" cost="freept"
+       descr="Roaming MOBI/CMO:Msgrie Mentions Leg2" >
+   <title>msgrie mentions leg 2</title>
+   ...une ligne fixe et laissez-vous guider. Attention :
+   dans certains pays, votre code secret vous sera demande
+   pour interroger votre...<br/>
+   <a href="#msgerie_mentions_leg3">Suite</a>
+ </page>
+
+ <page tag="msgerie_mentions_leg3" cost="freept"
+       descr="Roaming MOBI/CMO:Msgrie Mentions Leg3" >
+   <title>msgrie mentions leg 3</title>
+   ...messagerie vocale. N'oubliez pas d'enregistrer votre
+   code avant votre depart. L'activation ou la modification
+   de votre code secret doit...<br/>
+   <a href="#msgerie_mentions_leg4">Suite</a>
+ </page>
+
+ <page tag="msgerie_mentions_leg4" cost="freept"
+       descr="Roaming MOBI/CMO:Msgrie Mentions Leg4" >
+   <title>msgrie mentions leg 4</title>
+   ...se faire depuis la France metropolitaine. Avant de
+   partir a l'etranger, composez le : 888 choisissez
+   l'option 2 et laissez-vous guider.<br/>
+   <a href="#msgerie_mentions_leg5">Suite</a>
+ </page>
+
+ <page tag="msgerie_mentions_leg5" cost="freept"
+       descr="Roaming MOBI/CMO:Msgrie Mentions Leg5" >
+   <title>msgrie mentions leg 5</title>
+   Faites un essai de votre code confidentiel en composant
+   le + (ou 00) 33608080808 puis laissez-vous guider.
+   Retenez bien votre code secret.<br/>
+   <a href="#msgerie_mentions_leg6">Suite</a>
+ </page>
+
+ <page tag="msgerie_mentions_leg6" cost="freept"
+       descr="Roaming MOBI/CMO:Msgrie Mentions Leg6" >
+   <title>msgrie mentions leg 6</title>
+   Cout de consultation de la messagerie vocale a l'etranger
+   = cout d'une communication vers la France metropolitaine.
+ </page>
+
+<!-- Messages à renvoyer après interrogation de PRISM -->
+
+ <page tag="success" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_mobi_voice_mail" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_mobi_customer_service" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_mobi_phone_number" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_cmo_voice_mail" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_cmo_customer_service" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+ <page tag="success_cmo_phone_number" nav="end" descr="Callback réussi">
+  Vous allez bientot recevoir un appel et etre mis en relation avec
+  votre correspondant au bout de quelques secondes.
+ </page>
+
+ <page tag="error2_4" menutext="notext" backtext="notext"
+  descr="Erreur Callback : crédit épuisé">
+  Votre credit est epuise/insuffisant.Pour pouvoir appeler veuillez
+  recharger votre compte en tapant 1 ou 0 pour revenir en
+  arriere<br/>
+  <a href="recharge.xml">recharger</a>
+ </page>
+
+ <page tag="error3_9" backtext="notext" descr="Erreur Callback :
+  service indisponible" nav="end">
+  Le service est momentanement indisponible. Veuillez renouveler votre
+  appel ulterieurement.
+ </page>
+
+ <page tag="error5" menutext="notext" descr="Erreur Callback : numéro
+  inaccessible" nav="end">
+  Nous ne pouvons pas donner suite a votre appel. Ce numero est
+  inaccessible depuis l'etranger.
+ </page>
+
+ <page tag="error8" menutext="notext" descr="Erreur Callback : appel
+  vers pays inconnu non autorisé" nav="end">
+  Vous ne pouvez passer d'appels que vers la France et le pays visité.
+ </page>
+
+ <page tag="error8_country" menutext="notext" descr="Erreur Callback :
+  appel vers pays connu non autorisé" nav="end">
+  Vous ne pouvez passer d'appels que vers les pays suivants : France
+  et <subst name="COUNTRY"/>
+ </page>
+
+ <page tag="error6_7" backtext="notext" descr="Erreur Callback : pas
+  accès au service" nav="end">
+  Vous n'avez pas acces a ce service.
+ </page>
+
+<!-- Messages d'erreur -->
+
+ <page tag="unavailable" menutext="notext" cost="freept" descr="Erreur
+Callback : erreur inconnue" nav="end">
+  Ce service est temporairement indisponible
+ </page>
+
+  <page tag="camel" menutext="notext" cost="freept" descr="Erreur
+Callback : pays camel" nav="end">
+  Désolé, le service de callback n'est pas disponible dans le pays visité.
+ </page>
+
+ <page tag="noroaming" menutext="notext" cost="freept" descr="Erreur
+Callback : pas roaming" nav="end">
+  Désolé, le service de callback n'est disponible que lorsque vous
+  visitez un pays étranger.
+ </page>
+
+ <page tag="no_msisdn" menutext="notext" cost="freept" descr="Erreur
+Callback : pas de msisdn" nav="end">
+  Désolé, nous n'avons pas assez d'informations pour que vous puissiez
+  utiliser ce service.
+ </page>
+
+ <page tag="badnumber" menutext="notext" cost="freept" descr="Erreur
+Callback : mauvais destinataire" nav="end">
+  Le destinataire que vous avez saisi a un format invalide.
+ </page>
+
+</pages>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <doRechargementParentChildResponse xmlns="urn:orchidee.service.ecare/G8">
+      <return>
+	<activationPrestation>false</activationPrestation>
+	<rechargement>
+	  <comptes>
+	    <credit>25.2</credit>
+	    <dateLimiteValidite>1986-05-20T09:00:48.04</dateLimiteValidite>
+	    <montantFidelisation xsi:nil="true"/>
+	    <pourcentageFidelisation>-9208</pourcentageFidelisation>
+	    <uniteRestitution xsi:nil="true"/>
+	    <uniteGestion>
+	      <code>EUR</code>
+	      <identifiant>2</identifiant>
+	      <libelle>Euros</libelle>
+	    </uniteGestion>
+	    <planTarifaire xsi:nil="true"/>
+	    <typeCompte>
+	      <code>PRINC</code>
+	      <identifiant>2</identifiant>
+	      <libelle>Principal</libelle>
+	    </typeCompte>
+	  </comptes>
+	  <comptes>
+	    <credit>20</credit>
+	    <dateLimiteValidite>1989-05-20T09:00:48.04</dateLimiteValidite>
+	    <montantFidelisation xsi:nil="true"/>
+	    <pourcentageFidelisation>80</pourcentageFidelisation>
+	    <uniteRestitution xsi:nil="true"/>
+	    <uniteGestion xsi:nil="true"/>
+	    <!--uniteGestion>
+		<code>EUR</code>
+		<identifiant>2</identifiant>
+		<libelle>Euros</libelle>
+		</uniteGestion-->
+	    <planTarifaire xsi:nil="true"/>
+	    <typeCompte xsi:nil="true"/>	
+	    <!--typeCompte>
+		<code>PRINC</code>
+		<identifiant>2</identifiant>
+		<libelle>Principal</libelle>
+		</typeCompte-->	
+	  </comptes>
+	  <dateLimiteValiditeDossier>1996-12-05T13:11:18.74</dateLimiteValiditeDossier>
+	</rechargement>
+      </return>
+    </doRechargementParentChildResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+
+  <page cost="freept">
+    <redirect src="erl://svc_m5_orangef:redirect_by_open_hours?#m5_ouvert&amp;#menu_fermeture"/>
+  </page>
+
+  <page tag="m5_ouvert" descr="M5 Cmo">
+    <redirect src="erl://svc_m5_orangef:redirect_by_membership?#menu_adherent&amp;#menu_non_adherent&amp;#menu_indisponibilite"/>
+  </page>
+
+  <page tag="menu_adherent" descr="Menu M5 adherents" backtext="notext">
+    <title>M5 menu adherent</title>
+    Vos programmes :<br/>
+    <a href="#changer">Changer de mobile</a><br/>
+    <a href="#consult_catalogue">Programme de fidelite Davantage mobile</a><br/>
+    <a href="#programme_de_fidelite_Davantage">Programme de fidelite Davantage</a><br/>
+
+   </page>
+  
+  <page tag="menu_non_adherent" descr="Menu M5 non adherents" backtext="notext">
+    Vos programmes :<br/>
+    <a href="#changer">Changer de mobile</a><br/>
+    <a href="#non_adherent_M5byMobile">Programme de fidelite davantage mobile</a><br/>
+  </page>
+
+  <page tag="changer" descr="Menu PCM Cmo">
+    <title>Menu PCM Cmo</title>
+    <a href="#PCM_changer">Changer de mobile</a><br/>
+    <a href="#PCM_mobiles">Mobiles proposes</a><br/>
+    <a href="#PCM_reglement">Reglement</a>
+  </page>
+
+  <page tag="PCM_changer" descr="PCM Changer de mobile Cmo">
+    <title>PCM Changer de mobile Cmo</title>
+    Avec le Programme Changer de mobile, renouvelez votre mobile sans minimum de points ou d'anciennete. Chaque mois, vous gagnez 20 pts + 1 pt par euro depense<br/>
+  </page>
+
+  <page tag="PCM_mobiles" descr="PCM Mobiles proposes Cmo">
+    <title>PCM Mobiles proposes Cmo</title>
+    Des l'atteinte de 1200 points quelle que soit votre offre, vous beneficiez d'un prix tres attractif! Retrouvez notre catalogue de mobiles sur www.orange.fr.<br/>
+  </page>
+
+  <page tag="PCM_reglement" descr="PCM Reglement Cmo">
+    <title>PCM Reglement Cmo</title> 
+    Toutes les conditions specifiques au Programme Changer de mobile, sont disponibles sur votre espace client sur www.orange.fr.<br/>
+  </page>
+
+  <page tag="consult_catalogue" hist="donthist" descr="M5">
+    <redirect src="erl://svc_m5_orangef:catalogue_page?1"/>
+  </page>
+
+ <page tag="programme_de_fidelite_Davantage" descr="Programme de fidelite Davantage">
+  <title>Programme de fidelite Davantage</title>
+  Avec Davantage, regroupez vos points de fidelite fixe, mobile et internet et accedez a encore plus de kdos. RDV sur http://davantage.orange.fr
+  </page>
+
+  <page tag="page_catalogue" volatile ="true" hist="dohist" descr="M5">
+    <title>Une page du catalogue</title>
+    <include src="erl://svc_m5_orangef:display_page?page_catalogue"/>
+  </page>
+
+  <page tag="choix_par_usages" hist="dohist" descr="Menu Choix par usages Cmo">
+    <title>Menu Choix par usages Cmo</title>
+    <include src="erl://svc_m5_orangef:print_usage?CO&amp;#CO_sms_mms&amp;SMS et MMS"/>
+    <include src="erl://svc_m5_orangef:print_usage?VX&amp;#VX_com_fr&amp;Min de com en France metropolitaine"/>
+    <include src="erl://svc_m5_orangef:print_usage?VI&amp;#VX_com_inter&amp;Min de com a l'international"/>
+    <a href="#suite_usages">Suite des usages</a><br/>
+  </page>
+
+  <page tag="suite_usages" hist="dohist" descr="Menu choix recompense CO">
+    <include src="erl://svc_m5_orangef:print_usage?CP&amp;#CP_achat&amp;Achat de pts davantage mobile"/>
+    <include src="erl://svc_m5_orangef:print_usage?HD&amp;#HD_multi1&amp;Multimedia : TV/Messenger"/>
+    <include src="erl://svc_m5_orangef:print_usage?HD&amp;#HD_multi2&amp;Multimedia : Mail/Internet Max"/>
+    <include src="erl://svc_m5_orangef:print_usage?HD&amp;#HD_multi3&amp;Multimedia : Sport"/>
+  </page>
+
+  <page tag="CO_sms_mms" hist="dohist" descr="Menu choix recompense CO">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;CO"/>
+  </page>
+
+  <page tag="VX_com_fr" hist="dohist" descr="Menu choix recompense VX FR">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;VX"/>
+  </page>
+
+  <page tag="VX_com_inter" hist="dohist" descr="Menu choix recompense VX INT">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;VI"/>
+  </page>
+
+  <page tag="MO_reduction" hist="dohist" descr="Menu choix recompense MO">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;MO"/>
+  </page>
+
+  <page tag="FG_achat" hist="dohist" descr="Menu choix recompense FG">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;FG"/>
+  </page>
+
+  <page tag="CP_achat" hist="dohist" descr="Menu choix recompense CP">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;CP"/>
+  </page>
+
+  <page tag="HD_multi1" hist="dohist" descr="Menu choix recompense HD">
+    <redirect src="erl://svc_m5_orangef:present_page?1&amp;HD&amp;TV Max,Orange Messenger"/>
+  </page>
+
+  <page tag="HD_multi2" hist="dohist" descr="Menu choix recompense HD">
+   <redirect src="erl://svc_m5_orangef:present_page?1&amp;HD&amp;Mail,Internet Max"/>
+  </page>
+
+  <page tag="HD_multi3" hist="dohist" descr="Menu choix recompense HD">
+   <redirect src="erl://svc_m5_orangef:present_page?1&amp;HD&amp;Musique mix,Option sport"/>
+  </page>
+
+  <page tag="menu_CO" hist="dohist" descr="Menu choix recompense CO">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_VX" hist="dohist" descr="Menu choix recompense VX">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_VI" hist="dohist" descr="Menu choix recompense VI">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_MO" hist="dohist" descr="Menu choix recompense MO">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_FG" hist="dohist" descr="Menu choix recompense FG">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_CP" hist="dohist" descr="Menu choix recompense CP">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+  <page tag="menu_HD" hist="dohist" descr="Menu choix recompense HD">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?menu_TU"/>
+  </page>
+
+  <page tag="details" hist="donthist" menutext="notext" descr="Detail">
+    <title>Page de detail</title>
+    <include src="erl://svc_m5_orangef:display_page?details"/>
+  </page>
+  <page tag="select_present" hist="dohist" descr="Detail">
+    <title>Menu</title>
+    <include src="erl://svc_m5_orangef:display_page?select_present"/>
+  </page>
+  <page tag="confirmation" hist="donthist" backtext="notext" descr="Detail">
+    <title>Page de confirmation</title>
+    <include src="erl://svc_m5_orangef:display_page?confirmation"/>
+  </page>
+
+  <page tag="solde_insuffisant" descr="Menu solde insuffisant">
+    <title>Menu solde insuffisan</title>
+    Desole, votre solde ne vous permet pas d'activer le cadeau selectionne<br/>
+  </page>
+
+  <page tag="mobile_non_eligible" descr="Erreurs 401 402">
+    <title>Erreurs 401 402</title>
+    Desole, votre compte points Changer de mobile n'est pas eligible. Veuillez contacter votre service clients.
+  </page>
+
+  <page tag="plafond" descr="Erreur 403">
+    <title>Erreur 403</title>
+    Desole, vous avez atteint le plafond de votre compte points Changer de mobile.
+  </page>
+
+  <page tag="erreur_PCM_points" descr="Erreur 404 et 405 et 406">
+    <title>Erreur 404 et 405 et 406</title>
+    Desole, votre compte points Changer de mobile n'est pas eligible. Veuillez contacter votre service clients. 
+  </page>
+
+  <page tag="non_adherent_M5byMobile" descr="Menu non adherent M5ByMobile Cmo">
+    <title>Menu non adherent M5ByMobile Cmo</title>
+    Avec davantage mobile, Orange recompense votre fidelite.
+    Pour en savoir plus et decouvrir les cadeaux a gagner,
+    connectez vous sur orange.fr > espace client<br/>
+   </page>
+
+  <page tag="plus_infos" descr="Menu Description programme M5bO">
+    <title>Menu Description programme M5bO</title>
+    Avec Davantage, vous cumulez chaque mois des points que vous transformez en cadeaux (sms, min de com, options multimedia...).<br/>
+    <a href="#plus_infos_suite">Suite</a>
+  </page>
+  <page tag="plus_infos_suite">
+    Davantage, c'est gratuit et sans engagement.<br/>
+  </page>
+
+  <page tag="menu_fermeture" descr="Menu Fermeture du service Cmo" backtext="notext">
+    <title>Menu Fermeture du service Cmo</title>
+    Le service est indisponible entre 2h et 6h du matin.
+    Veuillez reessayer ulterieurement<br/>
+  </page>
+
+  <page tag="menu_indisponibilite" descr="Menu Indisponibilite du service Cmo" backtext="notext">
+    <title>Menu Indisponibilite du service Cmo</title>
+    Un probleme technique nous empeche de satisfaire votre demande,
+    merci de la renouveler ulterieurement<br/>
+  </page>
+
+</pages>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option CMO: Forfait SMS">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="Forfait SMS : souscription" cost="freept">
+   <title>Menu souscription Forfait SMS</title>
+   Choisissez votre option SMS/MMS ! Repondez<br/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_30&amp;#impact_sms_30&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_80&amp;#impact_sms_80&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_130&amp;#impact_sms_130&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_210&amp;#impact_sms_210&amp;br"/>
+   <include src="erl://svc_subscr_asmetier:print_if_inactif?sms_300&amp;#impact_sms_300&amp;nobr"/>
+   </page>
+
+<page tag="impact_sms_30" hist="dohist" descr="Forfait SMS : impact souscription 30 SMS">
+   <title>Impact souscription 30 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_30&amp;#add_sms_30,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_80" hist="dohist" descr="Forfait SMS : impact souscription 80 SMS">
+   <title>Impact souscription 80 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_80&amp;#add_sms_80,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_130" hist="dohist" descr="Forfait SMS : impact souscription 130 SMS">
+   <title>Impact souscription 130 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_130&amp;#add_sms_130,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_210" hist="dohist" descr="Forfait SMS : impact souscription 210 SMS">
+   <title>Impact souscription 210 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_210&amp;#add_sms_210,#error_msg"/>
+  </page>
+
+<page tag="impact_sms_300" hist="dohist" descr="Forfait SMS : impact souscription 300 SMS">
+   <title>Impact souscription 300 SMS</title>
+    <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?sms_300&amp;#add_sms_300,#error_msg"/>
+  </page>
+
+<page tag="add_sms_30" hist="dohist" descr="Forfait SMS : souscription 30 SMS">
+   <title>Confirmation souscription 30 SMS</title>
+   Vous souhaitez souscrire a l'option 30 SMS. Vous serez debite chaque mois de 3E.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_30&amp;#succes_add,#succes_add_first">Valider</a>
+  </page>
+
+<page tag="add_sms_80" hist="dohist" descr="Forfait SMS : souscription 80 SMS">
+   <title>Confirmation souscription 80 SMS</title>
+   Vous souhaitez souscrire a l'option 80 SMS. Vous serez debite chaque mois de 7,5E.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_80&amp;#succes_add,#succes_add_first">Valider</a>
+  </page>
+
+<page tag="add_sms_130" hist="dohist" descr="Forfait SMS : souscription 130 SMS">
+   <title>Confirmation souscription 130 SMS</title>
+   Vous souhaitez souscrire a l'option 130 SMS. Vous serez debite chaque mois de 12E.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_130&amp;#succes_add,#succes_add_first">Valider</a>
+  </page>
+
+<page tag="add_sms_210" hist="dohist" descr="Forfait SMS : souscription 210 SMS">
+   <title>Confirmation souscription 210 SMS</title>
+   Vous souhaitez souscrire a l'option 180 + 30 SMS. Vous serez debite chaque mois de 18E.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_210&amp;#succes_add,#succes_add_first">Valider</a>
+  </page>
+
+<page tag="add_sms_300" hist="dohist" descr="Forfait SMS : souscription 300 SMS">
+   <title>Confirmation souscription 300 SMS</title>
+   Vous souhaitez souscrire a l'option 250 + 50 SMS. Vous serez debite chaque mois de 25E.
+   <include src="erl://svc_subscr_asmetier:print_opt_incomp"/><br/>
+   <a href="erl://svc_subscr_asmetier:souscrire?sms_300&amp;#succes_add,#succes_add_first">Valider</a>
+  </page>
+   
+<page tag="succes_add" descr="Forfait SMS : Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option
+   <include src="erl://svc_subscr_asmetier:print_opt"/>. Vous
+   pouvez l'utiliser en SMS ou MMS(avec 1 MMS =3 SMS).
+   Vous serez averti de l'activation de votre option par SMS.
+</page>
+
+<page tag="succes_add_first" descr="Forfait SMS : Souscription Reussi" nav="end">
+   <title>Souscription Reussi</title>
+   Vous avez souscrit a l'option
+   <include src="erl://svc_subscr_asmetier:print_opt"/>. Vous
+   pouvez l'utiliser en SMS ou MMS(avec 1 MMS =3 SMS).
+   Vous serez averti de l'activation de votre option par SMS.
+</page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="O.CMO : Erreur">
+  <redirect src="selfcare_cmo.xml#temporary"/>
+</page>
+
+</pages>

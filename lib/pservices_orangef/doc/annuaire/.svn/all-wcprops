@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire
+END
+annuaire_tree.fig
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/annuaire_tree.fig
+END
+annuaire_tech.fig
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/annuaire_tech.fig
+END
+fs_annuaire.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/fs_annuaire.xml
+END
+annuaire_db.fig
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/annuaire_db.fig
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/Makefile
+END
+spell-ignore.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/doc/annuaire/spell-ignore.txt
+END

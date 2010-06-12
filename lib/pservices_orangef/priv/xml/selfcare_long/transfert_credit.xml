@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : Transfert Credit">
+  
+  <page cost="freept">
+    <redirect src="#presentation1"/>
+  </page>
+  
+  <page tag="accueil" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#redirect_menu"/>
+  </page>
+    
+  <page tag="presentation1" cost="free_pt" descr="Offrir Credit presentation 1_4" backtext="notext">
+    <title>Offrir Credit presntation 1_2</title>
+    Offrir du credit c'est simple et c'est gratuit avec le service de transfert de credit.
+    Vous pouvez tester le service...<br/>
+    <a href="#presentation2">Suite</a><br/>
+    <a href="#offrir1">Pour offrir du credit</a><br/>
+    <a href="#conditions1">Conditions</a><br/>
+  </page>
+
+  <page tag="presentation2" cost="free_pt" 
+	descr="Offrir Credit presentation 2_4" backtext="notext">
+    de transfert de credit en offrant un montant libre entre 1 et 15 euros a un proche detenant une carte prepayee Orange. Ce montant est debite de votre<br/>
+    <a href="#presentation3">Suite</a><br/>
+  </page>
+
+  <page tag="presentation3" backtext="notext" cost="free_pt" 
+	descr="Offrir Credit presentation 3_4" backtext="notext">
+    compte principal et immediatement transfere a un proche. Le montant offert est valable 7 jours et sera decompte au tarif en vigueur...<br/>
+    <a href="#presentation4">Suite</a><br/>
+  </page>
+
+  <page tag="presentation4" cost="free_pt" backtext="notext"
+	descr="Offrir Credit presentation 4_4">
+    Le montant offert ne prolonge pas la validite du compte principal et de la ligne du beneficiaire.<br/>
+    <a href="#offrir1">Pour offrir du credit</a><br/>
+  </page>
+
+ <page tag="offrir1" cost="free_pt" backtext="notext" menutext ="notext" descr="Offrir Credit 1_3">
+    <title>Transfert Credit : Choix montant</title>
+    <form action="erl://svc_transfert_credit:check_msisdn">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	Veuillez repondre en saisissant le numero de telephone de la personne a qui vous souhaitez offrir du credit (cette personne devant detenir une carte prepayee Orange).
+      </prompt>
+    </entry>
+   </form>
+ </page>
+
+ <page tag="offrir3" cost="free_pt" backtext="notext" descr="Offrir Credit 3_3">
+    <include src="erl://svc_transfert_credit:validate_msisdn_dest?Vous souhaitez offrir du credit au ~s"/><br/>
+    <a href="#confirm_msisdn_dest">Confirmer</a><br/>
+  </page>
+ 
+ <page tag="confirm_msisdn_dest" cost="free_pt" backtext="notext" menutext ="notext" descr="Offrir Credit 1_3">
+   <title>Transfert Credit : Choix montant</title>
+   <form action="erl://svc_transfert_credit:select_amount" keywords="disable">
+     <entry kind="digits" type="ccnumber">
+       <prompt>
+	 Numero enregistre.<br/><br/>
+	 Veuillez a present saisir le montant que vous souhaitez transferer compris entre 1 et 15 E. Vous devez choisir un nombre entier.
+       </prompt>
+     </entry>
+   </form>
+ </page>
+ 
+ <page tag="offrir2" cost="free_pt" backtext="notext" descr="Offrir Credit 3_3">
+    <include src="erl://svc_transfert_credit:validate_message?Vous souhaitez transferer ~s euros au ~s"/><br/>
+    <a href="erl://svc_transfert_credit:do_confirm">Confirmer</a><br/>
+  </page>
+
+ <page tag="erreur_enter_own_msisdn_transmetteur" cost="free_pt" backtext="notext" descr="Offrir Credit 3_3">
+   <form action="erl://svc_transfert_credit:check_msisdn" keywords="disable">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	Vous ne pouvez pas offrir du credit a votre propre carte prepayee, merci d'entrer un autre numero.<br/>
+	Vous pouvez aussi recharger votre carte en tapant 1.<br/>
+	1:Recharger<br/>
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+ <page tag="success" cost="free_pt" backtext="notext"
+	descr="Tranfert reussi">
+    <include src="erl://svc_transfert_credit:validate_message?Vous venez de transferer ~s euros au ~s. "/>Dans quelques instants le beneficiaire et vous recevrez un SMS de confirmation.
+  </page>
+
+  <page tag="conditions1" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 1_7">
+    Service accessible en France metropolitaine et reserve aux clients prepaye Orange disposant d'un credit sur le compte principal d'un montant minimum de 45 euros.<br/>
+    <a href="#conditions2">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions2" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 2_7">
+    ...Transfert de credit d'un montant de 1 a 15 euros par pas de 1 euro vers un autre compte prepaye Orange. Service accessible par le #123# et le 224...<br/>
+    <a href="#conditions3">Suite</a><br/>
+  </page>
+
+  <page tag="conditions3" cost="free_pt" backtext="notext" menutext="notext"
+	descr="Offrir Credit conditions 3_7">
+    Le credit transfere est valable 7 jours et ne prolonge ni la duree de validite du credit du compte principal
+    ni la duree de validite du num d'appel du beneficiaire<br/>
+    <a href="#conditions4">Suite</a><br/>
+  </page>
+
+  <page tag="conditions4" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 4_7">
+    ...Si la duree de validite du num d'appel est inferieure a 7 jours au moment du transfert,
+    elle sera automatiquement positionnee sur 7 jours...<br/>
+    <a href="#conditions5">Suite</a><br/>
+  </page>
+
+  <page tag="conditions5" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 5_7">
+    ...Les communications sont decomptees en priorite du credit transfere au tarif du plan classique seconde (voir fiche tarifaire en vigueur sur www.orange.fr)...<br/>
+    <a href="#conditions6">Suite</a><br/>
+  </page>
+
+  <page tag="conditions6" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 6_7">
+    ...Service limite a 5 transferts par mois pour le donneur et le beneficiaire.
+    Le credit transfere ne peut pas faire l'objet d'un nouveau transfert...<br/>  
+    <a href="#conditions7">Suite</a><br/>
+  </page>
+  
+  <page tag="conditions7" cost="free_pt" backtext="notext"
+	descr="Offrir Credit conditions 7_7">
+    Si le beneficiaire est inscrit a l'illimite kdo, le credit transfere n'entre pas en compte dans le calcul des 30E
+    recharges dans le mois.<br/>
+    <a href="#offrir1">Offrir du credit</a><br/>
+  </page>
+  
+  <page tag="erreur_montant" cost="free_pt" menutext="notext"  backtext="notext" descr="Erreur Montant">
+    <title>Transfert Credit : Erreur Montant</title>
+    <form action="erl://svc_transfert_credit:select_amount" keywords="disable">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+      Desole le montant saisi est incorrect. Merci de saisir un montant sans decimale compris entre 1 et 15 E.
+      </prompt>
+    </entry>
+   </form>
+ </page>
+
+  <page tag="erreur_msisdn_wrong_format" cost="free_pt" backtext="notext" descr="Erreur MSISDN in wrong format">
+    <title>Transfert Credit : Erreur MSISDN In Wrong Format</title>
+    <form action="erl://svc_transfert_credit:check_msisdn" keywords="disable">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	Numero non valide.<br/>
+	Merci d'entrer un no commencant par 06 ou 07, comportant 10 chiffres, sans espace<br/><br/>
+	Nous vous invitons a recommencer en entrant un nouveau numero
+      </prompt>
+    </entry>
+   </form>
+ </page>
+
+  <page tag="erreur_msisdn_pp_orange" cost="free_pt" backtext="notext" descr="Erreur MSISDN in wrong prepaid Orange">
+    <title>Transfert Credit : Erreur MSISDN in wrong prepaid Orange</title>
+    <form action="erl://svc_transfert_credit:check_msisdn" keywords="disable">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	Numero de telephone non valide. Seul un numero prepaye Orange peut beneficier d'un transfert de credit.<br/><br/>
+	Merci de recommencer en saisissant un nouveau numero. 
+      </prompt>
+    </entry>
+   </form>
+ </page>
+
+  <page tag="erreur_msisdn_inactive" cost="free_pt" backtext="notext" descr="Erreur MSISDN">
+    <title>Transfert Credit : Erreur MSISDN</title>
+    <form action="erl://svc_transfert_credit:check_msisdn" keywords="disable">
+    <entry kind="digits" type="ccnumber">
+      <prompt>
+	La carte prepayee de votre proche est inactive. Vous ne pouvez pas lui offrir du credit.<br/><br/>
+	Merci d'entrer un autre numero ou de revenir a l'accueil en tapant 9.
+      </prompt>
+    </entry>
+   </form>
+ </page>
+
+  <page tag="erreur_sachem" cost="free_pt" backtext="notext"	descr="Erreur SACHEM">
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci...<br/>
+  </page>
+
+
+</pages>

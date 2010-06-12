@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+<getIdentificationResponse xmlns="urn:identification.service.ecare/G8">
+            <return>
+               <ns1:adresseIpClient xmlns:ns1="urn:identification.service.ecare/G8:wsdl">string</ns1:adresseIpClient>
+               <adresseIpClient2>string</adresseIpClient2>
+               <civiliteClient>string</civiliteClient>
+               <codPlanTarifaire>string</codPlanTarifaire>
+               <codeEtatDossier>string</codeEtatDossier>
+               <codeOffreType>OS08F</codeOffreType>
+               <codeProduit>string</codeProduit>
+               <codeSegmentCommercial>string</codeSegmentCommercial>
+               <codesServicesOptionnels>string</codesServicesOptionnels>
+               <derniereEtapeRecouvrement>string</derniereEtapeRecouvrement>
+               <descEtatDossier>string</descEtatDossier>
+               <idDossier>oee_+33612345677_NOACT</idDossier>
+               <idSCS>string</idSCS>
+               <idUtilisateur>string</idUtilisateur>
+               <indicateurClientEntreprise>1</indicateurClientEntreprise>
+               <libSiteRattachement>string</libSiteRattachement>
+               <montantMoyenFacture>-2471.645094196054907</montantMoyenFacture>
+               <naturePortage>string</naturePortage>
+               <nomPrenomClient>string</nomPrenomClient>
+               <numAdv>string</numAdv>
+               <numCarteSim>string</numCarteSim>
+               <numClient>33612345677</numClient>
+               <numIMSI>string</numIMSI>
+               <segmentClient>string</segmentClient>
+               <statutPortage>string</statutPortage>
+               <typeDossier>string</typeDossier>
+               <typeOffre>string</typeOffre>
+            </return>
+        </getIdentificationResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

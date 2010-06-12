@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: 10 minutes offertes en Europe">
+
+  <page hist="dohist" cost="free_pt" backtext="notext"
+        descr="#123# Postpaid PRO: 10 minutes offertes en Europe">
+    <title>Postpaid PRO 10 minutes en Europe</title>
+    Profitez de 10 minutes offertes en Europe jusqu'au 1er septembre 2009. Cette promotion vous permet de beneficier
+    gratuitement de 10 minutes<br/> 
+    <a href="#10mn_europe_suite">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_suite" hist="dohist" cost="free_pt" backtext="notext" menutext="notext"
+        descr="#123# Postpaid PRO: 10 minutes offertes en Europe">
+    <title>Postpaid PRO 10 minutes offertes en Europe suite</title>
+    pour appeler depuis et vers la Zone Europe et vers la France.<br/>
+    <a href="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?opt_10mn_europe&amp;#10mn_europe,#error_msg">Souscrire</a><br/>
+    <a href="#10mn_europe_mentions_leg" key="7">Mentions legales</a>
+  </page>
+
+  <page tag="10mn_europe" hist="dohist" cost="free_pt"
+	descr="Postpaid PRO 10 minutes en Europe">
+    <title>Postpaid PRO 10 minutes en Europe</title>
+    <redirect src="erl://svc_subscr_asmetier:get_option_incomp?opt_10mn_europe&amp;#10mn_europe_souscrire,#10mn_europe_incomp,#error_msg"/>
+  </page>
+
+  <page tag="10mn_europe_souscrire" hist="dohist" cost="free_pt" backtext="notext"
+	descr="Postpaid PRO 10 minutes en Europe souscrire">
+    <title>Postpaid PRO 10 minutes en Europe souscrire</title>
+    Vous allez souscrire aux 10 minutes offertes en Europe. Cette gratuite est valable jusqu'au 1er septembre.<br/>
+    <a href="erl://svc_subscr_asmetier:souscrire?opt_10mn_europe&amp;#deja_active,#valider_ok">Valider</a>
+  </page>
+
+  
+  <page tag="deja_active" hist="dohist" cost="free_pt"
+	descr="Postpaid PRO 10 minutes en Europe deja actif">
+    <title>Deja Actif</title>
+	Vous avez deja souscrit a cette option. Profitez des autres options disponibles.<br/>
+	<a href="roaming_postpaid_pro.xml#bons_plans">Autres options a l'etranger</a>
+  </page>
+  
+  <page tag="10mn_europe_incomp" hist="dohist" cost="free_pt"
+	descr="Postpaid PRO 10 minutes en Europe incompatible">
+    <title>Postpaid PRO 10 minutes en Europe incompatible</title>
+    <include src="erl://svc_subscr_asmetier:print_opt_incomp?opt_10mn_europe"/><br/>
+    <a href="roaming_postpaid_pro.xml#bons_plans">Autres options a l'etranger</a>
+  </page>
+
+  <page tag="valider_ok" hist="dohist" cost="free_pt" nav="stop"
+        descr="Postpaid PRO 10 minutes en Europe valider">
+    <title>Postpaid PRO 10 minutes en Europe valider</title>
+    Vous avez souscrit aux 10 minutes offertes en Europe. Vous pouvez desormais communiquer sereinement .
+  </page>
+
+  <page tag="10mn_europe_mentions_leg" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg1">
+    <title>Postpaid 10 minutes en Europe</title>
+    Offre soumise a conditions. Offre valable du 18 juin au 1er septembre 2009 a compter de la date activation. 10 min
+    a utiliser jusqu'au 1er<br/>
+    <a href="#10mn_europe_mentions_leg_2">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_2" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg2">
+    <title>Postpaid 10 minutes en Europe</title>
+     septembre 2009. Incompatible avec les forfaits Ola. Non renouvelable et non cumulable. Appels decomptes a la seconde apres une premiere<br/>
+    <a href="#10mn_europe_mentions_leg_3">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_3" hist="dohist" cost="free_pt"
+	descr="#123# Postpaid PRO: 10 minutes en Europe m leg3">
+    <title>Postpaid 10 minutes en Europe</title>
+    minute indivisible. Information et souscription au 444 (appel gratuit meme depuis l'etranger), souscription au #123# - appels gratuits<br/>
+    <a href="#10mn_europe_mentions_leg_4">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_4" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg4">
+    <title>Postpaid 10 minutes en Europe</title>
+    depuis la France metropolitaine ou l'etranger sous reserve de compatibilite technique et d'activation prealable du mode international - ou<br/>
+    <a href="#10mn_europe_mentions_leg_5">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_5" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg5">
+    <title>Postpaid 10 minutes en Europe</title>
+    au service clients. Les appels voix depuis et vers les pays hors de la zone Europe seront decomptes du compte principal au tarif en vigueur.<br/>
+    <a href="#10mn_europe_mentions_leg_6">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_6" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg6">
+    <title>Postpaid 10 minutes en Europe</title>
+     En cas de souscription d'un pass voyage, le decompte &#34; 10 minutes Europe offertes &#34; se fera a compter de l'epuisement du pass voyage, pour
+    <a href="#10mn_europe_mentions_leg_7">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_7" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg7">
+    <title>Postpaid 10 minutes en Europe</title>
+    les autres pass souscrits et valables sur la zone Europe le decompte des 10 minutes se fera en priorite.<br/>
+    Credit equivalent a 10 minutes<br/>
+    <a href="#10mn_europe_mentions_leg_8">Suite</a>
+  </page>
+
+  <page tag="10mn_europe_mentions_leg_8" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg7">
+    <title>Postpaid 10 minutes en Europe</title>
+    d'appel emis ou recus depuis le pays visite de la zone Europe, hors Suisse et Andorre, vers tous les autres pays de cette zone et la France<br/>
+    <a href="#10mn_europe_mentions_leg_9">Suite</a>
+  </page>
+  
+<page tag="10mn_europe_mentions_leg_9" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: 10 minutes en Europe m leg7">
+    <title>Postpaid 10 minutes en Europe</title>
+    metropolitaine.
+  </page>
+  
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Postpaid: Service indisponible">
+    <title>Postpaid: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="system_failure" cost="free_pt" descr="Forfait SMS Postpaid PRO : Echec souscription failure">
+  <redirect src="/orangef/postpaid_pro.xml#temporary"/>
+  </page>
+
+</pages>

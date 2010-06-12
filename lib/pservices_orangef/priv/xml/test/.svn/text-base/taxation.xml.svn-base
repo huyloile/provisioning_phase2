@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Service pour tester taxation OF">
+
+ <page cost="free_pt" hist="dohist">
+    <title> Gratuit </title>
+    Service de test taxation OF<br/> free_pt <br/>
+    <a href="#acte"> Acte différencié</a><br/>
+    <a href="#stop"> Stop </a><br/>
+ </page>
+ 
+  <page tag="acte" cost="pt_test_of1">
+    pt_test_of1<br/>
+    Essai de test en fonction de la souscription
+  </page>
+  
+  <page tag="stop" cost="free_pt" nav="end">
+    <title> Stop </title>
+    Stop : free_pt
+  </page>
+
+</pages>

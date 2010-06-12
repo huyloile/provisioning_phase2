@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Resiliation postpaid options">
+  <page cost="freept" backtext="Retour" menutext="Menu">
+    <a href="#spider_reponse_detaille">Suivi conso detaille</a><br/>
+    <a href="#spider_reponse_options">Suivi conso options</a><br/>
+    <a href="#active_options">Gerer mes options</a>
+  </page>
+   <page tag="spider_reponse_detaille" descr="Redirection en fonction de la reponse Spider" menutext="notext" backtext="notext">
+       <title>Redirection en fonction de la reponse Spider</title>
+       <redirect src="erl://svc_of_plugins_spider:spider_response?#suivi_conso_detaille&amp;#indisponible_spider"/>
+ </page>
+    <page tag="spider_reponse_options" descr="Redirection en fonction de la reponse Spider" menutext="notext" backtext="notext">
+       <title>Redirection en fonction de la reponse Spider</title>
+       <redirect src="erl://svc_of_plugins_spider:spider_response?#suivi_conso_options&amp;#indisponible_spider"/>
+ </page>
+
+ <page tag="suivi_conso_detaille" descr="Suivi conso detaille" backtext="Retour" menutext="notext">    
+   <include src="erl://svc_of_plugins:track_kenobi_code?SCACOK"/>
+   <include src="file:/orangef/selfcare_long/spider.xml#postpaid"/>
+ </page>
+
+ <page tag="suivi_conso_godetC" descr="Suivi conso detaille suite" backtext="notext" menutext="Menu">
+   <include src="erl://svc_of_plugins:track_kenobi_code?SCACOK"/>
+   <include src="erl://svc_spider:suiviconsodetaille"/>
+ </page>
+
+ <page tag="suivi_conso_options" descr="Suivi conso des options">
+  <redirect src="erl://svc_spider:redirect_by_GodetCouD?#suivi_conso_godetC&amp;#svo_nogodetC"/> 
+ </page>
+  <page tag="indisponible_spider"  descr="suivi conso non disponible"
+        hist="dohist" menutext="notext">
+    <include src="erl://svc_of_plugins:track_kenobi_code?SCACKO"/>
+    Suivi conso momentanement indisponible, merci de vous reconnecter ulterieurement. ERXXX<br/>
+    <a href="resiliation_options_postpaid.xml">Menu</a>
+  </page>
+
+  <page tag="svo_nogodetC" descr="Suivi conso des options no godet C" backtext="Retour" menutext="Menu">
+	  Suivi conso options<br/>
+   <include src="erl://svc_of_plugins:track_kenobi_code?SCACOK"/>
+	Vous n'avez souscrit a aucune option pour le moment.<br/>
+	De nombreuses options sont disponibles dans l'offre Orange.<br/>
+	<a href="#opts_sms_mms">SMS/MMS</a><br/>
+	<a href="#opts_multimedia">Multimedia</a>
+  </page>
+
+ <page tag="active_options" descr="List active options">
+    <redirect src="erl://svc_of_plugins:active_options?#links_to_options&amp;#no_opt"/>   
+ </page>
+
+ <page tag="links_to_options" hist="dohist" descr="List active options" backtext="Retour" menutext="Menu">
+    <include src="erl://svc_of_plugins:links_to_options" />
+  </page>
+
+  <page tag="no_opt" descr="no options" backtext="Retour" menutext="Menu">
+	  Gerer mes options<br/>
+	Vous n'avez souscrit a aucune option pour le moment.<br/>
+	De nombreuses options sont disponibles dans l'offre Orange.<br/>
+	<a href="#opts_sms_mms">SMS/MMS</a><br/>
+	<a href="#opts_multimedia">Multimedia</a>
+  </page>
+
+  <page tag="option_page" descr="Option page" backtext="Retour" menutext="Menu">
+    <include src="erl://svc_of_plugins:print_opt_name"/><br/>
+    <a href="#menu_123">Souscrire une autre option de la gamme</a><br/>
+    <a href="#supprimer">Supprimer cette option</a>
+  </page>
+
+ <page tag="supprimer" descr="Supprimer page" menutext="notext" backtext="Retour">
+    Etes-vous sur de vouloir supprimer votre <include src="erl://svc_of_plugins:print_opt_name"/><br/>
+    Vous perdrez le benefice de celle-ci.<br/>
+    <a href="erl://svc_of_plugins:resilier_option?#supprime_ok,#supprime_nok">Valider</a>
+  </page>
+
+ <page tag="supprime_ok" descr="Supprime ok page" backtext="notext" menutext="Menu">
+    Votre demande a bien ete prise en compte. Vous recevrez sous 48 heures un SMS vous informant de la suppression de votre option<br/>   
+    <a href="#menu_123">Souscrire une autre option de la gamme</a>
+  </page>
+
+ <page tag="supprime_nok" descr="Supprime nok page" backtext="notext">
+     Le service est momentanement interrompu. Veuillez recommencer ulterieurement.
+  </page>
+
+   <page tag="menu_123" descr="Menu" backtext="notext">
+      <redirect src="file:/mcel/acceptance/Home_page_postpaid.xml"/>
+  </page>
+  
+   <page tag="opts_multimedia" descr="Menu" backtext="notext">
+       <redirect src="file:/mcel/acceptance/postpaid/options_multimedia/menu.xml"/>
+   </page>
+   
+   <page tag="opts_sms_mms" descr="Menu" backtext="notext">
+		  <redirect src="erl://svc_spider:redirect_by_produit?PRO=/mcel/acceptance/options_SMS_MMS_pro/accueil_options_sms_mms_pro.xml,?=/mcel/acceptance/options_SMS_MMS_gp/accueil_options_sms_mms_gp.xml"/>
+   </page>
+</pages>

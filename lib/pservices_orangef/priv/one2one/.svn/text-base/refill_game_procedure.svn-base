@@ -1,0 +1,97 @@
+Script used to fill the mnesia table refill_game: (this an INTERNAL file)
+1 - First step is to add the prizes in the mnesia table pservices_orangef/priv/one2one/refill_table.csv
+2 - Second execute the following command to reload the mnesia table
+
+To reload the mnesia table:
+***************************
+pservices_orangef_app:install_game([node()|nodes()]).
+
+For info about transformation between "gregorian_date" and "datetime"
+**********************************************************************
+> calendar:gregorian_seconds_to_datetime(63341886600).
+{{2007,3,23},{16,30,0}}
+> calendar:datetime_to_gregorian_seconds({{2007,3,23},{16,30,0}}).
+63341886600
+
+In our file we use :
+> Relative_date = calendar:datetime_to_gregorian_seconds({{2007,3,23},{16,30,0}}) - 62167219200 
+1174667400
+where : 
+> Absolute_date = calendar:gregorian_seconds_to_datetime(62167219200).
+{{1970,1,1},{0,0,0}}
+> calendar:gregorian_seconds_to_datetime(1174667400 + 62167219200).
+= calendar:gregorian_seconds_to_datetime(Relative_date + Absolute_date).
+{{2007,3,23},{16,30,0}}
+
+To generate the Gregorian date from datetime for a list :
+*********************************************************
+> [calendar:datetime_to_gregorian_seconds(Date_tuple_normal) - 62167219200 || Date_tuple_normal <- [{{2008,5,3},{10,15,0}},{{2008,5,7},{10,15,0}},{{2008,5,11},{10,15,0}},{{2008,5,14},{10,15,0}},{{2008,5,18},{10,15,0}},{{2008,5,22},{10,15,0}},{{2008,5,26},{10,15,0}}] ].
+1209809700,1210155300,1210500900,1210760100,1211105700,1211451300,1211796900
+
+In april, it was asked to generate the date for many hours and many days :
+**************************************************************************
+* TIME FOR soiree_infinie OFFERS :  21 gains par jour du 1er Mai au 24 mai pour les horaires
+07h01,07h31,08h01,08h31 ... 16h01,16h31 + 17h31
+
+(possum@localhost)12> H = lists:seq(7, 16). % de 7h heure à 16h
+(possum@localhost)26> H_01 = [{X,01,00} || X <- H]. % pour chaque Hh01
+(possum@localhost)27> H_31 = [{X,31,00} || X <- H]. % pour chaque Hh31
+(possum@localhost)32> Hours_1 = lists:append(H_01,H_31). % pour chaque Hh01 et Hh31 où 7<H<16
+(possum@localhost)34> Hours = Hours_1 ++ [{17,31,0}]. % en plus on ajoute 17h31
+(possum@localhost)17> J = lists:seq(1,24). % pour le 1er au 24 du mois
+(possum@localhost)19> D = [{2008,5,X} || X <- J]. % pour le mois de mai 2008
+(possum@localhost)36>  Dates = [{X,Y} || X <- D, Y <- Hours]. % format de date avec l'heure
+(possum@localhost)38> Dates_Greg = [calendar:datetime_to_gregorian_seconds(Date_tuple_normal) - 62167219200 || Date_tuple_normal <- Dates ].
+(possum@localhost)56> Line_fun = fun(D) -> io:format("\"refill_game\";\"~p\";\"soiree_inf\";\"true\";\"undefined\"~n",[D]) end.
+(possum@localhost)57> lists:map(Line_fun,Dates_Greg). %ligne pour insérer dans fichier refill_game.csv
+"refill_game";"1209625260";"soiree_inf";"true";"undefined"
+"refill_game";"1209628860";"soiree_inf";"true";"undefined"
+Ces dernières lignes sont à copier dans le fichier priv/one2one/refill_game.csv
+
+* TIME FOR soiree_infinie OFFERS :  21 gains par jour du 25 Mai au 11 juin pour les horaires:
+07h01,07h31,08h01,08h31 ... 16h01,16h31 + 17h31 + 18h31
+(possum@localhost)9> J_Mai = lists:seq(25,31).
+(possum@localhost)10> J_Juin = lists:seq(1,11).
+(possum@localhost)11> D_Mai = [{2008,5,X} || X <- J_Mai].
+(possum@localhost)12> D_Juin = [{2008,6,X} || X <- J_Juin].
+(possum@localhost)13> Date = lists:append(D_Mai,D_Juin).
+(possum@localhost)14> H = lists:seq(7, 16).
+(possum@localhost)15> H_01 = [{X,01,00} || X <- H].
+(possum@localhost)16> H_31 = [{X,31,00} || X <- H].
+(possum@localhost)17> Hours_1 = lists:append(H_01,H_31).
+(possum@localhost)18> Hours = Hours_1 ++ [{17,31,0},{18,31,0}].
+(possum@localhost)19> Dates = [{X,Y} || X <- Date, Y <- Hours].
+(possum@localhost)20> Dates_Greg = [calendar:datetime_to_gregorian_seconds(Date_tuple_normal) - 62167219200 || Date_tuple_normal <- Dates ].
+(possum@localhost)23> Line_fun = fun(D) -> io:format("\"refill_game\";\"~p\";\"soiree_inf\";\"true\";\"undefined\"~n",[D]) end.
+(possum@localhost)24> lists:map(Line_fun,Dates_Greg).
+"refill_game";"...";"soiree_inf";"true";"undefined"
+"refill_game";"...";"soiree_inf";"true";"undefined"
+Ces dernières lignes sont à copier dans le fichier priv/one2one/refill_game.csv
+
+Test part (not completed) :
+***************************
+Currently, there is no automatic test. 
+You have to insert manually the prize data in refill_date.csv
+This part gives some suggestions to implement these tests 
+(I have started but did not have the time to finish them (Magda))
+
+For each prize :
+We would like to insert an entry in the mnesia table where time == localtime().
+Then, when we make the test a few secondes/minutres after, we get the prize filled.
+If we retry to make the test, we have no prize anymore (or the "Prize" which they propose when you "loose").
+
+Commands which might be usefull to construct the automatic testing : 
+
+Local_time = calendar:local_time().
+{{2008,4,2},{10,0,24}}
+
+Unix_local_time = calendar:datetime_to_gregorian_seconds(Local_time) - 62167219200.
+
+{ok, Io_device} = file:open("lib/pservices_orangef/priv/one2one/refill_game.csv", [read,write]).
+{ok,<0.3757.1>}
+file:position(Io_device,{eof, 0}).
+{ok,51803}
+io:fwrite(Io_device,"\"refill_game\";\"~p\";\"mobile_prize\";\"true\";\"undefined\"~n",[Unix_local_time]).
+
+file:read(Io_device,100).
+{ok,"_name\";\"winnings_date\";\"winnings\";\"winnings_state\";\"winning_msisdn\"\n\"refill_game\";\"1209809700\";\"mobi"}

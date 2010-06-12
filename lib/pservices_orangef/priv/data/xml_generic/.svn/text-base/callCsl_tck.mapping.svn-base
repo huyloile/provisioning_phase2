@@ -1,0 +1,6 @@
+[
+ {xmlnode, "returnItems", "/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn/values"},
+ {value, "svcName",
+"/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn/serviceName/text()"},
+ {value, "statut",
+"/descendant::soapenv:Envelope/soapenv:Body/callCsl_tckResponse/callCsl_tckReturn/statut/text()"}].

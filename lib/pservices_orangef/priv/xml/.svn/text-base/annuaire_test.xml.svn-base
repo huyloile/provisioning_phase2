@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+ <page descr="annuaire" hist="bookmark">
+  <title>Annuaire</title>
+  <redirect src="erl://svc_util:redirect_size?181&amp;#check_access&amp;#not_compatible"/>
+ </page>
+ 
+  <page tag="check_access">
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#filter_sub,/orangef/home.xml#not_allowed"/>
+  </page>
+  
+ <page tag="filter_sub">
+    <redirect src="erl://svc_util:redir_subscription?mobi=#filter_msisdn,cmo=#filter_msisdn,postpaid=#filter_msisdn,dme=#filter_msisdn,monacell_postpaid=#filter_msisdn,monacell_prepaid=#filter_msisdn,default=/orangef/home.xml#not_allowed"/>
+  </page>
+
+ <page tag="filter_msisdn">
+  <redirect src="erl://svc_util:filter_msisdn?#check_ansi&amp;#not_msisdn"/>
+ </page>
+
+ <page tag="check_ansi">
+  <redirect src="erl://svc_roaming:redir_roaming_network?ansi=#ansi,default=#guide"/>
+ </page>
+
+ <page tag="ansi" descr="Menu Annuaire Orange ANSI" menutext="notext"
+  backtext="notext" hist="bookmark" ismenu="false">
+  <title>Annuaire ANSI</title>
+   Bienvenue sur le guide Orange des services SMS+, pour continuer tapez repondre puis 1<br/>
+   <a href="#guide">Continuer</a>
+ </page>
+
+ <page tag="guide" descr="Menu Annuaire Orange" menutext="notext"
+  backtext="notext" hist="bookmark" ismenu="true">
+  <title>Annuaire</title>
+  <redirect src="erl://svc_annuaire_test:guide_to_themes"/>
+ </page>
+
+ <page tag="themes" hist="donthist" descr="Menu Annuaire Orange">
+  <title>Page d'accueil</title>
+   Bienvenue sur le guide Orange des services SMS/MMS<br/>
+   Choisissez une rubrique en tapant le No correspondant:<br/>
+   <include src="erl://svc_annuaire_test:themes"/><br/>
+   <a href="#editors">rech. par editeur</a><br/>
+   <a href="#help">aide</a>
+ </page>
+
+
+
+<!----------------------- -->
+<!-- NAVIGATION BY THEME  -->
+<!----------------------- -->
+
+ <page tag="pre_vowel" descr="Article devant voyelle">d'</page>
+
+ <page tag="pre_consonant" descr="Article devant consonne">de </page>
+
+ <!-- direct selection of editor (eg : chat) -->
+ <page tag="direct_theme_editors" descr="Par rubrique: chat"
+  hist="dohist" volatile="true">
+  Consultez le service
+  <include src="erl://svc_annuaire_test:get_headings"/> en tapant le No
+   correspondant:<br/>
+  <include src="erl://svc_annuaire_test:t_editors"/>
+ </page>
+
+   <!-- selection of heading -->
+ <page tag="t_headings" descr="Par rubrique: choix de thématique"
+  hist="dohist" volatile="true">
+  Recherchez un service
+  <include src="erl://svc_annuaire_test:get_headings"/> en tapant le No
+   correspondant:<br/>
+  <include src="erl://svc_annuaire_test:t_headings"/>
+ </page>
+
+ <!-- selection of editor -->
+ <page tag="t_editors" descr="Par rubrique: choix d'éditeur"
+  hist="dohist" volatile="true">
+  Consultez les services offerts par les editeurs en tapant le No
+  correspondant:<br/>
+  <include src="erl://svc_annuaire_test:t_editors"/>
+ </page>
+
+ <page tag="include_mms" descr="Avertissement MMS">
+  Votre mobile doit etre compatible MMS<br/>
+ </page>
+
+
+<!-- --------------------- -->
+<!-- NAVIGATION BY EDITOR  -->
+<!-- --------------------- -->
+
+ <page tag="editors" descr="Par éditeur: blocs" hist="dohist">
+  Recherchez les services de l'editeur de votre choix en tapant le No
+  correspondant a son nom:<br/>
+  <a href="erl://svc_annuaire_test:editors?A&amp;C">A a C</a><br/>
+  <a href="erl://svc_annuaire_test:editors?D&amp;I">D a I</a><br/>
+  <a href="erl://svc_annuaire_test:editors?J&amp;M">J a M</a><br/>
+  <a href="erl://svc_annuaire_test:editors?N&amp;R">N a R</a><br/>
+  <a href="erl://svc_annuaire_test:editors?S&amp;Z">S a Z</a> <!--<br/>
+  <a href="erl://svc_annuaire_test:editors?0&amp;9">0 a 9</a> -->
+ </page>
+
+ <page tag="editors_list" descr="Par éditeur: choix d'éditeur"
+  hist="dohist" volatile="true">
+  Consultez les services de l'editeur de votre choix en tapant le No
+  correspondant:<br/>
+  <include src="erl://svc_annuaire_test:e_list"/>
+ </page>
+
+ <page tag="e_headings" descr="Par éditeur: choix de rubrique"
+  hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:e_headings"/>
+ </page>
+
+ <!-- -------- -->
+ <!-- SERVICES -->
+ <!-- -------- -->
+
+ <page tag="text_rules_jeux" descr="Texte 'Réglement'">
+  reglement
+ </page>
+
+ <!-- we have several service pages because we want "back" link to
+ work -->
+
+ <page tag="service1" descr="Service 1" hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:display_service?1"/>
+ </page>
+
+ <page tag="service2" descr="Service 2" hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:display_service?2"/>
+ </page>
+
+ <page tag="service3" descr="Service 3" hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:display_service?3"/>
+ </page>
+
+ <page tag="service4" descr="Service 4" hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:display_service?4"/>
+ </page>
+
+ <page tag="service5" descr="Service 5" hist="dohist" volatile="true">
+  <include src="erl://svc_annuaire_test:display_service?5"/>
+ </page>
+
+ <page tag="send_sms_link" descr="Texte 'envoi du SMS'">
+ envoi du SMS
+ </page>
+
+ <page tag="sms_param" descr="Service: saisie d'un paramètre" hist="dohist"
+  volatile="true" menutext="notext">
+  Pour acceder au service, veuillez preciser
+  <include src="erl://svc_annuaire_test:sms_param"/>
+ </page>
+
+ <page tag="more_info_link" descr="Texte '+d'info'">
+  +d'infos
+ </page>
+
+ <page tag="more_info" descr="Service: plus d'infos" hist="dohist">
+  <include src="erl://svc_annuaire_test:more_info"/>
+ </page>
+
+ <page tag="rules" descr="Réglement pour les jeux">
+  <subst name="RULES"/>
+ </page>
+
+  <page tag="sms_ok" descr="SMS envoyé">
+  Le SMS est en cours d'envoi.
+ </page>
+
+
+<!-- ---- -->
+<!-- HELP -->
+<!-- ---- -->
+
+ <page tag="help" descr="Aide" hist="dohist">
+  Selectionnez votre rubrique d'aide en tapant le No correspondant:<br/>
+  <a href="#keywords">mots clefs</a><br/>
+  <a href="#legal">infos legales</a>
+ </page>
+
+ <page tag="keywords" descr="Aide: mots clefs">
+  Pour obtenir les coordonnees d'un editeur, envoyez CONTACT au No court
+  du service<br/>
+  Pour ne plus recevoir de message en provenance d'un No court,
+  envoyez STOP au No court.<br/>
+  L'envoi de ces mots cles est facture selon le palier surtaxe du No
+  court auquel ils sont adresses+ prix d'un SMS.
+ </page>
+
+ <page tag="legal" descr="Aide: infos légales">
+  Orange propose gratuitement et sans engagement un annuaire des
+  services SMS a certains de ses clients. L'annuaire permet d'acceder a
+  des services payants fournis par Orange ou par des tiers (services
+  SMS+). Orange n'exerce aucun controle ou n'a aucune maitrise sur la
+  nature ou la qualite du contenu des services SMS+ proposes par ces
+  tiers. Toute reclamation relative au service est a adresser a
+  l'editeur concerne. Pour ce faire, le client enverra CONTACT par SMS
+  au No court de cet editeur.
+ </page>
+
+ <!-- ------------ -->
+ <!-- ERRORS PAGES -->
+ <!-- ------------ -->
+
+ <page tag="not_msisdn" descr="Manque de données" nav="end">
+  Nous n'avons pas assez d'informations pour vous permettre d'accéder à
+  ce service.
+ </page>
+
+ <page tag="not_compatible" descr="Pas compatible" nav="end">
+  Votre mobile ne vous permet pas d'acceder a ce service
+ </page>
+
+ <page tag="error" descr="Erreur annuaire" nav="end">
+  Le service est en cours de maintenance.<br/>
+   Veuillez nous en excuser et vous reconnecter ulterieurement.
+ </page>
+
+</pages>

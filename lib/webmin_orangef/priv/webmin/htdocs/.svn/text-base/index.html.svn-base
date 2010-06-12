@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Cellcube Management</title>
+    <META http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./oma/oma_style.css">
+  </head>
+  <body>
+    <h1>Cellcube Management</h1>
+    <ul>
+    <li><h2>Orange France</h2>
+       <ul>
+       <li><a href="/orangef/webmin_table_ratio:show">Table Ratio</a>
+       <li><a href="/orangef/webmin_one2one:show">One 2 One</a>
+       <li><a href="/orangef/webmin_of_params:show">Param&egrave;tres</a>
+       <li><a href="/orangef/webmin_of_stats:show">Counters and statistics - OF</a>
+       </ul>
+    <li><h2>Cellcube</h2>
+      <ul>
+        <li><a href="/cellcube/control/webmin_interface:show">Interface State</a>
+        <li><a href="/cellcube/control/webmin_proxy_interface:show">Proxy Interface State</a>
+        <li><a href="/cellcube/acl/webmin_acl:show">Access-lists</a>
+        <li><a href="/cellcube/control/webmin_traffic:show">Traffic Control</a>
+        <li><a href="/stats/private/index.html">Graphical Stats</a>
+      </ul>
+    <li><h2>Cellcube applications</h2>
+      <ul>
+       <li><a href="mcel/edit/webmin_mcel_svcs:show">Service Creation Environment</a>
+       <li><a href="handsim/erl/handsim:main">Handset simulator</a>
+       <li><a href="/cellcube/barring/webmin_barring:show">USSD Barring</a>
+       <li><a href="/cellcube/control/webmin_user_provisioning_batch:show">User Provisioning</a>
+ </ul>
+    <li><h2>OMA</h2>
+      <ul>
+      <li><a href="oma/status/webmin_stats_ro:show">Counters and statistics</a>
+      <li><a href="stats/">Statistics history</a>
+      <li><a href="oma/status/webmin_version:show">Version and licenses</a>
+      <li><a href="oma/status/webmin_status:show">Operational status</a>
+      <li><a href="oma/system/webmin_crontab:show">Crontab</a>
+      <li><a href="oma/control/webmin_alarms:show">Alarms</a>
+      <li><a href="oma/config/webmin_config:show">Configuration parameters</a>
+      <li><a href="/oma/config/webmin_mnesia:show">Configuration database</a>
+      <li><a href="oma/system/webmin_logs:show_default">Logs</a>
+      <li><a href="oma/util.html">Maintenance tools</a>
+      <li><a href="/erl/webmin_auth:logout">Logout</a>
+      </ul>
+    </ul>
+  </body>
+</html>

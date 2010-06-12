@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+
+  <page tag="page1_periode1" descr="Push: page 1 période 1">
+    Orange Info: offrez-vous une soiree de SMS pour 3E!
+    <a href="erl://svc_home:selfcare_user?#filter_cmo_and_mobi">Souscription
+    &amp; + d'infos sur les soirees SMS &amp; les bons plans du #123# en tapant
+    repondre puis 1 (apl gratuit)</a>
+  </page>
+
+  <page tag="page1_periode2" descr="Push: page 1 période 2">
+    Orange Info : Une soiree 100% SMS/MMS ?
+    <a href="erl://svc_home:selfcare_user?#filter_cmo_and_mobi">Pour + d'infos
+    et pour les bons plans du #123#, tapez repondre puis 1 (appel gratuit)</a>
+  </page>
+
+  <page tag="page1_periode3" descr="Push: page 1 période 3">
+    <a href="erl://svc_home:selfcare_user?#filter_cmo_and_mobi_2">Orange Info : 
+    profitez d'appels illimites le jour de votre choix pour 3 euros /soiree
+    seulement ! Plus d'infos en tapant repondre puis 1 (appel gratuit)</a>
+  </page>
+
+  <page tag="filter_cmo_and_mobi">
+    <redirect src="erl://svc_util:redir_subscription?mobi=/orangef/selfcare_long/opt_ssms.xml,cmo=/orangef/selfcare_long/souscrire_options_cmo.xml#ssms,default=#neither_cmo_nor_mobi"/>
+  </page>
+
+  <page tag="filter_cmo_and_mobi_2">
+    <redirect src="erl://svc_util:redir_subscription?mobi=/orangef/selfcare_long/opt_sinf.xml,cmo=/orangef/selfcare_long/souscrire_options_cmo.xml#s_inf,default=#neither_cmo_nor_mobi_2"/>
+  </page>
+
+  <page tag="neither_cmo_nor_mobi" descr="Push: client ni CMO ni mobicarte"
+   nav="end">
+    Desole, la souscription aux soirees SMS est reservee aux offres
+    mobicarte et avec compte mobile.
+  </page>
+
+  <page tag="neither_cmo_nor_mobi_2" descr="Push: client ni CMO ni mobicarte"
+   nav="end">
+    Desole, la souscription aux soirees infinies est reservee aux offres
+    mobicarte et avec compte mobile.
+  </page>
+
+</pages>

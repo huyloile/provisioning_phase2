@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="free_pt" hist="dohist">
+    <redirect src="erl://svc_plan_tarif_omer:check_solde?#menu&amp;#not_enough_credit_pt"/>
+  </page>
+
+<!-- 14=bzh_cmo  16=bzh_cmo Offre d'aout 05-->
+   <page tag="menu" cost="free_pt" hist="dohist">
+    <redirect src="erl://svc_util_of:redir_declinaison?12=#print_hlinks_by_plan,16=#print_hlinks_by_plan2,?=#print_hlinks_by_plan"/>
+  </page>
+  
+
+  <page tag="print_hlinks_by_plan" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO: Menu" hist="dohist">
+    <title>Changement de plan tarifaire Bzh CMO</title>
+    <include src="erl://svc_plan_tarif_omer:print_hlinks_by_plan?pcmo_min:Forfait a la seconde des la premiere seconde=#changer_pour_sec,pcmo_sec:Forfait a la seconde apres la premiere mn indivisible=#changer_pour_min"/>
+    <include src="#msg_gratuite"/><br/>
+  </page>
+
+  <page tag="print_hlinks_by_plan2" cost="free_pt"
+	descr="Changement de plan tarifaire Bzh CMO 2: Menu" hist="dohist">
+    <title>Changement de plan tarifaire bzh CMO</title>
+    <include src="erl://svc_plan_tarif_omer:print_hlinks_by_plan?pcmo_min2:Forfait a la seconde des la premiere seconde=#changer_pour_sec2,pcmo_sec2:Forfait a la seconde apres la premiere mn indivisible=#changer_pour_min2"/>
+    <include src="#msg_gratuite"/><br/>
+  </page>
+  
+  <page tag="changer_pour_sec" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO: vers plan seconde">
+    <title>Changement de plan Bzh CMO: vers plan minute</title>
+    Forfait a la s des la 1ere s: vos appels metropolitains depuis
+    l'ouest factures a 0,37E/mn<br/>
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec">
+    Choisir ce plan</a>
+  </page>
+  
+  <page tag="changer_pour_min" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO: vers plan minute">
+    <title>Changement de plan Bzh CMO: vers plan seconde"</title>
+     Forfait a la s apres la 1ere mn indivisible: vos appels metropolitains
+     depuis l'ouest factures a 0,31E/mn<br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min">
+     Choisir ce plan</a>
+  </page>
+
+  <page tag="changer_pour_sec2" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO 2: vers plan seconde ">
+    <title>Changement de plan Bzh CMO 2: vers plan minute</title>
+    Forfait a la s des la 1ere s: vos appels metropolitains depuis
+    l'ouest factures a 0,28E/mn<br/>
+    <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_sec2">
+    Choisir ce plan</a>
+  </page>
+  
+  <page tag="changer_pour_min2" cost="free_pt" hist="donthist" 
+	descr="Changement de plan Bzh CMO 2: vers plan minute">
+    <title>Changement de plan Bzh CMO 2: vers plan seconde"</title>
+     Forfait a la s apres la 1ere mn indivisible: vos appels metropolitains
+     depuis l'ouest factures a 0,22E/mn<br/>
+     <a href="erl://svc_plan_tarif_omer:do_changement_to?pcmo_min2">
+     Choisir ce plan</a>
+  </page>
+
+  
+  <page tag="msg_gratuite">
+    <include src="erl://svc_plan_tarif_omer:include_msg_gratuite?#2_grat&amp;#1_grat&amp;#0_grat"/>
+  </page>
+  
+  <page tag="2_grat">
+    Vos deux premieres modifications de plan tarifaire sont gratuites
+  </page>
+  
+  <page tag="1_grat">
+    Vous pouvez encore changer une fois gratuitement de plan tarifaire
+  </page>
+  
+  <page tag="0_grat">
+    Ce changement vous sera facture
+    <include src="erl://svc_plan_tarif_omer:print_prix_du_changement"/>
+  </page>
+  
+  <page tag="change_pt_success" backtext="notext" cost="free_pt"
+	descr="plan tarifaire: Changement reussi">
+    <title>plan tarifaire: Changement reussi</title>
+    Vous utilisez maintenant le plan <include src="erl://svc_plan_tarif_omer:print_by_plan?pcmo_sec=Forfait a la seconde des la premiere seconde,pcmo_min=Forfait a la seconde apres la premiere mn indivisible,pcmo_sec2=Forfait a la seconde des la premiere seconde,pcmo_min2=Forfait a la seconde apres la premiere mn indivisible"/>
+  </page>  
+  
+  <!--error pages -->
+  
+  <page tag="not_enough_credit_pt" cost="free_pt" 
+	descr="plan tarifaire: Credit insuffisant">
+    <title>plan tarifaire: Credit insuffisant</title>
+    Votre credit est insuffisant pour demander une modification du plan
+    tarifaire. Veuillez recharger votre compte.<br/>
+    <a href="recharge.xml">recharger</a>
+  </page>
+  
+  <page tag="change_pt_error" cost="free_pt" backtext="notext"
+	descr="plan tarifaire: Erreur SDP">
+    <title>plan tarifaire: Erreur SDP</title>
+    La modification de plan tarifaire ou de plage horaire est
+    techniquement impossible pour le moment: veuillez nous en excuser et
+    renouveler cette operation ulterieurement.
+  </page>
+  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="plan tarifaire : service indisponible">
+    <title>plan tarifaire : temporary error</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#main_long&amp;#main_short"/>
+ </page>
+
+  <page tag="main_long">
+    <redirect src="erl://svc_util_of:redirect_if_declinaison?cmo&amp;#start_recharge&amp;#not_cmo"/>
+	</page>
+
+	<page tag="start_recharge">
+    <redirect src="erl://svc_recharge_cb_cmo:start"/>
+  </page>
+
+  <page tag="main_short" hist="donthist" nav="end" descr="terminal incompatible">
+    Votre terminal ne permet pas d'accéder au service.
+  </page>
+
+<!-- rcod error SDA: 3000-->
+  <page tag="rcod_sda_error" ismenu="true" descr="Menu rechargement CMO">
+    Suite a un incident technique veuillez renouveler votre demande
+    de rechargement<br/>
+    <a href="recharge_cmo.xml">par recharge mobicarte</a>
+    <br/>
+    <a href="recharge_cmo_cb.xml">par carte bancaire</a><br/>
+  </page>
+
+
+<!-- Demande de code d'acces : 1004-->
+  <page tag="form_code_acces" menutext="notext" descr="Rechargement CMO CB: Demande code d'accés" nav="stop">
+    <title>Rech CMO CB: Dmd code d'accés</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_acces">
+    <entry kind="digits" type="password" >
+      <prompt>Tapez votre code confidentiel a 4 chiffres et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- 1008 et 1009-->
+<page tag="wrong_code_acces" menutext="notext" descr="code d'acces Incorrect" nav="stop">
+    <title>Rech CMO CB: code d'acces incorrect</title>
+     <form action="erl://svc_recharge_cb_cmo:verif_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+        Ce code ne correspond pas a votre code confidentiel.<br/>
+        Merci de retaper votre code et valider.
+    </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="wrong_code_acces_last" menutext="notext" descr="code d'acces Incorrect" nav="stop">
+    <title>Rech CMO CB: code d'acces NOK: dernier essai</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+        Merci de retaper une derniere fois votre code et valider<br/>
+        En cas d'erreur, merci de donner votre no de client a 10 chiffres
+        (inscrit sur votre contrat).
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<!-- Script 2136 -->
+<page tag="verif_code_ok" ismenu="true" descr="code d'acces Correct">
+    <title>Rech CMO CB: code d'acces Correct</title>
+    Votre code confidentiel est correct<br/> 
+    <a href="erl://svc_recharge_cb_cmo:info">alimenter votre Compte Mobile</a>
+    <br/>
+    <a href="#modif_code_acces">modifier votre code confidentiel</a>
+  </page>
+
+<!-- Demande code contrat client -->
+
+<!-- 2010 -->
+ <page tag="form_reinit_code" menutext="notext" descr="Rechargement CMO CB: Dmd code contrat client" nav="stop">
+    <title>Rech CMO CB: Dmd code contrat client</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_contrat_client">
+    <entry kind="digits">
+      <prompt>Merci de donner votre numero de client a 10 chiffres figurant
+      sur votre contrat et valider sinon appelez le 700(com nat)
+      </prompt>
+    </entry>
+  </form>
+  </page>
+ 
+<page tag="form_reinit_code_nok" menutext="notext" descr="Rechargement CMO CB: Dmd code contrat client" nav="stop">
+    <title>Rech CMO CB: Dmd code contrat client</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_contrat_client" keywords="user_defined">
+    <entry kind="digits">
+      <prompt>Ce n'est pas le code confidentiel.
+       Merci de donner votre numero de client a 10 chiffres figurant
+      sur votre contrat et valider sinon appelez le 700(prix d'une com nat)
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--Msg :3003-->
+<page tag="wrong_code_contrat" descr="code contrat Incorrect" nav="stop">
+    <title>Rech CMO CB: code contrat incorrect</title>
+<form action="erl://svc_recharge_cb_cmo:verif_code_contrat_client">
+    <entry kind="digits">
+      <prompt>Ce numero ne correspond pas a votre numero client.
+      Merci de retaper votre numero et valider
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Msg 3004-->
+<page tag="code_contrat_nok" descr="Code contrat incorrect et 3 tentatives" nav="end">
+    <title>Rech CMO CB: code contrat Inconnu</title>
+    Ce n'est pas votre numero client, veuillez reessayer ulterieurement ou
+    contacter votre service clients 
+   </page>
+
+<!-- Creation du code d'acces : 2103-->
+
+ <page tag="creation_code_acces">
+    <redirect src="#form_creation_acces"/>
+  </page>
+
+<page tag="form_creation_acces" menutext="notext" descr="Rechargement CMO CB: Ceation code d'acces" nav="stop">
+    <title>Rech CMO CB: Dmd code d'acces(Creation)</title>
+    <form action="erl://svc_recharge_cb_cmo:creation_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+      Pour acceder a ce service, il vous faut initialiser et choisir
+      votre code confidentiel a 4 chiffres.<br/>
+      Choisissez un code facile !<br/>
+      Tapez les 4 chiffres et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--1039-->
+<page tag="new_creation_acces" menutext="notext" descr="Rechargement CMO CB: Ceation code d'acces" nav="stop">
+    <title>Rech CMO CB: Creation Code acces(autre code)</title>
+    <form action="erl://svc_recharge_cb_cmo:creation_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+      Saisissez maintenant votre nouveau code confidentiel a 4 chiffres et
+      validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3008-->
+<page tag="wrong_acces_creation" menutext="notext" descr="Format Code d'acces incorrect" nav="stop">
+    <title>Rech CMO CB: Format code acces incorrect</title>
+    <form action="erl://svc_recharge_cb_cmo:creation_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+      Les informations saisie sont incorrect<br/>
+      Tapez les 4 chiffres de votre code confidentiel et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+
+<!-- 1027-->
+<page tag="code_acces_creation_ok" ismenu="true" descr="Code contrat incorrect et 3 tentatives">
+    <title>Rech CMO CB: Creation code Acces OK</title>
+    Votre code confidentiel est le <subst name="CODE"/><br/> 
+    <a href="erl://svc_recharge_cb_cmo:do_mcod?create">accepter ce code</a>
+    <br/>
+    <a href="erl://svc_recharge_cb_cmo:reinit_compteur?c_create_code&amp;#new_creation_acces">saisissez un autre code</a><br/>
+  </page>
+
+<!-- 1034-->
+<page tag="verif_create_code_ok" ismenu="true" descr="code d'acces Correct">
+    <title>Rech CMO CB: Creation code d'acces Correct</title>
+    Votre code confidentiel a bien ete enregistre<br/> 
+    <a href="erl://svc_recharge_cb_cmo:info">alimenter votre compte mobile</a>
+    <br/>
+    <a href="#modif_code_acces">modifier votre code confidentiel</a>
+  </page>
+
+<!--Modification du code d'acces: 1035-->
+
+ <page tag="modif_code_acces">
+   <redirect src="#form_modif_acces"/>
+  </page>
+
+<page tag="form_modif_acces" menutext="notext" descr="Rechargement CMO CB: Modification code d'acces" nav="stop">
+    <title>Rech CMO CB: Dmd code d'acces(Modification)</title>
+    <form action="erl://svc_recharge_cb_cmo:modification_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>Tapez les 4 chiffres de votre nouveau code confidentiel
+      et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+
+<!-- 1039 modif -->
+<page tag="new_modif_acces" menutext="notext" descr="Rechargement CMO CB: Modification code d'acces" nav="stop">
+    <title>Rech CMO CB: Modif Code acces(autre code)</title>
+    <form action="erl://svc_recharge_cb_cmo:modification_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+      Saisissez maintenant votre nouveau code confidentiel a 4 chiffres et
+      validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3008-->
+<page tag="wrong_acces_modif" menutext="notext" descr="Format Code d'acces incorrect" nav="stop">
+    <title>Rech CMO CB: Format code acces incorrect</title>
+    <form action="erl://svc_recharge_cb_cmo:modification_code_acces">
+    <entry kind="digits" type="password">
+      <prompt>
+      Les informations saisies sont incorrectes.<br/>
+      Tapez les 4 chiffres de votre code confidentiel et
+      validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<page tag="code_acces_modif_ok" ismenu="true" descr="Code contrat incorrect et 3 tentatives">
+    <title>Rech CMO CB: Creation code Acces OK</title>
+     Votre code confidentiel est le <subst name="CODE"/><br/> 
+     <a href="erl://svc_recharge_cb_cmo:do_mcod?modif">accepter ce code</a>
+     <br/>
+     <a href="erl://svc_recharge_cb_cmo:reinit_compteur?c_modif_code&amp;#new_modif_acces">saisissez un autre code</a><br/>
+  </page>
+
+<page tag="verif_modif_code_ok" ismenu="true" descr="code d'acces Correct">
+    <title>Rech CMO CB: Modif code d'acces Correct</title>
+    Votre nouveau code confidentiel a bien ete enregistre. Il vous
+    servira pour vos futurs versements<br/> 
+    <a href="erl://svc_recharge_cb_cmo:info">alimenter mon compte mobile</a>
+    <br/>
+    <a href="#modif_code_acces">modifier mon code confidentiel</a>
+  </page>
+
+<!-- Phase de paiement --> 
+
+<page tag="info_ok">
+     <redirect src="#form_code_CB"/>
+  </page>
+
+<!--2127-->
+<page tag="plafond_depasse" nav="end" descr="Rechargement CMO CB: plafond depasse">
+    <title>Rech CMO CB: PLafond Depasse</title>
+    Votre plafond de versement autorise est depasse<br/>
+    Pour realiser cette operation, appelez le 700 (prix d'une com nat) 
+  </page>
+
+<!--2120-->
+<page tag="form_code_CB" menutext="notext" descr="Rechargement CMO CB: Dmd code court/CB" nav="stop">
+    <title>Rech CMO CB: Dmd code court/CB</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_CB">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Tapez le numero de votre carte bancaire ou les 4 chiffres de
+      votre code court de rechargement et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3005-->
+<page tag="wrong_code_CB" menutext="notext" descr="Rechargement CMO CB: Dmd code court/CB" nav="stop">
+    <title>Rech CMO CB: Dmd code court/CB</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_CB">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Tapez a nouveau le numero de votre carte bancaire ou les 4 chiffres de
+      votre code court de rechargement et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- 2119 -->
+<page tag="form_date_valid" menutext="notext" descr="Rechargement CMO CB: Dmd date de validité" nav="stop">
+    <title>Rech CMO CB: Dmd date de validite</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_datevalid">
+    <entry kind="digits">
+      <prompt>Tapez les 4 chiffres de la date de validite de votre carte
+      bancaire sous la forme MMAA et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- 3007-->
+<page tag="wrong_date_valid" menutext="notext" descr="Date de validité incorrect" nav="stop">
+    <title>Date de validité invalid</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_datevalid">
+    <entry kind="digits">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Tapez les 4 chiffres de la date de validite de votre carte
+      bancaire sous la forme MMAA et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Msg 2125-->
+<page tag="saisie_nok" descr="saisie incorrect et 3 tentatives" nav="end">
+    <title>Rech CMO CB: saisie incorrect et 3 tentatives</title>
+		Apres 3 erreurs dans votre saisie, nous vous conseillons d'appeler votre service clients Orange mobile en
+		composant le 700 (prix com nat) depuis votre mobile.<br/>
+   </page>
+
+<!-- Phase de versement: 2104 -->
+
+<page tag="phase_de_versement" backtext="notext" menutext="notext" descr="Rechargement CMO CB: Saisie Montant" nav="stop">
+    <title>Rech CMO CB: Saisie Montant</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Votre versement doit etre au minimum de
+      <include src="erl://svc_recharge_cb_cmo:print?recharge_mini"/> Euros
+      et ne doit pas depasser
+      <include src="erl://svc_recharge_cb_cmo:print?plafond"/> Euros.<br/>
+      Tapez le montant de votre versement en Euros et validez<br/>
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3010-->
+ <page tag="montant_saisie_sup_plfd" menutext="notext" descr="Montant saisie supérieur au plafond" nav="stop">
+    <title>Rech CMO CNB: montant supérieur au plafond</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Ce montant ne peut etre accepte car il est superieur au montant
+      autorise.Tapez le montant de votre versement en Euros dans
+      les limites indiquees et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<!--3009-->
+ <page tag="montant_saisie_inf_mini" menutext="notext" descr="Montant saisie inf au montant mininum" nav="stop">
+    <title>Rech CMO CB: montant inférieur au montant minimum</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Ce montant ne peut etre accepte car il est inferieur au montant
+      minimum de
+      <include src="erl://svc_recharge_cb_cmo:print?recharge_mini"/>Euros<br/>
+      Tapez le montant de votre versement en Euros et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<page tag="wrong_montant_saisie" menutext="notext" descr="Montant saisie Format incorrect" nav="stop">
+    <title>Rech CMO CB: montant inférieur au montant minimum</title>
+    <form action="erl://svc_recharge_cb_cmo:saisie_montant">
+    <entry kind="digits">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Tapez le montant de votre versement en Euros et validez
+      </prompt>
+    </entry>
+   </form>
+  </page>
+
+<!--2107--> 
+ <page tag="montant_saisie_sup_plfd_nok" descr="Montant saisie superieur au plafond" nav="end">
+    <title>Rech CMO CB: montant superieur au plafond</title>
+    Ce montant ne peut etre accepte. Merci d'appelez le service client au
+    700(prix d'une com.nat) pour un montant superieur.
+  </page>
+
+<!--3011-->
+ <page tag="montant_saisie_inf_mini_nok" descr="Montant saisie inf au montant mininum" nav="end">
+    <title>Rech CMO CB: montant inférieur au montant minimum</title>
+    Ce montant ne peut etre accepte car il est inferieur au
+    montant minimum de
+    <include src="erl://svc_recharge_cb_cmo:print?recharge_mini"/> Euros.
+  </page>
+
+ 
+<!--2109-->
+<page tag="confirm_recharge" hist="donthist" ismenu="true" descr="Confirmer le rechargement">
+    <title>Rech CMO CB: Confirm rechargement</title>
+    Vous avez tape la somme de
+    <include src="erl://svc_recharge_cb_cmo:print?montant"/> Euros<br/>
+    <a href="erl://svc_recharge_cb_cmo:paiement?CB">
+    Confirmer ce versement</a><br/>
+    <a href="erl://svc_recharge_cb_cmo:reinit_compteur?c_montant&amp;#phase_de_versement">recommencer</a>
+  </page>
+
+<page tag="rechargement_reussi_cc" descr="Rechargement CB reussi: code court" nav="end">
+    <title>Rech CMO CB: rechargement reussi</title>
+     Votre versement a bien ete effectue<br/>
+     Le solde de votre Compte Mobile est desormais de
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> Euros.
+</page>
+
+<page tag="rechargement_reussi_cb" descr="Rechargement CB reussi:code CB">
+    <title>Rech CMO CB: Confirm rechargement</title>
+    Votre versement a bien ete effectue<br/>
+    Votre nouveau solde est de
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> Euros.
+    Pour un rechargement plus rapide, demandez un code court de rechargement
+    <br/>
+    <a href="erl://svc_recharge_cb_cmo:dmd_code_court">demande de code court
+    </a>
+</page>
+
+
+<!-- Verification Code Court -->
+<!--2169-->
+<page tag="saisie_cvx2" menutext="notext" descr="Rechargement CMO CB: Dmd code cvx2">
+    <title>Rech CMO CB: Dmd code CVx2</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_cvx2">
+    <entry kind="digits">
+      <prompt>Tapez les 3 derniers chiffres situes au dos de votre
+      carte bancaire dans l'encart de la signature et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!--3008-->
+<page tag="wrong_cvx2" menutext="notext" descr="Rechargement CMO CB: Dmd code cvx2">
+    <title>Rech CMO CB: Dmd code CVx2</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_cvx2">
+    <entry kind="digits">
+      <prompt>Les informations saisies sont incorrectes.<br/>
+      Tapez les 3 derniers chiffres situes au dos de votre
+      carte bancaire dans l'encart de la signature et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- demande code court -->
+<!--2128-->
+<page tag="dmd_code_court_ok" hist="donthist" descr="Demande de code court OK">
+    <title>Rech CMO CB: Dmd code court OK</title>
+    Votre code court de versement par carte bancaire est
+    <include src="erl://svc_recharge_cb_cmo:print?code_court"/>.<br/>
+    Vous pourrez utilisez ce code lors de vos prochains versements
+</page>
+
+<!--paiement error pages-->
+
+<!--3013-->
+ <page tag="error_cvx2" descr="Error CVx2" nav="end">
+    <title>Reject : Erreur CVx2</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.
+ </page>
+ 
+<!--2146-->
+ <page tag="anomalie_cb" descr="Anomalie Carte bancaire" nav="end">
+    <title>Reject : Anomalie carte bancaire</title>
+    Desole, votre carte bancaire presente une anomalie.<br/>
+    Nous vous invitons a prendre contact avec votre banque.
+ </page>
+
+<!--2122-->
+ <page tag="paiement_refuse" menutext="notext" descr="Paiement refuse">
+    <title>Reject : Paiement refuse</title>
+		Vous n'etes pas autorise a utiliser le rechargement par CB.<br/>
+		Contactez votre service clients Orange mobile en composant le 700 (prix com nat)<br/>
+		<a href="selfcare_cmo.xml#recharge">menu rechargement</a>
+ </page>
+
+<!--2130-->
+<page tag="wrong_cc" menutext="notext" descr="Rechargement CMO CB: code court faux" nav="stop">
+    <title>Rech CMO CB: code court faux</title>
+    <form action="erl://svc_recharge_cb_cmo:verif_code_CB">
+    <entry kind="digits" type="ccnumber">
+      <prompt>Ce code court est errone.<br/>
+      Veuillez retaper les 4 chiffres de
+      votre code court de rechargement et validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+<!-- Error pages -->
+
+  <page tag="system_failure" nav="end" descr="Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Suite a un probleme technique votre paiement a ete refuse, veuillez recommencer.<br/>
+    Si le probleme persiste contactez votre service clients Orange mobile au 700 (prix com nat)<br/>
+  </page>
+
+ <page tag="temporary" nav="end" descr="Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement.
+  </page>
+
+<!--2133-->
+ <page tag="not_cmo" nav="end" descr="not cmo">
+    Service reserve aux clients d'une offre avec compte mobile.<br/>
+    Pour toute info, contactez votre service clients Orange mobile
+    en composant le 700 (prix com nat) depuis votre mobile.
+  </page>
+
+</pages>

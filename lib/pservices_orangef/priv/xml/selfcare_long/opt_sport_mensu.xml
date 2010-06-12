@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+
+<pages descr="scripts pour le service : option Sport mensuelle">
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_sport_mensu&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Sport mensuelle page offre incompatible">
+    <title>option option Sport mensuelle page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option Sport mensuelle page offre incompatible">
+    <title>option option Sport mensuelle page offre
+    incompatible</title>
+    <redirect src="#failure"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle deja active">
+    <title>option Sport mensuelle deja active</title>
+    Votre option Sport mensuelle est actuellement activee.
+    <a href="#supprimer">Supprimer l'option</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="supprimer" cost="free_pt"  backtext="notext" hist="dohist" cost="free_pt">
+    Merci de confirmer la suppression de votre option Sport mensuelle.  
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_sport_mensu&amp;#desinscr_success,#failure">Confirmer</a>
+  </page>
+
+
+  <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_mobi,35=#conditions_pp,39=#conditions_pp,40=#conditions_pp,41=#conditions_pp,42=#conditions_pp,43=#conditions_pp,44=#conditions_pp,51=#conditions_mobi,default=#conditions_mobi"/>
+  </page>
+  
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle solde insuffisant">
+    <title>option Sport mensuelle solde insuffisant</title>
+    <redirect src="#failure"/>
+  </page>
+
+  <page tag="conditions_mobi" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P1/5">
+    <title>option Sport mensuelle page conditions</title>
+    Option Sport valable en France metropolitaine et reservee aux clients mobicarte et click la mobicarte. Acces et connexions illimitees en France metropolitaine...
+    <a href="#conditions_2">Suite</a>
+  </page>
+  <page tag="conditions_pp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P1/6">
+    <title>option Sport mensuelle page conditions</title>
+    Option Sport valable en France metropolitaine et reservee aux clients d'une offre prepayee Orange. Acces et connexions illimitees en France metropolitaine...
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P2/6">
+    <title>option Sport mensuelle page conditions</title>
+    ...aux services de la rubrique sport du portail Orange World, comprenant notamment les
+    chaines de television et les videos sportives (hors contenus payants), ...
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P3/6">
+    <title>option Sport mensuelle page conditions</title>
+    ...les services direct premium, les abonnements a SMS infos sportive, SMS Ligue 1 Orange
+    et SMS autres evenements sportifs. Services accessibles sur reseaux...
+    <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P4/6">
+    <title>option Sport mensuelle page conditions</title>
+    ...et depuis un terminal compatible. Voir details de l'option, conditions specifiques et
+    liste des mobiles compatibles sur www.orange.fr. Le prix de l'option est...
+    <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_5" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P5/6">
+    <title>option Sport mensuelle page conditions</title>
+	...preleve chaque mois sur le compte du client sous reserve d'un credit
+	suffisant. A defaut, l'option sera suspendue et reprendra automatiquement a date... 
+    <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Sport mensuelle page conditions P6/6">
+    <title>option Sport mensuelle page conditions</title>
+	...anniversaire si le credit est a nouveau suffisant. Resiliation possible au au 220.
+    <a href="#supprimer">Supprimer l'option</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO apres confirmation desinscription">
+    <title>option illimite KDO apres confirmation desnscription</title>
+    La suppression de votre option Sport mensuelle a bien ete prise en compte.<br/>
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+</pages>
+
+ 

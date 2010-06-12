@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="SMS pre-etabli pages">
+
+  <!--page>
+    <redirect src="erl://svc_util_of:check_sdp_user_state?%23redir_souscr"/>
+  </page>
+
+
+  <page tag="redir_souscr">
+    <redirect src="erl://svc_sms_pre:redirect_by_subcription?%23redir_etat&amp;%23not_authorized"/>
+  </page-->
+
+
+  <page>
+    <redirect src="erl://svc_sms_pre:redirect_by_subcription?%23check_access&amp;%23not_authorized"/>
+  </page>
+  
+   <page tag="check_access">
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#redir_etat,#not_allowed"/>
+  </page>
+  <page tag="redir_etat">
+    <redirect src="erl://svc_util_of:check_sdp_user_state?%23redir_etat_2"/>
+  </page>
+
+  <page tag="redir_etat_2">
+    <redirect src="erl://svc_util_of:redirect_etat_cpte?cpte_princ&amp;ac=#redir_ident,default=#not_allowed"/>
+  </page>
+
+  <page tag="redir_ident">
+    <redirect src="erl://svc_util_of:redirect_etat_cpte_second?ident=#check_sms,default=#not_identified"/>
+  </page>
+
+  <page tag="check_sms" backtext="notext" menutext="notext">
+    <redirect src="erl://svc_sms_pre:check_sms?%23redir_decl&amp;%23sms_max"/>
+  </page>
+
+  <page tag="redir_decl">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#home_page_mobi,34=#home_page_mobi,35=#home_page_m6,87=#home_page_cfoot,39=#home_page_cfoot,40=#home_page_cfoot,41=#home_page_cfoot,42=#home_page_cfoot,43=#home_page_cfoot,44=#home_page_cfoot,default=#not_allowed"/>
+
+  </page>
+  <page tag="not_identified" hist="donthist" nav="end" descr="Non identifie">
+   #140#<br/>
+   Pour profiter de ce service vous devez renvoyer votre coupon joint a votre kit et une copie de votre carte d'identite.
+  </page>
+
+  <page tag="not_allowed" hist="donthist" nav="end" cost="system_free_pt" descr="Non active">
+   <title>Not_allowed req</title>
+     <lang>
+       <fr>Vous n'avez pas acces a ce service.</fr>
+       <en>You do not have access to this service.</en>
+     </lang>
+  </page>
+
+<page tag="home_page_mobi" descr="Home page SMS pre-etabli" backtext="notext" menutext="notext">
+ <title>Home page SMS pre-etabli mobi</title>
+#140#<br/>
+Pour envoyer votre nouveau numero de mobile mobicarte a vos proches, laissez vous guider.<br/>
+ETAPE 1 : Tapez votre NOM puis valider (maximum 25 caracteres)<form action="erl://svc_variable:set_v2?sms_pre&amp;nom&amp;%23prenom">
+    <entry>
+      <prompt></prompt>
+    </entry>
+  </form>
+
+</page>
+
+<page tag="home_page_cfoot" descr="Home page SMS pre-etabli" backtext="notext" menutext="notext">
+ <title>Home page SMS pre-etabli club de foot</title>
+#140#<br/>
+Pour envoyer votre nouveau numero de mobile carte prepayee club de foot a vos proches, laissez vous guider.
+ETAPE 1 : Tapez votre NOM puis valider (maximum 25 caracteres)<form action="erl://svc_variable:set_v2?sms_pre&amp;nom&amp;%23prenom">
+    <entry>
+      <prompt></prompt>
+    </entry>
+  </form>
+
+</page>
+
+<page tag="home_page_m6" descr="Home page SMS pre-etabli" backtext="notext" menutext="notext">
+ <title>Home page SMS pre-etabli mobi m6</title>
+#140#<br/>
+Pour envoyer votre nouveau numero de mobile La carte prepayee M6 mobile by orange a vos proches,laissez vous guider.ETAPE 1:Tapez
+votre NOM puis valider(maximum 25 caracteres)<form action="erl://svc_variable:set_v2?sms_pre&amp;nom&amp;%23prenom">
+    <entry>
+      <prompt></prompt>
+    </entry>
+  </form>
+
+</page>
+
+<page tag="num_dest" descr="Saisie numero destinataire" backtext="notext" menutext="notext">
+ <title>Saisie numero destinataire</title>
+#140#<br/>
+ETAPE 3 : Tapez le numero de mobile du destinataire commencant par 06, puis validez.<form action="erl://svc_variable:set_v2?sms_pre&amp;msisdnB&amp;%23redir_num">
+    <entry>
+      <prompt></prompt>
+    </entry>
+  </form>
+
+</page>
+
+<page tag="num_nok" backtext="notext" menutext="notext">
+#140#<br/>
+Ce numero n'est pas valide: il doit etre compose de maximum 10 chiffres
+</page>
+
+<page tag="sms_max" backtext="notext" menutext="notext">
+#140#<br/>
+Vous avez utilise tous vos messages.
+</page>
+
+<page tag="num_ok" backtext="notext" menutext="notext">
+  <redirect src="erl://svc_sms_pre:send_sms?%23send_ok"/>
+</page>
+
+<page tag="prenom" descr="Saisie Prenom" backtext="notext" menutext="notext">
+ <title>Saisie Prenom</title>
+#140# <br/>
+ETAPE 2 : tapez votre PRENOM puis valider (maximum 25 caracteres) <form action="erl://svc_variable:set_v2?sms_pre&amp;prenom&amp;%23num_dest">
+    <entry>
+      <prompt></prompt>
+    </entry>
+  </form>
+
+</page>
+
+<page tag="redir_num" backtext="notext" menutext="notext">
+  <redirect src="erl://svc_variable:redir_by_variable?sms_pre&amp;msisdnB&amp;contain&amp;%5E%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%5B0-9%5D%24=%23num_ok,%3F=%23num_nok"/>
+</page>
+
+<page tag="send_ok" descr="envoi SMS OK" backtext="notext" menutext="notext">
+ <title>envoi SMS OK</title>
+#140#<br/>
+votre correspondant va recevoir dans quelque instant votre nouveau numero de mobile Mobicarte ...
+</page>
+
+<page tag="set_nom" backtext="notext" menutext="notext">
+  <redirect src="erl://svc_variable:set_v2?sms_pre&amp;name&amp;%23prenom&amp;"/>
+</page>
+
+<page tag="set_num" backtext="notext" menutext="notext">
+  <redirect src="erl://svc_variable:set_v2?sms_pre&amp;msisdnB&amp;%23redir_num&amp;"/>
+</page>
+
+<page tag="set_prenom" backtext="notext" menutext="notext">
+  <redirect src="erl://svc_variable:set_v2?sms_pre&amp;prenom&amp;%23num_dest&amp;"/>
+</page>
+
+<page tag="not_authorized"  nav="end" backtext="notext" menutext="notext">
+Vous n'avez pas acces a ce service 
+</page>
+
+
+</pages>

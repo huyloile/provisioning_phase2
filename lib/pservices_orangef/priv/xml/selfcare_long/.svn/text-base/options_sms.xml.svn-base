@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Options SMS">
+
+<!-- Premiere page -->
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_sms_quoti&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+
+  <page tag="opt_deja_active"  backtext="notext" hist="dohist" cost="free_pt"
+        descr="Options SMS: Actif">
+    <title>Options SMS Actif</title>
+    Bonjour, votre option SMS est actuellement activee.
+    et vous beneficiez de 6 SMS par jour pour seulement 0,50E pour votre usage quotidien...<br/>
+    <a href="#infos_suppr">+ d'infos</a><br/>
+    <a href="#conditions_suppr">Conditions</a><br/>
+   <a href="#suppression_1">Supprimer</a><br/>
+  </page>
+
+  <!--On utilise la page d'incompatibilité pour gérer le cas de l'option
+  suspendue, i.e active mais sans compte pricnipal créditeur
+  Normalement cette page n'est pas utilisée-->
+  <page tag="offre_incomp"  backtext="notext" hist="dohist" cost="free_pt"
+        descr="Options SMS: Actif">
+    <title>Options SMS Actif</title>
+    Votre option SMS est suspendue. Vous beneficierez a nouveau de 6 SMS/jour quand votre credit sera suffisant...<br/>
+    <a href="recharge.xml">Recharger votre compte</a><br/>
+    <a href="#suppression_1">Supprimer votre option</a>
+  </page>
+
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option SMS solde insuffisant classique">
+   <title>option SMS solde insuffisant</title>
+   Bonjour, pour souscrire a l'option SMS, vous devez disposer de plus de 0,50E sur votre compte principal. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Options SMS: Menu">
+    <title>Options SMS Menu</title>
+    Vos SMS a petit prix tous les jours ? Avec l'option SMS vous beneficiez chaque jour de 6 SMS pour seulement 0,50E/jour.<br/>
+    <a href="#infos">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscription">Souscrire</a>
+  </page>
+ 
+<!-- +d'infos -->
+ <!--+d'infos Souscription-->
+  <page tag="infos" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: + d'infos">
+    <title>+ d'infos</title>
+   Les SMS vous sont utiles au quotidien pour communiquer avec votre famille, vos amis ou vos collegues ? Alors l'option SMS est faite pour vous !<br/>
+   <a href="#infos2">Suite</a><br/>
+   <a href="#souscription">Souscrire</a><br/>
+  </page>
+
+  <page tag="infos2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: + d'infos 2">
+    <title>+ d'infos</title>
+   Vous beneficiez de 6 SMS par jour pour seulement 0,50E par jour et en plus votre option SMS est automatique et facile a gerer.<br/>
+   <a href="#infos3">Suite</a><br/>
+   <a href="#souscription">Souscrire</a><br/>
+  </page>
+
+  <page tag="infos3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: + d'infos 3">
+    <title>+ d'infos</title>
+    Une seule souscription suffit pour profiter simplement de 6 SMS tous les jours...jusqu'a ce que vous decidiez de ne plus en beneficier.<br/>
+   <a href="#infos4">Suite</a><br/>
+   <a href="#souscription">Souscrire</a><br/>
+  </page>
+
+  <page tag="infos4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: + d'infos 4">
+    <title>+ d'infos</title>
+    C'est simple : vous supprimez votre option quand vous le souhaitez en appelant gratuitement le 220 ou le #123#.<br/>
+   <a href="#souscription">Souscrire</a><br/>
+  </page>
+
+ <!--+d'infos Resiliation-->
+
+<page tag="infos_suppr" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: + d'infos suppression">
+    <title>+ d'infos</title>
+...En plus votre option SMS est automatique et facile a gerer.<br/> 
+   <a href="#suppression_1">Supprimer l'option</a>
+  </page>
+<!--/-->
+
+<!-- Conditions -->
+ <!-- Conditions subscr-->
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions P1/3">
+    <title>Conditions P1/3</title>
+    Offre valable en France metropolitaine. 6 SMS par jour utilisables en MMS (hors supplements des services SMS/MMS et MMS carte postale)...<br/>
+   <a href="#conditions_2">Suite</a>
+  </page>
+
+  <page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions P2/3">
+    <title>Conditions P2/3</title>
+    ...et decomptes sur la base d'1 MMS=3 SMS. Les 0,50E sont preleves sur le compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/>...<br/>
+   <a href="#conditions_3">Suite</a>
+  </page>
+
+  <page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions P3/3">
+    <title>Conditions P3/3</title>
+    ...lors du renouvellement quotidien de l'option sous reserve que le credit soit positif. En cas de credit insuffisant, l'option est suspendue...<br/>
+   <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions P3/3">
+    <title>Conditions P3/3</title>
+    ... et reprend automatiquement des que le credit est a nouveau suffisant. Les SMS non utilises par jour ne sont pas reportes sur le jour suivant.<br/>
+   <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_5" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions P3/3">
+    <title>Conditions P3/3</title>
+    Le renouvellement quotidien de l'option est effectue chaque jour entre
+    23h00 et 1h00.<br/>
+   <a href="#souscription">Souscrire</a>
+  </page>
+
+ <!-- Conditions suppr-->
+  
+  <page tag="conditions_suppr" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_suppr_gen,35=#conditions_suppr_m6,39=#conditions_suppr_foot,40=#conditions_suppr_foot,41=#conditions_suppr_foot,42=#conditions_suppr_foot,43=#conditions_suppr_foot,44=#conditions_suppr_foot,51=#conditions_suppr_foot,default=#conditions_suppr_gen"/>
+  </page>
+
+<page tag="conditions_suppr_gen" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression P1/5">
+    <title>Conditions P1/5</title>
+    Offre valable en France metropolitaine et reservee aux clients mobicarte et click la mobicarte.
+    6 SMS par jour utilisables en MMS (hors supplements des services...<br/>
+    <a href="#conditions_suppr_2">Suite</a>
+  </page>
+
+<page tag="conditions_suppr_m6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression M6 P1/5">
+    <title>Conditions M6 P1/5</title>
+    Offre valable en France metropolitaine et reservee aux clients d'une
+    offre prepayee Orange. 6 SMS par jour utilisables en MMS (hors supplements
+    des services SMS/...<br/>
+    <a href="#conditions_suppr_m6_2">Suite</a>
+  </page>
+
+<page tag="conditions_suppr_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Foot P1/5">
+    <title>Conditions Foot P1/5</title>
+    Offre valable en France metropolitaine et reservee aux clients d'une
+    offre prepayee Orange. 6 SMS par jour utilisables en MMS (hors supplements
+    des services SMS/...<br/>
+    <a href="#conditions_suppr_foot_2">Suite</a>
+  </page>
+
+<page tag="conditions_suppr_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Click P1/5">
+    <title>Conditions Click P1/5</title>
+    Offre valable en France metropolitaine et reservee aux clients mobicarte et click la mobicarte.
+    6 SMS par jour utilisables en MMS (hors supplements des services...<br/>
+    <a href="#conditions_suppr_click_2">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression P2/5">
+    <title>Conditions P2/5</title>
+    SMS/MMS et MMS carte postale) et decomptes sur la base d'1 MMS egal 3 SMS. Les 0,50E sont preleves sur le compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/> lors
+    du renouvellement quotidien de...<br/>
+   <a href="#conditions_suppr_3">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_m6_2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression M6 P2/5">
+    <title>Conditions M6 P2/5</title>
+    MMS, MMS carte postale) et decomptes sur la base d'1 MMS egal 3 SMS.
+    Les 0,50E sont preleves sur le compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/> lors
+    du renouvellement quotidien de l'option...<br/>
+   <a href="#conditions_suppr_3">Suite</a>
+  </page>
+
+ <page tag="conditions_suppr_foot_2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Foot P2/5">
+    <title>Conditions Foot P2/5</title>
+    MMS, MMS carte postale) et decomptes sur la base d'1 MMS egal 3 SMS.
+    Les 0,50E sont preleves sur le compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/> lors
+    du renouvellement quotidien de l'option...<br/>
+   <a href="#conditions_suppr_3">Suite</a>
+  </page>
+
+ <page tag="conditions_suppr_click_2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Click P2/5">
+    <title>Conditions Click P2/5</title>
+    SMS/MMS et MMS carte postale) et decomptes sur la base d'1 MMS egal 3 SMS.
+    Les 0,50E sont preleves sur le compte
+    <include src="erl://svc_options:debit_account?opt_sms_quoti"/> lors
+    du renouvellement quotidien de...<br/>
+   <a href="#conditions_suppr_click_3">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression P3/5">
+    <title>Conditions P3/5</title>
+    ...l'option sous reserve que le credit soit positif. En cas de credit insuffisant, l'option est suspendue
+    et reprend automatiquement des que le credit est a nouveau..<br/> 
+  <a href="#conditions_suppr_4">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_click_3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Click P3/5">
+    <title>Conditions Click P3/5</title>
+    ...l'option sous reserve que le credit soit positif. En cas de credit insuffisant, l'option est suspendue
+    et reprend automatiquement des que le credit est a nouveau...<br/> 
+  <a href="#conditions_suppr_click_4">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression P4/5">
+    <title>Conditions P4/5</title>
+    ...suffisant. Les SMS non utilises par jour ne sont pas reportes sur le jour suivant. Le renouvellement quotidien de l'option...<br/>
+  <a href="#conditions_suppr_5">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_click_4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression Click P4/5">
+    <title>Conditions Click P4/5</title>
+    ...suffisant. Les SMS non utilises par jour ne sont pas reportes sur le jour suivant. Le renouvellement quotidien de l'option...<br/>
+  <a href="#conditions_suppr_5">Suite</a>
+  </page>
+
+  <page tag="conditions_suppr_5" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Conditions suppression P5/5">
+    <title>Conditions P5/5</title>
+    ...effectue chaque jour entre 23h00 et 1h00.<br/>
+   <a href="#suppression_1">Supprimer l'option</a>
+  </page>
+
+<!--/-->
+
+<!-- Souscription -->
+
+  <page tag="souscription" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Souscription">
+    <title>Souscription</title>
+   Vous allez souscrire a l'option SMS.<br/>
+   <a href="erl://svc_options_mobi:do_subscription?opt_sms_quoti&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+  <page tag="success" backtext="notext" hist="dohist" nav="stop" cost="free_pt"
+        descr="Opt. SMS: Reussi">
+    <title>Succes de souscription</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants, votre option SMS sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_princ" backtext="notext" hist="dohist" nav="stop" cost="free_pt"
+        descr="Opt. SMS: Reussi">
+    <title>Succes de souscription</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants, votre option SMS sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_bp" backtext="notext" hist="dohist" nav="stop" cost="free_pt"
+        descr="Opt. SMS: Reussi">
+    <title>Succes de souscription</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants, votre option SMS sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_offert" backtext="notext" hist="dohist" nav="stop" cost="free_pt"
+        descr="Opt. SMS: Reussi">
+    <title>Succes de souscription</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants, votre option SMS sera activee. Merci de votre appel.
+  </page>
+  <page tag="success_dixit" backtext="notext" hist="dohist" nav="stop" cost="free_pt"
+        descr="Opt. SMS: Reussi">
+    <title>Succes de souscription</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants, votre option SMS sera activee. Merci de votre appel.
+  </page>
+
+  <page tag="failure" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Echec">
+    <title>Echec de souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+  
+<!-- Suppression -->
+
+  <page tag="suppression_1" backtext="notext" hist="donthist" cost="free_pt"
+        descr="Demande de confirmation de suppression">
+    <title>Confirmation de suppression</title>
+    Il vous reste
+    <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    a utiliser jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.
+    Si vous supprimez votre option SMS maintenant vous ne pourrez pas beneficier de ces SMS.<br/>
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_sms_quoti&amp;#suppression_success,#suppression_failure">Confirmer</a>
+  </page>
+
+  <page tag="suppression_success" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Succes de suppression option SMS">
+    <title>Succes de suppression</title>
+    La suppression de votre option SMS a bien ete prise en compte. Dans quelques instants, vous recevrez un SMS de confirmation. Merci de votre appel. 
+  </page>
+
+ <page tag="suppression_failure" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Echec de suppression option SMS">
+    <title>Echec de suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<!-- Restitution -->
+<!--SMS Quoti-->
+  
+  <page tag="rdl_sms_quoti_princ_sec" cost="free_pt" descr="Options Promo SMS 1">
+    <title>Restitution options SMS 1</title>
+    Vous avez jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/> inclus pour
+    utiliser les <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    de votre option SMS.
+    Vous disposerez a nouveau de 6 SMS le <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien"/>.
+  </page>
+
+  <page tag="rdl_sms_quoti_princ_no_sec" cost="free_pt" descr="Options Promo SMS 2">
+    <title>Restitution options SMS 2</title>
+    Vous avez utilise aujourd'hui la totalite des SMS de votre option SMS.
+    Vous disposerez a nouveau de 6 SMS le <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien"/>.
+  </page>
+
+  <page tag="rdl_sms_quoti_no_princ_sec" cost="free_pt" descr="Options Promo SMS 3">
+    <title>Restitution options SMS 3</title>
+    Vous avez jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/> inclus pour
+    utiliser les <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    de votre option SMS. Vous beneficierez a nouveau de 6 SMS/jour quand le credit de votre compte principal sera superieur a 0,50E.<br/>
+  </page>
+
+  <page tag="rdl_sms_quoti_no_princ_no_sec" cost="free_pt" descr="Options Promo SMS 4">
+    <title>Restitution options SMS 4</title>
+    Votre option SMS est actuellement suspendue.
+    Vous beneficierez automatiquement de 6 SMS/jour quand le credit de votre
+    compte principal sera superieur a 0,50E.<br/>
+  </page>
+
+<!--SMS Mensuelle: Restitution-->
+
+ <page tag="rdl_sms_mensu_princ_sec" cost="free_pt" descr="Option SMS mensuelle:restitution">
+    <title>Restitution options SMS mensuelle 1</title>
+    Vous avez jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_quotidien&amp;dm"/> inclus pour
+    utiliser les <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS
+    de votre option SMS mensuelle.
+    Vous disposerez a nouveau de 30 SMS le <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien&amp;dm"/>.
+  </page>
+
+  <page tag="rdl_sms_mensu_princ_no_sec" cost="free_pt"
+        descr="Option SMS mensuelle:restitution">
+    <title>Restitution options SMS mensuelle 2</title>
+    Votre option SMS mensuelle est epuisee ou suspendue, vous disposerez
+    a nouveau de 30 SMS le
+    <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien&amp;dm"/> si le
+    credit de votre compte principal est superieur a 3E.
+  </page>
+
+  <page tag="rdl_sms_mensu_no_princ_sec" cost="free_pt"
+        descr="Option SMS mensuelle:restitution">
+    <title>Restitution options SMS mensuelle 3</title>
+    Vous avez jusqu'au
+    <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_quotidien&amp;dm"/> inclus
+    pour utiliser vos
+    <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS.
+    Vous beneficierez a nouveau de 30 SMS si le credit de votre compte principal est
+    superieur a 3E le
+    <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien&amp;dm"/>.
+  </page>
+
+  <page tag="rdl_sms_mensu_no_princ_no_sec" cost="free_pt" descr="Option SMS mensuelle:restitution">
+    <title>Restitution options SMS mensuelle</title>
+    Votre option SMS mensuelle est epuisee ou suspendue, vous disposerez
+    a nouveau de 30 SMS le
+    <include src="erl://svc_compte:print_next_credit?cpte_sms_quotidien&amp;dm"/> si le
+    credit de votre compte principal est superieur a 3E.
+  </page>
+
+
+<!--SMS Mensuelle: Resiliation-->
+<page tag="resil_sms_mensu" cost="free_pt" backtext="notext" descr="Option SMS mensuelle:resiliation">
+    <title>Menu Resiliation options SMS mensuelle</title>
+     Votre option SMS mensuelle est actuellement activee.
+     Vous beneficiez de 30 SMS valables un mois pour 3E.
+     <a href="#supprimer_mensu">Supprimer l'option</a><br/>
+     <a href="#conditions_mensu">Conditions</a>  
+</page>
+
+<page tag="supprimer_mensu">
+    <redirect src="erl://svc_options_mobi:redirect_state_opt_cpte?opt_sms_mensu&amp;#supprimer_mensu_sms,#supprimer_mensu_no_sms"/>
+</page>
+
+<page tag="supprimer_mensu_sms" cost="free_pt" backtext="notext" descr="Options SMS mensuelle:resiliation confirmation?">
+    <title>Menu Resiliation options SMS mensuelle</title>
+     Il vous reste <include src="erl://svc_compte:print_solde?cpte_sms_quotidien&amp;sms"/> SMS a utiliser
+     jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_sms_quotidien"/>.
+     Si vous supprimez votre option SMS mensuelle maintenant vous ne pourrez pas beneficier de ces SMS.
+     <a href="#suppression_mensu">Confirmer</a><br/>
+</page>
+
+<page tag="supprimer_mensu_no_sms" cost="free_pt" backtext="notext" descr="Options SMS mensuelle:resiliation confirmation?">
+    <title>Confirmer Resiliation options SMS mensuelle</title>
+     Merci de confirmer la suppresion de votre option SMS mensuelle.<br/> 
+    <a href="#suppression_mensu">Confirmer</a><br/>
+</page>
+
+<page tag="suppression_mensu">
+    <redirect src="erl://svc_options_mobi:do_unsubscription?opt_sms_mensu&amp;#supprimer_mensu_ok,#supprimer_mensu_nok"/>
+</page>
+
+<page tag="supprimer_mensu_ok" cost="free_pt" backtext="notext" descr="Options SMS mensuelle:resiliation Ok">
+    <title>Confirmation Resiliation options SMS mensuelle</title>
+     La suppression de votre option SMS mensuelle a bien ete prise en compte.
+     Dans quelques instants, vous recevrez un SMS de confirmation. Merci de votre appel
+</page>
+<page tag="supprimer_mensu_nok" backtext="notext" hist="dohist" cost="free_pt"
+       descr="Echec de suppression option SMS mensuelle">
+    <title>Echec de suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+ </page>
+    
+
+<page tag="conditions_mensu" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_mensu_gen,35=#conditions_mensu_m6,39=#conditions_mensu_foot,40=#conditions_mensu_foot,41=#conditions_mensu_foot,42=#conditions_mensu_foot,43=#conditions_mensu_foot,44=#conditions_mensu_foot,51=#conditions_mensu_click,default=#conditions_mensu_gen"/>
+  </page>
+
+
+<page tag="conditions_mensu_gen" descr="Options SMS mensu:conditions" backtext="notext" menutext="notext">
+    <title>conditions mensu 1</title>
+    Offre valable en France metropolitaine et reservee aux clients mobicarte et click la mobicarte.
+    30 SMS valables un mois...<br/>
+    <a href="#conditions_mensu_2">Suite</a>
+</page>
+
+<page tag="conditions_mensu_2" descr="Options SMS mensu:conditions" backtext="notext">
+    <title>conditions mensu 2</title>
+    ...et utilisables en MMS (hors supplements des services SMS/MMS
+    et MMS carte postale) et decomptes sur la base d'1 MMS=3 SMS.
+    Les 3E sont preleves chaque mois...<br/>
+    <a href="#conditions_mensu_3">Suite</a>
+</page>
+
+<page tag="conditions_mensu_3" descr="Options SMS mensu:conditions" backtext="notext">
+    <title>conditions mensu 3</title>
+    ...sur le compte du client sous reserve de disposer d'un
+    credit suffisant. En cas de credit insuffisant, l'option sera suspendue
+    et reprendra...<br/>
+    <a href="#conditions_mensu_4">Suite</a>
+</page>
+
+
+<page tag="conditions_mensu_m6" descr="Options SMS mensu:conditions M6"
+      backtext="notext" menutext="notext">
+    <title>conditions mensu M6 1</title>
+    Offre valable en France metropolitaine, reservee aux clients d'un offre
+    prepayee Orange ayant souscrit entre le 05/09/06 et le 18/09/06.
+    30 SMS valables un mois...<br/>
+    <a href="#conditions_mensu_m6_2">Suite</a>
+</page>
+
+<page tag="conditions_mensu_m6_2" descr="Options SMS mensu:conditions M6" backtext="notext">
+    <title>conditions mensu M6 2</title>
+    ...et utilisables en MMS (hors supplements des services SMS/MMS
+    et MMS carte postale) et decomptes sur la base d'1 MMS=3 SMS.
+    Les 3E sont preleves chaque mois...<br/>
+    <a href="#conditions_mensu_m6_3">Suite</a>
+</page>
+
+<page tag="conditions_mensu_m6_3" descr="Options SMS mensu:conditions M6" backtext="notext">
+    <title>conditions mensu M6 3</title>
+    ...sur le compte principal du client sous reserve de disposer d'un
+    credit suffisant. En cas de credit insuffisant, l'option sera suspendue
+    et reprendra...<br/>
+    <a href="#conditions_mensu_4">Suite</a>
+</page>
+
+<page tag="conditions_mensu_foot" descr="Options SMS mensu:conditions Foot"
+      backtext="notext" menutext="notext">
+    <title>conditions mensu Foot 1</title>
+    Offre valable en France metropolitaine, reservee aux clients d'un offre
+    prepayee Orange ayant souscrit entre le 05/09/06 et le 18/09/06.
+    30 SMS valables un mois...<br/>
+    <a href="#conditions_mensu_foot_2">Suite</a>
+</page>
+
+<page tag="conditions_mensu_foot_2" descr="Options SMS mensu:conditions Foot" backtext="notext">
+    <title>conditions mensu Foot 2</title>
+    ...et utilisables en MMS (hors supplements des services SMS/MMS
+    et MMS carte postale) et decomptes sur la base d'1 MMS=3 SMS.
+    Les 3E sont preleves chaque mois...<br/>
+    <a href="#conditions_mensu_foot_3">Suite</a>
+</page>
+
+<page tag="conditions_mensu_foot_3" descr="Options SMS mensu:conditions Foot" backtext="notext">
+    <title>conditions mensu Foot 3</title>
+    ...sur le compte du client sous reserve de disposer d'un
+    credit suffisant. En cas de credit insuffisant, l'option sera suspendue
+    et reprendra...<br/>
+    <a href="#conditions_mensu_4">Suite</a>
+</page>
+
+<page tag="conditions_mensu_click" descr="Options SMS mensu:conditions Click"
+      backtext="notext" menutext="notext">
+    <title>conditions mensu Click 1</title>
+    Offre valable en France metropolitaine, reservee aux clients d'un offre mobicarte
+    ayant souscrit entre le 05/09/06 et le 18/09/06.<br/>
+    30 SMS valables un mois...<br/>
+    <a href="#conditions_mensu_click_2">Suite</a>
+</page>
+
+<page tag="conditions_mensu_click_2" descr="Options SMS mensu:conditions Click" backtext="notext">
+    <title>conditions mensu Click 2</title>
+    ...et utilisables en MMS (hors supplements des services SMS/MMS
+    et MMS carte postale) et decomptes sur la base d'1 MMS=3 SMS.
+    Les 3E sont preleves chaque mois...<br/>
+    <a href="#conditions_mensu_click_3">Suite</a>
+</page>
+
+<page tag="conditions_mensu_click_3" descr="Options SMS mensu:conditions Click" backtext="notext">
+    <title>conditions mensu Click 3</title>
+    ...sur le compte principal du client sous reserve de disposer d'un credit suffisant.
+    En cas de credit insuffisant, l'option sera suspendue et reprendra...<br/>
+    <a href="#conditions_mensu_4">Suite</a>
+</page>
+
+<page tag="conditions_mensu_4" descr="Options SMS mensu:conditions" backtext="notext">
+    <title>conditions mensu 4</title>
+    ...automatiquement a date anniversaire si le credit est a nouveau suffisant.
+    Les SMS non utilises dans le mois ne sont pas reportes sur la periode suivante...<br/>
+    <a href="#conditions_mensu_5">Suite</a>
+</page>
+
+<page tag="conditions_mensu_5" descr="Options SMS mensu:conditions" backtext="notext">
+    <title>conditions mensu 5</title>
+    ...Resiliation a tout moment au 220 ou #123#.
+    Le client est informe qu'a compter de la resiliation...<br/>
+    <a href="#conditions_mensu_6">Suite</a>
+</page>
+
+<page tag="conditions_mensu_6" descr="Options SMS mensu:conditions" backtext="notext">
+    <title>conditions mensu 6</title>
+     ...les SMS non consommes sont perdus. Option non compatible avec l'option SMS quotidienne. <br/>
+    <a href="#supprimer_mensu">Supprimer l'option</a>
+</page>
+
+<!-- Nouveautes -->
+
+  <page tag="nouveaute" cost="free_pt" descr="Options SMS: Nouveaute">
+    <title>Restitution options SMS 4</title>
+    L'option SMS c'est 6 SMS par jour pour 0.50E/jour soit le SMS � 0,083E.
+    Souscrivez une fois et c'est renouvele le temps que vous voulez, essayez vite !.<br/>
+    <a href="options_sms.xml">Souscrire</a>
+  </page>
+
+</pages>
+
+

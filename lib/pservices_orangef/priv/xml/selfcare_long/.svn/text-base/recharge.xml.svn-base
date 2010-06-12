@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+<pages descr="Refill page">
+  <page hist="donthist">
+    <!-- Switch to the correct home page depending on the profile  -->
+    <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+  <page tag="start">
+    <redirect src="erl://svc_recharge:is_forbidden?#recharge_allowed"/>
+  </page>
+  <page tag="recharge_allowed">
+    <redirect src="erl://svc_recharge:determine_homepage"/>
+  </page>
+  <page tag="direct_access" hist="donthist">
+    <redirect src="erl://svc_recharge:recharge_form"/>
+  </page>
+  <page tag="main_short" hist="donthist" log="SCC_rechmen" nav="end" descr="Terminal non compatible"><title>Terminal non compatible</title>
+      Votre terminal ne permet pas d'acceder au service.
+  </page>
+  <page tag="menu_rechargement" cost="free_pt" descr="Redirection Recharge">
+    <redirect src="file://mcel/acceptance/mobi/Home_page_mobi.xml#redirection_recharge"/>
+  </page>
+  <page tag="start_plug" menutext="acceder menu" descr="message d'infos rechargement Plug"><title>Message d'infos Rechargement Plug</title>
+       Actuellement sur Orange pLug, votre rechargment sera
+       automatiquement credite en 50% SMS + 50% communications sur
+       votre compte principal.
+       <br/><a href="erl://svc_recharge:recharge_form">Continuer</a>
+  </page>
+  <page tag="cag" descr="Rechargement Mobi: Form ph2">
+    <title>Rechargement Mobi: Form ph2</title>
+    <form action="erl://svc_recharge:process_code" >
+      <entry kind="digits">
+        <prompt>
+	Saisissez les 14 chiffres de votre code de rechargement situes au dos de votre recharge mobicarte
+	ou sur votre ticket de rechargement puis validez.</prompt>
+      </entry>
+    </form>
+  </page>
+  <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" log="SC_rechph1" descr="Rechargement Mobi: Form ph1">
+    <title>Rechargement Mobi: Form ph1</title>
+    <form action="erl://svc_recharge:process_code" keywords="user_defined">
+      <entry kind="digits">
+        <prompt>
+        Veuillez saisir votre code de rechargement sous la forme
+        #124*Code_a_14_chiffres# puis appuyer sur envoi.<br/>
+        Merci.
+      </prompt>
+      </entry>
+    </form>
+  </page>
+  <!-- Succes page with D4 -->
+  <page tag="sucess_cpte" descr="Rechargement Mobi Reussi: Cpte Princ" backtext="notext">
+    <title>Rechargement Mobi Reussi: Cpte_Princ</title>
+      Vous avez recharge votre compte de <include src="erl://svc_recharge:print_solde?cpte_princ"/>. Votre nouveau credit est de <include src="erl://svc_compte:print_solde_euro_centime?cpte_princ"/> a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/><br/>
+     <a href="/mcel/acceptance/mobi/bons_plans/menu.xml">Decouvrir les options et bons plans</a>
+ </page>
+  <page tag="sucess_sms" descr="Rechargement Mobi Reussi: Cpte SMS"><title>Rechargement Mobi Reussi: Cpte_SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte SMS:
+     <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS
+     a utiliser avant
+     le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <page tag="sucess_cpte_sms" descr="Rechargement Mobi Reussi: Cpte Princ et SMS"><title>Rechargement Mobi Reussi: Cpte Princ et SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte Princ:
+     <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+     Compte SMS:
+     <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS<br/>
+     A utiliser avant
+     le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+ </page>
+  <page tag="sucess_promo_sms" descr="Rechargement Mobi Reussi: Cpte SMS"><title>Rechargement Mobi Reussi: Cpte_SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte Promo SMS:
+     <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/> SMS
+     a utiliser avant
+     le <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <page tag="sucess_cpte_promo_sms" descr="Rechargement Mobi Reussi: Cpte Princ et SMS"><title>Rechargement Mobi Reussi: Cpte Princ et SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte Princ:
+     <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+     Compte Promo SMS:
+     <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/> SMS<br/>
+     A utiliser avant
+     le <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <!-- Erecharge Journee infinie -->
+  <page tag="succes_jinf_avec_souscription" descr="Succes rechargement Mobi Journee infinie"><title>"Succes rechargement Mobi Journee infinie"</title>
+     Vous beneficiez de vos journees infinies incluses dans votre recharge serie limitee 45E
+     jusqu'au <include src="erl://svc_compte:print_fin_credit?cpte_jinf_voix"/>.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <page tag="succes_jinf_sans_souscription" descr="Echec rechargement Mobi Journee infinie"><title>"Echec rechargement Mobi Journee infinie"</title>
+     L'activation des journees infinies incluses dans votre recharge serie limitee 45E a echoue. Pour en beneficier, veuillez appeler votre service clients au 722 (0,37E/minute)
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <!-- Erech WE infini -->
+  <page tag="weinf_deja_actif" descr="Rechargement Mobi Reussi: WE inf et Option deja active"><title>Rechargement Mobi Reussi: WE inf et Option deja active</title>
+     Vous avez deja souscrit a l'option WE infini. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 15 jours sur votre compte principal.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <page tag="succes_weinf" descr="Rechargement Mobi Reussi: WE inf">
+	Vous avez souscrit a un WE infini.Vos appels vers Orange et fixes sont illimites de vend.minuit a dim.minuit.Votre compte mobile a ete debite de 10E.
+  </page>
+  <page tag="succes_weinf_ss_souscription" descr="Rechargement Mobi Reussi: WE inf + echec souscription"><title>Rechargement Mobi Reussi: WE inf +echec souscription</title>
+     Votre inscription au WE infini n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+     Vous pouvez souscrire au WE infini en retournant au menu.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/--> 
+ </page>
+  <!-- Erech Europe -->
+  <page tag="europe_deja_actif" descr="Rechargement Mobi Reussi: Europe et Option deja active"><title>Rechargement Mobi Reussi: Europe et Option deja active</title>
+     Vous avez deja souscrit a l'option Europe. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 15 jours sur votre compte principal.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+ </page>
+  <page tag="succes_europe" descr="Rechargement Mobi Reussi: Europe" backtext="notext">
+	Rechargement reussi<br/>
+	La recharge Europe est reservee aux clients Mobicarte. C'est donc votre compte mobile qui a ete recharge de <include src="erl://svc_recharge:montant_recharge"/> Euros. 
+  </page>
+  <page tag="succes_europe_ss_souscription" descr="Rechargement Mobi Reussi: Europe + echec souscription"><title>Rechargement Mobi Reussi: Europe + echec souscription</title>
+     Votre inscription a l'option Europe n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+     Vous pouvez souscrire a l'option en retournant au menu.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+ </page>
+  <!-- Erech Maghreb -->
+  <page tag="maghreb_deja_actif" descr="Rechargement Mobi Reussi: Maghreb et Option deja active"><title>Rechargement Mobi Reussi: Maghreb et Option deja active</title>
+     Vous avez deja souscrit a l'option Maghreb. Par consequent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 15 jours sur votre compte principal.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+ </page>
+  <page tag="succes_maghreb" descr="Rechargement Mobi Reussi: Maghreb" backtext="notext">
+	Rechargement reussi<br/>
+	La recharge Maghreb est reservee aux clients Mobicarte. C'est donc votre compte mobile qui a ete recharge de <include src="erl://svc_recharge:montant_recharge"/> Euros. 
+  </page>
+  <page tag="succes_maghreb_ss_souscription">
+    Votre inscription a l'option Maghreb n'a pu se faire automatiquement.
+    Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+    Vous pouvez souscrire a l'option en retournant au menu.
+  </page>
+  <!-- Erech SMS MMS -->
+  <page tag="erech_smsmms_incompatible" descr="Rechargement Mobi Reussi: E rech SMS/MMS incompatible"><title>Rechargement MOBI Reussi: E rech SMS/MMS incompatible</title>
+     La recharge SMS/MMS n'est pas compatible avec les options Tout Shuss et vacances MMS.
+     Vous avez donc ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 15 jours.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+</page>
+  <page tag="succes_erech_smsmms" descr="Rechargement Mobi Reussi: Erech SMS/MMS reussi"><title>Rechargement MOBI Reussi: Erech SMS/MMS</title>
+	Rechargement reussi.<br/>
+	Votre compte SMS/MMS a ete credite de 5 Euros.<br/>
+	Votre nouveau solde SMS/MMS est
+	de <include src="erl://svc_compte:print_solde?cpte_e_recharge"/> Euros.
+      <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+ </page>
+  <page tag="succes_erech_smsmms_ss_souscription" descr="Rechargement Mobi Reussi: Erech SMS/MMS + echec souscription"><title>Rechargement MOBI Reussi: Maghreb +Erech SMS/MMS souscription</title>
+     Suite a un probleme technique votre recharge SMS/MMS n'a pu etre activee.
+     Votre compte principal a ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     valable 15 jours.
+     <!--include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez maintenant !,#start_game&amp;br"/-->
+</page>
+
+  <!-- Recharge Serie Limitee 10 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_10E" backtext="notext">
+     Vous avez recharge votre compte de 10E. Votre nouveau credit est de <include src="erl://svc_compte:print_solde_euro_centime?cpte_princ"/> a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_10E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_10E_suite">
+      ...SMS, MMS et d'Orange Messenger en illimite de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?183&amp;dmyy"/> en France metropolitaine.<br/>
+     <a href="#rech_SL_10E_suite2">Suite</a>
+  </page>
+  <page tag="rech_SL_10E_suite2">
+      Telecharger gratuitement Orange Messenger sur http://im.orange.fr et profitez de messages instantanes illimites de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?183&amp;dmyy"/>
+  </page>
+  <!-- Recharge Serie Limitee 20 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_20E" backtext="notext">
+      Vous avez recharge votre compte de 20E. Votre nouveau credit est de <include src="erl://svc_compte:print_solde_euro_centime?cpte_princ"/> a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_20E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_20E_suite">
+      ...SMS, MMS et d'Orange Messenger en illimite de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?184&amp;dmyy"/> en France metropolitaine.<br/>
+     <a href="#rech_SL_20E_suite2">Suite</a>
+  </page>
+  <page tag="rech_SL_20E_suite2">
+      Telecharger gratuitement Orange Messenger sur http://im.orange.fr et profitez de messages instantanes illimites de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?184&amp;dmyy"/>
+  </page>
+  <!-- Recharge Serie Limitee 30 euros  -->
+  <!-- offre feb 2010 -->
+  <page tag="rech_SL_30E" backtext="notext">
+      Vous avez recharge votre compte de 30E. Votre nouveau credit est de <include src="erl://svc_compte:print_solde_euro_centime?cpte_princ"/> a utiliser avant le <include src="erl://svc_compte:print_fin_credit_type?cpte_princ&amp;jma&amp;dmyy"/>. Profitez en plus de...<br/>
+      <a href="#rech_SL_30E_suite">Suite</a><br/>
+  </page>
+  <page tag="rech_SL_30E_suite">
+      ...SMS, MMS et d'Orange Messenger en illimite de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?185&amp;dmyy"/> en France metropolitaine.<br/>
+     <a href="#rech_SL_30E_suite2">Suite</a>
+  </page>
+  <page tag="rech_SL_30E_suite2">
+      Telecharger gratuitement Orange Messenger sur http://im.orange.fr et profitez de messages instantanes illimites de 21h a minuit jusqu'au <include src="erl://svc_of_plugins:print_end_credit_bonus_rech_sl?185&amp;dmyy"/>
+  </page>
+
+  <!-- Recharge Serie Limitee 20 euros  -->
+  <!-- offre octobre 2009 -->
+  <page tag="rech_20E_limitee" menutext="notext" backtext="notext">
+	Vous souhaitez recharger 20E de credit valable 1 mois et beneficier en plus d'appels illimites le JOUR, le SOIR ou le WE offerts vers les mobiles Orange<br/>
+	<a href="#menu_rech_20E_limitee">Confirmer</a><br/>
+	<br/>
+	<a href="#ussd1cag">Precedent</a>
+ </page>
+
+	  <page tag="menu_rech_20E_limitee" menutext="notext" >
+	Choisissez votre illimite offert pendant 1 mois vers les mobiles Orange en France metropolitaine.<br/>
+	<a href="#unlimited_voice_day">illimite JOUR</a><br/>
+	<a href="#unlimited_voice_night">illimite SOIR</a><br/>
+	<a href="#unlimited_voice_we">illimite WE</a><br/>
+	<a href="#plus_infos">+ d'infos</a>
+ </page>
+
+  <!-- Recharge Serie Limitee 20 euros  : Voice illimite -->
+  <page tag="unlimited_voice_day"  menutext="notext">
+	Avec l'illimite jour, c'est 20E de credit et vos appels en illimite offerts, de 7h a 17h, du lundi au vendredi pendant 1 mois vers les mobiles Orange.<br/>
+	<a href="#unlimited_VD_confirm">Confirmer</a>
+</page>
+  <page tag="unlimited_VD_confirm">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?1&amp;#unlimited_VD_success"/>
+  </page>
+  <page tag="unlimited_VD_success" backtext="notext">
+       Rechargement reussi. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+       a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/>.
+	Profitez de vos appels illimites le jour vers Orange jusqu'au <include src="erl://svc_of_plugins:print_date_end_opt?opt_rech_sl_20E"/>
+</page>
+  <page tag="unlimited_voice_night" menutext="notext">
+	Avec l'illimite soir, c'est 20E de credit et vos appels en illimite offerts de 21h a 00h, du lundi au vendredi pendant 1 mois vers les mobiles Orange.<br/>
+    <a href="#unlimited_VN_confirm">Confirmer</a>
+</page>
+  <page tag="unlimited_VN_confirm">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?2&amp;#unlimited_VN_success"/>
+  </page>
+  <page tag="unlimited_VN_success" backtext="notext">
+       Rechargement reussi. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+       a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/>.
+	Profitez de vos appels illimites le soir vers Orange jusqu'au <include src="erl://svc_of_plugins:print_date_end_opt?opt_rech_sl_20E"/>
+</page>
+  <page tag="unlimited_voice_we" menutext="notext">
+	Profitez de 20E de credit et de vos appels en illimite offerts tous les WE du vendredi minuit au dimanche minuit, pdt 1 mois vers les mobiles Orange.<br/>
+    <a href="#unlimited_VW_confirm">Confirmer</a>
+</page>
+  <page tag="unlimited_VW_confirm">
+    <redirect src="erl://svc_recharge:recharge_d6_and_redirect?3&amp;#unlimited_VW_success"/>
+  </page>
+  <page tag="unlimited_VW_success" backtext="notext">
+       Rechargement reussi. Votre nouveau credit est de <include src="erl://svc_compte:print_solde?cpte_princ"/> euros
+       a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/>.
+	Profitez de vos appels illimites le WE vers Orange jusqu'au <include src="erl://svc_of_plugins:print_date_end_opt?opt_rech_sl_20E"/>
+</page>
+  <!-- Recharge Serie Limitee 20 euros  : Plus d'infos -->
+  <page tag="plus_infos" menutext="notext">
+	20E de credit valable 1 mois et validite de la ligne au-dela de la validite du credit : 6 mois<br/>
+    <a href="#plus_infos_suite1">Suite</a>
+</page>
+  <page tag="plus_infos_suite1" menutext="notext">
+	Appels voix illimite pendant 1 mois vers les mobiles Orange en France metropolitaine, dont les plages horaires sont a choisir parmi celles proposees...<br/>
+	<a href="#plus_infos_suite2">Suite</a>
+</page>
+  <page tag="plus_infos_suite2" menutext="notext">
+  ...3h max par appel,hors n0s speciaux,de services,en cours de portabilite. Appels directs entre personnes physiques et pour 1 usage personnel non lucratif direct
+</page>
+
+  <!-- Jeu de Rechargement Instant Gagnant (du 19/04/2007 au 19/05/2007) -->
+  <page tag="start_game" menutext="notext" backtext="notext" descr="Jeu Rechargement Mobi: roulette">
+    <title>Jeu Rechargement Mobi: roulette</title>
+    <form action="erl://svc_recharge:is_lucky_number">
+      <entry kind="digits" type="ccnumber">
+        <prompt>Pour jouer, activez la roue de la chance en tapant un chiffre entre 1 et 7 et validez !
+      </prompt>
+      </entry>
+    </form>
+  </page>
+  <page tag="wap_push" backtext="notext" descr="Jeu Rechargement Mobi logo: redirect send wap_push">
+    <title>Jeu Rechargement Mobi logo: redirect send wap_push</title>
+    <include src="erl://svc_recharge_cb_mobi:send_sms?service_indication&amp;Grand%20Jeu%20rechargement%3A%20Vous%20avez%20gagne%201%20logo!%20Cliquez%20ici%20pour%20le%20telecharger%20avec%20un%20mobile%20compatible&amp;http%3A%2F%2Fstsl5.orange.fr&amp;automatic&amp;20776&amp;refillgame&amp;false&amp;#logo_winner&amp;#loosing_case"/>
+  </page>
+  <page tag="sms_clickable" backtext="notext" descr="Jeu Rechargement Mobi logo: redirect send wap_push">
+    <title>Jeu Rechargement Mobi logo: redirect send wap_push</title>
+    <include src="erl://svc_recharge_cb_mobi:send_sms?clickable_sms&amp;Grand%20Jeu%20rechargement%3A%20Vous%20avez%20gagne%201%20logo!%20Cliquez%20ici%20pour%20le%20telecharger%20avec%20un%20mobile%20compatible&amp;http%3A%2F%2Fstsl5.orange.fr&amp;default_alphabet&amp;20776&amp;refillgame&amp;false&amp;#logo_winner&amp;#loosing_case"/>
+  </page>
+  <page tag="loosing_case" backtext="notext" descr="Jeu Rechargement Mobi: PERDU"><title>Jeu Rechargement Mobi: PERDU</title>
+    Dommage! Vous avez perdu... Retentez votre chance a votre prochain
+    rechargement avant le <include src="erl://svc_options:print_commercial_end_date?refill_game&amp;dmy"/> !
+  </page>
+  <page tag="logo_winner" backtext="notext" descr="Jeu Rechargement Mobi: GAIN LOGO"><title>Jeu Rechargement Mobi: GAIN LOGO</title>
+    Bravo ! Vous avez gagne un logo sous reserve de compatibilite
+    de votre mobile et hors cout de connexion wap...<br/>
+    <a href="#logo_winner_suite">Suite</a>
+  </page>
+  <page tag="logo_winner_suite" descr="Jeu Rechargement Mobi: GAIN LOGO suite"><title>Jeu Rechargement Mobi: GAIN LOGO suite</title>
+    ...Vous allez recevoir un SMS. Cliquez sur le lien et
+    telechargez le logo d'une valeur de 2E TTC.
+  </page>
+  <!-- Subscription successes via the game "Instants Gagnants" (01/05/2008-11/06/2008)-->
+  <page tag="success_mobile_prize" backtext="notext" descr="Jeu Rechargement Mobi: GAIN MOBILE"><title>Jeu Rechargement Mobi: GAIN MOBILE</title>
+	Bravo, vous avez gagne un mobile Samsung E250, d'une valeur de 209E.
+	Orange vous contactera prochainement afin de confirmer votre adresse.
+  </page>
+  <page tag="success_opt_sinf_kdo" backtext="notext" descr="Jeu Rechargement Mobi: GAIN SOIREE INFINIE"><title>Jeu Rechargement Mobi: GAIN SOIREE INFINIE</title>
+	Bravo, vous avez gagne une soiree infinie.
+	Profitez d'appels illimites ce soir de 21h a minuit en France metro vers les telephones fixes et les mobiles Orange.
+  </page>
+  <page tag="success_mobile_prize_2" backtext="notext" descr="Jeu Rechargement Mobi: GAIN MOBILE AU SORT"><title>Jeu Rechargement Mobi: GAIN MOBILE AU SORT</title>
+	Bravo, vous participez gratuitement au tirage au sort pour remporter une TV LCD Samsung.
+	Orange vous contactera si vous avez gagne le gros lot!
+  </page>
+  <!-- Recharge Special Vacances -->
+  <page tag="success_vacances" backtext="notext" descr="Rechargement CB Mobi Reussi: Special Vacances 1_2"><title>Rechargement CB Mobi Reussi: Special Vacances 1_2</title>
+      Votre versement a bien ete effectue. Vous disposez jusqu'au
+      <include src="erl://svc_compte:print_fin_credit?roaming_in"/> de
+      <include src="erl://svc_compte:print_solde_min_sec?roaming_in"/> pour appeler la France ou le pays visite et
+      <include src="erl://svc_compte:print_solde_min_sec?roaming_out"/> pour etre appele...<br/>
+      <a href="#success_vacances2">Suite</a>
+</page>
+  <page tag="success_vacances2" backtext="notext" descr="Rechargement CB Mobi Reussi: Special Vacances 1_2"><title>Rechargement CB Mobi Reussi: Special Vacances 1_2</title>
+      ...consultez le solde de cette recharge dans votre suivi conso des promos<br/>
+      <a href="selfcare_long.xml#redirect_compte">suivi conso</a>
+      <include src="erl://svc_options_mobi:proposer_lien?is_game_activ&amp;Jouez !,#start_game&amp;br"/>     
+</page>
+  <!-- Error pages -->
+  <page tag="closed" descr="Recharge Mobi: Fermeture"><title>Recharge Mobi: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Reessayer ulterieurement.
+  </page>
+  <page tag="badprofil" backtext="notext" log="SCrech_Enotm" descr="not mobi"><title>Reject : not mobi</title>
+    Erreur<br/>
+    Suite a un probleme technique, votre rechargement n'a pas pu etre effectue.<br/>
+    Pour recharger, nous vous invitons a appeler gratuitement le 224.<br/>
+  </page>
+  <page tag="bad_code_55" backtext="notext" log="SCrech_Ebadcode" hist="donthist" descr="Reject : code de rechargement incorrect">
+    <title>Reject : bad code</title>
+    Erreur<br/>
+    Rechargement refuse car les caracteres saisis ne sont pas corrects. Veuillez verifier les chiffres et les composer a nouveau. Merci.<br/><br/>
+    <a href="#cag">Reessayer</a>
+  </page>
+
+  <page tag="bad_code_56" backtext="notext" log="SCrech_Ebadcode" hist="donthist" descr="Reject : code de rechargement incorrect">
+    <title>Reject : bad code</title>
+    Erreur<br/>
+    Votre ticket n'est pas valide. Pour plus d'informations, veuillez appeler le 722 (0,37E/min).<br/>
+  </page>
+  <page tag="ticket_deja_utilise" backtext="notext" descr="Reject : recharge incompatible avec votre offre">
+    <title>Reject : recharge incompatible avec offe mobicarte</title>
+    Erreur<br/>
+    Votre ticket a deja ete utilise.<br/><br/>
+    Vous pouvez recharger par carte bancaire, si vous le souhaitez en repondant 1<br/>
+    <a href="recharge_cb_mobi.xml">Recharger</a>
+  </page>
+
+  <page tag="incompatible" log="SCrech_Eincomp" backtext="notext" descr="Reject : recharge incompatible avec credit">
+    <title>Reject : recharge incompatible avec credit</title>
+    Erreur<br/>
+    Rechargement refuse car le ticket utilise n'est pas compatible avec votre offre<br/>
+    Merci d'appeler le 722 (0,37E/min) pour plus d'infos, ou...<br/>
+    <a href="#incompatible_offre_1">Suite</a>
+  </page>
+  <page tag="incompatible_offre_1" backtext="notext" descr="Reject : recharge incompatible avec votre offre">
+    <title>Reject : recharge incompatible avec offre mobicarte</title>
+    ... de recharger par carte bancaire en repondant 1<br/>
+    <a href="recharge_cb_mobi.xml">Recharger</a>
+  </page>
+  <page tag="incompatible_offre" backtext="notext" descr="Reject : recharge incompatible avec votre offre">
+    <title>Reject : recharge incompatible avec offre mobicarte</title>
+    Erreur<br/>
+    Rechargement refuse car le ticket utilise n'est pas compatible avec votre offre<br/>
+    Merci d'appeler le 722 (0,37E/min) pour plus d'infos, ou...<br/>
+    <a href="#incompatible_offre_1">Suite</a>
+  </page>
+
+  <page tag="promo" log="SCrech_Epromo" backtext="notext" nav="end" descr="Reject : rech promotionnelle"><title>Reject : rech promo</title>
+    Erreur<br/>
+    Pour activer cette recharge promo, vous devez avoir du credit sur votre compte rechargeable.<br/> 
+    Nous vous invitons a le recharger prealablement.<br/><br/>
+    <a href="#menu_rechargement">Menu recharger</a>
+  </page>
+  <page tag="bad_code_ph2" log="SCrech_Ebadcode" hist="donthist" descr="Reject : code de rechargement incorrect"><title>Reject : bad code</title>
+    Erreur<br/>
+    Rechargement refuse car les caracteres saisis ne sont pas corrects.
+    Veuillez verifier les chiffres et les composer a nouveau. Merci.<br/><br/>
+    <a href="#cag">Reessayer</a>
+  </page>
+  <page tag="bad_code_2_ph2" log="SCrech_Ebadcode" hist="donthist" descr="Reject : code de rechargement incorrect"><title>Reject : bad code</title>
+    Le code saisi n'est pas valide. <br/>
+    Nous vous invitons a appeler le 722 (0,37E/min) pour plus d'infos, ou a recharger par carte bancaire en repondant 1
+    <a href="#menu_rechargement">Recharger</a>
+  </page>
+  <page tag="bad_code_ph1" log="SCrech_Ebadcode" hist="donthist" backtext="notext" descr="Reject : code de rechargement incorrect"><title>Reject : bad code</title>
+    Rechargement refuse. Veuillez saisir le code de rechargement
+    sous la forme<br/>
+    #12*Code_a_14_chiffres#<br/>
+    verifier votre code et renouveler l'operation. Merci.
+  </page>
+  <page tag="bad_code" log="SCrech_Ebadcode" backtext="notext" nav="end" descr="Reject : code de rechargement incorrect"><title>Reject : bad code</title>
+    Rechargement refuse : votre code n'est pas correct. Veuillez
+    verifier votre code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="error_not_allowed" descr="Erreur client interdit de rechargement" backtext="notext">
+   <title>Erreur client interdit de rechargement</title>
+   Vous n'etes pas autorise a utiliser ce service.<br/>
+   Pour plus d'informations, veuillez appeler le 722 (0,37E/min).
+  </page>
+
+  <page tag="system_failure" backtext="notext" log="SCrech_Efail" descr="Rechargement CB TR system failure"><title>Reject : system failure</title>
+    Erreur<br/> 
+    Suite a un probleme technique, votre rechargement n'a pas pu etre effectue.<br/>
+    Nous vous invitons a reessayer plus tard.<br/>
+  </page>
+  <page tag="temporary" nav="end" descr="Rechargement CB TR temporairement indisponible"><title>Reject : system failure</title>
+    Probleme technique
+    Le service est momentanement interrompu. Veuillez reessayer
+    ulterieurement. Vous allez quitter le #123#.
+  </page>
+</pages>

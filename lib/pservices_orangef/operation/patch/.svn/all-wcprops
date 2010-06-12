@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch
+END
+patch_commit.sh
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_commit.sh
+END
+tag.sh
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/tag.sh
+END
+patch_compare_cvs_preprod.sh
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_compare_cvs_preprod.sh
+END
+patch_create.sh
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_create.sh
+END
+patch_create_3_11_intern.sh
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_create_3_11_intern.sh
+END
+install_patch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/install_patch.sh
+END
+patch_list.sh
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_list.sh
+END
+patch_create_3_7.sh
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_create_3_7.sh
+END
+patch_list_filterusort.sh
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_list_filterusort.sh
+END
+archive_cc_of_prod.sh
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/archive_cc_of_prod.sh
+END
+cellcube.orangef.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/cellcube.orangef.txt
+END
+patch_create_3_10.sh
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_create_3_10.sh
+END
+patch_compare_cvs_prod.sh
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/patch_compare_cvs_prod.sh
+END
+install_dev_specifiques.sh
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/install_dev_specifiques.sh
+END
+archive_cc_of_preprod.sh
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/operation/patch/archive_cc_of_preprod.sh
+END

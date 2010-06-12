@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour changer les bonus JANUS">
+  <page cost="freept">
+	<a href="#bonus_appels">Bonus appels</a><br/>
+	<a href="#bonus_sms">Bonus SMS</a><br/>
+	<a href="#bonus_internet">Bonus internet</a><br/>
+	<a href="#bonus_international">Bonus international</a>
+	<include src="erl://svc_of_plugins:proposer_lien?mobi&amp;janus_resilier_bonus&amp;Resilier votre bonus&amp;#resilier_bonus&amp;br"/>
+	<br/>
+	<a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="bonus_appels" hist="dohist" cost="free_pt">
+    <title>bonus appels</title>
+	Avec le Bonus appels: a partir de 10E recharges dans le mois, beneficiez de 20 a 80 min d'appels offerts le mois suivant<br/>
+	<br/>
+	<a href="#appels_inscrire">S'inscrire</a><br/>
+	<a href="#appels_info">+d'infos</a>
+  </page>
+  
+  <page tag="appels_inscrire" hist="dohist" cost="free_pt" menutext="notext" backtext="Retour">
+    <title>appels inscrire</title>
+        Vous allez changer votre bonus.<br/>
+	Votre bonus en cours sera perdu et le compteur de rechargements du bonus remis a 0.<br/><br/>
+	Faites Suite pour confirmer le changement.<br/>
+	<a href="#appels_inscrire_suite">Suite</a>
+  </page>
+  
+  <page tag="appels_inscrire_suite" hist="dohist" cost="free_pt">
+    <title>appels inscrire suite</title>
+        Vos 2 premiers changements de bonus sont gratuits, les suivants seront factures 3E par changement.<br/>
+	<a href="erl://svc_of_plugins:change_mobi_bonus?opt_bonus_appels&amp;#appels_confirm,#error_technique">Confirmer maintenant votre changement</a>
+  </page>
+  
+  <page tag="appels_info" hist="dohist" cost="free_pt" menutext="notext">
+    <title>appels d'infos</title>
+	Bonus offert hors numeros speciaux, de services et en cours de portabilite. Appels directs entre personnes physiques et pour usage perso non lucratif
+  </page>
+  
+  <page tag="appels_confirm" hist="dohist" cost="free_pt" backtext="notext" menutext="notext">
+    <title>appels confirm</title>
+    Bonus appels enregistre.<br/>
+    La nouvelle date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso"/> pour 10E recharges avant cette date.<br/>
+    <a href="#appels_confirm_suite">Suite</a>
+  </page>
+
+  <page tag="appels_confirm_suite" hist="dohist" cost="free_pt" backtext="notext">
+    <title>appels confirm suite</title>
+    Bonus appels:<br/>
+    De 10E a 19,99E recharges dans le mois, 20mn offertes le mois suivant!<br/>
+    De 20E a 29,99E, 40mn offertes!<br/>
+    30E ou+, 80mn offertes!<br/>
+    Usages en France metrop
+  </page>
+  
+  <page tag="bonus_sms" hist="dohist" cost="free_pt">
+    <title>bonus sms</title>
+	Avec le Bonus SMS: a partir de 10E recharges dans le mois, beneficiez de, au minimum, 100 SMS offerts le mois suivant<br/>
+	<br/>
+	<a href="#sms_inscrire">S'inscrire</a><br/>
+	<a href="#sms_info">+d'infos</a>
+  </page>
+  
+   <page tag="sms_inscrire" hist="dohist" cost="free_pt" menutext="notext" backtext="Retour">
+    <title>sms inscrire</title>
+        Vous allez changer votre bonus.<br/>
+        Votre bonus en cours sera perdu et le compteur de rechargements du bonus remis a 0.<br/><br/>
+        Faites Suite pour confirmer le changement.<br/>
+	<a href="#sms_inscrire_suite">Suite</a>
+  </page>
+
+  <page tag="sms_inscrire_suite" hist="dohist" cost="free_pt">
+    <title>sms inscrire suite</title>
+        Vos 2 premiers changements de bonus sont gratuits, les suivants seront factures 3E par changement.<br/>
+        <a href="erl://svc_of_plugins:change_mobi_bonus?opt_bonus_sms&amp;#sms_confirm,#error_technique">Confirmer maintenant votre changement</a>
+  </page>
+  
+  <page tag="sms_info" hist="dohist" cost="free_pt" menutext="notext">
+    <title>sms info</title>
+	SMS/MMS offerts en France Metro, hors sms/mms surtaxes, numeros courts et MMS cartes postales.<br/>
+	<a href="#sms_info_suite1">Suite</a>
+  </page>
+  
+  <page tag="sms_info_suite1" hist="dohist" cost="free_pt" menutext="notext">
+    <title>sms info</title>
+	SMS/MMS entre personnes physiques et pour usage personel non lucratif, jusqu'a 200 destinataires differents
+  </page>
+  
+  <page tag="sms_confirm" hist="dohist" cost="free_pt" backtext="notext" menutext="notext">
+    <title>sms confirm</title>
+        Bonus SMS enregistre.<br/>
+	La nouvelle date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso_day"/> de chaque mois.<br/>
+	Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso"/> pour 10E recharges avant cette date.<br/>
+	<a href="#sms_confirm_suite">Suite</a>
+  </page>
+  
+  <page tag="sms_confirm_suite" hist="dohist" cost="free_pt" backtext="notext">
+    <title>sms confirm suite</title>
+    Bonus SMS:<br/>
+    De 10E a 19,99E recharges dans le mois, 100 SMS offerts le mois suivant!<br/>
+    De 20E a 29,99E, 200 SMS offerts!<br/>
+    30E ou+, SMS illimites!<br/>
+    Usages en France metro<br/>
+  </page>
+  
+  <page tag="bonus_internet" hist="dohist" cost="free_pt">
+    <title>bonus internet</title>
+	Avec le Bonus internet: a partir de 10E recharges, de 1h a 4h d'internet mobile offertes le mois suivant<br/>
+	<br/>
+	<a href="#internet_inscrire">S'inscrire</a><br/>
+	<a href="#internet_info">+d'infos</a>
+  </page>
+  
+   <page tag="internet_inscrire" hist="dohist" cost="free_pt" menutext="notext" backtext="Retour">
+    <title>internet inscrire</title>
+        Vous allez changer votre bonus.<br/>
+        Votre bonus en cours sera perdu et le compteur de rechargements du bonus remis a 0.<br/><br/>
+        Faites Suite pour confirmer le changement.<br/>
+        <a href="#internet_inscrire_suite">Suite</a>
+   </page>
+
+   <page tag="internet_inscrire_suite" hist="dohist" cost="free_pt">
+    <title>internet inscrire suite</title>
+        Vos 2 premiers changements de bonus sont gratuits, les suivants seront factures 3E par changement.<br/>
+        <a href="erl://svc_of_plugins:change_mobi_bonus?opt_bonus_internet&amp;#internet_confirm,#error_technique">Confirmer maintenant votre changement</a>
+  </page>
+  
+   <page tag="internet_confirm" hist="dohist" cost="free_pt" backtext="notext" menutext="notext">
+    <title>internet confirm</title>
+        Bonus internet enregistre.<br/>
+        La nouvelle date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso_day"/> de chaque mois.<br/>
+        Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso"/> pour 10E recharges avant cette date.<br/>
+        <a href="#internet_confirm_suite">Suite</a>
+  </page>
+
+  <page tag="internet_confirm_suite" hist="dohist" cost="free_pt" backtext="notext">
+    <title>internet confirm suite</title>
+    Bonus internet:<br/>
+    De 10 a 19,99E recharges dans le mois, 1h d'internet offerte le mois suivant!<br/>
+    De 20 a 29,99E, 2h offertes!<br/>
+    30E ou+, 4h offertes!<br/>
+    Usage metropolitain<br/>
+  </page>
+  
+  <page tag="internet_info" hist="dohist" cost="free_pt" menutext="notext">
+    <title>internet info</title>
+	Bonus internet decompte a la min indivisible pour navigation sur portail OW, Gallery et internet, consultation videos, rubriques actualite, cinema, sport<br/>
+	<br/>
+	<a href="#internet_info_suite1">Suite</a>
+  </page>
+  
+  <page tag="internet_info_suite1" hist="dohist" cost="free_pt" menutext="notext">
+    <title>internet info</title>
+	et mes communautes sur le portail OW. Les usages mail (smtp, pop, imap) et modem, contenus et les services payants non inclus. Usages en France metro...<br/>
+	<a href="#internet_info_suite2">Suite</a>
+  </page>
+  
+  <page tag="internet_info_suite2" hist="dohist" cost="free_pt" menutext="notext">
+    <title>internet info</title>
+	Services de Voix surIP, P2P, Newsgroups interdits. Services sur reseaux et terminal compatibles. Le piratage nuit a la creation artistique. +d'infos sur orange.fr
+  </page>
+  
+  <page tag="bonus_international" hist="dohist" cost="free_pt">
+    <title>bonus international</title>
+	Avec le Bonus international: a partir de 10E recharges, de 10 a 40mn d'appels offerts le mois suivant vers et depuis ... au choix :<br/>
+	<a href="#bonus_opt_europe">Europe</a><br/>
+	<a href="#bonus_opt_maghreb">Maghreb</a>
+  </page>
+  
+  <page tag="bonus_opt_europe" hist="dohist" cost="free_pt" menutext="notext" backtext="Retour">
+    <title>bonus europe</title>
+        Vous avez choisi le bonus Europe. Votre bonus en cours sera perdu et le compteur de rechargements du bonus remis a 0.<br/>
+	<a href="#bonus_opt_europe_suite">Confirmer</a><br/>
+	<a href="#europe_list_des_pays">Liste des pays</a><br/>
+	<a href="#europe_info">+d'infos</a>
+  </page>
+
+  <page tag="bonus_opt_europe_suite" hist="dohist" cost="free_pt">
+    <title>internet inscrire suite</title>
+        Vos 2 premiers changements de bonus sont gratuits, les suivants seront factures 3E par changement.<br/>
+        <a href="erl://svc_of_plugins:change_mobi_bonus?opt_bonus_europe&amp;#europe_confirm,#error_technique">Confirmer maintenant votre changement</a>
+  </page>
+  
+  <page tag="europe_confirm" hist="dohist" cost="free_pt" backtext="notext" menutext="notext">
+    <title>europe confirm</title>
+        Bonus Europe enregistre.<br/>
+        La nouvelle date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso_day"/> de chaque mois.<br/>
+        Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso"/> pour 10E recharges avant cette date.<br/>
+        <a href="#europe_confirm_suite">Suite</a>
+  </page>
+  
+  <page tag="europe_confirm_suite" hist="dohist" cost="free_pt" backtext="notext">
+    <title>europe confirm suite</title>
+    Bonus Europe :<br/>
+    De 10E a 19,99E recharges dans le mois, 10 min d'appels offertes le mois suivant!<br/>
+    De 20E a 29,99E, 20 min offertes!<br/>
+    et pour 30E ou +, 40 min offertes!<br/>
+  </page>
+
+  <page tag="europe_list_des_pays" hist="dohist" cost="free_pt" menutext="notext">
+    <title>europe list des pays</title>
+	Allemagne, Andorre, Autriche, Baleares, Belgique, Bulgarie, Canaries, Chypre, Danemark, Espagne, Estonie, Finlande, Grece, Guadeloupe, Hongrie, Irlande<br/>
+	<a href="#list_des_pays_suite1">Suite</a>
+  </page>
+  
+  <page tag="list_des_pays_suite1" hist="dohist" cost="free_pt" menutext="notext">
+    <title>europe list des pays</title>
+	Italie, Luxembourg, Martinique, Norvege, Pays-Bas, Pologne, Portugal, Reunion, Roumanie, Royaume-Uni, Suede, Suisse, Rep. Tcheque.<br/>
+	Liste complete sur orange.fr
+  </page>
+
+  <page tag="europe_info" hist="dohist" cost="free_pt" menutext="notext">
+    <title>europe info</title>
+	Bonus decompte a la seconde apres une 1ere minute indivisible. Appels depuis la France Metro vers la zone Europe, ...<br/>
+	<a href="#europe_info_suite1">Suite</a>
+  </page>
+  
+  <page tag="europe_info_suite1" hist="dohist" cost="free_pt" menutext="notext">
+    <title>europe info</title>
+	...et depuis les pays de la zone Europe vers la France Metro et vers les pays de la zone choisie. Les autres com. decomptees du compte principal au tarif en vigueur
+  </page>
+  
+  <page tag="bonus_opt_maghreb" hist="dohist" cost="free_pt" menutext="notext" backtext="Retour">
+    <title>bonus maghreb</title>
+        Vous avez choisi le bonus Maghreb. Votre bonus en cours sera perdu et le compteur de rechargements du bonus remis a 0.<br/>
+        <a href="#bonus_opt_maghreb_suite">Confirmer</a><br/>
+	<a href="#maghreb_list_des_pays">Liste des pays</a><br/>
+	<a href="#maghreb_info">+d'infos</a>
+  </page>
+  
+  <page tag="bonus_opt_maghreb_suite" hist="dohist" cost="free_pt">
+    <title>internet inscrire suite</title>
+        Vos 2 premiers changements de bonus sont gratuits, les suivants seront factures 3E par changement.<br/>
+        <a href="erl://svc_of_plugins:change_mobi_bonus?opt_bonus_maghreb&amp;#maghreb_confirm,#error_technique">Confirmer maintenant votre changement</a>
+  </page>
+  
+  <page tag="maghreb_confirm" hist="dohist" cost="free_pt" backtext="notext" menutext="notext">
+    <title>maghreb confirm</title>
+        Bonus Maghreb enregistre.<br/>
+        La nouvelle date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso_day"/> de chaque mois.<br/>
+        Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?avec_perso"/> pour 10E recharges avant cette date.<br/>
+        <a href="#maghreb_confirm_suite">Suite</a>
+  </page>
+
+  <page tag="maghreb_confirm_suite" hist="dohist" cost="free_pt" backtext="notext">
+    <title>maghreb confirm suite</title>
+    Bonus Maghreb :<br/>
+    De 10E a 19,99E recharges dans le mois, 10 min d'appels offertes le mois suivant!<br/>
+    De 20E a 29,99E, 20 min offertes!<br/>
+    et pour 30E ou +, 40 min offertes!<br/>
+  </page>
+  
+  <page tag="maghreb_list_des_pays" hist="dohist" cost="free_pt" menutext="notext">
+    <title>maghreb list des pays</title>
+	A partir de 10E recharges dans le mois, vous allez beneficier de communications offertes vers et depuis le Maroc, l'Algerie et la Tunisie, le mois suivant.
+  </page>
+
+  <page tag="maghreb_info" hist="dohist" cost="free_pt" menutext="notext">
+    <title>maghreb info</title>
+	Bonus decompte a la seconde apres une 1ere minute indivisible. Appels depuis la France Metro vers le Maghreb, ...<br/>
+	<a href="#maghreb_info_suite1">Suite</a>
+  </page>
+  
+  <page tag="maghreb_info_suite1" hist="dohist" cost="free_pt" menutext="notext">
+    <title>maghreb info</title>
+	...et depuis les pays du Maghreb vers la France Metro et vers les pays de la zone choisie. Les autres com. decomptees du compte principal au tarif en vigueur
+  </page>
+  
+  <page tag="resilier_bonus" hist="dohist" cost="free_pt" backtext="notext">
+    <title>resilier bonus</title>
+	Vous souhaitez renoncer a votre bonus et ne plus beneficier des communications offertes.<br/>
+	<br/>
+	<a href="erl://svc_of_plugins:resilier_bonus_and_redirect?#resilier_confirm,#error_technique">Confirmer</a>
+  </page>
+  
+  <page tag="resilier_confirm" hist="dohist" cost="free_pt" backtext="notext">
+    <title>resilier confirm</title>
+	Votre desinscription a bien ete prise en compte.
+  </page>
+  
+  <page tag="conditions" hist="dohist" cost="free_pt" backtext="notext">
+    <title>conditions</title>
+	Les 2 premiers changements de bonus sont gratuits. Les suivants seront factures 3E.
+  </page>
+  
+  <page tag="error_technique" hist="dohist" cost="free_pt" backtext="notext">
+    <title>Error technique</title>
+	Erreur technique<br/>
+	Votre demande n'a pas ete prise en compte.<br/>
+	Veuillez vous reconnecter ulterieurement.
+  </page>
+</pages>
+
+ 

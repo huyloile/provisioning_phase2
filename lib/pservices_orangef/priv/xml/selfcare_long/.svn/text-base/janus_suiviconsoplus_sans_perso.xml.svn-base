@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour les bonus JANUS">
+
+  <page cost="freept" ismenu="true" hist="dohist" menutext="notext" backtext="notext">
+  <include src="erl://svc_of_plugins:track_kenobi_code?SCACOK"/>
+  <include src="erl://svc_of_plugins_spider:selfcare?mobi&amp;light"/>
+  <a href="#choisir_mon_bonus">Choisir mon Bonus</a><br/>
+	<include src="erl://svc_of_plugins:proposer_lien?mobi&amp;mobi_bonus_options&amp;Options/Promo&amp;#options"/>
+  </page>
+  
+    <page tag="choisir_mon_bonus" descr="Choisir mon bonus">
+     <redirect src="erl://svc_util_of:redir_declinaison?110=#redirect_choisir_bonus,default=#redirect_decouvrir_bonus"/>
+  </page>
+
+  <page tag="redirect_choisir_bonus">
+     <redirect src="erl://svc_of_plugins:redirect_by_choisir_bonus?file:/orangef/selfcare_long/janus_bonus_choisir.xml&amp;file:/orangef/selfcare_long/janus_bonus_choisir_promo.xml"/>
+  </page>
+  
+  <page tag="redirect_decouvrir_bonus">
+     <redirect src="erl://svc_of_plugins:redirect_decouvrir_bonus?file:/orangef/selfcare_long/janus_bonus_decouvrir_cible.xml&amp;file:/orangef/selfcare_long/janus_bonus_decouvrir.xml"/>
+  </page>
+
+  <page tag="options" descr="Suivi conso des options">
+    <include src="erl://svc_spider:do_suiviconsodetaille"/>
+  </page>
+ 
+</pages>
+
+ 

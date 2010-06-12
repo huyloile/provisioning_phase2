@@ -1,0 +1,30 @@
+<getActivationPrimesReponse>
+	<date>15/01/2005</date>
+	<heure>14:00:22</heure>
+	<codeRet>0</codeRet>
+	<messageRet/>
+	<requete>
+		<dossier>0699274545</dossier>
+		<canal>SWI</canal>
+		<idPrime>110</idPrime>
+	</requete>
+	<resultat>
+		<codeProduit>6</codeProduit>
+		<priseEnCompte>1</priseEnCompte>
+		<dateActivation>15/01/2005</dateActivation>
+		<solde>
+			<idUP>6</idUP>
+			<libelleUP>MMS en heures creuses</libelleUP>
+			<listeUPs>
+				<descUP>
+					<idUP>6</idUP>
+					<libelleUP>MMS en heures creuses</libelleUP>
+					<montant>200</montant>
+					<typeUnite>4</typeUnite>
+					<libelleUnite>MMS</libelleUnite>
+				</descUP>
+			</listeUPs>
+		</solde>
+	</resultat>
+</getActivationPrimesReponse>
+

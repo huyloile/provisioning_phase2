@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care OF nouveautes page">
+  
+  <page>
+    <redirect src="erl://svc_activ_opt_mobi:get_profile?#menu_nouveaute"/>
+  </page>
+  
+  <page tag="menu_nouveaute" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#menu_nouveaute_mobi,35=#menu_nouveaute_m6,39=#menu_nouveaute_foot,40=#menu_nouveaute_foot,41=#menu_nouveaute_foot,42=#menu_nouveaute_foot,43=#menu_nouveaute_foot,44=#menu_nouveaute_foot,51=#menu_nouveaute_click,65=#redirect_bic_phone,70=#menu_nouveaute_umobile,87=#menu_nouveaute_foot,115=#menu_nouveaute_ad_funded,default=#menu_nouveaute_mobi"/>
+  </page>
+
+  <!-- Menu Mobi -->
+
+  <page tag="menu_nouveaute_mobi" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouv_bonus">Les Bonus</a><br/>
+    <a href="#nouv_rech_20E">Recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14/07</a><br/>
+    <include src="erl://svc_of_plugins:prososer_lien_decouv_zap_zone?mobi&amp;Decouverte Zap zone&amp;#Zap_zone&amp;br_after"/>
+    <a href="#nouv_offre_renouv">Renouvellement de mobile</a><br/>
+    <a href="#nouv_payg_data">Internet mobile</a><br/>
+  </page>
+<!-- zap zone -->
+<page tag="prososer_lien_decouv_zap_zone" ismenu="false" volatile="false">
+  <redirect src="erl://svc_of_plugins:prososer_lien_decouv_zap_zone?mobi&amp;Avantage Decouverte Zap zone&amp;#Zap_zone&amp;br"/>
+</page>
+
+<page tag="Zap_zone" descr="Zap_zone" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  <title>Zap_zone</title>
+  Avantage Decouverte Zap zone : 1 semaine de surf illimite et gratuit pour decouvrir le portail Zap zone.<br/>
+  <a href="#text_souscrire" key="1">Souscrire</a><br/>
+  <a href="#zap_zone_conditions" key="2">Conditions</a>
+</page>
+
+<page tag="text_souscrire" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  Vous allez souscrire a l'Avantage Decouverte Zap zone.<br/>
+  <a href="#set_zap_zone" key="1">Confirmer</a>
+</page>
+
+<page tag="set_zap_zone" ismenu="false" volatile="false">
+  <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;#subscribe_zap_zone&amp;opt_avan_dec_zap_zone"/>
+</page>
+
+<page tag="subscribe_zap_zone" ismenu="false" volatile="false">
+  <redirect src="erl://svc_of_plugins:subscribe?#error&amp;#error&amp;#error&amp;#error&amp;#opt_avan_dec_valider"/>
+</page>
+
+<page tag="opt_avan_dec_valider" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  Vous avez souscrit a l'Avantage Decouverte Zap Zone.<br/>
+</page>
+
+<page tag="error" ismenu="false" menutext="notext" backtext="notext" volatile="false" count="true">
+  Le service est actuellement indisponible, veuillez contacter le 700 (prix com. au tarif normal).
+</page>
+
+<page tag="zap_zone_conditions" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  Avantage reserve aux clients mobile Orange dont l'utilisateur de la ligne est age de moins de 18 ans et non encore inscrit au portail Zapzone. <br/>
+  <a href="#message_condition1" key="1">Suite</a>
+</page>
+
+<page tag="message_condition1" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  Usages en France metropolitaine.Valable sur reseau et depuis un terminal compatible.<br/>
+  <a href="#message_condition2" key="1">Suite</a>
+</page>
+
+<page tag="message_condition2" ismenu="false" menutext="Accueil" backtext="Precedent" volatile="false" count="true">
+  Navigation illimitee sur le portail Zap zone pendant 7 jours a compter de la souscription de l'avantage decouverte Zap zone.
+</page>
+<!-- end zap zone -->
+  <!-- Menu Ad funded-->
+  <page tag="menu_nouveaute_ad_funded" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouv_rech_20E">Les recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14/07</a><br/>
+  </page>
+
+  <!--Menu Bic Phone-->
+  <page tag="redirect_bic_phone" hist="dohist" cost="free_pt"
+        descr="Bic phone client identify or not">
+	<redirect src="erl://svc_of_plugins:redirect_by_identify_bic_phone?#menu_nouveaute_mobi&amp;#menu_nouveaute_bic_phone"/>
+  </page>
+
+  <page tag="menu_nouveaute_bic_phone" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouv_rech_20E">Recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14/07</a><br/>
+    <include src="erl://svc_of_plugins:prososer_lien_decouv_zap_zone?mobi&amp;Decouverte Zap zone&amp;#Zap_zone&amp;br_after"/>
+    <a href="#nouv_offre_renouv">Offre Renouvellement de Mobile</a><br/>
+    <a href="#nouv_payg_data">Internet mobile</a><br/>
+  </page>
+
+  <!-- Menu M6 -->
+  <page tag="menu_nouveaute_m6" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouveaute_1_m6">Option Sport</a><br/>
+    <a href="#nouv_rech_20E">Recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14 juillet</a><br/>
+    <a href="#nouv_offre_renouv">Offre de renouvellement de mobile</a><br/>
+    <a href="#nouv_payg_data_m6_foot">Internet mobile</a><br/> 
+  </page>
+
+  <!-- Menu Foot -->
+  <page tag="menu_nouveaute_foot" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouveaute_1_foot">Option Sport</a><br/>
+    <a href="#nouv_rech_20E">Recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14/07</a><br/>
+    <a href="#nouv_payg_data_m6_foot">Internet mobile</a><br/> 
+  </page>
+
+  <!-- Menu Click -->
+  <page tag="menu_nouveaute_click" hist="dohist" cost="free_pt">
+    <title>nouveautes</title>
+    <a href="#nouv_decouvrir_bonus">Les bonus</a><br/>
+    <a href="#nouv_rech_20E">Recharges Edition Speciale</a><br/>
+    <a href="#nuit_kdo_sms">Nuit Kdo du 21/06</a><br/>
+    <a href="#journee_kdo_mms">Journee Kdo du 14/07</a><br/>
+    <include src="erl://svc_of_plugins:prososer_lien_decouv_zap_zone?mobi&amp;Decouverte Zap zone&amp;#Zap_zone&amp;br_after"/>
+    <a href="#nouv_offre_renouv">Renouvellement de mobile</a><br/> 
+    <a href="#nouv_payg_data_click">Internet mobile</a><br/> 
+  </page>
+
+  <!-- Menu UMobile -->
+  <page tag="menu_nouveaute_umobile" hist="dohist" cost="free_pt" descr="Nouveautes UMobile">
+    <title>nouveautes</title>
+    Du 15 au 26 juin 2010, offrez un pack U mobile et recevez 500 points Carte U... et 500 sms pour !<br/>
+    SMS valables 1mois en France metro pour tout rechargement sous 31j
+  </page>
+
+  <!-- Liens pour Mobi -->
+  <!-- Liens Les Bonus -->
+  <page tag="nouv_bonus" descr="Nouveautes Les bonus" menutext="notext" backtext="notext">
+    <title>Nouveaute Les Bonus</title>
+    Envie d'appels offerts en France ou a l'etranger, de SMS ou d'internet mobile ?<br/>
+    A chacun ses envies, a chacun son bonus...<br/>
+    <a href="#nouveaute_bonus_gerer_bonus" key="1">Gerer votre Bonus</a><br/>
+  </page>
+
+  <page tag="jeu_au_rechargement" descr="Jeu au rechargement">
+    <title>Jeu au rechargement</title>
+    Rechargez, jouez, gagnez? Participez au jeu Disneyland Paris et tentez de remporter, suite a votre rechargement, 1 sejour aux Parcs Disney.<br/>
+    <br/>
+    <a href="selfcare.xml#recharge">Recharger</a>
+  </page>
+
+  <page tag="avantage_zap_zone" descr="Avantage decouverte zap zone">
+  </page>
+
+  <page tag="nouveaute_bonus_gerer_bonus" menutext="notext" backtext="notext">
+    <redirect src="erl://svc_of_plugins:redirect_nouv_gerer_bonus?opt_bonus_janus&amp;#redirect_decouvrir_bonus&amp;#redirect_choisir_bonus&amp;#redirect_changer_bonus&amp;#error"/>
+  </page>
+
+  <page tag="redirect_decouvrir_bonus" menutext="notext" backtext="notext">
+    <redirect src="file://mcel/acceptance/mobi/menu_mobicarte.xml#redirect_decouvrir_bonus"/>
+  </page>
+
+  <page tag="redirect_choisir_bonus" menutext="notext" backtext="notext">
+    <redirect src="janus_bonus_choisir.xml"/>
+  </page>
+
+  <page tag="redirect_changer_bonus" menutext="notext" backtext="notext">
+    <redirect src="janus_bonus_changer.xml"/>
+  </page>
+
+
+  <!-- Liens Decouvrir les Bonus -->
+  <page tag="nouv_decouvrir_bonus" descr="Nouveautes Decouvrir les bonus" menutext="notext" backtext="notext">
+    <title>Nouveaute Decouvrir les Bonus</title>
+    Envie d'appels offerts en France ou a l'etranger, de SMS ou d'internet mobile ?<br/>
+    A chacun ses envies, a chacun son bonus...<br/>
+    <a href="#redirect_decouvrir_bonus" key="1">Decouvrir les Bonus</a><br/>
+  </page>
+
+  <page tag="nouv_offre_renouv" descr="Nouveautes mobi " backtext="notext">
+    <title>Nouveaute Offre de Renouvellement du Mobile</title>
+    NOUVEAU : avec mobicarte, changez de mobile sans changer de numero et beneficiez de 15 euros de credit offert pour tout rechargement.<br/>
+    Infos en point de vente.<br/>
+  </page>
+
+  <!-- Lien Recharge 20E + illimite -->
+  <page tag="nouv_rech_20E" descr="Les Recharge Edition Speciale ">
+    <title>Les Recharge Edition Speciale </title>
+   A partir de 10E, profitez de SMS, MMS et Orange Messenger en illimite de 21h a minuit avec les recharges EDITION SPECIALE du moment.<br/>
+    <a href="selfcare.xml#recharge">Recharger</a><br/>
+  </page>
+
+  <!--Journee KDO MMS du 14/07-->
+  <page tag="journee_kdo_mms" descr="Journee Kdo MMS du 14/07">
+  <title>Journee Kdo MMS du 14/07</title>
+  Journee Kdo MMS : Le 14 juillet 2010, tous vos MMS sont offerts et illimites vers tous les mobiles et adresses e-mail de 8h a 21h.<br/>
+  <a href="#journee_kdo_mms_men_leg">Mention legale</a>
+  </page>
+    <page tag="journee_kdo_mms_men_leg" descr="Journee Kdo MMS du 14/07">
+  <title>Journee Kdo MMS du 14/07</title>
+  MMS interpersonnels emis d'un mobile en France metrop. jusqu'a 600ko, hors MMS surtaxes, n0 ourts et MMS carte postale, sous reserve d'un credit > a 0E
+  </page>
+
+  <!--Nuit Kdo SMS 21/06-->
+  <page tag="nuit_kdo_sms" descr="Nuit Kdo SMS du 21/06">
+  <title>Nuite Kdo SMS du 21/06</title>
+  Nuit Kdo SMS : Le 21 juin 2010, profitez de SMS illimites vers tous les mobiles et fixes de 21h30 au lendemain 8h !<br/>
+  <a href="#nuite_kdo_mms_men_leg">Mention legale</a>
+  </page>
+  <page tag="nuite_kdo_mms_men_leg" descr="Nuit Kdo SMS du 21/06">
+   <title>Nuite Kdo SMS du 21/06</title>
+   SMS interpersonnels emis depuis un mobile en France metropolitaine hors SMS surtaxes, n0 courts, sous reserve d'un credit > a 0E.
+ </page>
+  <!-- Lien Mobi n°4 -->
+  <page tag="nouveaute_4_mobi" descr="Nouveautes mobi ">
+    <title>Nouveaute 4 Mobi</title>
+    <include src="erl://text_nouveaute:nouveaute_sous_menu_text?4"/><br/>
+    <a href="#wap_push_warn">Acceder a Zap zone</a><br/>
+    <a href="#zap_zone_30_sms_conditions">Conditions</a><br/>
+  </page>
+  <page tag="nouv_payg_data" descr="Nouveautes mobi ">
+    <title>Nouveaute PAYG Data</title>
+    Avec les cartes prepayees, les connexions a Orange mobile, Gallery ou internet sans option mutimedia se decomptent de votre credit : 0,50E par minute indivisible.<br/>
+    <a href="#nouv_payg_data_s1">Suite</a><br/>
+  </page>
+  <page tag="nouv_payg_data_click" descr="Nouveautes mobi click ">
+    <title>Nouveaute PAYG Data</title>
+    Avec mobicarte, les connexions a Orange World, Gallery ou internet sans option mutimedia se decomptent desormais de votre credit : 0,50E par minute indivisible.<br/>
+    <a href="#nouv_payg_data_s1">Suite</a><br/>
+  </page>
+  <page tag="nouv_payg_data_m6_foot" descr="Nouveautes mobi ">
+    <title>Nouveaute PAYG Data</title>
+    Les connexions a Orange World, Gallery ou internet sans option mutimedia se decomptent desormais de votre credit : 0,50E par minute indivisible.<br/>
+    <a href="#nouv_payg_data_s1">Suite</a><br/>
+  </page>
+  <page tag="nouv_payg_data_s1" descr="Nouveautes mobi ">
+    <title>Nouveaute PAYG Data</title>
+    Tarification a la minute, hors usages clients mail et GPS. Les usages mail (smtp, pop ou imap) et GPS sont factures au Ko.<br/>
+  </page>
+
+ <page tag="set_option_sport" descr="set option sport" backtext="notext" menutext="notext">
+ <title>Set option sport</title>
+  <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;%23option_sport&amp;opt_orange_sport"/>
+</page>
+
+ <page tag="set_option_sport_foot" descr="set option sport" backtext="notext" menutext="notext">
+ <title>Set option sport</title>
+  <redirect src="erl://svc_variable:set_v2?bons_plans&amp;option&amp;%23option_sport_foot&amp;opt_orange_sport"/>
+</page>
+
+  <page tag="option_sport_foot" backtext="notext">
+    <title>Option sport</title>
+    Avec l'option Sport, vivez tous les sports sur votre mobile.<br/>
+    <br/> 
+    <a href="opt_mobi_nouveautes_orange_sport.xml#set_souscription">Souscrire</a><br/>
+    <a href="opt_mobi_nouveautes_orange_sport.xml#set_conditions">Mentions legales</a>
+  </page>
+
+  <page tag="option_sport">
+    <title>Option sport</title>
+    <redirect src="file://mcel/acceptance/mobi/bons_plans/votre_multimedia/option.xml"/>
+  </page>
+
+  <!-- Liens pour M6 -->
+  <!-- Lien M6 n°2 -->
+  <page tag="nouveaute_1_m6" descr="Nouveautes m6 ">
+    <title>Nouveaute 2 M6</title>
+      <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_sport_foot&amp;m6"/>
+  </page>
+
+
+  <!-- Liens pour Foot -->
+  <page tag="nouveaute_1_foot" descr="Option sport">
+    <title>Option sport</title>
+    <redirect src="erl://svc_variable:set_v2?bons_plans&amp;subscription&amp;%23set_option_sport_foot&amp;foot"/>
+  </page>
+</pages>

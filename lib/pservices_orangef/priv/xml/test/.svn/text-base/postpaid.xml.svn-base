@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Postpaid test">
+  <page>
+    <redirect src="http://192.168.129.89:8996/cgi-bin/suiviconso.cgi"/>
+  </page>
+</pages>

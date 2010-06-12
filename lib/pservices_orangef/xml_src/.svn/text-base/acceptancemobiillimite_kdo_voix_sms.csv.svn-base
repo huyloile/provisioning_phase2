@@ -1,0 +1,4 @@
+"record_name";"path";"skey";"ikey";"gui_layout";"contents";"timestamp";"type";"version"
+"mcel_node";"[]";"{[],undefined}";"{[],undefined,undefined}";"vertical";"undefined";"0";"page";"4"
+"mcel_node";"[""acceptance"",""mobi"",""illimite_kdo_voix_sms""]";"{[""acceptance"",""mobi"",""illimite_kdo_voix_sms""],""menu""}";"{[""acceptance"",""mobi"",""illimite_kdo_voix_sms""],""menu"",undefined}";"vertical";"undefined";"1222271841";"page";"4"
+"mcel_node";"[""acceptance"",""mobi"",""illimite_kdo_voix_sms""]";"{[""acceptance"",""mobi"",""illimite_kdo_voix_sms""],""menu""}";"{[""acceptance"",""mobi"",""illimite_kdo_voix_sms""],""menu"",[]}";"vertical";"{mcel_plugin,{svc_core,change_service,2},[""/orangef/selfcare_long/opt_ikdo_vx_sms""],[{menutext,""notext""},{backtext,""notext""}],""Redirection Illimite Kdo Voix + SMS"",""Redirection Illimite Kdo Voix + SMS""}";"1222271841";"page";"4"

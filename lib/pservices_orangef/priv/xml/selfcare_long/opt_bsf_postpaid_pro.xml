@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Souscription d'option Postpaid: BSF PRO">
+  <page>
+  </page>
+
+  <page tag="souscrire" hist="dohist" descr="BSF Postpaid PRO : souscription" cost="freept">
+   <title>Menu souscription BSF PRO</title>
+     <redirect src="erl://svc_subscr_asmetier:get_impactSouscrServiceOpt?bsf&amp;#add_bsf,#error_msg"/>
+  </page>
+
+  <page tag="add_bsf" hist="dohist" descr="BSF Postpaid PRO : tentative souscription BSF">
+   <title>Tentative souscription BSF</title>
+     En souscrivant vous serez facture de 10E. Offre non renouvelable &amp; incompatible 
+     avec les autres offres de com. depuis ou vers l'etranger<br/>
+     <a href="erl://svc_subscr_asmetier:souscrire?bsf&amp;#bsf_valide,#bsf_valide">valider</a>
+  </page>
+
+<page tag="bsf_valide" backtext="notext" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Bonus sans frontiere Valide">
+     <title>O.Postpaid Bonus sans frontiere Valide</title>
+     Vous disposez de 20E pour vos communication a l'etranger. Ce credit est decompte
+     a la sec. a partir de la 1ere min &amp; les com.au-dela sont facturees aux tarifs en vigueur<br/>
+  </page>
+
+<page tag="error_msg" cost="free_pt" descr="Postpaid: Erreur interface AS Metier">
+    <title>Postpaid: Erreur interface AS Metier</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+<page tag="system_failure" cost="free_pt" descr="BSF Postpaid GP : Echec souscription failure">
+  <redirect src="/orangef/postpaid_pro.xml#temporary"/>
+</page>
+
+</pages>

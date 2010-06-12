@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+
+ <page tag="start">
+    <redirect src="erl://svc_util_of:redirect_if_declinaison?cmo&amp;#start_recharge&amp;#badprofil"/>
+ </page>
+
+ <page tag="start_recharge">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#main_long&amp;#main_short"/>
+ </page>
+
+  <page tag="main_long" hist="donthist" log="SCC_rechmen">
+    <redirect src="erl://svc_recharge_cmo:start"/>
+  </page>
+
+  <page tag="main_short" hist="donthist" log="SCC_rechmen" nav="end" descr="terminal incompatible">
+    Votre terminal ne permet pas d'acceder au service.
+  </page>
+
+  <page tag="bons_plans" cost="free_pt" descr="Redirection Accueil">
+    <redirect src="file://mcel/acceptance/cmo/bons_plans_tarifaires/accueil_bons_plans.xml"/>
+  </page>
+
+  <page tag="cag" menutext="notext" descr="Rechargement CMO: Formulaire">
+    <title>Rechargement CMO: Formulaire</title>
+    <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Saisissez les 14 chiffres de votre code de rechargement
+      situes au dos de votre recharge mobicarte ou sur votre ticket de rechargement puis validez
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" log="SC_rechph1" descr="Rechargement CMO: Form ph1">
+  <title>Rechargement CMO: Form ph1</title>
+  <form action="erl://svc_recharge_cmo:process_code">
+    <entry kind="digits">
+      <prompt>Saisissez les 14 chiffres de votre code de rechargement
+        situes au dos de votre recharge mobicarte
+        sous la forme #12*Code_a_14_chiffres#<br/>
+        puis validez<br/>
+        Merci.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <!-- Succes page with D4 -->
+  
+<page tag="sucess_cpte" descr="Rechargement CMO Reussi: Cpte Princ">
+     <title>Rechargement CMO Reussi: Cpte_Princ</title>
+     Votre compte mobile est recharge de
+     <include src="erl://svc_recharge:montant_recharge"/> euros.<br/>
+     Le savez-vous? : ce credit recharge vous permet de souscrire aux bons plans.<br/>
+     <a href="#bons_plans">souscrire a un bon plan</a>
+ </page>
+
+<page tag="sucess_sms" descr="Rechargement CMO Reussi: Cpte SMS">
+     <title>Rechargement CMO Reussi: Cpte_SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte SMS:
+     <include src="erl://svc_compte:print_solde?cpte_asms&amp;sms"/> SMS
+ </page>
+
+<page tag="sucess_cpte_sms" descr="Rechargement CMO Reussi: Cpte Princ et SMS">
+     <title>Rechargement CMO Reussi: Cpte Princ et SMS</title>
+     Votre rechargement de
+     <include src="erl://svc_recharge:montant_recharge"/> euros
+     a reussi.<br/>
+     Compte Mobile:
+     <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+     Compte SMS:
+     <include src="erl://svc_compte:print_solde?cpte_asms&amp;sms"/> SMS
+ </page>
+
+<page tag="weinf_deja_actif" descr="Rechargement CMO Reussi: WE inf et Option deja active">
+     <title>Rechargement CMO Reussi: WE inf et Option deja active</title>
+     Vous avez deja souscrit a l'option WE infini. Par conséquent vous
+     avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros
+     sur votre compte
+</page>
+
+<page tag="succes_weinf" descr="Rechargement CMO Reussi: WE inf">
+     <redirect src="souscrire_options_cmo.xml#weekend_success"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription" descr="Rechargement CMO Reussi: WE inf + echec souscription">
+     <title>Rechargement CMO Reussi: WE inf +echec souscription</title>
+     Votre inscription au WE infini n'a pu se faire automatiquement.
+     Vous avez ete credite de <include src="erl://svc_recharge:montant_recharge"/> euros.
+     Vous pouvez souscrire au WE infini en retournant au menu.
+ </page>
+
+<page tag="sucess_erech_europe" descr="Rechargement CMO Reussi: Cpte Princ Erech Maghreb)">
+     <title>Rechargement CMO Reussi: Cpte_Princ</title>
+     La recharge Europe est incompatible avec votre offre. Les
+     <include src="erl://svc_recharge:montant_recharge"/> euros sont credites
+     sur votre compte mobile &amp; sont utilisable pour souscrire a un bon plan<br/>
+     <a href="#bons_plans">les bons plans</a>
+</page>
+
+<page tag="sucess_erech_maghreb" descr="Rechargement CMO Reussi: Cpte Princ Erech Maghreb)">
+     <title>Rechargement CMO Reussi: Cpte_Princ</title>
+     La recharge Maghreb est incompatible avec votre offre. Les
+     <include src="erl://svc_recharge:montant_recharge"/> euros sont credites
+     sur votre compte mobile &amp; sont utilisable pour souscrire a un bon plan<br/>
+     <a href="#bons_plans">les bons plans</a>
+</page>
+
+<page tag="sucess_erech_smsmms" descr="Rechargement CMO Reussi: Cpte Princ Erech SMSMMS">
+     <title>Rechargement CMO Reussi: Cpte_Princ</title>
+     La recharge SMS/MMS n'est pas disponible pour les clients compte mobile.
+     Vous avez été crédité de <include src="erl://svc_recharge:montant_recharge"/> euros
+     sur votre compte mobile
+</page>
+
+<!-- Recharge Special Vacances -->
+
+<page tag="success_vacances"  backtext="notext" 
+      descr="Rechargement CMO Reussi: Special Vacances 1_2">
+      <title>Rechargement CMO Reussi: Special Vacances 1_2</title>
+      Votre versement a bien ete effectue. Vous disposez jusqu'au
+      <include src="erl://svc_compte:print_fin_credit?roaming_in"/> de
+      <include src="erl://svc_compte:print_solde_min_sec?roaming_in"/> pour appeler la France ou le pays visite et
+      <include src="erl://svc_compte:print_solde_min_sec?roaming_out"/> pour etre appele...<br/>
+      <a href="#success_vacances2">Suite</a>
+</page>
+<page tag="success_vacances2"  backtext="notext" 
+      descr="Rechargement CMO Reussi: Special Vacances 2_2">
+      <title>Rechargement CMO Reussi: Special Vacances 2_2</title>
+      ...consultez le solde de cette recharge dans votre suivi conso des promos<br/>
+      <a href="selfcare_long.xml#redirect_compte">suivi conso</a>
+</page>
+
+<page tag="rech_20E_messages" 
+      descr="Recharge 20 euros par TLR Mobi Reussie: Serie limitée messages illimités">
+Votre compte mobile a bien ete recharge de 20E. Le nouveau solde de votre compte mobile est
+de <include src="erl://svc_compte:print_solde?cpte_princ"/> E
+a utiliser avant le <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmyy"/>.<br/>
+<a href="#plus_infos_messages">Suite</a><br/>
+</page>
+
+<page tag="plus_infos_messages"
+      descr="Recharge 20 euros serie limitée messages illimités plus d'infos">
+SMS, MMS et Orange Messenger illimite de 21h a 00h jusqu'au <include src="erl://svc_compte:print_fin_credit_default?cpte_princ&amp;dmy"/> sous reserve de compatibilite mobile. Details de l'offre et conditions sur orange.fr
+</page>
+
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge CMO: Fermeture">
+    <title>Recharge CMO: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Réessayer ultérieurement.
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" menutext="notext" log="SCCrech_Ebadcode" nav="end" descr="Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+
+  <page tag="bad_code_ph2" hist="donthist" backtext="notext" menutext="notext" log="SCCrech_Ebadcode" nav="end" descr="Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse: votre code n'est pas correct. Veuillez verifier votre
+    code et renouveler l'operation. Merci.
+  </page>
+  
+<page tag="bad_code_ph1" log="SCrech_Ebadcode" backtext="notext" descr="Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Rechargement refuse.Pour recharger composez #12*, puis les 14 chifffres
+    de votre code de rechargement, puis # et OK ou envoi.
+  </page>
+
+  <page tag="system_failure" log="SCCrech_Efail" descr="Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+		Suite a un probleme technique nous ne pouvons crediter votre compte pour l'instant.<br/>
+		Si le probleme persiste contactez votre service clients Orange mobile au 700 (prix com nat)<br/>
+  </page>
+
+ <page tag="badprofil" nav="end" descr="not cmo">
+		Service reserve aux clients d'une offre avec compte mobile.<br/>
+		Pour toute info, contactez votre service clients Orange mobile en composant le 700 (prix com nat) depuis votre mobile<br/>
+  </page>
+
+  <page tag="incompatible" log="SCrech_Eincomp" backtext="notext" nav="end" descr="recharge incompatible">
+    <title>Reject : recharge incompatible avec credit</title>
+    Rechargement refuse. Pour utiliser cette recharge, vous devez
+    d'abord epuiser votre credit actuel.
+  </page>
+
+  <page tag="promo" log="SCrech_Epromo" backtext="notext" nav="end" descr="recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Votre recharge promotionnelle ne vous permet pas de recharger un
+    compte epuise ou perime. Merci.
+  </page>
+
+  <page tag="incompatible_offre" descr="Reject : recharge incompatible avec votre offre"><title>Reject : recharge incompatible avec offre</title>
+	Erreur<br/>
+	Rechargement refuse car les caracteres saisis correspondent a une recharge non compatible avec votre offre.
+  </page>
+
+</pages>

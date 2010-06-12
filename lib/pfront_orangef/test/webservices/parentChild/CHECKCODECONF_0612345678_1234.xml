@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <getVcodResponse xmlns="urn:sda.service.ecare/G8">
+
+	    <return>
+	        <ns1:dateDerniereModification xmlns:ns1="urn:sda.service.ecare/G8:wsdl">2005-10-03T15:56:37.000Z
+		</ns1:dateDerniereModification>
+
+		<ns2:dateDerniereVerification xmlns:ns2="urn:sda.service.ecare/G8:wsdl">2005-10-03T15:55:29.000Z
+		</ns2:dateDerniereVerification>
+
+		<ns3:nbTentatives xmlns:ns3="urn:sda.service.ecare/G8:wsdl">3</ns3:nbTentatives>
+		<ns4:resultat xmlns:ns4="urn:sda.service.ecare/G8:wsdl">string</ns4:resultat>
+	    </return>
+        </getVcodResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
+

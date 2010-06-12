@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  
+  <page cost="freept">
+    <redirect src="erl://svc_selfcare:start_light?#redirect_roaming"/>
+  </page>
+
+  <page tag="redirect_roaming" cost="freept">
+    <redirect src="erl://svc_roaming:redir_roaming_network?camel=roaming_mobi.xml,nocamel=callback.xml#mobi,ming=callback.xml#mobi,ansi=callback.xml#mobi,default=#redirect_one2one"/>
+  </page>
+  
+  <page tag="redirect_one2one" hist="dohist" cost="freept">
+    <redirect
+     src="erl://svc_one2one:redirect_one2one?#one2one_niv3&amp;selfcare_long.xml#redirect_compte"/>
+  </page>
+  
+  <page tag="one2one_niv3" descr=" ">
+    <redirect src="erl://svc_util_of:redir_spider_nogodetA?#one2one_niv3_ok"/>
+  </page>
+
+  <page tag="one2one_niv3_ok" cost="freept" menutext="notext" backtext="notext"
+	descr="Page de suivi Conso + one2one + menu">
+    <title>Page de suivi Conso niv3 avec one2one</title>
+    <include src="erl://svc_one2one:include_one2one_niv3"/><br/>
+    <include src="erl://svc_one2one:get_o2o_teaser"/><br/>
+    <a href="file:/orangef/o2o.xml">En savoir +</a><br/>
+    <a href="#one2one_niv1">suivi conso</a><br/>
+    <a href="#mainmenu" key="00">menu</a>
+  </page>
+  
+  <page tag="one2one_niv1" descr=" ">
+    <redirect src="erl://svc_util_of:redir_spider_nogodetA?#one2one_niv1_ok"/>
+  </page>
+
+  <page tag="one2one_niv1_ok" backtext="notext" menutext="notext" cost="freept"
+	descr="Page de suivi conso avec lien one2one">
+    <title>Page de suivi conso niv1 avec lien one2one</title>
+    <include src="erl://svc_one2one:include_one2one_niv1"/>
+  </page>
+  
+  <page tag="menu"  hist="dohist" ismenu="true" cost="free_pt">
+    <redirect src="file:/orangef/selfcare_long/spider.xml#menu"/>
+  </page>
+
+  <page tag="mainmenu"  hist="dohist" ismenu="true" cost="free_pt">
+    <!-- Switch to the correct home page depending on the profile  -->
+    <redirect src="erl://svc_selfcare:check_state?#mainmenu2"/>
+  </page>
+
+  <page tag="mainmenu2"  cost="free_pt">
+    <redirect src="erl://svc_util_of:consultation_sachem?#real_mainmenu&amp;#menu_indisp"/>
+  </page>
+
+  <page tag="menu_indisp" descr="menu mobi indisponible : echec de la requete A4">
+    L'acces au menu est indisponible.
+  </page>
+
+  <!-- =============================================================== -->
+  <!-- modif offre avril -->
+  <!-- =============================================================== -->
+  
+  
+  
+  <page tag="real_mainmenu" cost="free_pt">
+    <redirect src="erl://svc_options:do_check_topnumlist?#redir_by_dcl"/>
+  </page>
+
+  <!--page tag="real_mainmenu_tac" cost="free_pt">
+    <redirect src="erl://svc_util_of:redirect_by_tac?redir_by_dcl?#redir_by_dcl_with_tac&amp;#redir_by_dcl"/>
+  </page>
+  
+  <page tag="redir_by_dcl_with_tac" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#next_menu_tac,35=#next_menu_m6_tac,39=#next_menu_foot_tac,40=#next_menu_foot_tac,41=#next_menu_foot_tac,42=#next_menu_foot_tac,43=#next_menu_foot_tac,44=#next_menu_foot_tac,51=#next_menu_click_tac,default=#next_menu_tac"/-->
+
+
+  <page tag="redir_by_dcl" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#next_menu,35=#next_menu_m6,39=#next_menu_foot,40=#next_menu_foot,41=#next_menu_foot,42=#next_menu_foot,43=#next_menu_foot,44=#next_menu_foot,51=#next_menu_click,default=#next_menu"/>
+  </page>
+  
+
+
+
+  <!-- ==================================================================== -->
+  <!-- Menu Mobicarte classique-->
+  <!-- ==================================================================== -->
+
+  <page tag="next_menu" log="SC_menu"
+	menutext="notext" cost="free_pt" descr="menu principal">
+    <title>menu principal</title>
+    <include src="erl://svc_spider:lienSousMenu"/>
+    <include src="erl://svc_options_mobi:proposer_lien?refill_game&amp;Recharger mon compte,#recharge,#instant_gagnant&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?tranfert_credit&amp;Astuces credit epuise=#astuce,Offrir du credit=transfert_credit.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_illimite_kdo&amp;illimite KDO=opt_illimite_kdo.xml,illimite KDO=opt_ikdo_vx_sms.xml&amp;br"/>
+    <a href="#options_menu">Gerer vos bons plans &#38; Changer de plan</a><br/>
+<!--    <include src="erl://svc_plan_tarif_free:link_if_allowed?Changer de plan%0A&amp;plan_tarifaire_free.xml"/> -->
+    <include src="erl://svc_options_mobi:proposer_lien?offres_exclusives&amp;Offres eXclusives=limande_mobi.xml&amp;br"/>
+    <a href="#chat_jeux">Fun</a><br/>
+    <a href="nouveautes.xml">Nouveautes</a><br/>
+  </page>
+
+  <page tag="bons_plans_promo" log="SC_menu"
+	menutext="notext" cost="free_pt" descr="menu principal">
+    <title>menu bons plans et promo</title>
+    <include src="erl://svc_selfcare:print_first_link_promo?Suivi conso de mes promos&amp;promo_mobi.xml"/>
+    <include src="erl://svc_options_mobi:print_link_options?Suivi conso de mes bons plans=sv_options.xml"/>
+  </page>
+
+  <page tag="options_menu" hist="dohist" menutext="notext" cost="free_pt"
+	descr="get profile visio">
+    <redirect src="erl://svc_activ_opt_mobi:get_profile?#options"/>
+  </page>
+  
+  <page tag="options" descr="redir selon tac client">
+    <redirect src="erl://svc_util_of:redirect_by_tac?#options_with_tac,#options_without_tac"/>
+  </page>
+
+
+  <page tag="options_with_tac" hist="dohist" menutext="notext" cost="free_pt" descr="souscrire aux options">
+    <title>menu Souscrire aux Options</title>
+    <!--include src="erl://svc_options_mobi:proposer_lien_si_active?opt_unik&amp;Unik=Unik.xml&amp;br"/-->
+    <a href="opt_unik.xml">Unik</a><br/>
+    <a href="#sinf_et_weinf">vos bons plans voix</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_numprefp&amp;Privilegiez vos appels vers 1 numero=opt_numprefp.xml&amp;br"/>
+    <a href="#sms_mms_ol">vos bons plans SMS/MMS et messenger</a><br/>
+    <a href="#oworld">vos bons plans multimedia</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_europe&amp;pour telephoner vers ou depuis l'etranger=roaming_mobi.xml&amp;br"/>
+    <include src="erl://svc_plan_tarif_free:link_if_allowed?Changer de plan%0A&amp;plan_tarifaire_free.xml"/> 
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_cityzi&amp;l'option Cityzi=opt_cityzi.xml&amp;br"/>
+  </page>
+  
+
+  <page tag="options_without_tac" hist="dohist" menutext="notext" cost="free_pt" descr="souscrire aux options">
+    <title>menu Souscrire aux Options</title>
+    <a href="#sinf_et_weinf">vos bons plans voix</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_numprefp&amp;Privilegiez vos appels vers 1 numero=opt_numprefp.xml&amp;br"/>
+    <a href="#sms_mms_ol">vos bons plans SMS/MMS et messenger</a><br/>
+    <a href="#oworld">vos bons plans multimedia</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_europe&amp;pour telephoner vers ou depuis l'etranger=roaming_mobi.xml&amp;br"/>
+    <include src="erl://svc_plan_tarif_free:link_if_allowed?Changer de plan%0A&amp;plan_tarifaire_free.xml"/> 
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_cityzi&amp;l'option Cityzi=opt_cityzi.xml&amp;br"/>
+  </page>
+  
+  <page tag="sinf_et_weinf" hist="dohist" cost="free_pt" descr="Menu qui
+	offre les options soiree infinie et WE infinis">
+    <title>Menu qui offre les options soiree infinie et WE infinis</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_jinf&amp;Journee infinie=opt_jinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sinf&amp;Soiree infinie=opt_sinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_weinf&amp;Week-end infini=opt_weinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Option duo journee=opt_tt_shuss.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_appelprixunique&amp;Appel a prix unique=opt_appelprixunique.xml&amp;nobr"/>
+  </page>
+
+
+
+
+  <!-- ==================================================================== -->
+  <!-- Menu Mobicarte m6-->
+  <!-- ==================================================================== -->
+  
+  <page tag="next_menu_m6" log="SC_menu"
+	menutext="notext" cost="free_pt" descr="menu principal M6">
+    <title>menu principal M6</title>
+    <include src="erl://svc_spider:lienSousMenu"/>
+    <include src="erl://svc_options_mobi:proposer_lien?refill_game&amp;Recharger mon compte,#recharge,#instant_gagnant&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?tranfert_credit&amp;Astuces credit epuise=#astuce,Offrir du credit=transfert_credit.xml&amp;br"/>
+    <a href="#options_menu_m6">Gerer vos bons plans</a><br/>
+    <a href="#chat_jeux">Fun</a><br/>
+    <a href="nouveautes.xml">Nouveautes</a><br/>
+  </page>
+
+  <page tag="options_menu_m6" hist="dohist" menutext="notext" cost="free_pt"
+	descr="get profile visio">
+    <redirect src="erl://svc_activ_opt_mobi:get_profile?#options_m6"/>
+  </page>
+  
+  <page tag="options_m6" hist="dohist" menutext="notext" cost="free_pt" descr="souscrire aux options M6">
+    <title>menu Souscrire aux Options M6</title>
+    <a href="#sinf_et_weinf_m6">vos bons plans voix</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_numprefp&amp;Privilegiez vos appels vers 1 numero=opt_numprefp.xml&amp;br"/>
+    <a href="#sms_mms_ol">vos bons plans SMS/MMS et messenger</a><br/>
+    <a href="#oworld">vos bons plans multimedia</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_europe&amp;pour telephoner vers ou depuis l'etranger=roaming_mobi.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_cityzi&amp;l'option Cityzi=opt_cityzi.xml&amp;br"/>
+  </page>
+
+
+  <page tag="sinf_et_weinf_m6" hist="dohist" cost="free_pt" descr="Menu qui
+	offre les options soiree infinie et WE infinis M6">
+    <title>Menu qui offre les options soiree infinie et WE infinis M6</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_jinf&amp;Journee infinie=opt_jinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sinf&amp;Soiree infinie=opt_sinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_weinf&amp;Week-end infini=opt_weinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Option duo journee=opt_tt_shuss.xml&amp;nobr"/>
+  </page>
+
+
+
+
+  <!-- ==================================================================== -->
+  <!-- Menu Mobicarte Football-->
+  <!-- ==================================================================== -->
+
+  <page tag="next_menu_foot" log="SC_menu"
+	menutext="notext" cost="free_pt" descr="menu principal Foot">
+    <title>menu principal Foot</title>
+    <include src="erl://svc_spider:lienSousMenu"/>
+    <include src="erl://svc_options_mobi:proposer_lien?refill_game&amp;Recharger mon compte,#recharge,#instant_gagnant&amp;br"/>
+    <a href="#astuce">Astuces credit epuise</a><br/>
+    <a href="opt_kdo_sinf.xml">Activer votre compte soirees infinies</a><br/>
+    <a href="#options_menu_foot">Gerer vos bons plans</a><br/>
+    <a href="#chat_jeux">Fun</a><br/>
+    <a href="nouveautes.xml">Nouveautes</a><br/>
+  </page>
+
+  <page tag="options_menu_foot" hist="dohist" menutext="notext" cost="free_pt"
+	descr="get profile visio">
+    <redirect src="erl://svc_activ_opt_mobi:get_profile?#options_foot"/>
+  </page>
+  
+  <page tag="options_foot" cost="free_pt" descr="redir selon tac client">
+    <title>menu Souscrire aux Options</title>
+    <a href="#sinf_et_weinf_foot">vos bons plans voix</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_numprefp&amp;Privilegiez vos appels vers 1 numero=opt_numprefp.xml&amp;br"/>
+    <a href="#sms_mms_ol">vos bons plans SMS/MMS et messenger</a><br/>
+    <a href="#oworld">vos bons plans multimedia</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_europe&amp;pour telephoner vers ou depuis l'etranger=roaming_mobi.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_cityzi&amp;l'option Cityzi=opt_cityzi.xml&amp;br"/>
+  </page>
+ 
+    <page tag="sinf_et_weinf_foot" hist="dohist" cost="free_pt" descr="Menu qui
+	offre les options soiree infinie et WE infinis">
+    <title>Menu qui offre les options soiree infinie et WE infinis</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_jinf&amp;Journee infinie=opt_jinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sinf&amp;Soiree infinie=opt_sinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_weinf&amp;Week-end infini=opt_weinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Option duo journee=opt_tt_shuss.xml&amp;nobr"/>
+    <!--include src="erl://svc_options_mobi:proposer_lien?opt_appelprixunique&amp;Appel a prix unique=opt_appelprixunique.xml&amp;nobr"/-->
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- Menu Mobicarte click-->
+  <!-- ==================================================================== -->
+  
+  <page tag="next_menu_click" log="SC_menu"
+	menutext="notext" cost="free_pt" descr="menu principal">
+    <title>menu principal click</title>
+    <include src="erl://svc_spider:lienSousMenu"/>
+    <include src="erl://svc_options_mobi:proposer_lien?refill_game&amp;Recharger mon compte,#recharge,#instant_gagnant&amp;br"/>
+    <a href="#astuce">Astuces credit epuise</a><br/>
+    <a href="#options_menu_click">Gerer vos bons plans</a><br/>
+    <a href="#chat_jeux">Fun</a><br/>
+    <a href="nouveautes.xml">Nouveautes</a><br/>
+  </page>
+
+  <page tag="options_menu_click" hist="dohist" menutext="notext" cost="free_pt"
+	descr="get profile visio">
+    <redirect src="erl://svc_activ_opt_mobi:get_profile?#options_click"/>
+  </page>
+  
+  <page tag="options_click" cost="free_pt" descr="redir selon tac client">
+    <title>menu Souscrire aux Options</title>
+    <a href="#sinf_et_weinf_click">vos bons plans voix</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_numprefp&amp;Privilegiez vos appels vers 1 numero=opt_numprefp.xml&amp;br"/>
+    <a href="#sms_mms_ol">vos bons plans SMS/MMS et messenger</a><br/>
+    <a href="#oworld">vos bons plans multimedia</a><br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_europe&amp;pour telephoner vers ou depuis l'etranger=roaming_mobi.xml&amp;br"/>
+    <include src="erl://svc_plan_tarif_free:link_if_allowed?Changer de plan%0A&amp;plan_tarifaire_free.xml"/> 
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_cityzi&amp;l'option Cityzi=opt_cityzi.xml&amp;br"/>
+  </page>
+  
+  <page tag="sinf_et_weinf_click" hist="dohist" cost="free_pt" descr="Menu qui
+	offre les options soiree infinie et WE infinis">
+    <title>Menu qui offre les options soiree infinie et WE infinis</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_jinf&amp;Journee infinie=opt_jinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sinf&amp;Soiree infinie=opt_sinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_weinf&amp;Week-end infini=opt_weinf.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Option duo journee=opt_tt_shuss.xml&amp;br"/>
+  </page>
+
+
+  <!-- ==================================================================== -->
+  <!-- Arborescence -->
+  <!-- ==================================================================== -->
+
+  <page tag="sms_mms_ol">
+    <redirect src="erl://svc_mmsinfos:start?#sms_mms_ol2"/>
+  </page>
+
+  <page tag="sms_mms_ol2" hist="dohist" cost="free_pt" descr="Menu SMS MMS MSN Infos">
+    <title>Menu SMS MMS MSN Infos</title>
+    <include src="erl://svc_options_mobi:proposer_lien_interm?opts_comm_launched&amp;opt_sms_mensu,opt_ssms&amp;Bons plans SMS=#options_sms&amp;br"/>
+    <!-- <include src="erl://svc_options_mobi:proposer_lien?opt_vacances&amp;Options MMS=opt_vacances.xml,Options MMS=#options_mms&amp;br"/> -->
+    <include src="erl://svc_options_mobi:proposer_lien?opt_zap_quoti&amp;Bon plan Zap=opt_zap_quoti.xml#&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_mms_mensu&amp;Bon plan MMS mensuel=opt_mms_mensu.xml#resil_mms_mensu_ac,Bon plan MMS mensuel=opt_mms_mensu.xml#resil_mms_mensu_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_msn_mobi&amp;Option Journee Orange Messenger by Windows Live=#options_journee_msn,Options Orange Messenger by Windows Live=#options_msn&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_interm?opts_comm_launched&amp;mms_infos,mms_video&amp;Options SMS/MMS infos=#options_infos&amp;br"/>
+  </page>
+
+  <page tag="options_sms" hist="dohist" cost="free_pt" descr="Sous Menu Options SMS">
+    <title>Sous Menu Options SMS</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sms_illimite&amp;Nouveau: bon plan 1 numero SMS illimite=opt_sms_illimite.xml&amp;br"/> 
+    <include src="erl://svc_options_mobi:proposer_lien?opt_sms_quoti&amp;Option SMS quotidienne=options_sms.xml&amp;br"/> 
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_sms_mensu&amp;Supression option SMS mensuelle=options_sms.xml#resil_sms_mensu&amp;br"/> 
+    <include src="erl://svc_options_mobi:proposer_lien?opt_ssms&amp;Soiree SMS=opt_ssms.xml&amp;br"/>
+  </page>
+
+  <page tag="options_mms" hist="dohist" cost="free_pt" descr="Sous Menu Options MMS">
+    <title>Sous Menu Options MMS</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_mms_mensu&amp;Supression option 10 MMS mensuelle=opt_mms_mensu.xml#resil_mms_mensu_ac,Supression option 10 MMS mensuelle=opt_mms_mensu.xml#resil_mms_mensu_ep&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_vacances&amp;Options MMS=opt_vacances.xml,Option 25 MMS=opt_vacances.xml&amp;br"/>
+  </page>
+
+  <page tag="options_msn" hist="dohist" cost="free_pt" descr="Sous Menu Options MSN">
+    <title>Sous Menu Options MSN</title>
+    <a href="#options_journee_msn">Option journee Orange Messenger by Windows Live</a><br/>
+    <a href="#options_mensu_msn">Option mensuelle Orange Messenger by Windows Live</a><br/>
+  </page>
+  <page tag="options_journee_msn" hist="dohist" cost="free_pt" descr="Sous Menu Options MSN">
+    <title>Sous Menu Options MSN</title>
+    <redirect src="/mcel/acceptance/bons_plans_mobi/msn_journee_1ere_page.xml"/>
+  </page>
+  <page tag="options_mensu_msn" hist="dohist" cost="free_pt" descr="Sous Menu Options MSN">
+    <title>Sous Menu Options MSN</title>
+    <redirect src="/mcel/acceptance/bons_plans_mobi/msn_mensu_1ere_page.xml"/>
+  </page>
+
+  <page tag="options_infos" hist="dohist" cost="free_pt" descr="Sous Menu Options Infos">
+    <title>Sous Menu Options Infos</title>
+    <a href="sms_infos.xml">SMS Infos</a><br/>
+    <a href="orange_ligue1.xml">Orange Ligue 1</a><br/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_infos&amp;MMS Infos=mmsinfos.xml&amp;br"/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_video&amp;MMS Infos Video=mmsinfos_video.xml&amp;br"/>
+  </page>
+
+  <page tag="oworld" hist="dohist" cost="free_pt" descr="Orange World">
+    <title>Menu Orange World</title>
+    <redirect src="erl://svc_options_mobi:redirect_if_option_activated?option_multimedia&amp;#oworld_menu,#oworld_subscribe"/>
+  </page>
+
+  <page tag="oworld_menu" hist="dohist" cost="free_pt" descr="Orange World">
+    <title>Menu Orange World</title>
+    <a href="#oworld_subscribe">Souscrire a une option multimedia</a><br/>
+    <a href="#oworld_remove">Supprimer une option multimedia</a><br/>
+    <include src="erl://svc_activ_opt_mobi:proposer_lien?opt_visio&amp;Activer la visio=visio.xml&amp;nobr"/>
+  </page>
+
+  <page tag="oworld_remove" hist="dohist" cost="free_pt" descr="Orange World">
+    <title>Menu Orange World Suppression</title>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_internet_v2_pp&amp;Option Internet=opt_internet.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_internet_max_pp&amp;Option Internet Max=opt_internet_max.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_tv&amp;Option TV=option_TV.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_tv_max&amp;Option TV Max=opt_tv_max.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_musique&amp;Option Musique=opt_musique.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_surf_mensu&amp;Option surf mensuelle=opt_surf_mensu.xml#&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_tv_mensu&amp;Option TV mensuelle=opt_tv_mensu.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_total_tv_mensu&amp;Option Total TV mensuelle=opt_total_tv_mensu.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_musique_mensu&amp;Option Musique mensuelle=opt_musique_mensu.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien_si_active?opt_sport_mensu&amp;Option Sport mensuelle=opt_sport_mensu.xml&amp;br"/>
+  </page>
+ 
+  <page tag="oworld_subscribe" hist="dohist" cost="free_pt" descr="Orange World">
+    <title>Menu Orange World Souscription</title>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_internet_v2_pp&amp;Option Internet=opt_internet.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_internet_max_pp&amp;Option Internet Max=opt_internet_max.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_tv&amp;Option TV=option_TV.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_tv_max&amp;Option TV Max=opt_tv_max.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_musique&amp;Option Musique=opt_musique.xml&amp;br"/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_ow_3E_mobi&amp;Option Decouverte multimedia=opt_ow_3E_mobi.xml&amp;br"/>
+    <include src="erl://svc_activ_opt_mobi:proposer_lien?opt_visio&amp;Activer la visio=visio.xml&amp;nobr"/>
+  </page>
+  
+  <page tag="recharge" hist="dohist" cost="free_pt" descr="Menu Rechargement">
+    <title>Menu Rechargement</title>
+    <a href="recharge_cb_mobi.xml">par carte bancaire</a><br/>
+    <a href="recharge.xml">par recharge mobicarte</a><br/>
+    <a href="#recharge_moi_menu_recharge">Recharge pour moi</a><br/>
+    Sinon, pour toujours être joint :<br/>
+    <a href="#appelle_moi_menu_recharge">Appelle-moi</a>
+  </page>
+
+  <!-- Jeu de Rechargement Instant Gagnant valable du 19/04/2007 au 19/05/2007-->
+
+  <page tag="instant_gagnant" hist="dohist" cost="free_pt" descr="Prepaid: Menu Rechargement Instant Gagnant">
+    <title>Prepaid: Menu Rechargement Instant Gagnant</title>
+	Rechargez, jouez, gagnez ? Apres votre rechargement, tentez de gagner l'un des 10 000 lots en jeu !
+    <a href="#recharge">Recharger</a><br/>
+    <a href="#presents_list">Liste des cadeaux</a><br/>
+    <a href="#game_regulation">Reglement du jeu</a>
+  </page>
+
+  <page tag="presents_list" menutext="notext"
+        descr="Instant Gagnant prepaid:Liste des cadeaux">
+    <title>Instant Gagnant prepaid:Liste des cadeaux</title>
+	80 mobiles Samsung E250 (259E TTC) et 10000 soirees infinies (3E TTC) en instants gagnants,
+	1 TV LCD Samsung (999E TTC) par tirage au sort
+  </page>
+
+  <page tag="game_regulation" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu">
+    <title>Instant Gagnant prepaid:Règlement du jeu</title>
+	Jeu gratuit sans obligation d'achat
+	du <include src="erl://svc_options:print_commercial_start_date?refill_game&amp;dm"/> au
+	<include src="erl://svc_options:print_commercial_end_date?refill_game&amp;dmy"/>,
+	reserve aux clients prepayes et forfaits bloques Orange ayant active ligne avt 01/04/08<br/>
+    <a href="#game_regulation_1">Suite</a>
+  </page>
+
+  <page tag="game_regulation_1" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite1">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite1</title>
+	La participation au jeu implique l'entiere acceptation sans reserve du reglement dans son integralite<br/>
+    <a href="#game_regulation_2">Suite</a>
+  </page>
+
+  <page tag="game_regulation_2" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite2">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite2</title>
+	Reglement complet et conditions du jeu sur www.orange.fr
+  </page>
+
+  <!-- Jeu de Rechargement Instant Gagnant valable du 19/04/2007 au 19/05/2007-->
+
+  <page tag="instant_gagnant" hist="dohist" cost="free_pt" descr="Prepaid: Menu Rechargement Instant Gagnant">
+    <title>Prepaid: Menu Rechargement Instant Gagnant</title>
+    Apres votre rechargement, tentez de gagner une pochette
+    La Française des jeux, des motorola W375 et des milliers de cadeaux !
+    <a href="#recharge">Recharger</a><br/>
+    <a href="#presents_list">Liste des cadeaux</a><br/>
+    <a href="#game_regulation">Reglement du jeu</a>
+  </page>
+
+  <page tag="presents_list" menutext="notext"
+        descr="Instant Gagnant prepaid:Liste des cadeaux">
+    <title>Instant Gagnant prepaid:Liste des cadeaux</title>
+    5 000 pochettes La Française des Jeux (10E TTC), 
+    20 Motorola W375 (209E TTC),...<br/>
+    <a href="#presents_list1">Suite</a>
+  </page>
+
+  <page tag="presents_list1" menutext="notext"
+        descr="Instant Gagnant prepaid:Liste des cadeaux suite">
+    <title>Instant Gagnant prepaid:Liste des cadeaux suite</title>
+    ...50 SMS metropolitains (hors sms surtaxes) valables 7 jours et 1 million
+    de logos (2E TTC hors ct de connexion, sous reserve de compatibilite du mobile) 
+  </page>
+
+  <page tag="game_regulation" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu">
+    <title>Instant Gagnant prepaid:Règlement du jeu</title>
+    Participation en rechargeant son compte sur le 224, le 556 ou le #123# ou 
+    par bulletin de participation libre dispo sur orange.fr>mobile a renvoyer 
+    avt le <include src="erl://svc_options:print_commercial_end_date?refill_game&amp;dmy"/><br/>
+    <a href="#game_regulation_1">Suite</a>
+  </page>
+
+  <page tag="game_regulation_1" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite1">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite1</title>
+    Grand Jeu mobicarte- Cedex 21111- 99211 Paris Concours. Jeu du
+    <include src="erl://svc_options:print_commercial_start_date?refill_game&amp;dm"/> au
+    <include src="erl://svc_options:print_commercial_end_date?refill_game&amp;dmy"/>
+    reserve aux clients majeurs mobicarte, la carte prepayee M6 et 
+    forfaits bloques..<br/>
+    <a href="#game_regulation_2">Suite</a>
+  </page>
+
+  <page tag="game_regulation_2" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite2">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite2</title>
+    ...Reglement du jeu depose en l'etude Brisse-Bouvet-Bartet, huissiers de 
+    justice a Paris et disponible gratuitement sur simple demande ecrite a 
+    l'adresse du jeu...<br/>
+    <a href="#game_regulation_3">Suite</a>
+  </page>
+
+  <page tag="game_regulation_3" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite3">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite3</title>
+    ..BLCV - " Grand Jeu mobicarte " - 17 rue Louise Michel - 92300
+    Levallois-Perret. Remboursement des frais de participation sur demande
+    ecrite a l'adresse du jeu...<br/>
+    <a href="#game_regulation_4">Suite</a>
+  </page>
+
+  <page tag="game_regulation_4" menutext="notext"
+        descr="Instant Gagnant prepaid :Règlement du jeu suite4">
+    <title>Instant Gagnant prepaid:Règlement du jeu suite4</title>
+    ...Details du jeu et reglement sur www.orange.fr>mobile
+  </page>
+
+ <page tag="astuce" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Astuces">
+    <title>Menu Astuces</title>
+    <a href="#appelle_moi">"Appelle-moi" pour demander a etre joint quand on a plus de credit</a><br/>
+    <a href="#recharge_moi">"Recharge pour moi" pour demander a un proche de recharger votre compte mobile</a>
+ </page>
+
+ <page tag="appelle_moi" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Appelle moi">
+    <title>Menu Appelle moi</title>
+    Avec "Appelle-moi" des que le solde de votre forfait est &lt;1Eur vous
+    disposez de 10 messages gratuits valables 1 semaine pour demander a etre rappele!
+    <a href="#info_util_am">utiliser le service</a>
+ </page>
+
+ <page tag="recharge_moi" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Recharge moi">
+    <title>Menu Recharge moi</title>
+    Avec "Recharge pour moi"  vous disposez de 5 messages gratuits /mois
+    pour demander a un proche de recharger votre compte mobile !
+    <a href="#info_util_rc">utiliser le service</a>
+ </page>
+
+ <page tag="info_util_am" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Utiliser Appelle moi">
+    <title>Menu Utiliser Appelle moi</title>
+    Composez le #122*06XXXXXXXX# (06XXX... est le num. de mobile par lequel
+    vous souhaitez etre joint) Astuce: composez directement le #122*06XXXXXXXX#
+    sans passer par le #123#
+ </page>
+
+ <page tag="info_util_rc" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Utiliser Recharge moi">
+    <title>Menu Utiliser Recharge moi</title>
+    Composez le #126*06XXXXXXXX# (06XXX... est le num. de mobile de votre proche)
+    Astuce: composez directement le #126*06XXXXXXXX# sans passer par le #123#
+ </page>
+
+ <page tag="chat_jeux" cost="free_pt" hist="dohist" descr="#123# Mobi Menu Chat et Jeux">
+    <title>Menu Chat et Jeux</title>
+    <redirect src="/mcel/acceptance/menu_fun_mobi.xml"/>
+<!--    <a href="/orangef/chat.xml">Pour acceder au service "Chat"</a><br/>
+    <a href="/orangef/sms_games.xml">Pour acceder aux "Jeux par SMS"</a><br/>
+    <a href="#carte_postale_mms">Pour Cartes Postales MMS</a> -->
+ </page>
+
+  <page tag="carte_postale_mms">
+    <redirect src="erl://svc_util_of:redirect_by_param?carte_postale_url"/>
+  </page>
+
+
+  <page tag="recharge_moi_menu_recharge" cost="free_pt" hist="dohist" descr="Recharge moi">
+    <title>Recharge moi</title>
+    Recharge pour moi 5 messages gratuits/mois pour demander a un proche de recharger votre compte mobile !
+    Tapez #126*06XXXXXXXX# (no du proche)...<br/>
+  </page>
+    
+  <page tag="appelle_moi_menu_recharge" cost="free_pt" hist="dohist" descr="Appelle moi">
+    <title>Appelle moi</title>
+    Appelle-moi 10 messages gratuits pour demander a etre rappele des que votre compte &lt; 1Euros !
+    Tapez #122*06XXXXXXXX# (no du proche)...<br/>
+  </page>
+    
+
+
+  <!-- Error pages -->
+  
+  <page tag="notmobi" nav="end" log="SC_Enotmobi" cost="free_pt"
+	descr="Mobi : not mobi">
+    <title>Mobi : not mobi</title>
+    Vous n'avez pas acces a ce service reserve aux mobicartes.
+  </page>
+
+ <page tag="system_failure" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.</page>
+  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+  Merci.</page>
+
+  <!-- Option blocked by SACHEM, code 101 returned to opt_cpt request -->
+  
+  <page tag="code101_opt_bloquee" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked?1"/><br/>
+    <a href="#code101_opt_bloquee_suite1">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked?2"/><br/>
+    <a href="#code101_opt_bloquee_suite2">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked?3"/><br/>
+    <a href="#code101_opt_bloquee_suite3">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked?4"/><br/>
+    <a href="#code101_opt_bloquee_suite4">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked?5"/><br/>
+  </page>
+
+  <page tag="code101_opt_bloquee_m6" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_m6?1"/><br/>
+    <a href="#code101_opt_bloquee_m6_suite1">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_m6_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_m6?2"/><br/>
+    <a href="#code101_opt_bloquee_m6_suite2">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_m6_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_m6?3"/><br/>
+    <a href="#code101_opt_bloquee_m6_suite3">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_m6_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_m6?4"/><br/>
+    <a href="#code101_opt_bloquee_m6_suite4">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_m6_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_m6?5"/><br/>
+  </page>
+
+  <page tag="code101_opt_bloquee_foot" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_foot?1"/><br/>
+    <a href="#code101_opt_bloquee_foot_suite1">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_foot_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_foot?2"/><br/>
+    <a href="#code101_opt_bloquee_foot_suite2">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_foot_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_foot?3"/><br/>
+    <a href="#code101_opt_bloquee_foot_suite3">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_foot_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_foot?4"/><br/>
+    <a href="#code101_opt_bloquee_foot_suite4">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_foot_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_foot?5"/><br/>
+  </page>
+
+  <page tag="code101_opt_bloquee_click" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_click?1"/><br/>
+    <a href="#code101_opt_bloquee_click_suite1">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_click_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_click?2"/><br/>
+    <a href="#code101_opt_bloquee_click_suite2">suite</a>
+  </page>
+  
+  <page tag="code101_opt_bloquee_click_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_click?3"/><br/>
+    <a href="#code101_opt_bloquee_click_suite3">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_click_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_click?4"/><br/>
+    <a href="#code101_opt_bloquee_click_suite4">suite</a>
+  </page>
+
+  <page tag="code101_opt_bloquee_click_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_code101_opt_blocked:code101_opt_blocked_click?5"/><br/>
+  </page>
+
+  <!-- Recharge forbidden -->
+  
+  <page tag="recharge_interdit" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+<!--    <include src="erl://text_recharge_forbidden:recharge_interdit?1"/><br/>
+    <a href="#recharge_interdit_suite1">suite</a>-->
+     Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans votre point de vente habituel.<br/>
+  </page>
+  
+<!--  <page tag="recharge_interdit_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit?2"/><br/>
+    <a href="#recharge_interdit_suite2">suite</a>
+  </page>
+  
+  <page tag="recharge_interdit_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit?3"/><br/>
+    <a href="#recharge_interdit_suite3">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit?4"/><br/>
+    <a href="#recharge_interdit_suite4">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 4">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit?5"/><br/>
+  </page>
+-->
+  <page tag="recharge_interdit_m6" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+<!--    <include src="erl://text_recharge_forbidden:recharge_interdit_m6?1"/><br/>
+    <a href="#recharge_interdit_m6_suite1">suite</a>-->
+     Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans votre point de vente habituel.<br/>
+  </page>
+  
+<!--  <page tag="recharge_interdit_m6_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_m6?2"/><br/>
+    <a href="#recharge_interdit_m6_suite2">suite</a>
+  </page>
+  
+  <page tag="recharge_interdit_m6_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_m6?3"/><br/>
+    <a href="#recharge_interdit_m6_suite3">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_m6_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_m6?4"/><br/>
+    <a href="#recharge_interdit_m6_suite4">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_m6_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 4">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_m6?5"/><br/>
+  </page>
+-->
+<page tag="recharge_interdit_click" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+   <!-- <include src="erl://text_recharge_forbidden:recharge_interdit_click?1"/><br/>
+    <a href="#recharge_interdit_click_suite1">suite</a>-->
+     Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans votre point de vente habituel.<br/>
+  </page>
+<!--  
+  <page tag="recharge_interdit_click_suite1" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 1">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_click?2"/><br/>
+    <a href="#recharge_interdit_click_suite2">suite</a>
+  </page>
+  
+  <page tag="recharge_interdit_click_suite2" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 2">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_click?3"/><br/>
+    <a href="#recharge_interdit_click_suite3">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_click_suite3" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 3">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_click?4"/><br/>
+    <a href="#recharge_interdit_click_suite4">suite</a>
+  </page>
+
+  <page tag="recharge_interdit_click_suite4" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101 suite 4">
+    <title>Option bloquee code 101 quite 1</title>
+    <include src="erl://text_recharge_forbidden:recharge_interdit_click?5"/><br/>
+  </page>
+-->
+<page tag="recharge_interdit_umobile" backtext="notext" cost="free_pt"
+        descr="Option bloquee code 101">
+    <title>Option bloquee code 101</title>
+    Vous n'etes pas autorise a utiliser ce service. Veuillez appeler votre Service Clients au 722 (0,37EUR/min). Pour recharger, RDV dans les magasins U participants.<br/>
+  </page>
+</pages>

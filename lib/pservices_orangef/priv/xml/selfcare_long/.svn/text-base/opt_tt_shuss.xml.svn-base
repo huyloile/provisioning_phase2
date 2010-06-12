@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option Duo Journee">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_pack_duo_journee&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee deja active">
+    <title>option Duo Journee deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> est
+    deja activee.Vous ne pourrez
+    resouscrire a cette option qu'une fois votre option en cours epuisee.
+  </page>
+  
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page offre incompatible">
+    <title>option Duo Journee page offre incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>.Pour
+    +d'infos contactez votre service clients Orange mobile au 722 depuis
+    votre mobile (0,37E/min). Merci de votre appel.
+  </page>
+  
+<page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee solde insuffisant">
+    <title>option Duo Journee solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/> sur
+    votre compte.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee solde insuffisant M6">
+    <title>option Duo Journee solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/> sur
+    votre compte principal.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee solde insuffisant Foot">
+    <title>option Duo Journee solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/> sur
+    votre compte<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+ <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee solde insuffisant Click">
+    <title>option Duo Journee solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>,
+    vous devez disposer de plus
+    de <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/> sur
+    votre compte<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+  
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee menu generique">
+    <title>option Duo Journee menu generique</title>
+    Vos communications de la journee a petit prix: 1h de com'nat.
+    + 15 SMS utilisables en MMS de 9h a 21h pour
+    seulement <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/><br/>
+    <a href="#info">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="info" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page info">
+    <title>option Duo Journee page info</title>
+    Communiquez autrement a prix reduit avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/>.
+    Preparez ou racontez vos vacances, echangez les derniers potins en appelant
+    vos amis ou par SMS...<br/>
+    <a href="#info2">Suite</a><br/>
+  </page>
+
+   <page tag="info2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page info2">
+    <title>option Duo Journee page info2</title>
+    ... et envoyez vos plus belles photos par MMS.
+    Pour seulement
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>,
+    vous profitez d'1 heure de com' nat.
+    vers fixe et mobiles + 15 SMS/5MMS ...<br/>
+    <a href="#info3">Suite</a><br/>
+  </page>
+
+  <page tag="info3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page info3">
+    <title>option Duo Journee info3</title>
+    ... valables de 9h00 a 21h00 le jour de la souscription.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>
+
+  <page tag="conditions_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions">
+    <title>option Duo Journee page conditions</title>
+    Offre reservee aux clients mobicarte et click la mobicarte 
+    1 heure de communication en France metropolitaine...<br/>
+     <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions M6">
+    <title>option Duo Journee page conditions M6</title>
+    Offre reservee aux clients d'une offre prepayee Orange 
+    1 heure de communication en France metropolitaine...<br/>
+     <a href="#conditions_suite1">Suite</a>
+  </page>
+
+  <page tag="conditions_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions Foot">
+    <title>option Duo Journee page conditions Foot</title>
+    Offre reservee aux clients d'une offre prepayee Orange 
+    1 heure de communication en France metropolitaine...<br/>
+     <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  <page tag="conditions_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions Click">
+    <title>option Duo Journee page conditions Click</title>
+    Offre reservee aux clients mobicarte et click la mobicarte 
+    1 heure de communication en France metropolitaine...<br/>
+     <a href="#conditions_suite1">Suite</a>
+  </page>
+  
+  
+  <page tag="conditions_suite1" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions suite 2">
+    <title>option Duo Journee page conditions suite 2</title>
+    ...vers les n° fixes (hors n° speciaux) et les n° mobiles et
+    15 SMS metropolitains (hors SMS surtaxes). SMS utilisables en MMS ...<br/>
+    <a href="#conditions_suite2">Suite</a>
+  </page>
+
+  <page tag="conditions_suite2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions suite 3">
+    <title>option Duo Journee page conditions suite 3</title>
+    ... (hors MMS surtaxes et MMS Carte Postale) avec un mobile compatible et
+    decomptes sur la base de 1 MMS=3 SMS ...<br/>
+    <a href="#conditions_suite3">Suite</a>
+  </page>
+
+ <page tag="conditions_suite3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page conditions suite 4">
+    <title>option Duo Journee page conditions suite 4</title>
+    Communications decomptees a la seconde des la premiere seconde. 
+    Option incompatible avec l'option vacances MMS et la recharge SMS/MMS.<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option Duo Journee page souscrire">
+    <title>option Duo Journee page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_pack_duo_journee&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Duo Journee page apres confirmation">
+    <title>option Duo Journee page apres confirmation</title>
+    Votre souscription a bien ete prise en compte.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera
+    activee. Merci de votre appel.
+  </page>
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Duo Journee page apres confirmation">
+    <title>option Duo Journee page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>.
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+   <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Duo Journee page apres confirmation">
+    <title>option Duo Journee page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>.
+    Ce montant a ete debite de votre compte bons plans.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Duo Journee page apres confirmation">
+    <title>option Duo Journee page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option Duo Journee page apres confirmation">
+    <title>option Duo Journee page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/>.
+    Ce montant a ete debite de votre compte dixit.
+    Dans quelques instants, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+  
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. TT Shuss: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="nouveaute" cost="free_pt" descr="Option Duo Journee page nouveaute">
+    <title>Option Duo Journee page nouveaute</title>
+    Jusqu'au 
+    <include src="erl://svc_options:print_commercial_end_date?opt_pack_duo_journee&amp;dmy"/>,
+    toutes vos communications de la journee (de 9h a 21h) a prix reduit : 
+    1h de com nat' + 15 SMS / 5 MMS. Tout ça pour seulement
+    <include src="erl://svc_options:print_option_price?opt_pack_duo_journee"/> !.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Souscrire=opt_tt_shuss.xml&amp;nobr"/>
+  </page>
+
+  <page tag="restit_sms_ac_voix_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Duo Journee avec
+	cred">
+    <title>restitution a l'option Duo JOurnee</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_surprise_voix&amp;min"/> de com. nat.
+    et <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;sms"/>SMS inclus
+    dans votre option Duo Journee a utiliser avant ce soir 21h
+  </page>
+<page tag="restit_sms_ep_voix_ac" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Duo Journee: Uniq Voix">
+    <title>restitution a l'option Duo Journee</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_surprise_voix&amp;min"/> de com. nat.
+    inclus dans votre option Duo Journee a utiliser avant ce soir 21h
+  </page>
+<page tag="restit_sms_ac_voix_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Duo Journee: Uniq SMS">
+    <title>restitution a l'option Duo Journee</title>
+    Il vous reste <include src="erl://svc_compte:print_solde?cpte_packnoel&amp;sms"/>SMS
+    inclus dans votre option Duo Journee a utiliser avant ce soir 21h
+  </page>
+  
+  <page tag="restit_ep" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Duo Journee sans
+	cred">
+    <title>restitution a l'option Duo Journee sans cred</title>
+    Votre option Duo Journee est actuellement epuisee.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_pack_duo_journee&amp;Resouscrire a l'option Duo Journee=opt_tt_shuss.xml&amp;nobr"/>
+  </page>
+
+<!--PROMO-->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option duo journee menu generique promo">
+    <title>option duo journee menu generique promo</title>
+     Grace a votre promotion 1er rechargement, vous beneficiez de bons plans offerts...
+     <a href="#generique_promo2">Suite</a>
+  </page>
+
+ <page tag="generique_promo2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option duo journee menu generique promo 2">
+    <title>option duo journee menu generique promo</title>
+    Pensez a verifier le credit de votre compte bons plans (suivi conso detaille).
+    Si le credit est insuffisant, le montant du bon plan sera debite de votre compte principal...
+     <a href="#generique_promo3">Suite</a>
+  </page>
+
+ <page tag="generique_promo3" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option duo journee menu generique promo 2">
+    <title>option duo journee menu generique promo</title>
+    Vos communications de la journee : 1h de com' nat. + 15 SMS utilisables en MMS de 9h a 21h (bon plan d'une valeur de 3E)
+    <a href="#conditions_promo">Conditions</a><br/>
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option duo journee page souscrire Promo">
+    <title>option duo journee page souscrire Promo</title>
+    Vous allez souscrire a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> (bon plan d'une valeur de3E).
+    <a href="erl://svc_options_mobi:do_subscription?opt_pack_duo_journee&amp;#success_promo,#opt_deja_active,#solde_insuff,#failure,#success_princ_promo,#success_bp_promo,#success_offert_promo,#success_dixit_promo">Confirmer</a>
+  </page>
+
+
+ <page tag="success_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option duo journee page apres confirmation">
+    <title>option duo journee page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> (bon plan d'une valeur de 3E).
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+
+  <page tag="success_princ_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> (bon plan d'une valeur de 3E).
+    Ce montant a ete debite de votre compte principal.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+
+  <page tag="success_bp_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> grace a votre promo.
+    3E ont ete debites de votre compte bons plans.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+  <page tag="success_offert_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> pour 3E.
+    Ce montant a ete debite de votre compte credit offert.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+  <page tag="success_dixit_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option journee infini page apres confirmation">
+    <title>option journee infini page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> grace a votre promo.
+    3E ont ete debites de votre compte dixit.
+    Dans quelques instants, votre option <include src="erl://svc_options:print_commercial_name?opt_pack_duo_journee"/> sera activee.
+  </page>
+
+ <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option duo journee page conditions promo">
+    <title>option duo journee page conditions promo</title>
+    Communiquez autrement a prix reduit avec l'option duo journee. Preparez ou racontez vos vacances, echangez les derniers potins en appelant vos amis ou par SMS...
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+ <page tag="conditions_promo2" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option duo journee page conditions promo">
+    <title>option duo journee page conditions promo</title>
+    ...et envoyez vos plus belles photos par MMS. Profiter d'1 heure de com' nat. vers fixe et mobiles + 15 SMS/5MMS...
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+ <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option duo journee page conditions promo">
+    <title>option duo journee page conditions promo</title>
+    ...valables de 9h00 a 21h00 le jour de la souscription.
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+</pages>

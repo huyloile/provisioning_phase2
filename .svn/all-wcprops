@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2
+END
+devel_license.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/devel_license.config
+END
+post-commit.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/post-commit.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/Makefile
+END

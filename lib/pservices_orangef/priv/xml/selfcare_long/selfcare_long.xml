@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care Long page">
+
+  <page tag="redirect_compte" cost="freept">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=spider.xml#prepaid,undefined=spider.xml#mobi_no_resp"/>
+  </page>
+
+  <!--
+      <page tag="redirect_compte_sdp" cost="freept">
+      <redirect src="erl://svc_selfcare:select_home_niv1"/>
+      </page>
+  -->
+  
+  <page tag="redirect_compte_sdp" cost="freept">
+    <title>Pas de response Spider</title>
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+  Merci.</page>
+
+</pages>

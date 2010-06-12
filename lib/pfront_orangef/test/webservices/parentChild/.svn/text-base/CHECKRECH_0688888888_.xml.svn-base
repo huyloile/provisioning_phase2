@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <checkRechargementParentChildResponse xmlns="urn:m8o.francetelecom.com">
+            <checkRechargementParentChildReturn>
+                <ns1:statusList xmlns:ns1="urn:m8o.francetelecom.com:wsdl">
+                    <item>
+                        <ns1:channel>15</ns1:channel>
+                        <ns1:lang>FR</ns1:lang>
+                        <ns1:UUID>1</ns1:UUID>
+                        <ns1:statusDescription>Successfull check invocation</ns1:statusDescription>
+                        <ns1:statusName>CheckSuccess</ns1:statusName>
+                        <ns1:statusType>0</ns1:statusType>
+                        <ns1:statusCode>ba00</ns1:statusCode>
+                    </item>
+                </ns1:statusList>
+                <ns2:idDossierOrchidee xmlns:ns2="urn:m8o.francetelecom.com:wsdl:topup">8198055</ns2:idDossierOrchidee>
+                <ns3:idDossierSachem xsi:nil="true" xmlns:ns3="urn:m8o.francetelecom.com:wsdl:topup"/>
+                <ns4:mobicarte xsi:nil="true" xmlns:ns4="urn:m8o.francetelecom.com:wsdl:topup"/>
+                <ns5:rechargement xmlns:ns5="urn:m8o.francetelecom.com:wsdl:topup">
+                    <item>
+                        <ns5:prestation>
+                            <item>
+                                <ns5:code>1GM00</ns5:code>
+                                <ns5:montant>5</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM09</ns5:code>
+                                <ns5:montant>10</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM11</ns5:code>
+                                <ns5:montant>15</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM12</ns5:code>
+                                <ns5:montant>25</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM13</ns5:code>
+                                <ns5:montant>35</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM14</ns5:code>
+                                <ns5:montant>50</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GM15</ns5:code>
+                                <ns5:montant>75</ns5:montant>
+                            </item>
+                        </ns5:prestation>
+                        <ns5:mobicarte>true</ns5:mobicarte>
+                        <ns5:dateProchainRechargement xsi:nil="true"/>
+                    </item>
+                    <item>
+                        <ns5:prestation>
+                            <item>
+                                <ns5:code>1GC00</ns5:code>
+                                <ns5:montant>5</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC09</ns5:code>
+                                <ns5:montant>10</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC11</ns5:code>
+                                <ns5:montant>15</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC12</ns5:code>
+                                <ns5:montant>25</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC13</ns5:code>
+                                <ns5:montant>35</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC14</ns5:code>
+                                <ns5:montant>50</ns5:montant>
+                            </item>
+                            <item>
+                                <ns5:code>1GC15</ns5:code>
+                                <ns5:montant>75</ns5:montant>
+                            </item>
+                        </ns5:prestation>
+                        <ns5:mobicarte>false</ns5:mobicarte>
+                        <ns5:dateProchainRechargement xsi:nil="true"/>
+                    </item>
+                </ns5:rechargement>
+            </checkRechargementParentChildReturn>
+        </checkRechargementParentChildResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+ <pages descr="Self-care page">
+  <page cost="freept">
+    <!-- init sdp_state and pathological filtering  -->
+    <redirect src="erl://svc_selfcare_cmo:start_light?#redirect_roaming"/>
+  </page>
+
+  <page tag="redirect_roaming" cost="freept">
+    <redirect src="erl://svc_roaming:redir_roaming_network?camel=roaming_cmo.xml,nocamel=callback.xml#cmo,ming=callback.xml#cmo,ansi=callback.xml#cmo,default=#first_page"/>
+  </page>
+
+  <page tag="first_page" descr=" ">
+    <redirect src="erl://svc_util_of:redir_spider_nogodetA?#first_page2"/>
+  </page>
+
+ <page tag="first_page2" cost="freept" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="#123# CMO: Acueil">
+    <!-- Switch to the correct home page depending on the profile  -->
+    <include src="erl://svc_selfcare_cmo:include_sv_130"/><br/>
+    <a href="#mainmenu" key="9">Accueil: tapez repondre puis 9</a><br/>
+    <a href="#redir_compte" key="1">Suivi detaille</a>
+  </page>
+
+  <page tag="redir_compte" cost="freept">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=spider.xml#prepaid,undefined=#redir_compte_sdp"/>
+  </page>
+
+  <page tag="redir_compte_sdp" cost="freept">
+    <!-- Switch to the correct home page depending on the profile  -->
+    <redirect src="erl://svc_selfcare_cmo:select_home"/>
+  </page>
+
+<!-- OLAN ou ppola "Abonnement" -->
+  <page tag="olan"  cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : OLAN Cpte Princ AC">
+    <title>Suivi Conso</title>
+    Abonnement avec compte mobile<br/>
+    Solde compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (credit sans date limite d'utilisation)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+  <page tag="olan_epuise" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : OLAN Cpte Princ EP">
+    <title>Suivi Conso</title>
+    Abonnement avec compte mobile<br/>
+    Solde compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR<br/>
+    <a href="#recharge">pour recharger votre compte mobile</a><br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+<!-- OLAX ou ppol1 "Forfait 1 Heure" -->
+
+ <page tag="olax" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso: OLA1 Cpte Princ Forfait AC">
+    <title>Suivi Conso</title>
+    Forfait:
+    <include src="erl://svc_compte:print_solde?cpte_forf&amp;min"/> communications
+    nationales, soit
+    <include src="erl://svc_compte:print_solde?cpte_forf"/> EUR
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_forf"/> inclus<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (credit sans date limite d'utilisation)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+  <page tag="olax_cpte" cost="free_pt" backtext="notext" menutext="notext" hist="donthist" volatile="true" descr="Suivi Conso : OLA1 - Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait: epuise, renouvele le
+    <include src="erl://svc_compte:print_fin_credit?cpte_forf"/> en fin de
+    journee<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (credit sans date limite d'utilisation)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+  <page tag="olax_forfait" cost="free_pt" backtext="notext" menutext="notext" hist="donthist" volatile="true" descr="Suivi Conso : OLA1 - Cpte Princ EP">
+    <title>Suivi Conso</title>
+    Forfait:
+    <include src="erl://svc_compte:print_solde?cpte_forf&amp;min"/> communications
+    nationales, soit
+    <include src="erl://svc_compte:print_solde?cpte_forf"/> EUR
+    valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?cpte_forf"/> inclus<br/>
+    Compte mobile: epuise (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+  <page tag="olax_epuise" cost="free_pt" backtext="notext" menutext="notext" hist="donthist" volatile="true" descr="Suivi Conso : OLA1 - Cpte Princ et Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait: epuise,renouvele le
+    <include src="erl://svc_compte:print_fin_credit?cpte_forf"/> en fin de
+    journee<br/>
+    Compte mobile: epuise (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+<!-- OLA2 offre CAPRI version 20/11/2003-->
+<page tag="ola2_voix" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CAPRI - Forfait SMS sans promo wap">
+     <title>Suivi Conso</title>
+    Orange plug<br/>
+    Forfait SMS :
+    <include src="erl://svc_compte:print_solde?forf_sms&amp;sms"/> SMS non surtaxes<br/>
+    Promo : <include src="erl://svc_compte:print_solde?cpte_voix&amp;min"/><br/>
+    credits renouveles le <include src="erl://svc_compte:print_fin_credit?forf_sms"/> en fin de
+    journee<br/>
+    Compte mobile : <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR<br/>
+</page>
+
+<page tag="ola2_wap" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CAPRI - Forfait SMS sans promo voix">
+     <title>Suivi Conso</title>
+    Orange plug<br/>
+    Forfait SMS :
+    <include src="erl://svc_compte:print_solde?forf_wap234&amp;sms"/> SMS non surtaxes<br/>
+    Navigation Orange World : <include src="erl://svc_compte:print_solde?forf_wap234&amp;min"/><br/>
+    credits renouveles le <include src="erl://svc_compte:print_fin_credit?forf_wap234"/> en fin de
+    journee<br/>
+    Compte mobile : <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR<br/>
+</page>
+
+<!-- ZAP Offre du 09/06/2005-->
+
+   <page tag="zap_ep" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : ZAP Forfait Epuise">
+    <title>Suivi Conso</title>
+    Forfait epuise, renouvele le <include src="erl://svc_compte:print_fin_credit?cpte_voix"/>
+    en fin de journee<br/>
+    Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+
+   <page tag="zap_ac" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : ZAP - Forfait Actif">
+    <title>Suivi Conso</title>
+    Forfait: <include src="erl://svc_compte:print_solde?cpte_voix&amp;euro"/>EUR=
+    <include src="erl://svc_compte:print_solde?cpte_voix&amp;sms"/> SMS en heure 11-18 ou
+    <include src="erl://svc_compte:print_solde?cpte_voix&amp;sms_p"/> SMS en heure normale<br/>
+    Forfait renouvele
+    le <include src="erl://svc_compte:print_fin_credit?cpte_voix"/> fin de journee.
+    Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (choix 1 du menu pour recharger)
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+<!-- OLAC ou ppolc "Forfait Heures Creuses" -->
+
+ <page tag="olac" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso: CMO HC Cpte Princ Forfait AC">
+    <title>Suivi Conso</title>
+    Forfait: <include src="erl://svc_compte:print_solde?forf_hc"/> EUR =
+    <include src="erl://svc_compte:print_solde?forf_hc&amp;min"/> com.
+    nat. au tarif normal<br/>
+    Forfait renouvelé le
+    <include src="erl://svc_compte:print_fin_credit?forf_hc"/> en fin de
+    journee<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+ <page tag="olac_ep" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso: CMO HC Cpte Princ Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait epuise, renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_hc"/> en fin de
+    journee;<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+<!-- CMO 4.5 : Plug Multi usage -->
+  <page tag="pmu_sv" cost="free_pt" backtext="notext" menutext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CMO PMU">
+    <title>Suivi Conso</title>
+    Orange plug<br/>
+    Solde forfait =
+    <include src="erl://svc_compte:print_solde?forf_pmu&amp;sms"/> SMS =
+    <include src="erl://svc_compte:print_solde?forf_pmu&amp;euro"/> EUR<br/>
+    Services Orange Plug =
+    <include src="erl://svc_compte:print_solde?forf_webwap&amp;ko"/>(utilisables
+    en min)<br/>
+    Credits valables jusqu'au
+    <include src="erl://svc_compte:print_fin_credit?forf_pmu"/> inclus<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;euro"/>EUR<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+
+<!-- FMU Forfait Multi-usages CDC 7.2--> 
+
+<page tag="fmu" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CMO FMU Cpte Princ et Forfait AC">
+    <title>Suivi Conso</title>
+    Forfait:<include src="erl://svc_compte:print_solde?forf_fmu"/> EUR =
+    <include src="erl://svc_compte:print_solde?forf_fmu&amp;min"/> com.nat.
+    au tarif normal<br/>Forfait renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_fmu"/> en fin de
+    journee<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+ <page tag="fmu_ep" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CMO FMU Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait epuise, renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_fmu"/> en fin de
+    journee<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+   (choix 1 du menu pour recharger)<br/>
+   <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+<!-- CMO serie limitee CDC MOBI-CMO 3.0--> 
+
+<page tag="cmo_sl" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CMO SL Cpte Princ et Forfait AC">
+    <title>Suivi Conso</title>
+    Forfait : <include src="erl://svc_compte:print_solde?forf_cmosl"/> euros equivalents a
+    <include src="erl://svc_compte:print_solde?forf_cmosl&amp;min"/>. SMS gratuits &amp; illimites tous les jours de 9h a 16h
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+ <page tag="cmo_sl_ep" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : CMO SL Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait epuise, renouvele le
+    <include src="erl://svc_compte:print_fin_credit?forf_cmosl"/> fin de
+    journee. Les SMS restant gratuit &amp; illimites tous les jours de 9h a 16h<br/>
+    Compte mobile:
+    <include src="erl://svc_compte:print_solde?cpte_princ"/> EUR
+   (choix 1 du menu pour recharger)<br/>
+   <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+  <page tag="cmo_sl_apu" cost="free_pt" menutext="notext" backtext="notext"
+	hist="donthist" volatile="true"
+	descr="Suivi Conso : CMO SL APU Cpte Princ et Forfait AC">
+    <title>Suivi Conso</title>
+    Forfait: <include src="erl://svc_compte:print_solde?forf_cmoslapu"/> euros
+    equivalents a <include
+    src="erl://svc_compte:print_solde?forf_cmoslapu&amp;nbappels"/> appels
+    vers Orange &amp; Fixes.<br/>
+    Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (menu &gt; choix 1 pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+  
+  <page tag="cmo_sl_apu_ep" cost="free_pt" menutext="notext" backtext="notext"
+	hist="donthist" volatile="true"
+	descr="Suivi Conso : CMO SL APU Forfait EP">
+    <title>Suivi Conso</title>
+    Forfait epuise renouvele le <include
+    src="erl://svc_compte:print_fin_credit?forf_cmoslapu"/> fin de journee.
+    Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (choix 1 du menu pour recharger)<br/>
+    <a href="#mainmenu" key="9">Accueil</a>
+  </page>
+
+<!-- CMO M6 MObile CDC MOBI-CMO 7.1--> 
+
+<page tag="m6_ac" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : M6 Forfait AC">
+  Forfait : <include src="erl://svc_compte:print_solde?forf_mu_m6"/>EUR =
+  <include src="erl://svc_compte:print_solde?forf_mu_m6&amp;min"/> com. nationales.
+  Forfait renouvele le <include src="erl://svc_compte:print_fin_credit?forf_mu_m6"/> en fin de journee.<br/>
+  Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+  (choix 1 du menu pour recharger)<br/>
+  <a href="#mainmenu" key="9">Accueil</a>
+</page>  
+
+<page tag="m6_ep" cost="free_pt" menutext="notext" backtext="notext" hist="donthist" volatile="true" descr="Suivi Conso : M6 Forfait EP">
+  Forfait epuise, renouvele le <include src="erl://svc_compte:print_fin_credit?forf_mu_m6"/> en fin de journee<br/>
+  Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+  (choix 1 du menu pour recharger)<br/>
+  <a href="#mainmenu" key="9">Accueil</a>
+</page>
+
+<!-- "Forfaits M6 bloques illimites WE". Offre DE1901 CDC MOBI-CMO V17-->
+<page tag="m6_mobile_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: Forfait M6 Mobile 1h">
+    <title>Suivi Conso: Forfait M6 Mobile 1h</title>
+		Forfait : <include src="erl://svc_compte:print_solde?forf_m6_mob&amp;euro"/>EUR =
+		<include src="erl://svc_compte:print_solde?forf_m6_mob&amp;min"/> com. nationales.<br/>
+		Forfait renouvele le <include src="erl://svc_compte:print_fin_credit?forf_m6_mob"/> en fin de journee.<br/>
+		Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ&amp;euro"/>EUR (choix 1 du menu pour recharger)<br/>
+  </page>
+
+<page tag="m6_mobile_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" 
+	descr="SV Options CMO: Forfait M6 Mobile 1h epuise">
+    <title>Suivi Conso: Forfait M6 Mobile 1h epuise</title>
+		Forfait epuise, renouvele le <include src="erl://svc_compte:print_fin_credit?forf_m6_mob"/> en fin de journee;
+		Compte mobile: <include src="erl://svc_compte:print_solde?cpte_princ&amp;euro"/>EUR (choix 1 du menu pour recharger)<br/>
+  </page>
+
+<!-- CDC Avril MOBI-CMO 13.7 GROS FORFAIT-->
+ <page tag="big_ff_cmo_ac" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: GROS FF CMO">
+    <title>Options Forfait 30E</title>
+    Forfait: <include src="erl://svc_compte:print_solde?big_forf_cmo"/>EUR
+    = <include src="erl://svc_compte:print_solde?big_forf_cmo&amp;min"/> com
+    nat. au tarif normal <br/>
+    Forfait renouvele le <include src="erl://svc_compte:print_fin_credit?big_forf_cmo"/> en fin
+    de journee.<br/>
+    Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (choix 1 du menu pour recharger)
+  </page>
+
+ <page tag="big_ff_cmo_ep" menutext="notext" cost="free_pt" hist="donthist" volatile="true" descr="SV Options CMO: GROS FF CMO EP">
+    <title>Options Forfait 30E</title>
+     Forfait epuise: renouvele le <include src="erl://svc_compte:print_fin_credit?big_forf_cmo"/> en fin
+     de journee.<br/>
+     Compte mobile:<include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+     (choix 1 du menu pour recharger)
+  </page>
+
+ <page tag="mainmenu" cost="free_pt" ismenu="true" hist="dohist">
+    <!-- Switch to the correct home page depending on the profile  -->
+    <redirect src="erl://svc_selfcare_cmo:check_state?#mainmenu3"/>
+  </page>
+
+ <page tag="mainmenu3" cost="free_pt">
+    <redirect src="erl://svc_util_of:consultation_sachem?#real_mainmenu&amp;#menu_indisp"/>
+  </page>
+
+  <page tag="menu_indisp" descr="menu cmo indisponible : echec de la requete A4">
+    L'acces au menu est indisponible.
+  </page>
+
+<!-- Menu page -->
+ <page tag="real_mainmenu" menutext="notext" log="SCC_menu" cost="free_pt" hist="donthist">
+    <title>Menu</title>
+    <a href="souscrire_options_cmo.xml#bon_plan">Bons plans</a><br/>
+    <a href="#recharge">Recharger son compte mobile</a><br/>
+    <a href="#astuces">Astuces credit epuise</a><br/>
+    <a href="souscrire_options_cmo.xml">Souscrire a une option</a><br/>
+    <a href="#suivi-conso_plus">Suivi conso +</a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?m5&amp;Prog davantage et changer mobile=m5.xml&amp;br"/>
+    <a href="#chat_jeux">Chat et jeux</a><br/>
+    <include src="erl://svc_wap_push_orangef:main_menu_item"/>
+    <a href="#carte_postale_mms">Carte postale MMS</a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?nuit_kdo_sms&amp;Nuit KDO SMS %26 JKDO MMS=#nkdo_jkdo&amp;nobr"/>
+  </page>
+ 
+ <page tag="recharge" cost="free_pt" hist="dohist" descr="#123# CMO Menu rechargement">
+    <title>Menu Rechargement</title>
+    <a href="recharge_cmo.xml">par recharge mobicarte</a><br/>
+    <a href="recharge_cmo_cb.xml">par carte bancaire</a><br/>
+    <include src="erl://svc_options_cmo:proposer_lien?cmo_tlr&amp;par prelevement sur compte bancaire=recharge_cmo_tlr.xml&amp;nobr"/>
+ </page>
+
+ <page tag="astuces" cost="free_pt" hist="dohist" descr="#123# CMO Menu Astuces">
+    <title>Menu Astuces</title>
+    <a href="#appelle_moi">"Appelle-moi" pour demander a etre joint quand on n'a plus de credit</a><br/>
+    <a href="#recharge_moi">"Recharge pour moi" pour demander a un proche de recharger votre compte mobile</a>
+ </page>
+
+ <page tag="appelle_moi" cost="free_pt" hist="dohist" descr="#123# CMO Menu Appelle moi">
+    <title>Menu Appelle moi</title>
+    Avec "Appelle-moi" des que le solde de votre forfait est &lt;1Eur vous
+    disposez de 10 messages gratuits valables 1 semaine pour demander a etre rappele!
+    <a href="#info_util_am">utiliser le service</a>
+ </page>
+
+ <page tag="recharge_moi" cost="free_pt" hist="dohist" descr="#123# CMO Menu Recharge moi">
+    <title>Menu Recharge moi</title>
+    Avec "Recharge pour moi"  vous disposez de 5 messages gratuits /mois
+    pour demander a un proche de recharger votre compte mobile !
+    <a href="#info_util_rc">utiliser le service</a>
+ </page>
+
+ <page tag="info_util_am" cost="free_pt" hist="dohist" descr="#123# CMO Menu Utiliser Appelle moi">
+    <title>Menu Utiliser Appelle moi</title>
+    Composez le #122*06XXXXXXXX# (06XXX... est le num. de mobile par lequel
+    vous souhaitez etre joint) Astuce: composez directement le #122*06XXXXXXXX#
+    sans passer par le #123#
+ </page>
+
+ <page tag="info_util_rc" cost="free_pt" hist="dohist" descr="#123# CMO Menu Utiliser Recharge moi">
+    <title>Menu Utiliser Recharge moi</title>
+    Composez le #126*06XXXXXXXX# (06XXX... est le num. de mobile de votre proche)
+    Astuce: composez directement le #126*06XXXXXXXX# sans passer par le #123#
+ </page>
+
+ <page tag="suivi-conso_plus" cost="free_pt" hist="dohist" descr="suivi-conso +">
+  <title>Menu SV plus</title>
+    <a href="#redir_compte">Suivi conso detaille</a><br/>
+    <include src="erl://svc_selfcare_cmo:print_first_link_options?Vos options&amp;options_cmo.xml"/>
+    <include src="erl://svc_selfcare_cmo:print_first_link_promo?Vos bonus et promotions&amp;promo_cmo.xml"/>
+ </page>
+
+ <page tag="chat_jeux" cost="free_pt" hist="dohist" descr="#123# CMO Menu Chat et Jeux">
+    <title>Menu Chat et Jeux</title>
+    <a href="/orangef/chat.xml">Pour acceder au service "Chat"</a><br/>
+    <a href="/orangef/sms_games.xml">Pour acceder aux "Jeux par SMS"</a>
+ </page>
+
+ <page tag="wap_push" backtext="notext" menutext="notext">
+   <include src="erl://svc_wap_push_orangef:wap_menu"/>
+ </page>
+
+  <page tag="carte_postale_mms">
+    <redirect src="erl://svc_util_of:redirect_by_param?carte_postale_url"/>
+  </page>
+
+  <page tag="nkdo_jkdo" hist="dohist" cost="free_pt"
+        descr="#123# CMO Menu  Nuit KDO SMS et Journee KDO MMS">
+    <title>#123# CMO Menu  Nuit et Journee KDO</title>
+    <a href="#nuit_kdo_sms">Nuit KDO SMS</a><br/> 
+    <a href="#journee_kdo_mms">Journee KDO MMS</a>
+    <a href="#semaine_mini_prix">Semaine mini prix</a>
+  </page>
+
+ <page tag="journee_kdo_mms" cost="free_pt" hist="dohist" descr="#123# CMO Menu Journee KDO MMS">
+    <title>Menu Journee KDO MMS</title>
+    Journee KDO MMS le 06/12/2006 ! Tous vos MMS sont GRATUITS &amp; ILLIMITES de 8h00 a 21h30
+    (hors MMS surtaxes, sous reserve d'1 credit > 0 EUR pour les offres avec compte mobile)<br/>
+  </page>
+ 
+ <page tag="nuit_kdo_sms" cost="free_pt" hist="dohist" descr="#123# CMO Menu Nuit KDO MMS">
+    <title>Menu Nuit KDO SMS</title>
+    Nuit KDO SMS le 05/12/2006 ! Tous vos SMS sont GRATUITS &amp; ILLIMITES de 21h30 a 8h le matin
+    (hors SMS surtaxes, sous reserve d'1 credit > 0 EUR pour les offres avec compte mobile)<br/>
+  </page>
+
+ <page tag="semaine_mini_prix" cost="free_pt" hist="dohist" descr="#123# CMO Menu Nuit KDO MMS">
+    <title>Semaine mini prix</title>
+	Semaine mini prix SMS du 22 au 26 janvier 2007. 50% de reduction sur vos SMS (hors SMS surtaxes)<br/>
+  </page>
+
+<!-- Short version (all cases) -->
+
+   <page tag="ola_short" log="SCC_ola_short" cost="free_pt" menutext="notext" backtext="notext">
+    <redirect src="#not_compatible"/>
+  </page>
+
+  <page tag="not_compatible" backtext="notext" cost="free_pt" menutext="notext" nav="end" descr="Suivi Conso : Terminal non compatible">
+   <title>Suivi Conso : Terminal non compatible</title>
+   Votre terminal ne permet pas d'acceder au service.
+  </page>
+
+<!-- Error pages -->
+
+  <page tag="notcmo" nav="end" log="SC_Enotcmo" cost="free_pt" descr="not mobi">
+    Vous n'avez pas acces à ce service réserve aux clients
+    Compte Mobile Orange.
+    Veuillez contacter votre service client.
+  </page>
+
+
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Suivi Conso: Service indisponible">
+    <title>Suivi Conso: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ultérieurement.<br/>
+    Merci.
+  </page>
+
+
+</pages>

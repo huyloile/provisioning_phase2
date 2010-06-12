@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour les bonus JANUS">
+
+  <page cost="freept">
+      Envie d'appels offerts, de SMS ou d'internet?<br/><br/>
+      Choisissez votre bonus:<br/>
+      <a href="#appels">Bonus appels</a><br/>
+      <a href="#sms">Bonus SMS</a><br/>
+      <a href="#internet">Bonus internet</a><br/>
+      <a href="#international">Bonus international</a><br/><br/>      
+      <a href="#condition">Conditions</a>
+  </page>
+
+  <page tag="appels" hist="dohist" cost="free_pt" descr="menu bonus appels">
+    <title>menu bonus appels</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_appels&amp;description"/>
+      Avec le bonus appels, a partir de 10E recharges dans le mois, beneficiez de 20 a 80 min d'appels offerts
+      le mois suivant<br/><br/>
+      <a href="#appels_s_inscrire">S'inscrire</a><br/>
+      <a href="#appels_infos">+d'infos</a>      
+  </page>
+  
+  <page tag="appels_infos" hist="dohist" cost="free_pt" descr="voix +infos" menutext="notext">
+    <title>voix +infos</title>
+    Bonus offert hors numeros speciaux, de services et en cours de portabilite. Appels directs entre personnes
+    physiques et pour usage perso non lucratif
+  </page>  
+
+  <page tag="appels_s_inscrire" hist="dohist" cost="free_pt" descr="s'inscrire bonus appels">
+    <title>s'inscrire bonus appels</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_appels&amp;souscription"/>
+    Vous avez choisi le Bonus appels.<br/><br/>
+    <a href="#appels_confirmer">Confirmer</a>
+  </page>
+  
+    <page tag="appels_confirmer" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer bonus appels">
+    <title>confirmer bonus appels</title>
+    <redirect src="erl://svc_options_mobi:do_register_request?opt_bonus_appels&amp;#appels_success_confirmation,#confirmation_NOK"/>
+  </page>
+
+
+  <page tag="appels_success_confirmation" backtext="notext" hist="dohist" cost="free_pt"
+  descr="confirm bonus appels success">
+    <title>confirm bonus appels success</title>
+    <redirect src="erl://svc_options_mobi:proposer_lien_if_date_correct?opt_bonus_appels&amp;#success_appels,#success_appels_avec_bonus"/>
+  </page>
+  
+  <page tag="success_appels" backtext="notext" hist="dohist" cost="free_pt" descr="bonus appels infos">
+    <title>bonus appels recharge infos</title>
+    Votre inscription a bien ete prise en compte.
+  </page>
+
+  <page tag="success_appels_avec_bonus" backtext="notext" menutext="notext"
+        hist="dohist" cost="free_pt" descr="bonus appels infos">
+    <title>bonus appels success</title>
+    Bonus appels enregistre.<br/>
+    La date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso"/> si vous rechargez au moins 10E avant cette date.<br/>
+      <a href="#success_appels_avec_bonus_suite_1">Suite</a><br/>
+  </page>
+
+  <page tag="success_appels_avec_bonus_suite_1" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus appels success suite 1</title>
+    C'est automatique : a partir de 10E de recharges cumulees jusqu'au <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois, vous beneficiez de 20 a 80 mn d'appels offerts le mois suivant.<br/>
+    <a href="#success_appels_avec_bonus_suite_2">Suite</a>
+  </page>
+
+  <page tag="success_appels_avec_bonus_suite_2" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus appels success suite 2</title>
+    De 10E a 19,99E recharges dans le mois, 20mn offertes le mois suivant!<br/>
+    De 20E a 29,99E, 40mn offertes!<br/>
+    et pour 30E ou +, 80mn offertes!<br/>
+    Usages en France metrop<br/>
+  </page>
+
+  <page tag="sms" hist="dohist" cost="free_pt" descr="menu bonus sms">
+    <title>menu bonus sms</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_sms&amp;description"/>
+      Avec le bonus SMS, a partir de 10E recharges dans le mois, beneficiez de, au minimum, 100 SMS offerts
+      le mois suivant<br/><br/>
+      <a href="#sms_s_inscrire">S'inscrire</a><br/>
+      <a href="#sms_infos">+d'infos</a>      
+  </page>
+  
+  <page tag="sms_infos" hist="dohist" cost="free_pt" descr="sms +infos" menutext="notext">
+    <title>sms +infos</title>
+    SMS/MMS offerts en France Metro, hors sms/mms surtaxes, numeros courts et MMS cartes postales.<br/>
+    <a href="#sms_infos_1">Suite</a>
+  </page>  
+
+  <page tag="sms_infos_1" hist="dohist" cost="free_pt" descr="sms +infos page 1" menutext="notext">
+    <title>sms +infos page1</title>
+    SMS/MMS entre personnes physiques et pour usage personel non lucratif, jusqu'a 200 destinataires differents
+  </page>
+
+  <page tag="sms_s_inscrire" hist="dohist" cost="free_pt" descr="s'inscrire bonus sms">
+    <title>s'inscrire bonus sms</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_sms&amp;souscription"/>
+    Vous avez choisi le Bonus SMS.<br/><br/>
+    <a href="#sms_confirmer">Confirmer</a>
+  </page>
+  
+  <page tag="sms_confirmer" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer bonus sms">
+    <title>confirmer bonus sms</title>
+       <redirect src="erl://svc_options_mobi:do_register_request?opt_bonus_sms&amp;#sms_success_confirmation,#confirmation_NOK"/>
+  </page>
+  
+  <page tag="sms_success_confirmation" backtext="notext" hist="dohist" cost="free_pt"
+  descr="confirm bonus appels success">
+    <title>confirm bonus appels success</title>
+    <redirect src="erl://svc_options_mobi:proposer_lien_if_date_correct?opt_bonus_sms&amp;#success_sms,#success_sms_avec_bonus"/>    
+  </page>
+  
+  <page tag="success_sms" backtext="notext" hist="dohist" cost="free_pt"
+   descr="success sms page">
+    <title>success sms page</title>
+    Votre inscription a bien ete prise en compte.
+  </page>
+
+  <page tag="success_sms_avec_bonus" backtext="notext" menutext="notext"
+        hist="dohist" cost="free_pt" descr="success sms page">
+    <title>success sms page</title>
+    Bonus SMS enregistre.<br/>
+    La date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso"/> si vous rechargez au moins 10E avant cette date.<br/>
+    <a href="#success_sms_avec_bonus_suite_1">Suite</a><br/>
+  </page>
+
+  <page tag="success_sms_avec_bonus_suite_1" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus sms success suite 1</title>
+    C'est automatique : a partir de 10E de recharges cumulees jusqu'au <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois, vous beneficiez de 100 SMS au minimum offerts le mois suivant.<br/>
+    <a href="#success_sms_avec_bonus_suite_2">Suite</a>
+  </page>
+
+  <page tag="success_sms_avec_bonus_suite_2" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus sms success suite 2</title>
+    De 10E a 19,99E recharges dans le mois, 100 SMS offerts le mois suivant!<br/>
+    De 20E a 29,99E, 200 SMS offerts!<br/>
+    30E ou +, SMS illimites offerts!<br/>
+    Usages en France metrop<br/>
+  </page>
+
+  <page tag="internet" hist="dohist" cost="free_pt" descr="menu bonus internet">
+    <title>menu bonus internet</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_internet&amp;description"/>
+      Avec le bonus internet : a partir de 10E recharges beneficiez de 1h a 4h d'internet mobile offertes
+      le mois suivant<br/><br/>
+      <a href="#internet_s_inscrire">S'inscrire</a><br/>
+      <a href="#internet_infos">+d'infos</a>      
+  </page>
+  
+  <page tag="internet_infos" hist="dohist" cost="free_pt" descr="+infos pages" menutext="notext">
+    <title>+infos pages</title>
+    Bonus internet decompte a la min indivisible pour navigation sur portail OW, Gallery et internet, consultation
+    videos, rubriques actualite, cinema, sport<br/><br/>
+    <a href="#internet_infos_1">Suite</a>
+  </page>  
+
+  <page tag="internet_infos_1" hist="dohist" cost="free_pt" descr="+infos page 1" menutext="notext">
+    <title>+infos page 1</title>
+    et mes communautes sur le portail OW. Les usages mail (smtp, pop, imap) et modem, contenus et les services payants
+    non inclus. Usages en France metro...<br/>
+    <a href="#internet_infos_2">Suite</a>
+  </page>
+
+  <page tag="internet_infos_2" hist="dohist" cost="free_pt" descr="+infos page 2" menutext="notext">
+    <title>+infos page 2</title>
+    Services de Voix surIP, P2P, Newsgroups interdits. Services sur reseaux et terminal compatibles. Le piratage
+    nuit a la creation artistique. +d'infos sur orange.fr
+  </page>
+
+
+  <page tag="internet_s_inscrire" hist="dohist" cost="free_pt" descr="s'inscrire bonus internet">
+    <title>s'inscrire bonus internet</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_internet&amp;souscription"/>
+    Vous avez choisi le Bonus internet.<br/><br/>
+    <a href="#internet_confirmer">Confirmer</a>
+  </page>
+  
+  <page tag="internet_confirmer" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer bonus internet">
+    <title>confirmer bonus internet</title>
+       <redirect src="erl://svc_options_mobi:do_register_request?opt_bonus_internet&amp;#internet_success_confirmation,#confirmation_NOK"/>
+  </page>
+  
+  <page tag="internet_success_confirmation" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer bonus internet">
+    <title>confirmer bonus internet</title>
+    <redirect src="erl://svc_options_mobi:proposer_lien_if_date_correct?opt_bonus_internet&amp;#success_internet,#success_internet_avec_bonus"/>
+  </page>
+
+  <page tag="success_internet" backtext="notext" hist="dohist" cost="free_pt"
+   descr="bonus internet recharge infos">
+    <title>bonus internet recharge infos</title>
+    Votre inscription a bien ete prise en compte.
+  </page>
+
+  <page tag="success_internet_avec_bonus" backtext="notext" menutext="notext"
+        hist="dohist" cost="free_pt" descr="success internet page">
+    <title>success internet page</title>
+    Bonus internet enregistre.<br/>
+    La date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso"/> si vous rechargez au moins 10E avant cette date<br/>
+    <a href="#success_internet_avec_bonus_suite_1">Suite</a><br/>
+  </page>
+
+  <page tag="success_internet_avec_bonus_suite_1" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus internet success suite 1</title>
+    C'est automatique: a partir de 10E de recharges cumulees jusqu'au <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois,vous beneficiez de 1h a 4h d'internet mobile offertes le mois suivant.<br/>
+    <a href="#success_internet_avec_bonus_suite_2">Suite</a>
+  </page>
+
+  <page tag="success_internet_avec_bonus_suite_2" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus internet success suite 2</title>
+    De 10E a 19,99E recharges dans le mois, 1h d'internet offerte le mois suivant!<br/>
+    De 20E a 29,99E, 2h offertes!<br/>
+    et pour 30E ou +, 4h offertes!<br/>
+    Usages en France metrop<br/>
+  </page>
+
+  <page tag="international" hist="dohist" cost="free_pt" descr="menu bonus international">
+    <title>menu bonus international</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_europe&amp;description"/>
+      Avec le bonus international, a partir de 10E recharges, de 10 a 40mn d'appels offerts le mois suivant vers
+      et depuis ..<br/>
+      au choix :<br/>
+      <a href="#international_europe">Europe</a><br/>
+      <a href="#international_magreb">Maghreb</a>
+  </page>
+  
+  <page tag="international_europe" hist="dohist" cost="free_pt" descr="bonus international europe">
+    <title>bonus international europe</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_europe&amp;souscription"/>
+     Vous avez choisi le Bonus international : Europe<br/><br/>
+      <a href="#international_europe_confirmer">Confirmer</a><br/>
+       <a href="#international_europe_liste">Liste des pays</a><br/>
+      <a href="#international_europe_infos">+d'infos</a>      
+  </page>
+  
+  <page tag="international_europe_infos" hist="dohist" cost="free_pt" descr="europe +infos pages" menutext="notext">
+    <title>europe +infos pages</title>
+    Bonus decompte a la seconde apres une 1ere minute indivisible. Appels depuis la France Metro vers la zone
+    Europe, ...<br/>
+    <a href="#international_europe_infos_1">Suite</a>
+  </page>  
+
+  <page tag="international_europe_infos_1" hist="dohist" cost="free_pt" descr="+infos page 1" menutext="notext">
+    <title>+infos page 1</title>
+     ...et depuis les pays de la zone Europe vers la France Metro et vers les pays de la zone choisie. Les autres com.
+     decomptees du compte principal au tarif en vigueur
+  </page>
+
+  <page tag="international_europe_confirmer" backtext="notext" hist="dohist" cost="free_pt"
+  descr="confirmer bonus international">
+    <title>confirmer bonus international</title>
+    <redirect src="erl://svc_options_mobi:do_register_request?opt_bonus_europe&amp;#europe_success_confirmation,#confirmation_NOK"/>
+  </page>
+  
+  <page tag="europe_success_confirmation" backtext="notext" menutext="notext" hist="dohist" cost="free_pt"
+   descr="success europe page">
+    <title>success europe page</title>
+     <redirect src="erl://svc_options_mobi:proposer_lien_if_date_correct?opt_bonus_europe&amp;#success_europe,#success_europe_avec_bonus"/>
+  </page>
+  
+  <page tag="success_europe" backtext="notext" hist="dohist" cost="free_pt"
+   descr="success europe page">
+    <title>success europe page</title>
+    Votre inscription a bien ete prise en compte. 
+  </page>
+
+  <page tag="success_europe_avec_bonus" backtext="notext" menutext="notext"
+        hist="dohist" cost="free_pt" descr="success europe page">
+    <title>success europe page</title>
+    Bonus Europe enregistre.<br/>
+    La date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso"/> si vous rechargez au moins 10E avant cette date.<br/>
+    <a href="#success_europe_avec_bonus_suite_1">Suite</a><br/>
+  </page>
+
+  <page tag="success_europe_avec_bonus_suite_1" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus europe success suite 1</title>
+    C'est automatique: a partir de 10E de recharges cumulees jusqu'au <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois,vous beneficiez de 10 a 40 min offertes...<br/>
+    <a href="#success_europe_avec_bonus_suite_2">Suite</a>
+  </page>
+
+  <page tag="success_europe_avec_bonus_suite_2" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus europe success suite 2</title>
+    ...d'appels vers et depuis l'Europe  le mois suivant.<br/>
+    <a href="#success_europe_avec_bonus_suite_3">Suite</a>
+  </page>
+
+  <page tag="success_europe_avec_bonus_suite_3" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus europe success suite 3</title>
+    De 10E a 19,99E recharges dans le mois, 10 min d'appels offertes le mois suivant!<br/>
+    De 20E a 29,99E, 20 min offertes!<br/>
+    et pour 30E ou +, 40 min offertes!<br/>
+  </page>
+
+  <page tag="international_europe_liste" hist="dohist" cost="free_pt" descr="europe liste" menutext="notext">
+    <title>europe liste</title>
+    Allemagne, Andorre, Autriche, Baleares, Belgique, Bulgarie, Canaries, Chypre, Danemark, Espagne, Estonie, Finlande,
+    Grece, Guadeloupe, Hongrie, Irlande<br/>
+    <a href="#international_europe_liste_suite">Suite</a>
+  </page>
+  
+  <page tag="international_europe_liste_suite" hist="dohist" cost="free_pt" descr="europe liste" menutext="notext">
+    <title>europe liste suite</title>
+    Italie, Luxembourg, Martinique, Norvege, Pays-Bas, Pologne, Portugal, Reunion, Roumanie, Royaume-Uni, Suede, Suisse,
+    Rep. Tcheque.<br/>
+    Liste complete sur orange.fr
+  </page>
+  
+  <page tag="international_magreb" hist="dohist" cost="free_pt" descr="bonus international magreb">
+    <title>bonus international magreb</title>
+    <include src="erl://svc_of_plugins:track_kenobi_code?opt_bonus_maghreb&amp;souscription"/>
+    Vous avez choisi le bonus international : Maghreb (Maroc, Algerie et Tunisie)<br/><br/>
+    <a href="#international_magreb_confirmer">Confirmer</a><br/>
+    <a href="#international_magreb_infos">+d'infos</a>      
+  </page>
+  
+  <page tag="international_magreb_infos" hist="dohist" cost="free_pt" descr="magreb +infos pages" menutext="notext">
+    <title>magreb +infos pages</title>
+    Bonus decompte a la seconde apres une 1ere minute indivisible. Appels depuis la France Metro vers le Maghreb, ...
+    <a href="#international_magreb_infos_1">Suite</a>
+  </page>  
+
+  <page tag="international_magreb_infos_1" hist="dohist" cost="free_pt" descr="+infos page 1" menutext="notext">
+    <title>+infos page 1</title>
+    ... et depuis les pays du Maghreb vers la France Metro et vers les pays de la zone choisie. Les autres com. decomptees
+    du compte principal au tarif en vigueur
+  </page>
+
+  
+  <page tag="international_magreb_confirmer" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer bonus international maghreb">
+    <title>confirmer bonus international maghreb</title>
+      <redirect src="erl://svc_options_mobi:do_register_request?opt_bonus_maghreb&amp;#magreb_success_confirmation,#confirmation_NOK"/>
+  </page>
+
+  <page tag="magreb_success_confirmation" backtext="notext" menutext="notext" hist="dohist" cost="free_pt"
+   descr="magreb success confirmation page">
+    <title>magreb success confirmation page</title>
+    <redirect src="erl://svc_options_mobi:proposer_lien_if_date_correct?opt_bonus_maghreb&amp;#success_magreb,#success_magreb_avec_bonus"/>
+  </page>
+
+  <page tag="success_magreb" backtext="notext" hist="dohist" cost="free_pt"
+   descr="bonus magreb recharge infos">
+    <title>bonus magreb recharge infos</title>
+    Votre inscription a bien ete prise en compte. 
+  </page>
+
+  <page tag="success_magreb_avec_bonus" backtext="notext" menutext="notext"
+        hist="dohist" cost="free_pt" descr="success magreb page">
+    <title>success magreb page</title>
+    Bonus Maghreb enregistre.<br/>
+    La date anniversaire de votre bonus est le <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois.<br/>
+    Prochain bonus a partir du <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso"/> si vous rechargez au moins 10E avant cette date.<br/>
+    <a href="#success_magreb_avec_bonus_suite_1">Suite</a><br/>
+  </page>
+
+  <page tag="success_magreb_avec_bonus_suite_1" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus magreb success suite 1</title>
+    C'est automatique: a partir de 10E de recharges cumulees jusqu'au <include src="erl://svc_options_mobi:print_date_rnv_bonus?sans_perso_day"/> de chaque mois,vous beneficiez de 10 a 40 min offertes...<br/>
+    <a href="#success_magreb_avec_bonus_suite_2">Suite</a>
+  </page>
+
+  <page tag="success_magreb_avec_bonus_suite_2" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus magreb success suite 2</title>
+    ...d'appels vers et depuis le Maghreb le mois suivant.<br/>
+    <a href="#success_magreb_avec_bonus_suite_3">Suite</a>
+  </page>
+
+  <page tag="success_magreb_avec_bonus_suite_3" hist="dohist" cost="free_pt" backtext="notext">
+    <title>confirm bonus magreb success suite 3</title>
+    De 10E a 19,99E recharges dans le mois, 10 min d'appels offertes le mois suivant!<br/>
+    De 20E a 29,99E, 20 min offertes!<br/>
+    et pour 30E ou +, 40 min offertes!<br/>
+  </page>
+  
+  <page tag="condition" hist="dohist" cost="free_pt" descr="condition page" menutext="notext">
+    <title>condition page</title>
+    A chacun ses envies, a chacun son bonus! Choisissez votre bonus et chaque mois, profitez-en selon le montant recharge
+    le mois precedent.<br/><br/><br/>
+    <a href="#condition_1">Suite</a>
+  </page>
+
+  <page tag="condition_1" hist="dohist" cost="free_pt" descr="condition page 1" menutext="notext">
+    <title>condition page 1</title>
+    A partir de 10E recharges, beneficiez d'appels en France ou a l'etranger, de SMS, ou d'internet selon le bonus choisi.
+  </page>
+  
+
+  <page tag="confirmation_NOK" backtext="notext" hist="dohist" cost="free_pt" descr="confirmer NOK">
+    <title>confirmer NOK</title>
+    Erreur technique<br/>
+    Votre demande n'a pas ete prise en compte.<br/>
+    Veuillez reessayer ulterieurement.
+  </page>
+</pages>
+
+ 

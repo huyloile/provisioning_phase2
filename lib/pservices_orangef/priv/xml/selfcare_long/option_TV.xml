@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Option TV">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_tv&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique&amp;#generique_promo&amp;#solde_insuff_promo"/>
+  </page>
+
+  <page tag = "offre_incomp" hist="dohist" cost="freept"
+	descr="Options TV: Actif">
+    <title>Options TV: Actif</title>
+    Bonjour, vous ne pouvez pas souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>.
+    Pour + d'infos contactez
+    Orange service clients mobile au 722 depuis votre mobile (0,37 E/min.).
+    Merci de votre appel.
+  </page>
+	
+  <page tag = "opt_deja_active" hist="dohist" cost="freept"
+				descr="Options TV: Actif">
+    <title>Options TV: Actif</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> est actuellement activee.<br/>
+    <a href = "#supprimer">Supprimer l'option</a><br/>
+    <a href = "#conditions">Conditions</a><br/>
+  </page>
+
+  <page tag="supprimer" cost="free_pt"  backtext="notext" hist="dohist" cost="free_pt">
+    Merci de confirmer la suppression de votre option TV.
+    Si vous supprimez votre option maintenant, vous perdez immediatement le benefice de celle-ci.
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_tv&amp;#desinscr_success,#desinscr_failure">Confirmer</a>
+  </page>
+  
+  <page tag="desinscr_success" backtext="notext" hist="donthist" cost="free_pt" nav="stop"
+	descr="Options TV: confirmation desnscription">
+    <title>Options TV: confirmation desnscription</title>
+    La suppression de votre option TV a bien ete prise en compte. 
+    Merci de votre appel.
+  </page>
+
+   <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag = "solde_insuff_gen" hist="dohist" cost="freept"
+        descr="option TV solde insuffisant">
+    <title>option TV solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>,
+    vous devez disposer de plus de 6E sur votre compte.<br/>
+    Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag = "solde_insuff_m6" hist="dohist" cost="freept"
+        descr="option TV solde insuffisant M6">
+    <title>option TV solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>,
+    vous devez disposer de plus de 6E
+    sur votre compte principal.<br/>
+    Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag = "solde_insuff_foot" hist="dohist" cost="freept"
+        descr="option TV solde insuffisant Foot">
+    <title>option TV solde insuffisant Foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>,
+    vous devez disposer de plus de 6E sur votre compte.<br/>
+    Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag = "solde_insuff_click" hist="dohist" cost="freept"
+        descr="option TV solde insuffisant Click">
+    <title>option TV solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>,
+    vous devez disposer de plus de 6E sur votre compte.<br/>
+    Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag = "generique" hist="dohist" cost="freept" descr="option_tv"
+        descr="Options TV: Menu">
+    <title>Options TV Menu</title>
+    Avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/>,
+    profitez de pres de 20 chaines, de tte la video en illimite et de tous les services d'Orange World pour 6E par mois<br/>
+    <a href = "#TV_info">+ d'infos</a><br/>
+    <a href = "#conditions">Conditions</a><br/>
+    <a href = "#souscrire">Souscrire</a>
+  </page>
+
+  <page tag = "TV_info" hist="dohist" backtext="notext" cost="freept"
+        descr="Opt. TV: + d'infos">
+    <title>+ d'infos</title>
+    Suivez les chaines nationales et celles de la TNT ainsi que toutes les videos actu,
+    musique, sport, humour, cinema en illimite 24h/24 et 7j/7.<br/>
+    <a href = "#souscrire">Souscrire</a>
+  </page>
+  
+
+    <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>  
+
+  <page tag = "conditions_gen" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P1/7">
+    <title>Conditions P1/7</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> valable
+    en France metropolitaine.<br/>
+    <a href = "#conditions_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "conditions_m6" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions M6 P1/7">
+    <title>Conditions M6 P1/7</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> valable
+    en France metropolitaine pour tout client d'une offre
+    prepayee Orange. Connexions illimitees pour acceder a pres de 20 chaines...<br/>
+    <a href = "#conditions_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "conditions_foot" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions Foot P1/7">
+    <title>Conditions Foot P1/7</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> valable
+    en France metropolitaine pour tout client d'une offre
+    prepayee Orange. Connexions illimitees pour acceder a pres de 20 chaines...<br/>
+    <a href = "#conditions_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "conditions_click" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions Click P1/7">
+    <title>Conditions Click P1/7</title>
+    Option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> valable
+    en France metropolitaine pour tout client mobicarte et click la mobicarte.
+    Connexions illimitees pour acceder a pres de 20 chaines...<br/>
+    <a href = "#conditions_suite_1" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_1"  hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P2/7">
+    <title>Conditions P2/7</title>
+    Acces et connexions illimitees 24H/24 aux services du Portail Orange World
+    (hors Gallery, Internet, streaming audio, Orange Messenger by Windows Live, et<br/>
+    <a href = "#conditions_suite_2" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_2" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P3/7">
+    <title>Conditions P3/7</title>
+    hors contenus et telechargements payants).
+    Acces et connexions illimitees a plus de 20 chaines de television et a toutes les videos proposees sur Orange World,<br/>
+    <a href = "#conditions_suite_3" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_3" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P4/7">
+    <title>Conditions P4/7</title>
+    Liste des chaines TV susceptible d'evolution.
+    Services accessibles sur reseaux et depuis un terminal compatibles. Voir details de l'option,<br/>
+    <a href = "#conditions_suite_4" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_4" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P5/7">
+    <title>Conditions P5/7</title>
+    Conditions Specifiques et liste des mobiles compatibles sur www.orange.fr.
+    Option non compatible avec l'option TV max, L'option sera valable<br/>
+    <a href = "#conditions_suite_5" >Suite</a>
+  </page>
+
+   <page tag="conditions_suite_5" cost="free_pt">
+    <redirect src="erl://svc_options_mobi:first_page?opt_tv&amp;#conditions_suite_5_supprimer&amp;#failure&amp;#failure&amp;#conditions_suite_5_souscrire&amp;#failure&amp;#failure"/>
+  </page>
+
+  <page tag = "conditions_suite_5_souscrire" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P6/7">
+    <title>Conditions P6/7</title>
+    31 jours consecutifs a compter de la date d'activation de l'option intervenant sous 48h a compter de la souscription et renouvelee tous les mois.<br/>
+    <a href = "#conditions_suite_6" >Suite</a>
+  </page>
+
+  <page tag = "conditions_suite_5_supprimer" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P6/7">
+    <title>Conditions P6/7</title>
+    31 jours consecutifs a compter de la date d'activation de l'option intervenant sous 48h a compter de la souscription et renouvelee tous les mois.<br/>
+    <a href = "#supprimer" >Supprimer l'option</a>
+  </page>
+
+
+  <page tag = "conditions_suite_6" hist="dohist" cost="freept"
+        descr="Opt. TV: Conditions P7/7">
+    <title>Conditions P7/7</title>
+    Le prix de l'option sera preleve sur le compte du client chaque mois sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href = "#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" cost="free_pt"
+        descr="Opt. TV: Souscription">
+    <title>Souscription</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_tv"/>.<br/>
+    Cette option est renouvelee chaque mois a date anniversaire pour 6E par mois.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_tv&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer</a>
+  </page>
+
+  <page tag = "success" hist="donthist" cost="freept" nav="stop"
+        descr="Confirmer souscription a Option TV">
+    <title>Confirmer souscription option TV</title>
+    Votre souscription a bien ete prise en compte.<br/>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera
+    activee dans 48 heures.<br/>
+    Merci de votre appel.
+  </page>
+  <page tag = "success_princ" hist="donthist" cost="freept" nav="stop"
+        descr="Confirmer souscription a Option TV">
+    <title>Confirmer souscription option TV</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_tv"/>
+    . Ce montant a ete debite de votre compte principal.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag = "success_bp" hist="donthist" cost="freept" nav="stop"
+        descr="Confirmer souscription a Option TV">
+    <title>Confirmer souscription option TV</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_tv"/>
+    . Ce montant a ete debite de votre compte bons plans.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag = "success_offert" hist="donthist" cost="freept" nav="stop"
+        descr="Confirmer souscription a Option TV">
+    <title>Confirmer souscription option TV</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_tv"/>
+    . Ce montant a ete debite de votre compte credit offert
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag = "success_dixit" hist="dohist" cost="freept" nav="stop"
+        descr="Confirmer souscription a Option TV">
+    <title>Confirmer souscription option TV</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour
+    <include src="erl://svc_options:print_option_price?opt_tv"/>
+    . Ce montant a ete debite de votre compte dixit
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+
+ <page tag="failure" backtext="notext" cost="free_pt" 
+		descr="Opt. TV: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+ <page tag="desinscr_failure" backtext="notext" cost="free_pt" 
+		descr="Opt. TV: Echec">
+    <title>Echec Suppression</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+
+<!--PROMO-->
+
+ <page tag="generique_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option TV menu generique promo">
+    <title>option TV menu generique promo</title>
+     Grace a votre promotion 1er rechargement, vous beneficiez de bons plans offerts...<br/>
+     <a href="#generique_promo2">Suite</a>
+  </page>
+
+ <page tag="generique_promo2" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option TV menu generique promo 2">
+    <title>option TV menu generique promo</title>
+    ..de votre compte bons plans offerts (suivi conso +). Si le credit est insuffisant, le montant du bon plan sera debite de votre compte principal..<br/>
+     <a href="#generique_promo3">Suite</a>
+  </page>
+
+ <page tag="generique_promo3" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option TV menu generique promo 2">
+   <title>option TV menu generique promo</title>
+    Avec l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> (d'une valeur de 6 euros)
+    profitez de plus de 20 chaines, de tte la video en illimite et de tous les services...<br/>
+    <a href="#infos_promo">Suite</a><br/>
+    <a href="#conditions_promo">Conditions</a><br/>
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+  <page tag="souscrire_promo" backtext="notext" hist="dohist" cost="free_pt"
+        descr="option TV page souscrire Promo">
+    <title>option TV page souscrire Promo</title>
+    Vous allez souscrire a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> (d'une valeur de 6E).
+    Cette option est renouvelee chaque mois a date anniversaire.
+    <a href="erl://svc_options_mobi:do_subscription?opt_tv&amp;#success_promo,#opt_deja_active,#solde_insuff_promo,#failure,#success_princ_promo,#success_bp_promo,#success_offert_promo,#success_dixit_promo">Confirmer</a>
+  </page>
+
+
+ <page tag="success_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option TV page apres confirmation">
+    <title>option TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour 6E.
+    Ce montant a ete debite de votre compte principal.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+
+  <page tag="success_princ_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option TV page apres confirmation">
+    <title>option TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour 6E.
+    Ce montant a ete debite de votre compte principal.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+
+  <page tag="success_bp_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option TV page apres confirmation">
+    <title>option TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> grace a votre promo.
+    6E ont ete debites de votre compte bons plans.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag="success_offert_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option TV page apres confirmation">
+    <title>option TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> pour 6E.
+    Ce montant a ete debite de votre compte credit offert.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag="success_dixit_promo" nav="end" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option TV page apres confirmation">
+    <title>option TV page apres confirmation</title>
+    Vous avez souscrit a l'option <include src="erl://svc_options:print_commercial_name?opt_tv"/> grace a votre promo.
+    6E ont ete debites de votre compte dixit.
+    Attention : votre option <include src="erl://svc_options:print_commercial_name?opt_tv"/> sera active dans 48 heures.
+  </page>
+  <page tag = "solde_insuff_promo" hist="dohist" cost="freept" nav="stop"
+        descr="option TV solde insuffisant">
+    <title>option TV solde insuffisant</title>
+    Bonjour, pour souscrire a l'option<include src="erl://svc_options:print_commercial_name?opt_tv"/>, vous devez disposer de plus de 6E
+    sur votre compte. Orange vous remercie de votre appel.
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+ <page tag="infos_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page infos promo">
+    <title>option TV page infos promo</title>
+..d'Orange World. Suivez les chaines nationales et celles de la TNT ainsi que toutes les videos actu, sport, humour, cinema en illimite 24h/24 et 7j/7.
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+ <page tag="conditions_promo" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    Option TV valable en France metropolitaine<br/>
+    <a href="#conditions_promo2">Suite</a>
+  </page>
+ <page tag="conditions_promo2" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    Acces et connexions illimitees 24H/24 aux services du Portail Orange World (hors Gallery, Internet, streaming audio, Orange Messenger by Windows Live, et<br/>
+    <a href="#conditions_promo3">Suite</a>
+  </page>
+ <page tag="conditions_promo3" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    hors contenus et telechargements payants). Acces et connexions illimitees a plus de 20 chaines de television et a toutes les videos proposees sur Orange World,<br/>
+    <a href="#conditions_promo4">Suite</a>
+  </page>
+ <page tag="conditions_promo4" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    Liste des chaines TV susceptible d'evolution. Services accessibles sur reseaux et depuis un terminal compatibles. Voir details de l'option,<br/>
+    <a href="#conditions_promo5">Suite</a>
+  </page>
+ <page tag="conditions_promo5" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    Conditions Specifiques et liste des mobiles compatibles sur www.orange.fr. Option non compatible avec l'option TV max, L'option sera valable<br/>
+    <a href="#conditions_promo6">Suite</a>
+  </page>
+ <page tag="conditions_promo6" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    31 jours consecutifs a compter de la date d'activation de l'option intervenant sous 48h a compter de la souscription et renouvelee tous les mois.<br/>
+    <a href="#conditions_promo7">Suite</a>
+  </page>
+ <page tag="conditions_promo7" backtext="notext" hist="dohist"
+        cost="free_pt" descr="option TV page conditions promo">
+    <title>option TV page conditions promo</title>
+    Le prix de l'option sera preleve sur le compte du client chaque mois sous reserve que le credit dudit compte soit suffisant.<br/>
+    <a href="#souscrire_promo">Souscrire</a>
+  </page>
+
+</pages>

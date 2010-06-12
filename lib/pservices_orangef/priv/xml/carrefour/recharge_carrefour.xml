@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Carrefour prepaid : Refill page">
+ <page hist="donthist">
+   <redirect src="erl://svc_recharge:is_open?#start&amp;#closed"/>
+  </page>
+
+  <page tag="start" hist="donthist" log="SCC_rechmen">
+    <redirect src="erl://svc_recharge:start_recharge"/>
+  </page>
+
+  <page tag="cag" menutext="notext" descr="Carrefour: Saisie code TR" backtext="notext" menutext="notext">
+    <title>Carrefour prepaid : Saisie code TR</title>
+    <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+      <prompt>Veuillez saisir le code de rechargement (14 chiffres)<br/>
+           0:Retour<br/>
+	   00:Menu
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <page tag="ussd1cag" hist="donthist" backtext="notext" menutext="notext" descr="Carrefour: Saisie code TR USSD PHASE1">
+  <title>Carrefour prepaid: Saisie code TR USSD PHASE1</title>
+  <form action="erl://svc_recharge:process_code">
+    <entry kind="digits">
+      <prompt>Veuillez saisir le code de rechargement (14 chiffres) sous
+       la forme #12*Code_a_14_chiffres#,puis appuyer sur Envoi.Attention, 3 essais seulement.
+      </prompt>
+    </entry>
+  </form>
+  </page>
+
+ <!-- Succes page with D4 -->
+  
+<page tag="sucess_cpte" descr="Carrefour : Validation rechargement" backtext="notext" menutext="notext">
+     <title>Rechargement Carrefour prepaid Reussi: Cpte_Princ</title>
+     Votre rechargement a ete pris en compte. Votre nouveau solde
+     est <include src="erl://svc_compte:print_solde?cpte_princ"/> Euros<br/>
+     <a href="#cag" key="0">Retour</a><br/>     
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+
+<page tag="sucess_cpte_z1" descr="Carrefour : Validation rechargement compte Z1" backtext="notext" menutext="notext">
+     <title>Rechargement Carrefour prepaid Reussi: Cpte_Princ</title>
+     Votre rechargement a ete pris en compte. Votre nouveau solde Compte Europe
+     est <include src="erl://svc_compte:print_solde?forf_carrefour_z1"/> Euros<br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+<page tag="sucess_cpte_z2" descr="Carrefour : Validation rechargement compte Z2" backtext="notext" menutext="notext">
+     <title>Rechargement Carrefour prepaid Reussi: Cpte_Princ</title>
+     Votre rechargement a ete pris en compte. Votre nouveau solde Compte Maghreb/Turquie/Amerique du Nord
+     est <include src="erl://svc_compte:print_solde?forf_carrefour_z2"/> Euros<br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+<page tag="sucess_cpte_z3" descr="Carrefour : Validation rechargement compte Z3" backtext="notext" menutext="notext">
+     <title>Rechargement Carrefour prepaid Reussi: Cpte_Princ</title>
+     Votre rechargement a ete pris en compte. Votre nouveau solde Compte Monde
+     est <include src="erl://svc_compte:print_solde?forf_carrefour_z3"/> Euros<br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+<page tag="sucess_rech_sms_ill" descr="Carrefour : Validation rechargement SMS Illimite" backtext="notext" menutext="notext">
+     <title>Rechargement Carrefour prepaid Reussi: SMS Illimite</title>
+     Votre rechargement a ete pris en compte. SMS Illimites valable jusqu'au
+     <include src="erl://svc_compte:print_fin_credit_default?cpte_sms_ill&amp;dmy"/><br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+
+<page tag="sucess_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="sucess_cpte_sms">
+  <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="weinf_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_weinf">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_weinf_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_europe_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_maghreb_ss_souscription">
+    <redirect src="#sucess_cpte"/>
+ </page>
+
+<page tag="succes_europe">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_maghreb">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_promo_sms">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="sucess_cpte_promo_sms">
+   <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="succes_erech_smsmms">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="europe_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="maghreb_deja_actif">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<page tag="recharge_illimite_media">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+ <page tag="recharge_limite_7">
+    <redirect src="#sucess_cpte"/>
+</page>
+
+<!-- Error pages -->
+  <page tag="closed" descr="Recharge carrefour: Fermeture">
+    <title>Recharge carrefour: Fermeture</title>
+    Service interrompu entre 23h30 et 5h00. Reessayer ulterieurement.
+  </page>
+
+  <page tag="bad_code" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement Carrefour: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+
+  <page tag="bad_code_ph2" hist="donthist" backtext="notext" menutext="notext" nav="end" descr="Rechargement carrefour: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+  
+<page tag="bad_code_ph1" backtext="notext" menutext="notext"  descr="Rechargement carrefour: Code de rechargment incorrect">
+    <title>Reject : bad code</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+</page>
+
+  <page tag="system_failure" nav="end"  descr="Rechargement carrefour: Rechargement temporairement indisponible"
+    backtext="notext" menutext="notext">
+    <title>Reject : system failure</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+ <page tag="badprofil" nav="end" descr="not cmo" backtext="notext" menutext="notext">
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+
+  <page tag="incompatible" nav="end" descr="Rechargement carrefour: recharge incompatible"
+  backtext="notext" menutext="notext">
+    <title>Reject : recharge incompatible avec credit</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+
+  <page tag="already_used" nav="end" descr="Rechargement carrefour: TR deja utilise"
+  backtext="notext" menutext="notext">
+    <title>Ticket deja utilise</title>
+    Votre code de rechargement a deja ete utilise. Veuillez verifier le solde de votre compte.<br/>
+     <a href="#cag" key="0">Retour</a><br/>
+     <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+
+  <page tag="promo" backtext="notext" menutext="notext" nav="end" descr="Rechargement carrefour: recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Ce numero est incorrect. Veuillez, de nouveau, entrer les 14 chiffres situes au dos de votre recharge Carrefour Mobile
+    <br/>
+    <a href="#cag" key="0">Retour</a><br/>
+    <a href="selfcare_carrefour_pp.xml" key="00">Menu</a>
+  </page>
+
+</pages>

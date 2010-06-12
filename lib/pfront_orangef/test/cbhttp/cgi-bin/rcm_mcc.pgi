@@ -1,0 +1,38 @@
+#!/bin/sh
+
+read BODY
+MSISDN=""
+ORDRE=""
+IMSI=""
+##echo ${BODY%%[=]*}
+x=`expr "$BODY" : '.*MSISDN=\([0-9]*\)'` && MSISDN="$x"
+y=`expr "$BODY" : '.*ORDRE=\([0-Z]*\)'` && ORDRE="$y"
+z=`expr "$BODY" : '.*IMSI=\([0-Z]*\)'` && IMSI="$z"
+
+function mcc {
+    case $MSISDN in
+	*151)
+	    echo "STATUT=0152;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+	*152)
+	    echo "STATUT=0401;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=;STATUT_LIBELLE=error";;
+	*153)
+	    echo "STATUT=0499;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+	*154)
+	    echo "STATUT=0301;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+	*155)
+	    echo "STATUT=0302;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+	*156)
+	    echo "STATUT=0303;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+	*157)
+	    echo "STATUT=0314;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=";;
+
+	*)
+	    echo "STATUT=0000;MSISDN=$MSISDN;IMSI=$IMSI;CODE_COURT=1234";;
+    esac
+}
+
+cat <<EOF
+Content-Type: text/xml
+
+`mcc`
+EOF

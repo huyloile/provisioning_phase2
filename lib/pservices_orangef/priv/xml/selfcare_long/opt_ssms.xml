@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option soiree SMS">
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_ssms&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+
+  <page tag="offre_incomp" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option option soiree SMS page offre incompatible">
+    <title>option option soiree SMS page offre
+    incompatible</title>
+    Bonjour,vous ne pouvez pas souscrire a l'option Soiree SMS.Pour +d'infos
+    contactez votre service clients Orange mobile au 722 depuis votre mobile
+    (0,37 E/min). Merci de votre appel.
+  </page>
+  
+  <page tag="opt_deja_active" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS deja active">
+    <title>option soiree SMS deja active</title>
+    Bonjour, votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> est
+    deja activee. Vous ne pourrez
+    resouscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> qu'une fois
+    votre option en cours epuisee.
+  </page>
+    
+    <page tag="solde_insuff" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#solde_insuff_gen,35=#solde_insuff_m6,39=#solde_insuff_foot,40=#solde_insuff_foot,41=#solde_insuff_foot,42=#solde_insuff_foot,43=#solde_insuff_foot,44=#solde_insuff_foot,51=#solde_insuff_click,default=#solde_insuff_gen"/>
+  </page>
+
+  <page tag="solde_insuff_gen" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS solde insuffisant">
+    <title>option soiree SMS solde insuffisant</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ssms"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_m6" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS solde insuffisant M6">
+    <title>option soiree SMS solde insuffisant M6</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ssms"/> sur votre
+    compte principal. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_foot" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS solde insuffisant foot">
+    <title>option soiree SMS solde insuffisant foot</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ssms"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="solde_insuff_click" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS solde insuffisant Click">
+    <title>option soiree SMS solde insuffisant Click</title>
+    Bonjour, pour souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>,
+    vous devez disposer de plus de
+    <include src="erl://svc_options:print_option_price?opt_ssms"/> sur votre
+    compte. Orange vous remercie de votre appel.<br/>
+    <a href="recharge.xml">Recharger votre compte</a>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS menu generique">
+    <title>option soiree SMS menu generique</title>
+    Envie ou besoin de communiquer avec vos proches par SMS en soiree? Avec
+    l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> c'est
+    seulement <include src="erl://svc_options:print_option_price?opt_ssms"/>.<br/>
+    <a href="#plus_dinfos">+ d'infos</a><br/>
+    <a href="#conditions">Conditions</a><br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="plus_dinfos" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS page + d'infos">
+    <title>option soiree SMS page + d'infos</title>
+    Avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>, votre
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> (de 21h a minuit)
+    ne vous coute
+    que <include src="erl://svc_options:print_option_price?opt_ssms"/> pour envoyer
+    vos SMS en France metropolitaine.<br/>
+    <a href="#souscrire">Souscrire</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="conditions" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS page conditions P1/3">
+    <title>option soiree SMS page conditions</title>
+    Offre dans la limite de 100 SMS/33MMS (hors SMS/MMS surtaxes)
+    vers tous les mobiles en France metropo à utiliser entre 21h et
+    minuit le jour de la souscription...<br/>
+    <a href="#conditions_2">Suite</a>
+  </page>
+
+<page tag="conditions_2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS page conditions P2/3">
+    <title>option soiree SMS page conditions</title>
+    SMS utilisables en MMS sur la base de 1 MMS = 3 SMS.
+    MMS video disponible depuis un terminal compatible.<br/>
+    <a href="#conditions_3">Suite</a>
+  </page>
+
+<page tag="conditions_3" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS page conditions P3/3">
+    <title>option soiree SMS page conditions</title>
+    Option non disponible les jours feries et veilles de jours feries<br/>
+    <a href="#souscrire">Souscrire</a>
+  </page>
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option soiree SMS page souscrire">
+    <title>option soiree SMS page souscrire</title>
+    Vous allez souscrire a l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> pour
+    <include src="erl://svc_options:print_option_price?opt_ssms"/>.<br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ssms&amp;#success,#opt_deja_active,#solde_insuff,#failure,#success_princ,#success_bp,#success_offert,#success_dixit">Confirmer
+    </a>
+  </page>
+
+  <page tag="success" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option soiree SMS page apres confirmation">
+    <title>option soiree SMS page apres confirmation</title>
+    Votre souscription a bien ete prise en compte. Dans quelques instants,
+    votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> sera activee.
+    Merci de votre appel.
+  </page>
+  
+  <page tag="success_princ" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option soiree SMS page apres confirmation">
+    <title>option soiree SMS page apres confirmation</title>
+    Vous avez souscrit au bon plan soiree pour
+    <include src="erl://svc_options:print_option_price?opt_ssms"/>.
+    Ce montant a ete debite de votre compte principal. Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_bp" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option soiree SMS page apres confirmation">
+    <title>option soiree SMS page apres confirmation</title>
+    Vous avez souscrit au bon plan soiree pour
+    <include src="erl://svc_options:print_option_price?opt_ssms"/>.
+    Ce montant a ete debite de votre compte bons plans. Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_offert" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option soiree SMS page apres confirmation">
+    <title>option soiree SMS page apres confirmation</title>
+    Vous avez souscrit au bon plan soiree pour
+    <include src="erl://svc_options:print_option_price?opt_ssms"/>.
+    Ce montant a ete debite de votre compte credit offert. Dans quelques instants, votre bon plan sera activee.
+  </page>
+  <page tag="success_dixit" nav="end" backtext="notext" hist="dohist" cost="free_pt" nav="stop"
+	descr="option soiree SMS page apres confirmation">
+    <title>option soiree SMS page apres confirmation</title>
+    Vous avez souscrit au bon plan soiree pour
+    <include src="erl://svc_options:print_option_price?opt_ssms"/>.
+    Ce montant a ete debite de votre compte dixit. Dans quelques instants, votre bon plan sera activee.
+  </page>
+
+  <page tag="failure" backtext="notext" cost="free_pt" descr="Opt. SMS: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+  
+  <page tag="nouveaute" cost="free_pt" descr="Option Soiree SMS page
+	nouveaute">
+    <title>Option Soiree SMS nouveaute</title>
+    Du <include
+    src="erl://svc_options:print_commercial_start_date?opt_ssms&amp;dm"/> au
+    <include
+     src="erl://svc_options:print_commercial_end_date?opt_ssms&amp;dmy"/> : profitez
+     d'une
+     <include src="erl://svc_options:print_commercial_name?opt_ssms"/> de 21h a minuit pour
+     seulement
+     <include src="erl://svc_options:print_option_price?opt_ssms"/>/soiree
+     avec l'option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>.<br/>
+     <include src="erl://svc_options_mobi:proposer_lien?opt_ssms&amp;Souscrire=opt_ssms.xml&amp;nobr"/>
+  </page>
+  
+  <page tag="restitution_avec_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Soiree SMS avec
+	cred">
+    <title>Page de restitution a l'option Soiree SMS avec cred</title>
+    Vous avez jusqu'a ce soir minuit pour utiliser
+    les <include src="erl://svc_options:print_balance?opt_ssms&amp;sms"/>SMS
+    de votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/>.
+  </page>
+ 
+  <page tag="restitution_sans_cred" cost="free_pt" hist="donthist"
+	volatile="true" descr="Page de restitution a l'option Soiree SMS sans
+	cred">
+    <title>Page de restitution a l'option Soiree SMS sans cred</title>
+    Votre option
+    <include src="erl://svc_options:print_commercial_name?opt_ssms"/> est
+    actuellement epuisee.<br/>
+    <include src="erl://svc_options_mobi:proposer_lien?opt_ssms&amp;Resouscrire a l'option Soiree SMS=opt_ssms.xml&amp;nobr"/>
+  </page>
+
+</pages>
+
+ 

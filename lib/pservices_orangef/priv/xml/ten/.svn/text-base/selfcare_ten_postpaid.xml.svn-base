@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page for Ten Postpaid">
+
+  <page>
+   <redirect src="http://ten_postpaid_prod/suiviconso.jsp"/>
+  </page>
+
+</pages>

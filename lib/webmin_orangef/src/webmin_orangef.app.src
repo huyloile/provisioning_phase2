@@ -1,0 +1,29 @@
+{ application, webmin_orangef,
+  [ {description, "Cellcube O&M WWW interface for Orange France"},
+    {vsn, "%VSN_webmin_orangef%"},
+    {modules, %APP_MODULES%},
+    {registered, []},
+    {applications, [kernel, stdlib, mnesia, oma, posmon]},
+    {env,
+     [{editable_parameters,[{pservices_orangef, [roaming_camel_codes,
+                       				roaming_ansi_codes,
+						spider_table,						
+                       				spider_dme_table,
+                       				spider_infos_comp,
+                       				spider_postpaid_table,
+						asmetier_opt_cmo,
+						asmetier_opt_postpaid]},
+                            {handsim, [identities]}]},
+      {stats_refresh_period_of, 6},
+      {stats_views_of,
+       %% List of views for webmin_of_stats.
+       %% Each view is a list of counters.
+       %% List of {ViewName::string(),
+       %%          Include::[{Class,Mod,Type}],
+       %%          Exclude::[{Class,Mod,Type}]}.
+       [
+	 {"license",
+                 [{license_info,'_','_'},{license,'_','_'}],[]}
+	]}
+     ]}
+    ]}.

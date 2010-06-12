@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Monacell comptebloque : Bons plans page">
+ <page hist="donthist">
+ <redirect src="erl://svc_monacell:redirect_by_bonus?monacell_comptebloqu&amp;opt_sms_illimite&amp;#bons_plans_menu&amp;#deja_souscrit&amp;#erreur_technique"/>
+ </page>
+ 
+<page tag="deja_souscrit" descr="Bonus deja souscrit" backtext="notext" menutext="notext">
+  <title>Bonus deja souscrit</title>
+  Vous beneficiez deja du bonus pour le mois en cours<br/>
+  <a href="selfcare_monacell_cb.xml" key="00">Menu</a>
+ </page>
+ 
+ <page tag="bons_plans_menu" descr="Bons plans homepage">
+  <title>Monacell: Bons plans menu</title>
+  Bon plan 1 numero SMS illimite : pour 5 euros, envoyez des SMS en illimite 24H/24, 7J/7 vers un
+  numero pendant 31 jours.<br/><br/>
+  <a href="#souscrire">Souscrire</a><br/>
+  <a href="#plus_info">Plus d'infos</a><br/>
+  <a href="#mention_legale_0">Mentions legales</a>
+ </page>
+
+ <page tag="souscrire" descr="Choisir numero prefere" backtext="notext" menutext="notext">
+    <title>Choisir numero prefere</title>
+    <form action="erl://svc_monacell:verif_num?monacell_comptebloqu&amp;opt_sms_illimite&amp;#saisie_correcte&amp;#saisie_incorrecte&amp;#bons_plans_menu&amp;selfcare_monacell_cb.xml">
+      <entry kind="digits" type="ccnumber">
+        <prompt>
+	    Merci de bien vouloir taper les 10 chiffres du numero de votre choix. C'est a vous !<br/>
+	    0:Retour<br/>
+	    00:Menu
+	</prompt>
+      </entry>
+    </form>
+ </page>
+
+ <page tag="saisie_correcte" descr="Numero saisi correct" menutext="notext" backtext="notext">
+    <title>Numero saisi correct</title>
+    Le numero que vous venez de choisir est le <include src="erl://svc_options:print_numero_sms_illimite"/>,
+    merci de confirmer ce choix.<br/>
+    <a href="erl://svc_monacell:do_confirm?opt_sms_illimite&amp;#confirm_ok&amp;#confirm_nok&amp;#erreur_technique">Confirmer</a><br/>
+    <a href="#souscrire">Recommencer</a><br/>
+ </page>
+
+ <page tag="saisie_incorrecte" descr="Numero saisi incorrect" menutext="notext" backtext="notext">
+    <title>Numero saisi incorrect</title>
+    Le numero saisi n'est pas reconnu comme un numero mobile Monaco Telecom ou d'un operateur en France metropolitaine.<br/>
+    <a href="#souscrire">Recommencer</a><br/>
+ </page>
+
+ <page tag="confirm_ok" descr="Confirm OK" backtext="notext" menutext="notext">
+    <title>Confirm OK</title>
+    Forfait Bloque Monaco Telecom : vous beneficiez des a present de SMS illimite vers le
+    <include src="erl://svc_options:print_numero_sms_illimite"/> jusqu'au
+    <include src="erl://svc_options:print_date_end_opt?opt_sms_illimite"/><br/>
+    <a href="selfcare_monacell_cb.xml" key="00">Menu</a>
+ </page>
+
+ <page tag="confirm_nok" descr="Confirm NOK Solde insuffisant" backtext="notext" menutext="notext">
+    <title>Confirm NOK Solde insuffisant</title>
+    Le solde de votre compte ne permet pas la souscription a ce bonus: Il faut disposer de 5 euros minimum sur votre compte rechargeable. <br/>
+    <a href="selfcare_monacell_cb.xml" key="00">Menu</a>
+ </page>
+
+ <page tag="erreur_technique" descr="Confirm erreur probleme technique" backtext="notext" menutext="notext">
+    <title>Confirm erreur probleme technique</title>
+    Probleme technique<br/>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement. Vous allez quitter le *144#.<br/>
+    <a href="#saisie_correcte" key="0">Retour</a><br/>
+    <a href="selfcare_monacell_cb.xml" key="00">Menu</a>
+ </page> 
+
+ <page tag="plus_info" descr="Plus d'info" menutext="notext" backtext="notext">
+    <title>Plus d'info</title>
+    Nouveau ! Avec le bon plan 1 no SMS illimite, envoyez des SMS en illimite vers 1 numero
+    pour 5 euros. <br/>
+    <a href="#plus_info_1">Suite</a><br/>
+    <a href="#bons_plans_menu" key="0">Retour</a>
+ </page>
+
+ <page tag="plus_info_1" descr="Plus d'info suite" menutext="notext" backtext="notext">
+    <title>Plus d'info suite</title>
+    Le numero choisi est valable 31 jours et ne peut pas etre change apres la souscription du bon plan.<br/>
+    <a href="#plus_info" key="0">Retour</a>
+ </page>
+ 
+ <page tag="mention_legale_0" descr="Mentions legales page 0" menutext="notext" backtext="notext">
+    <title>Mentions legales page 0</title>
+    Option valable a Monaco et en France metropolitaine, reservee aux clients Forfait Bloque. Option valable 31 jours a compter de la souscription. <br/>
+    <a href="#mention_legale_1">Suite</a><br/>
+    <a href="#bons_plans_menu" key="0">Retour</a>    
+ </page>
+
+ <page tag="mention_legale_1" descr="Mentions legales page 1" menutext="notext" backtext="notext">
+    <title>Mentions legales page</title>
+    SMS illimites vers 1 seul et meme no de mobile Monaco Telecom ou d'un operateur France metropolitaine
+    (hors SMS surtaxes et non convertibles en MMS).<br/>
+    <a href="#mention_legale_2">Suite</a><br/>
+    <a href="#mention_legale_0" key="0">Retour</a>
+ </page>
+
+ <page tag="mention_legale_2" descr="Mentions legales page 3" menutext="notext" backtext="notext">
+    <title>Mentions legales page</title>
+    Le prix de l'option est preleve sur le compte rechargeable du client sous reserve d'un credit suffisant. Souscription au 220 et le *144#.<br/>
+    <a href="#mention_legale_1" key="0">Retour</a>
+ </page>
+
+
+
+ <page tag="system_failure" nav="end"  descr="Rechargement monacell: Rechargement temporairement indisponible">
+    <title>Reject : system failure</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.
+ </page>
+ 
+  <page tag="incompatible" backtext="notext" nav="end" descr="Rechargement monacell: recharge incompatible">
+    <title>Reject : recharge incompatible avec credit</title>
+    Rechargement refuse. Pour utiliser cette recharge, vous devez
+    d'abord epuiser votre credit actuel.
+  </page>
+
+  <page tag="promo" backtext="notext" nav="end" descr="Rechargement monacell: recharge promotionnelle">
+    <title>Reject : rech promo</title>
+    Votre recharge promotionnelle ne vous permet pas de recharger un
+    compte epuise ou perime. Merci.
+  </page>
+
+</pages>

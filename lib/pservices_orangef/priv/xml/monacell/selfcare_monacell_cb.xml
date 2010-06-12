@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Monacell selfcare pages">
+
+  <page descr="Monacell prepaid: redir by USSD level">
+   <redirect src="erl://svc_util:redirect_size?130&amp;#sc_level12&amp;#sc_level3"/>
+  </page>
+  
+  <page tag="sc_level12" descr="Monacell compte bloque:Redirection fonction etat compte princ">
+   <redirect src="erl://svc_monacell:select_home_niv1"/>
+  </page>
+
+  <!--Niv 1-->
+
+ <page tag="ac_ac_niv1" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 180">
+  <title>Monacell suivi conso 180 :Niv 1 cpte princ and cpte forfait actif</title>
+  Monaco Telecom Bonjour, au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> sur votre forfait principal. Solde compte rechargeable = <include src="erl://svc_compte:print_solde?cpte_princ"/> euros.<br/>
+  <a href="recharge_monacell_cb.xml">Recharger</a>
+  <include src="erl://svc_of_plugins:proposer_lien?monacell_comptebloqu&amp;opt_sms_illimite&amp;Bons plans&amp;bons_plans_monacell_cb.xml&amp;br"/>
+  </page>
+
+ <page tag="ep_ac_niv1" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 180">
+  <title>Monacell suivi conso 180 :Niv 1 cpte princ actif and cpte forfait epuise</title>
+  Monaco Telecom Bonjour, au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> votre forfait principal est epuise. Solde compte rechargeable = <include src="erl://svc_compte:print_solde?cpte_princ"/> euros.<br/>
+  <a href="recharge_monacell_cb.xml">Recharger</a>
+  <include src="erl://svc_of_plugins:proposer_lien?monacell_comptebloqu&amp;opt_sms_illimite&amp;Bons plans&amp;bons_plans_monacell_cb.xml&amp;br"/>
+  </page>
+
+  <page tag="ac_ep_niv1" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 180">
+  <title>Monacell suivi conso 180 :Niv 1 cpte princ epuise and cpte forfait actif</title>
+  Monaco Telecom Bonjour, au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> sur votre forfait principal. Votre compte rechargeable est epuise.<br/> 
+  <a href="recharge_monacell_cb.xml">Recharger</a>
+  <include src="erl://svc_of_plugins:proposer_lien?monacell_comptebloqu&amp;opt_sms_illimite&amp;Bons plans&amp;bons_plans_monacell_cb.xml&amp;br"/>
+  </page>
+  
+ <page tag="ep_ep_niv1" backtext="notext" menutext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso epuise 180">
+  <title>Monacell suivi conso epuise 180 : Niv 1</title>
+  Votre compte principal est epuise merci de le recharger.<br/>
+  <a href="recharge_monacell_cb.xml">Recharger</a>
+  <include src="erl://svc_of_plugins:proposer_lien?monacell_comptebloqu&amp;opt_sms_illimite&amp;Bons plans&amp;bons_plans_monacell_cb.xml&amp;br"/>
+ </page>
+
+<!--Niv2-->
+
+ <page tag="ac_ac_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 130">
+  <title>Monacell suivi conso 130 :Niv 2 cpte princ and cpte forfait actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> sur votre forfait principal.
+  Solde compte rechargeable = <include src="erl://svc_compte:print_solde?cpte_princ"/> euros.<br/>
+ </page>
+
+ <page tag="ep_ac_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 130">
+  <title>Monacell suivi conso 130 :Niv 2 cpte princ actif and cpte forfait epuise</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> votre forfait principal est epuise.
+  Solde compte rechargeable = <include src="erl://svc_compte:print_solde?cpte_princ"/> euros.<br/>
+ </page>
+
+ <page tag="ac_ep_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 130">
+  <title>Monacell suivi conso 130 :Niv 2 cpte princ epuise and cpte forfait actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> a <include src="erl://svc_util_of:print_today_datetime?hm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> sur votre forfait principal.
+  Votre compte rechargeable est epuise<br/>
+ </page>
+
+ <page tag="ep_ep_niv2" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso epuise 130">
+  <title>Monacell suivi conso epuise 130 : Niv 2</title>
+  Votre compte principal est epuise merci de le recharger.<br/>
+ </page>
+
+<!--Niv3-->
+  
+  <page tag="sc_level3" descr="Monacell prepaid:Redirection fonction type de terminal">
+   <redirect src="erl://svc_monacell:select_home_niv3"/>
+  </page>
+  
+  <page tag="ac_ac_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 64">
+  <title>Monacell suivi conso 64:Niv 3 cpt princ actif and cpt forfait actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> et <include src="erl://svc_compte:print_solde?cpte_princ"/> euros de recharge<br/>
+  </page>
+
+  <page tag="ep_ac_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 64">
+  <title>Monacell suivi conso 64:Niv 3 cpt princ actif and cpt forfait epuise</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> votre forfait est epuise <include src="erl://svc_compte:print_solde?cpte_princ"/> euros de recharge<br/>
+  </page>
+
+  <page tag="ac_ep_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso 64">
+  <title>Monacell suivi conso 64:Niv 3 cpt princ epuise and cpt forfait actif</title>
+  Au <include src="erl://svc_util_of:print_today_datetime?dm"/> il vous reste <include src="erl://svc_compte:print_solde_hour_min?cpte_forf_monaco_fb"/> et 0 euros de recharge<br/>
+  </page>
+
+  <page tag="ep_ep_niv3" backtext="notext" hist="donthist" cost="free_pt"
+  volatile="true" descr="Monacell suivi conso epuise 64">
+  <title>Monacell suivi conso epuise 64 :Niv 3</title>
+  Votre compte principal est epuise merci de le recharger.<br/>
+ </page>
+
+  <page tag="notidentified">
+    <redirect src="erl://svc_util:redirect_size?130&#notidentified_long&#notidentified_short"/>
+  </page>
+
+  <page tag="notidentified_long" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Monacell Prepaid : not identified">
+    <title>Monacell Prepaid : not identified</title>
+    Compte Monacell Prepaid suspendue: merci de vous rendre dans un point de vente
+    Monacell Prepaid avec une piece d'identite.
+  </page>
+
+  <page tag="notidentified_short" nav="end" log="SC_Enotid" cost="system_free_pt" descr="Reject : Monacell Prepaid not identified">
+    <title>Monacell Prepaid : not identified</title>
+    Compte suspendue: votre identite ne nous est pas parvenue.
+  </page>
+
+  <page tag="sursitaire">
+    <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+
+  <page tag="sursitaire_long" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Monacell Prepaid :Cpte sursitaire">
+    <title>Monacell Prepaid : Cpte sursitaire</title>
+    Compte Monacell Prepaid<br/>
+    La date limite de rechargement est depassee. Votre Compte Monacell Prepaid
+    est definitivement inutilisable.
+  </page>
+
+  <page tag="sursitaire_short" nav="end" log="SC_Esurs" cost="system_free_pt" descr="Monacell Prepaid : Cpte sursitaire">
+    <title>Monacell Prepaid : Cpte sursitaire</title>
+    Votre Compte est definitivement inutilisable.</page>
+
+  <page tag="suspendu">
+    <redirect src="erl://svc_util:redirect_size?130&#suspendu_long&#suspendu_short"/>
+  </page>
+
+  <page tag="suspendu_long" nav="end" log="SC_Esus" cost="system_free_pt" descr="Monacell Prepaid : Cpte suspendu">
+    <title>Monacell Prepaid : Cpte suspendu</title>
+    Compte Monacell Prepaid suspendu : vos appels sont bloques.<br/>
+    Veuillez contacter le service-clients Monacell Prepaid.</page>
+
+  <page tag="suspendu_short" nav="end" log="SC_Esus" cost="system_free_pt" descr="Monacell Prepaid : Cpte suspendu">
+    <title>Monacell Prepaid : Cpte suspendu</title>
+    Votre Compte est suspendu : vos appels sont bloques.<br/></page>
+
+  <page tag="resilie">
+   <redirect src="erl://svc_util:redirect_size?130&#sursitaire_long&#sursitaire_short"/>
+  </page>
+ 
+</pages>

@@ -1,0 +1,334 @@
+<!-- plan tarifaire change pages -->
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="free_pt">
+    <title>PT change</title>
+    <redirect src="erl://svc_plan_tarif:plans_to_change"/>
+  </page>
+
+<!-- Is Classique -->
+  <page tag="change_pt_is_classique" cost="free_pt" backtext="notext" descr="plan tarifaire: menu classique">
+    <title>plan tarifaire: menu </title>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">
+    choisir nouveau plan classique</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_soir_we">
+    choisir plan soir et week end</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+    <a href="#classique_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan gratuites.
+  </page>
+
+  <page tag="classique_infos" cost="free_pt" descr="plan tarifaire: Menu Infos classique">
+    <title>plan tarifaire: Menu Infos classique</title>
+    <a href="#infos_class_v2">nouveau plan classique</a><br/>
+    <a href="#infos_soir_we">plan soir et we</a><br/>
+    <a href="#infos_orange_plug">plan Orange Plug</a><br/>
+    <a href="#infos_classique">ancien plan classique</a>
+   </page>
+
+<!-- Is sur mesure -->
+
+  <page tag="change_pt_is_surmesure" cost="free_pt" backtext="notext" descr="plan tarifaire: menu classique">
+    <title>plan tarifaire: menu classique</title>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_soir_we">
+    choisir plan soir et week end</a><br/>
+   <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">
+    choisir nouveau plan classique</a><br/>
+    <a href="#sur_mesure_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan ou de plage gratuites.
+  </page>
+
+  <page tag="sur_mesure_infos" cost="free_pt" descr="plan tarifaire: Menu Infos sur mesure">
+    <title>plan tarifaire: Menu Infos sur mesure</title>
+    <a href="#infos_soir_we">plan soir et we</a><br/>
+    <a href="#infos_orange_plug">plan Orange Plug</a><br/>
+    <a href="#infos_class_v2">nouveau plan classique</a><br/>
+    <a href="#infos_sur_mesure">plan sur mesure</a>
+   </page>
+
+<!-- Is sur Orange_plug -->
+
+  <page tag="change_pt_is_orange_plug" cost="free_pt" backtext="notext" descr="plan tarifaire: menu Orange plug" hist="donthist">
+    <title>plan tarifaire: menu Orange plug</title>
+   <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">
+    choisir nouveau plan classique</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_soir_we">choisir plan soir et we</a><br/>
+    <a href="#orange_plug_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan gratuites.
+ </page>
+
+  <page tag="orange_plug_infos" cost="free_pt" descr="plan tarifaire: Menu Infos Orange plug">
+    <title>plan tarifaire: Menu Infos Orange plug</title>
+     <a href="#infos_orange_plug">plan Orange plug</a><br/>
+     <a href="#infos_soir_we">plan soir et we</a><br/>
+     <a href="#infos_class_v2">nouveau plan classique</a>
+   </page>
+
+<!-- Is soir et week end -->
+
+  <page tag="change_pt_is_soir_we" cost="free_pt" backtext="notext" descr="plan tarifaire: menu soir et week end">
+    <title>plan tarifaire: menu soir et week end</title>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">
+    choisir nouveau plan classique</a><br/>
+    <a href="#soir_we_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan ou de plage gratuites.
+  </page>
+
+  <page tag="soir_we_infos" cost="free_pt" descr="plan tarifaire: Menu Infos sur mesure">
+    <title>plan tarifaire: Menu Infos sur mesure</title>
+    <a href="#infos_orange_plug">plan Orange Plug</a><br/>
+    <a href="#infos_soir_we">plan soir et we</a><br/>
+    <a href="#infos_class_v2">nouveau plan classique</a>
+   </page>
+
+<!-- Is Classique V2 -->
+
+  <page tag="change_pt_is_class_v2" cost="free_pt" backtext="notext" descr="plan tarifaire: menu classique V2">
+    <title>plan tarifaire: menu classique V2</title>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_soir_we">
+    choisir plan soir et week end</a><br/>
+    <a href="erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+    <a href="#class_v2_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan ou de plage gratuites.
+  </page>
+
+  <page tag="class_v2_infos" cost="free_pt" descr="plan tarifaire: Menu Infos Classique V2">
+    <title>plan tarifaire: Menu Infos classique V2</title>
+    <a href="#infos_orange_plug">plan Orange Plug</a><br/>
+    <a href="#infos_soir_we">plan soir et we</a><br/>
+    <a href="#infos_class_v2">nouveau plan classique</a>
+   </page>
+<!-- Plug Noel -->
+  <page tag="change_pt_is_plug_noel" cost="free_pt" backtext="notext" descr="plan tarifaire: menu plug série limitée">
+    <title>plan tarifaire: menu </title>
+     <a href="erl://svc_plan_tarif:confirm_leave_noel?erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">choisir nouveau plan classique</a><br/>
+    <a href="erl://svc_plan_tarif:confirm_leave_noel?#change_pt_confirm_to_soir_we">
+    choisir plan soir et week end</a><br/>
+    <a href="erl://svc_plan_tarif:confirm_leave_noel?erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+    <a href="#plug_noel_infos">plus d'informations<br/></a>
+    Deux premières modifications de plan gratuites.
+  </page>
+ 
+ <page tag="plug_noel_infos" cost="free_pt" descr="plan tarifaire: Menu Infos noel">
+    <title>plan tarifaire: Menu Infos noel</title>
+    <a href="#infos_soir_we">plan soir et week end</a><br/>
+    <a href="#infos_class_v2">nouveau plan Classique</a><br/>
+    <a href="#infos_plug_noel">plan Orange plug série limité</a>
+   </page>
+
+   <page tag="confirm_leave_plug_noel" cost="free_pt" nav="stop" descr="plan tarifaire: Confirmation arrêt plan plug vacances">
+    <title>Quitte plan plug vacances</title>
+    Vous avez souscrit à l'option Orange plug vacances
+    En changeant de plan, vous perdez le bénéfice de cette option.<br/>
+    <include src="erl://svc_plan_tarif:print_confirm_noel"/> 
+  </page>
+
+<!-- soir et we série limitée-->
+
+  <page tag="change_pt_is_noel" cost="free_pt" backtext="notext" descr="plan tarifaire: menu soir et we série limitée">
+    <title>plan tarifaire: menu </title>
+    <a href="erl://svc_plan_tarif:confirm_leave_noel?#change_pt_confirm_to_soir_we">
+     choisir plan soir et week end</a><br/>
+    <a href="erl://svc_plan_tarif:confirm_leave_noel?erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_orange_plug">choisir plan Orange plug</a><br/>
+     <a href="erl://svc_plan_tarif:confirm_leave_noel?erl://svc_plan_tarif:verif_credit?#change_pt_confirm_to_class_v2">choisir nouveau plan classique</a><br/>
+     Deux premières modifications de plan gratuites.
+  </page>
+ 
+ <page tag="noel_infos" cost="free_pt" descr="plan tarifaire: Menu Infos noel">
+    <title>plan tarifaire: Menu Infos noel</title>
+    <a href="#infos_soir_we">plan soir et week end</a><br/>
+    <a href="#infos_orange_plug">plan Orange Plug</a><br/>
+    <a href="#infos_class_v2">nouveau plan Classique</a><br/>
+    <a href="#infos_noel">plan soir et week end série limitée</a>
+   </page>
+
+  <page tag="confirm_leave_noel" cost="free_pt" nav="stop" descr="plan tarifaire: Confirmation arrêt plan noel">
+    <title>Quitte plan noel</title>
+    Vous avez souscrit à l'option mobicarte week-end infini.
+    En changeant de plan,
+    vous perdez le bénéfice de cette option.<br/>
+    <include src="erl://svc_plan_tarif:print_confirm_noel"/><br/>
+  </page>
+
+<!-- Confirmation -->
+
+    <page tag="change_pt_confirm_to_class_v2" cost="free_pt" nav="stop" descr="plan tarifaire: Confirmation vers classique">
+    <title>plan tarifaire: Confirmation vers classique V2</title>
+    <include src="erl://svc_plan_tarif:plans_change_price"/><br/>
+    <include src="erl://svc_plan_tarif:confirm_msg_sup"/>
+    <a href="erl://svc_plan_tarif:pt_change?toclass_v2">confirmer choix
+    nouveau plan classique</a>
+  </page>
+
+  <page tag="change_pt_confirm_to_soir_we" cost="free_pt" nav="stop" descr="plan tarifaire: Confirm vers matin">
+    <title>plan tarifaire: Confirm vers soir et we</title>
+    <include src="erl://svc_plan_tarif:plans_change_price"/><br/>
+    <include src="erl://svc_plan_tarif:confirm_msg_sup"/>
+    <a href="erl://svc_plan_tarif:pt_change?tosoir_we">confirmer choix
+    plan soir et week end</a>
+  </page> 
+
+  <page tag="change_pt_confirm_to_orange_plug_vacances" cost="free_pt"
+    nav="stop" descr="plan tarifaire: Confirm to Orange plug vacances">
+    <title>plan tarifaire: Confirm to Orange plug vacances</title>
+    <nbblock>
+    Plan Orange plug vacances:<br/>
+    Du 7/02 au 7/03, tous vos appels en France metropolitaine vers
+    fixes (hors No speciaux) et mobiles sont a 0.25EUR/mn.</nbblock>
+    <nbblock>le 8/03, vous beneficierez a nouveau de votre plan Orange plug,
+    pour appeler a petit prix en dehors des cours!<br/>
+    <a href="erl://svc_plan_tarif:pt_change_plug_vac">Choisir le plan
+    Orange plug vacances</a></nbblock>
+  </page>
+
+ <page tag="change_pt_confirm_to_orange_plug" cost="free_pt" nav="stop" descr="plan tarifaire: Confirm to Orange plug">
+    <title>plan tarifaire: Confirm to Orange plug</title>
+    <include src="erl://svc_plan_tarif:plans_change_price"/><br/>
+    <include src="erl://svc_plan_tarif:confirm_msg_sup"/>
+    <a href="erl://svc_plan_tarif:pt_change?tomadrid">confirmer choix plan
+    Orange plug</a>
+  </page>
+
+<!-- Infos pages -->
+
+  <page tag="infos_sur_mesure" cost="free_pt" descr="plan tarifaire: Infos sur mesure">
+    <title>plan tarifaire: Infos sur mesure</title>
+    plan sur mesure:
+    <nbblock><include src="erl://svc_plan_tarif:prix_plan?mesure"/> centimes/mn
+    </nbblock> en com.nationales
+    les we et jours fériés et la semaine sur une plage horaire au choix.
+    Le reste du temps, les appels sont à <nbblock>60 centimes/mn</nbblock><br/>
+  </page>
+
+  <page tag="infos_classique" cost="free_pt" descr="plan tarifaire: Infos classique">
+    <title>plan tarifaire: Infos classique</title>
+    plan classique: les appels sont facturés à un tarif unique à
+    <nbblock><include src="erl://svc_plan_tarif:prix_plan?classique"/> centimes
+    /mn</nbblock> en com. nationales<br/>
+  </page>
+
+  <page tag="infos_orange_plug" cost="free_pt" descr="plan tarifaire: Infos Orange plug">
+    <title>plan tarifaire: Infos Orange plug</title>
+    Orange plug, c'est le rechargement 50/50 et un plan tarifaire.
+    A chaque rechargement c'est 50% de SMS à 10 centimes/SMS + 50% de crédit
+    pour appeler, accéder au wap ou envoyer encore plus de SMS.<br/>
+    Avec le plan tarifaire Orange plug, vous appelez à
+    <nbblock><include src="erl://svc_plan_tarif:prix_plan?plug"/> centimes
+    /mn</nbblock> de com.nat de 16h à 18h, le mercredi toute la journée + WE et
+    jours fériés. Entre 18h et 8h c'est 45 centimes/mn et le reste du temps
+    c'est 55 centimes/mn.Avec Orange plug, vous avez aussi accés aux
+    services Orange plug à tarifs privilégiés.<br/>
+    <include src="erl://svc_plan_tarif:print_link?plug"/>
+  </page>
+
+  <page tag="infos_plug_noel" cost="free_pt" descr="plan tarifaire: Infos plan plug noel">
+    <title>plan tarifaire: Infos plug noel</title>
+    plan Orange plug série limitée:
+    <include src="erl://svc_plan_tarif:prix_plan?plug_noel"/> centimes/mn
+    en com.nationales la semaine entre 12h et 14h et entre 17h et 21h
+    plus tous les we et jours fériés !
+    Le reste du temps,les appels sont à <nbblock>0.6euros/mn.</nbblock>
+    Vous pouvez recharger 100% SMS pour en  avoir un max. Vous avez aussi
+    accés aux services Orange plug à des tarifs privilégiés. Le tarif à
+    <nbblock>
+    <include src="erl://svc_plan_tarif:prix_plan?plug_noel"/> centimes/mn
+    </nbblock> est valable jusqu'au 22/07/03 inclus. A partir du 23/07/03, 
+    les appels seront facturés
+    aux tarifs en vigueur du plan Orange plug. Deux changements
+    de plan gratuits.
+  </page>
+ 
+ <page tag="infos_class_v2" cost="free_pt" descr="plan tarifaire: Infos classique V2">
+    <title>plan tarifaire: Infos classique V2</title>
+    Plan classique: ce plan vous permet d'appeler en toute tranquilité à
+    <nbblock><include src="erl://svc_plan_tarif:prix_plan?class_v2"/>
+    </nbblock> centimes d'euros par minutes de communications nationales,
+    à n'importe quel moment de la
+    journée et de la semaine!<br/>
+    <include src="erl://svc_plan_tarif:print_link?class_v2"/>
+  </page>
+
+<page tag="infos_soir_we" cost="free_pt" descr="plan tarifaire: Infos soir et we">
+    <title>plan tarifaire: Infos soir et we</title>
+    Plan soir et week end: ce plan est adapté au rythme de votre journée!<br/>
+    En semaine, dés 18h, vous bénéficiez d'un tarif avantageux: vos appels
+    sont à <nbblock>45 centimes/min</nbblock> de
+    communications nationales.<br/>
+    Ensuite, à partir de 21h, pour communiquer en toute liberté, vos appels
+    sont seulement à 25 centimes d'euros la minute. Ce tarif est aussi valable
+    tout le week end et les jours fériés !<br/>
+    Enfin de 8h à 18h, vos appels sont facturés à 55 centimes
+    d'euros la minute.<br/>
+    <include src="erl://svc_plan_tarif:print_link?soir_we"/>
+  </page>
+
+<!--success page-->
+  <page tag="change_pt_success" backtext="notext" cost="free_pt" descr="plan tarifaire: Changement réussi">
+    <title>plan tarifaire: Changement réussi</title>
+    Vous utilisez maintenant le plan
+    <include src="erl://svc_selfcare:plan"/><br/>
+    <subst name="TEXT_FIN"/>
+  </page>  
+
+<page tag="change_pt_plug_vac_success" cost="free_pt" descr="plan tarifaire: Changement réussi">
+    <title>plan Orange plug vacances: Changement réussi</title>
+    Votre plan Orange plug est actif. Du 7/02 au 7/03, vous
+    beneficiez du plan Orange plug vacances. Plus besoin de se poser
+    de question, c'est 0.25EUR/min tout le temps.
+  </page>
+
+<!--error pages -->
+
+  <page tag="not_enough_credit_pt" cost="free_pt" descr="plan tarifaire: Crédit insuffisant">
+    <title>plan tarifaire: Crédit insuffisant</title>
+    Votre crédit est insuffisant pour demander une modification du plan
+    tarifaire ou d'une plage horaire. Veuillez recharger votre compte.<br/>
+    <a href="recharge.xml">recharger</a>
+  </page>
+
+ <page tag="mobirecharge_change_pt" cost="free_pt" descr="plan tarifaire: Erreur mobirecharge">
+   <title>plan tarifaire: Erreur mobirecharge</title>
+   Vous utilisez une mobi-recharge 1H et bénéficiez d'une
+   tarification incompatible avec les plans tarifaires.
+ </page>
+
+ <page tag="change_pt_error" cost="free_pt" backtext="notext" descr="plan tarifaire: Erreur SDP">
+   <title>plan tarifaire: Erreur SDP</title>
+   La modification de plan tarifaire ou de plage horaire est
+   techniquement impossible pour le moment: veuillez nous en excuser et
+   renouveler cette opération ultérieurement.
+ </page>
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="plan tarifaire : service indisponible">
+    <title>plan tarifaire : temporary error</title>
+    Le service est momentanément interrompu. Veuillez recommencer
+    ultérieurement.<br/>
+    Merci.
+  </page>
+
+<!-- include pages -->
+ <page tag="apresmidi">
+   sur mesure aprés-midi</page>
+ <page tag="classique">
+   classique</page>
+ <page tag="soir">
+   sur mesure soir.</page>
+ <page tag="nuit">
+   sur mesure nuit.</page>
+ <page tag="matin">
+   sur mesure matin.</page>
+ <page tag="plug">
+   Orange plug.</page>
+ <page tag="class_v2">
+   classique</page>
+<page tag="soir_we">
+   soir et we</page>
+ <page tag="inconnu">
+   **inconnu**
+ </page>
+
+ </pages>

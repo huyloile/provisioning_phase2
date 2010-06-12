@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<!-- 
+	Scripts for postpaid subsciptions.
+	Since, currently, the scripts are identical for both GP (Grands publics) and PRO (Professionnels) profiles,
+	You can implement monthly modification in either files postpaid_gp.xml or postpaid_pro.xml (better start by grands publics)
+	You will just need to copy the whole file and replace gp by pro and vice-versa in case sensitive.
+	You can make a final check by comparing both files rapidely, if you find difference other than GP PRO
+-->
+<pages descr="Self-care page">
+
+  <page></page>
+
+  <page tag="menu_pro" hist="dohist" ismenu="true">
+    <redirect src="erl://svc_postpaid:init_svc_data?pro&amp;#pro_ident"/>
+  </page>
+
+  <page tag="pro_ident" hist="donthist">
+    <redirect src="erl://svc_subscr_asmetier:get_identification?oee&amp;#pro_list_serv_opt,#menu_pro_error_asmetier"/>
+  </page>
+  
+  <page tag="pro_list_serv_opt" hist="donthist">
+    <redirect src="erl://svc_subscr_asmetier:get_listServiceOptionnel?#print_menu_pro,#menu_pro_error_asmetier"/>
+  </page>
+  
+  <page tag="print_menu_pro" menutext="notext" hist="donthist" cost="free_pt" descr="#123# Postpaid PRO: Menu">
+    <title>Menu Postpaid Forfait PRO</title>
+    <a href="#bons_plans_pro">Bons Plans</a><br/>
+    <include src="erl://svc_parentChild:acces_service?Recharge pour un proche%0A"/>
+    <a href="#sms_mms_infos_pro">SMS/MMS Infos</a><br/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?if_profile_sms_pro&amp;Options SMS/MMS=#forf_sms_pro&amp;br"/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?if_profile_ow_pro&amp;Options multimedia=#orange_world_pro&amp;br"/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?m5&amp;Prog davantage et changer mobile=selfcare_long/m5.xml&amp;br"/>
+    <a href="#chat_et_jeux_pro">Chat et Jeux</a><br/>
+    <a href="#carte_postale_mms">Carte postale MMS</a>
+  </page>
+
+  <page tag="menu_pro_error_asmetier" hist="donthist" cost="free_pt"
+	descr="#123# Postpaid PRO: Menu error asmetier">
+    <title>Menu Postpaid Forfait PRO error asmetier</title>
+    <include src="erl://svc_parentChild:acces_service?Recharge pour un proche%0A"/>
+    <a href="#sms_mms_infos_pro">SMS/MMS Infos</a><br/>
+    <a href="#chat_et_jeux_pro">Chat et Jeux</a><br/>
+    <a href="#carte_postale_mms">Carte postale MMS</a>
+  </page>
+
+  <page tag="sms_mms_infos_pro">
+    <redirect src="erl://svc_mmsinfos:start?#sms_mms_infos_pro2"/>
+  </page>
+
+  <page tag="sms_mms_infos_pro2" cost="free_pt"
+      descr="Choix SMS/MMS infos, Orange ligue 1, Postpaid PRO">
+    Promotion<br/>
+    Orange vous offre votre premiere rubrique SMS ou MMS pendant 30 jours
+    (hors SMS Orange L1).<br/>
+    <a href="selfcare_long/sms_infos.xml">SMS Infos</a><br/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_infos&amp;MMS Infos=selfcare_long/mmsinfos.xml&amp;br"/>
+    <include src="erl://svc_mmsinfos:proposer_lien?mms_video&amp;MMS Infos video=selfcare_long/mmsinfos_video.xml&amp;br"/>
+    <a href="selfcare_long/orange_ligue1_postpaid.xml">Orange L1</a><br/>
+  </page>
+
+  <page tag="chat_et_jeux_pro" cost="free_pt" descr="Menu acces au chat et aux jeux SMS">
+    <a href="/orangef/chat.xml">Pour acceder au service "Chat"</a><br/>
+    <a href="/orangef/sms_games.xml">Pour acceder aux "Jeux par SMS"</a><br/>
+  </page>
+
+  <page tag="chat_et_jeux_pro" cost="free_pt" descr="Menu acces au chat et aux jeux SMS">
+    <a href="/orangef/chat.xml">Pour acceder au service "Chat"</a><br/>
+    <a href="/orangef/sms_games.xml">Pour acceder aux "Jeux par SMS"</a><br/>
+  </page>
+
+<!-- Bon Plans PRO-->
+  <page tag="bons_plans_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Menu Bons Plans">
+    <title>Postpaid BonsPlans PRO</title>
+    <a href="#plan_surf_pro">Option surf</a><br/>
+    <a href="#plan_total_tv_pro">Option totale TV</a><br/>
+    <a href="#plan4_pro">Offres eXclusives</a><br/>
+    <a href="#plan5_pro">Pass jeux a 3E/mois</a><br/>
+    <a href="#plan6_pro">Pass sonnerie a 2E/mois</a><br/>
+    <a href="selfcare_long/roaming_postpaid_pro.xml">A l'etranger</a><br/>
+    <a href="#plan_vol1_pro">Garantie en cas de vol</a><br/>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?kdo&amp;Semaine Mini-prix SMS=#semaine_mini_prix_pro,NKDO SMS-JKDO MMS=#nkdo_jkdo_pro,NKDO SMS-JKDO MMS=#nkdo_jkdo_pro&amp;nobr"/>
+  </page>
+
+  <!--page tag="plan_sport_pro" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: Bon Plan Sport">
+    <title>Postpaid PRO BP Sport</title>
+		Avec l'option sport a 9E/mois, suivez les grands evenements sportifs en direct et en illimite
+		24h/24 7j/7: Ligue 1 Orange, Top 14...<br/>1er mois offert !<br/>
+    <a href="selfcare_long/opt_ow_postpaid_pro.xml#add_ow_spo">Souscrire</a><br/>
+    <a href="#plan4_pro">Suite</a>
+  </page-->
+
+  <page tag="plan_surf_pro" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: Bon Plan Surf">
+    <title>Postpaid PRO Surf</title>
+		Avec l'option surf a 6E/mois, beneficiez de l'acces illimite 24h/24 et 7j/7 au portail Orange World.<br/>
+		Depechez-vous le 1er mois est offert !<br/>
+    <a href="selfcare_long/opt_ow_postpaid_pro.xml#add_ow_surf">Souscrire</a><br/>
+    <a href="#plan_total_tv_pro">Suite</a>
+  </page>
+
+  <page tag="plan_total_tv_pro" hist="dohist" cost="free_pt"
+        descr="#123# Postpaid PRO: Bon Plan Total TV">
+    <title>Postpaid PRO BP Total TV</title>
+	Avec l'option totale TV a 10E/mois, suivez plus de 60 chaines de tele et toutes les videos en illimite 24h/24 7j/7:
+	le 1er mois est offert !<br/>
+    <a href="selfcare_long/opt_ow_postpaid_pro.xml#add_ow_tv2">Souscrire</a><br/>
+    <a href="#plan4_pro">Suite</a>
+  </page>
+
+  <page tag="plan4_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Bon Plan 4" menutext="notext">
+    <title>Postpaid PRO BP 4</title>
+    <include src="erl://svc_limande_post:proposer_lien?En savoir %2B&amp;selfcare_long/limande_post.xml&amp;br"/>
+    <a href="#plan5_pro">Suite</a>
+  </page>
+
+  <page tag="plan5_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Bon Plan 5">
+    <title>Postpaid PRO BP 5</title>
+    Avec le pass jeux a 3E/mois, vous beneficiez d'1 jeu/mois
+    et de reductions sur le catalogue jeux.<br/>
+    Infos et souscription sur Orange World &gt; jeux.<br/>
+    1er mois offert !<br/>
+    <a href="#plan6_pro">Suite</a>
+  </page>
+
+  <page tag="plan6_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Bon Plan 6">
+    <title>Postpaid PRO BP 6</title>
+    Avec le pass sonnerie a 2E/mois, vous beneficiez
+    d'1 sonnerie Hi-Fi/mois. Infos et souscription sur
+    Orange World > sonnerie.<br/>
+    1er mois offert !<br/>
+    <a href="#plan_vol1_pro">Suite</a>
+  </page>
+
+  <page tag="plan7_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Bon Plan 7">
+    <title>Postpaid PRO BP 7</title>
+		Avec le pass vacances 5E, vous beneficiez de 10min d'appels emis
+		en Europe et Orange vous offre 10min d'appels recus en Europe.<br/>
+		Infos et souscription au 444.<br/>
+    <a href="#plan_vol1_pro">Suite</a>
+  </page>
+
+  <page tag="plan_vol1_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Garantie Vol">
+    <title>Postpaid PRO BP 8</title>
+    Exclusif Orange : la garantie en cas de vol de votre mobile !
+    Un avantage gratuit et automatique pour tous<br/>
+    <a href="#plan_vol2_pro">Suite</a>
+  </page>
+
+  <page tag="plan_vol2_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Garantie Vol suite">
+    <title>Postpaid PRO BP 9</title>
+    Remboursement des communications frauduleuses jusqu'a 500E, et du forfait,
+    la nouvelle carte SIM et suspension temporaire de votre ligne.<br/>
+    <a href="#plan_vol3_pro">Suite</a>
+  </page>
+
+  <page tag="plan_vol3_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: Garantie Vol suite 2">
+    <title>Postpaid PRO BP 9 suite 2</title>
+    Pour + d'infos, contactez votre service clients au 700
+  </page>
+
+  <page tag="nkdo_jkdo_pro" hist="dohist" cost="free_pt" 
+	descr="#123# Postpaid PRO: NKDO SMS-JKDO MMS">
+    <title>Postpaid PRO BP 10 NKDO SMS-JKDO MMS</title>
+    <include src="erl://svc_subscr_asmetier:proposer_lien?kdo&amp;Semaine Mini-prix SMS=#semaine_mini_prix_pro,Journee KDO MMS=#jrn_kdo_pro,Nuit KDO SMS=#nuit_kdo_pro&amp;nobr"/>
+  </page>
+
+
+<page tag="forf_sms_pro" cost="free_pt" hist="dohist" descr="Forfait SMS Postpaid PRO : pas d'autre forfait SMS">
+     <title>O.Postpaid Forfait SMS PRO</title>
+     Pour envoyer vos SMS/MMS a un prix avantageux faites votre choix. En plus le 1er mois est offert !<br/>
+     <a href="selfcare_long/opt_forf_sms_postpaid_pro.xml#souscrire">Souscrire a une option</a><br/>
+     <a href="#forf_sms_infos">+ d'infos</a>
+ </page>
+
+<page tag="forf_sms_infos" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Forfait SMS Plus d'infos">
+     <title>O.Postpaid Forfait SMS Plus d'infos</title>
+     Vous pouvez souscrire si vous n'avez pas d'option ou une option inferieure
+     a celle choisie. Pour les autres operations appelez le 700 (prix com. au tarif normal)<br/>
+  </page>
+
+<page tag="orange_world_pro" cost="free_pt" hist="dohist" descr="OW Postpaid PRO : pas d'autre opt OW">
+     <redirect src="erl://svc_core:redir_handset?wap&equal&false=#print_ow_nowap,?=#orange_world_pro_wap"/>
+ </page>
+
+<page tag="orange_world_pro_wap" cost="free_pt" hist="dohist" descr="O.Postpaid O.WORLD PRO">
+     <title>O.Postpaid O.WORLD PRO</title>
+		Decouvrez les nouvelles options multimedia en illimite 24h/24 et 7j/7.<br/>
+		En plus le 1er mois est offert !<br/>
+     <a href="selfcare_long/opt_ow_postpaid_pro.xml#souscrire">Souscrire a une option</a><br/>
+     <a href="#opt_ow_infos">+ d'infos</a>
+ </page>
+
+  <page tag="print_ow_nowap" hist="donthist" cost="free_pt"
+	menutext="notext" descr="#123# Postpaid: OW NO WAP">
+    <title>Menu Postpaid OW  NO WAP</title>
+    Desole, votre terminal ne vous permet pas de souscrire a ce type d'option.<br/>
+  </page>
+
+<page tag="opt_ow_infos" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Option OW Plus d'infos">
+     <title>O.Postpaid Option OW Plus d'infos</title>
+     Vous pouvez souscrire si vous n'avez pas d'option ou une option inferieure
+     a celle choisie. Pour les autres operations appelez le 700 (prix com. au tarif normal)<br/>
+  </page>
+
+<page tag="carte_postale_mms">
+    <redirect src="erl://svc_util_of:redirect_by_param?carte_postale_url"/>
+  </page>
+
+<!-- semaine, Valentin, nuit kdo : janvier 2007 -->
+
+  <page tag="semaine_mini_prix_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid PRO Semaine mini prix">
+    <title>Postpaid PRO Semaine mini prix</title>
+	Une semaine Mini Prix<br/>
+	Tous vos SMS a moitie prix vers tous les mobiles et fixes du 22 au 26/01/2007.<br/>
+	Tous les matins de 8h a 12h<br/>
+	<a href="#mention_legale_mini_prix_pro">Mention legale</a>
+  </page>
+
+  <page tag="mention_legale_mini_prix_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid PRO Mention legale Semaine mini prix">
+    <title>Postpaid PRO Mention legale Semaine mini prix</title>
+	SMS en France metropolitaine, hors SMS surtaxes. Sous reserve d'un credit &gt; a 0 EUR
+	pour les clients CMO, M6 mobile by Orange, ZAP et Mobicarte.<br/>
+  </page>
+
+  <page tag="m_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid M_KDO">
+    <title>Postpaid PRO ST VALENTIN M-KDO</title>
+	M-KDO ST VALENTIN<br/>
+	A l'occasion de la Saint Valentin, offrez des logos coeur,
+	messages et dedicaces gratuits du 9 au 19/02/2007.<br/>
+	<a href="#mention_legale_m_kdo_pro">Mention legale</a>
+  </page>
+
+  <page tag="mention_legale_m_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Mention legale 1 ST VALENTIN M_KDO">
+    <title>Postpaid PRO Mention legale 1 ST VALENTIN M-KDO</title>
+	Offre valable en France metropolitaine du 9/02/07 au 19/02/07 en utilisant
+	la fonction "offrir un logo a un ami" sur la selection de logos Speciale Saint Valentin<br/>
+	<a href="#suite_mention_legale_m_kdo_pro">Suite</a>
+  </page>
+
+  <page tag="suite_mention_legale_m_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Mention legale 2 ST VALENTIN M_KDO">
+    <title>Postpaid PRO Mention legale 2 ST VALENTIN M-KDO</title>
+	(hors couts de connexion au portail Orange World).<br/>
+	Service accessible en France metropolitaine depuis un mobile compatible.<br/>
+	Liste des mobiles compatibles sur www.orange.fr&gt;mobile.
+  </page>
+
+  <page tag="nuit_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid nuit kdo">
+    <title>Postpaid PRO Nuit kdo</title>
+    Nuit KDO SMS<br/>
+    Le 21 Juin 2007 tous vos SMS sont offerts et illimites
+    vers tous les mobiles et fixes de 21h30 au lendemain 8h<br/>
+    <a href="#mention_legale_nuit_kdo_pro">Mention legale</a>
+  </page>
+
+  <page tag="mention_legale_nuit_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Mention legale nuit kdo">
+    <title>Postpaid PRO Mention legale nuit kdo</title>
+    SMS emis d'un mobile en France metropolitaine, hors SMS
+    surtaxes. Sous reserve d'un credit > a 0EUR pour les
+    clients CMO, M6 mobile by Orange, ZAP et Mobicarte
+  </page>
+
+  <page tag="jrn_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid journee kdo MMS">
+    <title>Postpaid PRO Jrn kdo MMS</title>
+    Journee KDO MMS<br/>
+    Le 13/07/2007,tous vos MMS photo et video de 7 a
+    300ko sont offerts et illimites vers tous les mobiles
+    et adresses email de 8h a 21h<br/>
+    <a href="#mention_legale_jrn_kdo_pro">Mention legale</a>
+  </page>
+
+  <page tag="mention_legale_jrn_kdo_pro" hist="dohist" cost="free_pt"
+        descr="O.Postpaid Mention legale jrn kdo MMS">
+    <title>Postpaid PRO Mention legale jrn kdo MMS</title>
+    MMS de 7 a 300ko en France metrop.hors MMS surtaxes,
+    no courts et MMS carte postale.Sous reserve d'un credit > a 0 EUR
+    pour les clients CMO,M6 mobile by Orange,ZAP
+  </page>
+
+<!-- Messages d'erreurs -->
+
+ <page tag="system_failure" nav="end" cost="free_pt" descr="MMSINFOS: Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.</page>
+
+<page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="Postpaid: Service indisponible">
+    <title>Postpaid: Service indisponible</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+</pages>

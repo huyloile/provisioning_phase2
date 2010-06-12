@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sac="http://sachemservice">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <sac:callRec_tck>
+    <sac:params>
+      <sac:name>DOS_NUMID</sac:name>
+      <sac:type>Int</sac:type>
+      <sac:value><?DYNSTRING "$(rec_tck.DOS_NUMID.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>NUM_CR</sac:name>
+        <sac:type>String</sac:type>
+        <sac:value><?DYNSTRING "$(rec_tck.NUM_CR.)"?></sac:value>
+      </sac:params>
+      <sac:params>
+        <sac:name>TRC_NUM</sac:name>
+        <sac:type>Short</sac:type>
+        <sac:value><?DYNSTRING "$(rec_tck.TRC_NUM.)"?></sac:value>
+    </sac:params>
+    <sac:params>
+      <sac:name>CANAL_NUM</sac:name>
+      <sac:type>Short</sac:type>
+      <sac:value><?DYNSTRING "$(rec_tck.CANAL_NUM.)"?></sac:value>
+      </sac:params>
+    </sac:callRec_tck>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,16 @@
+sum;{interface,ussd_specific,incoming_msg;Messages USSD entrants
+sum;{interface,ussd_specific,outgoing_msg;Messages USSD sortants
+sum;failure,spider;Erreurs Spider
+sum;failure,sachem|trace,sachem,xml_generic_failure;Erreurs Sachem
+sum;file:/orangef/home.xml#ocf_prov_failed;Erreurs OCF
+sum;file:/system/home.xml#bug_xmlhttp;Erreurs XML/HTTP
+sum;send_message_failed;Echecs d'envoi de message USSD
+sum;license.*rate_exceeded.*,msg;Rejets de messages USSD pour dépassement de licence
+sum;{internal,session_routing_v2,session_end_err};Erreurs Cellcube
+sum;{trace,oto_request,oto_result};oto_result Result
+sum;{trace,oto_request,oto_stats_result};oto_stats_result
+sum;{warning,oto_request,error};error
+sum;{warning,oto_request,no_answer_stats};no_answer_stats
+sum;{warning,oto_request,o2o_no_answer};o2o_no_answer
+sum;{warning,oto_request,resp_with_error_code};resp_with_error_code
+sum;{count,session_routing_v2,{session_end,{subscription,"mobi"}}};session Mobicarte

@@ -1,0 +1,30 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:exception.ecare" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:exception.ecare">
+    <xsd:element name="ECareExceptionTechnique" type="tns:ECareExceptionTechnique"/>
+    <xsd:complexType name="ECareExceptionTechnique">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ECareExceptionFonctionnelle" type="tns:ECareExceptionFonctionnelle"/>
+    <xsd:complexType name="ECareExceptionFonctionnelle">
+        <xsd:sequence>
+            <xsd:element name="nomComposant" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomFamille" nillable="true" type="xsd:string"/>
+            <xsd:element name="codeMessage" nillable="true" type="xsd:string"/>
+            <xsd:element name="nomClasse" nillable="true" type="xsd:string"/>
+            <xsd:element name="dateException" nillable="true" type="xsd:dateTime"/>
+            <xsd:element name="gravite" nillable="true" type="xsd:string"/>
+            <xsd:element name="param1" nillable="true" type="xsd:string"/>
+            <xsd:element name="param2" nillable="true" type="xsd:string"/>
+            <xsd:element name="param3" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

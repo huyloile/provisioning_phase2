@@ -1,0 +1,13 @@
+[{"ticket_recharge_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-55']"},
+{"ticket_recharge_invalide","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-56']"},
+{"carte_perimee_tr_promo","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-57']"},
+{"autres_erreurs_recharge","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-62']"},
+{"incompatible_offre","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-63']"},
+{"dossier_inaccessible","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-78']"},
+{"incompatible_offre","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-78']"},
+{"erreur_options","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-86']"},
+{"erreur_promo","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-87']"},
+{"dossier_inconnu","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/sac:callRec_tckReturn[statut='-97']"},
+{"format_requete_incorrect","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-98']"},
+{"incident_technique","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut='-99']"},
+{"other_error","/descendant::soapenv:Envelope/soapenv:Body/callRec_tckResponse/callRec_tckReturn[statut!='0']"}].

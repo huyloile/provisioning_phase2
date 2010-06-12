@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Option Surf mensuelle">
+
+<!-- Premiere page -->
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:first_page?opt_surf_mensu&amp;#opt_deja_active&amp;#offre_incomp&amp;#solde_insuff&amp;#generique"/>
+  </page>
+
+  <page tag="opt_deja_active"  backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Actif">
+    <title>Options Surf mensuelle Actif</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_supprimer_generique_text?opt_surf_mensu"/><br/>
+    <a href="#resil_surf_mensu">Supprimer l'option</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+
+  <page tag="offre_incomp"  backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: incompatible">
+    <title>Option Surf mensuelle: incompatible</title>
+  </page>
+
+  <page tag="solde_insuff" backtext="notext" hist="dohist" cost="free_pt"
+       descr="option Surf mensuelle solde insuffisant">
+    <title>option Surf mensuelle solde insuffisant</title>
+  </page>
+
+  <page tag="generique" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Options Surf mensuelle: Menu">
+    <title>Options Surf mensuelle Menu</title>
+  </page>
+ 
+<!-- Conditions -->  
+
+    <page tag="conditions" cost="free_pt">
+    <redirect src="erl://svc_util_of:redir_declinaison?0=#conditions_gen,35=#conditions_m6,39=#conditions_foot,40=#conditions_foot,41=#conditions_foot,42=#conditions_foot,43=#conditions_foot,44=#conditions_foot,51=#conditions_click,default=#conditions_gen"/>
+  </page>
+
+  <page tag="conditions_gen" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions generique">
+    <title>Conditions 1</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;1"/><br/>
+   <a href="#conditions_2_gen">Suite</a>
+  </page>
+
+  <page tag="conditions_m6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions M6">
+    <title>Conditions 1</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_m6_text?opt_surf_mensu&amp;1"/><br/>
+   <a href="#conditions_2_m6">Suite</a>
+  </page>
+
+  <page tag="conditions_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Foot">
+    <title>Conditions 1</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_foot_text?opt_surf_mensu&amp;1"/><br/>
+   <a href="#conditions_2_foot">Suite</a>
+  </page>
+
+  <page tag="conditions_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Click">
+    <title>Conditions 1</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_click_text?opt_surf_mensu&amp;1"/><br/>
+   <a href="#conditions_2_click">Suite</a>
+  </page>
+
+  <page tag="conditions_2_gen" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 2">
+    <title>Conditions 2</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;2"/><br/>
+   <a href="#conditions_3_gen">Suite</a>
+  </page>
+
+  <page tag="conditions_2_m6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 2">
+    <title>Conditions 2</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_m6_text?opt_surf_mensu&amp;2"/><br/>
+   <a href="#conditions_3_m6">Suite</a>
+  </page>
+
+  <page tag="conditions_2_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 2">
+    <title>Conditions 2</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_foot_text?opt_surf_mensu&amp;2"/><br/>
+   <a href="#conditions_3_foot">Suite</a>
+  </page>
+
+  <page tag="conditions_2_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Click 2">
+    <title>Conditions Click 2</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_click_text?opt_surf_mensu&amp;2"/><br/>
+   <a href="#conditions_3_click">Suite</a>
+  </page>
+
+  <page tag="conditions_3_gen" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 3">
+    <title>Conditions 3</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;3"/><br/>
+   <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_3_m6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 3">
+    <title>Conditions 3</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_m6_text?opt_surf_mensu&amp;3"/><br/>
+   <a href="#conditions_4">Suite</a>
+  </page>
+
+  <page tag="conditions_3_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 3">
+    <title>Conditions 3</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_foot_text?opt_surf_mensu&amp;3"/><br/>
+   <a href="#conditions_4_foot">Suite</a>
+  </page>
+
+  <page tag="conditions_3_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Click 3">
+    <title>Conditions Click 3</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_click_text?opt_surf_mensu&amp;3"/><br/>
+   <a href="#conditions_4_click">Suite</a>
+  </page>
+
+  <page tag="conditions_4" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 4">
+    <title>Conditions 4</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;4"/><br/>
+   <a href="#conditions_5">Suite</a>
+  </page>
+
+  <page tag="conditions_4_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 4">
+    <title>Conditions 4</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_foot_text?opt_surf_mensu&amp;4"/><br/>
+   <a href="#conditions_5_foot">Suite</a>
+  </page>
+
+  <page tag="conditions_4_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Click 4">
+    <title>Conditions Click 4</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_click_text?opt_surf_mensu&amp;4"/><br/>
+   <a href="#conditions_5_click">Suite</a>
+  </page>
+
+  <page tag="conditions_5" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 5">
+    <title>Conditions 5</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;5"/><br/>
+   <a href="#conditions_6">Suite</a>
+  </page>
+
+
+  <page tag="conditions_5_foot" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 5">
+    <title>Conditions 5</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_foot_text?opt_surf_mensu&amp;5"/><br/>
+   <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_5_click" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions Click 5">
+    <title>Conditions Click 5</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_click_text?opt_surf_mensu&amp;5"/><br/>
+   <a href="#conditions_6">Suite</a>
+  </page>
+
+  <page tag="conditions_6" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Option Surf mensuelle: Conditions 6">
+    <title>Conditions 6</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_conditions_text?opt_surf_mensu&amp;6"/><br/>
+   <a href="#resil_surf_mensu_cond">Supprimer l'option</a>
+  </page>
+
+<!-- Souscription -->
+
+  <page tag="failure" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Opt. SMS: Echec">
+    <title>Echec de souscription</title>
+    Le service est momentanement interrompu. Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+  
+<!--Surf Mensuelle: Restitution-->
+ 
+  <page tag="surf_mensu_ac_princ_ac" cost="free_pt"
+        descr="Option Surf mensuelle: princ ac, sec ac">
+    <title>Option Surf mensuelle: princ ac, sec ac</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_restit_surf_mensu_ac_princ_ac_text?opt_surf_mensu"/><br/>
+  </page>
+ 
+  <page tag="surf_mensu_ac_princ_ep" cost="free_pt"
+        descr="Option Surf mensuelle: princ ac, sec ac">
+    <title>Option Surf mensuelle: princ ac, sec ac</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_restit_surf_mensu_ac_princ_ep_text?opt_surf_mensu"/><br/>
+  </page>
+ 
+  <page tag="surf_mensu_ep" cost="free_pt"
+        descr="Option Surf mensuelle: princ ac, sec ac">
+    <title>Option Surf mensuelle: princ ac, sec ac</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_restit_surf_mensu_ep_text?opt_surf_mensu"/><br/>
+  </page>
+
+<!-- Surf Mensuelle: Resiliation-->
+  <page tag="resil_surf_mensu" cost="free_pt" backtext="notext"
+        descr="Option Surf mensuelle:resiliation">
+    <title>Menu Resiliation option Surf mensuelle</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_suppr_confirmer_text?opt_surf_mensu&amp;mms"/><br/>
+    <a href="#suppression_mensu">Confirmer</a><br/>
+  </page>
+
+  <page tag="resil_surf_mensu_cond" cost="free_pt" backtext="notext"
+        descr="Option SMS mensuelle:resiliation apres conditions">
+    <title>Menu Resiliation apres conditions option Surf mensuelle</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_supprimer_cond_text?opt_surf_mensu"/><br/>
+    <a href="#suppression_mensu">Confirmer</a><br/>
+  </page>
+
+  <page tag="suppression_mensu">
+    <redirect src="erl://svc_options_mobi:do_unsubscription?opt_surf_mensu&amp;#supprimer_mensu_ok,#supprimer_mensu_nok"/>
+  </page>
+
+  <page tag="supprimer_mensu_ok" cost="free_pt" backtext="notext"
+        descr="Option Surf mensuelle:resiliation Ok">
+    <title>Confirmation Resiliation option Surf mensuelle</title>
+    <include src="erl://text_opt_surf_mensu:surf_mensu_suppr_ok_text?opt_surf_mensu"/><br/>
+  </page>
+
+  <page tag="supprimer_mensu_nok" backtext="notext" hist="dohist" cost="free_pt"
+        descr="Echec de suppression option Surf mensuelle">
+    <title>Echec de suppression</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+</pages>
+
+

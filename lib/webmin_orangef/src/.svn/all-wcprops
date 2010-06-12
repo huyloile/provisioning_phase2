@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src
+END
+webmin_orangef_app.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_orangef_app.erl
+END
+webmin_of_stats.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_of_stats.erl
+END
+webmin_one2one.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_one2one.erl
+END
+webmin_orangef.app.src
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_orangef.app.src
+END
+webmin_retry.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_retry.erl
+END
+webmin_table_ratio.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_table_ratio.erl
+END
+webmin_of_params.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/webmin_of_params.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/webmin_orangef/src/Makefile
+END

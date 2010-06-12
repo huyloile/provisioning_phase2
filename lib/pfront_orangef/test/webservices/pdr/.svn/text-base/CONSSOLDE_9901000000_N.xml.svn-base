@@ -1,0 +1,82 @@
+<getConsultationSoldeReponse>
+  <date>15/01/2005</date>
+  <heure>14:15:16</heure>
+  <codeRet>0</codeRet>
+  <requete>
+    <dossier>0600000000</dossier>
+    <canal>SWI</canal>
+    <restUPC>N</restUPC>
+  </requete>
+  <resultat>
+    <codeProduit>6</codeProduit>
+    <listeUPEs>
+	<descUPE>
+	  <idUP>5</idUP>
+	  <libelleUP>MMS en HP</libelleUP>
+	  <indUPC>O</indUPC>
+	  <cumul>O</cumul>
+	  <listeUPs>
+	      <descUP>
+		<idUP>5</idUP>
+		<libelleUP>MMS en HP</libelleUP>
+		<montant>33</montant>
+		<typeUnite>4</typeUnite>
+		<libelleUnite>MMS</libelleUnite>
+	      </descUP>
+	  </listeUPs>
+	</descUPE>
+	<descUPE>
+	  <idUP>9</idUP>
+	  <libelleUP>Ko de Web/Wap en HP</libelleUP>
+	  <indUPC>N</indUPC>
+	  <cumul>N</cumul>
+	  <listeUPs>
+	      <descUP>
+		<idUP>9</idUP>
+		<libelleUP>Ko de Web/Wap en HP</libelleUP>
+		<montant>1,5</montant>
+		<typeUnite>2</typeUnite>
+		<libelleUnite>Ko</libelleUnite>
+	      </descUP>
+	  </listeUPs>
+	</descUPE>
+	<descUPE>
+	  <idUP>2</idUP>
+	  <libelleUP>Voix en HC</libelleUP>
+	  <indUPC>N</indUPC>
+	  <cumul>O</cumul>
+	  <listeUPs>
+	      <descUP>
+		<idUP>2</idUP>
+		<libelleUP>Voix en HC</libelleUP>
+		<montant>3h 15mn 20s</montant>
+		<typeUnite>1</typeUnite>
+		<libelleUnite>Temps</libelleUnite>
+	      </descUP>
+	  </listeUPs>
+	</descUPE>
+	<descUPE>
+	  <idUP>100</idUP>
+	  <libelleUP>SMS en HC / MMS en HC</libelleUP>
+	  <indUPC>N</indUPC>
+	  <cumul>O</cumul>
+	  <listeUPs>
+	      <descUP>
+		<idUP>7</idUP>
+		<libelleUP>SMS en HC</libelleUP>
+		<montant>200</montant>
+		<typeUnite>3</typeUnite>
+		<libelleUnite>SMS</libelleUnite>
+	      </descUP>
+	      <descUP>
+		<idUP>8</idUP>
+		<libelleUP>MMS en HC</libelleUP>
+		<montant>100</montant>
+		<typeUnite>4</typeUnite>
+		<libelleUnite>MMS</libelleUnite>
+	      </descUP>
+	  </listeUPs>
+	</descUPE>
+    </listeUPEs>
+  </resultat>
+</getConsultationSoldeReponse>

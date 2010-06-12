@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="scripts pour le service : option illimite KDO voix SMS">
+
+<!-- OPTION ALREADY EXISTS -->
+
+  <page cost="freept">
+    <redirect src="erl://svc_options_mobi:redirect_if_kdo?opt_ikdo_vx_sms&amp;#menu_illimite,#enregistrer_kdo"/>
+  </page>
+
+  <page tag="menu_illimite" backtext="notext" hist="donthist" cost="free_pt"
+	descr="option illimite KDO voix SMS deja active">
+    <title>Menu illimite KDO voix SMS</title>
+    <a href="#suivi_rech">Suivi du rechargement</a><br/>
+    <a href="#consulter_KDO">Pour consulter son No KDO</a><br/>
+    <a href="#modifier_KDO">Pour modifier son No KDO</a><br/>
+    <a href="#desinscrire_KDO">Se desinscrire de l'illimite KDO voix + sms</a><br/>
+    <a href="#conditions">Conditions</a>
+  </page>
+  
+<!-- REGISTER NUMBER -->
+
+  <page tag="enregistrer_kdo" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS menu enregistrer no kdo">
+    <title>option illimite KDO voix SMS menu enregistrer no kdo</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enreg_generique_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#enregistrer_kdo2">Suite</a><br/>
+    <a href="#conditions_enreg">Conditions</a><br/>
+    <a href="#enregistrer">Enregistrer son numero</a>
+  </page>
+
+  <page tag="enregistrer_kdo2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS menu generique 2">
+    <title>option illimite KDO voix SMS menu generique 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enreg_generique_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#enregistrer">Enregistrer son No KDO</a>
+  </page>
+  
+  <page tag="enregistrer" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS enregistrer no kdo">
+    <title>option illimite KDO voix SMS enregistrer no kdo</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_ikdo_vx_sms&amp;#kdo_enreg&amp;#error_new">
+      <entry kind="digits" type="password">
+	<prompt>
+        <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enregistrer_text?opt_ikdo_vx_sms"/>
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="kdo_enreg">
+    <redirect src="erl://svc_options_mobi:do_register?opt_ikdo_vx_sms&amp;#kdo_enreg_success,#error_new,#failure"/>
+  </page>
+
+  <page tag="kdo_enreg_success" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS page kdo enregistre">
+    <title>option illimite KDO voix SMS page kdo enregistre</title>  
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enreg_ok_text?opt_ikdo_vx_sms"/><br/>
+  </page>
+ 
+  <page tag="error_new" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS erreur saisie nouveau numero KDO">
+    <title>Erreur de saisie du nouveau numero KDO</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enreg_nok_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#enregistrer">Reenregistrer votre No KDO</a><br/>
+  </page>
+ 
+<!-- MODIFY NUMBER -->
+
+  <page tag="modifier_KDO">
+    <redirect src="erl://svc_options_mobi:redirect_if_modif_allowed?opt_ikdo_vx_sms&amp;#modif_generique,#not_allowed"/>
+  </page>
+
+  <page tag="modif_generique" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS modifier numero KDO">
+    <title>option illimite KDO voix SMS modifier numero KDO</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_modifier_generique_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#modifier">Suite</a><br/>
+  </page>
+ 
+  <page tag="modifier" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS modifier no kdo">
+    <title>option illimite KDO voix SMS modifier no kdo</title>
+    <form action="erl://svc_options_mobi:is_correct_number?opt_ikdo_vx_sms&amp;#kdo_modif&amp;#error_modif">
+      <entry kind="digits" type="password">
+	<prompt>
+        <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_modifier_text?opt_ikdo_vx_sms"/>
+        </prompt>
+      </entry>
+    </form>
+  </page>
+
+  <page tag="kdo_modif">
+    <redirect src="erl://svc_options_mobi:do_register?opt_ikdo_vx_sms&amp;#kdo_modif_success,#error_new,#failure"/>
+  </page>
+
+  <page tag="kdo_modif_success" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS page kdo enregistre">
+    <title>option illimite KDO voix SMS page kdo enregistre</title>  
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_modif_ok_text?opt_ikdo_vx_sms"/><br/>
+  </page>
+ 
+  <page tag="error_modif" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO erreur saisie numero kdo modifie">
+    <title>Erreur de saisie du numero KDO modifie</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_enreg_nok_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#modifier">Reenregistrer votre No KDO</a><br/>
+  </page>
+ 
+  <page tag="not_allowed" backtext="notext" menutext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS numero deja modifie">
+    <title>option illimite KDO voix SMS numero deja modifie</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_deja_modifie_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#not_allowed2">Suite</a>
+  </page>
+  
+  <page tag="not_allowed2" backtext="notext" cost="free_pt"
+	 descr="option illimite KDO voix SMS numero deja modifie 2">
+    <title>option illimite KDO voix SMS numero deja modifie 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_deja_modifie_text?opt_ikdo_vx_sms&amp;2"/><br/>
+  </page>
+
+  <!-- GENERIC CONDITIONS -->
+
+  <page tag="conditions">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#conditions2">Suite</a>
+  </page>
+
+  <page tag="conditions2">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#conditions3">Suite</a>
+  </page>
+
+  <page tag="conditions3">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;3"/><br/>
+    <a href="#conditions4">Suite</a>
+  </page>
+
+  <page tag="conditions4">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;4"/><br/>
+    <a href="#conditions5">Suite</a>
+  </page>
+
+  <page tag="conditions5">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;5"/><br/>
+    <a href="#conditions6">Suite</a>
+  </page>
+
+  <page tag="conditions6">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;6"/><br/>
+    <a href="#conditions7">Suite</a>
+  </page>
+
+  <page tag="conditions7">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;7"/><br/>
+    <a href="#conditions8">Suite</a>
+  </page>
+
+  <page tag="conditions8">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;8"/><br/>
+    <a href="#conditions9">Suite</a>
+  </page>
+
+  <page tag="conditions9">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_text?opt_ikdo_vx_sms&amp;9"/><br/>
+  </page>
+
+<!-- REGISTER CONDITIONS -->
+
+  <page tag="conditions_enreg">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#conditions_enreg2">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg2">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#conditions_enreg3">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg3">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;3"/><br/>
+    <a href="#conditions_enreg4">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg4">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;4"/><br/>
+    <a href="#conditions_enreg5">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg5">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;5"/><br/>
+    <a href="#conditions_enreg6">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg6">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;6"/><br/>
+    <a href="#conditions_enreg7">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg7">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;7"/><br/>
+    <a href="#conditions_enreg8">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg8">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;8"/><br/>
+    <a href="#conditions_enreg9">Suite</a>
+  </page>
+
+  <page tag="conditions_enreg9">
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_conditions_enreg_text?opt_ikdo_vx_sms&amp;9"/><br/>
+    <a href="#enregistrer">Enregistrer son numero</a>
+  </page>
+
+<!-- CONSULT NUMBER -->
+
+  <page tag="consulter_KDO" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS consulter No KDO">
+    <title>option illimite KDO voix SMS consulter No KDO</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_consulter_generique_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#consulter_KDO2">Suite</a><br/>
+  </page>
+
+  <page tag="consulter_KDO2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS consulter No KDO 2">
+    <title>option illimite KDO voix SMS consulter No KDO 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_consulter_generique_text?opt_ikdo_vx_sms&amp;2"/><br/>
+  </page>
+ 
+ 
+<!-- SUBSCRIBE TO OPTION -->
+
+  <page tag="souscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS s'inscrire gratuitement">
+    <title>option illimite KDO voix SMS s'inscrire gratuitement</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_inscrire_gratuit_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#souscrire2">Suite</a>
+  </page>
+  
+  <page tag="souscrire2" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS s'inscrire gratuitement 2">
+    <title>option illimite KDO voix SMS s'inscrire gratuitement 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_inscrire_gratuit_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ikdo_vx_sms&amp;#success,#opt_deja_active,#failure,#failure">Confirmer</a>
+  </page>
+  
+  <page tag="souscrire_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS s'inscrire gratuitement generique suite">
+    <title>option illimite KDO voix SMS s'inscrire gratuitement generique suite</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_inscrire_suite_text?opt_ikdo_vx_sms"/><br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ikdo_vx_sms&amp;#success_suite,#opt_deja_active,#failure,#failure">Confirmer</a>
+  </page>
+  
+  <page tag="souscrire_cond" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS s'inscrire gratuitement generique conditions">
+    <title>option illimite KDO voix SMS s'inscrire gratuitement generique conditions</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_inscrire_cond_text?opt_ikdo_vx_sms"/><br/>
+    <a href="erl://svc_options_mobi:do_subscription?opt_ikdo_vx_sms&amp;#success_cond,#opt_deja_active,#failure,#failure">Confirmer</a>
+  </page>
+  
+  <page tag="success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS apres confirmation">
+    <title>option illimite KDO voix SMS apres confirmation</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_confirmer_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+   
+  <page tag="success_suite" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS apres confirmation, cas inscription suite">
+    <title>option illimite KDO voix SMS apres confirmation, cas inscription suite</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_confirmer_suite_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+      
+  <page tag="success_cond" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS apres confirmation, cas inscription conditions">
+    <title>option illimite KDO voix SMS apres confirmation, cas inscription conditions</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_confirmer_cond_text?opt_ikdo_vx_sms"/><br/>
+    <a href="#enregistrer_kdo">Enregistrer son numero KDO</a><br/>
+  </page>
+   
+<!-- UNSUBSCRIBE OPTION -->
+
+  <page tag="desinscrire_KDO">
+    <redirect src="erl://svc_options_mobi:redirect_state_and_refill?opt_ikdo_vx_sms&amp;#desinscr_encours_moins30,#desinscr_encours_plus30,#desinscrire,#desinscr_plus30"/>
+  </page>
+
+  <page tag="desinscr_plus30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire +30E">
+    <title>option illimite KDO voix SMS desinscrire +30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_nok_sup30_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#desinscr_plus30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_plus30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire +30E 2">
+    <title>option illimite KDO voix SMS desinscrire +30E 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_nok_sup30_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_moins30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire en cours -30E">
+    <title>option illimite KDO voix SMS desinscrire en cours -30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_ok_inf30_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#desinscr_encours_moins30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_moins30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire en cours -30E 2">
+    <title>option illimite KDO voix SMS desinscrire en cours -30E 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_ok_inf30_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire en cours +30E">
+    <title>option illimite KDO voix SMS desinscrire en cours +30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_ok_sup30_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#desinscr_encours_plus30_2">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30_2" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire en cours +30E 2">
+    <title>option illimite KDO voix SMS desinscrire en cours +30E 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_ok_sup30_text?opt_ikdo_vx_sms&amp;2"/><br/>
+    <a href="#desinscr_encours_plus30_3">Suite</a><br/>
+  </page>
+
+  <page tag="desinscr_encours_plus30_3" 
+        backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire en cours +30E 3">
+    <title>option illimite KDO voix SMS desinscrire en cours +30E 3</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_ok_sup30_text?opt_ikdo_vx_sms&amp;3"/><br/>
+    <a href="#desinscrire">Se desinscrire</a><br/>
+  </page>
+
+  <page tag="desinscrire" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS desinscrire">
+    <title>option illimite KDO voix SMS desinscrire</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_nok_inf30_text?opt_ikdo_vx_sms"/><br/>
+    <a href="erl://svc_options_mobi:do_unsubscription?opt_ikdo_vx_sms&amp;#desinscr_success,#failure_desinscr">Confirmer</a>
+  </page>
+
+  <page tag="desinscr_success" backtext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS apres confirmation desinscription">
+    <title>option illimite KDO voix SMS apres confirmation desnscription</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_desinscrire_confirm_text?opt_ikdo_vx_sms"/><br/>
+  </page>
+     
+<!-- ERROR CASES -->
+
+  <page tag="failure" backtext="notext"
+        cost="free_pt" descr="Opt. J INF: Echec">
+    <title>Echec Souscription</title>
+    Le service est momentanement interrompu.
+    Veuillez recommencer ulterieurement.<br/>
+    Merci.
+  </page>
+
+ <page tag="failure_desinscr" backtext="notext" cost="free_pt"
+       descr="option illimite KDO voix SMS : Echec desinscr">
+   <title>Echec Desinscription</title>
+   <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_failure_desinscr_text?opt_ikdo_vx_sms"/>
+  </page>
+
+<!-- CHECK REFILL -->
+
+  <page tag="suivi_rech">
+    <redirect src="erl://svc_options_mobi:redirect_state_opt_cpte?opt_ikdo_vx_sms&amp;#suivi_rech_ok,#suivi_rech_nok"/>
+  </page>
+
+  <page tag="suivi_rech_ok" backtext="notext" menutext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS suivi rechargement ok">
+    <title>option illimite KDO voix SMS suivi rechargement ok</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_suivi_rech_ok_text?opt_ikdo_vx_sms"/>
+    <a href="#restit_rech">Suivi du rechargement</a><br/>
+  </page>
+
+  <page tag="suivi_rech_nok" backtext="notext" menutext="notext" hist="dohist" cost="free_pt"
+	descr="option illimite KDO voix SMS suivi rechargement nok">
+    <title>option illimite KDO voix SMS suivi rechargement nok</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_suivi_rech_nok_text?opt_ikdo_vx_sms"/>
+    <a href="#restit_rech_next_month">Suivi du rechargement</a><br/>
+  </page>
+   
+<!-- RESTITUTION -->
+
+  <page tag="restit_rech">
+    <redirect src="erl://svc_options_mobi:redirect_refill_amount?opt_ikdo_vx_sms&amp;#restit_rech_inf_30E,#restit_rech_sup_30E"/>
+  </page>
+
+  <page tag="restit_rech_inf_30E" backtext="notext" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution recharge inferieur a 30E">
+    <title>Page de restitution recharge inferieur a 30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_rech_ok_inf30_text?opt_ikdo_vx_sms"/>
+  </page>
+
+  <page tag="restit_rech_sup_30E" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution recharge superieur a 30E">
+    <title>Page de restitution recharge superieur a 30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_rech_ok_sup30_text?opt_ikdo_vx_sms"/>
+  </page>
+
+  <page tag="restit_rech_next_month">
+    <redirect src="erl://svc_options_mobi:redirect_refill_amount?opt_ikdo_vx_sms&amp;#next_month_inf_30E,#restit_rech_sup_30E"/>
+  </page>
+
+  <page tag="next_month_inf_30E" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution mois inscription recharge inferieur a 30E">
+    <title>Page de restitution mois inscription recharge inferieur a 30E</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_rech_nok_inf30_text?opt_ikdo_vx_sms&amp;1"/><br/>
+    <a href="#next_month_inf_30E_2">Suite</a><br/>
+  </page>
+
+  <page tag="next_month_inf_30E_2" 
+        cost="free_pt" hist="donthist" volatile="true"
+	descr="Page de restitution mois inscription recharge inferieur a 30E 2">
+    <title>Page de restitution mois inscription recharge inferieur a 30E 2</title>
+    <include src="erl://text_opt_ikdo_vx_sms:ikdo_vx_sms_rech_nok_inf30_text?opt_ikdo_vx_sms&amp;2"/>
+  </page>
+
+</pages>
+
+ 

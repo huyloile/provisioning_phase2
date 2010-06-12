@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Pages for testing services">
+  <page>
+    <a href="erl://svc_flash:flash_msg?TstFlash&2">2 msgs</a><br/>
+    <a href="erl://svc_flash:flash_msg?TstFlash&3">3 msgs</a>
+  </page>
+
+  <page tag="1">
+    Nouveauté 1
+  </page>
+
+  <page tag="2">
+    Nouveauté 2
+  </page>
+
+  <page tag="3">
+   Nouveauté 3
+  </page>
+</pages>

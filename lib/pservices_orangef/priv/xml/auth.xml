@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page">
+
+  <page hist="donthist">
+    <title>Access</title>
+    <!-- Do authorization acess in fonction of imsi or msisdn -->
+    <!-- Allow to access with simulateur  -->
+    <redirect src="erl://svc_util:redirect_prefix?imsi&999&home.xml#service&#full_inter"/>
+  </page>
+
+  <page tag="full_inter">
+    <!-- IMSI with full authorization  -->
+    <redirect src="erl://svc_util:redir_interval?imsi&interval_imsi&home.xml#service&#sc_access"/>
+  </page>
+
+  <page tag="sc_access">
+    <redirect src="erl://svc_util:map_acl?service_code&auth_by_sc_acl&home.xml#bad_code"/>
+  </page>
+
+
+ <page tag="auth_preprod" nav="end">
+    <lang>
+      <fr>Vous n'avez pas accès à ce service.<br/></fr>
+      <en>You cannot access this service.<br/></en>
+    </lang>
+  </page>
+
+</pages>

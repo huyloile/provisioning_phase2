@@ -1,0 +1,4 @@
+<erl>
+out(A) ->
+    yaws_rpc:handler_session(A, {test_asmetier_webserv, orchidee_handler}).
+</erl>

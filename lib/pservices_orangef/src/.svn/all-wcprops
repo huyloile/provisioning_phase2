@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/orangef/!svn/ver/4988/branches/provisioning_phase2/lib/pservices_orangef/src
+END
+svc_spider.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pservices_orangef/src/svc_spider.erl
+END
+svc_recharge_eskimo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_eskimo.erl
+END
+annuaire.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/annuaire.erl
+END
+text_code101_opt_blocked.erl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_code101_opt_blocked.erl
+END
+svc_callback_test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_callback_test.erl
+END
+text_opt_ow_3E_mobi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_opt_ow_3E_mobi.erl
+END
+svc_virgin.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_virgin.erl
+END
+svc_activ_opt_mobi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_activ_opt_mobi.erl
+END
+text_opt_surf_mensu.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_opt_surf_mensu.erl
+END
+svc_virgin_cb.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_virgin_cb.erl
+END
+svc_transfert_credit.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_transfert_credit.erl
+END
+svc_of_mvno.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_mvno.erl
+END
+clean.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/clean.erl
+END
+svc_of_config_options_postpaid.erl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_config_options_postpaid.erl
+END
+svc_tele2.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_tele2.erl
+END
+wap_push_capability.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/wap_push_capability.erl
+END
+pservices_orangef_sup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/pservices_orangef_sup.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/Makefile
+END
+svc_bzh_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_bzh_cmo.erl
+END
+svc_recharge_cb_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_cb_cmo.erl
+END
+svc_recharge_moi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_moi.erl
+END
+svc_selfcare.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_selfcare.erl
+END
+content015.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/content015.erl
+END
+svc_options.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_options.erl
+END
+svc_roaming.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_roaming.erl
+END
+svc_parentChild.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_parentChild.erl
+END
+one2one_offers.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/one2one_offers.erl
+END
+svc_wifi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_wifi.erl
+END
+svc_sachem.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_sachem.erl
+END
+text_opt_ikdo_vx_sms.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_opt_ikdo_vx_sms.erl
+END
+svc_of_refill.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_refill.erl
+END
+svc_annuaire_test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_annuaire_test.erl
+END
+svc_smsinfos.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_smsinfos.erl
+END
+svc_annuaire.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_annuaire.erl
+END
+svc_option_manager.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_option_manager.erl
+END
+unit_test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/unit_test.erl
+END
+table_ratio_mnesia.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/table_ratio_mnesia.erl
+END
+svc_sms_pre.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_sms_pre.erl
+END
+svc_of_config_options_mobi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_config_options_mobi.erl
+END
+svc_sms_games.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_sms_games.erl
+END
+import_wap_push_capabilities.erl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/import_wap_push_capabilities.erl
+END
+svc_recharge.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge.erl
+END
+svc_plan_tarif_free.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_plan_tarif_free.erl
+END
+svc_selfcare_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_selfcare_cmo.erl
+END
+svc_soap_interface_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_soap_interface_orangef.erl
+END
+svc_postpaid.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_postpaid.erl
+END
+error_logger_monitor.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/error_logger_monitor.erl
+END
+text_recharge_forbidden.erl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_recharge_forbidden.erl
+END
+svc_activ_opt_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_activ_opt_cmo.erl
+END
+svc_wap_push_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_wap_push_orangef.erl
+END
+option_manager.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/option_manager.erl
+END
+svc_eskimo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_eskimo.erl
+END
+svc_mipc_vpbx.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_mipc_vpbx.erl
+END
+svc_carrefour.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_carrefour.erl
+END
+svc_options_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_options_cmo.erl
+END
+svc_callback.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_callback.erl
+END
+svc_recharge_virgin.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_virgin.erl
+END
+svc_util_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_util_of.erl
+END
+text_nouveaute.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_nouveaute.erl
+END
+sec0025.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/sec0025.erl
+END
+svc_msisdn_operator.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_msisdn_operator.erl
+END
+refillgame_2_mnesia.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/refillgame_2_mnesia.erl
+END
+svc_limande.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_limande.erl
+END
+svc_of_plugins_spider.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_plugins_spider.erl
+END
+batch_reset_imei.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/batch_reset_imei.erl
+END
+svc_recharge_tele2.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_tele2.erl
+END
+pt_test_of1.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/pt_test_of1.erl
+END
+svc_call_me_back.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_call_me_back.erl
+END
+pservices_orangef.app.src
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pservices_orangef/src/pservices_orangef.app.src
+END
+svc_recharge_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_cmo.erl
+END
+text_opt_mms_mensu.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_opt_mms_mensu.erl
+END
+svc_check_conditions_options.erl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_check_conditions_options.erl
+END
+svc_m5_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_m5_orangef.erl
+END
+svc_jeu.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_jeu.erl
+END
+svc_postpaid_plugins.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_postpaid_plugins.erl
+END
+page_popup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/page_popup.erl
+END
+terminal_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/terminal_of.erl
+END
+svc_compte.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_compte.erl
+END
+svc_home.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4988/branches/provisioning_phase2/lib/pservices_orangef/src/svc_home.erl
+END
+text_opt_bp_10_mms.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/text_opt_bp_10_mms.erl
+END
+get_list_from_soap_response_xmerl.erl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/get_list_from_soap_response_xmerl.erl
+END
+pservices_orangef_app.erl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/orangef/!svn/ver/4929/branches/provisioning_phase2/lib/pservices_orangef/src/pservices_orangef_app.erl
+END
+svc_monacell.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_monacell.erl
+END
+svc_recharge_cb_mobi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_recharge_cb_mobi.erl
+END
+svc_subscr_asmetier.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_subscr_asmetier.erl
+END
+svc_mmsinfos.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_mmsinfos.erl
+END
+svc_activ_opt_postpaid.erl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_activ_opt_postpaid.erl
+END
+svc_flash.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_flash.erl
+END
+euro01.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/euro01.erl
+END
+version_svn.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/version_svn.erl
+END
+svc_plan_tarif_omer.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_plan_tarif_omer.erl
+END
+svc_options_mobi.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_options_mobi.erl
+END
+svc_quicksilver.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_quicksilver.erl
+END
+svc_of_config_options_cmo.erl
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_config_options_cmo.erl
+END
+svc_one2one.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_one2one.erl
+END
+svc_of_plugins.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_of_plugins.erl
+END
+prisme_dump.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/prisme_dump.erl
+END
+billing_standard_of.erl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/billing_standard_of.erl
+END
+svc_calltogether.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_calltogether.erl
+END
+svc_plan_tarif.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/svc_plan_tarif.erl
+END
+sec001.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/sec001.erl
+END
+provisioning_ftm.erl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/orangef/!svn/ver/4945/branches/provisioning_phase2/lib/pservices_orangef/src/provisioning_ftm.erl
+END
+sec002.erl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pservices_orangef/src/sec002.erl
+END

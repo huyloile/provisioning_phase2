@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Home page for Virgin, Tele2, NRJ and Carrefour">
+
+  <page>
+     <redirect src="erl://svc_of_plugins:check_right_access_to_services?#selfcare_home,#anon"/>
+  </page>
+  
+  <page tag="selfcare_home">
+   <redirect src="erl://svc_util:redir_subscription?virgin_prepaid=#virgin_prepaid,virgin_comptebloque=virgin/selfcare_virgin_cb.xml,virgin_postpaid=virgin/selfcare_virgin_postpaid.xml,tele2_pp=tele2/selfcare.xml,tele2_comptebloque=/mcel/acceptance/selfcare_tele2_cb.xml,carrefour_prepaid=carrefour/selfcare_carrefour_pp.xml,ten_postpaid=ten/selfcare_ten_postpaid.xml,ten_comptebloque=/mcel/acceptance/selfcare_ten_cb.xml,monacell_prepaid=monacell/selfcare_monacell_pp.xml,monacell_comptebloqu=monacell/selfcare_monacell_cb.xml,symacom=eskimo/Eskimo.xml,nrj_prepaid=/mcel/acceptance/neptune/prepaid/Home_page.xml,nrj_comptebloque=#neptune,carrefour_comptebloq=/mcel/acceptance/selfcare_carrefour_cb.xml,opim=/mcel/acceptance/Home_page_opim.xml,default=#anon"/>
+   </page>
+
+   <page tag="anon" nav="end" descr="Client MVNO(tele2,virgin,carrefour,ten ou monacell) non reconnu">
+    Vous n'avez pas acces a ce service
+   </page>
+
+   <page tag="neptune" descr="Ridirect to Homepage neptune">
+      <redirect src="erl://svc_util_of:redir_declinaison?90=/mcel/acceptance/neptune/forfait/Home_page.xml,91=/mcel/acceptance/neptune/forfait/Home_page.xml,92=/mcel/acceptance/neptune/forfait/Home_page_mini.xml,93=/mcel/acceptance/neptune/forfait/Home_page_mini.xml,125=/mcel/acceptance/neptune/forfait/Home_page_data_illimitee.xml,126=/mcel/acceptance/neptune/forfait/Home_page_data_illimitee.xml,127=/mcel/acceptance/neptune/forfait/Home_page_data_illimitee.xml,default=/mcel/acceptance/neptune/forfait/Home_page.xml"/>
+  </page>
+
+  <page tag="virgin_prepaid" descr="Ridirect to Homepage virgin prepaid">
+      <redirect src="erl://svc_util_of:redir_declinaison?114=virgin/selfcare_virgin_pp2.xml,default=virgin/selfcare_virgin_pp.xml"/>
+  </page>
+
+</pages>

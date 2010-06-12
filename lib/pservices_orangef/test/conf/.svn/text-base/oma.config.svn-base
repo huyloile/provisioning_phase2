@@ -1,0 +1,29 @@
+[
+ {mnesia,
+  [
+   {schema_location, disc}
+  ]
+ },
+ {oma,
+  [
+   {force_snmp_agent_ip, true},
+   {slog_flush_mode,mnesia},
+   {snmp_agent_port, 8161},
+   {snmp_heartbeat_binds,[]},
+   {snmp_targets,[{{127,0,0,1},8162,v2c}]},
+   {system_descr,"OMA Test node"},
+   {system_id,"OMA"}
+  ]},
+ {snmp,
+  [
+   {snmp_config_dir,"../../oma/test/conf/snmp"}, %% for non-OMA applications
+   {agent,
+    [%%{agent_verbosity, log},
+     {db_dir, "run"},
+     {config, [{dir, "../../oma/test/conf/snmp"},
+	       {force_load, true}]},
+     {local_db,[{agent_repair, false}]}
+    ]}
+  ]}
+
+].

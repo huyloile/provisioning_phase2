@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="BZH CMO selfcare pages">
+   
+  <page cost="freept" descr="Suivi-conso Niv3: Bzh CMO">
+    <redirect src="erl://svc_bzh_cmo:redirect_compte"/>
+  </page>
+  
+ <page tag="forf_ac_princ_ac_odr_ac">
+   <redirect src="#actif"/>
+  </page>
+
+ <page tag="forf_ac_princ_ac_odr_ep">
+   <redirect src="#actif"/>
+  </page>
+ 
+ <page tag="forf_ac_princ_ep_odr_ac">
+   <redirect src="#actif"/>
+  </page>
+
+ <page tag="forf_ac_princ_ep_odr_ep">
+   <redirect src="#actif"/>
+  </page>
+
+ <page tag="forf_ep_princ_ac_odr_ac">
+   <redirect src="#actif"/>
+  </page>
+
+ <page tag="forf_ep_princ_ac_odr_ep">
+   <redirect src="#actif"/>
+  </page>
+ 
+ <page tag="forf_ep_princ_ep_odr_ac">
+   <redirect src="#epuise"/>
+  </page>
+
+ <page tag="forf_ep_princ_ep_odr_ep">
+   <redirect src="#epuise"/>
+  </page>
+
+
+  <page tag="actif" descr="SV Niv3 Bzh CMO: Forf AC ou Princ AC" nav="end">
+    <title>Suivi-conso Niv3: Bzh CMO</title>
+    Forfait: <include src="erl://svc_compte:print_solde?forf_bzh"/>EUR
+    jusqu'au <include src="erl://svc_compte:print_fin_credit?forf_bzh"/> -
+    Cpte rech: <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+  </page>
+
+
+  <page tag="epuise" descr="SV Niv3 Bzh CMO: Forf EP et Princ EP" nav="end">
+    <title>Suivi-conso Niv3: Bzh CMO</title>
+    Merci de recharger en appelant gratis le 224 avant le <include src="erl://svc_compte:print_fin_credit?forf_bzh"/>
+  </page>
+
+
+ <!-- Error pages -->  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>bzh_cmo : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+  Merci.</page>
+
+</pages>

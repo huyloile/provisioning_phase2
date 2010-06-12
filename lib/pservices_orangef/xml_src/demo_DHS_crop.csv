@@ -1,0 +1,8 @@
+You deleted an attachment from this message. The original MIME headers for the attachment were:
+Content-Type: application/octet-stream; name="demo_DHS_crop.csv"
+Content-Description: demo_DHS_crop.csv
+Content-Disposition: attachment; filename="demo_DHS_crop.csv"; size=3578;
+	creation-date="Tue, 18 Aug 2009 11:39:50 GMT";
+	modification-date="Tue, 18 Aug 2009 11:39:50 GMT"
+Content-Transfer-Encoding: base64
+

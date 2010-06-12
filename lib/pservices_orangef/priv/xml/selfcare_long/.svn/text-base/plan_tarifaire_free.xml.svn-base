@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<!-- plan tarifaire change pages -->
+
+<pages descr="Self-care page">
+  <page cost="free_pt" descr="plan tarifaire: 1er menu" hist="dohist" backtext="notext">
+    <title>Chgt de PT 1er menu</title>
+    <include src="erl://svc_plan_tarif_free:print_link_first_menu?class_sec&amp;#changer_pour_class_sec"/>
+    <include src="erl://svc_plan_tarif_free:print_link_first_menu?soir_we_sec&amp;#changer_pour_soir_we_sec"/>
+	<include src="erl://svc_plan_tarif_free:print_link_first_menu?class_sec_v2&amp;#changer_pour_class_sec_v2"/>
+  </page>  
+
+  <page tag="changer_pour_class_sec" cost="free_pt" hist="donthist" descr="plan tarifaire: changer_pour_class_sec" backtext="notext">
+    <title>changer_pour_class_sec</title>
+    Pour telephoner a la seconde des la premiere seconde a un tarif unique de 0,55 eur par min 7j/7 24h/24 :<br/>
+    <a href="erl://svc_plan_tarif_free:souscrire?class_sec&amp;#fin_class_sec">Souscrire</a>
+  </page>
+
+  <page tag="changer_pour_soir_we_sec" cost="free_pt" hist="donthist" descr="plan tarifaire: changer_pour_soir_we_sec" backtext="notext">
+    <title>changer_pour_soir_we_sec</title>
+    En semaine de 8h a 18h:0,65EUR/min. Apres 18H:0.55EUR/min et des 21h seulement
+	0.35EUR/min ! (valable les WE et jours feries)<br/>
+    <a href="erl://svc_plan_tarif_free:souscrire?soir_we_sec&amp;#fin_soir_we_sec">Souscrire</a>
+  </page>
+  
+  <page tag="changer_pour_class_sec_v2" cost="free_pt" hist="donthist" descr="plan tarifaire: changer_pour_class_sec_v2" backtext="notext">
+    <title>changer_pour_class_sec_v2</title>
+    Pour telephoner a la seconde des la premiere seconde a un tarif unique 
+	de 0,50 eur par min 7j/7 24h/24.<br/>
+    <a href="erl://svc_plan_tarif_free:souscrire?class_sec_v2&amp;#fin_class_sec_v2">Souscrire</a>
+  </page>
+  
+<!-- Messages de Fin -->  
+  <page tag="fin_class_sec" cost="free_pt" backtext="notext" nav="stop" descr="plan tarifaire: fin_class_sec">
+    <title>fin_class_sec</title>
+	Vous beneficiez maintenant du plan classique a la seconde des la premiere seconde.
+    <include src="#remerciements"/>
+  </page>
+
+  <page tag="fin_soir_we_sec" cost="free_pt" backtext="notext" nav="stop" descr="plan tarifaire: fin_soir_we_sec">
+    <title>fin_soir_we_sec</title>
+	Vous beneficiez maintenant du plan soir et Week-end.
+    <include src="#remerciements"/>
+  </page>
+
+  <page tag="fin_class_sec_v2" cost="free_pt" backtext="notext" nav="stop" descr="plan tarifaire: fin_class_sec_v2">
+    <title>fin_class_sec_v2</title>
+	Vous beneficiez maintenant du nouveau plan classique 2009 
+	a la seconde des la premiere seconde.
+    <include src="#remerciements"/>
+  </page>
+  
+  <page tag="remerciements" cost="free_pt" backtext="notext" descr="plan tarifaire: remerciements">
+    <title>remerciements</title>
+	Orange vous remercie de votre appel.
+  </page>
+
+<!--error pages -->
+
+  <page tag="not_enough_credit_pt" cost="free_pt" descr="plan tarifaire: Credit insuffisant">
+    <title>plan tarifaire: Credit insuffisant</title>
+    Votre credit est insuffisant pour demander une modification du plan
+    tarifaire ou d'une plage horaire. Veuillez recharger votre compte.<br/>
+    <a href="recharge.xml">recharger</a>
+  </page>
+
+ <page tag="mobirecharge_change_pt" cost="free_pt" descr="plan tarifaire: Erreur mobirecharge">
+   <title>plan tarifaire: Erreur mobirecharge</title>
+   Vous utilisez une mobi-recharge 1H et beneficiez d'une
+   tarification incompatible avec les plans tarifaires.
+ </page>
+
+ <page tag="change_pt_error" cost="free_pt" backtext="notext" descr="plan tarifaire: Erreur SDP">
+   <title>plan tarifaire: Erreur SDP</title>
+   La modification de plan tarifaire ou de plage horaire est
+   techniquement impossible pour le moment: veuillez nous en excuser et
+   renouveler cette operation ulterieurement.
+ </page>
+
+ <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt" descr="plan tarifaire : service indisponible">
+    <title>plan tarifaire : temporary error</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+ </pages>

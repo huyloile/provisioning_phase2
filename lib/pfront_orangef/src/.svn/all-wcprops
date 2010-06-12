@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2/lib/pfront_orangef/src
+END
+sachem.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/sachem.erl
+END
+pfront_orangef_sup.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/pfront_orangef_sup.erl
+END
+dico_tlv.erl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/dico_tlv.erl
+END
+proxyclient_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/proxyclient_server.erl
+END
+pfront_orangef_app.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/pfront_orangef_app.erl
+END
+limande.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/limande.erl
+END
+sms_mms_infos.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/sms_mms_infos.erl
+END
+ocf_rdp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/ocf_rdp.erl
+END
+mqseries_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/mqseries_server.erl
+END
+ascii_over_http.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/ascii_over_http.erl
+END
+bin_dec.erl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/bin_dec.erl
+END
+cbhttp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/cbhttp.erl
+END
+sachem_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/sachem_server.erl
+END
+opal.erl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/opal.erl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/Makefile
+END
+dise_request.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/dise_request.erl
+END
+des3_crypto.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/des3_crypto.erl
+END
+proxyclient_interface.erl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/proxyclient_interface.erl
+END
+smppasn_interface.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/smppasn_interface.erl
+END
+wifi_request.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/wifi_request.erl
+END
+asmetier_webserv.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/asmetier_webserv.erl
+END
+proxy_decoder.erl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/proxy_decoder.erl
+END
+smppasn_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/smppasn_server.erl
+END
+oto_request.erl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/oto_request.erl
+END
+batch_ocfrdp.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4989/branches/provisioning_phase2/lib/pfront_orangef/src/batch_ocfrdp.erl
+END
+transfert_of_cra.erl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/transfert_of_cra.erl
+END
+mipc_vpbx_webserv.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/mipc_vpbx_webserv.erl
+END
+rdp_options_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/rdp_options_server.erl
+END
+smsinfos_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/smsinfos_server.erl
+END
+SMPP37.asn
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/SMPP37.asn
+END
+tlv_encodage.erl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/tlv_encodage.erl
+END
+tlv_server.erl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/tlv_server.erl
+END
+soaplight_orangef.erl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/soaplight_orangef.erl
+END
+pfront_orangef.app.src
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/orangef/!svn/ver/4908/branches/provisioning_phase2/lib/pfront_orangef/src/pfront_orangef.app.src
+END

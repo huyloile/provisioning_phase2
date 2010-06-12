@@ -1,0 +1,7 @@
+* BUGFIX: CN 0000151-Gforge Ref.4593/ anomalie menu bons plans
+* FEATURE: CN 00001508-Gforgef Ref.4583 anomalie tele2
+* FEATURE: CDC_TELE2_CB_V3.1 Ajout tele2_cb3
+* BUGFIX : 4376 Anomalie m5
+* FEATURE: 4523 "#125# Wifi : Modification de scripts"
+* BUGFIX : 4215 "Recharge Mobi : Rechargement interdit pour mobicarte Click"
+* BUGFIX : 4519 "Premiere page postpaid avec OneToOne"

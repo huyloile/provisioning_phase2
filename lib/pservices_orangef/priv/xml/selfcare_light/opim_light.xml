@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages>
+  
+  <page tag="postpaid" descr=" ">
+    <redirect src="erl://svc_spider:redirect_by_fileRestitutionType?RF=#rf,ND=#nd,NA=#na,?=#suiviconso1erepage"/>
+  </page>
+
+  <page tag="rf" descr="suivi conso postpaid niv 1 retard de facturation"
+	hist="dohist">
+    Depuis le <include src="erl://svc_spider:print_dateProchFactuPlus1?~s"/> vous disposez a nouveau de votre forfait et de vos options eventuelles.
+  </page>
+
+  <page tag="nd" descr="suivi conso postpaid niv 1 nouveau dossier"
+	hist="dohist" menutext="notext">
+    Ce service est disponible 48h apres votre 1ere communication
+  </page>
+
+  <page tag="na" descr="suivi conso postpaid niv 1 acces refuse"
+	hist="dohist" menutext="notext">
+    Vous n'avez pas acces a ce service.
+  </page>
+
+  <page tag="suiviconso1erepage" descr="suivi conso postpaid/prepaid niv 1"
+	hist="dohist">
+    <redirect src="erl://svc_spider:redirect_by_typeRestitution?FORF=#restit_by_identifiant,?=#restitGodetAError"/>
+  </page>
+
+  <page tag="restit_by_identifiant" descr="suivi conso postpaid niv 1 forfait">
+    <redirect src="erl://svc_spider:redirect_by_identifiant?0002=#id0002,0027=#forfait,?=#forfait"/>
+  </page>
+  
+  <page tag="id0002" descr="suivi conso dme niv 2 id 2">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?consumed&amp;#id0002_ep&amp;#id0002_ac"/>
+  </page>
+
+  <page tag="id0002_ac" descr="suivi conso dme niv 2 id 2 actif">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?2&amp;consumed&amp;TEMPS&amp;Conso :~s~s%0A"/>
+    <include src="erl://svc_spider:print_credit?2&amp;bonus&amp;TEMPS&amp;Dont bonus:~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Hors forfait:~s EUR%0A"/>
+    Meilleur choix:<include src="erl://svc_spider:print_XXh?forfait ~s"/>
+    <include src="erl://svc_spider:print_credit?2&amp;excess&amp;TEMPS&amp; %2B~s~s"/>
+  </page>
+
+  <page tag="id0002_ep" descr="suivi conso dme niv 2 id 2 epuise">
+    A cette date, aucune conso<br/>
+    <include src="erl://svc_spider:print_credit?2&amp;bonus&amp;TEMPS&amp;Votre Bonus: ~s~s%0A"/>
+    <include src="erl://svc_spider:print_montant?hfDise&amp;Conso hors forfait: ~s EUR%0A"/>
+    Meilleur choix: <include src="erl://svc_spider:print_XXh?forfait ~s"/>
+  </page>  
+
+  <page tag="forfait" descr="suivi conso postpaid niv 1 forfait">
+    <redirect src="erl://svc_spider:redir_si_credit_nul?balance&amp;#forfait_ep&amp;#forfait_ac"/>
+  </page>
+
+  <page tag="forfait_ac" descr="suivi conso postpaid niv 1 forfait ac" backtext="notext" menutext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;Au ~s a ~s, votre "/>
+    <include src="erl://svc_spider:print_libelle?1&amp;~s "/>
+    <include src="erl://svc_spider:print_XXh?~s%0A"/>
+    <include src="erl://svc_spider:print_credits?1&amp;rollOver&amp; %2Breport de ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;balance&amp;TEMPS&amp;Solde forfait:~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactu?Validite:~s inclus%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Conso hors forfait: ~sEUR"/>
+  </page>
+
+  <page tag="forfait_ep" descr="suivi conso postpaid niv 1 forfait ep" backtext="notext" menutext="notext">
+    <include src="erl://svc_spider:print_dateHeureReactu?dm&amp;~s a ~s, "/>
+    <include src="erl://svc_spider:print_libelleepuise?1&amp;~s "/>
+    <include src="erl://svc_spider:print_XXh?~s%0A"/>
+    <include src="erl://svc_spider:print_credits?1&amp;rollOver&amp; %2Breport de ~s%0A"/>
+    <include src="erl://svc_spider:print_credit?1&amp;excess&amp;TEMPS&amp;Depassement de ~s~s%0A"/>
+    <include src="erl://svc_spider:print_dateProchFactuPlus1?Renouvellement le ~s%0A"/>
+    <include src="erl://svc_spider:print_infocompgodetA?balance&amp;1"/>
+    <include src="erl://svc_spider:print_somme_montant_hfAdv_hfInf?Conso hors forfait: ~sEUR"/>
+  </page>
+  
+  <page tag="restitGodetAError" descr="suivi conso niv 1 restitution impossible du godet A" nav="end" menutext="notext">
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+</pages>

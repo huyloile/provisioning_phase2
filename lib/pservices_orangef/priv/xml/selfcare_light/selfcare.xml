@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pages SYSTEM "mml.dtd">
+
+<pages descr="Self-care page">
+  <page cost="freept">
+    <redirect src="erl://svc_selfcare:start_light?#redir_home"/>
+  </page>
+  
+  <page tag="redir_home" cost="freept">
+    <redirect src="erl://svc_util_of:redir_by_spider_recordName?spider_response=spider.xml#prepaid,undefined=#redir_home_sdp"/>
+  </page>
+   
+  <!--
+      <page tag="redir_home_sdp" cost="freept">
+      <redirect src="erl://svc_selfcare:select_home_niv2"/>
+      </page>
+  -->
+
+  <page tag="redir_home_sdp" cost="freept">
+    <title>Pas de response Spider</title>
+    Service indisponible. Merci de vous reconnecter ulterieurement.
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas A  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas A">
+    <title>Suivi Conso Mobi cas A</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ac_promo_ac_classique,smm=#princ_ac_sms_ac_wap_ac_promo_ac_smm,smam=#princ_ac_sms_ac_wap_ac_promo_ac_smm,smsoir=#princ_ac_sms_ac_wap_ac_promo_ac_smm,smn=#princ_ac_sms_ac_wap_ac_promo_ac_smm,madrid2=#princ_ac_sms_ac_wap_ac_promo_ac_madrid2,plug_noel=#princ_ac_sms_ac_wap_ac_promo_ac_plug_noel,classiquev2=#princ_ac_sms_ac_wap_ac_promo_ac_classique,soir_we=#princ_ac_sms_ac_wap_ac_promo_ac_classique,plugv3=#princ_ac_sms_ac_wap_ac_promo_ac_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ac_promo_ac_plug_noel,classique_sec=#princ_ac_sms_ac_wap_ac_promo_ac_classique,soir_we_sec=#princ_ac_sms_ac_wap_ac_promo_ac_classique,zap=#princ_ac_sms_ac_wap_ac_promo_ac_zap,zap_promo=#princ_ac_sms_ac_wap_ac_promo_ac_zap,m6_prepaid=#princ_ac_sms_ac_wap_ac_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas C  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas C">
+    <title>Suivi Conso Mobi cas C</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ac_promo_ep_classique,smm=#princ_ac_sms_ac_wap_ac_promo_ep_smm,smam=#princ_ac_sms_ac_wap_ac_promo_ep_smm,smsoir=#princ_ac_sms_ac_wap_ac_promo_ep_smm,smn=#princ_ac_sms_ac_wap_ac_promo_ep_smm,madrid2=#princ_ac_sms_ac_wap_ac_promo_ep_madrid2,plug_noel=#princ_ac_sms_ac_wap_ac_promo_ep_plug_noel,classiquev2=#princ_ac_sms_ac_wap_ac_promo_ep_classique,soir_we=#princ_ac_sms_ac_wap_ac_promo_ep_classique,plugv3=#princ_ac_sms_ac_wap_ac_promo_ep_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ac_promo_ep_plug_noel,classique_sec=#princ_ac_sms_ac_wap_ac_promo_ep_classique,soir_we_sec=#princ_ac_sms_ac_wap_ac_promo_ep_classique,zap=#princ_ac_sms_ac_wap_ac_promo_ep_zap,zap_promo=#princ_ac_sms_ac_wap_ac_promo_ep_zap,m6_prepaid=#princ_ac_sms_ac_wap_ac_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas I  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas I">
+    <title>Suivi Conso Mobi cas I</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ep_promo_ac_classique,smm=#princ_ac_sms_ac_wap_ep_promo_ac_smm,smam=#princ_ac_sms_ac_wap_ep_promo_ac_smm,smsoir=#princ_ac_sms_ac_wap_ep_promo_ac_smm,smn=#princ_ac_sms_ac_wap_ep_promo_ac_smm,madrid2=#princ_ac_sms_ac_wap_ep_promo_ac_madrid2,plug_noel=#princ_ac_sms_ac_wap_ep_promo_ac_plug_noel,classiquev2=#princ_ac_sms_ac_wap_ep_promo_ac_classique,soir_we=#princ_ac_sms_ac_wap_ep_promo_ac_classique,plugv3=#princ_ac_sms_ac_wap_ep_promo_ac_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ep_promo_ac_plug_noel,classique_sec=#princ_ac_sms_ac_wap_ep_promo_ac_classique,soir_we_sec=#princ_ac_sms_ac_wap_ep_promo_ac_classique,zap=#princ_ac_sms_ac_wap_ac_promo_ac_zap,zap_promo=#princ_ac_sms_ac_wap_ac_promo_ac_zap,m6_prepaid=#princ_ac_sms_ac_wap_ep_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas F  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas F">
+    <title>Suivi Conso Mobi cas F</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ac_promo_ac_classique,smm=#princ_ac_sms_ep_wap_ac_promo_ac_smm,smam=#princ_ac_sms_ep_wap_ac_promo_ac_smm,smsoir=#princ_ac_sms_ep_wap_ac_promo_ac_smm,smn=#princ_ac_sms_ep_wap_ac_promo_ac_smm,madrid2=#princ_ac_sms_ep_wap_ac_promo_ac_madrid2,plug_noel=#princ_ac_sms_ep_wap_ac_promo_ac_plug_noel,classiquev2=#princ_ac_sms_ep_wap_ac_promo_ac_classique,soir_we=#princ_ac_sms_ep_wap_ac_promo_ac_classique,plugv3=#princ_ac_sms_ep_wap_ac_promo_ac_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ac_promo_ac_plug_noel,classique_sec=#princ_ac_sms_ep_wap_ac_promo_ac_classique,soir_we_sec=#princ_ac_sms_ep_wap_ac_promo_ac_classique,zap=#princ_ac_sms_ac_wap_ac_promo_ac_zap,zap_promo=#princ_ac_sms_ac_wap_ac_promo_ac_zap,m6_prepaid=#princ_ac_sms_ep_wap_ac_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas L  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas L">
+    <title>Suivi Conso Mobi cas L</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ep_sms_ac_wap_ac_promo_ac_classique,smm=#princ_ep_sms_ac_wap_ac_promo_ac_smm,smam=#princ_ep_sms_ac_wap_ac_promo_ac_smm,smsoir=#princ_ep_sms_ac_wap_ac_promo_ac_smm,smn=#princ_ep_sms_ac_wap_ac_promo_ac_smm,madrid2=#princ_ep_sms_ac_wap_ac_promo_ac_madrid2,plug_noel=#princ_ep_sms_ac_wap_ac_promo_ac_plug_noel,classiquev2=#princ_ep_sms_ac_wap_ac_promo_ac_classique,soir_we=#princ_ep_sms_ac_wap_ac_promo_ac_classique,plugv3=#princ_ep_sms_ac_wap_ac_promo_ac_plug_noel,plugv3sec=#princ_ep_sms_ac_wap_ac_promo_ac_plug_noel,classique_sec=#princ_ep_sms_ac_wap_ac_promo_ac_classique,soir_we_sec=#princ_ep_sms_ac_wap_ac_promo_ac_classique,zap=#princ_ep_sms_ac_wap_ac_promo_ac_zap,zap_promo=#princ_ep_sms_ac_wap_ac_promo_ac_zap,m6_prepaid=#princ_ep_sms_ac_wap_ac_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas D  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas D">
+    <title>Suivi Conso Mobi cas D</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ac_wap_ep_promo_ep_classique,smm=#princ_ac_sms_ac_wap_ep_promo_ep_smm,smam=#princ_ac_sms_ac_wap_ep_promo_ep_smm,smsoir=#princ_ac_sms_ac_wap_ep_promo_ep_smm,smn=#princ_ac_sms_ac_wap_ep_promo_ep_smm,madrid2=#princ_ac_sms_ac_wap_ep_promo_ep_madrid2,plug_noel=#princ_ac_sms_ac_wap_ep_promo_ep_plug_noel,classiquev2=#princ_ac_sms_ac_wap_ep_promo_ep_classique,soir_we=#princ_ac_sms_ac_wap_ep_promo_ep_classique,plugv3=#princ_ac_sms_ac_wap_ep_promo_ep_plug_noel,plugv3sec=#princ_ac_sms_ac_wap_ep_promo_ep_plug_noel,classique_sec=#princ_ac_sms_ac_wap_ep_promo_ep_classique,soir_we_sec=#princ_ac_sms_ac_wap_ep_promo_ep_classique,zap=#princ_ac_sms_ac_wap_ep_promo_ep_zap,zap_promo=#princ_ac_sms_ac_wap_ep_promo_ep_zap,m6_prepaid=#princ_ac_sms_ac_wap_ep_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas H  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas H">
+    <title>Suivi Conso Mobi cas H</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ac_promo_ep_classique,smm=#princ_ac_sms_ep_wap_ac_promo_ep_smm,smam=#princ_ac_sms_ep_wap_ac_promo_ep_smm,smsoir=#princ_ac_sms_ep_wap_ac_promo_ep_smm,smn=#princ_ac_sms_ep_wap_ac_promo_ep_smm,madrid2=#princ_ac_sms_ep_wap_ac_promo_ep_madrid2,plug_noel=#princ_ac_sms_ep_wap_ac_promo_ep_plug_noel,classiquev2=#princ_ac_sms_ep_wap_ac_promo_ep_classique,soir_we=#princ_ac_sms_ep_wap_ac_promo_ep_classique,plugv3=#princ_ac_sms_ep_wap_ac_promo_ep_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ac_promo_ep_plug_noel,classique_sec=#princ_ac_sms_ep_wap_ac_promo_ep_classique,soir_we_sec=#princ_ac_sms_ep_wap_ac_promo_ep_classique,zap=#princ_ac_sms_ep_wap_ac_promo_ep_zap,zap_promo=#princ_ac_sms_ep_wap_ac_promo_ep_zap,m6_prepaid=#princ_ac_sms_ep_wap_ac_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas N  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas N" nav="end">
+    <title>Suivi Conso Mobi cas N</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ac_m6_prepaid,default=#princ_ep_sms_ac_wap_ac_promo_ep_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas N default =========================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ep_default" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas N default" nav="end">
+    <title>Suivi Conso Mobi cas N default</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas G  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas G">
+    <title>Suivi Conso Mobi cas G</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ep_promo_ac_classique,smm=#princ_ac_sms_ep_wap_ep_promo_ac_smm,smam=#princ_ac_sms_ep_wap_ep_promo_ac_smm,smsoir=#princ_ac_sms_ep_wap_ep_promo_ac_smm,smn=#princ_ac_sms_ep_wap_ep_promo_ac_smm,madrid2=#princ_ac_sms_ep_wap_ep_promo_ac_madrid2,plug_noel=#princ_ac_sms_ep_wap_ep_promo_ac_plug_noel,classiquev2=#princ_ac_sms_ep_wap_ep_promo_ac_classique,soir_we=#princ_ac_sms_ep_wap_ep_promo_ac_classique,plugv3=#princ_ac_sms_ep_wap_ep_promo_ac_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ep_promo_ac_plug_noel,classique_sec=#princ_ac_sms_ep_wap_ep_promo_ac_classique,soir_we_sec=#princ_ac_sms_ep_wap_ep_promo_ac_classique,zap=#princ_ac_sms_ep_wap_ep_promo_ac_zap,zap_promo=#princ_ac_sms_ep_wap_ep_promo_ac_zap,m6_prepaid=#princ_ac_sms_ep_wap_ep_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas O  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ep_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas O" nav="end">
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ep_m6_prepaid,default=#princ_ep_sms_ac_wap_ep_promo_ac_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas O default =========================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ep_promo_ac_default" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas O" nav="end">
+    <title>Suivi Conso Mobi cas O</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas K  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ac_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas K" nav="end">
+    <title>Suivi Conso Mobi cas K</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ep_wap_ac_m6_prepaid,default=#princ_ep_sms_ep_wap_ac_promo_ac_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas K default =========================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ac_promo_ac_default" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas K" nav="end">
+    <title>Suivi Conso Mobi cas K</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_wap"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS
+    offerts<include src="erl://svc_selfcare:print_by_plan?noel= ,default= par Orange "/>a
+    ut.av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- ==================================================================== -->
+  <!-- ========== cas E  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas E">
+    <title>Suivi Conso Mobi cas E</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?classique=#princ_ac_sms_ep_wap_ep_promo_ep_classique,smm=#princ_ac_sms_ep_wap_ep_promo_ep_smm,smam=#princ_ac_sms_ep_wap_ep_promo_ep_smm,smsoir=#princ_ac_sms_ep_wap_ep_promo_ep_smm,smn=#princ_ac_sms_ep_wap_ep_promo_ep_smm,madrid2=#princ_ac_sms_ep_wap_ep_promo_ep_madrid2,noel=#princ_ac_sms_ep_wap_ep_promo_ep_classique,plug_noel=#princ_ac_sms_ep_wap_ep_promo_ep_plug_noel,classiquev2=#princ_ac_sms_ep_wap_ep_promo_ep_classique,soir_we=#princ_ac_sms_ep_wap_ep_promo_ep_classique,plugv3=#princ_ac_sms_ep_wap_ep_promo_ep_plug_noel,plugv3sec=#princ_ac_sms_ep_wap_ep_promo_ep_plug_noel,classique_sec=#princ_ac_sms_ep_wap_ep_promo_ep_classique,soir_we_sec=#princ_ac_sms_ep_wap_ep_promo_ep_classique,zap=#princ_ac_sms_ep_wap_ep_promo_ep_zap,zap_promo=#princ_ac_sms_ep_wap_ep_promo_ep_zap,m6_prepaid=#princ_ac_sms_ep_wap_ep_m6_prepaid"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas M  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ep_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas M" nav="end">
+    <title>Suivi Conso Mobi cas M</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ac_wap_ep_m6_prepaid,default=#princ_ep_sms_ac_wap_ep_promo_ep_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas M default =========================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ac_wap_ep_promo_ep_default" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas M" nav="end">
+    <title>Suivi Conso Mobi cas M</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas P  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ac_promo_ep" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas M" nav="end">
+    <title>Suivi Conso Mobi cas M</title>
+    <redirect src="erl://svc_selfcare:redirect_by_plan?m6_prepaid=#princ_ep_sms_ep_wap_ac_m6_prepaid,default=#princ_ep_sms_ep_wap_ac_promo_ep_default"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas P default =========================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ac_promo_ep_default" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas P" nav="end">
+    <title>Suivi Conso Mobi cas P</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_wap"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== cas J  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="princ_ep_sms_ep_wap_ep_promo_ac" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi cas J" nav="end">
+    <title>Suivi Conso Mobi cas J</title>
+    la mobicarte credit epuise<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- ==================================================================== -->
+  <!-- ========== cas B  ================================================== -->
+  <!-- ==================================================================== -->
+  <page tag="epuise" log="SC_Eep" cost="free_pt" backtext="notext"
+	descr="Suivi conso Mobi - cas epuise" nav="end">
+    <title>Suivi conso</title>
+    la mobicarte<br/>
+    Credit epuise. <br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+  
+  <page tag="perime" log="SC_Eper" cost="free_pt" backtext="notext"
+	descr="Suivi conso Mobi - cas perime" nav="end">
+    <title>Suivi-Conso</title>
+    la mobicarte<br/>
+    Date de validite du credit depassee.<br/>
+    Merci de recharger avant le
+    <include src="erl://svc_selfcare:fin_validite"/>.<br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  
+  <!-- ==================================================================== -->
+  <!-- ========== plan classique ========================================== -->
+  <!-- ==================================================================== -->
+  <!-- == plan classique cas A == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas A" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas A</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser av.
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan classique cas C == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas C" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales),
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange World a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan classique cas D == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas D" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas D</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales)
+    et <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan classique cas E == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas E" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales ou <include src="erl://svc_selfcare:print_by_plan?classique_sec=jusqu'a "/><include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/>SMS <include src="erl://svc_selfcare:print_by_plan?classique_sec=le soir et WE "/>a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan classique cas F == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ac_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas F">
+    <title>Suivi Conso Mobi plan classique - cas F</title>
+    <redirect src="#princ_ac_sms_ac_wap_ac_promo_ac_classique"/>
+  </page>
+
+  <!-- == plan classique cas G == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas G" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas G</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    <include src="erl://svc_selfcare:print_by_plan?classiquev2=com.nat ou jusqu'a ,classique_sec=com.nat ou jusqu'a ,default=com.nationales ou "/>
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/>SMS
+    <include src="erl://svc_selfcare:print_by_plan?classiquev2=le soir et WE a utiliser av. ,classique_sec=le soir et WE a utiliser av ,default=a utiliser avant "/>
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS
+    offerts<include src="erl://svc_selfcare:print_by_plan?classiquev2= ,classique_sec= ,default= par Orange "/>a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan classique cas H == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas H" nav="end">
+    <title>Suivi Conso Mobi plan classique - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales) et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange World a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan classique cas I == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ac_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas I">
+    <title>Suivi Conso Mobi plan classique - cas I</title>
+    <redirect src="#princ_ac_sms_ac_wap_ac_promo_ac_classique"/>
+  </page>
+  
+  <!-- == plan classique cas L == -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac_classique" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan classique - cas L">
+    <title>Suivi Conso Mobi plan classique - cas L</title>
+    <include src="#plan_name"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    OW<include src="erl://svc_selfcare:print_by_plan?noel= ,default= a consommer "/>avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== plan sur mesure matin =================================== -->
+  <!-- ==================================================================== -->
+  <!-- == plan sur mesure matin cas A == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas A">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas A</title>
+    <redirect src="#princ_ac_sms_ep_wap_ep_promo_ac_smm"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas C == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas C" nav="end">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nat.<include src="#descr_plan"/>),
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange World a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas D == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas D" nav="end">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales<include src="#descr_plan"/>) et
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas E == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas E" nav="end">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales <include src="erl://svc_selfcare:print_by_plan?smsoir=en heures creuses ,smn=en heures creuses "/>ou jusqu'a
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/>SMS le soir et
+    WE a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas F == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ac_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas F">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas F</title>
+    <redirect src="#princ_ac_sms_ep_wap_ep_promo_ac_smm"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas G == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas G" nav="end">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas G</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> com.nat.
+    en heures creuses, a utiliser av.
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas H == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas H" nav="end">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales<include src="#descr_plan"/>) et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange World a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas I == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ac_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas I">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas I</title>
+    <redirect src="#princ_ac_sms_ep_wap_ep_promo_ac_smm"/>
+  </page>
+  
+  <!-- == plan sur mesure matin cas L == -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac_smm" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan sur mesure matin - cas L">
+    <title>Suivi Conso Mobi plan sur mesure matin - cas L</title>
+    <redirect src="#princ_ep_sms_ac_wap_ac_promo_ac_classique"/>
+  </page>
+  
+  <!-- ==================================================================== -->
+  <!-- ========== plan plug (madrid2) ===================================== -->
+  <!-- ==================================================================== -->
+  <!-- == plan plug cas A == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas A" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas A</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,<!-- -->
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> com.nat en
+    dehors des cours + WE) a utiliser
+    av<include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a ut
+    avt <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan plug cas C == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas C" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nat.<include src="#descr_plan"/>)+
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange plug a utiliser av
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug cas D == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas D" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas D</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    et <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales<include src="#descr_plan"/>)
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug cas E == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas E" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales<include src="#descr_plan"/>, a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug cas F == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ac_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas F" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas F</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> com.nat
+    en dehors des cours + WE
+    a utiliser av.<include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+    <br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av.<include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan plug cas G == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas G" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas G</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> com.nat.
+    en dehors des cours + WE, a utiliser
+    av.<include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    a utiliser
+    av.<include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan plug cas H == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas H" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR (soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nat<include src="#descr_plan"/>) et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange plug a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug cas I == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ac_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas I">
+    <title>Suivi Conso Mobi plan plug - cas I</title>
+    <redirect src="#princ_ac_sms_ac_wap_ac_promo_ac_madrid2"/>
+  </page>
+  
+  <!-- == plan plug cas L == -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac_madrid2" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug - cas L" nav="end">
+    <title>Suivi Conso Mobi plan plug - cas L</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    Orange plug a utiliser
+    avt <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- ==================================================================== -->
+  <!-- ========== plan plug noel ========================================== -->
+  <!-- ==================================================================== -->
+  <!-- == plan plug noel cas A == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas A" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas A</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,<!-- -->
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> apres les
+    cours vers fixe et Orange) a ut
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a ut
+    avt <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+
+  <!-- == plan plug noel cas C == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas C" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nat. apres les cours vers fixe et Orange) a ut av.
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug noel cas D == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas D" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas D</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    et <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nationales en dehors des cours vers fixes et mobiles Orange)
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug noel cas E == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas E" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR soit
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    com.nat en dehors des cours vers fixes et Orange
+    (des 17h en sem,mercredi+WE), a util
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug noel cas F == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ac_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas F">
+    <title>Suivi Conso Mobi plan plug noel - cas F</title>
+    <redirect src="#princ_ac_sms_ep_wap_ep_promo_ac_plug_noel"/>
+  </page>
+  
+  <!-- == plan plug noel cas G == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas G" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas G</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> de
+    apres les cours vers fixe et Orange),a ut.av.
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a ut
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan plug noel cas H == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas H" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> com.nat
+    apres les cours vers fixe+Orange) et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces au
+    portail Orange plug a ut
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan plug noel cas I == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ac_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas I">
+    <title>Suivi Conso Mobi plan plug noel - cas I</title>
+    <redirect src="#princ_ac_sms_ac_wap_ac_promo_ac_plug_noel"/>
+  </page>
+  
+  <!-- == plan plug noel cas L == -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac_plug_noel" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan plug noel - cas L" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas L</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    av <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+
+  <!-- ==================================================================== -->
+  <!-- ========== plan ZAP ================================================ -->
+  <!-- ==================================================================== -->
+  <!-- == plan plug ZAP cas A == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ac_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan Zap - cas A" nav="end">
+    <title>Suivi Conso Mobi plan plug noel - cas A</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,<!-- -->
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> d'appels
+    en heures Zap) a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    avt <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+
+  <!-- == plan plug ZAP cas C == -->
+  <page tag="princ_ac_sms_ac_wap_ac_promo_ep_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan ZAP - cas C" nav="end">
+    <title>Suivi Conso Mobi plan ZAP - cas C</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS,
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde_min_sec?cpte_princ"/> d'appels
+    en heures zap) a utiliser av
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>.
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces au
+    portail Orange world
+  </page>
+  
+  <!-- == plan plug ZAP cas D == -->
+  <page tag="princ_ac_sms_ac_wap_ep_promo_ep_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan ZAP - cas D" nav="end">
+    <title>Suivi Conso Mobi plan ZAP - cas D</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    et <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    (<include src="erl://svc_compte:print_solde?cpte_princ&amp;min"/> d'appels
+    en heures zap ou <include src="erl://svc_compte:print_solde?cpte_princ&amp;min_p"/> en
+    heure normales) a utiliser av
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+  <!-- == plan Zap cas E == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ep_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan Zap - cas E" nav="end">
+    <title>Suivi Conso Mobi plan plug Zap - cas E</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR =
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS en heures ZAP
+    ou <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS
+    en heures normales a utiliser    
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+   <!-- == plan ZAP cas G == -->
+  <page tag="princ_ac_sms_ep_wap_ep_promo_ac_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan ZAP - cas G" nav="end">
+    <title>Suivi Conso Mobi plan ZAP - cas G</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS ou
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms_p"/> SMS en
+    heures normales, a utiliser
+    av.<include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a util
+    av.<include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+  <!-- == plan ZAP cas H == -->
+  <page tag="princ_ac_sms_ep_wap_ac_promo_ep_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan ZAP - cas H" nav="end">
+    <title>Suivi Conso Mobi plan ZAP - cas H</title>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR=
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms"/> SMS ou
+    <include src="erl://svc_compte:print_solde?cpte_princ&amp;sms_p"/> SMS en
+    heures normales +
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces a
+    orange world a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/>
+  </page>
+  
+   <!-- == plan ZAP cas L == -->
+  <page tag="princ_ep_sms_ac_wap_ac_promo_ac_zap" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan ZAP - cas L" nav="end">
+    <title>Suivi Conso Mobi plan ZAP - cas L</title>
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/> SMS et
+    <include src="erl://svc_compte:print_solde_min_sec?cpte_wap"/> d'acces
+    <include src="#descr_wap"/> a utiliser
+    avt <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_compte:print_solde?cpte_sms_noel&amp;sms"/>SMS offerts
+    par Orange a utiliser
+    av. <include src="erl://svc_compte:print_fin_credit?cpte_sms_noel"/>
+  </page>
+  
+
+ <!-- ==================================================================== -->
+ <!-- ========== plan M6 Prepaid       =================================== -->
+ <!-- ==================================================================== -->
+ <!-- cas A et cas C script plan M6 Prepaid -->
+  <page tag="princ_ac_sms_ac_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas A et cas C">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas A et cas C</title>
+    M6 mobile by Orange:<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR,
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas D et cas I script plan M6 Prepaid -->
+  <page tag="princ_ac_sms_ac_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas D et cas I">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas D et cas I</title>
+    M6 mobile by Orange:<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas E et cas G script plan M6 Prepaid -->
+  <page tag="princ_ac_sms_ep_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas E et cas G">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas E et cas G</title>
+    M6 mobile by Orange:<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas F et cas H script plan M6 Prepaid -->
+  <page tag="princ_ac_sms_ep_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas F et cas H">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas F et cas H</title>
+    M6 mobile by Orange:<br/>
+    <include src="erl://svc_compte:print_solde?cpte_princ"/>EUR et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_princ"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas L et cas N plan m6_prepaid -->
+  <page tag="princ_ep_sms_ac_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas L et cas N">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas L et cas N</title>
+    M6 mobile by Orange:<br/>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS et
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas M et cas O plan m6_prepaid -->
+  <page tag="princ_ep_sms_ac_wap_ep_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas M et cas O">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas M et cas O</title>
+    M6 mobile by Orange:<br/>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_sms&amp;sms"/>SMS
+    a utiliser avant
+    <include src="erl://svc_compte:print_fin_credit?cpte_sms"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- cas K et cas P plan m6_prepaid -->
+  <page tag="princ_ep_sms_ep_wap_ac_m6_prepaid" backtext="notext"
+	hist="donthist" cost="free_pt" volatile="true"
+	descr="Suivi Conso Mobi plan M6 Prepaid - cas K et cas P">
+    <title>Suivi Conso Mobi plan M6 Prepaid - cas K et cas P</title>
+    M6 mobile by Orange:<br/>
+    Credit epuise.
+    <include src="erl://svc_compte:print_solde?cpte_wap"/>Mo a utiliser
+    avant <include src="erl://svc_compte:print_fin_credit?cpte_wap"/><br/>
+    <include src="erl://svc_selfcare:msisdn"/> valide jusqu'au
+    <include src="erl://svc_selfcare:fin_validite"/>
+  </page>
+
+  <!-- Error pages -->
+  <page tag="notmobi" nav="end" log="SC_Enotmobi" cost="free_pt"
+	descr="Mobi : not mobi">
+    <title>Mobi : not mobi</title>
+    Vous n'avez pas acces a ce service reserve aux mobicartes.
+  </page>
+  
+  <page tag="temporary" nav="end" log="SC_Etmp" cost="free_pt"
+	descr="Service indisponible">
+    <title>Mobi : Service indisponible</title>
+    Le service est momentanement interrompu. Veuillez recommencer
+    ulterieurement.<br/>
+    Merci.
+  </page>
+
+  <page tag="plan_name">
+    plan <include src="erl://svc_selfcare:print_by_plan?classique=classique,smm=sur mesure matin,smam=sur mesure apres midi,smsoir=sur mesure soir,smn=sur mesure nuit,madrid2=Orange plug,noel=soir et we serie limitee,plug_noel=Orange plug,classiquev2=classique,soir_we=soir et we,plugv3=Orange plug,plugv3sec=Orange plug,classique_sec=classique,soir_we_sec=soir et we,zap=Orange Zap a la seconde,zap_promo=Orange Zap a la seconde"/>
+  </page>
+  
+  <page tag="descr_plan">
+    <include src="erl://svc_selfcare:print_by_plan?smm= en heures creuses,smam= en heures creuses,smsoir= en heures creuses,smn= en heures creuses,madrid2= en dehors des cours %2B WE,noel= le soir et we,plug_noel= pendant les vacances,soir_we= apres 21h%2BWE,soir_we_sec= apres 21h%2BWE"/>
+  </page>
+  
+  <page tag="descr_wap">
+    <include src="erl://svc_selfcare:print_by_plan?madrid2=au portail Orange plug,plug_noel=au portail Orange plug,plugv3=au portail Orange plug,default=a Orange World"/>
+  </page>
+  
+</pages>
