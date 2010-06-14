@@ -123,4 +123,16 @@
       <AttributClient nomAttribut='paiementMode'>non</AttributClient>
    </Client>
 
+   <!-- Customer 13 --> 
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000114</AttributClient>
+      <AttributClient nomAttribut='ancienMSISDN'>33600000113</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000114</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3IPZ</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='TechnologicalSegment'>TRM3G</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+
 </ListeClient>

@@ -1,5 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ListeClient>
+  <!--Customer 1, update subscription (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000001</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000001</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 2, update IMEI & Subscription (U+1)-->
+    <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000002</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000002</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 3, update subscription (IMEI not modified because level 
+                cannot decrease) (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000003</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000003</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>2</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 4, update MSISDN & Subscription (U+1)-->
+  <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33610000004</AttributClient>
+      <AttributClient nomAttribut='ancienMSISDN'>33600000004</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000004</AttributClient>
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 5, update IMSI (old will be deleted from db) & 
+                Subscription (U+1)-->
+  <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000005</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010010000005</AttributClient>
+      <AttributClient nomAttribut='ancienIMSI'>208010000000005</AttributClient>	
+      <AttributClient nomAttribut='segCo'>F3LOF</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 6, update subscription to mobi (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000006</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000006</AttributClient>
+      <AttributClient nomAttribut='segCo'>CPP01</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>oui</AttributClient>
+   </Client>
+   <!--Customer 7, update subscription to cmo (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000007</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000007</AttributClient>
+      <AttributClient nomAttribut='segCo'>ABONW</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>cmo</AttributClient>
+   </Client>
+   <!--Customer 8, update subscription to postpaid (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000008</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000008</AttributClient>
+      <AttributClient nomAttribut='segCo'>30JOU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 9, update subscription to dme (U+1)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000009</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000009</AttributClient>
+      <AttributClient nomAttribut='segCo'>A30FL</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>ENT</AttributClient>
+   </Client>
+   <!--Customer 10, subscription remains NULL (unknown segCo) (no update)-->
+   <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000010</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000010</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 11, etatDossier 70, delete (D+1)-->
+  <Client etatDossier='70'>
+      <AttributClient nomAttribut='MSISDN'>33600000011</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000011</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
+   <!--Customer 12, unknown customer, insert to db-->
+  <Client etatDossier='10'>
+      <AttributClient nomAttribut='MSISDN'>33600000012</AttributClient>
+      <AttributClient nomAttribut='IMSI'>208010000000012</AttributClient>
+      <AttributClient nomAttribut='segCo'>INCONU</AttributClient>
+      <AttributClient nomAttribut='TAC'>000001</AttributClient>
+      <AttributClient nomAttribut='tacUssdLevel'>1</AttributClient>
+      <AttributClient nomAttribut='paiementMode'>non</AttributClient>
+   </Client>
    <!--Customer 13, unknown segCo & TAC & UL, leave imei unchanged and 
                 subscription already set to null, no update (only tech seg)-->
   <Client etatDossier='10'>

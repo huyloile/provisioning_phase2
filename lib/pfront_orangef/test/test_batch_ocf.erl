@@ -87,9 +87,8 @@ compare(Gotten, Expected, Line) ->
 	 {"208010000000014", "+33600000014", "00000100000001", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"},
 	 {"208010000000015", "+33600000015", "00000100000001", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"},
 	 {"208010000000016", "+33600000015", "00000200000001", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"},
-	 {"208010000000101", "+33600000101", "000001XXXXXXX1", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"}, %% Added
-	 {"208010000000110", "+33600000111", "000001XXXXXXX1", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"},
-	 {"208010000000112", "+33600000111", "000001XXXXXXX1", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"}
+	 {"208010000000041", "+33600000042", "000001XXXXXXX1", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"},
+	 {"208010000000042", "+33600000041", "000001XXXXXXX1", ?OCF_NO_FIELD, ?OCF_NO_FIELD, "MOB"}
 	].
 
 %% Each 3-tuple contains an IMSI, the initial technological segment
@@ -125,7 +124,7 @@ online()->
     %% 3 -> verify modification in users base
     %% 4 -> delete imsi in use 
     %% 5 -> verify deletion of inactive profiles    
-%%    test_prov(),
+    test_prov(),
     test_prov2(),
     io:format("Test OK~n"),
     ok.

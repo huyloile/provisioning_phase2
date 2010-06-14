@@ -471,10 +471,10 @@ print_rapport(Time)->
 %%     Tmp=io_lib:format("~s~n~p~n",[Date,XML]),
 %%     file:write(FD_U,Tmp),
 %%     print_error(Date,[],FD_U);
-print_log(Date,[{no_update,XML}|_],FD_U)->
+print_log(Date,[{no_update,XML}|T],FD_U)->
     Tmp = io_lib:format("~s~n~p~n",[Date,XML]),
     file:write(FD_U,Tmp),
-    print_error(Date,[],FD_U);
+    print_error(Date,T,FD_U);
 print_log(_,[],_) ->
      ok.
 
@@ -551,16 +551,22 @@ acc(X,Acc,S)->
 
 write_log(#xmlElement{name='Client',
 		      attributes=[#xmlAttribute{name=etatDossier,value=Val}|_],
-		      content=Contents}=Ret) ->
-    case catch get(no_update) of 
-	[] ->
-	    ok;
-	[{no_update,#client{etat_dossier=Val}}|_] ->
-	    put(warning,get(warning)++[{no_update,client_xml(Ret)}]),
-	    ok;
-	Else ->
-	    Else
-    end.
+		      content=[#xmlElement{name='AttributClient',
+		       			   attributes=[Attr],content=[C]}|T]}=Ret) ->
+    io:format("~p etat dossier is :~p~n",[?LINE,Val]),
+    Warning = fun(X) -> 		      
+		      case X of 
+			  [{no_update,#client{etat_dossier=Val}}|T] -> 
+			      put(warning,get(warning)++[{no_update,client_xml(Ret)}]),
+			      ok;
+			  Else ->
+			      io:format("X is :~p~n",[Else]),
+			      ok
+		      end
+	      end,
+    lists:foreach(Warning,get(no_update));
+write_log(_) ->
+    ok.
 
 client_xml(Element) -> 
     Prolog = ["<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"],
@@ -699,27 +705,26 @@ do_request(#client{imsi=IMSI,msisdn=MSISDN,subscription=SUB,tac=TAC,
     %% update pur
     Old_imsi = Cl#client.old_imsi,
     Old_msisdn = Cl#client.old_msisdn,
-    io:format("~p Old imsi :~p~n",[?LINE,Old_imsi]),
-    io:format("~p Old msisdn :~p~n",[?LINE,Old_msisdn]),
+    io:format("do_request/1 (Line: ~p) =>  Old imsi(~p) & old msisdn(~p)~n",[?LINE,Old_imsi,Old_msisdn]),
     Cl1 = case generate_imei(Cl) of
 	      {error,ignore_client}->
 		  Cl;
 	      Cl_updated->
 		  Cl_updated
 	  end,
-    update_users(Cl1).
+    update_users(Cl1);
 
-%% do_request(#client{imsi=IMSI,msisdn=MSISDN,subscription=SUB,
-%% 		   old_imsi=O_IMSI}=Cl) ->
-%%     IMSI2 = case O_IMSI of undefined -> IMSI; _ -> O_IMSI end, 
-%%     io:format("Old imsi :~p~n",[IMSI2]),
-%%     case select_imei(IMSI2) of
-%% 	{UID,IMEI}->
-%% 	    Cl2=Cl#client{uid=UID,imei=IMEI},
-%% 	    update_users(Cl2);
-%% 	no_client_in_base ->
-%% 	    ok
-%%     end.
+do_request(#client{imsi=IMSI,msisdn=MSISDN,subscription=SUB,
+ 		   old_imsi=O_IMSI}=Cl) ->
+     IMSI2 = case O_IMSI of undefined -> IMSI; _ -> O_IMSI end, 
+     io:format("Old imsi :~p~n",[IMSI2]),
+     case select_imei(IMSI2) of
+ 	{UID,IMEI}->
+ 	    Cl2=Cl#client{uid=UID,imei=IMEI},
+ 	    update_users(Cl2);
+ 	no_client_in_base ->
+ 	    ok
+     end.
 
 %% +type generate_imei(client())-> client().
 generate_imei(#client{imsi=IMSI,tac=TAC,level=UL,old_imsi=O_IMSI}=Cl)->
@@ -868,21 +873,43 @@ update_users(#client{old_imsi=O_IMSI,imsi=N_IMSI}=Cl) when list(O_IMSI)->
              %% don't update old profile 
              %% to avoid doublons
              %% maybe delete later ....
- 	    io:format("new imsi (found in db) :~p~n",[N_IMSI]),
- 	    slog:event(warning,?MODULE,doublons_msisdn,{O_IMSI,N_IMSI}),
- 	    slog:event(count,?MODULE,delete_to_prevent_doublon,{O_IMSI,N_IMSI}),
- 	    clean:delete(UID),
- 	    ok;
- 	not_found ->
+	     io:format("update_users/1 (Line :~p) => new imsi(~p) (found in db)~n",[?LINE,N_IMSI]),
+	     slog:event(warning,?MODULE,doublons_msisdn,{O_IMSI,N_IMSI}),
+	     io:format("deleting this imsi~n"),
+	     clean:delete(UID),
+	     io:format("OK~n"),
+	     update_users(Cl#client{old_imsi=undefined});
+	 not_found ->
              %% no doubons we can update users.
- 	    io:format("new imsi (not found in db) :~p~n",[N_IMSI]),
- 	    update_users(Cl#client{old_imsi=undefined})
+	     io:format("new imsi (not found in db) :~p~n",[N_IMSI]),
+	     update_users(Cl#client{old_imsi=undefined})
      catch Tag:Value ->
- 	    slog:event(internal,?MODULE,update_user_failed,
- 		       {O_IMSI,{Tag,Value}})
+	     slog:event(internal,?MODULE,update_user_failed,
+			{O_IMSI,{Tag,Value}})
      end;
+
+%% update_users(#client{old_imsi=O_IMSI,imsi=N_IMSI}=Cl) when list(O_IMSI)->
+%%      %% verify if new client does not exist  
+%%      try db:lookup_profile({imsi,N_IMSI}) of
+%%  	#profile{uid=UID} ->
+%%              %% don't update old profile 
+%%              %% to avoid doublons
+%%              %% maybe delete later ....
+%%  	    io:format("new imsi (found in db) :~p~n",[N_IMSI]),
+%%  	    slog:event(warning,?MODULE,doublons_msisdn,{O_IMSI,N_IMSI}),
+%%  	    slog:event(count,?MODULE,delete_to_prevent_doublon,{O_IMSI,N_IMSI}),
+%%  	    clean:delete(UID),
+%%  	    ok;
+%%  	not_found ->
+%%              %% no doubons we can update users.
+%%  	    io:format("new imsi (not found in db) :~p~n",[N_IMSI]),
+%%  	    update_users(Cl#client{old_imsi=undefined})
+%%      catch Tag:Value ->
+%%  	    slog:event(internal,?MODULE,update_user_failed,
+%%  		       {O_IMSI,{Tag,Value}})
+%%      end;
     
-update_users(#client{old_imsi=undefined,uid=undefined}=Cl)->
+update_users(#client{uid=undefined}=Cl)->
     slog:event(warning,?MODULE,no_uid_in_update_users,Cl#client.imsi),
     io:format("insert users directly into db :~p~n",[Cl#client.msisdn]),
     insert_users(Cl);
@@ -892,16 +919,16 @@ update_users(#client{old_imsi=undefined,uid=Uid}=Cl) when list(Uid) ->
         #profile{}=OldProfile ->
 	    Old_msisdn = OldProfile#profile.msisdn,
 	    Old_imsi = OldProfile#profile.imsi,
-	    io:format("Old msisdn, Old imsi (in db): ~p, ~p~n",[Old_msisdn,Old_imsi]),
+	    io:format("update_users/1 (Line :~p) => old imsi(~p) & old msisdn(~p) (found in db)~n",[?LINE,Old_imsi,Old_msisdn]),
             case update_profile(OldProfile,Cl) of
                 {ok,NewProfile} ->
-		    New_msisdn = NewProfile#profile.msisdn,
-		    New_imsi = NewProfile#profile.imsi,
-		    io:format("New msisdn, New imsi (from updated client): ~p, ~p~n",[New_msisdn,New_imsi]),
+		    N_msisdn = NewProfile#profile.msisdn,
+		    N_imsi = NewProfile#profile.imsi,
+		    io:format("update_users/1 (Line :~p) => new imsi(~p) & new msisdn(~p) (to update)~n",[?LINE,N_imsi,N_msisdn]),
                     case catch update_user_int(Cl,OldProfile,NewProfile) of
                         ok -> 
 			    Msisdn = NewProfile#profile.msisdn,
-			    io:format("Msisdn (updated): ~p~n~n",[Msisdn]),
+			    io:format("Msisdn (was updated successfully): ~p~n~n",[Msisdn]),
 			    put(update,get(update)+1);
                         no_update -> ok;
                         {nok,Else} ->
@@ -928,21 +955,27 @@ update_users(#client{old_imsi=undefined,uid=Uid}=Cl) when list(Uid) ->
 update_user_int(#client{uid=Uid}=Cl,
 		#profile{msisdn=Msisdn}=OldProfile,
 		#profile{msisdn=Msisdn}=NewProfile) ->
+    io:format("~p:update_user_int/3 => msisdn(old=new): ~p~n",[?LINE,Msisdn]),
     update_user_int_do(Cl,OldProfile,NewProfile);
 
 update_user_int(#client{uid=Uid}=Cl,
 		#profile{msisdn=Old_msisdn}=OldProfile,
 		#profile{msisdn=New_msisdn}=NewProfile) ->
     slog:event(warning,?MODULE,new_profile,{Cl,OldProfile,NewProfile}),
+    io:format("~p:update_user_int/3 => old msisdn(~p) & new msisdn(~p)~n",[?LINE,Old_msisdn,New_msisdn]),
     %% check if a potential doublon can exist
-     try db:lookup_profile({msisdn, NewProfile#profile.msisdn}) of
-	 #profile{uid=Old_Uid} ->
+     try db:lookup_profile({msisdn,New_msisdn}) of
+	 #profile{uid=Old_Uid}=Profile ->
  	    Old_Uid_String = integer_to_list(Old_Uid),
+	     New_msisdn = Profile#profile.msisdn,
+	     New_imsi = Profile#profile.imsi,
+	     io:format("update_user_int/1 (Line :~p) => new imsi(~p) & new msisdn(~p) (found in db)~n",[?LINE,New_imsi,New_msisdn]),     io:format("~p:update_user_int/3 => profile uid(~p) & client uid(~p)~n",[?LINE,Old_Uid_String,Uid]),
 	     if (Old_Uid_String =/= Uid) ->
  		    %% Old profile found: remove it
  		    %%                    clean:delete(Uid);
  		    slog:event(count,?MODULE,delete_to_prevent_doublon,
  			       {Old_Uid,OldProfile}),
+		      io:format("deleting profile uid: ~p~n",[Old_Uid]),
  		    clean:delete(Old_Uid);
 	       
  	       true  ->
@@ -951,6 +984,7 @@ update_user_int(#client{uid=Uid}=Cl,
 	     update_user_int_do(Cl,OldProfile,NewProfile);
 	 not_found ->
              slog:event(trace,?MODULE,no_doublon,continue),
+	     io:format("update_user_int/1 (Line :~p) => new msisdn(~p) not found in db~n",[?LINE,New_msisdn]),
              update_user_int_do(Cl,OldProfile,NewProfile);
 	 Else ->
              slog:event(failure,?MODULE,unexpected_resp,[Else]),
@@ -1030,7 +1064,7 @@ insert_users(#client{msisdn=Msisdn,imsi=Imsi}=Cl)->
     Profile1 = db:unanon_profile(Profile),
     case db:insert_profile(Profile1) of 	
 	{ok, #profile{uid=Uid}} ->
-	    io:format("Msisdn (insert) :~p~n~n",[Msisdn]),
+	    io:format("new imsi(~p) & new msisdn (~p) (inserted)~n~n",[Imsi,Msisdn]),
 	    update_user_extra(Cl#client{uid=integer_to_list(Uid)}),
 	    put(update,get(update)+1);
  	Else ->
